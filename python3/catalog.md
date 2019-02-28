@@ -8,7 +8,7 @@
 3. An Informal Introduction to Python   
    3.1. Using Python as a Calculator   
    3.1.1. Numbers   
-   3.1.2. Strings   
+   3.1.2. Strings   
    3.1.3. Lists   
    3.2. First Steps Towards Programming   
 4. More Control Flow Tools.  
