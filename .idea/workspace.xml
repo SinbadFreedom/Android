@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/python3/catalog.md" line="23" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python3/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/python3/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python3/catalog.md" beforeDir="false" afterPath="$PROJECT_DIR$/python3/catalog.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +55,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1529184150">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="6" />
+          <entry key="md" value="6" />
+          <entry key="txt" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="6" />
+          <entry key="Markdown" value="6" />
+          <entry key="PLAIN_TEXT" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="17" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="17" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python3/1.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="63">
               <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
             </state>
           </provider>
@@ -67,16 +104,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python3/2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
+            <state relative-caret-position="1008">
               <caret line="48" column="30" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python3/catalog.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python3/2.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
+            <state relative-caret-position="1890">
               <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
             </state>
           </provider>
@@ -95,7 +141,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/官方教程/2.Intent 和 Intent 过滤器.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="315">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
@@ -116,20 +162,21 @@
       <list>
         <option value="$PROJECT_DIR$/python3/2.html" />
         <option value="$PROJECT_DIR$/python3/2.md" />
+        <option value="$PROJECT_DIR$/python3/catalog.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="802" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,16 +189,12 @@
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="python3" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="官方教程" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,11 +239,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551082244161</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="remove messy code">
+      <created>1551323564653</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551323564653</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
@@ -224,14 +274,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add test link" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test link" />
+    <MESSAGE value="remove messy code" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove messy code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BottomNavigation/app/src/main/java/com/example/bottomnavigation/MainActivity.java" />
+    <entry file="file://$PROJECT_DIR$/python3/2_1.html" />
     <entry file="file://$PROJECT_DIR$/python3/1.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="63">
           <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python3/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python3/2.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -243,7 +309,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/官方教程/2.Intent 和 Intent 过滤器.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="315">
           <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
@@ -251,24 +317,10 @@
     <entry file="file://$PROJECT_DIR$/python3/1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/python3/2_1.html">
+    <entry file="file://$PROJECT_DIR$/python3/catalog.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="54" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python3/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python3/2.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
