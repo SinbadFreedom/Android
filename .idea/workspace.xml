@@ -4,9 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/python3/catalog.md" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 调整js位置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python3/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/python3/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python3/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/python3/template.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +71,7 @@
         <counts>
           <entry key="css" value="8" />
           <entry key="html" value="11" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="md" value="6" />
           <entry key="txt" value="4" />
         </counts>
@@ -78,34 +80,34 @@
         <counts>
           <entry key="CSS" value="8" />
           <entry key="HTML" value="11" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="218" />
-          <entry key="js" value="4" />
-          <entry key="txt" value="140" />
+          <entry key="html" value="226" />
+          <entry key="js" value="7" />
+          <entry key="txt" value="171" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="218" />
-          <entry key="JavaScript" value="4" />
-          <entry key="PLAIN_TEXT" value="140" />
+          <entry key="HTML" value="226" />
+          <entry key="JavaScript" value="7" />
+          <entry key="PLAIN_TEXT" value="171" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python3/2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="105">
+              <caret line="5" column="20" selection-start-line="5" selection-end-line="6" />
               <folding>
                 <element signature="e#5305#5309#0" expanded="true" />
                 <element signature="e#5309#5313#0" expanded="true" />
@@ -128,10 +130,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="39" column="81" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python3/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="210">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -171,12 +182,12 @@
       <find>css</find>
       <find>.css</find>
       <find>https://cdn.rawgit.com/google/code-prettify/master/loader/skins/</find>
-      <find>https://cdn.rawgit.com</find>
       <find>https://cdn.rawgit.com/google/code-prettify/master/loader/</find>
       <find>ttps://cdn.rawgit.co</find>
       <find>https://cdn.rawgit.com/google/code-prettify/master/loader</find>
       <find>https://cdn.rawgit.com/g</find>
       <find>&lt;pre class=&quot;prettyprint&quot;&gt;</find>
+      <find>https://cdn.rawgit.com</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;pre class=&quot;prettyprint lang-py&quot;&gt;</replace>
@@ -192,8 +203,8 @@
         <option value="$PROJECT_DIR$/python3/catalog.md" />
         <option value="$PROJECT_DIR$/python3/test.html" />
         <option value="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" />
-        <option value="$PROJECT_DIR$/python3/template.html" />
         <option value="$PROJECT_DIR$/python3/2.html" />
+        <option value="$PROJECT_DIR$/python3/template.html" />
       </list>
     </option>
   </component>
@@ -220,6 +231,19 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="python3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="python3" type="462c0819:PsiDirectoryNode" />
+              <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="python3" type="462c0819:PsiDirectoryNode" />
+              <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
+              <item name="skins" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -319,7 +343,21 @@
       <option name="project" value="LOCAL" />
       <updated>1551768580063</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1. change url to https">
+      <created>1551769136136</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551769136136</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1. 调整js位置">
+      <created>1551770655595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551770655595</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -363,7 +401,9 @@
     <MESSAGE value="1. 修改template采用bootstrap&#10;2. 修改2.html用bootstrap" />
     <MESSAGE value="1. 加入google-code-pretty代码高亮" />
     <MESSAGE value="1. 加入js test." />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 加入js test." />
+    <MESSAGE value="1. change url to https" />
+    <MESSAGE value="1. 调整js位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 调整js位置" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BottomNavigation/app/src/main/java/com/example/bottomnavigation/MainActivity.java" />
@@ -418,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="48" column="236" selection-start-line="48" selection-start-column="229" selection-end-line="48" selection-end-column="236" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/skins/doxy.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -445,17 +478,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python3/template.html">
+    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="333">
+          <caret line="39" column="81" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python3/2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="105">
+          <caret line="5" column="20" selection-start-line="5" selection-end-line="6" />
           <folding>
             <element signature="e#5305#5309#0" expanded="true" />
             <element signature="e#5309#5313#0" expanded="true" />
@@ -473,6 +506,13 @@
             <element signature="e#5975#5979#0" expanded="true" />
             <element signature="e#5979#5983#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python3/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>
