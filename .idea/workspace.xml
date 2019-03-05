@@ -4,11 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/python3/catalog.md" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 调整js位置">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 调整google-code-pretty js url 去掉域名">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python3/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/python3/2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python3/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/python3/template.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,34 +67,34 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="8" />
+          <entry key="css" value="9" />
           <entry key="html" value="11" />
-          <entry key="js" value="2" />
+          <entry key="js" value="3" />
           <entry key="md" value="6" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="8" />
+          <entry key="CSS" value="9" />
           <entry key="HTML" value="11" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="226" />
-          <entry key="js" value="7" />
-          <entry key="txt" value="171" />
+          <entry key="html" value="256" />
+          <entry key="js" value="47" />
+          <entry key="txt" value="201" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="226" />
-          <entry key="JavaScript" value="7" />
-          <entry key="PLAIN_TEXT" value="171" />
+          <entry key="HTML" value="256" />
+          <entry key="JavaScript" value="47" />
+          <entry key="PLAIN_TEXT" value="201" />
         </counts>
       </usages-collector>
     </session>
@@ -107,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/python3/2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="5" column="20" selection-start-line="5" selection-end-line="6" />
+              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding>
                 <element signature="e#5305#5309#0" expanded="true" />
                 <element signature="e#5309#5313#0" expanded="true" />
@@ -129,20 +127,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="39" column="81" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
+            <state relative-caret-position="312">
+              <caret line="33" column="396" selection-start-line="33" selection-start-column="396" selection-end-line="33" selection-end-column="396" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/prettify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-252" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/prettify.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python3/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="105">
+              <caret line="5" column="78" lean-forward="true" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -188,6 +198,7 @@
       <find>https://cdn.rawgit.com/g</find>
       <find>&lt;pre class=&quot;prettyprint&quot;&gt;</find>
       <find>https://cdn.rawgit.com</find>
+      <find>https</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;pre class=&quot;prettyprint lang-py&quot;&gt;</replace>
@@ -202,9 +213,9 @@
         <option value="$PROJECT_DIR$/python3/2.md" />
         <option value="$PROJECT_DIR$/python3/catalog.md" />
         <option value="$PROJECT_DIR$/python3/test.html" />
-        <option value="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" />
-        <option value="$PROJECT_DIR$/python3/2.html" />
         <option value="$PROJECT_DIR$/python3/template.html" />
+        <option value="$PROJECT_DIR$/python3/2.html" />
+        <option value="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" />
       </list>
     </option>
   </component>
@@ -237,13 +248,6 @@
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="python3" type="462c0819:PsiDirectoryNode" />
               <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="python3" type="462c0819:PsiDirectoryNode" />
-              <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
-              <item name="skins" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -357,10 +361,17 @@
       <option name="project" value="LOCAL" />
       <updated>1551770655595</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1. 调整google-code-pretty js url 去掉域名">
+      <created>1551771459956</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551771459956</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -374,7 +385,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12684989" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12632136" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -382,8 +393,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="TODO" order="1" visible="true" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.17056856" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="1.0" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -403,7 +414,8 @@
     <MESSAGE value="1. 加入js test." />
     <MESSAGE value="1. change url to https" />
     <MESSAGE value="1. 调整js位置" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 调整js位置" />
+    <MESSAGE value="1. 调整google-code-pretty js url 去掉域名" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 调整google-code-pretty js url 去掉域名" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BottomNavigation/app/src/main/java/com/example/bottomnavigation/MainActivity.java" />
@@ -478,17 +490,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
+    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/prettify.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/prettify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="39" column="81" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
-        </state>
+        <state relative-caret-position="-252" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python3/2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="5" column="20" selection-start-line="5" selection-end-line="6" />
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
             <element signature="e#5305#5309#0" expanded="true" />
             <element signature="e#5309#5313#0" expanded="true" />
@@ -511,8 +524,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python3/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="105">
+          <caret line="5" column="78" lean-forward="true" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="33" column="396" selection-start-line="33" selection-start-column="396" selection-end-line="33" selection-end-column="396" />
         </state>
       </provider>
     </entry>
