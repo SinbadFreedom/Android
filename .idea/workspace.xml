@@ -4,102 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/md/python3/catalog.md" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 调整google-code-pretty js url 去掉域名">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tool/convert.js" />
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 调整lib目录路径">
+      <change beforePath="" afterPath="$PROJECT_DIR$/md/python3/4.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/python3/1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/python3/1.md" afterPath="$PROJECT_DIR$/md/python3/1.md" />
-      <change beforePath="$PROJECT_DIR$/python3/2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/python3/2.md" afterPath="$PROJECT_DIR$/md/python3/2.md" />
-      <change beforePath="$PROJECT_DIR$/python3/catalog.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/python3/catalog.md" afterPath="$PROJECT_DIR$/md/python3/catalog.md" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-Splus.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-Splus.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-aea.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-aea.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-agc.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-agc.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-apollo.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-apollo.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-basic.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-basic.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-cbm.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-cbm.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-cl.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-cl.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-clj.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-clj.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-css.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-css.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-dart.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-dart.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-el.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-el.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-erl.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-erl.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-erlang.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-erlang.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-ex.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-ex.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-exs.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-exs.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-fs.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-fs.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-go.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-go.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-hs.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-hs.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-kotlin.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-kotlin.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lasso.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lasso.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lassoscript.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lassoscript.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-latex.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-latex.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lgt.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lgt.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lisp.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lisp.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-ll.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-ll.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-llvm.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-llvm.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-logtalk.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-logtalk.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-ls.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-ls.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lsp.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lsp.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-lua.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-lua.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-matlab.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-matlab.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-ml.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-ml.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-mumps.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-mumps.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-n.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-n.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-nemerle.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-nemerle.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-pascal.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-pascal.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-proto.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-proto.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-r.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-r.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-rd.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-rd.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-rkt.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-rkt.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-rust.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-rust.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-s.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-s.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-scala.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-scala.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-scm.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-scm.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-sql.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-sql.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-ss.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-ss.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-swift.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-swift.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-tcl.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-tcl.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-tex.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-tex.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-vb.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-vb.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-vbs.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-vbs.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-vhd.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-vhd.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-vhdl.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-vhdl.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-wiki.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-wiki.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-xq.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-xq.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-xquery.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-xquery.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-yaml.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-yaml.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/lang-yml.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/lang-yml.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/prettify.css" afterPath="$PROJECT_DIR$/lib/google-code-prettify/prettify.css" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/prettify.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/prettify.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/run_prettify.js" afterPath="$PROJECT_DIR$/lib/google-code-prettify/run_prettify.js" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/skins/desert.css" afterPath="$PROJECT_DIR$/lib/google-code-prettify/skins/desert.css" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/skins/doxy.css" afterPath="$PROJECT_DIR$/lib/google-code-prettify/skins/doxy.css" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/skins/sons-of-obsidian.css" afterPath="$PROJECT_DIR$/lib/google-code-prettify/skins/sons-of-obsidian.css" />
-      <change beforePath="$PROJECT_DIR$/python3/google-code-prettify/skins/sunburst.css" afterPath="$PROJECT_DIR$/lib/google-code-prettify/skins/sunburst.css" />
-      <change beforePath="$PROJECT_DIR$/python3/template.html" afterPath="$PROJECT_DIR$/md/python3/template.handlebars" />
-      <change beforePath="$PROJECT_DIR$/官方教程/1.应用基础知识.txt" afterPath="$PROJECT_DIR$/md/官方教程/1.应用基础知识.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/10.本地化.txt" afterPath="$PROJECT_DIR$/md/官方教程/10.本地化.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/11.使用pseudolocales测试您的应用程序.txt" afterPath="$PROJECT_DIR$/md/官方教程/11.使用pseudolocales测试您的应用程序.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/12.Unicode和国际化支持.txt" afterPath="$PROJECT_DIR$/md/官方教程/12.Unicode和国际化支持.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/13.语言和语言区域.txt" afterPath="$PROJECT_DIR$/md/官方教程/13.语言和语言区域.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/14.内联复杂的XML资源.txt" afterPath="$PROJECT_DIR$/md/官方教程/14.内联复杂的XML资源.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/15.资源类型概述.txt" afterPath="$PROJECT_DIR$/md/官方教程/15.资源类型概述.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/16.manifest文件.txt" afterPath="$PROJECT_DIR$/md/官方教程/16.manifest文件.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/17.应用权限.txt" afterPath="$PROJECT_DIR$/md/官方教程/17.应用权限.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/18.在运行时请求权限.txt" afterPath="$PROJECT_DIR$/md/官方教程/18.在运行时请求权限.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/19.应用权限最佳做法.txt" afterPath="$PROJECT_DIR$/md/官方教程/19.应用权限最佳做法.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/2.Intent 和 Intent 过滤器.txt" afterPath="$PROJECT_DIR$/md/官方教程/2.Intent 和 Intent 过滤器.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/20.定义自定义应用程序权限.txt" afterPath="$PROJECT_DIR$/md/官方教程/20.定义自定义应用程序权限.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/21.设备兼容性.txt" afterPath="$PROJECT_DIR$/md/官方教程/21.设备兼容性.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/3.Activity.txt" afterPath="$PROJECT_DIR$/md/官方教程/3.Activity.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/4.提供资源.txt" afterPath="$PROJECT_DIR$/md/官方教程/4.提供资源.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/5.设备兼容性.txt" afterPath="$PROJECT_DIR$/md/官方教程/5.设备兼容性.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/6.系统权限.txt" afterPath="$PROJECT_DIR$/md/官方教程/6.系统权限.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/7.构建您的第一个应用.txt" afterPath="$PROJECT_DIR$/md/官方教程/7.构建您的第一个应用.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/8.APP资源.txt" afterPath="$PROJECT_DIR$/md/官方教程/8.APP资源.txt" />
-      <change beforePath="$PROJECT_DIR$/官方教程/9.处理运行时变更.txt" afterPath="$PROJECT_DIR$/md/官方教程/9.处理运行时变更.txt" />
+      <change beforePath="$PROJECT_DIR$/build/python3/2.html" afterPath="$PROJECT_DIR$/build/python3/2.html" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -199,32 +107,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="template.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/md/python3/template.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
+      <file leaf-file-name="3.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md/python3/3.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="282">
+                <caret line="495" column="1" lean-forward="true" selection-start-line="495" selection-start-column="1" selection-end-line="495" selection-end-column="1" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="convert.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tool/convert.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-214">
-              <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-              <folding />
+      <file leaf-file-name="5.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md/python3/5.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="618">
+                <caret line="588" column="130" lean-forward="false" selection-start-line="588" selection-start-column="130" selection-end-line="588" selection-end-column="130" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lib.es2015.symbol.wellknown.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.symbol.wellknown.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4294">
-              <caret line="239" column="4" lean-forward="false" selection-start-line="239" selection-start-column="4" selection-end-line="239" selection-end-column="4" />
-              <folding />
+      <file leaf-file-name="4.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md/python3/4.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="10982">
+                <caret line="578" column="0" lean-forward="false" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/md/python3/2.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="1189">
+                <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md/python3/1.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -244,72 +187,41 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
               <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-              <folding>
-                <element signature="e#4620#4624#0" expanded="true" />
-                <element signature="e#4624#4628#0" expanded="true" />
-                <element signature="e#4628#4632#0" expanded="true" />
-                <element signature="e#5053#5057#0" expanded="true" />
-                <element signature="e#5057#5061#0" expanded="true" />
-                <element signature="e#5061#5065#0" expanded="true" />
-                <element signature="e#5235#5239#0" expanded="true" />
-                <element signature="e#5239#5243#0" expanded="true" />
-                <element signature="e#5243#5247#0" expanded="true" />
-                <element signature="e#5248#5252#0" expanded="true" />
-                <element signature="e#5252#5256#0" expanded="true" />
-                <element signature="e#5256#5260#0" expanded="true" />
-                <element signature="e#5286#5290#0" expanded="true" />
-                <element signature="e#5290#5294#0" expanded="true" />
-                <element signature="e#5294#5298#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/python3/3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="386" column="66" lean-forward="false" selection-start-line="386" selection-start-column="60" selection-end-line="386" selection-end-column="66" />
+              <folding>
+                <element signature="e#17825#17829#0" expanded="true" />
+                <element signature="e#17829#17833#0" expanded="true" />
+                <element signature="e#17833#17837#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalog.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/md/python3/catalog.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="1919">
-                <caret line="101" column="50" lean-forward="false" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="4.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/python3/4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalog.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/python3/catalog.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="5.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/python3/5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-912">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -325,16 +237,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>https://cdn.rawgit.com/google/code-prettify/master/loader/skins/</find>
-      <find>https://cdn.rawgit.com/google/code-prettify/master/loader/</find>
-      <find>ttps://cdn.rawgit.co</find>
-      <find>https://cdn.rawgit.com/google/code-prettify/master/loader</find>
-      <find>https://cdn.rawgit.com/g</find>
-      <find>&lt;pre class=&quot;prettyprint&quot;&gt;</find>
-      <find>https://cdn.rawgit.com</find>
-      <find>https</find>
-      <find>python3/</find>
-      <find>//dashidan.com/and_doc/goo</find>
       <find>css_bootstrap</find>
       <find>moment</find>
       <find>getFileShowNameByNum</find>
@@ -355,6 +257,16 @@
       <find>htmlData</find>
       <find>&lt;pre&gt;</find>
       <find>nodemo</find>
+      <find>ython as a C</find>
+      <find>mple introduces several new</find>
+      <find>print</find>
+      <find>Note how the ord</find>
+      <find>and C are true but</find>
+      <find>are true but</find>
+      <find>grams: ty</find>
+      <find>al sub-sequence of t</find>
+      <find>ci series]() as follo</find>
+      <find>&lt;code&gt;</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;pre class=&quot;prettyprint lang-py&quot;&gt;</replace>
@@ -380,6 +292,9 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tool/convert.js" />
         <option value="$PROJECT_DIR$/build/python3/2.html" />
+        <option value="$PROJECT_DIR$/md/python3/4.md" />
+        <option value="$PROJECT_DIR$/md/python3/5.md" />
+        <option value="$PROJECT_DIR$/md/python3/3.md" />
       </list>
     </option>
   </component>
@@ -420,11 +335,6 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="tool" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -446,11 +356,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Android\build" />
       <recent name="D:\workplace\git\Android\tool" />
       <recent name="D:\workplace\git\Android" />
       <recent name="D:\workplace\git\Android\lib" />
       <recent name="D:\workplace\git\Android\md" />
-      <recent name="D:\workplace\git\Android\handlebars" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workplace\git\Android" />
@@ -500,7 +410,11 @@
       <workItem from="1551851212495" duration="885000" />
       <workItem from="1551852123187" duration="1778000" />
       <workItem from="1551853925114" duration="1833000" />
-      <workItem from="1551855775184" duration="316000" />
+      <workItem from="1551855775184" duration="1750000" />
+      <workItem from="1551863960250" duration="1788000" />
+      <workItem from="1551866531324" duration="1778000" />
+      <workItem from="1551870924502" duration="1794000" />
+      <workItem from="1551872731180" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -586,11 +500,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551772114351</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1. 加入 handlebars, showdown md 转html&#10;2. 加入package.json 设置依赖库&#10;3. 加入convert.js 脚本&#10;4. 调整文件目录">
+      <created>1551856227734</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1551856227735</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1. 调整lib目录路径">
+      <created>1551856680956</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551856680956</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10472000" />
+    <option name="totallyTimeSpent" value="18875000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -604,12 +532,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21881607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.108350955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34602463" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34553775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -639,7 +567,9 @@
     <MESSAGE value="1. change url to https" />
     <MESSAGE value="1. 调整js位置" />
     <MESSAGE value="1. 调整google-code-pretty js url 去掉域名" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 调整google-code-pretty js url 去掉域名" />
+    <MESSAGE value="1. 加入 handlebars, showdown md 转html&#10;2. 加入package.json 设置依赖库&#10;3. 加入convert.js 脚本&#10;4. 调整文件目录" />
+    <MESSAGE value="1. 调整lib目录路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 调整lib目录路径" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -648,51 +578,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tool/md2html.js" />
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/handlebars-v4.1.0.js" />
-    <entry file="file://$PROJECT_DIR$/tool/convert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/template.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/handlebars/handlebars-v4.1.0.js" />
     <entry file="file://$PROJECT_DIR$/tool/convert.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="37" column="56" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,7 +591,6 @@
         <state split_layout="SECOND">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -712,6 +601,7 @@
         <state split_layout="SECOND">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -721,12 +611,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/md/python3/2.html" />
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/run_prettify.js">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="30" column="115" lean-forward="false" selection-start-line="30" selection-start-column="115" selection-end-line="30" selection-end-column="115" />
@@ -737,25 +626,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/sunburst.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/sunburst.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/desert.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/desert.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="914" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/doxy.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/doxy.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="98" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="98" />
@@ -772,28 +660,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python3/2_1.html" />
     <entry file="file://$PROJECT_DIR$/python3/test.html" />
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/sunburst.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/sunburst.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/desert.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/desert.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="914" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/skins/doxy.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/doxy.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="98" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="98" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/prettify.js">
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/prettify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -801,14 +689,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/catalog.md" />
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap-4.3.1-dist/js/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1596">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js">
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -821,30 +709,53 @@
     <entry file="file://$PROJECT_DIR$/tool/md2html.js" />
     <entry file="file://$PROJECT_DIR$/build/python3/1t.html" />
     <entry file="file://$PROJECT_DIR$/md/python3/catalog.html" />
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google-code-prettify/run_prettify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="27" column="68" lean-forward="true" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/md/python3/2.html" />
-    <entry file="file://$PROJECT_DIR$/md/python3/2.md">
+    <entry file="file://$PROJECT_DIR$/lib/handlebars/handlebars-v4.1.0.js" />
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.symbol.wellknown.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4294">
+          <caret line="239" column="4" lean-forward="false" selection-start-line="239" selection-start-column="4" selection-end-line="239" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore" />
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="27" column="68" lean-forward="true" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tool/convert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
           <first_editor relative-caret-position="0">
@@ -853,9 +764,59 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/python3/catalog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/template.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/catalog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1919">
+            <caret line="101" column="50" lean-forward="false" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/5.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="618">
+            <caret line="588" column="130" lean-forward="false" selection-start-line="588" selection-start-column="130" selection-end-line="588" selection-end-column="130" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="10982">
+            <caret line="578" column="0" lean-forward="false" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -875,39 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/template.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/handlebars-v4.1.0.js" />
-    <entry file="file://$PROJECT_DIR$/md/python3/catalog.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1919">
-            <caret line="101" column="50" lean-forward="false" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.symbol.wellknown.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4294">
-          <caret line="239" column="4" lean-forward="false" selection-start-line="239" selection-start-column="4" selection-end-line="239" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/python3/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -920,69 +848,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/python3/4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/python3/5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-912">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/3.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="282">
+            <caret line="495" column="1" lean-forward="true" selection-start-line="495" selection-start-column="1" selection-end-line="495" selection-end-column="1" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/python3/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="386" column="66" lean-forward="false" selection-start-line="386" selection-start-column="60" selection-end-line="386" selection-end-column="66" />
           <folding>
-            <element signature="e#4620#4624#0" expanded="true" />
-            <element signature="e#4624#4628#0" expanded="true" />
-            <element signature="e#4628#4632#0" expanded="true" />
-            <element signature="e#5053#5057#0" expanded="true" />
-            <element signature="e#5057#5061#0" expanded="true" />
-            <element signature="e#5061#5065#0" expanded="true" />
-            <element signature="e#5235#5239#0" expanded="true" />
-            <element signature="e#5239#5243#0" expanded="true" />
-            <element signature="e#5243#5247#0" expanded="true" />
-            <element signature="e#5248#5252#0" expanded="true" />
-            <element signature="e#5252#5256#0" expanded="true" />
-            <element signature="e#5256#5260#0" expanded="true" />
-            <element signature="e#5286#5290#0" expanded="true" />
-            <element signature="e#5290#5294#0" expanded="true" />
-            <element signature="e#5294#5298#0" expanded="true" />
+            <element signature="e#17825#17829#0" expanded="true" />
+            <element signature="e#17829#17833#0" expanded="true" />
+            <element signature="e#17833#17837#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/python3/catalog.md">
+    <entry file="file://$PROJECT_DIR$/md/python3/2.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1189">
+            <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tool/convert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
         </state>
       </provider>
     </entry>
