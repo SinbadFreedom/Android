@@ -6,9 +6,9 @@
     <script src="https://dashidan.com/and_doc/lib/google-code-prettify/run_prettify.js?skin=sunburst"></script>
 </head>
 <body>
-    <h1 id="5datastructures">5. Data Structures</h1>
+    <h1 id='5.'>5. Data Structures</h1>
 <p>This chapter describes some things you’ve learned about already in more detail, and adds some new things as well.</p>
-<h3 id="51moreonlists">5.1. More on Lists</h3>
+<h3 id="5.1.">5.1. More on Lists</h3>
 <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
 <ul>
 <li><p>list.<em>append(x)</em></p>
@@ -59,7 +59,7 @@
 'pear'
 </code></pre>
 <p>You might have noticed that methods like <code>insert</code>, <code>remove</code> or <code>sort</code> that only modify the list have no return value printed – they return the default <code>None</code>. <a href="#">1</a> This is a design principle for all mutable data structures in Python.</p>
-<h4 id="511usinglistsasstacks">5.1.1. Using Lists as Stacks</h4>
+<h4 id="5.1.1.">5.1.1. Using Lists as Stacks</h4>
 <p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out”). To add an item to the top of the stack, use <code>append()</code>. To retrieve an item from the top of the stack, use <code>pop()</code> without an explicit index. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; stack = [3, 4, 5]
@@ -78,7 +78,7 @@
 &gt;&gt;&gt; stack
 [3, 4]
 </code></pre>
-<h4 id="512usinglistsasqueues">5.1.2. Using Lists as Queues</h4>
+<h4 id="5.1.2.">5.1.2. Using Lists as Queues</h4>
 <p>It is also possible to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out”); however, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
 <p>To implement a queue, use <a href="#">collections.deque</a> which was designed to have fast appends and pops from both ends. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -93,7 +93,7 @@
 &gt;&gt;&gt; queue                           # Remaining queue in order of arrival
 deque(['Michael', 'Terry', 'Graham'])
 </code></pre>
-<h4 id="513listcomprehensions">5.1.3. List Comprehensions</h4>
+<h4 id="5.1.3.">5.1.3. List Comprehensions</h4>
 <p>List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.</p>
 <p>For example, assume we want to create a list of squares, like:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -164,7 +164,7 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; [str(round(pi, i)) for i in range(1, 6)]
 ['3.1', '3.14', '3.142', '3.1416', '3.14159']
 </code></pre>
-<h4 id="514nestedlistcomprehensions">5.1.4. Nested List Comprehensions</h4>
+<h4 id="5.1.4.">5.1.4. Nested List Comprehensions</h4>
 <p>The initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.</p>
 <p>Consider the following example of a 3x4 matrix implemented as a list of 3 lists of length 4:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -207,7 +207,7 @@ SyntaxError: invalid syntax
 [(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
 </code></pre>
 <p>See Unpacking Argument Lists for details on the asterisk in this line.</p>
-<h4 id="52thedelstatement">5.2. The del statement</h4>
+<h4 id="5.2.">5.2. The del statement</h4>
 <p>There is a way to remove an item from a list given its index instead of its value: the <a href="#">del</a> statement. This differs from the <code>pop()</code> method which returns a value. The del statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; a = [-1, 1, 66.25, 333, 333, 1234.5]
@@ -226,7 +226,7 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; del a
 </code></pre>
 <p>Referencing the name a hereafter is an error (at least until another value is assigned to it). We’ll find other uses for del later.</p>
-<h4 id="53tuplesandsequences">5.3. Tuples and Sequences</h4>
+<h4 id="5.3.">5.3. Tuples and Sequences</h4>
 <p>We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see <a href="#">Sequence Types — list, tuple, range</a>). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the <code>tuple</code>.</p>
 <p>A tuple consists of a number of values separated by commas, for instance:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -267,7 +267,7 @@ TypeError: 'tuple' object does not support item assignment
 &gt;&gt;&gt; x, y, z = t
 </code></pre>
 <p>This is called, appropriately enough, sequence unpacking and works for any sequence on the right-hand side. Sequence unpacking requires that there are as many variables on the left side of the equals sign as there are elements in the sequence. Note that multiple assignment is really just a combination of tuple packing and sequence unpacking.</p>
-<h4 id="54sets">5.4. Sets</h4>
+<h4 id="5.4.">5.4. Sets</h4>
 <p>Python also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
 <p>Curly braces or the <a href="#">set()</a> function can be used to create sets. Note: to create an empty set you have to use <a href="#">set()</a>, not <code>{}</code>; the latter creates an empty dictionary, a data structure that we discuss in the next section.</p>
 <p>Here is a brief demonstration:</p>
@@ -301,7 +301,7 @@ False
 &gt;&gt;&gt; a
 {'r', 'd'}
 </code></pre>
-<h3 id="55dictionaries">5.5. Dictionaries</h3>
+<h3 id="5.5.">5.5. Dictionaries</h3>
 <p>Another useful data type built into Python is the dictionary (see <a href="#">Mapping Types — dict</a>). Dictionaries are sometimes found in other languages as “associative memories” or “associative arrays”. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like <code>append()</code> and <code>extend()</code>.</p>
 <p>It is best to think of a dictionary as a set of key: value pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: <code>{}</code>. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.</p>
 <p>The main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with del. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.</p>
@@ -342,7 +342,7 @@ False
 &gt;&gt;&gt; dict(sape=4139, guido=4127, jack=4098)
 {'sape': 4139, 'guido': 4127, 'jack': 4098}
 </code></pre>
-<h3 id="56loopingtechniques">5.6. Looping Techniques</h3>
+<h3 id="5.6.">5.6. Looping Techniques</h3>
 <p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the items() method.</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; knights = {'gallahad': 'the pure', 'robin': 'the brave'}
@@ -406,7 +406,7 @@ pear
 &gt;&gt;&gt; filtered_data
 [56.2, 51.7, 55.3, 52.5, 47.8]
 </code></pre>
-<h3 id="57moreonconditions">5.7. More on Conditions</h3>
+<h3 id="5.7.">5.7. More on Conditions</h3>
 <p>The conditions used in <code>while</code> and <code>if</code> statements can contain any operators, not just comparisons.</p>
 <p>The comparison operators <code>in</code> and <code>not in</code> check whether a value occurs (does not occur) in a sequence. The operators <code>is</code> and <code>is not</code> compare whether two objects are really the same object; this only matters for mutable objects like lists. All comparison operators have the same priority, which is lower than that of all numerical operators.</p>
 <p>Comparisons can be chained. For example, <code>a &lt; b == c</code> tests whether <code>a</code> is less than <code>b</code> and moreover <code>b</code> equals <code>c</code>.</p>
@@ -420,7 +420,7 @@ pear
 'Trondheim'
 </code></pre>
 <p>Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing <code>=</code> in an expression when <code>==</code> was intended.</p>
-<h3 id="58comparingsequencesandothertypes">5.8. Comparing Sequences and Other Types</h3>
+<h3 id="5.8.">5.8. Comparing Sequences and Other Types</h3>
 <p>Sequence objects may be compared to other objects with the same sequence type. The comparison uses lexicographical ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively. If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one. Lexicographical ordering for strings uses the Unicode code point number to order individual characters. Some examples of comparisons between sequences of the same type:</p>
 <pre class='prettyprint'><code>(1, 2, 3)              &lt; (1, 2, 4)
 [1, 2, 3]              &lt; [1, 2, 4]

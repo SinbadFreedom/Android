@@ -66,13 +66,115 @@ function convertAllFile() {
 }
 
 /**
+ * 匹配一级标题 ===, 修改id，以空格为拆分，前边的作为 h1 的id
+ */
+showdown.extension('custom-header-id-for-title-1', function () {
+    var setextRegexH1 = /^(.+)[ \t]*\n=+[ \t]*\n+/gm;
+
+    return [{
+        type: 'listener',
+        listeners: {
+            'headers.before': function (event, text, converter, options, globals) {
+                text = text.replace(setextRegexH1, function (wholeMatch, m1) {
+                    var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
+                        hLevel    = 1,
+                        hID       = " id='" + m1.split(" ")[0] + "'",
+                        hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
+                    return showdown.subParser('hashBlock')(hashBlock, options, globals);
+                });
+                return text;
+            }
+        }
+    }];
+});
+
+/**
+ * 匹配二级标题 ---, 修改id，以空格为拆分，前边的作为 h2 的id
+ */
+showdown.extension('custom-header-id-for-title-2', function () {
+    var setextRegexH2 = /^(.+)[ \t]*\n-+[ \t]*\n+/gm;
+
+    return [{
+        type: 'listener',
+        listeners: {
+            'headers.before': function (event, text, converter, options, globals) {
+                text = text.replace(setextRegexH2, function (wholeMatch, m1) {
+                    var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
+                        hLevel    = 2,
+                        hID       = " id='" + m1.split(" ")[0] + "'",
+                        hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
+                    return showdown.subParser('hashBlock')(hashBlock, options, globals);
+                });
+                return text;
+            }
+        }
+    }];
+});
+
+
+/**
+ *  加入自定义插件改变标题id规则 只对以"#"开头的标题生效(#,##,###...######),
+ *  "==="及"---"对应的标题id 采用上边的两个方法。
+ *
+ *  插件参考：
+ *  https://jsfiddle.net/tivie/107yuueg/
+ *
+ */
+showdown.extension('custom-header-id', function () {
+    // var rgx = /^(#{1,6})[ \t]*(.+?) *\{: *#([\S]+?)\}[ \t]*#*$/gmi;
+    /** 匹配标题*/
+    var rgx = /^(#{1,6})[ \t]*(.+?) *[ \t]*#*$/gmi;
+
+    return [{
+        type: 'listener',
+        listeners: {
+            'headers.before': function (event, text, converter, options, globals) {
+                text = text.replace(rgx, function (wm, hLevel, hText, hCustomId) {
+                    // find how many # there are at the beggining of the header
+                    // these will define the header level
+                    hLevel = hLevel.length;
+
+                    // since headers can have markdown in them (ex: # some *italic* header)
+                    // we need to pass the text to the span parser
+                    hText = showdown.subParser('spanGamut')(hText, options, globals);
+
+                    // console.error("hText " + hText + " hCustomId " + hCustomId)
+                    /**
+                     * id规则为标题字符串以空格符拆分，前边的字符串。
+                     * 比如:
+                     * 2.2.1. 源代码编码
+                     * id 为 2.2.1
+                     */
+                    let titleId = hText.split(" ")[0];
+
+
+                    // create the appropriate HTML
+                    var header = '<h' + hLevel + ' id="' + titleId + '">' + hText + '</h' + hLevel + '>';
+
+                    // hash block to prevent any further modification
+                    return showdown.subParser('hashBlock')(header, options, globals);
+                });
+                // return the changed text
+                return text;
+            }
+        }
+    }];
+});
+
+/**
  * Mardown文件转化为html文件
  * @param mdFile
  * @param outHtmlFile
  */
 function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
     const mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
-    let converter = new showdown.Converter();
+    // let converter = new showdown.Converter();
+    /**
+     * 加入自定义插件 改变生成标题id的规则，
+     * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
+     */
+    var converter = new showdown.Converter({extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
+
     let htmlData = converter.makeHtml(mdData);
     /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
     console.log("-------------------------------------------------------");
@@ -92,6 +194,7 @@ function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
     fs.writeFileSync(outHtmlFile, finalData);
     console.log("convertFile OK.");
 }
+
 
 /** 获取所有目录下所有数字开头的md文件*/
 getAllMdFileName(article_folder);
