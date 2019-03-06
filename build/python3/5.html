@@ -10,30 +10,32 @@
 <p>This chapter describes some things you’ve learned about already in more detail, and adds some new things as well.</p>
 <h3 id="51moreonlists">5.1. More on Lists</h3>
 <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
-<p>list.append(x)</p>
-<p>Add an item to the end of the list. Equivalent to <code>a[len(a):] = [x]</code>.</p>
-<p>list.extend(iterable)</p>
-<p>Extend the list by appending all the items from the iterable. Equivalent to <code>a[len(a):] = iterable</code>.</p>
-<p>list.insert(i, x)</p>
-<p>Insert an item at a given position. The first argument is the index of the element before which to insert, so <code>a.insert(0, x)</code> inserts at the front of the list, and <code>a.insert(len(a), x)</code> is equivalent to <code>a.append(x)</code>.</p>
-<p>list.remove(x)</p>
-<p>Remove the first item from the list whose value is equal to x. It raises a <a href="#">ValueError</a> if there is no such item.</p>
-<p>list.pop([i])</p>
-<p>Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)</p>
-<p>list.clear()</p>
-<p>Remove all items from the list. Equivalent to <code>del a[:]</code>.</p>
-<p>list.index(x[, start[, end]])</p>
+<ul>
+<li><p>list.<em>append(x)</em></p>
+<p>Add an item to the end of the list. Equivalent to <code>a[len(a):] = [x]</code>.</p></li>
+<li><p>list.<em>extend(iterable)</em></p>
+<p>Extend the list by appending all the items from the iterable. Equivalent to <code>a[len(a):] = iterable</code>.</p></li>
+<li><p>list.<em>insert(i, x)</em></p>
+<p>Insert an item at a given position. The first argument is the index of the element before which to insert, so <code>a.insert(0, x)</code> inserts at the front of the list, and <code>a.insert(len(a), x)</code> is equivalent to <code>a.append(x)</code>.</p></li>
+<li><p>list.<em>remove(x)</em></p>
+<p>Remove the first item from the list whose value is equal to x. It raises a <a href="#">ValueError</a> if there is no such item.</p></li>
+<li><p>list.<em>pop([i])</em></p>
+<p>Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)</p></li>
+<li><p>list.<em>clear()</em></p>
+<p>Remove all items from the list. Equivalent to <code>del a[:]</code>.</p></li>
+<li><p>list.<em>index(x[, start[, end]])</em></p>
 <p>Return zero-based index in the list of the first item whose value is equal to x. Raises a <a href="#">ValueError</a> if there is no such item.</p>
-<p>The optional arguments start and end are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the start argument.</p>
-<p>list.count(x)</p>
-<p>Return the number of times x appears in the list.</p>
-<p>list.sort(key=None, reverse=False)</p>
-<p>Sort the items of the list in place (the arguments can be used for sort customization, see <a href="#">sorted()</a> for their explanation).</p>
-<p>list.reverse()</p>
-<p>Reverse the elements of the list in place.</p>
-<p>list.copy()</p>
+<p>The optional arguments start and end are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the start argument.</p></li>
+<li><p>list.<em>count(x)</em></p>
+<p>Return the number of times x appears in the list.</p></li>
+<li><p>list.<em>sort(key=None, reverse=False)</em></p>
+<p>Sort the items of the list in place (the arguments can be used for sort customization, see <a href="#">sorted()</a> for their explanation).</p></li>
+<li><p>list.<em>reverse()</em></p>
+<p>Reverse the elements of the list in place.</p></li>
+<li><p>list.<em>copy()</em></p>
 <p>Return a shallow copy of the list. Equivalent to <code>a[:]</code>.</p>
-<p>An example that uses most of the list methods:</p>
+<p>An example that uses most of the list methods:</p></li>
+</ul>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
 &gt;&gt;&gt; fruits.count('apple')
