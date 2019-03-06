@@ -1,0 +1,22 @@
+{
+  "name": "convert_md_to_html",
+  "barename": "convert_md_to_html",
+  "version": "1.1.1",
+  "description": "convert_md_to_html",
+  "homepage": "http://dashidan.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SinbadFreedom/Android.git"
+  },
+  "author": "Sinbad",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "showdown": "^1.9.0",
+    "handlebars": "^4.1.0"
+  },
+  "main": "tool/convert.js"
+}
