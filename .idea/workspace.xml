@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/md/python3/catalog.md" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入中文测试页面&#10;2. 修改2和3 md格式">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入catalog.cn.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node_modules/" />
@@ -445,7 +445,7 @@
       <workItem from="1551872731180" duration="1792000" />
       <workItem from="1551874665867" duration="1354000" />
       <workItem from="1551879948494" duration="1802000" />
-      <workItem from="1551883048058" duration="901000" />
+      <workItem from="1551883048058" duration="916000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -580,11 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551883365717</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1. 加入catalog.cn.md">
+      <created>1551883961057</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1551883961057</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23115000" />
+    <option name="totallyTimeSpent" value="23130000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -640,7 +647,8 @@
     <MESSAGE value="1. 修改空连接改为[](#)" />
     <MESSAGE value="1. 调整5.md 格式" />
     <MESSAGE value="1. 加入中文测试页面&#10;2. 修改2和3 md格式" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 加入中文测试页面&#10;2. 修改2和3 md格式" />
+    <MESSAGE value="1. 加入catalog.cn.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 加入catalog.cn.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
