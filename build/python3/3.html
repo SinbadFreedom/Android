@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1 id="3aninformalintroductiontopython">3. An Informal Introduction to Python</h1>
-<p>In the following examples, input and output are distinguished by the presence or absence of prompts ([&gt;&gt;&gt;]() and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
+<p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
 <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
 <p>Some examples:</p>
 <pre class='prettyprint'><code># this is the first comment
@@ -29,8 +29,8 @@ text = "# This is not a comment because it's inside quotes."
 &gt;&gt;&gt; 8 / 5  # division always returns a floating point number
 1.6
 </code></pre>
-<p>The integer numbers (e.g. <code>2</code>, <code>4</code>, <code>20</code>) have type [int](), the ones with a fractional part (e.g. <code>5.0</code>, <code>1.6</code>) have type [float](). We will see more about numeric types later in the tutorial.</p>
-<p>Division (<code>/</code>) always returns a float. To do [floor division]() and get an integer result (discarding any fractional result) you can use the <code>//</code> operator; to calculate the remainder you can use <code>%</code>:</p>
+<p>The integer numbers (e.g. <code>2</code>, <code>4</code>, <code>20</code>) have type <a href="#">int</a>, the ones with a fractional part (e.g. <code>5.0</code>, <code>1.6</code>) have type <a href="#">float</a>. We will see more about numeric types later in the tutorial.</p>
+<p>Division (<code>/</code>) always returns a float. To do <a href="#">floor division</a> and get an integer result (discarding any fractional result) you can use the <code>//</code> operator; to calculate the remainder you can use <code>%</code>:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; 17 / 3  # classic division returns a float
 5.666666666666667
@@ -42,7 +42,7 @@ text = "# This is not a comment because it's inside quotes."
 &gt;&gt;&gt; 5 * 3 + 2  # result * divisor + remainder
 17
 </code></pre>
-<p>With Python, it is possible to use the <code>**</code> operator to calculate powers [1]():</p>
+<p>With Python, it is possible to use the <code>**</code> operator to calculate powers <a href="#">1</a>:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; 5 ** 2  # 5 squared
 25
@@ -80,7 +80,7 @@ NameError: name 'n' is not defined
 113.06
 </code></pre>
 <p>This variable should be treated as read-only by the user. Don’t explicitly assign a value to it — you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
-<p>In addition to [int]() and [float](), Python supports other types of numbers, such as [Decimal]() and [Fraction](). Python also has built-in support for [complex numbers](), and uses the j or J suffix to indicate the imaginary part (e.g. <code>3+5j</code>).</p>
+<p>In addition to <a href="#">int</a> and <a href="#">float</a>, Python supports other types of numbers, such as <a href="#">Decimal</a> and <a href="#">Fraction</a>. Python also has built-in support for <a href="#">complex numbers</a>, and uses the j or J suffix to indicate the imaginary part (e.g. <code>3+5j</code>).</p>
 <h4 id="312strings">3.1.2. Strings</h4>
 <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>) with the same result [2]. \ can be used to escape quotes:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -97,7 +97,7 @@ NameError: name 'n' is not defined
 &gt;&gt;&gt; '"Isn\'t," they said.'
 '"Isn\'t," they said.'
 </code></pre>
-<p>In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The [print()]() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:</p>
+<p>In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The <a href="#">print()</a> function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; '"Isn\'t," they said.'
 '"Isn\'t," they said.'
@@ -230,7 +230,7 @@ IndexError: string index out of range
 &gt;&gt;&gt; word[42:]
 ''
 </code></pre>
-<p>Python strings cannot be changed — they are [immutable](). Therefore, assigning to an indexed position in the string results in an error:</p>
+<p>Python strings cannot be changed — they are <a href="#">immutable</a>. Therefore, assigning to an indexed position in the string results in an error:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; word[0] = 'J'
 Traceback (most recent call last):
@@ -248,14 +248,14 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; word[:2] + 'py'
 'Pypy'
 </code></pre>
-<p>The built-in function [len()]() returns the length of a string:</p>
+<p>The built-in function <a href="#">len()</a> returns the length of a string:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; s = 'supercalifragilisticexpialidocious'
 &gt;&gt;&gt; len(s)
 34
 </code></pre>
 <p>See also</p>
-<p>[Text Sequence Type — str]()</p>
+<p><a href="#">Text Sequence Type — str</a></p>
 <p>Strings are examples of sequence types, and support the common operations supported by such types.</p>
 <p>[String Methods]()</p>
 <p>Strings support a large number of methods for basic transformations and searching.</p>
