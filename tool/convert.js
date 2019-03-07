@@ -15,6 +15,8 @@ let allFileName = [];
 /** catalog 文件名*/
 const catalogName = "catalog.md";
 const catalogCnName = "catalog.cn.md";
+const catalogNameTxt = "catalog.txt";
+const catalogCnNameTxt = "catalog.cn.txt";
 
 function getAllMdFileName(folderName) {
     console.log("readFolder folderName : " + folderName);
@@ -169,8 +171,8 @@ showdown.extension('custom-header-id', function () {
  * @param mdFile
  * @param outHtmlFile
  */
-function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
-    const mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
+function convertSingleFile(mdFileName, outHtmlFile) {
+    let mdData = fs.readFileSync(mdFileName, 'utf-8');
     /**
      * 加入自定义插件 改变生成标题id的规则，
      * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
@@ -181,7 +183,7 @@ function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
     let htmlData = converter.makeHtml(mdData);
     /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
     console.log("-------------------------------------------------------");
-    console.log("convertFile " + mdFileNameWithFolder + " to: " + outHtmlFile);
+    console.log("convertFile " + mdFileName + " to: " + outHtmlFile);
     console.log("-------------------------------------------------------");
     /** 配置表中加入其它参数*/
     let article_config = {};
@@ -205,7 +207,7 @@ function fullAngleToHalfAngle(str) {
     let s = "";
     for (let i = 0; i < str.length; i++) {
         let cCode = str.charCodeAt(i);
-        if (cCode === 0x03000) {
+        if (cCode == 0x03000) {
             /** 处理空格*/
             cCode = 0x0020;
         } else {
@@ -246,15 +248,34 @@ function fullAngleToHalfAngle(str) {
     return s;
 }
 
-function convertCatalog(fileName) {
+function copyCatalogTxt(fileName) {
+    /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    console.log("copyCatalogTxt " + fileName);
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    let catalogMdName = article_folder + "/" + fileName;
+    let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
+    /** 全角转化为半角*/
+    let finalCatalogData = fullAngleToHalfAngle(catalogData);
+    /** 写入文件*/
+    fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, finalCatalogData);
+}
+
+function convertCatalogMd(fileName) {
+    /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     console.log("convertCatalog " + fileName);
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    let catalogData = fs.readFileSync(article_folder + "/" + fileName, 'utf-8');
+    let catalogMdName = article_folder + "/" + fileName;
+    let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
     /** 全角转化为半角*/
-    catalogData = fullAngleToHalfAngle(catalogData);
+    let finalCatalogData = fullAngleToHalfAngle(catalogData);
     /** 写入文件*/
-    fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, catalogData);
+    fs.writeFileSync(catalogMdName, finalCatalogData);
+
+    /** 转化目录html，android首屏用*/
+    let outHtmlFileName = htmlOutBaseFolder + "/" + fileName.replace('.md', '.html');
+    convertSingleFile(catalogMdName,  outHtmlFileName)
 }
 
 /** 获取所有目录下所有数字开头的md文件*/
@@ -262,5 +283,7 @@ getAllMdFileName(article_folder);
 /** 转化全部文件*/
 convertAllFile();
 /** 转化目录catalog文件*/
-convertCatalog(catalogName);
-convertCatalog(catalogCnName);
+convertCatalogMd(catalogName);
+convertCatalogMd(catalogCnName);
+copyCatalogTxt(catalogNameTxt);
+copyCatalogTxt(catalogCnNameTxt);
