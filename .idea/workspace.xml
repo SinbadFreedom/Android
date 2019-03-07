@@ -7,6 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入 index.html index.cn.html.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build/python3/index.cn.html" afterPath="$PROJECT_DIR$/build/python3/index.cn.html" />
+      <change beforePath="$PROJECT_DIR$/build/python3/index.html" afterPath="$PROJECT_DIR$/build/python3/index.html" />
+      <change beforePath="$PROJECT_DIR$/img/ic_launcher-web.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/md/python3/index.cn.html" afterPath="$PROJECT_DIR$/md/python3/index.cn.html" />
+      <change beforePath="$PROJECT_DIR$/md/python3/index.html" afterPath="$PROJECT_DIR$/md/python3/index.html" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -129,19 +134,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ic_launcher-web.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/ic_launcher-web.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/md/python3/index.html">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="171">
-                <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="8" />
+              <first_editor relative-caret-position="228">
+                <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -149,21 +147,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.cn.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/md/python3/index.cn.html">
+      <file leaf-file-name="index.cn.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/python3/index.cn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="285">
+              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.cn.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/python3/index.cn.html">
+      <file leaf-file-name="index.cn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md/python3/index.cn.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -306,8 +304,8 @@
         <option value="$PROJECT_DIR$/tool/convert.js" />
         <option value="$PROJECT_DIR$/md/python3/catalog.cn.md" />
         <option value="$PROJECT_DIR$/md/python3/index.md" />
-        <option value="$PROJECT_DIR$/md/python3/index.html" />
         <option value="$PROJECT_DIR$/md/python3/index.cn.html" />
+        <option value="$PROJECT_DIR$/md/python3/index.html" />
       </list>
     </option>
   </component>
@@ -368,7 +366,30 @@
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="python3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="md" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
+              <item name="python3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -402,11 +423,11 @@
       <recent name="D:\workplace\git\Android\md" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workplace\git\Android\build" />
       <recent name="D:\workplace\git\Android\build\python3" />
+      <recent name="D:\workplace\git\Android\md" />
+      <recent name="D:\workplace\git\Android\build" />
       <recent name="D:\workplace\git\Android\md\python3" />
       <recent name="D:\workplace\git\Android\img" />
-      <recent name="D:\workplace\git\Android" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -468,7 +489,7 @@
       <workItem from="1551927014725" duration="1793000" />
       <workItem from="1551928820989" duration="1793000" />
       <workItem from="1551930627137" duration="2436000" />
-      <workItem from="1551940797723" duration="658000" />
+      <workItem from="1551940797723" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -680,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551941371121</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="1. 加入 index.html index.cn.html.">
+      <created>1551941461554</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1551941461554</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43905000" />
+    <option name="totallyTimeSpent" value="43973000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -697,8 +725,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34566596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34566596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1086,29 +1115,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/index.cn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/md/python3/index.html">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="171">
-            <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="8" />
+          <first_editor relative-caret-position="228">
+            <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/index.cn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/python3/index.cn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="285">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
