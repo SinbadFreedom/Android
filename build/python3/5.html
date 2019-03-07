@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1 id='5.'>5. Data Structures</h1>
-<p>This chapter describes some things you’ve learned about already in more detail, and adds some new things as well.</p>
+<p>This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
 <h3 id="5.1.">5.1. More on Lists</h3>
 <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
 <ul>
@@ -60,7 +60,7 @@
 </code></pre>
 <p>You might have noticed that methods like <code>insert</code>, <code>remove</code> or <code>sort</code> that only modify the list have no return value printed – they return the default <code>None</code>. <a href="#">1</a> This is a design principle for all mutable data structures in Python.</p>
 <h4 id="5.1.1.">5.1.1. Using Lists as Stacks</h4>
-<p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out”). To add an item to the top of the stack, use <code>append()</code>. To retrieve an item from the top of the stack, use <code>pop()</code> without an explicit index. For example:</p>
+<p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved ("last-in, first-out"). To add an item to the top of the stack, use <code>append()</code>. To retrieve an item from the top of the stack, use <code>pop()</code> without an explicit index. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; stack = [3, 4, 5]
 &gt;&gt;&gt; stack.append(6)
@@ -79,7 +79,7 @@
 [3, 4]
 </code></pre>
 <h4 id="5.1.2.">5.1.2. Using Lists as Queues</h4>
-<p>It is also possible to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out”); however, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
+<p>It is also possible to use a list as a queue, where the first element added is the first element retrieved ("first-in, first-out"); however, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
 <p>To implement a queue, use <a href="#">collections.deque</a> which was designed to have fast appends and pops from both ends. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; from collections import deque
@@ -115,7 +115,7 @@ deque(['Michael', 'Terry', 'Graham'])
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
 [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
-and it’s equivalent to:
+and it's equivalent to:
 
 &gt;&gt;&gt;
 &gt;&gt;&gt; combs = []
@@ -225,9 +225,9 @@ SyntaxError: invalid syntax
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; del a
 </code></pre>
-<p>Referencing the name a hereafter is an error (at least until another value is assigned to it). We’ll find other uses for del later.</p>
+<p>Referencing the name a hereafter is an error (at least until another value is assigned to it). We'll find other uses for del later.</p>
 <h4 id="5.3.">5.3. Tuples and Sequences</h4>
-<p>We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see <a href="#">Sequence Types — list, tuple, range</a>). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the <code>tuple</code>.</p>
+<p>We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see <a href="#">Sequence Types - list, tuple, range</a>). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the <code>tuple</code>.</p>
 <p>A tuple consists of a number of values separated by commas, for instance:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; t = 12345, 54321, 'hello!'
@@ -302,7 +302,7 @@ False
 {'r', 'd'}
 </code></pre>
 <h3 id="5.5.">5.5. Dictionaries</h3>
-<p>Another useful data type built into Python is the dictionary (see <a href="#">Mapping Types — dict</a>). Dictionaries are sometimes found in other languages as “associative memories” or “associative arrays”. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like <code>append()</code> and <code>extend()</code>.</p>
+<p>Another useful data type built into Python is the dictionary (see <a href="#">Mapping Types - dict</a>). Dictionaries are sometimes found in other languages as "associative memories" or "associative arrays". Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like <code>append()</code> and <code>extend()</code>.</p>
 <p>It is best to think of a dictionary as a set of key: value pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: <code>{}</code>. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.</p>
 <p>The main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with del. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.</p>
 <p>Performing <code>list(d)</code> on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use <code>sorted(d)</code> instead). To check whether a single key is in the dictionary, use the <code>in</code> keyword.</p>

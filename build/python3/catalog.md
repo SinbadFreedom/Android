@@ -44,7 +44,7 @@
    6.1. More on Modules   
       6.1.1. Executing modules as scripts   
       6.1.2. The Module Search Path   
-      6.1.3. “Compiled” Python files   
+      6.1.3. "Compiled" Python files   
    6.2. Standard Modules   
    6.3. The dir() Function   
    6.4. Packages   
@@ -99,7 +99,7 @@
    10.10. Performance Measurement   
    10.11. Quality Control   
    10.12. Batteries Included   
-11. Brief Tour of the Standard Library — Part II   
+11. Brief Tour of the Standard Library - Part II   
    11.1. Output Formatting   
    11.2. Templating   
    11.3. Working with Binary Data Record Layouts   

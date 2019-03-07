@@ -12,6 +12,9 @@ let htmlOutBaseFolder = "../build/" + article_type;
 let handlebars_template_file_name = article_folder + "/template.handlebars";
 /** 全部md文件名*/
 let allFileName = [];
+/** catalog 文件名*/
+const catalogName = "catalog.md";
+const catalogCnName = "catalog.cn.md";
 
 function getAllMdFileName(folderName) {
     console.log("readFolder folderName : " + folderName);
@@ -168,12 +171,12 @@ showdown.extension('custom-header-id', function () {
  */
 function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
     const mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
-    // let converter = new showdown.Converter();
     /**
      * 加入自定义插件 改变生成标题id的规则，
      * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
      */
-    var converter = new showdown.Converter({extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
+    let converter = new showdown.Converter(
+        {extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
 
     let htmlData = converter.makeHtml(mdData);
     /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
@@ -190,13 +193,74 @@ function convertSingleFile(mdFileNameWithFolder, outHtmlFile) {
     let finalData = compiled(article_config);
     /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
     finalData = finalData.replace(/<pre>/g, "<pre class='prettyprint'>");
+    /** 全角转化为半角*/
+    finalData = fullAngleToHalfAngle(finalData);
     /** 写入文件*/
     fs.writeFileSync(outHtmlFile, finalData);
     console.log("convertFile OK.");
 }
 
+/** 全角转化为半角*/
+function fullAngleToHalfAngle(str) {
+    let s = "";
+    for (let i = 0; i < str.length; i++) {
+        let cCode = str.charCodeAt(i);
+        if (cCode === 0x03000) {
+            /** 处理空格*/
+            cCode = 0x0020;
+        } else {
+            /** 除空格外全角与半角相差 65248 (十进制)*/
+            if (cCode >= 0xFF01 && cCode <= 0xFF5E) {
+                cCode = cCode - 65248;
+            }
+        }
+        s += String.fromCharCode(cCode);
+    }
+
+    /** 正则转换中文标点*/
+    s = s.replace(/：/g, ':');
+    s = s.replace(/。/g, '.');
+    s = s.replace(/“/g, '"');
+    s = s.replace(/”/g, '"');
+    s = s.replace(/【/g, '[');
+    s = s.replace(/】/g, ']');
+    s = s.replace(/《/g, '<');
+    s = s.replace(/》/g, '>');
+    s = s.replace(/，/g, ',');
+    s = s.replace(/？/g, '?');
+    s = s.replace(/、/g, ',');
+    s = s.replace(/；/g, ';');
+    s = s.replace(/（/g, '(');
+    s = s.replace(/）/g, ')');
+    s = s.replace(/‘/g, "'");
+    s = s.replace(/’/g, "'");
+    s = s.replace(/『/g, "[");
+    s = s.replace(/』/g, "]");
+    s = s.replace(/「/g, "[");
+    s = s.replace(/」/g, "]");
+    s = s.replace(/﹃/g, "[");
+    s = s.replace(/﹄/g, "]");
+    s = s.replace(/〔/g, "{");
+    s = s.replace(/〕/g, "}");
+    s = s.replace(/—/g, "-");
+    return s;
+}
+
+function convertCatalog(fileName) {
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    console.log("convertCatalog " + fileName);
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    let catalogData = fs.readFileSync(article_folder + "/" + fileName, 'utf-8');
+    /** 全角转化为半角*/
+    catalogData = fullAngleToHalfAngle(catalogData);
+    /** 写入文件*/
+    fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, catalogData);
+}
 
 /** 获取所有目录下所有数字开头的md文件*/
 getAllMdFileName(article_folder);
 /** 转化全部文件*/
 convertAllFile();
+/** 转化目录catalog文件*/
+convertCatalog(catalogName);
+convertCatalog(catalogCnName);

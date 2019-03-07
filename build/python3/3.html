@@ -16,7 +16,7 @@ spam = 1  # and this is the second comment
 text = "# This is not a comment because it's inside quotes."
 </code></pre>
 <h3 id="3.1.">3.1. Using Python as a Calculator</h3>
-<p>Let’s try some simple Python commands. Start the interpreter and wait for the primary prompt, <code>&gt;&gt;&gt;</code>. (It shouldn’t take long.)</p>
+<p>Let's try some simple Python commands. Start the interpreter and wait for the primary prompt, <code>&gt;&gt;&gt;</code>. (It shouldn't take long.)</p>
 <h4 id="3.1.1.">3.1.1. Numbers</h4>
 <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code> work just like in most other languages (for example, Pascal or C); parentheses (<code>()</code>) can be used for grouping. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -56,7 +56,7 @@ text = "# This is not a comment because it's inside quotes."
 &gt;&gt;&gt; width * height
 900
 </code></pre>
-<p>If a variable is not “defined” (assigned a value), trying to use it will give you an error:</p>
+<p>If a variable is not "defined" (assigned a value), trying to use it will give you an error:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; n  # try to access an undefined variable
 Traceback (most recent call last):
@@ -79,7 +79,7 @@ NameError: name 'n' is not defined
 &gt;&gt;&gt; round(_, 2)
 113.06
 </code></pre>
-<p>This variable should be treated as read-only by the user. Don’t explicitly assign a value to it — you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
+<p>This variable should be treated as read-only by the user. Don't explicitly assign a value to it - you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
 <p>In addition to <a href="#">int</a> and <a href="#">float</a>, Python supports other types of numbers, such as <a href="#">Decimal</a> and <a href="#">Fraction</a>. Python also has built-in support for <a href="#">complex numbers</a>, and uses the j or J suffix to indicate the imaginary part (e.g. <code>3+5j</code>).</p>
 <h4 id="3.1.2.">3.1.2. Strings</h4>
 <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>) with the same result [2]. \ can be used to escape quotes:</p>
@@ -110,14 +110,14 @@ NameError: name 'n' is not defined
 First line.
 Second line.
 </code></pre>
-<p>If you don’t want characters prefaced by <code>\</code> to be interpreted as special characters, you can use raw strings by adding an r before the first quote:</p>
+<p>If you don't want characters prefaced by <code>\</code> to be interpreted as special characters, you can use raw strings by adding an r before the first quote:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; print('C:\some\name')  # here \n means newline!
 C:\some\name
 &gt;&gt;&gt; print(r'C:\some\name')  # note the r before the quote
 C:\some\name
 </code></pre>
-<p>String literals can span multiple lines. One way is using triple-quotes: <code>"""..."""</code> or <code>'''...'''</code>. End of lines are automatically included in the string, but it’s possible to prevent this by adding a <code>\</code> at the end of the line. The following example:</p>
+<p>String literals can span multiple lines. One way is using triple-quotes: <code>"""..."""</code> or <code>'''...'''</code>. End of lines are automatically included in the string, but it's possible to prevent this by adding a <code>\</code> at the end of the line. The following example:</p>
 <pre class='prettyprint'><code>print("""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
@@ -230,7 +230,7 @@ IndexError: string index out of range
 &gt;&gt;&gt; word[42:]
 ''
 </code></pre>
-<p>Python strings cannot be changed — they are <a href="#">immutable</a>. Therefore, assigning to an indexed position in the string results in an error:</p>
+<p>Python strings cannot be changed - they are <a href="#">immutable</a>. Therefore, assigning to an indexed position in the string results in an error:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; word[0] = 'J'
 Traceback (most recent call last):
@@ -255,7 +255,7 @@ TypeError: 'str' object does not support item assignment
 34
 </code></pre>
 <p>See also</p>
-<p><a href="#">Text Sequence Type — str</a></p>
+<p><a href="#">Text Sequence Type - str</a></p>
 <p>Strings are examples of sequence types, and support the common operations supported by such types.</p>
 <p><a href="#">String Methods</a></p>
 <p>Strings support a large number of methods for basic transformations and searching.</p>
@@ -365,7 +365,7 @@ TypeError: 'str' object does not support item assignment
 <ul>
 <li><p>The first line contains a multiple assignment: the variables <code>a</code> and <code>b</code> simultaneously get the new values 0 and 1. On the last line this is used again, demonstrating that the expressions on the right-hand side are all evaluated first before any of the assignments take place. The right-hand side expressions are evaluated from the left to the right.</p></li>
 <li><p>The <a href="#">while</a> loop executes as long as the condition (here: <code>a &lt; 10</code>) remains true. In Python, like in C, any non-zero integer value is true; zero is false. The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. The test used in the example is a simple comparison. The standard comparison operators are written the same as in C: <code>&lt;</code> (less than), <code>&gt;</code> (greater than), <code>==</code> (equal to), <code>&lt;=</code> (less than or equal to), <code>&gt;=</code> (greater than or equal to) and <code>!=</code> (not equal to).</p></li>
-<li><p>The body of the loop is indented: indentation is Python’s way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). Note that each line within a basic block must be indented by the same amount.</p></li>
+<li><p>The body of the loop is indented: indentation is Python's way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). Note that each line within a basic block must be indented by the same amount.</p></li>
 <li><p>The <a href="#">print()</a> function writes the value of the argument(s) it is given. It differs from just writing the expression you want to write (as we did earlier in the calculator examples) in the way it handles multiple arguments, floating point quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely, like this:</p></li>
 </ul>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
@@ -384,6 +384,6 @@ The value of i is 65536
 </code></pre>
 <h2 id='Footnotes'>Footnotes</h2>
 <p><a href="#">1</a> Since <code>**</code> has higher precedence than <code>-</code>, <code>-3**2</code> will be interpreted as <code>-(3**2)</code> and thus result in <code>-9</code>. To avoid this and get <code>9</code>, you can use <code>(-3)**2</code>.</p>
-<p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don’t need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
+<p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don't need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
 </body>
 </html>
