@@ -368,24 +368,7 @@
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="python3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="md" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -419,11 +402,11 @@
       <recent name="D:\workplace\git\Android\md" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Android\build" />
       <recent name="D:\workplace\git\Android\build\python3" />
       <recent name="D:\workplace\git\Android\md\python3" />
       <recent name="D:\workplace\git\Android\img" />
       <recent name="D:\workplace\git\Android" />
-      <recent name="D:\workplace\git\Android\lib\showdown" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -485,7 +468,7 @@
       <workItem from="1551927014725" duration="1793000" />
       <workItem from="1551928820989" duration="1793000" />
       <workItem from="1551930627137" duration="2436000" />
-      <workItem from="1551940797723" duration="566000" />
+      <workItem from="1551940797723" duration="658000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -690,11 +673,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551941284244</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="1. 加入 index.html index.cn.html.">
+      <created>1551941371121</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1551941371121</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43813000" />
+    <option name="totallyTimeSpent" value="43905000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
