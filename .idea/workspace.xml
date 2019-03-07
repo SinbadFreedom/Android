@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/tool/convert.js" line="210" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入catalog.html catalog.cn.html. &#10;2. catalog.md catalog.cn.md中加入标题链接和锚点&#10;3. 加入catalog.txt catalog.cn.txt">
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/python3/index.cn.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/python3/index.html" />
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入 index.html index.cn.html.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node_modules/" />
@@ -487,7 +485,7 @@
       <workItem from="1551927014725" duration="1793000" />
       <workItem from="1551928820989" duration="1793000" />
       <workItem from="1551930627137" duration="2436000" />
-      <workItem from="1551940797723" duration="465000" />
+      <workItem from="1551940797723" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -685,11 +683,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551931854584</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="1. 加入 index.html index.cn.html.">
+      <created>1551941284244</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1551941284244</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43712000" />
+    <option name="totallyTimeSpent" value="43813000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -749,7 +754,8 @@
     <MESSAGE value="1. workplace.xml" />
     <MESSAGE value="1. 加入全角转半角,修改convert.js&#10;2. 重新生成build目录文件" />
     <MESSAGE value="1. 加入catalog.html catalog.cn.html. &#10;2. catalog.md catalog.cn.md中加入标题链接和锚点&#10;3. 加入catalog.txt catalog.cn.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 加入catalog.html catalog.cn.html. &#10;2. catalog.md catalog.cn.md中加入标题链接和锚点&#10;3. 加入catalog.txt catalog.cn.txt" />
+    <MESSAGE value="1. 加入 index.html index.cn.html." />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 加入 index.html index.cn.html." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
