@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入自定义dashidan.css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build/css/dashidan.css" afterPath="$PROJECT_DIR$/build/css/dashidan.css" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -152,8 +153,8 @@
       <file leaf-file-name="dashidan.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+            <state relative-caret-position="603">
+              <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -514,7 +515,7 @@
       <workItem from="1551959604136" duration="669000" />
       <workItem from="1552004603218" duration="1718000" />
       <workItem from="1552006376414" duration="1608000" />
-      <workItem from="1552031574430" duration="789000" />
+      <workItem from="1552031574430" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="add test link">
       <created>1551082244161</created>
@@ -768,11 +769,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552032293299</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="1. 加入自定义dashidan.css">
+      <created>1552032366673</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1552032366673</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50129000" />
+    <option name="totallyTimeSpent" value="50501000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1207,8 +1215,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+        <state relative-caret-position="603">
+          <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
           <folding />
         </state>
       </provider>
