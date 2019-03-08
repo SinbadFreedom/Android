@@ -112,6 +112,12 @@ footer > a {
 pre {
     padding: 2px 4px;
     font-size: 90%;
-    background-color: #eee;
+    background-color: #888;
     border-radius: 6px;
+}
+
+/** 复写google pretty*/
+pre.prettyprint {
+    padding: 0px;
+    border: none;
 }
