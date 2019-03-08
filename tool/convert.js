@@ -207,7 +207,8 @@ function fullAngleToHalfAngle(str) {
     let s = "";
     for (let i = 0; i < str.length; i++) {
         let cCode = str.charCodeAt(i);
-        if (cCode == 0x03000) {
+        /** 用chrome的google翻译, 空格会转化 charcode 160 的空格字符 */
+        if (cCode === 0x3000 || cCode === 160) {
             /** 处理空格*/
             cCode = 0x0020;
         } else {
