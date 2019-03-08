@@ -119,5 +119,6 @@ pre {
 /** 复写google pretty*/
 pre.prettyprint {
     padding: 2px;
+    border: none;
     /*border: 1px solid #888*/
 }
