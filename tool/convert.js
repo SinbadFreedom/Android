@@ -4,19 +4,26 @@ const showdown = require('showdown');
 const Handlebars = require("handlebars");
 
 const article_type = process.argv[2];
-const article_folder = "../md/" + article_type;
+const language = process.argv[3];
+
+const article_folder = "../md/" + article_type + '/' + language;
+const template_folder = "../md/" + article_type;
 
 /** pc默认格式文件目录*/
-let htmlOutBaseFolder = "../build/" + article_type;
+let htmlOutBaseFolder = "../build/" + article_type + '/' + language;
 /** handlebars 模板文件*/
-let handlebars_template_file_name = article_folder + "/template.handlebars";
+let handlebars_template_file_name = template_folder + "/template.handlebars";
 /** 全部md文件名*/
 let allFileName = [];
 /** catalog 文件名*/
 const catalogName = "catalog.md";
-const catalogCnName = "catalog.cn.md";
 const catalogNameTxt = "catalog.txt";
-const catalogCnNameTxt = "catalog.cn.txt";
+/** 版本号 更新内容*/
+const versionName = "version.json";
+/** 首页*/
+const indexName = "index.html";
+/** 更多*/
+const moreName = "more.html";
 
 function getAllMdFileName(folderName) {
     console.log("readFolder folderName : " + folderName);
@@ -249,10 +256,10 @@ function fullAngleToHalfAngle(str) {
     return s;
 }
 
-function copyCatalogTxt(fileName) {
+function copyFileByName(fileName) {
     /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    console.log("copyCatalogTxt " + fileName);
+    console.log("copyFileByName " + fileName);
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     let catalogMdName = article_folder + "/" + fileName;
     let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
@@ -285,6 +292,7 @@ getAllMdFileName(article_folder);
 convertAllFile();
 /** 转化目录catalog文件*/
 convertCatalogMd(catalogName);
-convertCatalogMd(catalogCnName);
-copyCatalogTxt(catalogNameTxt);
-copyCatalogTxt(catalogCnNameTxt);
+copyFileByName(catalogNameTxt);
+copyFileByName(versionName);
+copyFileByName(indexName);
+copyFileByName(moreName);
