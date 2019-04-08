@@ -5,41 +5,8 @@
     <bookmark url="file://$PROJECT_DIR$/tool/convert.js" line="218" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入根据语言目录切分">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/more.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/more.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/1.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/2.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/3.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/4.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/5.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/catalog.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/catalog.cn.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/catalog.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/catalog.txt" afterPath="$PROJECT_DIR$/md/python3/en/catalog.txt" />
-      <change beforePath="$PROJECT_DIR$/build/python3/index.cn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/version.cn.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/python3/version.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/md/python3/1.cn.md" afterPath="$PROJECT_DIR$/md/python3/zh_cn/1.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/1.md" afterPath="$PROJECT_DIR$/md/python3/en/1.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/2.cn.md" afterPath="$PROJECT_DIR$/md/python3/zh_cn/2.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/2.md" afterPath="$PROJECT_DIR$/md/python3/en/2.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/3.cn.md" afterPath="$PROJECT_DIR$/md/python3/zh_cn/3.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/3.md" afterPath="$PROJECT_DIR$/md/python3/en/3.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/4.md" afterPath="$PROJECT_DIR$/md/python3/en/4.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/5.md" afterPath="$PROJECT_DIR$/md/python3/en/5.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/catalog.cn.md" afterPath="$PROJECT_DIR$/md/python3/zh_cn/catalog.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/catalog.cn.txt" afterPath="$PROJECT_DIR$/md/python3/zh_cn/catalog.txt" />
-      <change beforePath="$PROJECT_DIR$/md/python3/catalog.md" afterPath="$PROJECT_DIR$/md/python3/en/catalog.md" />
-      <change beforePath="$PROJECT_DIR$/md/python3/catalog.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/md/python3/index.cn.html" afterPath="$PROJECT_DIR$/md/python3/zh_cn/index.html" />
-      <change beforePath="$PROJECT_DIR$/md/python3/index.html" afterPath="$PROJECT_DIR$/md/python3/en/index.html" />
-      <change beforePath="$PROJECT_DIR$/tool/convert.js" afterPath="$PROJECT_DIR$/tool/convert.js" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -159,16 +126,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="convert.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tool/convert.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5643">
-              <caret line="297" column="18" lean-forward="false" selection-start-line="297" selection-start-column="18" selection-end-line="297" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="catalog.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/python3/en/catalog.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -199,7 +156,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/md/python3/en/version.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/md/python3/zh_cn/1.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -426,31 +393,20 @@
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
               <item name="python3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
               <item name="python3" type="462c0819:PsiDirectoryNode" />
               <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -594,14 +550,7 @@
       <workItem from="1554304393635" duration="449000" />
       <workItem from="1554748155982" duration="1732000" />
       <workItem from="1554749956367" duration="1709000" />
-      <workItem from="1554752463075" duration="695000" />
-    </task>
-    <task id="LOCAL-00009" summary="1. change url to https">
-      <created>1551769136136</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1551769136136</updated>
+      <workItem from="1554752463075" duration="1000000" />
     </task>
     <task id="LOCAL-00010" summary="1. 调整js位置">
       <created>1551770655595</created>
@@ -939,11 +888,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554304726380</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件">
+      <created>1554753313234</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1554753313234</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90443000" />
+    <option name="totallyTimeSpent" value="90748000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -956,8 +912,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -983,7 +940,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 加入python 3 4 5" />
     <MESSAGE value="1. 修改空连接改为[](#)" />
     <MESSAGE value="1. 调整5.md 格式" />
     <MESSAGE value="1. 加入中文测试页面&#10;2. 修改2和3 md格式" />
@@ -1008,7 +964,8 @@
     <MESSAGE value="1. 加入java android 图标和简单介绍&#10;2. 修改index页面加入其他应用图标" />
     <MESSAGE value="1. 加入跟多应用页面模板 more.html&#10;2. 修改index页面&#10;3. 加入java android icon" />
     <MESSAGE value="1. 修改index，more页面描述" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改index，more页面描述" />
+    <MESSAGE value="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1122,6 +1079,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,6 +1123,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,6 +1131,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,6 +1140,7 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="1262">
             <caret line="81" column="30" lean-forward="false" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1190,6 +1151,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1200,6 +1162,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1269,14 +1232,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3/en/version.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,6 +1315,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3/en/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
