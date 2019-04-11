@@ -23,7 +23,7 @@ if (isset($_GET['type'])) {
 
 $time_stamp = time();
 $today = date('Y-m-d', $time_stamp);
-$file = 'log_rank_list_' . $today . '.log';
+$file = '../log/log_rank_list_' . $today . '.log';
 if (isset($_GET['userid'])) {
     $user_id = $_GET['userid'];
     $content = ' userid ' . $user_id . ' type ' . $type . " $time_stamp\n";

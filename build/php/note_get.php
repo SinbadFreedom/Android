@@ -6,8 +6,6 @@
  * Time: 12:20
  */
 
-
-
 if (!isset($_GET['openid'])) {
     echo 'param error 1';
     return;
@@ -34,7 +32,7 @@ if (!is_numeric($num)) {
 }
 
 $time_stamp = time();
-$file = 'log_note_get_' . date('Y-m-d', $time_stamp) . '.txt';
+$file = '../log/log_note_get_' . date('Y-m-d', $time_stamp) . '.txt';
 $content = "$open_id " . " $user_id " . " $num" . " $time_stamp\n";;
 file_put_contents($file, $content, FILE_APPEND);
 

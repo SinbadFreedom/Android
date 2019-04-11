@@ -7,7 +7,7 @@
  */
 $time_stamp = time();
 $today = date('Y-m-d', $time_stamp);
-$file = 'log_update_exp_' . $today . '.txt';
+$file = '../log/log_update_exp_' . $today . '.txt';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);

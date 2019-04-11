@@ -7,7 +7,7 @@
  */
 
 $time_stamp = time();
-$file = 'log_user_login_' . date('Y-m-d', $time_stamp) . '.txt';
+$file = '../log/log_user_login_' . date('Y-m-d', $time_stamp) . '.txt';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
