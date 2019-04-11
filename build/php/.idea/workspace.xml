@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/user_login.php" line="140" mnemonic="8" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="26ab51be-8561-496a-9977-7142191e710b" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1523942443">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="75" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.14" value="4" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.3" value="6" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.4" value="47" />
+          <entry key="project.open.time.5" value="9" />
+          <entry key="project.opened" value="75" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="html" value="18" />
+          <entry key="log" value="2" />
+          <entry key="php" value="69" />
+          <entry key="txt" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="18" />
+          <entry key="PHP" value="69" />
+          <entry key="PLAIN_TEXT" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="18" />
+          <entry key="html" value="703" />
+          <entry key="php" value="7691" />
+          <entry key="txt" value="1031" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="716" />
+          <entry key="PHP" value="7678" />
+          <entry key="PLAIN_TEXT" value="1049" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rank_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4313">
+              <caret line="232" column="2" selection-start-line="232" selection-start-column="2" selection-end-line="237" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/none_note_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/update_exp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1235">
+              <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1653">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mongodb/mongodb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6631">
+              <caret line="362" column="34" selection-start-line="362" selection-start-column="34" selection-end-line="362" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/note_list_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rank_init/rank_update_minute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="643">
+              <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/note_add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="45" column="9" selection-start-line="10" selection-start-column="7" selection-end-line="108" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rank_init/rank_update_day.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Query</find>
+      <find>$image_name</find>
+      <find>$save_fullpath</find>
+      <find>image_name</find>
+      <find>getimageInfo</find>
+      <find>ROOT_PATH</find>
+      <find>FAIL_WRITE_DATA</find>
+      <find>NO_STREAM_DATA</find>
+      <find>NOT_CORRECT_TYPE</find>
+      <find>CAN_NOT_CREATE_FILE</find>
+      <find>$this-&gt;</find>
+      <find>$flags</find>
+      <find>getimagesize</find>
+      <find>$db_collection_name</find>
+      <find>Collection</find>
+      <find>count</find>
+      <find>$today</find>
+      <find>TYPE_MONTH_LAST</find>
+      <find>$time</find>
+      <find>$type</find>
+      <find>time()</find>
+      <find>$manager</find>
+      <find>$user_id</find>
+      <find>$open_id</find>
+      <find>$nickname</find>
+      <find>col-md-12</find>
+      <find>$res_5</find>
+      <find>$col_all</find>
+      <find>col_all</find>
+      <find>nickname</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>$num</replace>
+      <replace>$</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/addNote.php" />
+        <option value="$PROJECT_DIR$/getNote.php" />
+        <option value="$PROJECT_DIR$/app_list.php" />
+        <option value="$PROJECT_DIR$/more_app_list.php" />
+        <option value="$PROJECT_DIR$/none_note.html" />
+        <option value="$PROJECT_DIR$/note_list.html" />
+        <option value="$PROJECT_DIR$/conf.php" />
+        <option value="$PROJECT_DIR$/rank_list_update.php" />
+        <option value="$PROJECT_DIR$/rank_init/rank_update_month.php" />
+        <option value="$PROJECT_DIR$/rank_init/rank_update_week.php" />
+        <option value="$PROJECT_DIR$/note_add.php" />
+        <option value="$PROJECT_DIR$/user_login.php" />
+        <option value="$PROJECT_DIR$/upload_img.php" />
+        <option value="$PROJECT_DIR$/note_get.php" />
+        <option value="$PROJECT_DIR$/template/note_list_template.html" />
+        <option value="$PROJECT_DIR$/template/rank_list_template.html" />
+        <option value="$PROJECT_DIR$/rank_init/rank_update_day.php" />
+        <option value="$PROJECT_DIR$/rank_list.php" />
+        <option value="$PROJECT_DIR$/rank_init/rank_update_minute.php" />
+        <option value="$PROJECT_DIR$/update_exp.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-260" />
+    <option name="y" value="44" />
+    <option name="width" value="2273" />
+    <option name="height" value="1100" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
+              <item name="rank_init" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Doc\dashidan.com\php\rank_init" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Doc\dashidan.com\php\telplate" />
+      <recent name="D:\workplace\git\Doc\dashidan.com\php\rank_init" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26ab51be-8561-496a-9977-7142191e710b" name="Default Changelist" comment="" />
+      <created>1553014975465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553014975465</updated>
+      <workItem from="1553014976731" duration="1024000" />
+      <workItem from="1553016674717" duration="1916000" />
+      <workItem from="1553018819940" duration="1805000" />
+      <workItem from="1553020706544" duration="1793000" />
+      <workItem from="1553022524123" duration="528000" />
+      <workItem from="1553610368825" duration="1208000" />
+      <workItem from="1553651639937" duration="1680000" />
+      <workItem from="1553657228612" duration="763000" />
+      <workItem from="1553664649159" duration="45000" />
+      <workItem from="1553664741291" duration="1824000" />
+      <workItem from="1553666641767" duration="599000" />
+      <workItem from="1553669639514" duration="1794000" />
+      <workItem from="1553671485504" duration="1813000" />
+      <workItem from="1553673334819" duration="1790000" />
+      <workItem from="1553675151439" duration="1793000" />
+      <workItem from="1553677083627" duration="1792000" />
+      <workItem from="1553678899838" duration="2076000" />
+      <workItem from="1553681528164" duration="1793000" />
+      <workItem from="1553683521996" duration="1793000" />
+      <workItem from="1553685340946" duration="2223000" />
+      <workItem from="1553738579996" duration="1528000" />
+      <workItem from="1553740386930" duration="1993000" />
+      <workItem from="1553743512239" duration="1878000" />
+      <workItem from="1554020644014" duration="10000" />
+      <workItem from="1554020764017" duration="599000" />
+      <workItem from="1554023224462" duration="713000" />
+      <workItem from="1554032642483" duration="1121000" />
+      <workItem from="1554034928861" duration="1790000" />
+      <workItem from="1554036742816" duration="1794000" />
+      <workItem from="1554043108774" duration="1823000" />
+      <workItem from="1554044963128" duration="1852000" />
+      <workItem from="1554046848245" duration="1797000" />
+      <workItem from="1554048670899" duration="1456000" />
+      <workItem from="1554260029205" duration="575000" />
+      <workItem from="1554268527063" duration="1149000" />
+      <workItem from="1554273688916" duration="1247000" />
+      <workItem from="1554279505779" duration="1561000" />
+      <workItem from="1554281333300" duration="1478000" />
+      <workItem from="1554283359971" duration="1723000" />
+      <workItem from="1554300844807" duration="1774000" />
+      <workItem from="1554302648289" duration="1195000" />
+      <workItem from="1554339141749" duration="599000" />
+      <workItem from="1554344819272" duration="1789000" />
+      <workItem from="1554355356426" duration="1321000" />
+      <workItem from="1554357184039" duration="1801000" />
+      <workItem from="1554359010185" duration="1793000" />
+      <workItem from="1554360829657" duration="1847000" />
+      <workItem from="1554366283997" duration="1125000" />
+      <workItem from="1554368132353" duration="1756000" />
+      <workItem from="1554369976331" duration="1873000" />
+      <workItem from="1554393445479" duration="1770000" />
+      <workItem from="1554395240530" duration="344000" />
+      <workItem from="1554395825794" duration="1748000" />
+      <workItem from="1554397625885" duration="1791000" />
+      <workItem from="1554399443619" duration="1654000" />
+      <workItem from="1554401177947" duration="319000" />
+      <workItem from="1554423416228" duration="1762000" />
+      <workItem from="1554425615659" duration="1259000" />
+      <workItem from="1554439652173" duration="1310000" />
+      <workItem from="1554451121721" duration="1794000" />
+      <workItem from="1554452940787" duration="1793000" />
+      <workItem from="1554454758562" duration="1571000" />
+      <workItem from="1554693036760" duration="599000" />
+      <workItem from="1554694939994" duration="1301000" />
+      <workItem from="1554701746601" duration="1781000" />
+      <workItem from="1554703604605" duration="1815000" />
+      <workItem from="1554705449128" duration="1766000" />
+      <workItem from="1554707271466" duration="1591000" />
+      <workItem from="1554709254183" duration="670000" />
+      <workItem from="1554714330417" duration="952000" />
+      <workItem from="1554733216263" duration="1763000" />
+      <workItem from="1554735038931" duration="1879000" />
+      <workItem from="1554738428365" duration="1188000" />
+      <workItem from="1554863624875" duration="1766000" />
+      <workItem from="1554865416668" duration="796000" />
+    </task>
+    <task id="LOCAL-00028" summary="1. 修改mongo_client,采用新版操作方式">
+      <created>1553686293357</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1553686293357</updated>
+    </task>
+    <task id="LOCAL-00029" summary="1. 修改mongo_client,修复bug，正常运行版">
+      <created>1553686502355</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1553686502355</updated>
+    </task>
+    <task id="LOCAL-00030" summary="1. 加入注释user_login">
+      <created>1553686956013</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1553686956013</updated>
+    </task>
+    <task id="LOCAL-00031" summary="1. 加入is_new">
+      <created>1553739834330</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1553739834330</updated>
+    </task>
+    <task id="LOCAL-00032" summary="1. 加入upload_img">
+      <created>1553744013705</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1553744013705</updated>
+    </task>
+    <task id="LOCAL-00033" summary="1. 加入upload_img">
+      <created>1553744839331</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1553744839331</updated>
+    </task>
+    <task id="LOCAL-00034" summary="1. note_add 加入参数&#10;2. 修改note_get 获取作者信息">
+      <created>1554047011137</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1554047011137</updated>
+    </task>
+    <task id="LOCAL-00035" summary="1. 修改头像大小">
+      <created>1554047833372</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1554047833372</updated>
+    </task>
+    <task id="LOCAL-00036" summary="1. 修改笔记列表页面样式">
+      <created>1554049074948</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1554049074948</updated>
+    </task>
+    <task id="LOCAL-00037" summary="1. 修改笔记列表页面样式">
+      <created>1554049157094</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1554049157094</updated>
+    </task>
+    <task id="LOCAL-00038" summary="1. 修改笔记列表页面样式">
+      <created>1554049291671</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1554049291671</updated>
+    </task>
+    <task id="LOCAL-00039" summary="1. 修改笔记列表页面样式">
+      <created>1554049582162</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1554049582162</updated>
+    </task>
+    <task id="LOCAL-00040" summary="1. 修改笔记列表页面样式">
+      <created>1554049659971</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1554049659971</updated>
+    </task>
+    <task id="LOCAL-00041" summary="1. 新用户加入经验数据&#10;2. 加入经验配置conf.php&#10;3. 加入更新经验update_exp.php&#10;4. 修改html模板文件名">
+      <created>1554282201586</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1554282201586</updated>
+    </task>
+    <task id="LOCAL-00042" summary="1. 修改经验配置conf.php">
+      <created>1554285131683</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1554285131683</updated>
+    </task>
+    <task id="LOCAL-00043" summary="1. 修改日志文件格式">
+      <created>1554301196856</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1554301196856</updated>
+    </task>
+    <task id="LOCAL-00044" summary="1. 修改日志文件格式">
+      <created>1554301695856</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1554301695856</updated>
+    </task>
+    <task id="LOCAL-00045" summary="1. 修改update_exp 返回数据">
+      <created>1554301982834</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1554301982834</updated>
+    </task>
+    <task id="LOCAL-00046" summary="1. 修改update_exp 时间计算为秒">
+      <created>1554302177852</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302177852</updated>
+    </task>
+    <task id="LOCAL-00047" summary="1. 修改update_exp 时间计算为秒">
+      <created>1554302330178</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302330178</updated>
+    </task>
+    <task id="LOCAL-00048" summary="1. 修改update_exp 时间计算为秒">
+      <created>1554302367061</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302367061</updated>
+    </task>
+    <task id="LOCAL-00049" summary="1. 修改更新经验时间">
+      <created>1554302509662</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302509662</updated>
+    </task>
+    <task id="LOCAL-00050" summary="1. 清理注释代码">
+      <created>1554302671189</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302671190</updated>
+    </task>
+    <task id="LOCAL-00051" summary="1. 还原'new' =&gt; true,返回更新后的值">
+      <created>1554304197619</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1554304197619</updated>
+    </task>
+    <task id="LOCAL-00052" summary="1. 加入log和时间戳&#10;2. note_get.php加入get参数openid和userid">
+      <created>1554346067837</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1554346067838</updated>
+    </task>
+    <task id="LOCAL-00053" summary="1. 加入log和时间戳&#10;2. note_get.php加入get参数openid和userid">
+      <created>1554346330276</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1554346330276</updated>
+    </task>
+    <task id="LOCAL-00054" summary="1. 加入rank_list.php,获取排行榜数据&#10;2. 加入rank_update_day, rank_update_minute, 更新排行榜数据">
+      <created>1554424034554</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1554424034554</updated>
+    </task>
+    <task id="LOCAL-00055" summary="1. 加入template目录，放置php web页面html模板">
+      <created>1554425720688</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1554425720688</updated>
+    </task>
+    <task id="LOCAL-00056" summary="1. 加入reak_liste_template 模板文件&#10;2. 加入rank_list.php 排行榜信息&#10;3. 修改排行榜数据格式，对象改为数组">
+      <created>1554454563477</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1554454563478</updated>
+    </task>
+    <task id="LOCAL-00057" summary="1. 清理代码">
+      <created>1554454796929</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1554454796929</updated>
+    </task>
+    <task id="LOCAL-00058" summary="1. 清理代码">
+      <created>1554455214911</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1554455214911</updated>
+    </task>
+    <task id="LOCAL-00059" summary="1. 修复排行榜数据&#10;2. 修改没有排行榜数据的提示">
+      <created>1554456006842</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1554456006842</updated>
+    </task>
+    <task id="LOCAL-00060" summary="1. 加入login_type区分登录方式">
+      <created>1554701852093</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1554701852094</updated>
+    </task>
+    <task id="LOCAL-00061" summary="1. 修复upload_img">
+      <created>1554702697263</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1554702697263</updated>
+    </task>
+    <task id="LOCAL-00062" summary="1. 修复upload_img">
+      <created>1554703003467</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1554703003467</updated>
+    </task>
+    <task id="LOCAL-00063" summary="1. 修复排行榜 递增改为递减">
+      <created>1554704055550</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1554704055550</updated>
+    </task>
+    <task id="LOCAL-00064" summary="1. 加入排行榜排名和前三的格式特殊处理&#10;2. 修改排行榜模板&#10;3. 更新排行榜加入输出">
+      <created>1554706011944</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706011944</updated>
+    </task>
+    <task id="LOCAL-00065" summary="1. 修复排行榜显示">
+      <created>1554706302533</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706302533</updated>
+    </task>
+    <task id="LOCAL-00066" summary="1. 修复排行榜显示">
+      <created>1554706442844</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706442844</updated>
+    </task>
+    <task id="LOCAL-00067" summary="1. 修复排行榜显示">
+      <created>1554706710182</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706710182</updated>
+    </task>
+    <task id="LOCAL-00068" summary="1. 修复排行榜显示">
+      <created>1554707101743</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1554707101743</updated>
+    </task>
+    <task id="LOCAL-00069" summary="1. 修复排行榜显示">
+      <created>1554707301639</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1554707301639</updated>
+    </task>
+    <task id="LOCAL-00070" summary="1. 修复上月排行榜">
+      <created>1554707691143</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1554707691143</updated>
+    </task>
+    <task id="LOCAL-00071" summary="1. 修改没有排行榜的提示">
+      <created>1554714681142</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1554714681143</updated>
+    </task>
+    <task id="LOCAL-00072" summary="1. 清理调试代码">
+      <created>1554734426594</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1554734426594</updated>
+    </task>
+    <task id="LOCAL-00073" summary="1. 修改排名标题">
+      <created>1554734790390</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1554734790390</updated>
+    </task>
+    <task id="LOCAL-00074" summary="1. 排行榜加入等级和刷新提示">
+      <created>1554736362380</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1554736362380</updated>
+    </task>
+    <task id="LOCAL-00075" summary="1. 修改只有总排行榜显示等级">
+      <created>1554738902141</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1554738902142</updated>
+    </task>
+    <task id="LOCAL-00076" summary="1. 修改只有总排行榜显示等级">
+      <created>1554865594479</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1554865594480</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="107994000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23614073" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28784648" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1. 新用户加入经验数据&#10;2. 加入经验配置conf.php&#10;3. 加入更新经验update_exp.php&#10;4. 修改html模板文件名" />
+    <MESSAGE value="1. 修改经验配置conf.php" />
+    <MESSAGE value="1. 修改日志文件格式" />
+    <MESSAGE value="1. 修改update_exp 返回数据" />
+    <MESSAGE value="1. 修改update_exp 时间计算为秒" />
+    <MESSAGE value="1. 修改更新经验时间" />
+    <MESSAGE value="1. 清理注释代码" />
+    <MESSAGE value="1. 还原'new' =&gt; true,返回更新后的值" />
+    <MESSAGE value="1. 加入log和时间戳&#10;2. note_get.php加入get参数openid和userid" />
+    <MESSAGE value="1. 加入rank_list.php,获取排行榜数据&#10;2. 加入rank_update_day, rank_update_minute, 更新排行榜数据" />
+    <MESSAGE value="1. 加入template目录，放置php web页面html模板" />
+    <MESSAGE value="1. 加入reak_liste_template 模板文件&#10;2. 加入rank_list.php 排行榜信息&#10;3. 修改排行榜数据格式，对象改为数组" />
+    <MESSAGE value="1. 清理代码" />
+    <MESSAGE value="1. 修复排行榜数据&#10;2. 修改没有排行榜数据的提示" />
+    <MESSAGE value="1. 加入login_type区分登录方式" />
+    <MESSAGE value="1. 修复upload_img" />
+    <MESSAGE value="1. 修复排行榜 递增改为递减" />
+    <MESSAGE value="1. 加入排行榜排名和前三的格式特殊处理&#10;2. 修改排行榜模板&#10;3. 更新排行榜加入输出" />
+    <MESSAGE value="1. 修复排行榜显示" />
+    <MESSAGE value="1. 修复上月排行榜" />
+    <MESSAGE value="1. 修改没有排行榜的提示" />
+    <MESSAGE value="1. 清理调试代码" />
+    <MESSAGE value="1. 修改排名标题" />
+    <MESSAGE value="1. 排行榜加入等级和刷新提示" />
+    <MESSAGE value="1. 修改只有总排行榜显示等级" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改只有总排行榜显示等级" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_defines.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10925">
+          <caret line="575" column="20" selection-start-line="575" selection-start-column="9" selection-end-line="575" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17233">
+          <caret line="907" column="32" selection-start-line="907" selection-start-column="23" selection-end-line="907" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14972">
+          <caret line="788" column="19" selection-start-line="788" selection-start-column="9" selection-end-line="788" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5073">
+          <caret line="267" column="19" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/more_app_list.php" />
+    <entry file="file://$PROJECT_DIR$/log_2019-03-31.txt" />
+    <entry file="file://$PROJECT_DIR$/rank_init/rank_update_month.php" />
+    <entry file="file://$PROJECT_DIR$/rank_init/rank_update_week.php" />
+    <entry file="file://$PROJECT_DIR$/rank_init/rank_list_update.php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/redis/Redis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7049">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log_rank_list_2019-04-04.log" />
+    <entry file="file://$PROJECT_DIR$/log_user_login_2019-04-04.txt" />
+    <entry file="file://$PROJECT_DIR$/log_note_add_2019-04-04.txt" />
+    <entry file="file://$PROJECT_DIR$/log_note_get_2019-04-04.txt" />
+    <entry file="file://$PROJECT_DIR$/log_update_exp_2019-04-04.txt" />
+    <entry file="file://$PROJECT_DIR$/note_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_img.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../css/dashidan.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/rank_list_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rank_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4313">
+          <caret line="232" column="2" selection-start-line="232" selection-start-column="2" selection-end-line="237" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/none_note_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_exp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mongodb/mongodb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6631">
+          <caret line="362" column="34" selection-start-line="362" selection-start-column="34" selection-end-line="362" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/note_list_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="45" column="9" selection-start-line="10" selection-start-column="7" selection-end-line="108" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rank_init/rank_update_day.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rank_init/rank_update_minute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
