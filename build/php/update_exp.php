@@ -81,7 +81,7 @@ function updateExpAddValue($user_id, $manager, $col_name)
     );
 
     $command = new MongoDB\Driver\Command($query);
-    $command_cursor = $manager->executeCommand('db_account', $command);
+    $command_cursor = $manager->executeCommand('db_rank_list', $command);
     $response = $command_cursor->toArray()[0];
     $exp = $response->value->exp;
 
