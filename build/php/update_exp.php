@@ -5,6 +5,8 @@
  * Date: 2019/4/3
  * Time: 16:42
  */
+error_reporting(E_ALL ^ E_NOTICE);
+
 $time_stamp = time();
 $today = date('Y-m-d', $time_stamp);
 $file = '../log/log_update_exp_' . $today . '.txt';
@@ -12,17 +14,11 @@ $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 
-if (!isset($_POST['openid'])) {
-    echo 'param error 1';
-    return;
-}
-
 if (!isset($_POST['userid'])) {
     echo 'param error 2';
     return;
 }
 
-$open_id = $_POST['openid'];
 $user_id = intval($_POST['userid']);
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
 /** 生成自增id*/

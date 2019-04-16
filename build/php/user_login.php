@@ -5,6 +5,7 @@
  * Date: 2019/3/27
  * Time: 11:27
  */
+error_reporting(E_ALL ^ E_NOTICE);
 
 $time_stamp = time();
 $file = '../log/log_user_login_' . date('Y-m-d', $time_stamp) . '.txt';
