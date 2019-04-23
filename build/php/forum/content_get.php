@@ -6,13 +6,14 @@
  * Time: 12:20
  */
 error_reporting(E_ALL ^ E_NOTICE);
+date_default_timezone_set('PRC');
 
-if (!isset($_GET['num'])) {
+if (!isset($_GET['contentid'])) {
     echo 'param error 3';
     return;
 }
 
-if (!is_numeric($_GET['num'])) {
+if (!is_numeric($_GET['contentid'])) {
     echo 'param error 4';
     return;
 }
@@ -23,16 +24,16 @@ if (!isset($_GET['tag'])) {
 }
 
 $tag = $_GET['tag'];
-$num = $_GET['num'];
+$content_id = $_GET['contentid'];
 
 $time_stamp = time();
 $file = '../../log/log_content_get_' . date('Y-m-d', $time_stamp) . '.txt';
-$content = "$tag " . " $num" . " $time_stamp\n";;
+$content = "$tag " . " $content_id" . " $time_stamp\n";;
 file_put_contents($file, $content, FILE_APPEND);
 
 /** collection name*/;
 $db_name = 'db_content';
-$col_name = $tag . '_' . $num;
+$col_name = $tag . '_' . $content_id;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
 $query = array(
@@ -69,25 +70,24 @@ if ($noteCount > 0) {
     $note_list_content = '<ul>';
     foreach ($cursor as $doc) {
 
-        $note = $doc->content;
-//        $open_id = $doc->openid;
-        $user_id = $doc->userid;
-        $nick_name = $doc->name;
-        $time = $doc->time;
+        $content = $doc->content;
+        $editor_id = $doc->editorid;
+        $editor_name = $doc->editorname;
+        $edit_time = $doc->edittime;
 
         $note_list_content .= '<li style="display: flex">'
             . '<div>'
-            . '<img class="img-responsive center-block" src="../../head_img/' . $user_id . '.jpg" width="50px" height="50px">'
+            . '<img class="img-responsive center-block" src="../../head_img/' . $editor_id . '.jpg" width="50px" height="50px">'
             . '<p class="text-center">'
-            . $nick_name
+            . $editor_name
             . '</p>'
             . '</div>'
             . '<div style="width: 100%">'
             . '<div class="text-right">'
-            . date("Y-m-d H:i:s", $time)
+            . date("Y-m-d H:i:s", $edit_time)
             . '</div>'
             . '<div>'
-            . $note
+            . $content
             . '</div>'
             . '</div>'
             . '</li>';

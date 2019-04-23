@@ -6,6 +6,7 @@
  * Time: 11:27
  */
 error_reporting(E_ALL ^ E_NOTICE);
+date_default_timezone_set('PRC');
 
 $time_stamp = time();
 $file = '../log/log_user_login_' . date('Y-m-d', $time_stamp) . '.txt';
@@ -100,7 +101,6 @@ if ($user_info) {
 } else {
     /** 新用户*/
     $is_new = true;
-    $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
     /** 生成自增id*/
     $query = array(
         "findandmodify" => "col_increase",
@@ -137,6 +137,7 @@ if ($user_info) {
         'logintype' => $login_type
     ]);
     /** 插入数据库*/
+    $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
     $insertOneResult = $manager->executeBulkWrite('db_account.col_user', $bulkInsertUser, $writeConcern);
 }
 /** 返回用户id*/

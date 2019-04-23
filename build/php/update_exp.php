@@ -6,6 +6,7 @@
  * Time: 16:42
  */
 error_reporting(E_ALL ^ E_NOTICE);
+date_default_timezone_set('PRC');
 
 $time_stamp = time();
 $today = date('Y-m-d', $time_stamp);

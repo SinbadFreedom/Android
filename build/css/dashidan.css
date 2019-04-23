@@ -1,7 +1,9 @@
 a, a:hover, a:visited, a:link {
     text-decoration: none;
 }
-
+a {
+    color: #1c79c0;
+}
 a:hover {
     color: #f0ad4e;
 }
@@ -123,4 +125,8 @@ pre.prettyprint {
 .row {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.table td {
+    padding: 0.25em;
 }

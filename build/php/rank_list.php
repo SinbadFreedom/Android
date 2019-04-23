@@ -5,8 +5,6 @@
  * Date: 2019/3/27
  * Time: 10:02
  */
-
-
 const TYPE_TODAY = 1;
 const TYPE_YESTERDAY = 2;
 const TYPE_WEEK = 3;

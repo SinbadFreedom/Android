@@ -6,6 +6,7 @@
  * Time: 10:41
  */
 error_reporting(E_ALL ^ E_NOTICE);
+date_default_timezone_set('PRC');
 
 if (!isset($_POST['userid'])) {
     echo "param error 0";

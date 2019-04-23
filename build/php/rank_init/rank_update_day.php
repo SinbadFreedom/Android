@@ -5,6 +5,7 @@
  * Date: 2019/4/4
  * Time: 16:50
  */
+date_default_timezone_set('PRC');
 
 /** 获取redis的排行榜数据*/
 $redis = new Redis();
