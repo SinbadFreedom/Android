@@ -52,29 +52,26 @@ $nick_name = $_POST['name'];
 
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
 /** collection name*/
-$col_name = 'db_content.'. $tag . '_' . $content_id;
+$col_name = 'db_content.' . $tag . '_' . $content_id;
 
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert(['content' => $content, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp]);
 
-//$writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
-//$res = $manager->executeBulkWrite($col_name, $bulk, $writeConcern);
 $res = $manager->executeBulkWrite($col_name, $bulk);
 
 /** 修改对应文章最后编辑者的信息*/
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->update(
     ['contentid' => intval($content_id)],
-    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp]],
+    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp],
+     '$inc' => ['commentcount' => 1]],
     ['multi' => false, 'upsert' => false]
 );
 $db_collection_name = 'db_tag.' . $tag;
 $result = $manager->executeBulkWrite($db_collection_name, $bulk);
 
 /** 更新redis的编辑时间 加入排序列表*/
-$content_all = "content_all";
-//$content_tag = "content_" . $tag;
 $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 /**
@@ -82,6 +79,6 @@ $redis->connect('127.0.0.1', 6379);
  * $score1 是编辑时间
  * $value1 是$tag和$content_id的组合 $tag_$content_id
  */
-$redis->zAdd($content_all, $time_stamp, $tag . '_' .$content_id);
-///** 指定tag更新排序*/
-//$redis->zAdd($content_tag, $time_stamp, $tag . '_' .$content_id);
+$redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
+/** 指定tag更新排序*/
+$redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);

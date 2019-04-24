@@ -36,18 +36,28 @@ $db_name = 'db_content';
 $col_name = $tag . '_' . $content_id;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
-$query = array(
-    "count" => $col_name,
-    "query" => [],
-);
+$query = [
+    'count' => $col_name,
+    'query' => [],
+];
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand($db_name, $command);
 /** 笔记总条数*/
 $noteCount = $command_cursor->toArray()[0]->n;
-
+//TODO 上面这个 $noteCount count()操作可以优化掉,只采用下边的 query功能
 if ($noteCount > 0) {
-    $query = new MongoDB\Driver\Query([]);
-    $cursor = $manager->executeQuery($db_name . '.' . $col_name, $query);
+    /** 通过_id倒叙排序，显示最新评论，limit和skip控制显示条数和分页功能*/
+    $command_arr = [
+        "find" => $col_name,
+        // 倒序显示评论，通过 _id倒叙排列
+        'sort' => ['_id' => -1],
+        // 显示数量控制
+        'limit' => 20,
+        // 分页使用
+        'skip' => 0
+    ];
+    $command = new MongoDB\Driver\Command($command_arr);
+    $cursor = $manager->executeCommand($db_name, $command);
     //TODO 笔记数据分页
     /**
      * <li style="display: flex">

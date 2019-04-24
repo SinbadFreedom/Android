@@ -2,14 +2,23 @@
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
+/** 默认显示全部标签的文章，通过content_tag显示指定标签的文章*/
+$content_tag = 'content_all';
+if (isset($_GET['content_tag'])) {
+    $content_tag = $_GET['content_tag'];
+}
+
 /** 论坛首页 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
 
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
 $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
-$content_all = "content_all";
-$res = $redis->zrevrange($content_all, 0, 99, true);
+
+/** 获取总数 文章列表分页用*/
+$total_count = $redis->zcard($content_tag);
+/** 获取指定区间，分页用*/
+$res = $redis->zrevrange($content_tag, 0, 99, true);
 
 $titles_str .= '<tbody>';
 
@@ -32,7 +41,10 @@ foreach ($res as $key => $value) {
     $author_id = $info->authorid;
     $author_name = $info->authorname;
     $create_time = $info->createtime;
+    $comment_count = $info->commentcount;
     $create_date = date("md H:i");
+    /** 文章url*/
+    $content_url = 'content_get.php?tag=' . $tag . '&contentid=' . $content_id;
     /** 最后编辑用户的信息 初始为空*/
     $editor_id = $info->editorid;
     $editor_name = $info->editorname;
@@ -68,21 +80,19 @@ foreach ($res as $key => $value) {
      */
     $titles_str .= '<tr>
             <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">
-            <b>9399</b>
+            <b>'. $comment_count .'</b>
         </td>
         <td>
             <div style="font-size: 18px">
-                <a href="">' . $title . '</a>
+                <a href="' . $content_url . '">' . $title . '</a>
                     <div class="d-lg-none" style="font-size: 14px">
     <div>
-    <a href="">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span>&nbsp' . $editor_name . '&nbsp<span>' . $time_diff_str . '</span>
+    <a href="' . $tag . '">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '</span>&nbsp' . $time_diff_str . '
     </div>
             </div>
         </td>
         <td class="d-none d-lg-block text-right">
-    <a href="">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span>&nbsp' . $editor_name . '&nbsp<span>' . $time_diff_str . '</span>
-        </td>
-    </tr>';
+    <a href="">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '&nbsp</span>' . $time_diff_str . '</td></tr>';
 }
 
 $titles_str .= '</tbody>';
