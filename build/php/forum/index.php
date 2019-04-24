@@ -45,6 +45,7 @@ foreach ($res as $key => $value) {
     $create_date = date("md H:i");
     /** 文章url*/
     $content_url = 'content_get.php?tag=' . $tag . '&contentid=' . $content_id;
+    $tag_url = 'index.php?content_tag=' . $tag;
     /** 最后编辑用户的信息 初始为空*/
     $editor_id = $info->editorid;
     $editor_name = $info->editorname;
@@ -87,12 +88,12 @@ foreach ($res as $key => $value) {
                 <a href="' . $content_url . '">' . $title . '</a>
                     <div class="d-lg-none" style="font-size: 14px">
     <div>
-    <a href="' . $tag . '">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '</span>&nbsp' . $time_diff_str . '
+    <a href="' . $tag_url . '">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '</span>&nbsp' . $time_diff_str . '
     </div>
             </div>
         </td>
         <td class="d-none d-lg-block text-right">
-    <a href="">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '&nbsp</span>' . $time_diff_str . '</td></tr>';
+    <a href="' . $tag_url . '">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '&nbsp</span>' . $time_diff_str . '</td></tr>';
 }
 
 $titles_str .= '</tbody>';
