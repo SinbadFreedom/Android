@@ -7,8 +7,17 @@ $content_tag = 'content_all';
 if (isset($_GET['content_tag'])) {
     $content_tag = $_GET['content_tag'];
 }
-
-/** 论坛首页 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
+/** 分页显示，默认page从0开始，显示页数时加1*/
+$page = 0;
+if (isset($_GET['page'])) {
+    $page = intval($_GET['page']);
+    /** 下边界保护*/
+    if ($page < 0) {
+        $page = 0;
+    }
+}
+/** 每页显示条数*/
+$count_per_page = 20;
 
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
@@ -17,11 +26,37 @@ $redis->connect('127.0.0.1', 6379);
 
 /** 获取总数 文章列表分页用*/
 $total_count = $redis->zcard($content_tag);
+$page_max = intval($total_count / $count_per_page);
 /** 获取指定区间，分页用*/
-$res = $redis->zrevrange($content_tag, 0, 99, true);
+if ($page > $page_max) {
+    /** 上边界保护*/
+    $page = $page_max;
+}
 
+/** 页数*/
+$page_current = $page + 1;
+$page_before = $page_current - 1;
+$page_after = $page_current + 1;
+
+/** 前一页标签*/
+if ($page_before > 0) {
+    $page_before_html_str = '<a href="index.php?page=' . $page_before . '"><span>&nbsp前一页&nbsp</span></a>';
+} else {
+    /** 第一页隐藏 上一页*/
+    $page_before_html_str = '';
+}
+/** 后一页标签*/
+if ($page_after >= $page_max) {
+    /** 最后页隐藏 下一页*/
+    $page_after_html_str = '';
+} else {
+    $page_after_html_str = '<a href="index.php?page=' . $page_after . '"><span>&nbsp后一页&nbsp</span></a>';
+}
+/** 标题列表 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
+$start = $count_per_page * $page;
+$res = $redis->zrevrange($content_tag, $start, $start + $count_per_page - 1, true);
+/** 拼接html*/
 $titles_str .= '<tbody>';
-
 foreach ($res as $key => $value) {
     /** $key 格式 Python3.7.2_2 $tag_$content_id*/
     $pos = strrpos($key, '_');
@@ -81,7 +116,7 @@ foreach ($res as $key => $value) {
      */
     $titles_str .= '<tr>
             <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">
-            <b>'. $comment_count .'</b>
+            <b>' . $comment_count . '</b>
         </td>
         <td>
             <div style="font-size: 18px">
@@ -111,6 +146,9 @@ echo '<!DOCTYPE html>
 <table class="table">
 ' . $titles_str . '
 </table>
+<div>
+    <a href="index.php"><span>&nbsp首页&nbsp</span></a>' . $page_before_html_str . '<span><b>' . $page_current . '</b></span> ' . $page_after_html_str . '
+</div>
 </body>
 </html>';
 

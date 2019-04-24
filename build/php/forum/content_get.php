@@ -23,15 +23,25 @@ if (!isset($_GET['tag'])) {
     return;
 }
 
+/** 分页显示，默认page从0开始，显示页数时加1*/
+$page = 0;
+if (isset($_GET['page'])) {
+    $page = intval($_GET['page']);
+    /** 下边界保护*/
+    if ($page < 0) {
+        $page = 0;
+    }
+}
+/** 每页显示条数*/
+$count_per_page = 20;
+
 $tag = $_GET['tag'];
 $content_id = $_GET['contentid'];
 
 $time_stamp = time();
 $file = '../../log/log_content_get_' . date('Y-m-d', $time_stamp) . '.txt';
 $content = "$tag " . " $content_id" . " $time_stamp\n";;
-file_put_contents($file, $content, FILE_APPEND);
-
-/** collection name*/;
+file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
 $db_name = 'db_content';
 $col_name = $tag . '_' . $content_id;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
@@ -42,19 +52,45 @@ $query = [
 ];
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand($db_name, $command);
-/** 笔记总条数*/
-$noteCount = $command_cursor->toArray()[0]->n;
-//TODO 上面这个 $noteCount count()操作可以优化掉,只采用下边的 query功能
-if ($noteCount > 0) {
+/** 笔记总条数 列表分页用*/
+$total_count = $command_cursor->toArray()[0]->n;
+
+/** 获取指定区间，分页用*/
+if ($count_per_page * $page > $total_count) {
+    /** 上边界保护*/
+    $page = intval($total_count / $count_per_page);
+}
+
+/** 页数*/
+$page_current = $page + 1;
+$page_before = $page_current - 1;
+$page_after = $page_current + 1;
+
+/** 前一页标签*/
+if ($page_before > 0) {
+    $page_before_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '"><span>&nbsp前一页&nbsp</span></a>';
+} else {
+    /** 第一页隐藏 上一页*/
+    $page_before_html_str = '';
+}
+/** 后一页标签*/
+if ($page_after >= $page_max) {
+    /** 最后页隐藏 下一页*/
+    $page_after_html_str = '';
+} else {
+    $page_after_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '"><span>&nbsp后一页&nbsp</span></a>';
+}
+
+if ($total_count > 0) {
     /** 通过_id倒叙排序，显示最新评论，limit和skip控制显示条数和分页功能*/
     $command_arr = [
         "find" => $col_name,
         // 倒序显示评论，通过 _id倒叙排列
         'sort' => ['_id' => -1],
         // 显示数量控制
-        'limit' => 20,
+        'limit' => $count_per_page,
         // 分页使用
-        'skip' => 0
+        'skip' => $count_per_page * $page
     ];
     $command = new MongoDB\Driver\Command($command_arr);
     $cursor = $manager->executeCommand($db_name, $command);
@@ -115,6 +151,9 @@ if ($noteCount > 0) {
 </head>
 <body>
 ' . $note_list_content . '
+<div>
+    <a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '"><span>&nbsp首页&nbsp</span></a>' . $page_before_html_str . '<span><b>' . $page_current . '</b></span>' . $page_after_html_str . '
+</div>
 </body>
 </html>';
 } else {
