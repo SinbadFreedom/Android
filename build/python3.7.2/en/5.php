@@ -2,11 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <title>熊猫文档-面向程序员的技术文档网站</title>
     <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="../../lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
+<div class="text-right">
+    <a href="../zh_cn/5.php"><span>&nbsp简体&nbsp</span></a><a href="../en/5.php"><span>&nbspEnglish&nbsp</span></a>
+</div>
+
+<div>
+    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+</div>
+
+<hr>
 
 <h1 id='5.'>5. Data Structures</h1>
 <p>This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
@@ -436,5 +446,48 @@ pear
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Other languages may return the mutated object, which allows method chaining, such as <code>d-&gt;insert("a")-&gt;remove("b")-&gt;sort()</code>;.</p>
 
+
+<h4>最新笔记</h4>
+
+<hr>
+
+<div id="note_area">
+<!-- 评论区-->
+</div>
+
+<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+<button type="button" class="btn btn-primary">提交</button>
+
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+</div>
+
+<div class="row center-block text-center">
+    <div class="col-6">
+            <a href="4.php" class="badge badge-primary text-center">← 上一篇</a>
+            </div>
+    <div class="col-6">
+            <a href="6.php" class="badge badge-primary"> 下一篇 →</a>
+    </div>
+</div>
+
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+    /** 评论*/
+    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=5";
+    $.ajax({
+        url: url,
+        type: "GET",
+        async: false,//同步请求用false,异步请求true
+        dataType: "html",
+        data: {},
+        success: function (data) {
+            document.getElementById("note_area").innerHTML = data;
+        },
+        error: function (data, textstatus) {
+            //请求不成功返回的提示
+        }
+    });
+</script>
 </body>
 </html>

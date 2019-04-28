@@ -2,11 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <title>熊猫文档-面向程序员的技术文档网站</title>
     <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="../../lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
+<div class="text-right">
+    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+</div>
+
+<div>
+    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+</div>
+
+<hr>
 
 <h1 id='3.'>3. An Informal Introduction to Python</h1>
 <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
@@ -387,14 +397,49 @@ The value of i is 65536
 <h2 id='Footnotes'>Footnotes</h2>
 <p><a href="#">1</a> Since <code>**</code> has higher precedence than <code>-</code>, <code>-3**2</code> will be interpreted as <code>-(3**2)</code> and thus result in <code>-9</code>. To avoid this and get <code>9</code>, you can use <code>(-3)**2</code>.</p>
 <p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don't need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
+
+
+<h4>最新笔记</h4>
+
+<hr>
+
+<div id="note_area">
+<!-- 评论区-->
+</div>
+
+<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+<button type="button" class="btn btn-primary">提交</button>
+
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+</div>
+
 <div class="row center-block text-center">
     <div class="col-6">
-        <a href="2.html" class="badge badge-primary">← 上一篇</a>
-    </div>
+            <a href="2.php" class="badge badge-primary text-center">← 上一篇</a>
+            </div>
     <div class="col-6">
-        <a href="4.html" class="badge badge-primary">下一篇 →</a>
+            <a href="4.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>
 
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+    /** 评论*/
+    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=3";
+    $.ajax({
+        url: url,
+        type: "GET",
+        async: false,//同步请求用false,异步请求true
+        dataType: "html",
+        data: {},
+        success: function (data) {
+            document.getElementById("note_area").innerHTML = data;
+        },
+        error: function (data, textstatus) {
+            //请求不成功返回的提示
+        }
+    });
+</script>
 </body>
 </html>

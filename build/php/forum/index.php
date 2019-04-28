@@ -78,9 +78,10 @@ foreach ($res as $key => $value) {
     $create_time = $info->createtime;
     $comment_count = $info->commentcount;
     $create_date = date("md H:i");
-    /** 文章url*/
-    $content_url = 'content_get.php?tag=' . $tag . '&contentid=' . $content_id;
-    $tag_url = 'index.php?content_tag=' . $tag;
+    /** 文章url 跳到中文文章的评论区*/
+//    $content_url = '/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id;
+    $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
+    $tag_url = '/php/forum/index.php?content_tag=' . $tag;
     /** 最后编辑用户的信息 初始为空*/
     $editor_id = $info->editorid;
     $editor_name = $info->editorname;

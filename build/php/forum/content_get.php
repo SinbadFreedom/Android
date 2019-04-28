@@ -9,17 +9,17 @@ error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
 if (!isset($_GET['contentid'])) {
-    echo 'param error 3';
+    echo 'param error contentid3';
     return;
 }
 
 if (!is_numeric($_GET['contentid'])) {
-    echo 'param error 4';
+    echo 'param error contentid4';
     return;
 }
 
 if (!isset($_GET['tag'])) {
-    echo 'param error 5';
+    echo 'param error tag';
     return;
 }
 
@@ -39,7 +39,7 @@ $tag = $_GET['tag'];
 $content_id = $_GET['contentid'];
 
 $time_stamp = time();
-$file = '../../log/log_content_get_' . date('Y-m-d', $time_stamp) . '.txt';
+$file = '../../log/log_content_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = "$tag " . " $content_id" . " $time_stamp\n";;
 file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
 $db_name = 'db_content';
@@ -113,7 +113,7 @@ if ($total_count > 0) {
      * </div>
      * </li>
      */
-    $note_list_content = '<ul>';
+    $note_list_content = '';
     foreach ($cursor as $doc) {
 
         $content = $doc->content;
@@ -139,7 +139,6 @@ if ($total_count > 0) {
             . '</li>';
 
     }
-    $note_list_content .= '</ul>';
 
     echo '<!DOCTYPE html>
 <html lang="zh_CN">

@@ -2,11 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <title>熊猫文档-面向程序员的技术文档网站</title>
     <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="../../lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
+<div class="text-right">
+    <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>
+</div>
+
+<div>
+    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+</div>
+
+<hr>
 
 <h1 id='1.'>1. 激发你的胃口</h1>
 <p>如果你在计算机上做了很多工作,最终你会发现有一些你想要自动化的任务.例如,您可能希望对大量文本文件执行搜索和替换,或者以复杂的方式重命名和重新排列一堆照片文件.也许您想编写一个小型自定义数据库,或专门的GUI应用程序,或简单的游戏.</p>
@@ -25,11 +35,48 @@ Python是可扩展的:如果您知道如何使用C编程,则很容易向解释�
 <p>既然您对Python感到兴奋,那么您将需要更详细地研究它.由于学习语言的最佳方法是使用它,因此本教程邀请您在阅读时使用Python解释器.</p>
 <p>在下一章中,将解释使用解释器的机制.这是相当普通的信息,但对于尝试后面显示的示例至关重要.</p>
 <p>本教程的其余部分通过示例介绍了Python语言和系统的各种功能,从简单的表达式,语句和数据类型开始,通过函数和模块,最后涉及异常和用户定义的类等高级概念.</p>
+
+
+<h4>最新笔记</h4>
+
+<hr>
+
+<div id="note_area">
+<!-- 评论区-->
+</div>
+
+<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+<button type="button" class="btn btn-primary">提交</button>
+
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+</div>
+
 <div class="row center-block text-center">
-    <div class="col-12">
-        <a href="2.cn.html" class="badge badge-primary">下一篇 →</a>
+    <div class="col-6">
+    </div>
+    <div class="col-6">
+            <a href="2.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>
 
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+    /** 评论*/
+    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=1";
+    $.ajax({
+        url: url,
+        type: "GET",
+        async: false,//同步请求用false,异步请求true
+        dataType: "html",
+        data: {},
+        success: function (data) {
+            document.getElementById("note_area").innerHTML = data;
+        },
+        error: function (data, textstatus) {
+            //请求不成功返回的提示
+        }
+    });
+</script>
 </body>
 </html>

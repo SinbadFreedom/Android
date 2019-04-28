@@ -4,26 +4,18 @@ const showdown = require('showdown');
 const Handlebars = require("handlebars");
 
 const article_type = process.argv[2];
-const language = process.argv[3];
 
-const article_folder = "../md/" + article_type + '/' + language;
-const template_folder = "../md/" + article_type;
-
-/** pc默认格式文件目录*/
-let htmlOutBaseFolder = "../build/" + article_type + '/' + language;
-/** handlebars 模板文件*/
-let handlebars_template_file_name = template_folder + "/template.handlebars";
-/** 全部md文件名*/
-let allFileName = [];
 /** catalog 文件名*/
 const catalogName = "catalog.md";
-const catalogNameTxt = "catalog.txt";
 /** 版本号 更新内容*/
 const versionName = "version.json";
-/** 首页*/
-const indexName = "index.html";
+// /** 首页*/
+// const indexName = "index.php";
 /** 更多*/
-const moreName = "more.html";
+const moreName = "more.php";
+
+/** 全部md文件名*/
+let allFileName = [];
 
 function getAllMdFileName(folderName) {
     console.log("readFolder folderName : " + folderName);
@@ -62,7 +54,7 @@ function isFileStartWithNumber(fileName) {
  * 读取目录中的MD文件
  * @param folderName
  */
-function convertAllFile() {
+function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_file_name) {
     /** 检测输出目录，不存在则创建*/
     let exist = fs.existsSync(htmlOutBaseFolder);
     if (!exist) {
@@ -72,8 +64,8 @@ function convertAllFile() {
     /** 转化md文件*/
     for (let index in allFileName) {
         let mdFileNameWithFolder = article_folder + "/" + allFileName[index];
-        let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.html');
-        convertSingleFile(mdFileNameWithFolder, outHtmlFileName);
+        let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.php');
+        convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName, handlebars_template_file_name);
     }
 }
 
@@ -89,8 +81,8 @@ showdown.extension('custom-header-id-for-title-1', function () {
             'headers.before': function (event, text, converter, options, globals) {
                 text = text.replace(setextRegexH1, function (wholeMatch, m1) {
                     var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
-                        hLevel    = 1,
-                        hID       = " id='" + m1.split(" ")[0] + "'",
+                        hLevel = 1,
+                        hID = " id='" + m1.split(" ")[0] + "'",
                         hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
                     return showdown.subParser('hashBlock')(hashBlock, options, globals);
                 });
@@ -112,8 +104,8 @@ showdown.extension('custom-header-id-for-title-2', function () {
             'headers.before': function (event, text, converter, options, globals) {
                 text = text.replace(setextRegexH2, function (wholeMatch, m1) {
                     var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
-                        hLevel    = 2,
-                        hID       = " id='" + m1.split(" ")[0] + "'",
+                        hLevel = 2,
+                        hID = " id='" + m1.split(" ")[0] + "'",
                         hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
                     return showdown.subParser('hashBlock')(hashBlock, options, globals);
                 });
@@ -178,8 +170,8 @@ showdown.extension('custom-header-id', function () {
  * @param mdFile
  * @param outHtmlFile
  */
-function convertSingleFile(mdFileName, outHtmlFile) {
-    let mdData = fs.readFileSync(mdFileName, 'utf-8');
+function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handlebars_template_file_name) {
+    let mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
     /**
      * 加入自定义插件 改变生成标题id的规则，
      * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
@@ -190,11 +182,22 @@ function convertSingleFile(mdFileName, outHtmlFile) {
     let htmlData = converter.makeHtml(mdData);
     /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
     console.log("-------------------------------------------------------");
-    console.log("convertFile " + mdFileName + " to: " + outHtmlFile);
+    console.log("convertFile " + mdFileNameWithFolder + " to: " + outHtmlFile);
     console.log("-------------------------------------------------------");
-    /** 配置表中加入其它参数*/
     let article_config = {};
     article_config.content = htmlData;
+    /** 目录，关于，首页file_number 不是int*/
+    article_config.file_number = fileName.split('.')[0];
+    article_config.article_type = article_type;
+    /** 计算上一篇 下一篇编号*/
+    let file_number = parseInt(fileName.split('.')[0]);
+    if (file_number > 1) {
+        article_config.last = file_number - 1;
+    }
+
+    if (file_number < allFileName.length) {
+        article_config.next = file_number + 1;
+    }
     /**  读取handlebars模板数据 默认pc文件 读取template_article.hbs*/
     let mustache_data = fs.readFileSync(handlebars_template_file_name, 'utf-8');
     /** 转化为html数据*/
@@ -256,7 +259,7 @@ function fullAngleToHalfAngle(str) {
     return s;
 }
 
-function copyFileByName(fileName) {
+function copyFileByName(article_folder, fileName, htmlOutBaseFolder) {
     /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     console.log("copyFileByName " + fileName);
@@ -269,12 +272,12 @@ function copyFileByName(fileName) {
     fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, finalCatalogData);
 }
 
-function convertCatalogMd(fileName) {
+function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template_file_name) {
     /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    console.log("convertCatalog " + fileName);
+    console.log("convertCatalog " + catalogName);
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    let catalogMdName = article_folder + "/" + fileName;
+    let catalogMdName = article_folder + "/" + catalogName;
     let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
     /** 全角转化为半角*/
     let finalCatalogData = fullAngleToHalfAngle(catalogData);
@@ -282,17 +285,28 @@ function convertCatalogMd(fileName) {
     fs.writeFileSync(catalogMdName, finalCatalogData);
 
     /** 转化目录html，android首屏用*/
-    let outHtmlFileName = htmlOutBaseFolder + "/" + fileName.replace('.md', '.html');
-    convertSingleFile(catalogMdName,  outHtmlFileName)
+    let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.md', '.php');
+    convertSingleFile(catalogName, catalogMdName, outHtmlFileName, handlebars_template_file_name)
 }
 
-/** 获取所有目录下所有数字开头的md文件*/
-getAllMdFileName(article_folder);
-/** 转化全部文件*/
-convertAllFile();
-/** 转化目录catalog文件*/
-convertCatalogMd(catalogName);
-copyFileByName(catalogNameTxt);
-copyFileByName(versionName);
-copyFileByName(indexName);
-copyFileByName(moreName);
+/** 加入支持同时转化多个语言版本*/
+for (let i = 3; i < process.argv.length; i++) {
+    const language = process.argv[i];
+
+    const article_folder = "../md/" + article_type + '/' + language;
+    /** handlebars 模板文件*/
+    let template_file_name_doc = "../md/" + article_type + "/template_doc.handlebars";
+    let template_file_name_catalog = "../md/" + article_type + "/template_catalog.handlebars";
+    /** pc默认格式文件目录*/
+    let htmlOutBaseFolder = "../build/" + article_type + '/' + language;
+
+    /** 获取所有目录下所有数字开头的md文件*/
+    getAllMdFileName(article_folder);
+    /** 转化全部文件*/
+    convertAllFile(htmlOutBaseFolder, article_folder, template_file_name_doc);
+    /** 转化目录catalog文件*/
+    convertCatalogMd(article_folder, htmlOutBaseFolder, template_file_name_catalog);
+    copyFileByName(article_folder, versionName, htmlOutBaseFolder);
+    // copyFileByName(article_folder, indexName, htmlOutBaseFolder);
+    copyFileByName(article_folder, moreName, htmlOutBaseFolder);
+}

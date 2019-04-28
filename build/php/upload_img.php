@@ -23,7 +23,7 @@ $img_data = $_POST['imgdata'];
 
 /** 记录log*/
 $time_stamp = time();
-$file = '../log/log_upload_img_' . date('Y-m-d', $time_stamp) . '.txt';
+$file = '../log/log_upload_img_' . date('Y-m-d', $time_stamp) . '.log';
 $content = $openid . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 

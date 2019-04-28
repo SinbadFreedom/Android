@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="../../css/bootstrap.min.css" crossorigin="anonymous">
-    <script src="../../and_doc/lib/google-code-prettify/run_prettify.js"></script>
+    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
     <style>
         img {
             height: auto;

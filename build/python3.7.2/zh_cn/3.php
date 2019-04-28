@@ -2,11 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <title>熊猫文档-面向程序员的技术文档网站</title>
     <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="../../lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
+<div class="text-right">
+    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+</div>
+
+<div>
+    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+</div>
+
+<hr>
 
 <h1 id='3.'>3. Python的非正式简介</h1>
 <p>在以下示例中,输入和输出通过是否存在提示来区分(<a href="#">>>></a>和…):要重复示例,必须在提示符后出现提示时出现提示;从解释器输出不以提示开头的行. 请注意,示例中一行上的辅助提示意味着您必须键入一个空行;这用于结束多行命令. </p>
@@ -387,14 +397,48 @@ i的值是65536
 <h2 id='脚注'>脚注</h2>
 <p><a href="#">1</a>因为<code>**'的优先级高于</code>-<code>,所以</code>-3 ** 2<code>将被解释为</code> - (3 ** 2)<code>,从而得到</code>-9<code>. 要避免这种情况并得到</code>9<code>,你可以使用</code>( -  3)** 2`. </p>
 <p><a href="#">2</a>与其他语言不同,诸如<code>\ n</code>之类的特殊字符与单引号(''''')和双引号(<code>"..."</code>)具有相同的含义. 两者之间的唯一区别是在单引号内你不需要逃避<code>``(但你必须逃避</code>\'`),反之亦然.</p>
+
+
+<h4>最新笔记</h4>
+
+<hr>
+
+<div id="note_area">
+<!-- 评论区-->
+</div>
+
+<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+<button type="button" class="btn btn-primary">提交</button>
+
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+</div>
+
 <div class="row center-block text-center">
     <div class="col-6">
-        <a href="2.cn.html" class="badge badge-primary">← 上一篇</a>
-    </div>
+            <a href="2.php" class="badge badge-primary text-center">← 上一篇</a>
+            </div>
     <div class="col-6">
-        <a href="4.cn.html" class="badge badge-primary">下一篇 →</a>
     </div>
 </div>
 
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+    /** 评论*/
+    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=3";
+    $.ajax({
+        url: url,
+        type: "GET",
+        async: false,//同步请求用false,异步请求true
+        dataType: "html",
+        data: {},
+        success: function (data) {
+            document.getElementById("note_area").innerHTML = data;
+        },
+        error: function (data, textstatus) {
+            //请求不成功返回的提示
+        }
+    });
+</script>
 </body>
 </html>

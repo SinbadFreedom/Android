@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>熊猫文档-面向程序员的技术文档网站</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="../../css/dashidan.css">
+</head>
+<body>
+<div class="text-right">
+    <a href="../zh_cn/{{file_number}}.php"><span>&nbsp简体&nbsp</span></a><a href="../en/{{file_number}}.php"><span>&nbspEnglish&nbsp</span></a>
+</div>
+
+<div>
+    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsp{{article_type}}&nbsp</a>
+</div>
+
+<hr>
+
+{{{content}}}
+
+<h4>最新笔记</h4>
+
+<div id="note_area">
+<!-- 评论区-->
+</div>
+
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+    /** 评论*/
+    var url = "../../php/forum/index.php?content_tag={{article_type}}";
+    $.ajax({
+        url: url,
+        type: "GET",
+        async: false,//同步请求用false，异步请求true
+        dataType: "html",
+        data: {},
+        success: function (data) {
+            document.getElementById("note_area").innerHTML = data;
+        },
+        error: function (data, textstatus) {
+            //请求不成功返回的提示
+        }
+    });
+</script>
+</body>
+</html>
