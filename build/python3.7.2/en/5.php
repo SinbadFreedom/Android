@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/5.php"><span>&nbsp简体&nbsp</span></a><a href="../en/5.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
+    <div class="text-right">
+        <a href="../zh_cn/5.php"><span>&nbsp简体&nbsp</span></a><a href="../en/5.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
 
-<h1 id='5.'>5. Data Structures</h1>
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h1 id='5.'>5. Data Structures</h1>
 <p>This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
 <h3 id="5.1.">5.1. More on Lists</h3>
 <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
@@ -446,27 +453,28 @@ pear
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Other languages may return the mutated object, which allows method chaining, such as <code>d-&gt;insert("a")-&gt;remove("b")-&gt;sort()</code>;.</p>
 
+    <h4>最新笔记</h4>
 
-<h4>最新笔记</h4>
+    <hr>
 
-<hr>
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 
-<div id="note_area">
-<!-- 评论区-->
-</div>
+    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+    <button type="button" class="btn btn-primary">提交</button>
 
-<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-<button type="button" class="btn btn-primary">提交</button>
+    <div class="text-right">
+        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+    </div>
 
-<div class="text-right">
-    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
-    <div class="col-6">
-            <a href="4.php" class="badge badge-primary text-center">← 上一篇</a>
+    <div class="col-6 text-right">
+            <a href="4.php" class="badge badge-primary">← 上一篇</a>
             </div>
-    <div class="col-6">
+    <div class="col-6 text-left">
             <a href="6.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>

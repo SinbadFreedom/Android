@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
+    <div class="text-right">
+        <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
 
-<h1 id='4.'>4. More Control Flow Tools</h1>
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h1 id='4.'>4. More Control Flow Tools</h1>
 <p>Besides the <a href="#">while</a> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
 <h3 id="4.1.">4.1. if Statements</h3>
 <p>Perhaps the most well-known statement type is the <a href="#">if</a> statement. For example:</p>
@@ -445,27 +452,28 @@ Arguments: spam eggs
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
 
+    <h4>最新笔记</h4>
 
-<h4>最新笔记</h4>
+    <hr>
 
-<hr>
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 
-<div id="note_area">
-<!-- 评论区-->
-</div>
+    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+    <button type="button" class="btn btn-primary">提交</button>
 
-<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-<button type="button" class="btn btn-primary">提交</button>
+    <div class="text-right">
+        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+    </div>
 
-<div class="text-right">
-    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
-    <div class="col-6">
-            <a href="3.php" class="badge badge-primary text-center">← 上一篇</a>
+    <div class="col-6 text-right">
+            <a href="3.php" class="badge badge-primary">← 上一篇</a>
             </div>
-    <div class="col-6">
+    <div class="col-6 text-left">
             <a href="5.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>

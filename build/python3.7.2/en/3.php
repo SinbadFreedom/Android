@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
+    <div class="text-right">
+        <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
 
-<h1 id='3.'>3. An Informal Introduction to Python</h1>
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h1 id='3.'>3. An Informal Introduction to Python</h1>
 <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
 <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
 <p>Some examples:</p>
@@ -398,27 +405,28 @@ The value of i is 65536
 <p><a href="#">1</a> Since <code>**</code> has higher precedence than <code>-</code>, <code>-3**2</code> will be interpreted as <code>-(3**2)</code> and thus result in <code>-9</code>. To avoid this and get <code>9</code>, you can use <code>(-3)**2</code>.</p>
 <p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don't need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
 
+    <h4>最新笔记</h4>
 
-<h4>最新笔记</h4>
+    <hr>
 
-<hr>
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 
-<div id="note_area">
-<!-- 评论区-->
-</div>
+    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+    <button type="button" class="btn btn-primary">提交</button>
 
-<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-<button type="button" class="btn btn-primary">提交</button>
+    <div class="text-right">
+        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+    </div>
 
-<div class="text-right">
-    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
-    <div class="col-6">
-            <a href="2.php" class="badge badge-primary text-center">← 上一篇</a>
+    <div class="col-6 text-right">
+            <a href="2.php" class="badge badge-primary">← 上一篇</a>
             </div>
-    <div class="col-6">
+    <div class="col-6 text-left">
             <a href="4.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>

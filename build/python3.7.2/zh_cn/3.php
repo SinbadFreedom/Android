@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
+    <div class="text-right">
+        <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
 
-<h1 id='3.'>3. Python的非正式简介</h1>
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h1 id='3.'>3. Python的非正式简介</h1>
 <p>在以下示例中,输入和输出通过是否存在提示来区分(<a href="#">>>></a>和…):要重复示例,必须在提示符后出现提示时出现提示;从解释器输出不以提示开头的行. 请注意,示例中一行上的辅助提示意味着您必须键入一个空行;这用于结束多行命令. </p>
 <p>本手册中的许多示例,即使是在交互式提示符下输入的示例,都包含注释.  Python中的注释以井号字符#开头,并延伸到物理行的末尾. 注释可能出现在行的开头或跟随空格或代码,但不在字符串文字中. 字符串文字中的哈希字符只是一个哈希字符. 由于注释是为了澄清代码而不是由Python解释,因此在键入示例时可能会省略它们. </p>
 <p>一些例子:</p>
@@ -398,27 +405,28 @@ i的值是65536
 <p><a href="#">1</a>因为<code>**'的优先级高于</code>-<code>,所以</code>-3 ** 2<code>将被解释为</code> - (3 ** 2)<code>,从而得到</code>-9<code>. 要避免这种情况并得到</code>9<code>,你可以使用</code>( -  3)** 2`. </p>
 <p><a href="#">2</a>与其他语言不同,诸如<code>\ n</code>之类的特殊字符与单引号(''''')和双引号(<code>"..."</code>)具有相同的含义. 两者之间的唯一区别是在单引号内你不需要逃避<code>``(但你必须逃避</code>\'`),反之亦然.</p>
 
+    <h4>最新笔记</h4>
 
-<h4>最新笔记</h4>
+    <hr>
 
-<hr>
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 
-<div id="note_area">
-<!-- 评论区-->
-</div>
+    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+    <button type="button" class="btn btn-primary">提交</button>
 
-<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-<button type="button" class="btn btn-primary">提交</button>
+    <div class="text-right">
+        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+    </div>
 
-<div class="text-right">
-    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
-    <div class="col-6">
-            <a href="2.php" class="badge badge-primary text-center">← 上一篇</a>
+    <div class="col-6 text-right">
+            <a href="2.php" class="badge badge-primary">← 上一篇</a>
             </div>
-    <div class="col-6">
+    <div class="col-6 text-left">
     </div>
 </div>
 

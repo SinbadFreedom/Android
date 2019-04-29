@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/2.php"><span>&nbsp简体&nbsp</span></a><a href="../en/2.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
+    <div class="text-right">
+        <a href="../zh_cn/2.php"><span>&nbsp简体&nbsp</span></a><a href="../en/2.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
 
-<h1 id='2.'>2. 使用Python解释器</h1>
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h1 id='2.'>2. 使用Python解释器</h1>
 <h3 id="2.1.">2.1. 调用口译员</h3>
 <p>Python解释器通常在那些可用的机器上安装为<code>/ usr / local / bin / python3.7</code>;在你的Unix shell的搜索路径中放置<code>/ usr / local / bin</code>可以通过输入命令来启动它:</p>
 <pre class='prettyprint'><code>python3.7
@@ -70,27 +77,28 @@ Linux上的[GCC 4.8.2]
 <p>*** ***脚注</p>
 <p><a href="#">[1]</a> 在Unix上,Python 3.x解释器默认情况下不安装名为python的可执行文件,因此它不会与同时安装的Python 2.x可执行文件冲突.</p>
 
+    <h4>最新笔记</h4>
 
-<h4>最新笔记</h4>
+    <hr>
 
-<hr>
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 
-<div id="note_area">
-<!-- 评论区-->
-</div>
+    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
+    <button type="button" class="btn btn-primary">提交</button>
 
-<textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-<button type="button" class="btn btn-primary">提交</button>
+    <div class="text-right">
+        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
+    </div>
 
-<div class="text-right">
-    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
-    <div class="col-6">
-            <a href="1.php" class="badge badge-primary text-center">← 上一篇</a>
+    <div class="col-6 text-right">
+            <a href="1.php" class="badge badge-primary">← 上一篇</a>
             </div>
-    <div class="col-6">
+    <div class="col-6 text-left">
             <a href="3.php" class="badge badge-primary"> 下一篇 →</a>
     </div>
 </div>

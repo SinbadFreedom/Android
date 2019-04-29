@@ -9,18 +9,22 @@
 
 <body>
 
-<div style="background: #438cf9">
+<div style="background: #2196F3">
     <img src="img/web_1.png">
 </div>
-<hr>
-<div class="col-sm-6 col-md-4 col-lg-4 text-center">
-    <a href="python3.7.2/zh_cn/catalog.php"><h2><br>Python3.7.2<br><br></h2></a>
-</div>
 
-<h4>最新笔记</h4>
+<div class="container">
+    <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+        <a href="python3.7.2/zh_cn/catalog.php"><h2><br>Python3.7.2<br><br></h2></a>
+    </div>
 
-<div id="note_area">
-    <!-- 评论区-->
+    <h4>最新笔记</h4>
+
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
+
+    <div>津ICP备19002572号-1</div>
 </div>
 
 <script src="lib/jquery-3.2.1.min.js"></script>
@@ -43,5 +47,4 @@
 </script>
 
 </body>
-<footer>津ICP备19002572号-1</footer>
 </html>

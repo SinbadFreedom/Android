@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-right">
-    <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>
+
+<div style="background: #2196F3">
+    <img src="../../img/web_1.png">
 </div>
 
-<div>
-    <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
-</div>
+<div class="container">
 
-<hr>
 
-<h2 id='Python3.7.2文档'>Python3.7.2文档</h2>
+    <div class="text-right">
+        <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>
+    </div>
+
+    <div>
+        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    </div>
+
+    <hr>
+
+    <h2 id='Python3.7.2文档'>Python3.7.2文档</h2>
 <h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
 <h4 id="2.">2. <a href="2.php">使用Python解释器</a></h4>
 <ul>
@@ -174,10 +182,11 @@
 <li>16.1.4. <a href="16.php#16.1.4.">定制模块</a>   </li></ul></li>
 </ul>
 
-<h4>最新笔记</h4>
+    <h4>最新笔记</h4>
 
-<div id="note_area">
-<!-- 评论区-->
+    <div id="note_area">
+        <!-- 评论区-->
+    </div>
 </div>
 
 <script src="../../lib/jquery-3.2.1.min.js"></script>
