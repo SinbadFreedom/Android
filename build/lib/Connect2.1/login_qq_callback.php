@@ -9,6 +9,6 @@ echo '<br>';
 echo $open_id;
 echo '<br>';
 $qc_info = new QC($access_token, $open_id);
-$arr = $qc->get_user_info();
+$arr = $qc_info->get_user_info();
 print_r($arr);
 
