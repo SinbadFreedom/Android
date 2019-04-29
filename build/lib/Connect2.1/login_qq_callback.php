@@ -7,3 +7,6 @@ $open_id = $qc->get_openid();
 echo $access_token;
 echo '<br>';
 echo $open_id;
+echo '<br>';
+$arr = $qc->get_user_info();
+print_r($arr);
