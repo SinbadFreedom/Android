@@ -39,7 +39,7 @@ $tag = $_GET['tag'];
 $content_id = $_GET['contentid'];
 
 $time_stamp = time();
-$file = '../../log/log_content_get_' . date('Y-m-d', $time_stamp) . '.log';
+$file = '/workplace/log/log_content_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = "$tag " . " $content_id" . " $time_stamp\n";;
 file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
 $db_name = 'db_content';

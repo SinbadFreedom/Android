@@ -9,7 +9,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
 $time_stamp = time();
-$file = '../log/log_user_login_' . date('Y-m-d', $time_stamp) . '.log';
+$file = '/workplace/log/log_user_login_' . date('Y-m-d', $time_stamp) . '.log';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
