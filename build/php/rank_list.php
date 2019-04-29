@@ -318,9 +318,9 @@ if ($key) {
             <?php echo $btn_5; ?>
             <?php echo $btn_6; ?>
         </div>
-        <span class="text-center">
+        <p class="text-center">
             <?php echo $title. '  ' .$tip; ?>
-        </span>
+        </p>
     </div>
 
     <div class="text-center">
