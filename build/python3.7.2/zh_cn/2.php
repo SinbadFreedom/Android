@@ -85,9 +85,6 @@ Linux上的[GCC 4.8.2]
         <!-- 评论区-->
     </div>
 
-    <textarea style="width: 100%" placeholder="点击添加笔记" rows="6"></textarea>
-    <button type="button" class="btn btn-primary">提交</button>
-
     <div class="text-right">
         当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
     </div>
