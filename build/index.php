@@ -60,7 +60,7 @@
     // var childWindow;
     function qq_login()
     {
-        window.location.href = "lib/Connect2.1/index.php";
+        window.location.href = "lib/Connect2.1/oauth/index.php";
         // childWindow = window.open("lib/Connect2.1/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
     }
 
