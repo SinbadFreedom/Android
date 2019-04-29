@@ -57,16 +57,17 @@
     //         "width=450,height=320,menubar=0,scrollbars=1, resizable = 1, status = 1, titlebar = 0, toolbar = 0, location = 1");
     // }
 
-    var childWindow;
+    // var childWindow;
     function qq_login()
     {
-        childWindow = window.open("lib/Connect2.1/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+        window.location.href = "lib/Connect2.1/index.php";
+        // childWindow = window.open("lib/Connect2.1/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
     }
 
-    function closeChildWindow()
-    {
-        childWindow.close();
-    }
+    // function closeChildWindow()
+    // {
+    //     childWindow.close();
+    // }
 </script>
 </body>
 </html>
