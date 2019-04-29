@@ -7,41 +7,52 @@
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="col-md-12 text-center">
-    <h2>今日排行榜</h2>
-    <p class="text-right">
-        每分钟更新
-    </p>
+<div class="container">
+    <div class="col-md-12 text-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success">今日</button>
+            <button type="button" class="btn btn-secondary">昨日</button>
+            <button type="button" class="btn btn-secondary">本周</button>
+            <button type="button" class="btn btn-secondary">上周</button>
+            <button type="button" class="btn btn-secondary">本月</button>
+            <button type="button" class="btn btn-secondary">上月</button>
+            <button type="button" class="btn btn-secondary">总榜</button>
+        </div>
+        <!--    <h2>今日排行榜</h2>-->
+        <p class="text-right">
+            每分钟更新
+        </p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr class="table-active">
+            <th>排名</th>
+            <th>头像</th>
+            <th>昵称</th>
+            <th>经验</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-danger">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr class="table-warning">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr class="table-success">
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<table class="table">
-    <thead>
-    <tr class="table-active">
-        <th>排名</th>
-        <th>头像</th>
-        <th>昵称</th>
-        <th>经验</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="table-danger">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr class="table-warning">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr class="table-success">
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-    </tr>
-    </tbody>
-</table>
 </body>
 </html>

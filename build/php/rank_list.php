@@ -150,41 +150,59 @@ $redis->connect('127.0.0.1', 6379);
 $key = null;
 $title = "排行榜";
 $tip = "";
+/** 排行榜按钮状态默认灰色的 secondary，选中类型为primary 蓝色*/
+$btn_state = 'btn-secondary';
+
+$btn_0 = '<button type="button" class="btn btn-secondary" onclick="jump(1)">今日</button>';
+$btn_1 = '<button type="button" class="btn btn-secondary" onclick="jump(2)">昨日</button>';
+$btn_2 = '<button type="button" class="btn btn-secondary" onclick="jump(3)">本周</button>';
+$btn_3 = '<button type="button" class="btn btn-secondary" onclick="jump(4)">上周</button>';
+$btn_4 = '<button type="button" class="btn btn-secondary" onclick="jump(5)">本月</button>';
+$btn_5 = '<button type="button" class="btn btn-secondary" onclick="jump(6)">上月</button>';
+$btn_6 = '<button type="button" class="btn btn-secondary" onclick="jump(7)">总榜</button>';
+
 switch ($type) {
     case TYPE_TODAY:
         $key = 'rank_today';
         $title = "今日排行榜";
         $tip = '每分钟更新';
+        $btn_0 = '<button type="button" class="btn btn-primary" onclick="jump(1)">今日</button>';
         break;
     case TYPE_YESTERDAY:
         $key = 'rank_yesterday';
         $title = "昨日排行榜";
         $tip = '每日0点更新';
+        $btn_1 = '<button type="button" class="btn btn-primary" onclick="jump(2)">昨日</button>';
         break;
     case TYPE_WEEK:
         $key = 'rank_week';
         $title = "本周排行榜";
         $tip = '每分钟更新';
+        $btn_2 = '<button type="button" class="btn btn-primary" onclick="jump(3)">本周</button>';
         break;
     case TYPE_WEEK_LAST:
         $key = 'rank_week_last';
         $title = "上周排行榜";
         $tip = '每周一0点更新';
+        $btn_3 = '<button type="button" class="btn btn-primary" onclick="jump(4)">上周</button>';
         break;
     case TYPE_MONTH:
         $key = 'rank_month';
         $title = "本月排行榜";
         $tip = '每分钟更新';
+        $btn_4 = '<button type="button" class="btn btn-primary" onclick="jump(5)">本月</button>';
         break;
     case TYPE_MONTH_LAST:
         $key = 'rank_month_last';
         $title = "上月排行榜";
         $tip = '每月1日0点更新';
+        $btn_5 = '<button type="button" class="btn btn-primary" onclick="jump(6)">上月</button>';
         break;
     case TYPE_ALL:
         $key = 'rank_all';
         $title = "总排行榜";
         $tip = '每分钟更新';
+        $btn_6 = '<button type="button" class="btn btn-primary" onclick="jump(7)">总榜</button>';
         break;
 }
 
@@ -289,19 +307,33 @@ if ($key) {
     <link rel="stylesheet" href="../../css/dashidan.css">
 </head>
 <body>
-<div class="text-center">
-    <h2>
-        <?php echo $title; ?>
-    </h2>
-    <p class="text-right">
-        <?php echo $tip; ?>
-    </p>
+<div class="container">
+    <div class="text-center">
+        <div class="btn-group">
+            <?php echo $btn_0; ?>
+            <?php echo $btn_1; ?>
+            <?php echo $btn_2; ?>
+            <?php echo $btn_3; ?>
+            <?php echo $btn_4; ?>
+            <?php echo $btn_5; ?>
+            <?php echo $btn_6; ?>
+        </div>
+        <p class="text-center">
+            <?php echo $title. '  ' .$tip; ?>
+        </p>
+    </div>
+
+    <div class="text-center">
+        <?php
+        echo $note_list_content;
+        ?>
+    </div>
 </div>
 
-<div class="text-center">
-    <?php
-    echo $note_list_content;
-    ?>
-</div>
+<script>
+    function jump(type){
+        window.location.href = "rank_list.php?type=" + type;
+    }
+</script>
 </body>
 </html>
