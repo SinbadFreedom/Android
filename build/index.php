@@ -27,7 +27,7 @@
         <!-- 评论区-->
     </div>
 
-    <div>津ICP备19002572号-1</div>
+    <div>天津码桥科技有限公司 津ICP备19002572号-1</div>
 </div>
 
 <script src="lib/jquery-3.2.1.min.js"></script>
@@ -51,7 +51,6 @@
 
 <script>
     function qq_login() {
-        alert(1);
         //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
         //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
         var A = window.open("lib/Connect2.1/index.php", "TencentLogin",
