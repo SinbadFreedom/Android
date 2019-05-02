@@ -22,4 +22,7 @@ $arr[figureurl_type];
 /** 登陆 后 跳转到首页 */
 $_SESSION['figureurl_qq'] = $arr[figureurl_qq];
 $_SESSION['nickname'] = $arr[nickname];
-require_once("../../index.php");
+//require_once("../../index.php");
+
+header("Location: ../../index.php");
+return;
