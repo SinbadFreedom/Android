@@ -7,15 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/dashidan.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/dashidan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/img/web_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/img/web_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/content_get.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/content_get.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/forum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/title_list_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/title_list_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/rank_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/rank_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/template/rank_list_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/template/rank_list_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/3.php" afterDir="false" />
@@ -42,32 +37,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <state relative-caret-position="468">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+        <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="5" column="72850" selection-start-line="5" selection-start-column="72850" selection-end-line="5" selection-end-column="72850" />
+            <state relative-caret-position="413">
+              <caret line="79" selection-start-line="79" selection-end-line="84" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="30" selection-start-line="27" selection-end-line="30" />
               <folding>
-                <element signature="e#25768#26002#2" expanded="true" />
-                <element signature="e#26806#26959#1" expanded="true" />
-                <element signature="e#26999#27233#1" expanded="true" />
-                <element signature="e#30239#30515#2" expanded="true" />
-                <element signature="e#31347#31500#1" expanded="true" />
-                <element signature="e#31540#31816#1" expanded="true" />
-                <element signature="e#61072#61259#2" expanded="true" />
-                <element signature="e#61488#61624#2" expanded="true" />
-                <element signature="e#62027#62160#2" expanded="true" />
-                <element signature="e#63642#63795#1" expanded="true" />
-                <element signature="e#75788#76018#2" expanded="true" />
-                <element signature="e#76885#77121#2" expanded="true" />
-                <element signature="e#106714#106891#2" expanded="true" />
-                <element signature="e#106937#107114#2" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,17 +68,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="308">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php">
+        <entry file="file://$PROJECT_DIR$/build/img/icon_java-web.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/img/icon_java.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="399">
+              <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -94,53 +96,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="318" column="58" selection-start-line="318" selection-start-column="58" selection-end-line="318" selection-end-column="58" />
+            <state relative-caret-position="342">
+              <caret line="327" column="34" selection-start-line="327" selection-start-column="34" selection-end-line="327" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/python3.7.2/en/1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/build/img/icon_android-web.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/python3.7.2/en/2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2520" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-679">
-              <caret line="155" column="59" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="19" column="41" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/info.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/build/img/bt_blue_76X24.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -155,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allFileName</find>
       <find>catalogName</find>
       <find>versionName</find>
       <find>template_folder</find>
@@ -185,6 +153,7 @@
       <find>../../</find>
       <find>../..</find>
       <find>主页</find>
+      <find>nav-link</find>
     </findStrings>
     <replaceStrings>
       <replace>](#)</replace>
@@ -234,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/md/python3/zh_cn/more.html" />
         <option value="$PROJECT_DIR$/md/python3/zh_cn/version.json" />
         <option value="$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js" />
         <option value="$PROJECT_DIR$/build/php/forum/tag_init.php" />
@@ -278,11 +246,12 @@
         <option value="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" />
         <option value="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" />
         <option value="$PROJECT_DIR$/build/python3.7.2/zh_cn/1.php" />
-        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/python3.7.2/en/1.php" />
+        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
+        <option value="$PROJECT_DIR$/build/index.php" />
+        <option value="$PROJECT_DIR$/build/php/login.php" />
         <option value="$PROJECT_DIR$/build/php/rank_list.php" />
         <option value="$PROJECT_DIR$/build/php/forum/index.php" />
-        <option value="$PROJECT_DIR$/build/index.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
       </list>
@@ -310,6 +279,18 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -364,6 +345,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build/img" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -505,14 +487,7 @@
       <workItem from="1556465036477" duration="9045000" />
       <workItem from="1556500449165" duration="26689000" />
       <workItem from="1556593034376" duration="2882000" />
-      <workItem from="1556760275665" duration="10113000" />
-    </task>
-    <task id="LOCAL-00051" summary="1. 更新apk">
-      <created>1552394665950</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1552394665950</updated>
+      <workItem from="1556760275665" duration="13784000" />
     </task>
     <task id="LOCAL-00052" summary="1. 加入getNote.php测试文件">
       <created>1552624221442</created>
@@ -850,11 +825,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556554408045</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="1. 修改web样式">
+      <created>1556779819457</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1556779819457</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245407000" />
+    <option name="totallyTimeSpent" value="249078000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -895,7 +877,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修复图片目录" />
     <MESSAGE value="1. 修复图片目录,CSS样式目录" />
     <MESSAGE value="1. 加入主页" />
     <MESSAGE value="1. 加入php" />
@@ -920,7 +901,8 @@
     <MESSAGE value="1. 舍掉web q登陆" />
     <MESSAGE value="1. 舍掉web 添加笔记" />
     <MESSAGE value="1. 加入rank list标签" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 加入rank list标签" />
+    <MESSAGE value="1. 修改web样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改web样式" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -931,38 +913,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/head_img/0.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/upload_img.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/head_img/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/head_img/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/example/img/qq_login.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/example/get_tenpay_addr/get_tenpay_addr.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/example/get_tenpay_addr/get_tenpay_addr.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/example/user/get_user_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/install/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -1160,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="141" column="22" lean-forward="true" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/template/rank_list_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1202,6 +1145,20 @@
         <state relative-caret-position="-2520" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1225,52 +1182,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php">
+    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="518">
+          <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/info.php">
+    <entry file="file://$PROJECT_DIR$/build/img/web_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/icon_python-web.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/icon_python.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/icon_java-web.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/icon_java.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/icon_android-web.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/img/bt_blue_76X24.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="413">
+          <caret line="79" selection-start-line="79" selection-end-line="84" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="30" selection-start-line="27" selection-end-line="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="318" column="58" selection-start-line="318" selection-start-column="58" selection-end-line="318" selection-end-column="58" />
+        <state relative-caret-position="342">
+          <caret line="327" column="34" selection-start-line="327" selection-start-column="34" selection-end-line="327" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-679">
-          <caret line="155" column="59" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="399">
+          <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        <state relative-caret-position="468">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="308">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
         </state>
       </provider>
     </entry>
