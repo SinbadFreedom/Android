@@ -29,13 +29,13 @@
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
             <li class="nav-item">
-                <?php
-                    if (isset($_SESSION['figureurl_qq'])) {
-                        echo '<a class="nav-link" href="/php/login.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
-                    } else {
-                        echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
-                    }
-                ?>
+            <?php
+                if (isset($_SESSION['figureurl_qq'])) {
+                    echo '<a class="nav-link" href="/php/user_info.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
+                } else {
+                    echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                }
+            ?>
             </li>
         </ul>
     </div>
