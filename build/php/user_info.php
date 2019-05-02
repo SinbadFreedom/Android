@@ -41,7 +41,9 @@ session_start();
 
 <div class="container">
     <div>
-        <img src="' .<?php echo $_SESSION['figureurl_qq']; ?> . '">
+        <img src=" . <?php echo $_SESSION['figureurl_qq']; ?> . ">
+    </div>
+    <div>
         <span><?php echo $_SESSION['nickname']; ?></span>
     </div>
 </div>
