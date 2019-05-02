@@ -28,7 +28,7 @@
             <li class="nav-item">
                 <?php
                     if (isset($arr)) {
-                        echo '<a class="nav-link" href="/php/login.php"><b>' . $arr[nickname] . '</b></a>';
+                        echo '<a class="nav-link" href="/php/login.php"><img src="'. $arr[figureurl_qq] .'"></a>';
                     } else {
                         echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
                     }
