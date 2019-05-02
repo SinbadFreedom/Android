@@ -200,9 +200,9 @@ function time2Units($time)
                 发表新的笔记
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="note_new_ui.php?tag=python3.7.2">Python3.7.2</a>
-                <a class="dropdown-item" href="note_new_ui.php?tag=ji_shu_tao_lun">技术讨论</a>
-                <a class="dropdown-item" href="note_new_ui.php?tag=guan_shui_le_yuan">灌水乐园</a>
+                <a class="dropdown-item" href="note_new_ui.php?tag=python3.7.2">python3.7.2</a>
+                <a class="dropdown-item" href="note_new_ui.php?tag=技术讨论">技术讨论</a>
+                <a class="dropdown-item" href="note_new_ui.php?tag=灌水乐园">灌水乐园</a>
             </div>
         </div>
     </div>
