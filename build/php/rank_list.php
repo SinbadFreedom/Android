@@ -303,6 +303,7 @@ if ($key) {
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="/lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="/css/dashidan.css">
@@ -325,19 +326,23 @@ if ($key) {
             <li class="nav-item">
                 <a class="nav-link active" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
-            <?php
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <?php
                 if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
+                    echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
                 } else {
-                    echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                    echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
                 }
-            ?>
+                ?>
+            </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
-    <div>
+    <div class="text-center">
         <div class="btn-group">
             <?php echo $btn_0; ?>
             <?php echo $btn_1; ?>

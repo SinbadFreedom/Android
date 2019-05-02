@@ -32,7 +32,7 @@ session_start();
             if (isset($_SESSION['figureurl_qq'])) {
                 echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
             } else {
-                echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
             }
             ?>
         </ul>

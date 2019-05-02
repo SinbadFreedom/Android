@@ -148,7 +148,6 @@ function time2Units($time)
             break;
         }
     }
-
     return $elapse;
 }
 ?>
@@ -156,6 +155,7 @@ function time2Units($time)
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script src="/lib/google-code-prettify/run_prettify.js"></script>
     <link rel="stylesheet" href="/css/dashidan.css">
@@ -177,40 +177,60 @@ function time2Units($time)
             <li class="nav-item">
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
-            <?php
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <?php
                 if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
+                    echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
                 } else {
-                    echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                    echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
                 }
-            ?>
+                ?>
+            </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
+    <div class="row">
+        <div class="dropdown ml-auto">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                发表新的笔记
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="note_new_ui.php?tag=Python3.7.2">Python3.7.2</a>
+                <a class="dropdown-item" href="note_new_ui.php?tag=ji_shu_tao_lun">技术讨论</a>
+                <a class="dropdown-item" href="note_new_ui.php?tag=guan_shui_le_yuan">灌水乐园</a>
+            </div>
+        </div>
+    </div>
 
-<table class="table">
- <?php echo $titles_str ?>
-</table>
+    <table class="table">
+        <?php echo $titles_str ?>
+    </table>
 
-<ul class="pagination">
-    <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
-    <?php if ($page_before > 0) {
-        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">前一页</a></li>';
-    } else {
-        /** 第一页隐藏 上一页*/
-    }
-    echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page_current . '</a></li>';
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
+        <?php if ($page_before > 0) {
+            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">前一页</a></li>';
+        } else {
+            /** 第一页隐藏 上一页*/
+        }
+        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page_current . '</a></li>';
 
-    if ($page_after >= $page_max) {
-        /** 最后页隐藏 下一页*/
-    } else {
-        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
-    }
-    ?>
-</ul>
-
+        if ($page_after >= $page_max) {
+            /** 最后页隐藏 下一页*/
+        } else {
+            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
+        }
+        ?>
+    </ul>
 </div>
+
+<script src="/lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<script src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

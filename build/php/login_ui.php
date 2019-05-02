@@ -5,6 +5,7 @@ session_start();
 <html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>熊猫文档-面向程序员的文档站</title>
     <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/dashidan.css">
@@ -28,13 +29,17 @@ session_start();
             <li class="nav-item">
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
             <?php
             if (isset($_SESSION['figureurl_qq'])) {
                 echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
             } else {
-                echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                echo '<a class="nav-link " href="/php/login_ui.php"><b>登录</b></a>';
             }
             ?>
+            </li>
         </ul>
     </div>
 </nav>
