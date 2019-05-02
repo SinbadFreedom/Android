@@ -19,4 +19,7 @@ $arr[year];
 $arr[figureurl_qq];
 $arr[figureurl_type];
 
+
+//require_once("../../php/user_login.php");
 /** 登陆 */
+require_once("/index.php");
