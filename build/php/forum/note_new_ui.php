@@ -70,7 +70,8 @@ session_start();
         return null;
     }
 
-    var tag = getUrlParam('tag');
+    /** 参数转为小写tag*/
+    var tag = getUrlParam('tag').toLowerCase();
     $('#note_tag').attr('value', tag);
 </script>
 <script>
