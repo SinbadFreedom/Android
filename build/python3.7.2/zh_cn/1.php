@@ -15,17 +15,20 @@
 
 <nav class="navbar navbar-expand navbar-light">
     <div class="container">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/index.php"><b>首页</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-                </li>
-            </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/login.php"><b>登录</b></a>
+            </li>
+        </ul>
     </div>
 </nav>
 

@@ -150,3 +150,12 @@ hr {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000!important;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    /*color: rgba(0,0,0,.9);*/
+    color: #ffffff!important;
+}

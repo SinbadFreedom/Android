@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>熊猫文档-面向程序员的文档站</title>
-    <link rel="stylesheet" href="lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 
 <body>
 
 <div style="background: #2196F3">
-    <img src="img/web_1.png">
+    <img src="/img/web_1.png">
 </div>
 
 <nav class="navbar navbar-expand navbar-light">
@@ -25,13 +25,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/login.php"><b>登录</b></a>
+            </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <div class="col-4">
-        <a href="python3.7.2/zh_cn/catalog.php"><h2><br>Python3.7.2<br><br></h2></a>
+        <a href="/python3.7.2/zh_cn/catalog.php"><h2><br>Python3.7.2<br><br></h2></a>
     </div>
 </div>
 
@@ -39,7 +42,7 @@
     <small>天津码桥科技有限公司出品</small> <small>津ICP备19002572号-1</small>
 </div>
 
-<script src="lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     // /** 评论*/
     // var url = "php/forum/index.php";

@@ -324,6 +324,9 @@ if ($key) {
             <li class="nav-item">
                 <a class="nav-link active" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/login.php"><b>登录</b></a>
+            </li>
         </ul>
     </div>
 </nav>
