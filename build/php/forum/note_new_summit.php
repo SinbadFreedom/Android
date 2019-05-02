@@ -32,7 +32,7 @@ $tag = $_POST['note_tag'];
 $title = $_POST['title'];
 $content = $_POST['content'];
 
-$nickname = $_SESSION['nickname'];
+$nick_name = $_SESSION['nickname'];
 $user_id = $_SESSION['user_id'];
 
 $time_stamp = time();
