@@ -208,16 +208,26 @@ function time2Units($time)
 <div class="container">
 
 <table class="table">
-' . $titles_str . '
+ <?php echo $titles_str ?>
 </table>
 
 <ul class="pagination">
-<li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
-' . $page_before_html_str . '
-' . $page_current_str . '
-' . $page_after_html_str . '
+    <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
+    <?php if ($page_before > 0) {
+        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">前一页</a></li>';
+    } else {
+        /** 第一页隐藏 上一页*/
+    }
+    echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page_current . '</a></li>';
+
+    if ($page_after >= $page_max) {
+        /** 最后页隐藏 下一页*/
+    } else {
+        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
+    }
+    ?>
 </ul>
 
 </div>
 </body>
-</html>;
+</html>
