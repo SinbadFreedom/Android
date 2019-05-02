@@ -55,9 +55,10 @@ foreach ($titles as $title) {
  * 官方文档初始化完成后检测当前文档id，如果小于100000，设置为100000，大于等于则保持不变
  * 保持对已经加入的自定义文章id兼容
  */
+
 $bulkWrite = new MongoDB\Driver\BulkWrite;
 $bulkWrite->update(
-    ['content_id_now' => ['$lt' => 100000]],
+    ['table' => 'inc_content_id', 'content_id_now' => ['$lt' => 100000]],
     ['$set' => ['content_id_now' => 100000]],
     ['multi' => false, 'upsert' => true]
 );
