@@ -35,12 +35,14 @@ if ($page > $page_max) {
 
 /** 页数*/
 $page_current = $page + 1;
+$page_current_str = '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page_current . '</a></li>';
+
 $page_before = $page_current - 1;
 $page_after = $page_current + 1;
 
 /** 前一页标签*/
 if ($page_before > 0) {
-    $page_before_html_str = '<a href="index.php?page=' . $page_before . '"><span>&nbsp前一页&nbsp</span></a>';
+    $page_before_html_str = '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">前一页</a></li>';
 } else {
     /** 第一页隐藏 上一页*/
     $page_before_html_str = '';
@@ -50,8 +52,9 @@ if ($page_after >= $page_max) {
     /** 最后页隐藏 下一页*/
     $page_after_html_str = '';
 } else {
-    $page_after_html_str = '<a href="index.php?page=' . $page_after . '"><span>&nbsp后一页&nbsp</span></a>';
+    $page_after_html_str = '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
 }
+
 /** 标题列表 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
 $start = $count_per_page * $page;
 $res = $redis->zrevrange($content_tag, $start, $start + $count_per_page - 1, true);
@@ -79,7 +82,6 @@ foreach ($res as $key => $value) {
     $comment_count = $info->commentcount;
     $create_date = date("md H:i");
     /** 文章url 跳到中文文章的评论区*/
-//    $content_url = '/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id;
     $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
     $tag_url = '/php/forum/index.php?content_tag=' . $tag;
     /** 最后编辑用户的信息 初始为空*/
@@ -138,17 +140,44 @@ echo '<!DOCTYPE html>
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
+<div style="background: #2196F3">
+    <img src="/img/web_1.png">
+</div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
 
 <table class="table">
 ' . $titles_str . '
 </table>
-<div>
-    <a href="index.php"><span>&nbsp首页&nbsp</span></a>' . $page_before_html_str . '<span><b>' . $page_current . '</b></span> ' . $page_after_html_str . '
+
+<ul class="pagination">
+<li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
+' . $page_before_html_str . '
+' . $page_current_str . '
+' . $page_after_html_str . '
+</ul>
+
 </div>
 </body>
 </html>';

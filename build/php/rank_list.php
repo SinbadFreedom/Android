@@ -302,13 +302,34 @@ if ($key) {
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
+
+<div style="background: #2196F3">
+    <img src="/img/web_1.png">
+</div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container">
-    <div class="text-center">
+    <div>
         <div class="btn-group">
             <?php echo $btn_0; ?>
             <?php echo $btn_1; ?>
@@ -318,7 +339,7 @@ if ($key) {
             <?php echo $btn_5; ?>
             <?php echo $btn_6; ?>
         </div>
-        <p class="text-center">
+        <p>
             <?php echo $title. '  ' .$tip; ?>
         </p>
     </div>

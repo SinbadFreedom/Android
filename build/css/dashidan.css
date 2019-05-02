@@ -145,3 +145,8 @@ pre.prettyprint {
 .table td {
     padding: 0.25em;
 }
+
+hr {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}

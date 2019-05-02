@@ -65,10 +65,13 @@ if ($count_per_page * $page > $total_count) {
 $page_current = $page + 1;
 $page_before = $page_current - 1;
 $page_after = $page_current + 1;
+$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . $page_current . '</a></li>';
 
 /** 前一页标签*/
 if ($page_before > 0) {
-    $page_before_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '"><span>&nbsp前一页&nbsp</span></a>';
+//    $page_before_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '"><span>&nbsp前一页&nbsp</span></a>';
+    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '">前一页</a></li>';
+
 } else {
     /** 第一页隐藏 上一页*/
     $page_before_html_str = '';
@@ -78,7 +81,9 @@ if ($page_after >= $page_max) {
     /** 最后页隐藏 下一页*/
     $page_after_html_str = '';
 } else {
-    $page_after_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '"><span>&nbsp后一页&nbsp</span></a>';
+//    $page_after_html_str = '<a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '"><span>&nbsp后一页&nbsp</span></a>';
+    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '">后一页</a></li>';
+
 }
 
 if ($total_count > 0) {
@@ -150,9 +155,14 @@ if ($total_count > 0) {
 </head>
 <body>
 ' . $note_list_content . '
-<div>
-    <a href="content_get.php?tag=' . $tag . '&contentid=' . $content_id . '"><span>&nbsp首页&nbsp</span></a>' . $page_before_html_str . '<span><b>' . $page_current . '</b></span>' . $page_after_html_str . '
-</div>
+
+<ul class="pagination">
+<li class="page-item"><a class="page-link" href="/php/forum/content_get.php?tag=' . $tag . '&contentid=' . $content_id . '">&nbsp首页&nbsp</a></li>
+' . $page_before_html_str . '
+' . $page_current_str . '
+' . $page_after_html_str . '
+</ul>
+
 </body>
 </html>';
 } else {

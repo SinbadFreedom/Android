@@ -3,24 +3,40 @@
 <head>
     <meta charset="utf-8"/>
     <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
 
 <div style="background: #2196F3">
-    <img src="../../img/web_1.png">
+    <img src="/img/web_1.png">
 </div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index.php"><b>首页</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+                </li>
+            </ul>
+    </div>
+</nav>
 
 <div class="container">
 
-    <div class="text-right">
-        <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>
+    <div>
+        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp1
     </div>
 
-    <div>
-        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    <div class="text-right">
+        <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>
     </div>
 
     <hr>
@@ -43,7 +59,7 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
 <p>In the next chapter, the mechanics of using the interpreter are explained. This is rather mundane information, but essential for trying out the examples shown later.</p>
 <p>The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes.</p>
 
-    <h4>最新笔记</h4>
+    <h4>笔记</h4>
 
     <hr>
 
@@ -51,10 +67,14 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
         <!-- 评论区-->
     </div>
 
+    <div>
+        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
+        &nbsp</a>/&nbsp1
+    </div>
+
     <div class="text-right">
         当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
     </div>
-
 </div>
 
 <div class="row center-block text-center">
@@ -65,10 +85,10 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
     </div>
 </div>
 
-<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=1";
+    var url = "/php/forum/content_get.php?tag=python3.7.2&contentid=1";
     $.ajax({
         url: url,
         type: "GET",

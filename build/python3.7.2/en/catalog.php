@@ -3,25 +3,39 @@
 <head>
     <meta charset="utf-8"/>
     <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
 
 <div style="background: #2196F3">
-    <img src="../../img/web_1.png">
+    <img src="/img/web_1.png">
 </div>
 
-<div class="container">
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
+<div class="container">
+    <div>
+        <a href="/index.php">&nbsp首页&nbsp</a>/&nbsppython3.7.2
+    </div>
 
     <div class="text-right">
         <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>
-    </div>
-
-    <div>
-        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
     </div>
 
     <hr>
@@ -189,10 +203,10 @@
     </div>
 </div>
 
-<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "../../php/forum/index.php?content_tag=python3.7.2";
+    var url = "/php/forum/index.php?content_tag=python3.7.2";
     $.ajax({
         url: url,
         type: "GET",

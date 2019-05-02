@@ -3,24 +3,40 @@
 <head>
     <meta charset="utf-8"/>
     <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
 
 <div style="background: #2196F3">
-    <img src="../../img/web_1.png">
+    <img src="/img/web_1.png">
 </div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index.php"><b>首页</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+                </li>
+            </ul>
+    </div>
+</nav>
 
 <div class="container">
 
-    <div class="text-right">
-        <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>
+    <div>
+        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp4
     </div>
 
-    <div>
-        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    <div class="text-right">
+        <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>
     </div>
 
     <hr>
@@ -452,7 +468,7 @@ Arguments: spam eggs
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
 
-    <h4>最新笔记</h4>
+    <h4>笔记</h4>
 
     <hr>
 
@@ -460,10 +476,14 @@ Arguments: spam eggs
         <!-- 评论区-->
     </div>
 
+    <div>
+        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
+        &nbsp</a>/&nbsp4
+    </div>
+
     <div class="text-right">
         当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
     </div>
-
 </div>
 
 <div class="row center-block text-center">
@@ -475,10 +495,10 @@ Arguments: spam eggs
     </div>
 </div>
 
-<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=4";
+    var url = "/php/forum/content_get.php?tag=python3.7.2&contentid=4";
     $.ajax({
         url: url,
         type: "GET",

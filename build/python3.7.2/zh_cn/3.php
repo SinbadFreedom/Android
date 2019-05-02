@@ -3,24 +3,40 @@
 <head>
     <meta charset="utf-8"/>
     <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="../../lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="../../lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../css/dashidan.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
 
 <div style="background: #2196F3">
-    <img src="../../img/web_1.png">
+    <img src="/img/web_1.png">
 </div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index.php"><b>首页</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+                </li>
+            </ul>
+    </div>
+</nav>
 
 <div class="container">
 
-    <div class="text-right">
-        <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
+    <div>
+        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp3
     </div>
 
-    <div>
-        <a href="../../index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+    <div class="text-right">
+        <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
     </div>
 
     <hr>
@@ -405,7 +421,7 @@ i的值是65536
 <p><a href="#">1</a>因为<code>**'的优先级高于</code>-<code>,所以</code>-3 ** 2<code>将被解释为</code> - (3 ** 2)<code>,从而得到</code>-9<code>. 要避免这种情况并得到</code>9<code>,你可以使用</code>( -  3)** 2`. </p>
 <p><a href="#">2</a>与其他语言不同,诸如<code>\ n</code>之类的特殊字符与单引号(''''')和双引号(<code>"..."</code>)具有相同的含义. 两者之间的唯一区别是在单引号内你不需要逃避<code>``(但你必须逃避</code>\'`),反之亦然.</p>
 
-    <h4>最新笔记</h4>
+    <h4>笔记</h4>
 
     <hr>
 
@@ -413,10 +429,14 @@ i的值是65536
         <!-- 评论区-->
     </div>
 
+    <div>
+        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
+        &nbsp</a>/&nbsp3
+    </div>
+
     <div class="text-right">
         当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
     </div>
-
 </div>
 
 <div class="row center-block text-center">
@@ -427,10 +447,10 @@ i的值是65536
     </div>
 </div>
 
-<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "../../php/forum/content_get.php?tag=python3.7.2&contentid=3";
+    var url = "/php/forum/content_get.php?tag=python3.7.2&contentid=3";
     $.ajax({
         url: url,
         type: "GET",
