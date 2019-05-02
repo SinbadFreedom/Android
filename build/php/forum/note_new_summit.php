@@ -38,6 +38,7 @@ $user_id = $_SESSION['user_id'];
 $time_stamp = time();
 
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
+$manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 /** collection name*/
 $col_name = 'db_content.' . $tag;
 
@@ -58,7 +59,6 @@ $response = $command_cursor->toArray()[0];
 /** 获取新用户id*/
 $content_id = $response->value->content_id_now;
 
-$manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert(['content' => $content, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp]);
 
