@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
@@ -136,57 +138,6 @@ foreach ($res as $key => $value) {
 
 $titles_str .= '</tbody>';
 
-echo '<!DOCTYPE html>
-<html lang="zh_CN">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
-<div style="background: #2196F3">
-    <img src="/img/web_1.png">
-</div>
-
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/login.php"><b>登录</b></a>
-            </li>
-
-        </ul>
-    </div>
-</nav>
-
-<div class="container">
-
-<table class="table">
-' . $titles_str . '
-</table>
-
-<ul class="pagination">
-<li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
-' . $page_before_html_str . '
-' . $page_current_str . '
-' . $page_after_html_str . '
-</ul>
-
-</div>
-</body>
-</html>';
-
-
 function time2Units($time)
 {
     $year = floor($time / 60 / 60 / 24 / 365);
@@ -217,3 +168,56 @@ function time2Units($time)
 
     return $elapse;
 }
+?>
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
+</head>
+<body>
+<div style="background: #2196F3">
+    <img src="/img/web_1.png">
+</div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+            <?php
+                if (isset($_SESSION['figureurl_qq'])) {
+                    echo '<a class="nav-link" href="/php/login.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
+                } else {
+                    echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                }
+            ?>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+<table class="table">
+' . $titles_str . '
+</table>
+
+<ul class="pagination">
+<li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
+' . $page_before_html_str . '
+' . $page_current_str . '
+' . $page_after_html_str . '
+</ul>
+
+</div>
+</body>
+</html>;
