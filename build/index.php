@@ -27,8 +27,8 @@
             </li>
             <li class="nav-item">
                 <?php
-                    if (isset($arr)) {
-                        echo '<a class="nav-link" href="/php/login.php"><img src="'. $arr[figureurl_qq] .'" width="24px" height="24px"></a>';
+                    if (isset($_SESSION['figureurl_qq'])) {
+                        echo '<a class="nav-link" href="/php/login.php"><img src="'. $_SESSION['figureurl_qq'] .'" width="24px" height="24px"></a>';
                     } else {
                         echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
                     }

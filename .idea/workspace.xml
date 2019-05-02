@@ -9,6 +9,7 @@
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -32,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="129" selection-start-line="30" selection-start-column="129" selection-end-line="30" selection-end-column="129" />
+            <state relative-caret-position="419">
+              <caret line="29" column="59" lean-forward="true" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -75,8 +76,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="504">
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -106,11 +116,6 @@
               <caret line="327" column="34" selection-start-line="327" selection-start-column="34" selection-end-line="327" selection-end-column="34" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/img/bt_blue_76X24.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -487,21 +492,7 @@
       <workItem from="1556465036477" duration="9045000" />
       <workItem from="1556500449165" duration="26689000" />
       <workItem from="1556593034376" duration="2882000" />
-      <workItem from="1556760275665" duration="17197000" />
-    </task>
-    <task id="LOCAL-00058" summary="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件">
-      <created>1554753313234</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1554753313234</updated>
-    </task>
-    <task id="LOCAL-00059" summary="1. 加入根据语言目录切分&#10;2. 修改convert脚本，参数加入目录，加入拷贝文件">
-      <created>1554753603494</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1554753603494</updated>
+      <workItem from="1556760275665" duration="17533000" />
     </task>
     <task id="LOCAL-00060" summary="1. 修复图片目录">
       <created>1554754622347</created>
@@ -832,11 +823,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556797535264</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="1. 修改Q登陆">
+      <created>1556797645946</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1556797645946</updated>
+    </task>
+    <task id="LOCAL-00108" summary="1. 修改Q登陆">
+      <created>1556797820151</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1556797820151</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252491000" />
+    <option name="totallyTimeSpent" value="252827000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -940,13 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="23" column="41" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1242,17 +1240,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="504">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="129" selection-start-line="30" selection-start-column="129" selection-end-line="30" selection-end-column="129" />
+        <state relative-caret-position="419">
+          <caret line="29" column="59" lean-forward="true" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

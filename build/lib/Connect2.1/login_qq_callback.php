@@ -20,4 +20,6 @@ $arr[figureurl_qq];
 $arr[figureurl_type];
 //require_once("../../php/user_login.php");
 /** 登陆 后 跳转到首页 */
+$_SESSION['figureurl_qq'] = $arr[figureurl_qq];
+$_SESSION['nickname'] = $arr[nickname];
 require_once("../../index.php");
