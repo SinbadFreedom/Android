@@ -1,6 +1,5 @@
 <?php
-
-var_dump($_POST);
+session_start();
 
 if (!isset($_POST['note_tag'])) {
     return;
