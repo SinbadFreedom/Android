@@ -26,7 +26,13 @@
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/php/login.php"><b>登录</b></a>
+                <?php
+                    if (isset($arr)) {
+                        echo '<a class="nav-link" href="/php/login.php"><b>' . $arr[nickname] . '</b></a>';
+                    } else {
+                        echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                    }
+                ?>
             </li>
         </ul>
     </div>
@@ -39,7 +45,8 @@
 </div>
 
 <div class="container fixed-bottom text-right">
-    <small>天津码桥科技有限公司出品</small> <small>津ICP备19002572号-1</small>
+    <small>天津码桥科技有限公司出品</small>
+    <small>津ICP备19002572号-1</small>
 </div>
 
 <script src="/lib/jquery-3.2.1.min.js"></script>
@@ -84,4 +91,4 @@
 <!--    }-->
 <!--</script>-->
 </body>
-</html>
+</html>;
