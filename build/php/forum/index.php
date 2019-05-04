@@ -195,6 +195,11 @@ function time2Units($time)
 </nav>
 
 <div class="container">
+    <div>
+        <a href="index.php?tag=python3.7.2">&nbsppython3.7.2&nbsp</a>
+        <a href="index.php?tag=技术讨论">&nbsp技术讨论&nbsp</a>
+        <a href="index.php?tag=灌水乐园">&nbsp灌水乐园&nbsp</a>
+    </div>
     <div class="row">
         <div class="dropdown ml-auto">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
