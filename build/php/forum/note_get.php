@@ -36,9 +36,7 @@ file_put_contents($file, $content, FILE_APPEND);
 
 /** collection name*/;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
-echo "--------------------------------1". $tag;
 $col_name = 'db_tag.'. $tag;
-echo "--------------------------------2". $col_name;
 $filter = ['contentid' => $content_id];
 $options = array(
     'limit' => 1
@@ -47,9 +45,7 @@ $options = array(
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
 $info = $cursor->toArray()[0];
-echo "--------------------------------3";
-var_dump($info);
-//$content_id = $info->contentid;
+
 $title = $info->title;
 $author_id = $info->authorid;
 $author_name = $info->authorname;
