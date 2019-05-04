@@ -4,10 +4,10 @@ session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
-/** 默认显示全部标签的文章，通过content_tag显示指定标签的文章*/
-$content_tag = 'content_all';
-if (isset($_GET['content_tag'])) {
-    $content_tag = $_GET['content_tag'];
+/** 默认显示全部标签的文章，通过tag显示指定标签的文章*/
+$tag = 'content_all';
+if (isset($_GET['tag'])) {
+    $tag = $_GET['tag'];
 }
 /** 分页显示，默认page从0开始，显示页数时加1*/
 $page = 0;
@@ -27,7 +27,7 @@ $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 
 /** 获取总数 文章列表分页用*/
-$total_count = $redis->zcard($content_tag);
+$total_count = $redis->zcard($tag);
 $page_max = ceil($total_count / $count_per_page);
 /** 获取指定区间，分页用*/
 if ($page > $page_max) {
@@ -37,7 +37,7 @@ if ($page > $page_max) {
 
 /** 标题列表 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
 $start = $count_per_page * $page;
-$res = $redis->zrevrange($content_tag, $start, $start + $count_per_page - 1, true);
+$res = $redis->zrevrange($tag, $start, $start + $count_per_page - 1, true);
 /** 拼接html*/
 $titles_str .= '<tbody>';
 foreach ($res as $key => $value) {
@@ -79,7 +79,7 @@ foreach ($res as $key => $value) {
     /** 文章url 跳到中文文章的评论区*/
 //    $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
     $content_url = '/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id;
-    $tag_url = '/php/forum/index.php?content_tag=' . $tag;
+    $tag_url = '/php/forum/index.php?tag=' . $tag;
     /**
      * 单个标题格式
      * <tr>
@@ -196,9 +196,9 @@ function time2Units($time)
 
 <div class="container">
     <div>
-        <a href="index.php?tag=python3.7.2">&nbsppython3.7.2&nbsp</a>
-        <a href="index.php?tag=技术讨论">&nbsp技术讨论&nbsp</a>
-        <a href="index.php?tag=灌水乐园">&nbsp灌水乐园&nbsp</a>
+        <a href="/php/forum/index.php?tag=python3.7.2">&nbsppython3.7.2&nbsp</a>
+        <a href="/php/forum/index.php?tag=技术讨论">&nbsp技术讨论&nbsp</a>
+        <a href="/php/forum/index.php?tag=灌水乐园">&nbsp灌水乐园&nbsp</a>
     </div>
     <div class="row">
         <div class="dropdown ml-auto">
