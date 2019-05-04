@@ -146,7 +146,7 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?> / <?php echo $title ?>
     </div>
 
     <div class="row">
