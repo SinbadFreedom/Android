@@ -149,6 +149,12 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
         <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?>
     </div>
 
+    <div class="row">
+        <div class="ml-auto">
+            <button class="btn btn-success ml-auto" type="button">发表回复</button>
+        </div>
+    </div>
+
     <table>
         <tbody>
         <tr>
