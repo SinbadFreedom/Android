@@ -163,7 +163,7 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
                 <span><?php echo $nick_name ?></span>
                 <span><?php echo $user_id ?></span>
             </td>
-            <td width="auto">
+            <td width="auto" valign="top">
                 <div>
                     <span><b><?php echo $title ?></b></span>
                     <span><small><?php echo $time_stamp ?></small></span>
