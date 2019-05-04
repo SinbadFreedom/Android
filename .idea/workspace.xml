@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/forum/note_new_summit.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/note_new_summit.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -21,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
+            <state relative-caret-position="436">
+              <caret line="122" column="13" lean-forward="true" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
               </folding>
@@ -72,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="65" column="18" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="18" />
+            <state relative-caret-position="415">
+              <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -132,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>熊猫文档</find>
       <find>../../</find>
       <find>../..</find>
       <find>主页</find>
@@ -153,7 +150,6 @@
       <find>content_id_now</find>
       <find>$nickname</find>
       <find>$nick_name</find>
-      <find>$content_url</find>
       <find>$title</find>
       <find>$res</find>
       <find>$tag</find>
@@ -162,6 +158,8 @@
       <find>db_tag</find>
       <find>$create_date</find>
       <find>$time_stamp</find>
+      <find>$content_url</find>
+      <find>comment_count</find>
     </findStrings>
     <replaceStrings>
       <replace>](#)</replace>
@@ -259,9 +257,9 @@
         <option value="$PROJECT_DIR$/build/php/forum/note_new_ui.php" />
         <option value="$PROJECT_DIR$/build/php/forum/title_get.php" />
         <option value="$PROJECT_DIR$/build/php/forum/content_get.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/note_new_summit.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
         <option value="$PROJECT_DIR$/build/php/forum/index.php" />
+        <option value="$PROJECT_DIR$/build/php/forum/note_new_summit.php" />
       </list>
     </option>
   </component>
@@ -491,14 +489,7 @@
       <workItem from="1556593034376" duration="2882000" />
       <workItem from="1556760275665" duration="35470000" />
       <workItem from="1556848213036" duration="550000" />
-      <workItem from="1556950199499" duration="11313000" />
-    </task>
-    <task id="LOCAL-00092" summary="1. 修改q登陆">
-      <created>1556548814784</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1556548814785</updated>
+      <workItem from="1556950199499" duration="11478000" />
     </task>
     <task id="LOCAL-00093" summary="1. 修改q登陆">
       <created>1556548974965</created>
@@ -836,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556956337630</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="1. 修改新建笔记链接">
+      <created>1556964391285</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1556964391285</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282627000" />
+    <option name="totallyTimeSpent" value="282792000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -881,7 +879,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 加入log目录，修改log文件位置" />
     <MESSAGE value="1. 修改log文件位置" />
     <MESSAGE value="1. 重新设计讨论区模板&#10;2. 修改其他模板引用文件地址" />
     <MESSAGE value="1. 分离排行榜数据db_rank_list" />
@@ -906,7 +903,8 @@
     <MESSAGE value="1. 加入登录页" />
     <MESSAGE value="1. 修改Q登陆" />
     <MESSAGE value="1. 修改新建笔记页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改新建笔记页面" />
+    <MESSAGE value="1. 修改新建笔记链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改新建笔记链接" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1233,16 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -1255,10 +1243,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
+        <state relative-caret-position="436">
+          <caret line="122" column="13" lean-forward="true" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
