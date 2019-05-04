@@ -28,7 +28,7 @@ $redis->connect('127.0.0.1', 6379);
 
 /** 获取总数 文章列表分页用*/
 $total_count = $redis->zcard($content_tag);
-$page_max = intval($total_count / $count_per_page);
+$page_max = ceil($total_count / $count_per_page);
 /** 获取指定区间，分页用*/
 if ($page > $page_max) {
     /** 上边界保护*/
