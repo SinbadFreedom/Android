@@ -79,7 +79,7 @@ session_start();
         var tag = $("#note_tag").attr('value');
         var title = $("#title").val();
         var content = $("#content").val();
-        /*这里是提交表单前的非空校验*/
+        /** 这里是提交表单前的非空校验*/
         if (tag == "" || tag == null || tag == undefined) {
             alert("请选择标签");
             return false;/*阻止表单提交*/

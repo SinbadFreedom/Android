@@ -15,12 +15,12 @@ if (!isset($_POST['content'])) {
 }
 
 if (!isset($_SESSION['nickname'])) {
-    echo 'param error nickname';
+    echo '请先登陆';
     return;
 }
 
 if (!isset($_SESSION['figureurl_qq'])) {
-    echo 'param error figureurl_qq';
+    echo '请先登陆';
     return;
 }
 
@@ -87,15 +87,76 @@ $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
-echo $tag;
-echo '<br>';
-echo $title;
-echo '<br>';
-echo $content;
-echo '<br>';
-echo $nickname;
-echo '<br>';
-echo $user_id;
-echo '<br>';
-echo $content_id;
-echo '<br>';
+//echo $tag;
+//echo '<br>';
+//echo $title;
+//echo '<br>';
+//echo $content;
+//echo '<br>';
+//echo $nickname;
+//echo '<br>';
+//echo $user_id;
+//echo '<br>';
+//echo $content_id;
+//echo '<br>';
+?>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>熊猫文档-面向程序员的技术文档网站</title>
+    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/lib/google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="/css/dashidan.css">
+</head>
+<body>
+
+<div style="background: #2196F3">
+    <img src="/img/web_1.png">
+</div>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php"><b>首页</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/php/forum/index.php"><b>笔记</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <?php
+                if (isset($_SESSION['figureurl_qq'])) {
+                    echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
+                } else {
+                    echo '<a class="nav-link" href="/php/login.php"><b>登录</b></a>';
+                }
+                ?>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div>
+        <a href="/index.php">&nbsp首页&nbsp</a>/ 笔记 /
+    </div>
+
+    <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
+    <span><?php echo $user_id ?></span>
+    <span><?php echo $nickname ?></span>
+    <span><?php echo $tag ?></span>
+    <span><?php echo $title ?></span>
+    <span><?php echo $content ?></span>
+    <span><?php echo $content_id ?></span>
+    <span><?php echo $time_stamp ?></span>
+</div>
+</body>
+</html>
