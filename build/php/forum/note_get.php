@@ -116,7 +116,7 @@ $author_figure = $content_info->author_figure;
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?> / <?php echo $title ?>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a> / <?php echo $title ?>
     </div>
 
     <div class="row">
