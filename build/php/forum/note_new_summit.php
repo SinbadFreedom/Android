@@ -71,7 +71,7 @@ $bulk->update(
     ['contentid' => intval($content_id)],
     ['$set' => ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp]],
 //    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
-    ['multi' => false, 'upsert' => false]
+    ['multi' => false, 'upsert' => true]
 );
 $db_collection_name = 'db_tag.' . $tag;
 $result = $manager->executeBulkWrite($db_collection_name, $bulk);
