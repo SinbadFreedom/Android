@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="195" selection-start-line="195" selection-end-line="207" selection-end-column="10" />
+            <state relative-caret-position="180">
+              <caret line="203" column="81" lean-forward="true" selection-start-line="203" selection-start-column="81" selection-end-line="203" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -59,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
+            <state relative-caret-position="411">
+              <caret line="152" column="17" lean-forward="true" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -252,8 +252,8 @@
         <option value="$PROJECT_DIR$/build/php/forum/content_get.php" />
         <option value="$PROJECT_DIR$/build/php/forum/forum_init.php" />
         <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/index.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_ui.php" />
+        <option value="$PROJECT_DIR$/build/php/forum/index.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_summit.php" />
       </list>
     </option>
@@ -484,21 +484,7 @@
       <workItem from="1556593034376" duration="2882000" />
       <workItem from="1556760275665" duration="35470000" />
       <workItem from="1556848213036" duration="550000" />
-      <workItem from="1556950199499" duration="3059000" />
-    </task>
-    <task id="LOCAL-00087" summary="1. 修改q登陆">
-      <created>1556548043423</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1556548043423</updated>
-    </task>
-    <task id="LOCAL-00088" summary="1. 修改q登陆">
-      <created>1556548313851</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1556548313851</updated>
+      <workItem from="1556950199499" duration="3927000" />
     </task>
     <task id="LOCAL-00089" summary="1. 修改q登陆">
       <created>1556548448787</created>
@@ -829,11 +815,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556953544322</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="1. 修改新建笔记页面">
+      <created>1556953635887</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1556953635887</updated>
+    </task>
+    <task id="LOCAL-00137" summary="1. 修改新建笔记页面">
+      <created>1556953684980</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1556953684980</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274373000" />
+    <option name="totallyTimeSpent" value="275241000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1229,13 +1229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="195" selection-start-line="195" selection-end-line="207" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/user_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1243,10 +1236,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="203" column="81" lean-forward="true" selection-start-line="203" selection-start-column="81" selection-end-line="203" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
+        <state relative-caret-position="411">
+          <caret line="152" column="17" lean-forward="true" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

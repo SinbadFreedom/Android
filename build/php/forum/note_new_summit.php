@@ -87,18 +87,6 @@ $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
-//echo $tag;
-//echo '<br>';
-//echo $title;
-//echo '<br>';
-//echo $content;
-//echo '<br>';
-//echo $nickname;
-//echo '<br>';
-//echo $user_id;
-//echo '<br>';
-//echo $content_id;
-//echo '<br>';
 ?>
 
 <!doctype html>
@@ -161,7 +149,7 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
             <td width="48px">
                 <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
                 <span><?php echo $nick_name ?></span>
-                <span><?php echo $user_id ?></span>
+<!--                <span>--><?php //echo $user_id ?><!--</span>-->
             </td>
             <td width="auto" valign="top">
                 <div>
