@@ -160,7 +160,7 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
         <tr>
             <td width="48px">
                 <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
-                <span><?php echo $nickname ?></span>
+                <span><?php echo $nick_name ?></span>
                 <span><?php echo $user_id ?></span>
             </td>
             <td width="auto">
