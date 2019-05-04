@@ -5,8 +5,7 @@
  * Date: 2019/3/15
  * Time: 12:20
  */
-
-use MongoDB\Driver\Query;
+session_start();
 
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
