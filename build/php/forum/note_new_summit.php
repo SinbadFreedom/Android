@@ -89,7 +89,7 @@ $note_title_info = [
     'authorid' => $user_id,
     'authorname' => $nick_name,
     'createtime' => $time_stamp,
-    '$comment_count' => 0
+    'comment_count' => 0
 ];
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert($note_title_info);
