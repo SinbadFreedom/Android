@@ -184,7 +184,7 @@ function time2Units($time)
             <li class="nav-item">
                 <?php
                 if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
+                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
                 } else {
                     echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
                 }
@@ -196,12 +196,23 @@ function time2Units($time)
 
 <div class="container">
     <div>
-        <a href="/php/forum/index.php">全部&nbsp</a>
-        <a href="/php/forum/index.php?tag=python3.7.2">python3.7.2&nbsp</a>
-        <a href="/php/forum/index.php?tag=技术讨论">技术讨论&nbsp</a>
-        <a href="/php/forum/index.php?tag=灌水乐园">灌水乐园&nbsp</a>
+        <a href="/php/forum/index.php"><span class="panda_border alert-primary">全部</span></a>
+        <a href="/php/forum/index.php?tag=python3.7.2"><span class="panda_border alert-primary">python3.7.2</span></a>
+        <a href="/php/forum/index.php?tag=技术讨论"><span class="panda_border alert-primary">技术讨论</span></a>
+        <a href="/php/forum/index.php?tag=灌水乐园"><span class="panda_border alert-primary">灌水乐园</span></a>
     </div>
+
     <div class="row">
+        <span class="btn btn-secondary">
+            <?php
+            if (isset($_GET['tag'])) {
+                echo $_GET['tag'];
+            } else {
+                echo '全部';
+            }
+            ?>
+        </span>
+
         <div class="dropdown ml-auto">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -214,7 +225,6 @@ function time2Units($time)
             </div>
         </div>
     </div>
-
     <table class="table">
         <?php echo $titles_str ?>
     </table>
