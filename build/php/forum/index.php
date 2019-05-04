@@ -60,15 +60,16 @@ foreach ($res as $key => $value) {
     $query = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery($col_name, $query);
     $info = $cursor->toArray()[0];
+    /**
+    $note_content = ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp];
+     */
+    $content_id = $info->contentid;
     $title = $info->title;
     $author_id = $info->authorid;
     $author_name = $info->authorname;
     $create_time = $info->createtime;
     $comment_count = $info->commentcount;
-    $create_date = date("md H:i");
-    /** 文章url 跳到中文文章的评论区*/
-    $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
-    $tag_url = '/php/forum/index.php?content_tag=' . $tag;
+    $create_date = date("md H:i", $create_time);
     /** 最后编辑用户的信息 初始为空*/
     $editor_id = $info->editorid;
     $editor_name = $info->editorname;
@@ -79,6 +80,11 @@ foreach ($res as $key => $value) {
         $diff = time() - $edit_time;
         $time_diff_str = time2Units($diff) . '前';
     }
+
+    /** 文章url 跳到中文文章的评论区*/
+//    $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
+    $content_url = '/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id;
+    $tag_url = '/php/forum/index.php?content_tag=' . $tag;
     /**
      * 单个标题格式
      * <tr>

@@ -40,8 +40,7 @@ $time_stamp = time();
 
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
-/** collection name*/
-$col_name = 'db_content.' . $tag;
+
 
 /** 初始化content_id*/
 /** 生成自增id*/
@@ -59,22 +58,43 @@ $response = $command_cursor->toArray()[0];
 
 /** 获取新用户id*/
 $content_id = $response->value->content_id_now;
-
+/** 内容信息*/
 $bulk = new MongoDB\Driver\BulkWrite;
-$bulk->insert(['content' => $content, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp]);
+$note_content_info = [
+    'contentid' => intval($content_id),
+//    'title' => $title,
+    'author_figure' => $_SESSION['figureurl_qq'],
+    'content' => $content,
+//    'authorid' => $user_id,
+//    'authorname' => $nick_name,
+//    'createtime' => $time_stamp,
+//    '$comment_count' => 0
+];
+$bulk->insert($note_content_info);
+/** collection name*/
+$col_name = 'db_content.' . $tag;
+$manager->executeBulkWrite($col_name, $bulk);
 
-$res = $manager->executeBulkWrite($col_name, $bulk);
-
-/** 修改对应文章最后编辑者的信息*/
+/** 标题信息*/
+//$bulk->update(
+//    ['contentid' => intval($content_id)],
+//    ['$set' => ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp]],
+////    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
+//    ['multi' => false, 'upsert' => true]
+//);
+//$note_content = ['contentid' => intval($content_id), 'title' => $title, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp];
+$note_title_info = [
+    'contentid' => intval($content_id),
+    'title' => $title,
+    'authorid' => $user_id,
+    'authorname' => $nick_name,
+    'createtime' => $time_stamp,
+    '$comment_count' => 0
+];
 $bulk = new MongoDB\Driver\BulkWrite;
-$bulk->update(
-    ['contentid' => intval($content_id)],
-    ['$set' => ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp]],
-//    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
-    ['multi' => false, 'upsert' => true]
-);
+$bulk->insert($note_title_info);
 $db_collection_name = 'db_tag.' . $tag;
-$result = $manager->executeBulkWrite($db_collection_name, $bulk);
+$manager->executeBulkWrite($db_collection_name, $bulk);
 
 /** 更新redis的编辑时间 加入排序列表*/
 $redis = new Redis();
@@ -87,7 +107,6 @@ $redis->connect('127.0.0.1', 6379);
 $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
-
 ?>
 
 <!doctype html>
@@ -135,7 +154,8 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?> / <?php echo $title ?>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?>
+        / <?php echo $title ?>
     </div>
 
     <div class="row">
