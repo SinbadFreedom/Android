@@ -215,7 +215,7 @@ function time2Units($time)
 
     <ul class="pagination">
         <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
-        <?php if ($page - 1 > 0) {
+        <?php if ($page - 1 >= 0) {
             echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '">上页</a></li>';
         } else {
             /** 第一页隐藏 上一页*/

@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="216" column="89" selection-start-line="216" selection-start-column="89" selection-end-line="216" selection-end-column="89" />
+            <state relative-caret-position="306">
+              <caret line="217" column="35" lean-forward="true" selection-start-line="217" selection-start-column="35" selection-end-line="217" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
               </folding>
@@ -490,21 +490,7 @@
       <workItem from="1556593034376" duration="2882000" />
       <workItem from="1556760275665" duration="35470000" />
       <workItem from="1556848213036" duration="550000" />
-      <workItem from="1556950199499" duration="12990000" />
-    </task>
-    <task id="LOCAL-00101" summary="1. 加入登录页">
-      <created>1556783454681</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1556783454681</updated>
-    </task>
-    <task id="LOCAL-00102" summary="1. 加入登录页">
-      <created>1556783596790</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1556783596790</updated>
+      <workItem from="1556950199499" duration="13075000" />
     </task>
     <task id="LOCAL-00103" summary="1. 修改Q登陆">
       <created>1556796639090</created>
@@ -835,11 +821,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556965915209</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="1. 修改新建笔记链接">
+      <created>1556966046644</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1556966046644</updated>
+    </task>
+    <task id="LOCAL-00151" summary="1. 修改新建笔记链接">
+      <created>1556966089223</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1556966089223</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284304000" />
+    <option name="totallyTimeSpent" value="284389000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1254,8 +1254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="216" column="89" selection-start-line="216" selection-start-column="89" selection-end-line="216" selection-end-column="89" />
+        <state relative-caret-position="306">
+          <caret line="217" column="35" lean-forward="true" selection-start-line="217" selection-start-column="35" selection-end-line="217" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
           </folding>
