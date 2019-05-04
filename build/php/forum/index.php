@@ -226,7 +226,7 @@ function time2Units($time)
         }
         echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page_current . '</a></li>';
 
-        if ($page_after >= $page_max) {
+        if ($page_after > $page_max) {
             /** 最后页隐藏 下一页*/
         } else {
             echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
