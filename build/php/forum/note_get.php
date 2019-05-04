@@ -27,7 +27,7 @@ if (!isset($_GET['tag'])) {
 }
 
 $tag = $_GET['tag'];
-$content_id = $_GET['contentid'];
+$content_id = intval($_GET['contentid']);
 
 //$time_stamp = time();
 $file = '/workplace/log/log_note_get_' . date('Y-m-d', $time_stamp) . '.log';
@@ -49,7 +49,7 @@ $cursor = $manager->executeQuery($col_name, $query);
 $info = $cursor->toArray()[0];
 echo "--------------------------------3";
 var_dump($info);
-$content_id = $info->contentid;
+//$content_id = $info->contentid;
 $title = $info->title;
 $author_id = $info->authorid;
 $author_name = $info->authorname;

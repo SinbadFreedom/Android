@@ -61,7 +61,7 @@ $content_id = $response->value->content_id_now;
 /** 内容信息*/
 $bulk = new MongoDB\Driver\BulkWrite;
 $note_content_info = [
-    'contentid' => intval($content_id),
+    'contentid' => $content_id,
 //    'title' => $title,
     'author_figure' => $_SESSION['figureurl_qq'],
     'content' => $content,
@@ -84,7 +84,7 @@ $manager->executeBulkWrite($col_name, $bulk);
 //);
 //$note_content = ['contentid' => intval($content_id), 'title' => $title, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp];
 $note_title_info = [
-    'contentid' => intval($content_id),
+    'contentid' => $content_id,
     'title' => $title,
     'authorid' => $user_id,
     'authorname' => $nick_name,
