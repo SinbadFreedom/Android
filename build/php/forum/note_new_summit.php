@@ -146,17 +146,29 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/ 笔记 /
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <?php echo $tag ?>
     </div>
 
-    <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
-    <span><?php echo $user_id ?></span>
-    <span><?php echo $nickname ?></span>
-    <span><?php echo $tag ?></span>
-    <span><?php echo $title ?></span>
-    <span><?php echo $content ?></span>
-    <span><?php echo $content_id ?></span>
-    <span><?php echo $time_stamp ?></span>
+    <table>
+        <tbody>
+        <tr>
+            <td width="48px">
+                <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
+                <span><?php echo $nickname ?></span>
+                <span><?php echo $user_id ?></span>
+            </td>
+            <td width="auto">
+                <div>
+                    <span><?php echo $title ?></span>
+                    <span><?php echo $time_stamp ?></span>
+                </div>
+                <div>
+                    <span><?php echo $content ?></span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
