@@ -69,7 +69,8 @@ $res = $manager->executeBulkWrite($col_name, $bulk);
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->update(
     ['contentid' => intval($content_id)],
-    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
+    ['$set' => ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp]],
+//    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
     ['multi' => false, 'upsert' => false]
 );
 $db_collection_name = 'db_tag.' . $tag;
@@ -149,7 +150,6 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
             <td width="48px">
                 <img src="<?php echo $_SESSION['figureurl_qq'] ?>" width="48px" height="48px">
                 <span><?php echo $nick_name ?></span>
-<!--                <span>--><?php //echo $user_id ?><!--</span>-->
             </td>
             <td width="auto" valign="top">
                 <div>
