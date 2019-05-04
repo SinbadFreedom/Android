@@ -165,8 +165,8 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
             </td>
             <td width="auto">
                 <div>
-                    <span><?php echo $title ?></span>
-                    <span><?php echo $time_stamp ?></span>
+                    <span><b><?php echo $title ?></b></span>
+                    <span><small><?php echo $time_stamp ?></small></span>
                 </div>
                 <div>
                     <span><?php echo $content ?></span>
