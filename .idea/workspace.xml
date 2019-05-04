@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="214">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
               </folding>
@@ -131,15 +131,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>主页</find>
-      <find>nav-link</find>
       <find>$titles_str</find>
       <find>$page_before_html_str</find>
       <find>$page_after_html_str</find>
       <find>$note_list_content</find>
       <find>$page_current_str</find>
       <find>m&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;index.</find>
-      <find>$page_before</find>
       <find>'&quot; width=&quot;24px&quot; height=&quot;24px</find>
       <find>$btn_0</find>
       <find>$headimgurl</find>
@@ -161,6 +158,9 @@
       <find>$time_stamp</find>
       <find>intval</find>
       <find>$content_id</find>
+      <find>$page_max</find>
+      <find>$page_before</find>
+      <find>$page_current</find>
     </findStrings>
     <replaceStrings>
       <replace>](#)</replace>
@@ -490,21 +490,7 @@
       <workItem from="1556593034376" duration="2882000" />
       <workItem from="1556760275665" duration="35470000" />
       <workItem from="1556848213036" duration="550000" />
-      <workItem from="1556950199499" duration="12390000" />
-    </task>
-    <task id="LOCAL-00098" summary="1. 加入rank list标签">
-      <created>1556554349893</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1556554349893</updated>
-    </task>
-    <task id="LOCAL-00099" summary="1. 加入rank list标签">
-      <created>1556554408045</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1556554408045</updated>
+      <workItem from="1556950199499" duration="12860000" />
     </task>
     <task id="LOCAL-00100" summary="1. 修改web样式">
       <created>1556779819457</created>
@@ -835,11 +821,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556964991303</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="1. 修改新建笔记链接">
+      <created>1556965462031</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1556965462031</updated>
+    </task>
+    <task id="LOCAL-00148" summary="1. 修改新建笔记链接">
+      <created>1556965719073</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1556965719073</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283704000" />
+    <option name="totallyTimeSpent" value="284174000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1254,8 +1254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="214">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
           </folding>

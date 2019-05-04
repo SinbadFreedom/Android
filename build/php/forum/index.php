@@ -35,10 +35,10 @@ if ($page > $page_max) {
     $page = $page_max;
 }
 
-/** 页数*/
+/** 页数 当前页数显示用从1开始记 加1 ，上页下页从0开始记*/
 $page_current = $page + 1;
-$page_before = $page_current - 1;
-$page_after = $page_current + 1;
+$page_before = $page - 1;
+$page_after = $page + 1;
 
 /** 标题列表 默认按最后编辑时间读取最新20篇 编辑时间降序排序*/
 $start = $count_per_page * $page;
@@ -220,7 +220,7 @@ function time2Units($time)
     <ul class="pagination">
         <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
         <?php if ($page_before > 0) {
-            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">前一页</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_before . '">上页</a></li>';
         } else {
             /** 第一页隐藏 上一页*/
         }
@@ -229,7 +229,7 @@ function time2Units($time)
         if ($page_after > $page_max) {
             /** 最后页隐藏 下一页*/
         } else {
-            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">后一页</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page_after . '">下页</a></li>';
         }
         ?>
     </ul>
