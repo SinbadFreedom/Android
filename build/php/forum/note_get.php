@@ -89,8 +89,8 @@ foreach ($cursor as $document) {
                 <span>' . $editor_name . '</span>
             </td>
             <td width="auto" valign="top">
-                <div>
-                    <span><small>' . $edit_time . '</small></span>
+                <div class="row">
+                    <span class="ml-auto"><small>' . date("md H:i", $edit_time) . '</small></span>
                 </div>
                 <div>
                     <span>' . $reply . '</span>
