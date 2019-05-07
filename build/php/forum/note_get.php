@@ -184,6 +184,8 @@ foreach ($cursor as $document) {
     </form>
 </div>
 
+<script src="/lib/jquery-3.2.1.min.js"></script>
+
 <script>
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
