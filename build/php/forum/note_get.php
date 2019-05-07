@@ -104,21 +104,19 @@ if ($page_after >= $page_max) {
 }
 
 $count_per_page = 20;
-$command_arr = [
-    'find' => $col_reply_name,
-    'query' => ['content_id' => $content_id],
-    /** 倒序显示评论，通过 _id倒叙排列*/
+$filter = ['contentid' => $content_id];
+/** 只返回标题相关内容，不返回文章内容*/
+$options = [
+    /** 按时间倒叙排列*/
     'sort' => ['_id' => -1],
     // 显示数量控制
     'limit' => $count_per_page,
     // 分页使用
     'skip' => $count_per_page * $page
-];
-
-var_dump($command_arr);
-
-$command = new MongoDB\Driver\Command($command_arr);
-$cursor = $manager->executeCommand($db_reply_name, $command);
+    ];
+/** 根据tag和content_id查找对应的文章标题信息*/
+$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $manager->executeQuery($col_reply_name, $query);
 
 $reply_html_str = '';
 foreach ($cursor as $document) {
