@@ -63,6 +63,8 @@ $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
 /** 笔记翻页*/
+$count_per_page = 20;
+
 $db_reply_name = 'db_reply';
 $col_reply_name = 'db_reply.' . $tag;
 $query = [
@@ -103,7 +105,6 @@ if ($page_after >= $page_max) {
     $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '">后一页</a></li>';
 }
 
-$count_per_page = 20;
 $filter = ['content_id' => $content_id];
 /** 只返回标题相关内容，不返回文章内容*/
 $options = [

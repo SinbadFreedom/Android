@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+            <state relative-caret-position="525">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
             </state>
           </provider>
         </entry>
@@ -126,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>db_tag</find>
       <find>$create_date</find>
       <find>$content_url</find>
       <find>comment_count</find>
@@ -156,6 +155,7 @@
       <find>$col_name</find>
       <find>$col_reply_name</find>
       <find>$page_after_html_str</find>
+      <find>content_id</find>
     </findStrings>
     <replaceStrings>
       <replace>- 7.</replace>
@@ -495,14 +495,7 @@
       <workItem from="1557194713717" duration="2364000" />
       <workItem from="1557199681693" duration="636000" />
       <workItem from="1557211945342" duration="10519000" />
-      <workItem from="1557237263675" duration="4428000" />
-    </task>
-    <task id="LOCAL-00147" summary="1. 修改新建笔记链接">
-      <created>1556965462031</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1556965462031</updated>
+      <workItem from="1557237263675" duration="4808000" />
     </task>
     <task id="LOCAL-00148" summary="1. 修改新建笔记链接">
       <created>1556965719073</created>
@@ -840,11 +833,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557241584436</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="1. 修改评论翻页">
+      <created>1557241714981</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1557241714981</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305811000" />
+    <option name="totallyTimeSpent" value="306191000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1239,8 +1239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+        <state relative-caret-position="525">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
