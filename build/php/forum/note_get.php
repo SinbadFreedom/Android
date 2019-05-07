@@ -63,11 +63,11 @@ $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
 /** 笔记翻页*/
+$col_reply_name = 'db_reply.' . $tag;
 $query = [
-    'count' => $col_name,
+    'count' => $col_reply_name,
     'query' => ['content_id' => $content_id]
 ];
-$col_reply_name = 'db.reply.' . $tag;
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand($col_reply_name, $command);
 /** 笔记总条数 列表分页用*/

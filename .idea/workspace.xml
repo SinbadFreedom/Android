@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/forum/note_get.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/note_get.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -19,20 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2301">
-              <caret line="169" column="20" lean-forward="true" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="128" selection-start-line="36" selection-start-column="128" selection-end-line="36" selection-end-column="128" />
+            <state relative-caret-position="593">
+              <caret line="65" column="27" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -46,11 +38,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state relative-caret-position="441">
+              <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/content_get.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="158" selection-start-line="158" selection-end-line="164" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,10 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$nickname</find>
-      <find>$nick_name</find>
-      <find>$title</find>
-      <find>$res</find>
       <find>$col_name</find>
       <find>$count_per_page</find>
       <find>db_tag</find>
@@ -151,9 +152,12 @@
       <find>dat</find>
       <find>date</find>
       <find>date(</find>
+      <find>content_get.php</find>
+      <find>'skip' =&gt;</find>
+      <find>$db_name</find>
+      <find>$page_after_html_str</find>
     </findStrings>
     <replaceStrings>
-      <replace>)</replace>
       <replace>. [</replace>
       <replace>- 7.</replace>
       <replace>- 16.</replace>
@@ -183,15 +187,16 @@
       <replace>tag</replace>
       <replace>href=&quot;/php/login_ui.php&quot;&gt;&lt;b&gt;登录&lt;/b&gt;</replace>
       <replace>$open_id</replace>
+      <replace>note_get.php</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\workplace\git\Android\md\python3</dir>
       <dir>D:\workplace\git\Android\md\python3.7.2\zh_cn</dir>
       <dir>D:\workplace\git\Android\md</dir>
-      <dir>D:\workplace\git\Android\build\php</dir>
       <dir>D:\workplace\git\Android\build\lib\Connect2.1</dir>
       <dir>D:\workplace\git\Android\build</dir>
       <dir>D:\workplace\git\Android</dir>
+      <dir>D:\workplace\git\Android\build\php</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -248,9 +253,9 @@
         <option value="$PROJECT_DIR$/build/php/forum/note_new_summit.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_ui.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
-        <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" />
         <option value="$PROJECT_DIR$/build/php/forum/index.php" />
+        <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
       </list>
     </option>
   </component>
@@ -490,21 +495,7 @@
       <workItem from="1557194713717" duration="2364000" />
       <workItem from="1557199681693" duration="636000" />
       <workItem from="1557211945342" duration="10519000" />
-      <workItem from="1557237263675" duration="1259000" />
-    </task>
-    <task id="LOCAL-00139" summary="1. 修改新建笔记页面">
-      <created>1556956199045</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1556956199045</updated>
-    </task>
-    <task id="LOCAL-00140" summary="1. 修改新建笔记页面">
-      <created>1556956337630</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1556956337630</updated>
+      <workItem from="1557237263675" duration="2764000" />
     </task>
     <task id="LOCAL-00141" summary="1. 修改新建笔记链接">
       <created>1556964391285</created>
@@ -835,11 +826,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557238449179</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="1. 修改最后编辑信息">
+      <created>1557238531638</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1557238531638</updated>
+    </task>
+    <task id="LOCAL-00189" summary="1. 修改最后编辑信息">
+      <created>1557239820694</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1557239820694</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302642000" />
+    <option name="totallyTimeSpent" value="304147000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -858,7 +863,7 @@
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.208061" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.208061" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.18954249" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1150,13 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/content_get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1743">
-          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply_ui.php" />
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars">
       <provider selected="true" editor-type-id="text-editor">
@@ -1200,24 +1198,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2301">
-          <caret line="169" column="20" lean-forward="true" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/content_add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="63" selection-start-line="63" selection-end-line="71" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1230,8 +1214,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        <state relative-caret-position="441">
+          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/content_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="158" selection-start-line="158" selection-end-line="164" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="27" />
         </state>
       </provider>
     </entry>
