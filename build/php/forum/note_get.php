@@ -179,7 +179,13 @@ foreach ($cursor as $document) {
             <label for="content_reply">发表回复</label>
             <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary ml-auto">发表回复</button>
+        <?php
+        if (isset($_SESSION['figureurl_qq'])) {
+            echo '<button type="submit" class="btn btn-primary ml-auto">发表回复</button>';
+        } else {
+            echo '<label class="btn btn-warning ml-auto">登录后方可回复</label>';
+        }
+        ?>
     </form>
 </div>
 
