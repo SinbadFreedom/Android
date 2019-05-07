@@ -202,9 +202,9 @@ foreach ($cursor as $document) {
 </script>
 <script>
     $("#note_reply").submit(function () {
-        var content_reply = $("#content_reply").val();
+        var reply = $("#reply").val();
         /** 这里是提交表单前的非空校验*/
-        if (content_reply === "" || !content_reply) {
+        if (reply === "" || !reply) {
             alert("请输入回复内容");
             return false;/*阻止表单提交*/
         }
