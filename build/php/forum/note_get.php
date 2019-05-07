@@ -198,6 +198,8 @@ foreach ($cursor as $document) {
     var reply_rul = 'note_new_summit.php?tag=' + tag + '&contentid=' + content_id;
     /** 替换 reply 的url*/
     $('#note_reply').attr('action', reply_rul);
+    alert($('#note_reply').attr('action'));
+    alert(reply_rul);
 </script>
 <script>
     $("#note_reply").submit(function () {
