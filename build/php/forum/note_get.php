@@ -28,27 +28,26 @@ if (!isset($_GET['tag'])) {
 $tag = $_GET['tag'];
 $content_id = intval($_GET['contentid']);
 
-//$time_stamp = time();
 $file = '/workplace/log/log_note_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = $tag . " $content_id" . " $time_stamp\n";
-file_put_contents($file, $content, FILE_APPEND);
-
-/** collection name*/;
+file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
-$col_name = 'db_tag.'. $tag;
+$col_name = 'db_tag.' . $tag;
 $filter = ['contentid' => $content_id];
-$options = array(
-    'limit' => 1
-);
+/** 不返回文章内容*/
+$options = ['content' => 0, 'limit' => 1];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
 $info = $cursor->toArray()[0];
 
-$title = $info->title;
 $author_id = $info->authorid;
 $author_name = $info->authorname;
+$author_figure = $info->author_figure;
 $create_time = $info->createtime;
+$content_id = $info->contentid;
+$title = $info->title;
+$content = $info->content;
 $comment_count = $info->commentcount;
 $create_date = date("md H:i", $create_time);
 /** 最后编辑用户的信息 初始为空*/
@@ -56,18 +55,6 @@ $editor_id = $info->editorid;
 $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
-$filter = ['contentid' => $content_id];
-$options = array(
-    'limit' => 1
-);
-
-/** 文章内容信息*/
-$query = new MongoDB\Driver\Query($filter, $options);
-$col_content_name = 'db_content.'. $tag;
-$cursor = $manager->executeQuery($col_content_name, $query);
-$content_info = $cursor->toArray()[0];
-$content = $content_info->content;
-$author_figure = $content_info->author_figure;
 ?>
 
 <!doctype html>
@@ -115,7 +102,9 @@ $author_figure = $content_info->author_figure;
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a> / <?php echo $title ?>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
+                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
+        / <?php echo $title ?>
     </div>
 
     <div class="row">

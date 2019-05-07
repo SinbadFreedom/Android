@@ -41,7 +41,6 @@ $time_stamp = time();
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
-
 /** 初始化content_id*/
 /** 生成自增id*/
 $query = array(
@@ -55,39 +54,16 @@ $query = array(
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
-
-/** 获取新用户id*/
 $content_id = $response->value->content_id_now;
-/** 内容信息*/
-$bulk = new MongoDB\Driver\BulkWrite;
-$note_content_info = [
-    'contentid' => $content_id,
-//    'title' => $title,
-    'author_figure' => $_SESSION['figureurl_qq'],
-    'content' => $content,
-//    'authorid' => $user_id,
-//    'authorname' => $nick_name,
-//    'createtime' => $time_stamp,
-//    '$comment_count' => 0
-];
-$bulk->insert($note_content_info);
-/** collection name*/
-$col_name = 'db_content.' . $tag;
-$manager->executeBulkWrite($col_name, $bulk);
 
 /** 标题信息*/
-//$bulk->update(
-//    ['contentid' => intval($content_id)],
-//    ['$set' => ['contentid' => intval($content_id), 'title' => $title, 'authorid' => $user_id, 'authorname' => $nick_name, 'createtime' => $time_stamp]],
-////    ['$set' => ['editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp], '$inc' => ['commentcount' => 1]],
-//    ['multi' => false, 'upsert' => true]
-//);
-//$note_content = ['contentid' => intval($content_id), 'title' => $title, 'editorid' => $user_id, 'editorname' => $nick_name, 'edittime' => $time_stamp];
 $note_title_info = [
     'contentid' => $content_id,
-    'title' => $title,
     'authorid' => $user_id,
     'authorname' => $nick_name,
+    'author_figure' => $_SESSION['figureurl_qq'],
+    'title' => $title,
+    'content' => $content,
     'createtime' => $time_stamp,
     'comment_count' => 0
 ];
