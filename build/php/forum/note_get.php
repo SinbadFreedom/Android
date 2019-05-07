@@ -120,6 +120,7 @@ $options = [
     ];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
+$col_reply_name = 'db_reply.' . $tag;
 $cursor = $manager->executeQuery($col_reply_name, $query);
 
 $reply_html_str = '';
