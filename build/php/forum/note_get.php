@@ -65,7 +65,6 @@ $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
 
 $reply_html_str = '';
-echo '+++++';
 foreach ($cursor as $document) {
     /**
      * 回复数据
@@ -81,19 +80,6 @@ foreach ($cursor as $document) {
     $edit_time = $document->edit_time;
     $reply = $document->reply;
 
-    echo '------------------------------------';
-    echo '<br>';
-    echo $editor_name;
-    echo '<br>';
-    echo $editor_figure;
-    echo '<br>';
-    echo $editor_name;
-    echo '<br>';
-    echo $edit_time;
-    echo '<br>';
-    echo $reply;
-    echo '<br>';
-    echo '------------------------------------';
     /**
      * 组成html字符串
      */
