@@ -49,7 +49,7 @@ $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
 /** 回复信息*/
 $note_reply_info = [
-    'contentid' => $content_id,
+    'content_id' => $content_id,
     'editor_id' => $user_id,
     'editor_name' => $nick_name,
     'editor_figure' => $editor_figure,

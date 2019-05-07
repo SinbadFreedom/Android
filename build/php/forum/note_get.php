@@ -57,7 +57,7 @@ $edit_time = $info->edittime;
 
 /** 获取回复内容*/
 $col_name = 'db_reply.' . $tag;
-$filter = ['contentid' => $content_id];
+$filter = ['content_id' => $content_id];
 /** 最多返回20条回复*/
 $options = ['limit' => 20];
 /** 根据tag和content_id查找对应的文章标题信息*/
@@ -65,6 +65,7 @@ $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
 
 $reply_html_str = '';
+echo '+++++';
 foreach ($cursor as $document) {
     /**
      * 回复数据
@@ -80,6 +81,19 @@ foreach ($cursor as $document) {
     $edit_time = $document->edit_time;
     $reply = $document->reply;
 
+    echo '------------------------------------';
+    echo '<br>';
+    echo $editor_name;
+    echo '<br>';
+    echo $editor_figure;
+    echo '<br>';
+    echo $editor_name;
+    echo '<br>';
+    echo $edit_time;
+    echo '<br>';
+    echo $reply;
+    echo '<br>';
+    echo '------------------------------------';
     /**
      * 组成html字符串
      */
@@ -144,12 +158,6 @@ foreach ($cursor as $document) {
 </nav>
 
 <div class="container">
-    <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
-                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
-        / <?php echo $title ?>
-    </div>
-
     <table>
         <tbody>
         <tr>
@@ -167,10 +175,16 @@ foreach ($cursor as $document) {
                 </div>
             </td>
         </tr>
-        </tbody>
         <!-- 回复内容-->
         <?php echo $reply_html_str ?>
+        </tbody>
     </table>
+
+    <div>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
+                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
+        / <?php echo $title ?>
+    </div>
 </div>
 
 <div class="container">
