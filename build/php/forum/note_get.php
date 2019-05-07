@@ -39,13 +39,13 @@ $file = '/workplace/log/log_note_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = $tag . " $content_id" . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
-$col_name = 'db_tag.' . $tag;
+$col_tag_name = 'db_tag.' . $tag;
 $filter = ['contentid' => $content_id];
 /** 不返回文章内容*/
 $options = ['limit' => 1];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery($col_name, $query);
+$cursor = $manager->executeQuery($col_tag_name, $query);
 $info = $cursor->toArray()[0];
 
 $author_id = $info->authorid;
@@ -63,13 +63,14 @@ $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
 /** 笔记翻页*/
+$db_reply_name = 'db_reply';
 $col_reply_name = 'db_reply.' . $tag;
 $query = [
     'count' => $col_reply_name,
     'query' => ['content_id' => $content_id]
 ];
 $command = new MongoDB\Driver\Command($query);
-$command_cursor = $manager->executeCommand($col_reply_name, $command);
+$command_cursor = $manager->executeCommand($db_reply_name, $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
 
