@@ -58,16 +58,9 @@ $content = $info->content;
 /** 笔记翻页*/
 $count_per_page = 20;
 
-//$query = [
-//    'count' => $col_reply_name,
-//    'query' => ['content_id' => $content_id]
-//];
-//$command = new MongoDB\Driver\Command($query);
-//$command_cursor = $manager->executeCommand($col_reply_name, $command);
-
-$col_reply_name = 'db_reply.' . $tag;
 $command = new MongoDB\Driver\Command([
-    'count' => $col_reply_name,
+        /** $tag 是 collection name */
+    'count' => $tag,
     'query' => ['content_id' => $content_id]
 ]);
 
