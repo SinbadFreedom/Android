@@ -155,9 +155,9 @@ foreach ($cursor as $document) {
                 <div class="row">
                     <span><b><?php echo $title ?></b></span>
                     <span class="ml-auto"><small><?php echo date("md H:i", $create_time) ?></small></span>
-                    <div>
-                        <span><?php echo $content ?></span>
-                    </div>
+                </div>
+                <div>
+                    <span><?php echo $content ?></span>
                 </div>
             </td>
         </tr>
