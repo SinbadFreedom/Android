@@ -75,6 +75,8 @@ $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand($db_reply_name, $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
+
+var_dump($total_count = $command_cursor->toArray());
 echo '--------------';
 echo '<br>';
 echo $page;

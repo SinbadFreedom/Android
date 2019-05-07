@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="424">
+              <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -137,7 +137,6 @@
       <find>content_tag</find>
       <find>$tag</find>
       <find>&lt;img src=&quot;' . $_SESSION['figureurl_qq']</find>
-      <find>$content_id</find>
       <find>intval</find>
       <find>$note_title_info</find>
       <find>db.content</find>
@@ -156,6 +155,7 @@
       <find>$col_reply_name</find>
       <find>$page_after_html_str</find>
       <find>content_id</find>
+      <find>$content_id</find>
     </findStrings>
     <replaceStrings>
       <replace>- 7.</replace>
@@ -495,21 +495,7 @@
       <workItem from="1557194713717" duration="2364000" />
       <workItem from="1557199681693" duration="636000" />
       <workItem from="1557211945342" duration="10519000" />
-      <workItem from="1557237263675" duration="4808000" />
-    </task>
-    <task id="LOCAL-00148" summary="1. 修改新建笔记链接">
-      <created>1556965719073</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1556965719073</updated>
-    </task>
-    <task id="LOCAL-00149" summary="1. 修改新建笔记链接">
-      <created>1556965915209</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1556965915209</updated>
+      <workItem from="1557237263675" duration="5213000" />
     </task>
     <task id="LOCAL-00150" summary="1. 修改新建笔记链接">
       <created>1556966046644</created>
@@ -840,11 +826,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557241714981</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="1. 修改评论翻页">
+      <created>1557242091268</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1557242091268</updated>
+    </task>
+    <task id="LOCAL-00198" summary="1. 修改评论翻页">
+      <created>1557242236577</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1557242236577</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306191000" />
+    <option name="totallyTimeSpent" value="306596000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1239,8 +1239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="424">
+          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
         </state>
       </provider>
     </entry>
