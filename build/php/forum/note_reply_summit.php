@@ -2,15 +2,18 @@
 session_start();
 date_default_timezone_set('PRC');
 
-if (!isset($_GET['note_tag'])) {
+if (!isset($_GET['tag'])) {
+    echo 'param error tag';
     return;
 }
 
 if (!isset($_GET['contentid'])) {
+    echo 'param error contentid';
     return;
 }
 
 if (!isset($_POST['reply'])) {
+    echo 'param error reply';
     return;
 }
 
@@ -29,13 +32,16 @@ if (!isset($_SESSION['user_id'])) {
     return;
 }
 
+/** GET参数*/
 $tag = $_GET['tag'];
 $content_id = $_GET['contentid'];
+/** POST参数*/
 $reply = $_POST['reply'];
-
+/** SESSION参数*/
 $nick_name = $_SESSION['nickname'];
 $user_id = $_SESSION['user_id'];
 $editor_figure = $_SESSION['figureurl_qq'];
+/** 时间戳*/
 $time_stamp = time();
 
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
