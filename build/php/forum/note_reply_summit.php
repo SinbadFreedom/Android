@@ -58,8 +58,19 @@ $note_reply_info = [
 ];
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert($note_reply_info);
-$db_collection_name = 'db_reply.' . $tag;
-$manager->executeBulkWrite($db_collection_name, $bulk);
+$col_reply_name = 'db_reply.' . $tag;
+$manager->executeBulkWrite($col_reply_name, $bulk);
+
+/** 修改最后编辑相关的标题信息，增加编辑次数*/
+$bulk = new MongoDB\Driver\BulkWrite;
+$bulk->update(
+    ['contentid' => intval($content_id)],
+    ['$set' => ['editor_id' => $user_id, 'editor_name' => $nick_name, 'edit_time' => $time_stamp],
+        '$inc' => ['comment_count' => 1]],
+    ['multi' => false, 'upsert' => false]
+);
+$col_tag_name = 'db_tag.' . $tag;
+$manager->executeBulkWrite($col_tag_name, $bulk);
 
 /** 更新redis的编辑时间 加入排序列表*/
 $redis = new Redis();
