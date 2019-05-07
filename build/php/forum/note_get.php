@@ -52,31 +52,22 @@ $author_id = $info->authorid;
 $author_name = $info->authorname;
 $author_figure = $info->author_figure;
 $create_time = $info->createtime;
-$content_id = $info->contentid;
 $title = $info->title;
 $content = $info->content;
-$comment_count = $info->commentcount;
-$create_date = date("md H:i", $create_time);
-/** 最后编辑用户的信息 初始为空*/
-$editor_id = $info->editorid;
-$editor_name = $info->editorname;
-$edit_time = $info->edittime;
 
 /** 笔记翻页*/
 $count_per_page = 20;
 
-$db_reply_name = 'db_reply';
 $col_reply_name = 'db_reply.' . $tag;
 $query = [
     'count' => $col_reply_name,
     'query' => ['content_id' => $content_id]
 ];
 $command = new MongoDB\Driver\Command($query);
-$command_cursor = $manager->executeCommand($db_reply_name, $command);
+$command_cursor = $manager->executeCommand($col_reply_name, $command);
 /** 笔记总条数 列表分页用*/
-$total_count = $command_cursor->toArray()[0]->n;
-
 print($command_cursor->toArray());
+$total_count = $command_cursor->toArray()[0]->n;
 echo '--------------';
 echo '<br>';
 echo $page;

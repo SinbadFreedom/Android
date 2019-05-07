@@ -64,7 +64,7 @@ $manager->executeBulkWrite($col_reply_name, $bulk);
 /** 修改最后编辑相关的标题信息，增加编辑次数*/
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->update(
-    ['contentid' => intval($content_id)],
+    ['contentid' => $content_id],
     ['$set' => ['editor_id' => $user_id, 'editor_name' => $nick_name, 'edit_time' => $time_stamp],
         '$inc' => ['comment_count' => 1]],
     ['multi' => false, 'upsert' => false]
