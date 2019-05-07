@@ -48,9 +48,8 @@ foreach ($res as $key => $value) {
     $content_id = intval($content_id_str);
     $col_name = 'db_tag.' . $tag;
     $filter = ['contentid' => $content_id];
-    $options = array(
-        'limit' => 1
-    );
+    /** 只返回标题相关内容，不返回文章内容*/
+    $options = ['limit' => 1, 'content' => 0];
     /** 根据tag和content_id查找对应的文章标题信息*/
     $query = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery($col_name, $query);

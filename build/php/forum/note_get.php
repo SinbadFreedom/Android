@@ -10,6 +10,11 @@ session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
+if (!isset($_GET['tag'])) {
+    echo 'param error tag';
+    return;
+}
+
 if (!isset($_GET['contentid'])) {
     echo 'param error contentid3';
     return;
@@ -17,11 +22,6 @@ if (!isset($_GET['contentid'])) {
 
 if (!is_numeric($_GET['contentid'])) {
     echo 'param error contentid4';
-    return;
-}
-
-if (!isset($_GET['tag'])) {
-    echo 'param error tag';
     return;
 }
 
@@ -35,7 +35,7 @@ $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 $col_name = 'db_tag.' . $tag;
 $filter = ['contentid' => $content_id];
 /** 不返回文章内容*/
-$options = ['content' => 0, 'limit' => 1];
+$options = ['limit' => 1];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
@@ -55,6 +55,49 @@ $editor_id = $info->editorid;
 $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
+/** 获取回复内容*/
+$col_name = 'db_reply.' . $tag;
+$filter = ['contentid' => $content_id];
+/** 最多返回20条回复*/
+$options = ['limit' => 20];
+/** 根据tag和content_id查找对应的文章标题信息*/
+$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $manager->executeQuery($col_name, $query);
+
+$reply_html_str = '';
+foreach ($cursor as $document) {
+    /**
+     * 回复数据
+     * 'editor_id' => $user_id,
+     * 'editor_name' => $nick_name,
+     * 'editor_figure' => $editor_figure,
+     * 'reply' => $reply,
+     * 'edit_time' => $time_stamp,
+     */
+    $document->editor_id;
+    $editor_name = $document->editor_name;
+    $editor_figure = $document->editor_figure;
+    $edit_time = $document->edit_time;
+    $reply = $document->reply;
+
+    /**
+     * 组成html字符串
+     */
+    $reply_html_str .= '<tr>
+            <td width="48px">
+                <img src="' . $editor_figure . '" width="48px" height="48px">
+                <span>' . $editor_name . '</span>
+            </td>
+            <td width="auto" valign="top">
+                <div>
+                    <span><small>' . $edit_time . '</small></span>
+                </div>
+                <div>
+                    <span>' . $reply . '</span>
+                </div>
+            </td>
+        </tr>';
+}
 ?>
 
 <!doctype html>
@@ -107,12 +150,6 @@ $edit_time = $info->edittime;
         / <?php echo $title ?>
     </div>
 
-    <div class="row">
-        <div class="ml-auto">
-            <button class="btn btn-success ml-auto" type="button">发表回复</button>
-        </div>
-    </div>
-
     <table>
         <tbody>
         <tr>
@@ -131,7 +168,47 @@ $edit_time = $info->edittime;
             </td>
         </tr>
         </tbody>
+        <!-- 回复内容-->
+        <?php echo $reply_html_str ?>
     </table>
 </div>
+
+<div class="container">
+    <form action="需要js替换的reply URL" method="post" id="note_reply">
+        <div class="form-group">
+            <label for="content_reply">发表回复</label>
+            <textarea class="form-control" id="content_reply" name="content_reply" rows="5"
+                      placeholder="请输入回复内容"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary ml-auto">发表回复</button>
+    </form>
+</div>
+
+<script>
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
+
+    var tag = getUrlParam('tag');
+    var content_id = getUrlParam('contentid');
+
+    var reply_rul = 'note_new_summit.php?tag=' + tag + '&contentid=' + content_id;
+    /** 替换 reply 的url*/
+    $('#note_reply').attr('action', reply_rul);
+</script>
+<script>
+    $("#note_reply").submit(function () {
+        var content_reply = $("#content_reply").val();
+        /** 这里是提交表单前的非空校验*/
+        if (content_reply === "" || !content_reply) {
+            alert("请输入回复内容");
+            return false;/*阻止表单提交*/
+        }
+        return true;
+    });
+</script>
 </body>
 </html>

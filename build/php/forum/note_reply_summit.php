@@ -2,15 +2,15 @@
 session_start();
 date_default_timezone_set('PRC');
 
-if (!isset($_POST['note_tag'])) {
+if (!isset($_GET['note_tag'])) {
     return;
 }
 
-if (!isset($_POST['title'])) {
+if (!isset($_GET['contentid'])) {
     return;
 }
 
-if (!isset($_POST['content'])) {
+if (!isset($_POST['reply'])) {
     return;
 }
 
@@ -25,51 +25,34 @@ if (!isset($_SESSION['figureurl_qq'])) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    echo 'param error user_id';
+    echo '请先登陆';
     return;
 }
 
-$tag = $_POST['note_tag'];
-$title = $_POST['title'];
-$content = $_POST['content'];
+$tag = $_GET['tag'];
+$content_id = $_GET['contentid'];
+$reply = $_POST['reply'];
 
 $nick_name = $_SESSION['nickname'];
 $user_id = $_SESSION['user_id'];
-
+$editor_figure = $_SESSION['figureurl_qq'];
 $time_stamp = time();
 
 //TODO 插入数据前 检测collection 是否存在，不存在则不插入
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
-/** 初始化content_id*/
-/** 生成自增id*/
-$query = array(
-    "findandmodify" => "col_increase",
-    "query" => ['table' => 'inc_content_id'],
-    "update" => ['$inc' => ['content_id_now' => 1]],
-    'upsert' => true,
-    'new' => true,
-    'fields' => ['content_id_now' => 1]
-);
-$command = new MongoDB\Driver\Command($query);
-$command_cursor = $manager->executeCommand('db_account', $command);
-$response = $command_cursor->toArray()[0];
-$content_id = $response->value->content_id_now;
-
-/** 标题信息*/
-$note_title_info = [
+/** 回复信息*/
+$note_reply_info = [
     'contentid' => $content_id,
-    'authorid' => $user_id,
-    'authorname' => $nick_name,
-    'author_figure' => $_SESSION['figureurl_qq'],
-    'title' => $title,
-    'content' => $content,
-    'createtime' => $time_stamp,
-    'comment_count' => 0
+    'editor_id' => $user_id,
+    'editor_name' => $nick_name,
+    'editor_figure' => $editor_figure,
+    'reply' => $reply,
+    'edit_time' => $time_stamp
 ];
 $bulk = new MongoDB\Driver\BulkWrite;
-$bulk->insert($note_title_info);
-$db_collection_name = 'db_tag.' . $tag;
+$bulk->insert($note_reply_info);
+$db_collection_name = 'db_reply.' . $tag;
 $manager->executeBulkWrite($db_collection_name, $bulk);
 
 /** 更新redis的编辑时间 加入排序列表*/

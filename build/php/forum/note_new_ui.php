@@ -57,7 +57,13 @@ session_start();
             <label for="content">内容:</label>
             <textarea class="form-control" id="content" name="content" rows="5" placeholder="请输入内容"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary ml-auto">提交</button>
+        <?php
+        if (isset($_SESSION['figureurl_qq'])) {
+            echo '<button type="submit" class="btn btn-primary ml-auto">提交</button>';
+        } else {
+            echo '<label class="btn btn-warning ml-auto">登录后方可提交</label>';
+        }
+        ?>
     </form>
 </div>
 
@@ -70,7 +76,6 @@ session_start();
         return null;
     }
 
-    /** 参数转为小写tag*/
     var tag = getUrlParam('tag');
     $('#note_tag').attr('value', tag);
 </script>
@@ -80,21 +85,23 @@ session_start();
         var title = $("#title").val();
         var content = $("#content").val();
         /** 这里是提交表单前的非空校验*/
-        if (tag == "" || tag == null || tag == undefined) {
+        if (tag === "" || !tag) {
             alert("请选择标签");
             return false;/*阻止表单提交*/
         }
 
-        if (title == "" || title == null || title == undefined) {
+        if (title === "" || !title) {
             alert("请输入标题");
             return false;/*阻止表单提交*/
-        } else if (content == "" || content == null || content == undefined) {
+        }
+
+        if (content === "" || !content) {
             alert("请输入内容");
             return false;/*阻止表单提交*/
-        } else {
-            return true;
         }
-    })
+
+        return true;
+    });
 </script>
 </body>
 </html>
