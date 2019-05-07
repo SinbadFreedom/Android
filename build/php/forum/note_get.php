@@ -75,7 +75,14 @@ $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand($db_reply_name, $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
-
+echo '--------------';
+echo '<br>';
+echo $page;
+echo '<br>';
+echo $total_count;
+echo '<br>';
+echo $count_per_page;
+echo '<br>';
 if ($total_count > 0) {
     /** 获取指定区间，分页用*/
     if ($count_per_page * $page > $total_count) {
@@ -85,6 +92,10 @@ if ($total_count > 0) {
 } else {
     $page = 0;
 }
+echo $page;
+echo '<br>';
+echo '--------------';
+
 /** 页数*/
 $page_current = $page + 1;
 $page_before = $page_current - 1;
