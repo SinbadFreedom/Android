@@ -105,7 +105,8 @@ if ($page_after >= $page_max) {
 
 $count_per_page = 20;
 $command_arr = [
-    "find" => $col_reply_name,
+    'find' => $col_reply_name,
+    'query' => ['content_id' => $content_id],
     /** 倒序显示评论，通过 _id倒叙排列*/
     'sort' => ['_id' => -1],
     // 显示数量控制
@@ -113,7 +114,6 @@ $command_arr = [
     // 分页使用
     'skip' => $count_per_page * $page
 ];
-
 
 var_dump($command_arr);
 
