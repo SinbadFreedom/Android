@@ -113,6 +113,10 @@ $command_arr = [
     // 分页使用
     'skip' => $count_per_page * $page
 ];
+
+
+var_dump($command_arr);
+
 $command = new MongoDB\Driver\Command($command_arr);
 $cursor = $manager->executeCommand($db_reply_name, $command);
 
