@@ -90,7 +90,7 @@ foreach ($cursor as $document) {
             </td>
             <td width="auto" valign="top">
                 <div class="row">
-                    <span class="ml-auto"><small>' . date("md H:i", $edit_time) . '</small></span>
+                    <span class="ml-auto"><small>' . date("m-d H:i", $edit_time) . '</small></span>
                 </div>
                 <div>
                     <span>' . $reply . '</span>
@@ -154,7 +154,7 @@ foreach ($cursor as $document) {
             <td width="100%" " valign="top">
                 <div class="row">
                     <span><b><?php echo $title ?></b></span>
-                    <span class="ml-auto"><small><?php echo date("md H:i", $create_time) ?></small></span>
+                    <span class="ml-auto"><small><?php echo date("m-d H:i", $create_time) ?></small></span>
                 </div>
                 <div>
                     <span><?php echo $content ?></span>
