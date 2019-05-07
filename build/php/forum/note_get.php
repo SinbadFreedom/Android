@@ -151,7 +151,7 @@ foreach ($cursor as $document) {
                 <img src="<?php echo $author_figure ?>" width="48px" height="48px">
                 <span><?php echo $author_name ?></span>
             </td>
-            <td width="auto" valign="top">
+            <td width="100%" " valign="top">
                 <div class="row">
                     <span><b><?php echo $title ?></b></span>
                     <span class="ml-auto"><small><?php echo date("md H:i", $create_time) ?></small></span>
