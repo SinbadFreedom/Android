@@ -103,16 +103,6 @@ if ($page_after >= $page_max) {
     $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '">后一页</a></li>';
 }
 
-///** 获取回复内容*/
-//$filter = ['content_id' => $content_id];
-///** 最多返回20条回复*/
-//$options = [
-//        'limit' => 20,
-//        'skip' => 20 * $page
-//];
-///** 根据tag和content_id查找对应的文章标题信息*/
-//$query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery($col_reply_name, $query);
 $count_per_page = 20;
 $command_arr = [
     "find" => $col_reply_name,
@@ -124,7 +114,7 @@ $command_arr = [
     'skip' => $count_per_page * $page
 ];
 $command = new MongoDB\Driver\Command($command_arr);
-$cursor = $manager->executeCommand($db_name, $command);
+$cursor = $manager->executeCommand($db_reply_name, $command);
 
 $reply_html_str = '';
 foreach ($cursor as $document) {
