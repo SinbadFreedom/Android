@@ -5,6 +5,7 @@
  * Date: 2019/3/15
  * Time: 12:20
  */
+
 session_start();
 
 error_reporting(E_ALL ^ E_NOTICE);
@@ -23,6 +24,12 @@ if (!isset($_GET['contentid'])) {
 if (!is_numeric($_GET['contentid'])) {
     echo 'param error contentid4';
     return;
+}
+
+/** 回复翻页，默认显示第一页*/
+$page = 0;
+if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = intval($_GET['page']);
 }
 
 $tag = $_GET['tag'];
@@ -55,14 +62,68 @@ $editor_id = $info->editorid;
 $editor_name = $info->editorname;
 $edit_time = $info->edittime;
 
-/** 获取回复内容*/
-$col_name = 'db_reply.' . $tag;
-$filter = ['content_id' => $content_id];
-/** 最多返回20条回复*/
-$options = ['limit' => 20];
-/** 根据tag和content_id查找对应的文章标题信息*/
-$query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery($col_name, $query);
+/** 笔记翻页*/
+$query = [
+    'count' => $col_name,
+    'query' => ['content_id' => $content_id]
+];
+$col_reply_name = 'db.reply.' . $tag;
+$command = new MongoDB\Driver\Command($query);
+$command_cursor = $manager->executeCommand($col_reply_name, $command);
+/** 笔记总条数 列表分页用*/
+$total_count = $command_cursor->toArray()[0]->n;
+
+if ($total_count > 0) {
+    /** 获取指定区间，分页用*/
+    if ($count_per_page * $page > $total_count) {
+        /** 上边界保护*/
+        $page = intval($total_count / $count_per_page);
+    }
+} else {
+    $page = 0;
+}
+/** 页数*/
+$page_current = $page + 1;
+$page_before = $page_current - 1;
+$page_after = $page_current + 1;
+$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . $page_current . '</a></li>';
+/** 前一页标签*/
+if ($page_before > 0) {
+    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '">前一页</a></li>';
+} else {
+    /** 第一页隐藏 上一页*/
+    $page_before_html_str = '';
+}
+/** 后一页标签*/
+if ($page_after >= $page_max) {
+    /** 最后页隐藏 下一页*/
+    $page_after_html_str = '';
+} else {
+    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '">后一页</a></li>';
+}
+
+///** 获取回复内容*/
+//$filter = ['content_id' => $content_id];
+///** 最多返回20条回复*/
+//$options = [
+//        'limit' => 20,
+//        'skip' => 20 * $page
+//];
+///** 根据tag和content_id查找对应的文章标题信息*/
+//$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $manager->executeQuery($col_reply_name, $query);
+$count_per_page = 20;
+$command_arr = [
+    "find" => $col_reply_name,
+    /** 倒序显示评论，通过 _id倒叙排列*/
+    'sort' => ['_id' => -1],
+    // 显示数量控制
+    'limit' => $count_per_page,
+    // 分页使用
+    'skip' => $count_per_page * $page
+];
+$command = new MongoDB\Driver\Command($command_arr);
+$cursor = $manager->executeCommand($db_name, $command);
 
 $reply_html_str = '';
 foreach ($cursor as $document) {
@@ -171,6 +232,13 @@ foreach ($cursor as $document) {
         <?php echo $reply_html_str ?>
         </tbody>
     </table>
+
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a></li>
+        <?php echo $page_before_html_str ?>
+        <?php echo $page_current_str ?>
+        <?php echo $page_after_html_str ?>
+    </ul>
 </div>
 
 <div class="container">
