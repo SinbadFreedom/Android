@@ -177,8 +177,7 @@ foreach ($cursor as $document) {
     <form action="需要js替换的reply URL" method="post" id="note_reply">
         <div class="form-group">
             <label for="content_reply">发表回复</label>
-            <textarea class="form-control" id="content_reply" name="content_reply" rows="5"
-                      placeholder="请输入回复内容"></textarea>
+            <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
         </div>
         <button type="submit" class="btn btn-primary ml-auto">发表回复</button>
     </form>
