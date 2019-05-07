@@ -75,11 +75,13 @@ echo $total_count;
 echo '<br>';
 echo $count_per_page;
 echo '<br>';
+$page_max = ceil($total_count / $count_per_page);
+echo $page_max;
 if ($total_count > 0) {
     /** 获取指定区间，分页用*/
-    if ($count_per_page * $page > $total_count) {
+    if ($page > $total_count) {
         /** 上边界保护*/
-        $page = intval($total_count / $count_per_page);
+        $page = $page_max;
     }
 } else {
     $page = 0;
