@@ -144,6 +144,12 @@ foreach ($cursor as $document) {
 </nav>
 
 <div class="container">
+    <div>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
+                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
+        / <?php echo $title ?>
+    </div>
+
     <table>
         <tbody>
         <tr>
@@ -165,12 +171,6 @@ foreach ($cursor as $document) {
         <?php echo $reply_html_str ?>
         </tbody>
     </table>
-
-    <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
-                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
-        / <?php echo $title ?>
-    </div>
 </div>
 
 <div class="container">
