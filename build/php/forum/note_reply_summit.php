@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_id'])) {
 
 /** GET参数*/
 $tag = $_GET['tag'];
-$content_id = $_GET['contentid'];
+$content_id = intval($_GET['contentid']);
 /** POST参数*/
 $reply = $_POST['reply'];
 /** SESSION参数*/
