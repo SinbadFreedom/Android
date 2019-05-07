@@ -63,7 +63,7 @@ foreach ($res as $key => $value) {
     $author_name = $info->authorname;
     $create_time = $info->createtime;
     $comment_count = $info->comment_count;
-    $create_date = date("md H:i", $create_time);
+    $create_date = date("m-d H:i", $create_time);
     /** 最后编辑用户的信息 初始为空，回复时赋值note_reply_summit.php*/
     $editor_id = $info->editor_id;
     $editor_name = $info->editor_name;
