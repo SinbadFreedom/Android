@@ -36,7 +36,7 @@ $exp = 1;
 $is_new = false;
 /** 根据openid 查找用户数据*/
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-$filter = ['openid' => $openid];
+$filter = ['openid' => $open_id];
 $options = array(
     'limit' => 1
 );
@@ -68,7 +68,7 @@ if ($user_info) {
     /** 插入用户表*/
     $bulkInsertUser = new MongoDB\Driver\BulkWrite();
     $bulkInsertUser->insert([
-        'openid' => $openid,
+        'openid' => $open_id,
         'access_token' => $access_token,
 
         'headimgurl' => $headimgurl,
