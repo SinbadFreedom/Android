@@ -69,4 +69,4 @@ $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
 /** 跳转到指定评论页面*/
 $url = 'note_get.php?tag=' . $tag . '$contentid=' . $content_id;
-echo '<script language = "javascript" type = "text/javascript">window.location.href=' . $url . '</script>';
+echo '<script language = "javascript" type = "text/javascript">window.location.href="' . $url . '"</script>';
