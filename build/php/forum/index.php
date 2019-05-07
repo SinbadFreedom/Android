@@ -76,7 +76,6 @@ foreach ($res as $key => $value) {
     }
 
     /** 文章url 跳到中文文章的评论区*/
-//    $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
     $content_url = '/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id;
     $tag_url = '/php/forum/index.php?tag=' . $tag;
     /**

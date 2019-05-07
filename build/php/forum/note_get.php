@@ -153,8 +153,12 @@ foreach ($cursor as $document) {
             </td>
             <td width="auto" valign="top">
                 <div>
-                    <span><b><?php echo $title ?></b></span>
-                    <span><small><?php echo $create_time ?></small></span>
+                    <div>
+                        <span><b><?php echo $title ?></b></span>
+                    </div>
+                    <div class="ml-auto">
+                        <span class=><small><?php echo date("md H:i", $create_time) ?></small></span>
+                    </div>
                 </div>
                 <div>
                     <span><?php echo $content ?></span>
