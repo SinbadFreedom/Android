@@ -67,6 +67,6 @@ $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
-/** 获取指定评论的内容*/
+/** 跳转到指定评论页面*/
 $url = 'note_get.php?tag=' . $tag . '$contentid=' . $content_id;
-require_once($url);
+echo '<script language = "javascript" type = "text/javascript">window.location.href=' . $url . '</script>';
