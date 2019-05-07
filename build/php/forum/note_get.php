@@ -104,7 +104,7 @@ if ($page_after >= $page_max) {
 }
 
 $count_per_page = 20;
-$filter = ['contentid' => $content_id];
+$filter = ['content_id' => $content_id];
 /** 只返回标题相关内容，不返回文章内容*/
 $options = [
     /** 按时间倒叙排列*/
