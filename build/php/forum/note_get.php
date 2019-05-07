@@ -75,11 +75,12 @@ echo $total_count;
 echo '<br>';
 echo $count_per_page;
 echo '<br>';
-$page_max = ceil($total_count / $count_per_page);
+$page_max = floor($total_count / $count_per_page);
+echo '<br>';
 echo $page_max;
 if ($total_count > 0) {
     /** 获取指定区间，分页用*/
-    if ($page > $total_count) {
+    if ($page > $page_max) {
         /** 上边界保护*/
         $page = $page_max;
     }
@@ -91,23 +92,20 @@ echo '<br>';
 echo '--------------';
 
 /** 页数*/
-$page_current = $page + 1;
-$page_before = $page_current - 1;
-$page_after = $page_current + 1;
-$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . $page_current . '</a></li>';
+$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . ($page + 1) . '</a></li>';
 /** 前一页标签*/
-if ($page_before > 0) {
-    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_before . '">前一页</a></li>';
+if ($page > 0) {
+    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page - 1) . '">前一页</a></li>';
 } else {
     /** 第一页隐藏 上一页*/
     $page_before_html_str = '';
 }
 /** 后一页标签*/
-if ($page_after >= $page_max) {
+if ($page < $page_max) {
+    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page + 1) . '">后一页</a></li>';
+} else {
     /** 最后页隐藏 下一页*/
     $page_after_html_str = '';
-} else {
-    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page_after . '">后一页</a></li>';
 }
 
 $filter = ['content_id' => $content_id];
