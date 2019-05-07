@@ -152,14 +152,8 @@ foreach ($cursor as $document) {
                 <span><?php echo $author_name ?></span>
             </td>
             <td width="auto" valign="top">
-                <div>
-                    <div>
-                        <span><b><?php echo $title ?></b></span>
-                    </div>
-                    <div class="ml-auto">
-                        <span class=><small><?php echo date("md H:i", $create_time) ?></small></span>
-                    </div>
-                </div>
+                <span><b><?php echo $title ?></b></span>
+                <span class="ml-auto"><small><?php echo date("md H:i", $create_time) ?></small></span>
                 <div>
                     <span><?php echo $content ?></span>
                 </div>
