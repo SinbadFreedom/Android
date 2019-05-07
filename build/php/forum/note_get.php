@@ -58,15 +58,22 @@ $content = $info->content;
 /** 笔记翻页*/
 $count_per_page = 20;
 
-$col_reply_name = 'db_reply.' . $tag;
-$query = [
+//$col_reply_name = 'db_reply.' . $tag;
+//$query = [
+//    'count' => $col_reply_name,
+//    'query' => ['content_id' => $content_id]
+//];
+//$command = new MongoDB\Driver\Command($query);
+//$command_cursor = $manager->executeCommand($col_reply_name, $command);
+
+$command = new MongoDB\Driver\Command([
     'count' => $col_reply_name,
     'query' => ['content_id' => $content_id]
-];
-$command = new MongoDB\Driver\Command($query);
-$command_cursor = $manager->executeCommand($col_reply_name, $command);
+]);
+
+$command_cursor = $manager->executeCommand('db_reply', $command);
 /** 笔记总条数 列表分页用*/
-print($command_cursor->toArray());
+var_dump($command_cursor->toArray());
 $total_count = $command_cursor->toArray()[0]->n;
 echo '--------------';
 echo '<br>';
