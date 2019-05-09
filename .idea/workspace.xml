@@ -6,22 +6,9 @@
     <bookmark url="file://$PROJECT_DIR$/build/index.php" line="15" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 修改评论翻页">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/content_add.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/content_get.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/forum/note_get.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/note_get.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/4.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/5.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/zh_cn/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/zh_cn/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/zh_cn/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/zh_cn/3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -33,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="199" column="9" lean-forward="true" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+            <state relative-caret-position="342">
+              <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -46,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="-300">
+              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -59,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="168" column="9" lean-forward="true" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+              <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -258,8 +245,8 @@
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
         <option value="$PROJECT_DIR$/build/php/forum/index.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
+        <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
       </list>
     </option>
   </component>
@@ -501,21 +488,7 @@
       <workItem from="1557211945342" duration="10519000" />
       <workItem from="1557237263675" duration="7228000" />
       <workItem from="1557317843707" duration="646000" />
-      <workItem from="1557384020734" duration="4763000" />
-    </task>
-    <task id="LOCAL-00161" summary="1. 调整文章数据结构">
-      <created>1557196704071</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1557196704072</updated>
-    </task>
-    <task id="LOCAL-00162" summary="1. 加入回复">
-      <created>1557225146815</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1557225146815</updated>
+      <workItem from="1557384020734" duration="5321000" />
     </task>
     <task id="LOCAL-00163" summary="1. 加入回复">
       <created>1557225891998</created>
@@ -846,11 +819,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557384296506</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="1. 修改文档笔记">
+      <created>1557394545014</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1557394545014</updated>
+    </task>
+    <task id="LOCAL-00211" summary="1. 修改文档笔记">
+      <created>1557394842421</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1557394842421</updated>
+    </task>
+    <option name="localTasksCounter" value="212" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314020000" />
+    <option name="totallyTimeSpent" value="314578000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -891,7 +878,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 建立index页面&#10;2. 优化笔记区显示 加入 jquery获取笔记&#10;3. 区分doc和catalog模板&#10;4. php tag 目录修改&#10;5. img css样式修改，移除边框，加入居中和大小自适应&#10;6. 修改log文件后缀 txt &gt; log" />
     <MESSAGE value="1. 优化网页样式" />
     <MESSAGE value="1. 加入QQ登录" />
     <MESSAGE value="1. 加入获取个人信息" />
@@ -916,7 +902,8 @@
     <MESSAGE value="1. 修改回复按钮状态" />
     <MESSAGE value="1. 修改最后编辑信息" />
     <MESSAGE value="1. 修改评论翻页" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改评论翻页" />
+    <MESSAGE value="1. 修改文档笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改文档笔记" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1224,7 +1211,7 @@
     <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="168" column="9" lean-forward="true" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+          <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1235,21 +1222,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="199" column="9" lean-forward="true" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+        <state relative-caret-position="342">
+          <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
     </entry>

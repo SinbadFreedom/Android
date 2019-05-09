@@ -267,6 +267,8 @@ if ($show_header == 1) {
     var reply_rul = 'note_reply_summit.php?tag=' + tag + '&contentid=' + content_id;
     /** 替换 reply 的url*/
     $('#note_reply').attr('action', reply_rul);
+
+    alert(reply_rul);
 </script>
 <script>
     $("#note_reply").submit(function () {
