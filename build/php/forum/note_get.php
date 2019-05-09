@@ -67,17 +67,7 @@ $command = new MongoDB\Driver\Command([
 $command_cursor = $manager->executeCommand('db_reply', $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
-echo '--------------';
-echo '<br>';
-echo $page;
-echo '<br>';
-echo $total_count;
-echo '<br>';
-echo $count_per_page;
-echo '<br>';
 $page_max = floor($total_count / $count_per_page);
-echo '<br>';
-echo $page_max;
 if ($total_count > 0) {
     /** 获取指定区间，分页用*/
     if ($page > $page_max) {
@@ -87,10 +77,6 @@ if ($total_count > 0) {
 } else {
     $page = 0;
 }
-echo $page;
-echo '<br>';
-echo '--------------';
-
 /** 页数*/
 $page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . ($page + 1) . '</a></li>';
 /** 前一页标签*/
