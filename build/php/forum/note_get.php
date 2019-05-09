@@ -35,6 +35,12 @@ if (isset($_GET['page']) && is_numeric($_GET['page'])) {
 $tag = $_GET['tag'];
 $content_id = intval($_GET['contentid']);
 
+/** 是否显示 header区，原文档不显示，自建标题显示*/
+$show_header = 1;
+if (isset($_GET['show_header'])) {
+    $show_header = intval($_GET['show_header']);
+}
+
 $file = '/workplace/log/log_note_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = $tag . " $content_id" . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);/** collection name*/;
@@ -59,7 +65,7 @@ $content = $info->content;
 $count_per_page = 20;
 
 $command = new MongoDB\Driver\Command([
-        /** $tag 是 collection name */
+    /** $tag 是 collection name */
     'count' => $tag,
     'query' => ['content_id' => $content_id]
 ]);
@@ -103,7 +109,7 @@ $options = [
     'limit' => $count_per_page,
     // 分页使用
     'skip' => $count_per_page * $page
-    ];
+];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
 $col_reply_name = 'db_reply.' . $tag;
@@ -144,8 +150,9 @@ foreach ($cursor as $document) {
         </tr>';
 }
 ?>
-
-<!doctype html>
+<?php
+if ($show_header == 1) {
+    echo '<!doctype html>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -175,18 +182,19 @@ foreach ($cursor as $document) {
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
+            <li class="nav-item">';
                 if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
+                    echo ' < a class="nav-link" href = "/php/user_info.php" ><img class="rounded" src = "' . $_SESSION['figureurl_qq'] . '" width = "24px" height = "24px" ></a > ';
                 } else {
-                    echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
+                    echo '<a class="nav-link" href = "/php/login_ui.php" ><b > 登录</b ></a > ';
                 }
-                ?>
-            </li>
+            echo '</li>
         </ul>
     </div>
-</nav>
+</nav>';
+};
+?>
+
 
 <div class="container">
     <div>
@@ -218,7 +226,9 @@ foreach ($cursor as $document) {
     </table>
 
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a></li>
+        <li class="page-item"><a class="page-link"
+                                 href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a>
+        </li>
         <?php echo $page_before_html_str ?>
         <?php echo $page_current_str ?>
         <?php echo $page_after_html_str ?>

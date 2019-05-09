@@ -103,7 +103,7 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
 <script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "/php/forum/content_get.php?tag=python3.7.2&contentid=1";
+    var url = "/php/forum/note_get.php?tag=python3.7.2&contentid=1&show_header=0";
     $.ajax({
         url: url,
         type: "GET",
