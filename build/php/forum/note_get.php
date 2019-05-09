@@ -150,9 +150,8 @@ foreach ($cursor as $document) {
         </tr>';
 }
 ?>
-<?php
-if ($show_header == 1) {
-    echo '<!doctype html>
+
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -163,8 +162,9 @@ if ($show_header == 1) {
     <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
-
-<div style="background: #2196F3">
+<?php
+if ($show_header == 1) {
+    echo '<div style="background: #2196F3">
     <img src="/img/web_1.png">
 </div>
 
