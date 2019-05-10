@@ -197,11 +197,8 @@ if ($show_header == 1) {
 </nav>
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
-                href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
-        / <?php echo $title ?>
-    </div>
-</div>';
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag='. $tag . '">&nbsp' . $tag . '&nbsp</a>/' . $title . '</div>
+    </div>';
 };
 ?>
 
