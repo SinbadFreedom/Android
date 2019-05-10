@@ -144,7 +144,7 @@ foreach ($cursor as $document) {
                     <span>' . $editor_name . '</span>
                 </div>
             </td>
-            <td width="auto" valign="top">
+            <td width="100%" valign="top">
                 <div class="row">
                     <span class="ml-auto"><small>' . date("m-d H:i", $edit_time) . '</small></span>
                 </div>
@@ -211,18 +211,22 @@ if ($show_header == 1) {
     <table>
         <tbody>
         <tr>
-            <td width="96px">
+            <td style="width: 96px" >
                 <img src="<?php echo $author_figure ?>" width="48px" height="48px">
                 <div class="text-center">
                     <span><?php echo $author_name ?></span>
                 </div>
             </td>
-            <td width="auto" valign="top">
+            <td valign="top">
                 <div class="row">
-                    <span><b><?php echo $title ?></b></span>
-                    <span class="m-auto"><h6><?php echo date("m-d H:i", $create_time) ?></h6></span>
+                    <div>
+                        <span><b><?php echo $title ?></b></span>
+                    </div>
+                    <div class="ml-auto">
+                        <span><h6><?php echo date("m-d H:i", $create_time) ?></h6></span>
+                    </div>
                 </div>
-                <div>
+                <div style="width: 100%">
                     <span><?php echo $content ?></span>
                 </div>
             </td>
