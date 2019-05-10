@@ -57,6 +57,9 @@ $info = $cursor->toArray()[0];
 $author_id = $info->authorid;
 $author_name = $info->authorname;
 $author_figure = $info->author_figure;
+if (!$author_figure) {
+    $author_figure = '/head_img/0.jpg';
+}
 $create_time = $info->createtime;
 $title = $info->title;
 $content = $info->content;
@@ -208,7 +211,7 @@ if ($show_header == 1) {
         <tr>
             <td width="48px">
                 <img src="<?php echo $author_figure ?>" width="48px" height="48px">
-                <span><?php echo $author_name ?></span>
+                <h6><?php echo $author_name ?></h6>
             </td>
             <td width="100%" valign="top">
                 <div class="row">

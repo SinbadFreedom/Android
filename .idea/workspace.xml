@@ -23,11 +23,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="199" column="189" lean-forward="true" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="189" />
+            <state relative-caret-position="193">
+              <caret line="60" column="31" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="31" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/head_img/0.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="101" column="14" lean-forward="true" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="42" column="121" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -42,37 +65,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3192">
-              <caret line="152" column="9" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
               <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="70" column="32" lean-forward="true" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -139,8 +135,6 @@
       <find>$editor_id</find>
       <find>editor_id</find>
       <find>$author_id</find>
-      <find>$author_figure</find>
-      <find>$author_name</find>
       <find>$title</find>
       <find>$create_date</find>
       <find>$content</find>
@@ -154,7 +148,9 @@
       <find>需要js替换的reply URL</find>
       <find>getUrlParam</find>
       <find>reply_rul</find>
+      <find>$author_name</find>
       <find>php echo $tag</find>
+      <find>$author_figure</find>
     </findStrings>
     <replaceStrings>
       <replace>- 7.</replace>
@@ -237,7 +233,6 @@
         <option value="$PROJECT_DIR$/build/php/user_login.php" />
         <option value="$PROJECT_DIR$/build/php/login_back_end_qq.php" />
         <option value="$PROJECT_DIR$/build/php/forum/content_add.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/forum_init.php" />
         <option value="$PROJECT_DIR$/build/php/forum/title_get.php" />
         <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/index.php" />
@@ -254,6 +249,7 @@
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
         <option value="$PROJECT_DIR$/build/php/login_ui.php" />
         <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
+        <option value="$PROJECT_DIR$/build/php/forum/forum_init.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
       </list>
     </option>
@@ -287,6 +283,12 @@
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="head_img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -497,21 +499,7 @@
       <workItem from="1557237263675" duration="7228000" />
       <workItem from="1557317843707" duration="646000" />
       <workItem from="1557384020734" duration="6730000" />
-      <workItem from="1557455180977" duration="3256000" />
-    </task>
-    <task id="LOCAL-00169" summary="1. 修改变量名">
-      <created>1557226844427</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1557226844427</updated>
-    </task>
-    <task id="LOCAL-00170" summary="1. 修改变量名">
-      <created>1557227051754</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1557227051754</updated>
+      <workItem from="1557455180977" duration="3713000" />
     </task>
     <task id="LOCAL-00171" summary="1. 修改变量名">
       <created>1557227134602</created>
@@ -842,11 +830,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557458838843</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="1. 修复笔记标签导航url">
+      <created>1557459345835</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1557459345835</updated>
+    </task>
+    <task id="LOCAL-00219" summary="1. 修改文档的作者名">
+      <created>1557459410051</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1557459410051</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319243000" />
+    <option name="totallyTimeSpent" value="319700000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -887,8 +889,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修改log目录" />
-    <MESSAGE value="1. 删除log目录" />
     <MESSAGE value="1. 加入 gitignore" />
     <MESSAGE value="1. 修改qq登录" />
     <MESSAGE value="1. 修改q登陆" />
@@ -912,7 +912,9 @@
     <MESSAGE value="1. 修改登陆来路域名，完成后跳转回去。" />
     <MESSAGE value="1. 移除文档笔记中的面包屑导航" />
     <MESSAGE value="1. 修改笔记中的reply_url，由js改为php" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改笔记中的reply_url，由js改为php" />
+    <MESSAGE value="1. 修复笔记标签导航url" />
+    <MESSAGE value="1. 修改文档的作者名" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改文档的作者名" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -923,19 +925,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/php/template/rank_list_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3.7.2/zh_cn/version.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/zh_cn/catalog.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1143,13 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/content_add.php" />
     <entry file="file://$PROJECT_DIR$/build/php/forum/content_get.php" />
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get_ui.php" />
@@ -1216,10 +1198,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="42" column="121" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="101" column="14" lean-forward="true" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/head_img/0.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="199" column="189" lean-forward="true" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="189" />
+        <state relative-caret-position="193">
+          <caret line="60" column="31" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="31" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
