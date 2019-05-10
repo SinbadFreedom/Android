@@ -140,7 +140,9 @@ foreach ($cursor as $document) {
     $reply_html_str .= '<tr>
             <td width="96px">
                 <img src="' . $editor_figure . '" width="48px" height="48px">
-                <span>' . $editor_name . '</span>
+                <div class="text-center">
+                    <span>' . $editor_name . '</span>
+                </div>
             </td>
             <td width="auto" valign="top">
                 <div class="row">

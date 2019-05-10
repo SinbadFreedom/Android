@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="60" column="31" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="31" />
+            <state relative-caret-position="399">
+              <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -121,10 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>href=&quot;/php/login.php&quot;&gt;&lt;b&gt;登录&lt;/b&gt;</find>
-      <find>dat</find>
-      <find>date</find>
-      <find>date(</find>
       <find>content_get.php</find>
       <find>'skip' =&gt;</find>
       <find>$db_name</find>
@@ -151,6 +147,10 @@
       <find>$author_name</find>
       <find>php echo $tag</find>
       <find>$author_figure</find>
+      <find>100%</find>
+      <find>auto</find>
+      <find>$edit_time</find>
+      <find>48</find>
     </findStrings>
     <replaceStrings>
       <replace>- 7.</replace>
@@ -499,21 +499,7 @@
       <workItem from="1557237263675" duration="7228000" />
       <workItem from="1557317843707" duration="646000" />
       <workItem from="1557384020734" duration="6730000" />
-      <workItem from="1557455180977" duration="3713000" />
-    </task>
-    <task id="LOCAL-00171" summary="1. 修改变量名">
-      <created>1557227134602</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1557227134602</updated>
-    </task>
-    <task id="LOCAL-00172" summary="1. 修改变量名">
-      <created>1557227191795</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1557227191795</updated>
+      <workItem from="1557455180977" duration="5497000" />
     </task>
     <task id="LOCAL-00173" summary="1. 修改变量名">
       <created>1557227387731</created>
@@ -844,11 +830,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557459410051</updated>
     </task>
-    <option name="localTasksCounter" value="220" />
+    <task id="LOCAL-00220" summary="1. 设置默认头像">
+      <created>1557459783934</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1557459783934</updated>
+    </task>
+    <task id="LOCAL-00221" summary="1. 调整作者头像和名字区域">
+      <created>1557461453870</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1557461453870</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319700000" />
+    <option name="totallyTimeSpent" value="321484000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -889,8 +889,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 加入 gitignore" />
-    <MESSAGE value="1. 修改qq登录" />
     <MESSAGE value="1. 修改q登陆" />
     <MESSAGE value="1. 舍掉web q登陆" />
     <MESSAGE value="1. 舍掉web 添加笔记" />
@@ -914,7 +912,9 @@
     <MESSAGE value="1. 修改笔记中的reply_url，由js改为php" />
     <MESSAGE value="1. 修复笔记标签导航url" />
     <MESSAGE value="1. 修改文档的作者名" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改文档的作者名" />
+    <MESSAGE value="1. 设置默认头像" />
+    <MESSAGE value="1. 调整作者头像和名字区域" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 调整作者头像和名字区域" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1217,8 +1217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="31" />
+        <state relative-caret-position="399">
+          <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
