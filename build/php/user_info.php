@@ -81,7 +81,7 @@ if ($user_id) {
             </div>
         </div>
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-1 col-form-label">注册日期:</label>
+            <label for="staticEmail" class="col-sm-1 col-form-label">注册:</label>
             <div class="col-sm-11">
                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
                        value="<?php echo date('Y-m-d', $create_time) ?>">
