@@ -149,6 +149,9 @@ foreach ($cursor as $document) {
             </td>
         </tr>';
 }
+
+$reply_rul = 'note_reply_summit.php?tag=' . $tag . '&contentid=' . $content_id;
+
 ?>
 
 <!doctype html>
@@ -236,7 +239,7 @@ if ($show_header == 1) {
 </div>
 
 <div class="container">
-    <form action="需要js替换的reply URL" method="post" id="note_reply">
+    <form action="<?php echo $reply_rul; ?>" method="post" id="note_reply">
         <div class="form-group">
             <label for="content_reply">发表回复</label>
             <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
@@ -253,23 +256,23 @@ if ($show_header == 1) {
 
 <script src="/lib/jquery-3.2.1.min.js"></script>
 
-<script>
-    function getUrlParam(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return decodeURI(r[2]);
-        return null;
-    }
-
-    var tag = getUrlParam('tag');
-    var content_id = getUrlParam('contentid');
-
-    var reply_rul = 'note_reply_summit.php?tag=' + tag + '&contentid=' + content_id;
-    /** 替换 reply 的url*/
-    $('#note_reply').attr('action', reply_rul);
-
-    alert(reply_rul);
-</script>
+<!--<script>-->
+<!--    function getUrlParam(name) {-->
+<!--        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");-->
+<!--        var r = window.location.search.substr(1).match(reg);-->
+<!--        if (r != null) return decodeURI(r[2]);-->
+<!--        return null;-->
+<!--    }-->
+<!---->
+<!--    var tag = getUrlParam('tag');-->
+<!--    var content_id = getUrlParam('contentid');-->
+<!---->
+<!--    var reply_rul = 'note_reply_summit.php?tag=' + tag + '&contentid=' + content_id;-->
+<!--    /** 替换 reply 的url*/-->
+<!--    $('#note_reply').attr('action', reply_rul);-->
+<!---->
+<!--    alert(reply_rul);-->
+<!--</script>-->
 <script>
     $("#note_reply").submit(function () {
         var reply = $("#reply").val();
