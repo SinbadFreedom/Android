@@ -138,7 +138,7 @@ foreach ($cursor as $document) {
      * 组成html字符串
      */
     $reply_html_str .= '<tr>
-            <td width="48px">
+            <td width="96px">
                 <img src="' . $editor_figure . '" width="48px" height="48px">
                 <span>' . $editor_name . '</span>
             </td>
@@ -209,14 +209,16 @@ if ($show_header == 1) {
     <table>
         <tbody>
         <tr>
-            <td width="48px">
+            <td width="96px">
                 <img src="<?php echo $author_figure ?>" width="48px" height="48px">
-                <h6><?php echo $author_name ?></h6>
+                <div class="text-center">
+                    <span><?php echo $author_name ?></span>
+                </div>
             </td>
-            <td width="100%" valign="top">
+            <td width="auto" valign="top">
                 <div class="row">
                     <span><b><?php echo $title ?></b></span>
-                    <span class="ml-auto"><small><?php echo date("m-d H:i", $create_time) ?></small></span>
+                    <span class="m-auto"><h6><?php echo date("m-d H:i", $create_time) ?></h6></span>
                 </div>
                 <div>
                     <span><?php echo $content ?></span>
@@ -256,23 +258,6 @@ if ($show_header == 1) {
 
 <script src="/lib/jquery-3.2.1.min.js"></script>
 
-<!--<script>-->
-<!--    function getUrlParam(name) {-->
-<!--        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");-->
-<!--        var r = window.location.search.substr(1).match(reg);-->
-<!--        if (r != null) return decodeURI(r[2]);-->
-<!--        return null;-->
-<!--    }-->
-<!---->
-<!--    var tag = getUrlParam('tag');-->
-<!--    var content_id = getUrlParam('contentid');-->
-<!---->
-<!--    var reply_rul = 'note_reply_summit.php?tag=' + tag + '&contentid=' + content_id;-->
-<!--    /** 替换 reply 的url*/-->
-<!--    $('#note_reply').attr('action', reply_rul);-->
-<!---->
-<!--    alert(reply_rul);-->
-<!--</script>-->
 <script>
     $("#note_reply").submit(function () {
         var reply = $("#reply").val();
