@@ -7,7 +7,7 @@ $time_stamp = time();
 
 /** id 为 0采用默认图片*/
 $author_id = 0;
-$author_name = "系统";
+$author_name = "熊猫文档";
 
 /** python3.7.2*/
 $tag = 'python3.7.2';
