@@ -245,7 +245,7 @@ if ($show_header == 1) {
         if (isset($_SESSION['figureurl_qq'])) {
             echo '<button type="submit" class="btn btn-primary ml-auto">发表回复</button>';
         } else {
-            echo '<label class="btn btn-warning ml-auto">登录后方可回复</label>';
+            echo '<a href="/php/login_ui.php"><button type="button" class="btn btn-warning ml-auto">登录后方可回复</button></a>';
         }
         ?>
     </form>

@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+/** 获取完整的来路URL 记录session,登陆完成后跳转回去*/
+$url = $_SERVER["HTTP_REFERER"];
+$_SESSION['from_url'] = $url;
+
 ?>
 <!DOCTYPE html>
 <html lang="zh_CN">

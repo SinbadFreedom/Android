@@ -92,5 +92,7 @@ $_SESSION['figureurl_qq'] = $arr['figureurl_qq'];
 $_SESSION['nickname'] = $arr['nickname'];
 $_SESSION['user_id'] = $user_id;
 
-header("Location: ../../index.php");
+/** login_ui.php中记录来路url，完成登陆，跳转回去*/
+$from_url = $_SESSION['from_url'];
+header("Location: $from_url");
 return;
