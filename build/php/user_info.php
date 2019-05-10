@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+require_once('util_level.php');
+
 $user_id = $_SESSION['user_id'];
 
 if ($user_id) {
@@ -9,12 +12,15 @@ if ($user_id) {
     $query_find = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery('db_account.col_user', $query_find);
     $user_info = $cursor->toArray()[0];
-    var_dump($user_info);
+    /** 用户显示信息*/
     $head_img_url = $user_info->headimgurl;
     $nick_name = $user_info->nickname;
     $sex = $user_info->sex;
     $exp = $user_info->exp;
     $create_time = $user_info->create_time;
+    /** 计算等级和最大经验*/
+    $level = getLevelByExp($exp);
+    $exp_max = getLevelExpMax($level);
 }
 ?>
 <!DOCTYPE html>
@@ -67,7 +73,10 @@ if ($user_id) {
         <span>昵称:</span><span><?php echo $nick_name ?></span>
     </div>
     <div>
-        <span>经验:</span><span><?php echo $exp ?></span>
+        <span>等级:</span><span><?php echo $level ?></span>
+    </div>
+    <div>
+        <span>经验:</span><span><?php echo $exp . '/' . $exp_max;?></span>
     </div>
 </div>
 

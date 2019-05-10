@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/rank_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/rank_list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/user_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/user_info.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -37,11 +38,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/user_info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="69" column="29" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="29" />
+            <state relative-caret-position="267">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="144" column="25" lean-forward="true" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/util_level.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="635">
+              <caret line="117" column="23" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -96,24 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_ui.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1239">
-              <caret line="59" selection-start-line="59" selection-end-line="65" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply_summit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -126,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$db_name</find>
       <find>$col_name</find>
       <find>$col_reply_name</find>
       <find>content_id</find>
@@ -156,6 +157,7 @@
       <find>48</find>
       <find>$nick_name</find>
       <find>$head_img_url</find>
+      <find>getLevelByExp</find>
     </findStrings>
     <replaceStrings>
       <replace>- 7.</replace>
@@ -205,8 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/md/python3.7.2/zh_cn/index.html" />
-        <option value="$PROJECT_DIR$/md/python3.7.2/zh_cn/1.md" />
         <option value="$PROJECT_DIR$/md/python3.7.2/zh_cn/2.md" />
         <option value="$PROJECT_DIR$/md/python3.7.2/zh_cn/3.md" />
         <option value="$PROJECT_DIR$/md/python3.7.2/en/1.md" />
@@ -241,7 +241,6 @@
         <option value="$PROJECT_DIR$/build/php/forum/title_get.php" />
         <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/index.php" />
-        <option value="$PROJECT_DIR$/build/php/rank_list.php" />
         <option value="$PROJECT_DIR$/build/php/forum/content_get.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_reply.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_reply_ui.php" />
@@ -255,6 +254,9 @@
         <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
         <option value="$PROJECT_DIR$/build/php/forum/forum_init.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
+        <option value="$PROJECT_DIR$/build/php/util_exp.php" />
+        <option value="$PROJECT_DIR$/build/php/rank_list.php" />
+        <option value="$PROJECT_DIR$/build/php/util_level.php" />
         <option value="$PROJECT_DIR$/build/php/user_info.php" />
       </list>
     </option>
@@ -504,21 +506,7 @@
       <workItem from="1557237263675" duration="7228000" />
       <workItem from="1557317843707" duration="646000" />
       <workItem from="1557384020734" duration="6730000" />
-      <workItem from="1557455180977" duration="9570000" />
-    </task>
-    <task id="LOCAL-00175" summary="1. 修改变量名">
-      <created>1557227783260</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1557227783260</updated>
-    </task>
-    <task id="LOCAL-00176" summary="1. 修改变量名">
-      <created>1557227849673</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1557227849673</updated>
+      <workItem from="1557455180977" duration="10393000" />
     </task>
     <task id="LOCAL-00177" summary="1. 修改变量名">
       <created>1557228078175</created>
@@ -849,11 +837,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557462527322</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <task id="LOCAL-00224" summary="1. 修改用户信息页">
+      <created>1557478174575</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1557478174575</updated>
+    </task>
+    <task id="LOCAL-00225" summary="1. 修改用户信息页">
+      <created>1557478332110</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1557478332110</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325557000" />
+    <option name="totallyTimeSpent" value="326380000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -894,7 +896,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修改q登陆" />
     <MESSAGE value="1. 舍掉web q登陆" />
     <MESSAGE value="1. 舍掉web 添加笔记" />
     <MESSAGE value="1. 加入rank list标签" />
@@ -919,7 +920,8 @@
     <MESSAGE value="1. 修改文档的作者名" />
     <MESSAGE value="1. 设置默认头像" />
     <MESSAGE value="1. 调整作者头像和名字区域" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 调整作者头像和名字区域" />
+    <MESSAGE value="1. 修改用户信息页" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改用户信息页" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -930,9 +932,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/md/python3.7.2/zh_cn/catalog.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/template/note_list_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1091,13 +1090,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/title_get.php" />
-    <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6993">
-          <caret line="333" column="93" selection-start-line="333" selection-start-column="93" selection-end-line="333" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3444">
@@ -1225,12 +1217,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="144" column="25" lean-forward="true" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/util_level.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="117" column="23" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/user_info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="267">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
