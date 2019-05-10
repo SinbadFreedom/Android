@@ -60,14 +60,14 @@ if ($user_id) {
 </nav>
 
 <div class="container">
-    <div class="mr-auto">
+    <div style="width: 140px; height: 140px">
         <img src="<?php echo $head_img_url ?>">
     </div>
     <div>
-        <span><?php echo $nick_name ?></span>
+        <span>昵称:</span><span><?php echo $nick_name ?></span>
     </div>
     <div>
-        <span><?php echo $exp ?></span>
+        <span>经验:</span><span><?php echo $exp ?></span>
     </div>
 </div>
 
