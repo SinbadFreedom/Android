@@ -69,38 +69,38 @@ if ($user_id) {
 <div class="container">
     <form>
         <div class="form-group row">
-            <img src="<?php echo $head_img_url ?>">
+            <div class="mr-auto">
+                <img src="<?php echo $head_img_url ?>">
+            </div>
         </div>
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">昵称:</label>
-            <div class="col-sm-10">
+            <label for="staticEmail" class="col-sm-1 col-form-label">昵称:</label>
+            <div class="col-sm-11">
                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
                        value="<?php echo $nick_name ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">等级:</label>
-            <div class="col-sm-10">
+            <label for="inputPassword" class="col-sm-1 col-form-label">等级:</label>
+            <div class="col-sm-11">
                 <input type="text" readonly class="form-control-plaintext" id="inputPassword"
                        value="<?php echo $level ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputExp" class="col-sm-2 col-form-label">经验:</label>
-            <div class="col-sm-10">
+            <label for="inputExp" class="col-sm-1 col-form-label">经验:</label>
+            <div class="col-sm-11">
                 <input type="text" readonly class="form-control-plaintext" id="inputExp"
                        value="<?php echo $exp . '/' . $exp_max; ?>">
             </div>
         </div>
-        <div class="form-group row">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-                     style="width: <?php echo $percent ?>%" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0"
-                     aria-valuemax="<?php echo $exp_max ?>">
-                </div>
-            </div>
-        </div>
     </form>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+             style="width: <?php echo $percent ?>%" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0"
+             aria-valuemax="<?php echo $exp_max ?>">
+        </div>
+    </div>
 </div>
 
 </body>
