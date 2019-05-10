@@ -184,25 +184,25 @@ if ($show_header == 1) {
         <ul class="navbar-nav">
             <li class="nav-item">';
                 if (isset($_SESSION['figureurl_qq'])) {
-                    echo ' < a class="nav-link" href = "/php/user_info.php" ><img class="rounded" src = "' . $_SESSION['figureurl_qq'] . '" width = "24px" height = "24px" ></a > ';
+                    echo '<a class="nav-link" href="/php/user_info.php" ><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width = "24px" height = "24px" ></a > ';
                 } else {
-                    echo '<a class="nav-link" href = "/php/login_ui.php" ><b > 登录</b ></a > ';
+                    echo '<a class="nav-link" href="/php/login_ui.php" ><b>登录</b></a>';
                 }
             echo '</li>
         </ul>
     </div>
-</nav>';
-};
-?>
-
-
+</nav>
 <div class="container">
     <div>
         <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a
                 href="/php/forum/index.php?tag=<?php echo $tag ?>">&nbsp<?php echo $tag ?>&nbsp</a>
         / <?php echo $title ?>
     </div>
+</div>';
+};
+?>
 
+<div class="container">
     <table>
         <tbody>
         <tr>
