@@ -21,6 +21,7 @@ if ($user_id) {
     /** 计算等级和最大经验*/
     $level = getLevelByExp($exp);
     $exp_max = getLevelExpMax($level);
+    $percent = intval($exp * 100 / $exp_max);
 }
 ?>
 <!DOCTYPE html>
@@ -77,6 +78,9 @@ if ($user_id) {
     </div>
     <div>
         <span>经验:</span><span><?php echo $exp . '/' . $exp_max;?></span>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <?php echo $percent ?>%" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0" aria-valuemax="<?php echo $exp_max ?>"></div>
     </div>
 </div>
 
