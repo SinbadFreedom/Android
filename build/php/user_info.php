@@ -67,21 +67,40 @@ if ($user_id) {
 </nav>
 
 <div class="container">
-    <div style="width: 140px; height: 140px">
-        <img src="<?php echo $head_img_url ?>">
-    </div>
-    <div>
-        <span>昵称:</span><span><?php echo $nick_name ?></span>
-    </div>
-    <div>
-        <span>等级:</span><span><?php echo $level ?></span>
-    </div>
-    <div>
-        <span>经验:</span><span><?php echo $exp . '/' . $exp_max;?></span>
-    </div>
-    <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <?php echo $percent ?>%" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0" aria-valuemax="<?php echo $exp_max ?>"></div>
-    </div>
+    <form>
+        <div class="form-group row">
+            <img src="<?php echo $head_img_url ?>">
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">昵称:</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                       value="<?php echo $nick_name ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">等级:</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="inputPassword"
+                       value="<?php echo $level ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputExp" class="col-sm-2 col-form-label">经验:</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="inputExp"
+                       value="<?php echo $exp . '/' . $exp_max; ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                     style="width: <?php echo $percent ?>%" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0"
+                     aria-valuemax="<?php echo $exp_max ?>">
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 </body>
