@@ -27,10 +27,6 @@ $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJ
 /** 每日经验上限是一天的分钟数, exp_today 记录当天获取的经验数，通过crontab/reset_exp_day.php 每日0点重置*/
 $exp_today_max = 60 * 24;
 
-echo '<br>';
-echo $user_id;
-echo '<br>';
-
 $query = [
     "findandmodify" => "col_user",
     "query" => ['user_id' => $user_id, 'exp_day' => ['$lt' => $exp_today_max]],
@@ -44,10 +40,6 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
-
-echo '<br>';
-var_dump($response);
-echo '<br>';
 
 /** 获取新用户id*/
 $res = new stdClass();
@@ -63,10 +55,6 @@ if ($response->value) {
 } else {
     $res->state = -1;
 }
-
-echo '<br>';
-var_dump($res);
-echo '<br>';
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {
