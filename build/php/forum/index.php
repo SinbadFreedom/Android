@@ -20,7 +20,8 @@ if (isset($_GET['page'])) {
 }
 /** 每页显示条数*/
 $count_per_page = 20;
-
+/** 文档tag集合，文档笔记的url特殊处理，指向文档url的笔记区*/
+$doc_tag_arr = ['python3.7.2'];
 /** 是否显示 header区，原文档不显示，自建标题显示*/
 $show_header = 1;
 if (isset($_GET['show_header'])) {
@@ -45,7 +46,7 @@ if ($page > $page_max) {
 $start = $count_per_page * $page;
 $res = $redis->zrevrange($tag, $start, $start + $count_per_page - 1, true);
 /** 拼接html*/
-$titles_str .= '<tbody>';
+$note_list .= '<tbody>';
 foreach ($res as $key => $value) {
     /** $key 格式 Python3.7.2_2 $tag_$content_id*/
     $pos = strrpos($key, '_');
@@ -81,8 +82,21 @@ foreach ($res as $key => $value) {
         $time_diff_str = time2Units($diff) . '前';
     }
 
-    /** 文章url 跳到中文文章的评论区*/
-    $content_url = '/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id;
+    /** 判断tag是为文档tag*/
+    $is_doc_tag = in_array($tag, $doc_tag_arr);
+    if ($is_doc_tag) {
+        /**
+         * 系统文档笔记url示例 统一采用中文笔记url:
+         * http://panda-doc.com/python3.7.2/zh_cn/1.php
+         */
+        $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php';
+    } else {
+        /**
+         * 自建笔记url示例
+         * http://panda-doc.com/php/forum/note_get.php?tag=%E7%81%8C%E6%B0%B4%E4%B9%90%E5%9B%AD&contentid=100038
+         */
+        $content_url = '/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id;
+    }
     $tag_url = '/php/forum/index.php?tag=' . $tag;
     /**
      * 单个标题格式
@@ -107,7 +121,7 @@ foreach ($res as $key => $value) {
      * </td>
      * </tr>
      */
-    $titles_str .= '<tr>
+    $note_list .= '<tr>
             <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">
             <b>' . $comment_count . '</b>
         </td>
@@ -124,7 +138,7 @@ foreach ($res as $key => $value) {
     <a href="' . $tag_url . '">[' . $tag . ']</a>&nbsp' . $author_name . '&nbsp<span>' . $create_date . '</span><span>&nbsp' . $editor_name . '&nbsp</span>' . $time_diff_str . '</td></tr>';
 }
 
-$titles_str .= '</tbody>';
+$note_list .= '</tbody>';
 
 function time2Units($time)
 {
@@ -231,25 +245,25 @@ echo '</span>
 
 <div class="container">
     <table class="table">
-        <?php echo $titles_str ?>
+        <?php echo $note_list ?>
     </table>
 
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>
-        <?php if ($page - 1 >= 0) {
-            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '">上页</a></li>';
-        } else {
-            /** 第一页隐藏 上一页*/
-        }
-        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . ($page + 1) . '</a></li>';
-
-        if ($page + 1 >= $page_max) {
-            /** 最后页隐藏 下一页*/
-        } else {
-            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page + 1) . '">下页</a></li>';
-        }
-        ?>
-    </ul>
+<!--    <ul class="pagination">-->
+<!--        <li class="page-item"><a class="page-link" href="index.php">&nbsp首页&nbsp</a></li>-->
+<!--        --><?php //if ($page - 1 >= 0) {
+//            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '">上页</a></li>';
+//        } else {
+//            /** 第一页隐藏 上一页*/
+//        }
+//        echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . ($page + 1) . '</a></li>';
+//
+//        if ($page + 1 >= $page_max) {
+//            /** 最后页隐藏 下一页*/
+//        } else {
+//            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page + 1) . '">下页</a></li>';
+//        }
+//        ?>
+<!--    </ul>-->
 </div>
 
 <script src="/lib/jquery-3.2.1.min.js"></script>
