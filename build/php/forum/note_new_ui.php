@@ -32,8 +32,8 @@ session_start();
         <ul class="navbar-nav">
             <li class="nav-item">
                 <?php
-                if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
+                if (isset($_SESSION['figure_url'])) {
+                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
                 } else {
                     echo '<a class="nav-link " href="/php/login_ui.php"><b>登录</b></a>';
                 }
@@ -58,7 +58,7 @@ session_start();
             <textarea class="form-control" id="content" name="content" rows="5" placeholder="请输入内容"></textarea>
         </div>
         <?php
-        if (isset($_SESSION['figureurl_qq'])) {
+        if (isset($_SESSION['figure_url'])) {
             echo '<button type="submit" class="btn btn-primary ml-auto">提交</button>';
         } else {
             echo '<label class="btn btn-warning ml-auto">登录后方可提交</label>';

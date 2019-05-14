@@ -191,8 +191,8 @@ if ($show_header == 1) {
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">';
-                if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php" ><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width = "24px" height = "24px" ></a > ';
+                if (isset($_SESSION['figure_url'])) {
+                    echo '<a class="nav-link" href="/php/user_info.php" ><img class="rounded" src="' . $_SESSION['figure_url'] . '" width = "24px" height = "24px" ></a > ';
                 } else {
                     echo '<a class="nav-link" href="/php/login_ui.php" ><b>登录</b></a>';
                 }
@@ -253,7 +253,7 @@ if ($show_header == 1) {
             <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
         </div>
         <?php
-        if (isset($_SESSION['figureurl_qq'])) {
+        if (isset($_SESSION['figure_url'])) {
             echo '<button type="submit" class="btn btn-primary ml-auto">发表回复</button>';
         } else {
             echo '<a href="/php/login_ui.php"><button type="button" class="btn btn-warning ml-auto">登录后方可回复</button></a>';

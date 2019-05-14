@@ -145,7 +145,7 @@ if ($user_info) {
 }
 
 /** 初始化$_SESSION 数据*/
-$_SESSION['figureurl_qq'] = $headimgurl;
+$_SESSION['figure_url'] = $headimgurl;
 $_SESSION['nickname'] = $nickname;
 $_SESSION['user_id'] = $user_id;
 

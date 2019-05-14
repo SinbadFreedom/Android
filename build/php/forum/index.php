@@ -181,8 +181,8 @@ function time2Units($time)
         <ul class="navbar-nav">
             <li class="nav-item">
                 <?php
-                if (isset($_SESSION['figureurl_qq'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figureurl_qq'] . '" width="24px" height="24px"></a>';
+                if (isset($_SESSION['figure_url'])) {
+                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
                 } else {
                     echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
                 }

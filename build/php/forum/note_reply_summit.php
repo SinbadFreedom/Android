@@ -22,7 +22,7 @@ if (!isset($_SESSION['nickname'])) {
     return;
 }
 
-if (!isset($_SESSION['figureurl_qq'])) {
+if (!isset($_SESSION['figure_url'])) {
     echo '请先登陆';
     return;
 }
@@ -40,7 +40,7 @@ $reply = $_POST['reply'];
 /** SESSION参数*/
 $nick_name = $_SESSION['nickname'];
 $user_id = $_SESSION['user_id'];
-$editor_figure = $_SESSION['figureurl_qq'];
+$editor_figure = $_SESSION['figure_url'];
 /** 时间戳*/
 $time_stamp = time();
 

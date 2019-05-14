@@ -19,7 +19,7 @@ if (!isset($_SESSION['nickname'])) {
     return;
 }
 
-if (!isset($_SESSION['figureurl_qq'])) {
+if (!isset($_SESSION['figure_url'])) {
     echo '请先登陆';
     return;
 }
@@ -61,7 +61,7 @@ $note_title_info = [
     'contentid' => $content_id,
     'authorid' => $user_id,
     'authorname' => $nick_name,
-    'author_figure' => $_SESSION['figureurl_qq'],
+    'author_figure' => $_SESSION['figure_url'],
     'title' => $title,
     'content' => $content,
     'createtime' => $time_stamp,
