@@ -46,7 +46,7 @@
 
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/&nbsppython3.7.2
+        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
     </div>
 
     <div class="text-right">
