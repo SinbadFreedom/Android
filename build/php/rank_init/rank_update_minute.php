@@ -49,6 +49,9 @@ updateAllRank($manager, $redis, "rank_all");
 /** 将玩家信息加入redis 排行榜中，更新redis排行榜数据*/
 function getUserInfo($res, $manager, $redis, $redis_key)
 {
+    echo "----------1";
+    var_dump($res);
+    echo "----------2";
     $info_arr = [];
     foreach ($res as $key => $value) {
         $filter = ['user_id' => $key];
@@ -94,17 +97,18 @@ function updateAllRank($manager, $redis, $redis_key)
     foreach ($rank_info as $user_info) {
         /** 插入玩家信息*/
         $info = new stdClass();
-        $info->userid = $user_info->user_id;
-        $info->openid = $user_info->openid;
-        $info->nickname = $user_info->nickname;
         $info->exp = $user_info->exp;
+        $info->nickname = $user_info->nickname;
+        $info->openid = $user_info->openid;
+        $info->userid = $user_info->user_id;
+        $info->headimgurl = $user_info->headimgurl;
         /** 将原玩家id转化为玩家信息对象, 存入数组*/
         array_push($info_arr, $info);
     }
     /** 存入redis*/
     $redis->set($redis_key, json_encode($info_arr));
     /** 输出*/
-    echo '$redis_key ' . $redis_key . '<br>';
+    echo 'redis_key: ' . $redis_key . '<br>';
     var_dump($info_arr);
     echo '<br>';
 }
