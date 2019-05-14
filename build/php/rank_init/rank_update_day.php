@@ -46,9 +46,7 @@ function getUserInfo($res, $manager, $redis, $redis_key)
     $info_arr = [];
     foreach ($res as $key => $value) {
         $filter = ['user_id' => $key];
-        $options = array(
-            'limit' => 1
-        );
+        $options = ['limit' => 1];
         $query_find = new MongoDB\Driver\Query($filter, $options);
         $cursor = $manager->executeQuery('db_account.col_user', $query_find);
         $user_info = $cursor->toArray()[0];
@@ -58,6 +56,7 @@ function getUserInfo($res, $manager, $redis, $redis_key)
         $info->nickname = $user_info->nickname;
         $info->openid = $user_info->openid;
         $info->userid = $key;
+        $info->headimgurl = $user_info->headimgurl;
         /** 将原玩家id转化为玩家信息对象, 存入数组*/
         array_push($info_arr, $info);
     }

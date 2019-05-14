@@ -139,7 +139,8 @@ if ($key) {
         $rank = 1;
         foreach ($rank_list as $value) {
 
-            $open_id = $value->openid;
+//            $open_id = $value->openid;
+            $headimgurl = $value->headimgurl;
             $nick_name = $value->nickname;
             $exp = $value->exp;
             $level = getLevelByExp($exp);
@@ -164,7 +165,7 @@ if ($key) {
                 /** 总榜显示等级*/
                 $note_list_content .= '<th scope="row">' . $rank . '</th>'
                     . '<td>'
-                    . '<img class="img-responsive center-block" src="../head_img/' . $open_id . '.jpg" width="50px" height="50px">'
+                    . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
                     . '</td>'
                     . '<td>' . $nick_name . '</td>'
                     . '<td>' . $level . '</td>'
@@ -174,7 +175,7 @@ if ($key) {
                 /** 其他榜不显示等级*/
                 $note_list_content .= '<th scope="row">' . $rank . '</th>'
                     . '<td>'
-                    . '<img class="img-responsive center-block" src="../head_img/' . $open_id . '.jpg" width="50px" height="50px">'
+                    . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
                     . '</td>'
                     . '<td>' . $nick_name . '</td>'
                     . '<td>' . $exp . '</td>'

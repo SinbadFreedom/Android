@@ -115,8 +115,8 @@ function getLevelByExp($exp)
 }
 
 /** 获取等级对应的最大经验值，等级从1开始*/
-function getLevelExpMax($level) {
+function getLevelExpMax($level)
+{
     global $exp_conf;
     return $exp_conf[$level - 1];
-};
-
+}

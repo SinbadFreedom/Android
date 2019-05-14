@@ -25,15 +25,14 @@ $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJ
 /** 生成自增id*/
 /** 有效更新时间，间隔至少1分钟*/
 $can_edit_time = $time_stamp - 60;
-$query = array(
+$query = [
     "findandmodify" => "col_user",
     "query" => ['user_id' => $user_id, 'exp_time' => ['$lt' => $can_edit_time]],
     "update" => ['$inc' => ['exp' => 1], '$set' => ['exp_time' => $time_stamp]],
     'upsert' => false,
     'new' => true,
     'fields' => ['exp' => 1]
-);
-
+];
 
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 $command = new MongoDB\Driver\Command($query);
@@ -68,14 +67,14 @@ echo json_encode($res);
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {
-    $query = array(
+    $query = [
         "findandmodify" => $col_name,
         "query" => ['user_id' => $user_id],
         "update" => ['$inc' => ['exp' => 1]],
         'upsert' => true,
         'new' => true,
         'fields' => ['exp' => 1]
-    );
+    ];
 
     $command = new MongoDB\Driver\Command($query);
     $command_cursor = $manager->executeCommand('db_rank_list', $command);
