@@ -204,18 +204,13 @@ if ($show_header == 1) {
         <a href="/php/forum/index.php?tag=技术讨论"><span class="panda_border alert-primary">技术讨论</span></a>
         <a href="/php/forum/index.php?tag=灌水乐园"><span class="panda_border alert-primary">灌水乐园</span></a>
     </div>
-</div>';
-};
-?>
-
-<div class="container">
     <div class="row">
         <span class="btn btn-secondary">
             <?php
-            if (isset($_GET['tag'])) {
-                echo $_GET['tag'];
+            if (isset($_GET[\'tag\'])) {
+                echo $_GET[\'tag\'];
             } else {
-                echo '全部';
+                echo \'全部\';
             }
             ?>
         </span>
@@ -232,6 +227,11 @@ if ($show_header == 1) {
             </div>
         </div>
     </div>
+</div>';
+};
+?>
+
+<div class="container">
     <table class="table">
         <?php echo $titles_str ?>
     </table>
