@@ -60,10 +60,11 @@ function getUserInfo($res, $manager, $redis, $redis_key)
         $user_info = $cursor->toArray()[0];
         /** 插入玩家信息*/
         $info = new stdClass();
-        $info->exp = $value;
+        $info->exp = $user_info->exp;
         $info->nickname = $user_info->nickname;
         $info->openid = $user_info->openid;
-        $info->userid = $key;
+        $info->userid = $user_info->user_id;
+        $info->headimgurl = $user_info->headimgurl;
         /** 将原玩家id转化为玩家信息对象, 存入数组*/
         array_push($info_arr, $info);
     }
