@@ -26,6 +26,11 @@ $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJ
 /** 生成自增id*/
 /** 每日经验上限是一天的分钟数, exp_today 记录当天获取的经验数，通过crontab/reset_exp_day.php 每日0点重置*/
 $exp_today_max = 60 * 24;
+
+echo '<br>';
+echo $user_id;
+echo '<br>';
+
 $query = [
     "findandmodify" => "col_user",
     "query" => ['user_id' => $user_id, 'exp_today' => ['$lt' => $exp_today_max]],
@@ -39,6 +44,11 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 $command = new MongoDB\Driver\Command($query);
 $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
+
+echo '<br>';
+var_dump($response);
+echo '<br>';
+
 /** 获取新用户id*/
 $res = new stdClass();
 
@@ -47,22 +57,16 @@ if ($response->value) {
     $res->state = 0;
     $res->exp = $response->value->exp;
 
-    /** 经验增量数据入库*/
-    $year = date('Y', $time_stamp);
-    $month = date('m', $time_stamp);
-    /** 从1970年1月1日以来的总周数，方便计算上一周排名, 1970年1月1日是周四，减去4天的时间差，从19700105日，周一的时间差开始算总周数*/
-    $week = intval(($time_stamp - 4 * 24 * 60 * 60) / (7 * 24 * 60 * 60));
-    /** 日,周，月，经验数据表名*/
-    $col_today = "col_day_" . $today;
-    $col_week = "col_week_" . $week;
-    $col_month = "col_month_" . $year . "_" . $month;
-
     updateExpAddValue($user_id, $manager, $col_today);
     updateExpAddValue($user_id, $manager, $col_week);
     updateExpAddValue($user_id, $manager, $col_month);
 } else {
     $res->state = -1;
 }
+
+echo '<br>';
+var_dump($res);
+echo '<br>';
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {
