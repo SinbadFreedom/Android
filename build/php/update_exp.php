@@ -9,27 +9,27 @@ session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
-$time_stamp = time();
-$today = date('Y-m-d', $time_stamp);
+require_once('util_time.php');
+
 $file = '/workplace/log/log_update_exp_' . $today . '.log';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 
+/** 登录状态检测*/
 if (!isset($_SESSION['user_id'])) {
     return;
 }
 
 $user_id = $_SESSION['user_id'];
-//$user_id = intval($_POST['userid']);
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
 /** 生成自增id*/
-/** 每日经验上限是一天的分钟数*/
+/** 每日经验上限是一天的分钟数, exp_today 记录当天获取的经验数，通过crontab/reset_exp_day.php 每日0点重置*/
 $exp_today_max = 60 * 24;
 $query = [
     "findandmodify" => "col_user",
     "query" => ['user_id' => $user_id, 'exp_today' => ['$lt' => $exp_today_max]],
-    "update" => ['$inc' => ['exp' => 1], '$inc' => ['exp_today' => 1]],
+    "update" => ['$inc' => ['exp' => 1, 'exp_today' => 1]],
     'upsert' => false,
     'new' => true,
     'fields' => ['exp' => 1]

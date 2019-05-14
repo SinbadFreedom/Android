@@ -8,6 +8,7 @@ session_start();
  */
 
 require_once('util_level.php');
+require_once('util_time.php');
 
 const TYPE_TODAY = 1;
 const TYPE_YESTERDAY = 2;
@@ -23,8 +24,6 @@ if (isset($_GET['type'])) {
     $type = $_GET['type'];
 }
 
-$time_stamp = time();
-$today = date('Y-m-d', $time_stamp);
 $file = '/workplace/log/log_rank_list_' . $today . '.log';
 if (isset($_GET['userid'])) {
     $user_id = $_GET['userid'];
@@ -54,37 +53,37 @@ $btn_6 = '<button type="button" class="btn btn-secondary" onclick="jump(7)">总�
 
 switch ($type) {
     case TYPE_TODAY:
-        $key = 'rank_today';
+        $key = $col_today;
         $title = "今日排行榜";
         $tip = '每分钟更新';
         $btn_0 = '<button type="button" class="btn btn-primary" onclick="jump(1)">今日</button>';
         break;
     case TYPE_YESTERDAY:
-        $key = 'rank_yesterday';
+        $key = $col_yesterday;
         $title = "昨日排行榜";
         $tip = '每日0点更新';
         $btn_1 = '<button type="button" class="btn btn-primary" onclick="jump(2)">昨日</button>';
         break;
     case TYPE_WEEK:
-        $key = 'rank_week';
+        $key = $col_week;
         $title = "本周排行榜";
         $tip = '每分钟更新';
         $btn_2 = '<button type="button" class="btn btn-primary" onclick="jump(3)">本周</button>';
         break;
     case TYPE_WEEK_LAST:
-        $key = 'rank_week_last';
+        $key = $col_week_last;
         $title = "上周排行榜";
         $tip = '每周一0点更新';
         $btn_3 = '<button type="button" class="btn btn-primary" onclick="jump(4)">上周</button>';
         break;
     case TYPE_MONTH:
-        $key = 'rank_month';
+        $key = $col_month;
         $title = "本月排行榜";
         $tip = '每分钟更新';
         $btn_4 = '<button type="button" class="btn btn-primary" onclick="jump(5)">本月</button>';
         break;
     case TYPE_MONTH_LAST:
-        $key = 'rank_month_last';
+        $key = $col_month_last;
         $title = "上月排行榜";
         $tip = '每月1日0点更新';
         $btn_5 = '<button type="button" class="btn btn-primary" onclick="jump(6)">上月</button>';
