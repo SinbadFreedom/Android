@@ -63,8 +63,6 @@ if ($response->value) {
 } else {
     $res->state = -1;
 }
-echo json_encode($res);
-
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {
