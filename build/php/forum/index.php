@@ -205,15 +205,13 @@ if ($show_header == 1) {
         <a href="/php/forum/index.php?tag=灌水乐园"><span class="panda_border alert-primary">灌水乐园</span></a>
     </div>
     <div class="row">
-        <span class="btn btn-secondary">
-            <?php
-            if (isset($_GET[\'tag\'])) {
-                echo $_GET[\'tag\'];
+        <span class="btn btn-secondary">';
+            if (isset($_GET['tag'])) {
+                echo $_GET['tag'];
             } else {
-                echo \'全部\';
+                echo '全部';
             }
-            ?>
-        </span>
+echo '</span>
 
         <div class="dropdown ml-auto">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"

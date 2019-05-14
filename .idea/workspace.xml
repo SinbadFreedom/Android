@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="211" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="390">
+              <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -538,21 +538,7 @@
       <workItem from="1557843385167" duration="1792000" />
       <workItem from="1557845191174" duration="1588000" />
       <workItem from="1557848717817" duration="1688000" />
-      <workItem from="1557850547944" duration="112000" />
-    </task>
-    <task id="LOCAL-00205" summary="1. 修改评论翻页">
-      <created>1557243536510</created>
-      <option name="number" value="00205" />
-      <option name="presentableId" value="LOCAL-00205" />
-      <option name="project" value="LOCAL" />
-      <updated>1557243536510</updated>
-    </task>
-    <task id="LOCAL-00206" summary="1. 修改评论翻页">
-      <created>1557243601964</created>
-      <option name="number" value="00206" />
-      <option name="presentableId" value="LOCAL-00206" />
-      <option name="project" value="LOCAL" />
-      <updated>1557243601964</updated>
+      <workItem from="1557850547944" duration="492000" />
     </task>
     <task id="LOCAL-00207" summary="1. 修改评论翻页">
       <created>1557243737816</created>
@@ -883,11 +869,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557850386071</updated>
     </task>
-    <option name="localTasksCounter" value="254" />
+    <task id="LOCAL-00254" summary="1. 调整forum index.php布局">
+      <created>1557850701120</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
+      <option name="project" value="LOCAL" />
+      <updated>1557850701120</updated>
+    </task>
+    <task id="LOCAL-00255" summary="1. 调整forum index.php布局">
+      <created>1557850832020</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1557850832020</updated>
+    </task>
+    <option name="localTasksCounter" value="256" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351757000" />
+    <option name="totallyTimeSpent" value="352137000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -928,7 +928,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修改笔记中的reply_url，由js改为php" />
     <MESSAGE value="1. 修复笔记标签导航url" />
     <MESSAGE value="1. 修改文档的作者名" />
     <MESSAGE value="1. 设置默认头像" />
@@ -953,7 +952,8 @@
     <MESSAGE value="1. app_login.php加入session数据" />
     <MESSAGE value="1. 修改session变量名$_SESSION['figure_url']" />
     <MESSAGE value="1. 修复目录评论格式" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修复目录评论格式" />
+    <MESSAGE value="1. 调整forum index.php布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 调整forum index.php布局" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1247,8 +1247,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="390">
+          <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
         </state>
       </provider>
     </entry>
