@@ -18,13 +18,13 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 /** 获取对用排行榜数据,前100名 每日更新 昨日，上周，上月*/
 /** ['val0' => 0, 'val2' => 2, 'val10' => 10] */
 $res_2 = $redis->zrevrange($col_yesterday, 0, 99, true);
-getUserInfo($res_2, $manager, $redis, "rank_yesterday");
+getUserInfo($res_2, $manager, $redis, "redis_rank_yesterday");
 
 $res_4 = $redis->zrevrange($col_week_last, 0, 99, true);
-getUserInfo($res_4, $manager, $redis, "rank_week_last");
+getUserInfo($res_4, $manager, $redis, "redis_rank_week_last");
 
 $res_6 = $redis->zrevrange($col_month_last, 0, 99, true);
-getUserInfo($res_6, $manager, $redis, "rank_month_last");
+getUserInfo($res_6, $manager, $redis, "redis_rank_month_last");
 
 /** 将玩家信息加入redis 排行榜中，更新redis排行榜数据*/
 function getUserInfo($res, $manager, $redis, $redis_key)

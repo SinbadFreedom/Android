@@ -53,43 +53,43 @@ $btn_6 = '<button type="button" class="btn btn-secondary" onclick="jump(7)">总�
 
 switch ($type) {
     case TYPE_TODAY:
-        $key = $col_today;
+        $key = 'redis_rank_today';
         $title = "今日排行榜";
         $tip = '每分钟更新';
         $btn_0 = '<button type="button" class="btn btn-primary" onclick="jump(1)">今日</button>';
         break;
     case TYPE_YESTERDAY:
-        $key = $col_yesterday;
+        $key = 'redis_rank_yesterday';
         $title = "昨日排行榜";
         $tip = '每日0点更新';
         $btn_1 = '<button type="button" class="btn btn-primary" onclick="jump(2)">昨日</button>';
         break;
     case TYPE_WEEK:
-        $key = $col_week;
+        $key = 'redis_rank_week';
         $title = "本周排行榜";
         $tip = '每分钟更新';
         $btn_2 = '<button type="button" class="btn btn-primary" onclick="jump(3)">本周</button>';
         break;
     case TYPE_WEEK_LAST:
-        $key = $col_week_last;
+        $key = 'redis_rank_week_last';
         $title = "上周排行榜";
         $tip = '每周一0点更新';
         $btn_3 = '<button type="button" class="btn btn-primary" onclick="jump(4)">上周</button>';
         break;
     case TYPE_MONTH:
-        $key = $col_month;
+        $key = 'redis_rank_month';
         $title = "本月排行榜";
         $tip = '每分钟更新';
         $btn_4 = '<button type="button" class="btn btn-primary" onclick="jump(5)">本月</button>';
         break;
     case TYPE_MONTH_LAST:
-        $key = $col_month_last;
+        $key = 'redis_rank_month_last';
         $title = "上月排行榜";
         $tip = '每月1日0点更新';
         $btn_5 = '<button type="button" class="btn btn-primary" onclick="jump(6)">上月</button>';
         break;
     case TYPE_ALL:
-        $key = 'rank_all';
+        $key = 'redis_rank_all';
         $title = "总排行榜";
         $tip = '每分钟更新';
         $btn_6 = '<button type="button" class="btn btn-primary" onclick="jump(7)">总榜</button>';
