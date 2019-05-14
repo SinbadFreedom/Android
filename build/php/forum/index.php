@@ -199,19 +199,16 @@ if ($show_header == 1) {
 </nav>
 <div class="container">
     <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag='. $tag . '">&nbsp' . $tag . '&nbsp</a>/' . $title . '</div>
-    </div>';
-};
-?>
-
-<div class="container">
-    <div>
         <a href="/php/forum/index.php"><span class="panda_border alert-primary">全部</span></a>
         <a href="/php/forum/index.php?tag=python3.7.2"><span class="panda_border alert-primary">python3.7.2</span></a>
         <a href="/php/forum/index.php?tag=技术讨论"><span class="panda_border alert-primary">技术讨论</span></a>
         <a href="/php/forum/index.php?tag=灌水乐园"><span class="panda_border alert-primary">灌水乐园</span></a>
     </div>
+</div>';
+};
+?>
 
+<div class="container">
     <div class="row">
         <span class="btn btn-secondary">
             <?php
