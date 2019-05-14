@@ -5,7 +5,6 @@
  * Date: 2019/3/27
  * Time: 11:27
  */
-
 session_start();
 
 error_reporting(E_ALL ^ E_NOTICE);
@@ -154,7 +153,8 @@ $res = new stdClass;
 $res->user_id = $user_id;
 $res->is_new = $is_new;
 $res->exp = $exp;
-
-
+$res->figure_url = $_SESSION['figure_url'];
+$res->user_id = $_SESSION['user_id'];
+$res->nickname = $_SESSION['nickname'];
 
 echo json_encode($res);
