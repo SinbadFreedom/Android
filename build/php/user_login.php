@@ -132,7 +132,7 @@ if ($user_info) {
         'channel' => $channel,
         'user_id' => $user_id,
         'exp' => $exp,
-        'exp_time' => $time_stamp,
+        'exp_day' => 0,
         'create_time' => $time_stamp,
         'logintype' => $login_type
     ]);

@@ -33,8 +33,8 @@ echo '<br>';
 
 $query = [
     "findandmodify" => "col_user",
-    "query" => ['user_id' => $user_id, 'exp_today' => ['$lt' => $exp_today_max]],
-    "update" => ['$inc' => ['exp' => 1, 'exp_today' => 1]],
+    "query" => ['user_id' => $user_id, 'exp_day' => ['$lt' => $exp_today_max]],
+    "update" => ['$inc' => ['exp' => 1, 'exp_day' => 1]],
     'upsert' => false,
     'new' => true,
     'fields' => ['exp' => 1]
