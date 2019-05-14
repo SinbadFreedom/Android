@@ -5,11 +5,14 @@
  * Date: 2019/3/27
  * Time: 11:27
  */
+
+session_start();
+
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
 $time_stamp = time();
-$file = '/workplace/log/log_user_login_' . date('Y-m-d', $time_stamp) . '.log';
+$file = '/workplace/log/log_app_login_' . date('Y-m-d', $time_stamp) . '.log';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
@@ -140,10 +143,18 @@ if ($user_info) {
     $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
     $insertOneResult = $manager->executeBulkWrite('db_account.col_user', $bulkInsertUser, $writeConcern);
 }
+
+/** 初始化$_SESSION 数据*/
+$_SESSION['figureurl_qq'] = $headimgurl;
+$_SESSION['nickname'] = $nickname;
+$_SESSION['user_id'] = $user_id;
+
 /** 返回用户id*/
 $res = new stdClass;
 $res->user_id = $user_id;
 $res->is_new = $is_new;
 $res->exp = $exp;
+
+
 
 echo json_encode($res);
