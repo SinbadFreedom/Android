@@ -21,6 +21,12 @@ if (isset($_GET['page'])) {
 /** 每页显示条数*/
 $count_per_page = 20;
 
+/** 是否显示 header区，原文档不显示，自建标题显示*/
+$show_header = 1;
+if (isset($_GET['show_header'])) {
+    $show_header = intval($_GET['show_header']);
+}
+
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
 $redis = new Redis();
@@ -161,7 +167,9 @@ function time2Units($time)
     <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 <body>
-<div style="background: #2196F3">
+<?php
+if ($show_header == 1) {
+    echo '<div style="background: #2196F3">
     <img src="/img/web_1.png">
 </div>
 
@@ -171,26 +179,30 @@ function time2Units($time)
             <li class="nav-item">
                 <a class="nav-link" href="/index.php"><b>首页</b></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
+            <li class="nav-item">
+                <a class="nav-link active" href="/php/forum/index.php"><b>笔记</b></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-                } else {
-                    echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
-                }
-                ?>
-            </li>
+            <li class="nav-item">';
+    if (isset($_SESSION['figure_url'])) {
+        echo '<a class="nav-link" href="/php/user_info.php" ><img class="rounded" src="' . $_SESSION['figure_url'] . '" width = "24px" height = "24px" ></a > ';
+    } else {
+        echo '<a class="nav-link" href="/php/login_ui.php" ><b>登录</b></a>';
+    }
+    echo '</li>
         </ul>
     </div>
 </nav>
+<div class="container">
+    <div>
+        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag='. $tag . '">&nbsp' . $tag . '&nbsp</a>/' . $title . '</div>
+    </div>';
+};
+?>
 
 <div class="container">
     <div>

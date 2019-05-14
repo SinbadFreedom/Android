@@ -222,7 +222,7 @@
 <script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "/php/forum/note_get.php?tag=python3.7.2&show_header=0";
+    var url = "/php/forum/index.php?tag=python3.7.2&show_header=0";
     $.ajax({
         url: url,
         type: "GET",
