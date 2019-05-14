@@ -105,13 +105,16 @@ $exp_conf = [
 function getLevelByExp($exp)
 {
     global $exp_conf;
-    for ($i = sizeof($exp_conf) - 1; $i > 0; $i--) {
-        if ($exp_conf[$i] <= $exp) {
-            /** 等级为数组下标加1*/
-            return $i + 1;
+    $len = sizeof($exp_conf);
+    $level_index = 0;
+    for ($i = 0; $i < $len; $i++) {
+        if ($exp < $exp_conf[$i]) {
+            $level_index = $i;
+            break;
         }
     }
-    return 1;
+    /** 等级为数组下标加1*/
+    return $level_index + 1;
 }
 
 /** 获取等级对应的最大经验值，等级从1开始*/
