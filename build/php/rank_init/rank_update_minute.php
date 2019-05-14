@@ -49,9 +49,6 @@ updateAllRank($manager, $redis, "rank_all");
 /** 将玩家信息加入redis 排行榜中，更新redis排行榜数据*/
 function getUserInfo($res, $manager, $redis, $redis_key)
 {
-    echo "----------1";
-    var_dump($res);
-    echo "----------2";
     $info_arr = [];
     foreach ($res as $key => $value) {
         $filter = ['user_id' => $key];
