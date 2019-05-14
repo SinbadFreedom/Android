@@ -43,6 +43,9 @@ getUserInfo($res_6, $manager, $redis, "rank_month_last");
 /** 将玩家信息加入redis 排行榜中，更新redis排行榜数据*/
 function getUserInfo($res, $manager, $redis, $redis_key)
 {
+    echo "----------1";
+    var_dump($res);
+    echo "----------2";
     $info_arr = [];
     foreach ($res as $key => $value) {
         $filter = ['user_id' => $key];
@@ -52,10 +55,10 @@ function getUserInfo($res, $manager, $redis, $redis_key)
         $user_info = $cursor->toArray()[0];
         /** 插入玩家信息*/
         $info = new stdClass();
-        $info->exp = $value;
+        $info->exp = $user_info->exp;
         $info->nickname = $user_info->nickname;
         $info->openid = $user_info->openid;
-        $info->userid = $key;
+        $info->userid = $user_info->user_id;
         $info->headimgurl = $user_info->headimgurl;
         /** 将原玩家id转化为玩家信息对象, 存入数组*/
         array_push($info_arr, $info);
