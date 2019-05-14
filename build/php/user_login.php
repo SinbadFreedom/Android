@@ -102,14 +102,14 @@ if ($user_info) {
     /** 新用户*/
     $is_new = true;
     /** 生成自增id*/
-    $query = array(
+    $query = [
         "findandmodify" => "col_increase",
         "query" => ['table' => 'inc_user_id'],
         "update" => ['$inc' => ['user_id_now' => 1]],
         'upsert' => true,
         'new' => true,
         'fields' => ['user_id_now' => 1]
-    );
+    ];
     $command = new MongoDB\Driver\Command($query);
     $command_cursor = $manager->executeCommand('db_account', $command);
     $response = $command_cursor->toArray()[0];

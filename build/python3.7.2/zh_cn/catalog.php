@@ -1,5 +1,6 @@
 <?php
    session_start();
+   require_once('/php/update_exp.php');
 ?>
 <!doctype html>
 <html>
@@ -46,7 +47,7 @@
 
 <div class="container">
     <div>
-        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>
+        <a href="/index.php">&nbsp首页&nbsp</a>/&nbsppython3.7.2
     </div>
 
     <div class="text-right">

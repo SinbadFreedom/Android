@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: sinbad
@@ -15,20 +16,20 @@ $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 
-if (!isset($_POST['userid'])) {
-    echo 'param error 2';
+if (!isset($_SESSION['user_id'])) {
     return;
 }
 
-$user_id = intval($_POST['userid']);
+$user_id = $_SESSION['user_id'];
+//$user_id = intval($_POST['userid']);
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
 /** 生成自增id*/
-/** 有效更新时间，间隔至少1分钟*/
-$can_edit_time = $time_stamp - 60;
+/** 每日经验上限是一天的分钟数*/
+$exp_today_max = 60 * 24;
 $query = [
     "findandmodify" => "col_user",
-    "query" => ['user_id' => $user_id, 'exp_time' => ['$lt' => $can_edit_time]],
-    "update" => ['$inc' => ['exp' => 1], '$set' => ['exp_time' => $time_stamp]],
+    "query" => ['user_id' => $user_id, 'exp_today' => ['$lt' => $exp_today_max]],
+    "update" => ['$inc' => ['exp' => 1], '$inc' => ['exp_today' => 1]],
     'upsert' => false,
     'new' => true,
     'fields' => ['exp' => 1]
