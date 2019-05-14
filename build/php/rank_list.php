@@ -138,8 +138,6 @@ if ($key) {
         }
         $rank = 1;
         foreach ($rank_list as $value) {
-
-//            $open_id = $value->openid;
             $headimgurl = $value->headimgurl;
             $nick_name = $value->nickname;
             $exp = $value->exp;
@@ -163,22 +161,22 @@ if ($key) {
 
             if ($type == TYPE_ALL) {
                 /** 总榜显示等级*/
-                $note_list_content .= '<th scope="row">' . $rank . '</th>'
+                $note_list_content .= '<th valign="middle">' . $rank . '</th>'
                     . '<td>'
                     . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
                     . '</td>'
-                    . '<td>' . $nick_name . '</td>'
-                    . '<td>' . $level . '</td>'
-                    . '<td>' . $exp . '</td>'
+                    . '<td valign="middle">' . $nick_name . '</td>'
+                    . '<td valign="middle">' . $level . '</td>'
+                    . '<td valign="middle">' . $exp . '</td>'
                     . '</tr>';
             } else {
                 /** 其他榜不显示等级*/
-                $note_list_content .= '<th scope="row">' . $rank . '</th>'
-                    . '<td>'
+                $note_list_content .= '<th valign="middle">' . $rank . '</th>'
+                    . '<td valign="middle">'
                     . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
                     . '</td>'
-                    . '<td>' . $nick_name . '</td>'
-                    . '<td>' . $exp . '</td>'
+                    . '<td valign="middle">' . $nick_name . '</td>'
+                    . '<td valign="middle">' . $exp . '</td>'
                     . '</tr>';
             }
 
