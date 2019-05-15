@@ -55,6 +55,7 @@ if ($user_id) {
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <?php
+                echo $_SESSION['figure_url'];
                 if (isset($_SESSION['figure_url'])) {
                     echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
                 } else {
