@@ -1,20 +1,16 @@
 <?php
-   session_start();
-   /** 初始化$_SESSION 数据*/
-   if (isset($_POST['headimgurl'])) {
+require_once('../../php/update_exp.php');
+/** 初始化$_SESSION 数据*/
+if (isset($_POST['headimgurl'])) {
        $_SESSION['figure_url'] = $_POST['headimgurl'];
-       echo '---<br>';
-       echo $_SESSION['figure_url'];
-       echo '---<br>';
    }
-   if (isset($_POST['nickname'])) {
+if (isset($_POST['nickname'])) {
        $_SESSION['nickname'] = $_POST['nickname'];
    }
-   if (isset($_POST['user_id'])) {
+if (isset($_POST['user_id'])) {
        $_SESSION['user_id'] = $_POST['user_id'];
    }
 
-   require_once('../../php/update_exp.php');
 ?>
 <!doctype html>
 <html>
@@ -48,9 +44,6 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <?php
-                echo '---1<br>';
-                echo $_SESSION['figure_url'];
-                echo '---1<br>';
                 if (isset($_SESSION['figure_url'])) {
                     echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
                 } else {

@@ -9,17 +9,17 @@ session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
+/** 登录状态检测*/
+if (!isset($_SESSION['user_id'])) {
+    return;
+}
+
 require_once('util_time.php');
 
 $file = '/workplace/log/log_update_exp_' . $today . '.log';
 $content = file_get_contents("php://input");
 $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
-
-/** 登录状态检测*/
-if (!isset($_SESSION['user_id'])) {
-    return;
-}
 
 $user_id = $_SESSION['user_id'];
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
