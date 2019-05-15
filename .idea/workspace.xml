@@ -6,12 +6,10 @@
     <bookmark url="file://$PROJECT_DIR$/build/index.php" line="15" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. $_SESSION['figure_url'] http 替换为https">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/app_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/app_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4383">
-              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="189">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -36,26 +34,65 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="189">
+              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
+        <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="3087">
+              <caret line="147" column="70" lean-forward="true" selection-start-line="147" selection-start-column="70" selection-end-line="147" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/app_login.php">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="146" column="35" selection-start-line="146" selection-end-line="147" />
+            <state relative-caret-position="3318">
+              <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_ui.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1512">
+              <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="36" column="32" selection-start-line="36" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply_summit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -63,53 +100,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/python3.7.2/en/catalog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+        <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="767" column="39" selection-start-line="767" selection-start-column="31" selection-end-line="767" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/util_string.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/util_level.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="939">
-              <caret line="106" column="21" lean-forward="true" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/util_time.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="49" />
+            <state relative-caret-position="1764">
+              <caret line="84" column="28" lean-forward="true" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -154,8 +155,8 @@
       <find>$_SESSION['figure_url'] =</find>
       <find>session_start</find>
       <find>XMLHttpRequest</find>
-      <find>$_SESSION['figure_url'] =</find>
       <find>$headimgurl</find>
+      <find>$_POST['user_id']</find>
     </findStrings>
     <replaceStrings>
       <replace>####</replace>
@@ -194,8 +195,8 @@
       <dir>D:\workplace\git\Android\md\python3.7.2\zh_cn</dir>
       <dir>D:\workplace\git\Android\md</dir>
       <dir>D:\workplace\git\Android\build\lib\Connect2.1</dir>
-      <dir>D:\workplace\git\Android\build</dir>
       <dir>D:\workplace\git\Android\build\php</dir>
+      <dir>D:\workplace\git\Android\build</dir>
       <dir>D:\workplace\git\Android</dir>
     </dirStrings>
   </component>
@@ -228,7 +229,6 @@
         <option value="$PROJECT_DIR$/build/php/forum/note_reply_ui.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_summit.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_ui.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" />
         <option value="$PROJECT_DIR$/build/php/login_ui.php" />
         <option value="$PROJECT_DIR$/build/php/forum/forum_init.php" />
         <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
@@ -244,7 +244,6 @@
         <option value="$PROJECT_DIR$/build/php/util_time.php" />
         <option value="$PROJECT_DIR$/build/php/util_level.php" />
         <option value="$PROJECT_DIR$/build/php/crontab/update_rank_day.php" />
-        <option value="$PROJECT_DIR$/build/php/rank_list.php" />
         <option value="$PROJECT_DIR$/build/php/crontab/update_rank_minute.php" />
         <option value="$PROJECT_DIR$/build/php/user_login.php" />
         <option value="$PROJECT_DIR$/build/index.php" />
@@ -254,6 +253,8 @@
         <option value="$PROJECT_DIR$/build/php/util_string.php" />
         <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
         <option value="$PROJECT_DIR$/build/php/app_login.php" />
+        <option value="$PROJECT_DIR$/build/php/rank_list.php" />
+        <option value="$PROJECT_DIR$/build/php/forum/note_reply_summit.php" />
         <option value="$PROJECT_DIR$/build/python3.7.2/en/catalog.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
       </list>
@@ -270,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -355,7 +357,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -545,21 +546,8 @@
       <workItem from="1557885761505" duration="754000" />
       <workItem from="1557887714758" duration="934000" />
       <workItem from="1557906321573" duration="1464000" />
-      <workItem from="1557908134182" duration="786000" />
-    </task>
-    <task id="LOCAL-00215" summary="1. 移除文档笔记中的面包屑导航">
-      <created>1557458166056</created>
-      <option name="number" value="00215" />
-      <option name="presentableId" value="LOCAL-00215" />
-      <option name="project" value="LOCAL" />
-      <updated>1557458166056</updated>
-    </task>
-    <task id="LOCAL-00216" summary="1. 修改笔记中的reply_url，由js改为php">
-      <created>1557458719340</created>
-      <option name="number" value="00216" />
-      <option name="presentableId" value="LOCAL-00216" />
-      <option name="project" value="LOCAL" />
-      <updated>1557458719340</updated>
+      <workItem from="1557908134182" duration="1708000" />
+      <workItem from="1557910503192" duration="151000" />
     </task>
     <task id="LOCAL-00217" summary="1. 修改笔记中的reply_url，由js改为php">
       <created>1557458838843</created>
@@ -890,11 +878,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557908351986</updated>
     </task>
-    <option name="localTasksCounter" value="264" />
+    <task id="LOCAL-00264" summary="1. $_SESSION['figure_url'] http 替换为https">
+      <created>1557908965314</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1557908965314</updated>
+    </task>
+    <task id="LOCAL-00265" summary="1. 排行榜头像 http 替换为https">
+      <created>1557909113840</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1557909113840</updated>
+    </task>
+    <option name="localTasksCounter" value="266" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364673000" />
+    <option name="totallyTimeSpent" value="365746000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -909,13 +911,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.24509804" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18954249" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.24509804" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18954249" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -935,8 +937,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 调整作者头像和名字区域" />
-    <MESSAGE value="1. 修改用户信息页" />
     <MESSAGE value="1. 分离经验计算工具" />
     <MESSAGE value="1. 加入经验条进度条" />
     <MESSAGE value="1. 修改用户信息排版" />
@@ -960,7 +960,9 @@
     <MESSAGE value="1. 删除catalog.txt" />
     <MESSAGE value="1. 调试app_login.php" />
     <MESSAGE value="1. 调试app登录catalog.php session" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 调试app登录catalog.php session" />
+    <MESSAGE value="1. $_SESSION['figure_url'] http 替换为https" />
+    <MESSAGE value="1. 排行榜头像 http 替换为https" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 排行榜头像 http 替换为https" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -991,29 +993,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="32" selection-start-line="36" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/tag_list.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" selection-start-line="29" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/title_list_template.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1077,13 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/zh_cn/1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1104,23 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17640">
           <caret line="840" column="26" selection-start-line="840" selection-start-column="19" selection-end-line="840" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_ui.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3318">
-          <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1194,13 +1151,6 @@
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/zh_cn/more.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1974">
-          <caret line="94" column="45" lean-forward="true" selection-start-line="94" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -1236,13 +1186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/app_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -1250,24 +1193,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1743">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3087">
+          <caret line="147" column="70" lean-forward="true" selection-start-line="147" selection-start-column="70" selection-end-line="147" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3318">
+          <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_ui.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_new_summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="32" selection-start-line="36" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="84" column="28" lean-forward="true" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply_summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/python3.7.2/en/catalog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="189">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4383">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="189">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>

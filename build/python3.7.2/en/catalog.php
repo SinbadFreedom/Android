@@ -7,8 +7,8 @@
    if (isset($_POST['nickname'])) {
        $_SESSION['nickname'] = $_POST['nickname'];
    }
-   if (isset($_POST['user_id'])) {
-       $_SESSION['user_id'] = $_POST['user_id'];
+   if (isset($_POST['userid'])) {
+       $_SESSION['user_id'] = $_POST['userid'];
    }
 ?>
 <!doctype html>

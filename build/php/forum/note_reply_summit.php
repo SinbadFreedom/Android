@@ -18,17 +18,17 @@ if (!isset($_POST['reply'])) {
 }
 
 if (!isset($_SESSION['nickname'])) {
-    echo '请先登陆';
+    echo '请先登陆 nickname: ' . $_SESSION['nickname'];
     return;
 }
 
 if (!isset($_SESSION['figure_url'])) {
-    echo '请先登陆';
+    echo '请先登陆 figure_url: ' . $_SESSION['figure_url'];
     return;
 }
 
 if (!isset($_SESSION['user_id'])) {
-    echo '请先登陆';
+    echo '请先登陆 user_id: ' . $_SESSION['user_id'];
     return;
 }
 
