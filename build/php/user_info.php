@@ -1,9 +1,13 @@
 <?php
 session_start();
-
 require_once('util_level.php');
 
-$user_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_id'])) {
+    echo "请先登录 user_id";
+    return;
+}
+
+$user_id = intval($_SESSION['user_id']);
 
 if ($user_id) {
     $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
@@ -13,7 +17,7 @@ if ($user_id) {
     $cursor = $manager->executeQuery('db_account.col_user', $query_find);
     $user_info = $cursor->toArray()[0];
     /** 用户显示信息*/
-    $head_img_url = $user_info->headimgurl;
+//    $head_img_url = $user_info->headimgurl;
     $nick_name = $user_info->nickname;
     $sex = $user_info->sex;
     $exp = $user_info->exp;
@@ -55,7 +59,6 @@ if ($user_id) {
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <?php
-                echo $_SESSION['figure_url'];
                 if (isset($_SESSION['figure_url'])) {
                     echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
                 } else {
@@ -71,7 +74,7 @@ if ($user_id) {
     <form>
         <div class="form-group row">
             <div class="mr-auto">
-                <img src="<?php echo $head_img_url ?>">
+                <img src="<?php echo $_SESSION['figure_url'] ?>">
             </div>
         </div>
         <div class="form-group row">
