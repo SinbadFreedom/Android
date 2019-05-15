@@ -73,7 +73,7 @@ if ($user_id) {
 <div class="container">
     <form>
         <div class="form-group row">
-            <div class="mr-auto">
+            <div>
                 <img src="<?php echo $_SESSION['figure_url'] ?>">
             </div>
         </div>
