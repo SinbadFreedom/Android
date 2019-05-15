@@ -10,7 +10,7 @@
    if (isset($_POST['user_id'])) {
        $_SESSION['user_id'] = $_POST['user_id'];
    }
-   
+
    require_once('../../php/update_exp.php');
 ?>
 <!doctype html>
