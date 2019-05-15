@@ -17,7 +17,6 @@ if ($user_id) {
     $cursor = $manager->executeQuery('db_account.col_user', $query_find);
     $user_info = $cursor->toArray()[0];
     /** 用户显示信息*/
-//    $head_img_url = $user_info->headimgurl;
     $nick_name = $user_info->nickname;
     $sex = $user_info->sex;
     $exp = $user_info->exp;

@@ -45,20 +45,20 @@ if (!isset($_POST['nickname'])) {
     return;
 }
 
-if (!isset($_POST['sex'])) {
-    echo "param error 6";
-    return;
-}
-
-if (!isset($_POST['province'])) {
-    echo "param error 7";
-    return;
-}
-
-if (!isset($_POST['city'])) {
-    echo "param error 8";
-    return;
-}
+//if (!isset($_POST['sex'])) {
+//    echo "param error 6";
+//    return;
+//}
+//
+//if (!isset($_POST['province'])) {
+//    echo "param error 7";
+//    return;
+//}
+//
+//if (!isset($_POST['city'])) {
+//    echo "param error 8";
+//    return;
+//}
 
 if (!isset($_POST['channel'])) {
     echo "param error 9";
@@ -76,9 +76,9 @@ $access_token = $_POST['access_token'];
 $refresh_token = $_POST['refresh_token'];
 $headimgurl = $_POST['headimgurl'];
 $nickname = $_POST['nickname'];
-$sex = $_POST['sex'];
-$province = $_POST['province'];
-$city = $_POST['city'];
+//$sex = $_POST['sex'];
+//$province = $_POST['province'];
+//$city = $_POST['city'];
 $channel = $_POST['channel'];
 $login_type = $_POST['logintype'];
 
@@ -127,9 +127,9 @@ if ($user_info) {
 
         'headimgurl' => $headimgurl,
         'nickname' => $nickname,
-        'sex' => $sex,
-        'province' => $province,
-        'city' => $city,
+//        'sex' => $sex,
+//        'province' => $province,
+//        'city' => $city,
 
         'channel' => $channel,
         'user_id' => $user_id,
