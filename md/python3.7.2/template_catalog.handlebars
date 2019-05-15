@@ -1,8 +1,8 @@
 <?php
-   session_start();
+   require_once('../../php/update_exp.php');
    /** 初始化$_SESSION 数据*/
    if (isset($_POST['headimgurl'])) {
-       $_SESSION['figure_url'] = $_POST['headimgurl'];
+       $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl']);
    }
    if (isset($_POST['nickname'])) {
        $_SESSION['nickname'] = $_POST['nickname'];
@@ -10,8 +10,6 @@
    if (isset($_POST['user_id'])) {
        $_SESSION['user_id'] = $_POST['user_id'];
    }
-
-   require_once('../../php/update_exp.php');
 ?>
 <!doctype html>
 <html>

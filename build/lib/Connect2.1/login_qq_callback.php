@@ -88,7 +88,7 @@ if ($user_info) {
 }
 
 /** 初始化$_SESSION 数据*/
-$_SESSION['figure_url'] = $arr['figureurl_qq'];
+$_SESSION['figure_url'] = str_replace('http://', 'https://', arr['figureurl_qq']);
 $_SESSION['nickname'] = $arr['nickname'];
 $_SESSION['user_id'] = $user_id;
 
