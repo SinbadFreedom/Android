@@ -137,7 +137,7 @@ if ($key) {
         }
         $rank = 1;
         foreach ($rank_list as $value) {
-            $headimgurl = $value->headimgurl;
+            $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
             $nick_name = $value->nickname;
             $exp = $value->exp;
             $level = getLevelByExp($exp);
