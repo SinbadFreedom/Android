@@ -8,7 +8,6 @@ if (!isset($_GET['code'])) {
 
 $code = $_GET['code'];
 
-
 function getDataFromUrl($get_url)
 {
     $ch = curl_init();
@@ -16,11 +15,6 @@ function getDataFromUrl($get_url)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $data = curl_exec($ch);
-    echo '----------------1';
-    var_dump($data);
-//    $data = curl_getinfo($ch);
-//    echo '----------------2';
-//    var_dump($data);
     curl_close($ch);
     return $data;
 }
@@ -28,16 +22,9 @@ function getDataFromUrl($get_url)
 $url = 'https' . '://ap' . 'i.we' . 'ix' . 'in.q' . 'q.c' . 'om/sn' . 's/oau' . 'th2/ac' . 'cess_' . 'to' . 'ken?ap' . 'pid=wx7' . 'c369' . 'f8fe5340534&sec' . 'ret' . '=' . '163ffc' . 'e441b47' . '6cd12672b69' . '51889ddf' . '&co' . 'de=' . $code . '&grant_type' . '=' . 'au' . 'thor' . 'izatio' . 'n_' . 'code';
 $data = getDataFromUrl($url);
 
-echo '---<br>';
-var_dump($data);
-echo '---<br>';
-
 $data_json = json_decode($data);
 $access_token = $data_json->access_token;
 $open_id = $data_json->openid;
-
-echo '---<br>';
-echo $access_token;
 
 /**
  * {
@@ -94,21 +81,8 @@ $open_id = $info_json->openid;
 $nick_name = $info_json->nickname;
 $head_img_url = $info_json->headimgurl;
 
-echo '---<br>';
-var_dump($info);
-echo '---<br>';
-echo '$open_id' . $open_id;
-echo '---<br>';
-echo '$nick_name' . $nick_name;
-echo '---<br>';
-echo '$head_img_url' . $head_img_url;
-
 require_once('../../php/mongo_login.php');
 $user_id = login($open_id, $nick_name, $head_img_url);
-
-echo '---<br>';
-echo '$user_id' . $user_id;
-echo '---<br>';
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
@@ -122,6 +96,6 @@ $_SESSION['user_id'] = $user_id;
 
 /** login_ui.php中记录来路url，完成登陆，跳转回去*/
 $from_url = $_SESSION['from_url'];
-//header("Location: $from_url");
-//return;
+header("Location: $from_url");
+return;
 
