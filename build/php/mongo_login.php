@@ -41,6 +41,7 @@ function login($open_id, $nick_name, $head_img_url)
             'nickname' => $nick_name,
             'user_id' => $user_id,
             'exp' => 1,
+            'exp_day' => 0,
             'create_time' => $time_stamp
         ]);
         /** 插入数据库*/
