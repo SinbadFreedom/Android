@@ -15,12 +15,12 @@ function getDataFromUrl($get_url)
     curl_setopt($ch, CURLOPT_URL, $get_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
-    $ret = curl_exec($ch);
+    $data = curl_exec($ch);
     echo '----------------1';
-    var_dump($ret);
-    $data = curl_getinfo($ch);
-    echo '----------------2';
     var_dump($data);
+//    $data = curl_getinfo($ch);
+//    echo '----------------2';
+//    var_dump($data);
     curl_close($ch);
     return $data;
 }
@@ -32,9 +32,9 @@ echo '---<br>';
 var_dump($data);
 echo '---<br>';
 
-//$data_json = json_decode($data);
-$access_token = $data['access_token'];
-$open_id = $data['openid'];
+$data_json = json_decode($data);
+$access_token = $data_json->access_token;
+$open_id = $data_json->openid;
 
 echo '---<br>';
 echo $access_token;
@@ -83,15 +83,16 @@ $info = getDataFromUrl($url);
  * }
  *
  */
-$info['sex'];
-$info['province'];
-$info['city'];
-$info['country'];
-$info['unionid'];
+$info_json = json_decode($info);
+$info->sex;
+$info->province;
+$info->city;
+$info->country;
+$info->unionid;
 
-$open_id = $info['openid'];
-$nick_name = $info['nickname'];
-$head_img_url = $info['headimgurl'];
+$open_id = $info->openid;
+$nick_name = $info->nickname;
+$head_img_url = $info->headimgurl;
 
 echo '---<br>';
 var_dump($info);
