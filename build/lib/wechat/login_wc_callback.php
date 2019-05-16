@@ -84,30 +84,30 @@ $info = getDataFromUrl($url);
  *
  */
 $info_json = json_decode($info);
-$info->sex;
-$info->province;
-$info->city;
-$info->country;
-$info->unionid;
+$info_json->sex;
+$info_json->province;
+$info_json->city;
+$info_json->country;
+$info_json->unionid;
 
-$open_id = $info->openid;
-$nick_name = $info->nickname;
-$head_img_url = $info->headimgurl;
+$open_id = $info_json->openid;
+$nick_name = $info_json->nickname;
+$head_img_url = $info_json->headimgurl;
 
 echo '---<br>';
 var_dump($info);
 echo '---<br>';
-echo $open_id;
+echo '$open_id' . $open_id;
 echo '---<br>';
-echo $nick_name;
+echo '$nick_name' . $nick_name;
 echo '---<br>';
-echo $head_img_url;
+echo '$head_img_url' . $head_img_url;
 
 require_once('../../php/mongo_login.php');
 $user_id = login($open_id, $nick_name, $head_img_url);
 
 echo '---<br>';
-echo $user_id;
+echo '$user_id' . $user_id;
 echo '---<br>';
 
 if ($user_id < 0) {
