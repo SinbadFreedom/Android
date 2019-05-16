@@ -14,8 +14,13 @@ function getDataFromUrl($get_url)
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $get_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
     $ret = curl_exec($ch);
+    echo '----------------1';
+    var_dump($ret);
     $data = curl_getinfo($ch);
+    echo '----------------2';
+    var_dump($data);
     curl_close($ch);
     return $data;
 }
