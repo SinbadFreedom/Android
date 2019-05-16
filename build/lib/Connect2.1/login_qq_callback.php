@@ -22,8 +22,8 @@ $arr = $qc_info->get_user_info();
  */
 
 /** 数据入库，返回user_id*/
-$headimgurl = $arr['figureurl_qq'];
-$nickname = $arr['nickname'];
+$head_img_url = $arr['figureurl_qq'];
+$nick_name = $arr['nickname'];
 $sex = $arr['gender'];
 $province = $arr['province'];
 $city = $arr['city'];
@@ -31,7 +31,7 @@ $year = $arr['year'];
 $figureurl_type = $arr['figureurl_type'];
 
 require_once('../../php/mongo_login.php');
-$user_id = login($open_id, $nickname, $headimgurl);
+$user_id = login($open_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';

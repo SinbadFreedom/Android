@@ -1,7 +1,7 @@
 <?php
 
 /** 通过openid 处理用户登陆，新用户初始化后返回id，老用户直接返回id*/
-function login($open_id, $nickname, $headimgurl)
+function login($open_id, $nick_name, $head_img_url)
 {
     $time_stamp = time();
     /** 根据openid 查找用户数据*/
@@ -37,8 +37,8 @@ function login($open_id, $nickname, $headimgurl)
         $bulkInsertUser = new MongoDB\Driver\BulkWrite();
         $bulkInsertUser->insert([
             'openid' => $open_id,
-            'headimgurl' => $headimgurl,
-            'nickname' => $nickname,
+            'headimgurl' => $head_img_url,
+            'nickname' => $nick_name,
             'user_id' => $user_id,
             'exp' => 1,
             'create_time' => $time_stamp

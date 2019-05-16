@@ -78,7 +78,7 @@ $nick_name = $info['nickname'];
 $head_img_url = $info['headimgurl'];
 
 require_once('../../php/mongo_login.php');
-$user_id = login($open_id, $nickname, $headimgurl);
+$user_id = login($open_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
