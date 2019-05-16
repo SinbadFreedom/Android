@@ -77,8 +77,20 @@ $open_id = $info['openid'];
 $nick_name = $info['nickname'];
 $head_img_url = $info['headimgurl'];
 
+var_dump($info);
+echo '<br>';
+echo $open_id;
+echo '<br>';
+echo $nick_name;
+echo '<br>';
+echo $head_img_url;
+
 require_once('../../php/mongo_login.php');
 $user_id = login($open_id, $nick_name, $head_img_url);
+
+echo '<br>';
+echo $user_id;
+echo '<br>';
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
@@ -92,6 +104,6 @@ $_SESSION['user_id'] = $user_id;
 
 /** login_ui.php中记录来路url，完成登陆，跳转回去*/
 $from_url = $_SESSION['from_url'];
-header("Location: $from_url");
-return;
+//header("Location: $from_url");
+//return;
 
