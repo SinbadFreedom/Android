@@ -13,15 +13,14 @@ date_default_timezone_set('PRC');
 if (!isset($_SESSION['user_id'])) {
     return;
 }
+$user_id = $_SESSION['user_id'];
 
 require_once('util_time.php');
 
 $file = '/workplace/log/log_update_exp_' . $today . '.log';
-$content = file_get_contents("php://input");
-$content = $content . " $time_stamp\n";
+$content = $user_id . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 
-$user_id = $_SESSION['user_id'];
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
 /** 生成自增id*/
 /** 每日经验上限是一天的分钟数, exp_today 记录当天获取的经验数，通过crontab/reset_exp_day.php 每日0点重置*/

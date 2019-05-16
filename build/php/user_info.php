@@ -77,29 +77,36 @@ if ($user_id) {
             </div>
         </div>
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-1 col-form-label">昵称:</label>
-            <div class="col-sm-11">
+            <label for="staticEmail" class="col-1 col-form-label">昵称:</label>
+            <div class="col-11">
                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
                        value="<?php echo $nick_name ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-1 col-form-label">注册:</label>
-            <div class="col-sm-11">
+            <label for="staticEmail" class="col-1 col-form-label">ID:</label>
+            <div class="col-11">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                       value="<?php echo $user_id ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-1 col-form-label">注册:</label>
+            <div class="col-11">
                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
                        value="<?php echo date('Y-m-d', $create_time) ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputPassword" class="col-sm-1 col-form-label">等级:</label>
-            <div class="col-sm-11">
+            <label for="inputPassword" class="col-1 col-form-label">等级:</label>
+            <div class="col-11">
                 <input type="text" readonly class="form-control-plaintext" id="inputPassword"
                        value="<?php echo $level ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputExp" class="col-sm-1 col-form-label">经验:</label>
-            <div class="col-sm-11">
+            <label for="inputExp" class="col-1 col-form-label">经验:</label>
+            <div class="col-11">
                 <input type="text" readonly class="form-control-plaintext" id="inputExp"
                        value="<?php echo $exp . '/' . $exp_max; ?>">
             </div>
