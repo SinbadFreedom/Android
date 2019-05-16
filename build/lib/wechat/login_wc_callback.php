@@ -20,9 +20,20 @@ function getDataFromUrl($get_url)
 
 $url = 'https' . '://ap' . 'i.we' . 'ix' . 'in.q' . 'q.c' . 'om/sn' . 's/oau' . 'th2/ac' . 'cess_' . 'to' . 'ken?ap' . 'pid=wx7' . 'c369' . 'f8fe5340534&sec' . 'ret' . '=' . '163ffc' . 'e441b47' . '6cd12672b69' . '51889ddf' . '&co' . 'de=' . $code . '&grant_type' . '=' . 'au' . 'thor' . 'izatio' . 'n_' . 'code';
 $data = getDataFromUrl($url);
+
+echo '---<br>';
+var_dump($data);
+echo '---<br>';
+
 $data_json = json_decode($data);
 $access_token = $data_json->access_token;
 $open_id = $data_json->openid;
+
+echo '---<br>';
+var_dump($data_json);
+echo '---<br>';
+echo $access_token;
+
 /**
  * {
  * "access_token":"ACCESS_TOKEN",
@@ -77,20 +88,21 @@ $open_id = $info['openid'];
 $nick_name = $info['nickname'];
 $head_img_url = $info['headimgurl'];
 
+echo '---<br>';
 var_dump($info);
-echo '<br>';
+echo '---<br>';
 echo $open_id;
-echo '<br>';
+echo '---<br>';
 echo $nick_name;
-echo '<br>';
+echo '---<br>';
 echo $head_img_url;
 
 require_once('../../php/mongo_login.php');
 $user_id = login($open_id, $nick_name, $head_img_url);
 
-echo '<br>';
+echo '---<br>';
 echo $user_id;
-echo '<br>';
+echo '---<br>';
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
