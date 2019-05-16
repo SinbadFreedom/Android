@@ -1,5 +1,6 @@
 <?php
-echo '------------------0';
+session_start();
+
 if (!isset($_GET['code'])) {
     echo 'code false';
     return;
@@ -7,15 +8,18 @@ if (!isset($_GET['code'])) {
 
 $code = $_GET['code'];
 
-echo '------------------1';
-var_dump($code);
-echo '------------------2';
+
+function getDataFromUrl($get_url)
+{
+    $curl = curl_init($get_url);
+    $ret = curl_exec($curl);
+    $data = curl_getinfo($curl);
+    curl_close($curl);
+    return $data;
+}
 
 $url = 'https' . '://ap' . 'i.we' . 'ix' . 'in.q' . 'q.c' . 'om/sn' . 's/oau' . 'th2/ac' . 'cess_' . 'to' . 'ken?ap' . 'pid=wx7' . 'c369' . 'f8fe5340534&sec' . 'ret' . '=' . '163ffc' . 'e441b47' . '6cd12672b69' . '51889ddf' . '&co' . 'de=' . $code . '&grant_type' . '=' . 'au' . 'thor' . 'izatio' . 'n_' . 'code';
-var_dump($url);
 $data = getDataFromUrl($url);
-echo '------------------3';
-var_dump($data);
 $data_json = json_decode($data);
 $access_token = $data_json->access_token;
 $open_id = $data_json->openid;
@@ -42,19 +46,9 @@ $url = 'https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=wx7c369f8fe5340
  * "scope":"SCOPE"
  * }
  */
-//$access_token = '';
-//$openid = '';
-
 $url = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $access_token . '&openid=' . $open_id;
-echo '------------------4';
-var_dump($url);
 
 $info = getDataFromUrl($url);
-echo '------------------5';
-var_dump($info);
-$info_json = json_decode($info);
-echo '------------------6';
-var_dump($info_json);
 /**
  * {
  * "openid":"OPENID",
@@ -73,19 +67,31 @@ var_dump($info_json);
  * }
  *
  */
-function getDataFromUrl($get_url)
-{
-//    $curl = curl_init();
-    $curl = curl_init($get_url);
-//    /** 设置抓取的url*/
-//    curl_setopt($curl, CURLOPT_URL, $get_url);
-////    /** 设置头文件的信息作为数据流输出*/
-////    curl_setopt($curl, CURLOPT_HEADER, 1);
-//    /** 设置获取的信息以文件流的形式返回，而不是直接输出。*/
-//    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    /** 执行命令*/
-    $ret = curl_exec($curl);
-    $data = curl_getinfo($curl);
-    curl_close($curl);
-    return $data;
+$info['sex'];
+$info['province'];
+$info['city'];
+$info['country'];
+$info['unionid'];
+
+$open_id = $info['openid'];
+$nick_name = $info['nickname'];
+$head_img_url = $info['headimgurl'];
+
+require_once('../../php/mongo_login.php');
+$user_id = login($open_id, $nickname, $headimgurl);
+
+if ($user_id < 0) {
+    echo 'userid error 请重新登陆';
+    return;
 }
+
+/** 初始化$_SESSION 数据*/
+$_SESSION['figure_url'] = str_replace('http://', 'https://', $head_img_url);
+$_SESSION['nickname'] = $nick_name;
+$_SESSION['user_id'] = $user_id;
+
+/** login_ui.php中记录来路url，完成登陆，跳转回去*/
+$from_url = $_SESSION['from_url'];
+header("Location: $from_url");
+return;
+
