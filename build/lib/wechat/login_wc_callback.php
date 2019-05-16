@@ -11,10 +11,12 @@ $code = $_GET['code'];
 
 function getDataFromUrl($get_url)
 {
-    $curl = curl_init($get_url);
-    $ret = curl_exec($curl);
-    $data = curl_getinfo($curl);
-    curl_close($curl);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $get_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $ret = curl_exec($ch);
+    $data = curl_getinfo($ch);
+    curl_close($ch);
     return $data;
 }
 
@@ -25,12 +27,10 @@ echo '---<br>';
 var_dump($data);
 echo '---<br>';
 
-$data_json = json_decode($data);
-$access_token = $data_json->access_token;
-$open_id = $data_json->openid;
+//$data_json = json_decode($data);
+$access_token = $data['access_token'];
+$open_id = $data['openid'];
 
-echo '---<br>';
-var_dump($data_json);
 echo '---<br>';
 echo $access_token;
 
