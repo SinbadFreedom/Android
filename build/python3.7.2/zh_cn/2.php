@@ -1,5 +1,4 @@
 <?php
-   session_start();
    require_once('../../php/update_exp.php');
 ?>
 <!doctype html>
