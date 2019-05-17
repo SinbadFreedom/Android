@@ -18,7 +18,7 @@ if ($user_id) {
     $user_info = $cursor->toArray()[0];
     /** 用户显示信息*/
     $nick_name = $user_info->nickname;
-    $sex = $user_info->sex;
+//    $sex = $user_info->sex;
     $exp = $user_info->exp;
     $create_time = $user_info->create_time;
     /** 计算等级和最大经验*/
