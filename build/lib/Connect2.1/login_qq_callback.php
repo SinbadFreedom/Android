@@ -30,9 +30,21 @@ $city = $arr['city'];
 $year = $arr['year'];
 $figureurl_type = $arr['figureurl_type'];
 
+
+/**
+{
+"client_id":"YOUR_APPID",
+"openid":"YOUR_OPENID",
+"unionid":"YOUR_UNIONID"
+}
+ */
 require_once('../../php/mongo_login.php');
 //TODO QQ 网站应用审核通过后，点击申请获取unionid,替换为unionid
-$user_id = login($open_id, $nick_name, $head_img_url);
+//$union_id_obj = $qc_info->getUnionId();
+//$union_id = $union_id_obj->unionid;
+//TODO $union_id暂时设置为$open_id，这样会导致QQ web和APP登录为不同账号
+$union_id = $open_id;
+$user_id = login($union_id, $open_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';

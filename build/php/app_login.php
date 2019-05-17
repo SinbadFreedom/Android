@@ -89,7 +89,7 @@ $nick_name = $_POST['nickname'];
 
 require_once('mongo_login.php');
 /** app登陆qq,wx都采用 unionid，web和app统一*/
-$user_id = login($union_id, $nick_name, $head_img_url);
+$user_id = login($union_id, $open_id, $nick_name, $head_img_url);
 
 //$user_id = -1;
 //$exp = 1;

@@ -1,12 +1,12 @@
 <?php
 
 /** 通过openid 处理用户登陆，新用户初始化后返回id，老用户直接返回id*/
-function login($open_id, $nick_name, $head_img_url)
+function login($union_id, $open_id, $nick_name, $head_img_url)
 {
     $time_stamp = time();
     /** 根据openid 查找用户数据*/
     $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-    $filter = ['openid' => $open_id];
+    $filter = ['union_id' => $union_id];
     $options = ['limit' => 1];
     $query_find = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery('db_account.col_user', $query_find);
@@ -34,6 +34,7 @@ function login($open_id, $nick_name, $head_img_url)
         /** 插入用户表*/
         $bulkInsertUser = new MongoDB\Driver\BulkWrite();
         $bulkInsertUser->insert([
+            'union_id' => $union_id,
             'openid' => $open_id,
             'headimgurl' => $head_img_url,
             'nickname' => $nick_name,

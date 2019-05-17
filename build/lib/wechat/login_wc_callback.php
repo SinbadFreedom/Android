@@ -84,7 +84,7 @@ $union_id = $info_json->unionid;
 
 require_once('../../php/mongo_login.php');
 /** 微信登陆采用 unionid，web和app统一*/
-$user_id = login($union_id, $nick_name, $head_img_url);
+$user_id = login($union_id, $open_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
