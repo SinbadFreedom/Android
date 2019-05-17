@@ -8,7 +8,7 @@
        $_SESSION['nickname'] = $_POST['nickname'];
    }
    if (isset($_POST['userid'])) {
-       $_SESSION['user_id'] = $_POST['userid'];
+       $_SESSION['user_id'] = intval($_POST['userid']);
    }
 ?>
 <!doctype html>
