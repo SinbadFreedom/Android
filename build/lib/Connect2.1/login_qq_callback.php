@@ -31,6 +31,7 @@ $year = $arr['year'];
 $figureurl_type = $arr['figureurl_type'];
 
 require_once('../../php/mongo_login.php');
+//TODO QQ 网站应用审核通过后，点击申请获取unionid,替换为unionid
 $user_id = login($open_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {

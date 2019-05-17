@@ -80,9 +80,11 @@ $info_json->unionid;
 $open_id = $info_json->openid;
 $nick_name = $info_json->nickname;
 $head_img_url = $info_json->headimgurl;
+$union_id = $info_json->unionid;
 
 require_once('../../php/mongo_login.php');
-$user_id = login($open_id, $nick_name, $head_img_url);
+/** 微信登陆采用 unionid，web和app统一*/
+$user_id = login($union_id, $nick_name, $head_img_url);
 
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
@@ -93,6 +95,7 @@ if ($user_id < 0) {
 $_SESSION['figure_url'] = str_replace('http://', 'https://', $head_img_url);
 $_SESSION['nickname'] = $nick_name;
 $_SESSION['user_id'] = $user_id;
+$_SESSION['union_id'] = $user_id;
 
 /** login_ui.php中记录来路url，完成登陆，跳转回去*/
 $from_url = $_SESSION['from_url'];

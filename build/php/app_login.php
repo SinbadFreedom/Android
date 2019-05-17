@@ -17,31 +17,35 @@ $content = $content . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
 
 if (!isset($_POST['openid'])) {
-    echo "param error 0";
+    echo "param error openid";
     return;
 }
 
-if (!isset($_POST['access_token'])) {
-    echo "param error 1";
+if (!isset($_POST['unionid'])) {
+    echo "param error unionid";
     return;
 }
-
-if (!isset($_POST['refresh_token'])) {
-    echo "param error 2";
-    return;
-}
-
-if (!isset($_POST['scope'])) {
-    return;
-}
+//if (!isset($_POST['access_token'])) {
+//    echo "param error 1";
+//    return;
+//}
+//
+//if (!isset($_POST['refresh_token'])) {
+//    echo "param error 2";
+//    return;
+//}
+//
+//if (!isset($_POST['scope'])) {
+//    return;
+//}
 
 if (!isset($_POST['headimgurl'])) {
-    echo "param error 4";
+    echo "param error headimgurl";
     return;
 }
 
 if (!isset($_POST['nickname'])) {
-    echo "param error 5";
+    echo "param error nickname";
     return;
 }
 
@@ -60,101 +64,105 @@ if (!isset($_POST['nickname'])) {
 //    return;
 //}
 
-if (!isset($_POST['channel'])) {
-    echo "param error 9";
-    return;
-}
+//if (!isset($_POST['channel'])) {
+//    echo "param error 9";
+//    return;
+//}
+//
+//if (!isset($_POST['logintype'])) {
+//    echo "param error 10";
+//    return;
+//}
 
-if (!isset($_POST['logintype'])) {
-    echo "param error 10";
-    return;
-}
-
-$scope = $_POST['scope'];
-$openid = $_POST['openid'];
-$access_token = $_POST['access_token'];
-$refresh_token = $_POST['refresh_token'];
-$headimgurl = $_POST['headimgurl'];
-$nickname = $_POST['nickname'];
+//$scope = $_POST['scope'];
+$open_id = $_POST['openid'];
+$union_id = $_POST['unionid'];
+//$access_token = $_POST['access_token'];
+//$refresh_token = $_POST['refresh_token'];
+$head_img_url = $_POST['headimgurl'];
+$nick_name = $_POST['nickname'];
 //$sex = $_POST['sex'];
 //$province = $_POST['province'];
 //$city = $_POST['city'];
-$channel = $_POST['channel'];
-$login_type = $_POST['logintype'];
+//$channel = $_POST['channel'];
+//$login_type = $_POST['logintype'];
 
+require_once('../../php/mongo_login.php');
+/** app登陆qq,wx都采用 unionid，web和app统一*/
+$user_id = login($union_id, $nick_name, $head_img_url);
 
-$user_id = -1;
-$exp = 1;
-$is_new = false;
-/** 根据openid 查找用户数据*/
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-$filter = ['openid' => $openid];
-$options = array(
-    'limit' => 1
-);
-$query_find = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery('db_account.col_user', $query_find);
-$user_info = $cursor->toArray()[0];
-/** 区分新老用户*/
-if ($user_info) {
-    /** 老用户*/
-    $user_id = $user_info->user_id;
-    $exp = $user_info->exp;
-} else {
-    /** 新用户*/
-    $is_new = true;
-    /** 生成自增id*/
-    $query = [
-        "findandmodify" => "col_increase",
-        "query" => ['table' => 'inc_user_id'],
-        "update" => ['$inc' => ['user_id_now' => 1]],
-        'upsert' => true,
-        'new' => true,
-        'fields' => ['user_id_now' => 1]
-    ];
-    $command = new MongoDB\Driver\Command($query);
-    $command_cursor = $manager->executeCommand('db_account', $command);
-    $response = $command_cursor->toArray()[0];
-    /** 获取新用户id*/
-    $user_id = $response->value->user_id_now;
-    /** 插入用户表*/
-    $bulkInsertUser = new MongoDB\Driver\BulkWrite();
-    $bulkInsertUser->insert([
-        'openid' => $openid,
-        'access_token' => $access_token,
-        'refresh_token' => $refresh_token,
-        'scope' => $scope,
-
-        'headimgurl' => $headimgurl,
-        'nickname' => $nickname,
-//        'sex' => $sex,
-//        'province' => $province,
-//        'city' => $city,
-
-        'channel' => $channel,
-        'user_id' => $user_id,
-        'exp' => $exp,
-        'exp_day' => 0,
-        'create_time' => $time_stamp,
-        'logintype' => $login_type
-    ]);
-    /** 插入数据库*/
-    $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
-    $insertOneResult = $manager->executeBulkWrite('db_account.col_user', $bulkInsertUser, $writeConcern);
-}
+//$user_id = -1;
+//$exp = 1;
+//$is_new = false;
+///** 根据openid 查找用户数据*/
+//$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+//$filter = ['openid' => $openid];
+//$options = array(
+//    'limit' => 1
+//);
+//$query_find = new MongoDB\Driver\Query($filter, $options);
+//$cursor = $manager->executeQuery('db_account.col_user', $query_find);
+//$user_info = $cursor->toArray()[0];
+///** 区分新老用户*/
+//if ($user_info) {
+//    /** 老用户*/
+//    $user_id = $user_info->user_id;
+//    $exp = $user_info->exp;
+//} else {
+//    /** 新用户*/
+//    $is_new = true;
+//    /** 生成自增id*/
+//    $query = [
+//        "findandmodify" => "col_increase",
+//        "query" => ['table' => 'inc_user_id'],
+//        "update" => ['$inc' => ['user_id_now' => 1]],
+//        'upsert' => true,
+//        'new' => true,
+//        'fields' => ['user_id_now' => 1]
+//    ];
+//    $command = new MongoDB\Driver\Command($query);
+//    $command_cursor = $manager->executeCommand('db_account', $command);
+//    $response = $command_cursor->toArray()[0];
+//    /** 获取新用户id*/
+//    $user_id = $response->value->user_id_now;
+//    /** 插入用户表*/
+//    $bulkInsertUser = new MongoDB\Driver\BulkWrite();
+//    $bulkInsertUser->insert([
+//        'openid' => $openid,
+//        'access_token' => $access_token,
+//        'refresh_token' => $refresh_token,
+////        'scope' => $scope,
+//
+//        'headimgurl' => $headimgurl,
+//        'nickname' => $nickname,
+////        'sex' => $sex,
+////        'province' => $province,
+////        'city' => $city,
+//
+////        'channel' => $channel,
+//        'user_id' => $user_id,
+//        'exp' => $exp,
+//        'exp_day' => 0,
+//        'create_time' => $time_stamp,
+////        'logintype' => $login_type
+//    ]);
+//    /** 插入数据库*/
+//    $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 3000);
+//    $insertOneResult = $manager->executeBulkWrite('db_account.col_user', $bulkInsertUser, $writeConcern);
+//}
 
 /** 初始化$_SESSION 数据*/
 $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl']);
-$_SESSION['nickname'] = $nickname;
+$_SESSION['nickname'] = $nick_name;
 $_SESSION['user_id'] = $user_id;
 
 /** 返回用户id*/
 $res = new stdClass;
 $res->user_id = $user_id;
-$res->is_new = $is_new;
-$res->exp = $exp;
-$res->figure_url = $_SESSION['figure_url'];
-$res->user_id = $_SESSION['user_id'];
-$res->nickname = $_SESSION['nickname'];
+//$res->is_new = $is_new;
+//$res->exp = $exp;
+//$res->figure_url = $_SESSION['figure_url'];
+//$res->user_id = $_SESSION['user_id'];
+//$res->nickname = $_SESSION['nickname'];
 
 echo json_encode($res);

@@ -7,9 +7,7 @@ function login($open_id, $nick_name, $head_img_url)
     /** 根据openid 查找用户数据*/
     $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     $filter = ['openid' => $open_id];
-    $options = array(
-        'limit' => 1
-    );
+    $options = ['limit' => 1];
     $query_find = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery('db_account.col_user', $query_find);
     $user_info = $cursor->toArray()[0];

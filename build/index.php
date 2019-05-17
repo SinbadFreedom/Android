@@ -59,45 +59,5 @@
 </div>
 
 <script src="/lib/jquery-3.2.1.min.js"></script>
-<script>
-    // /** 评论*/
-    // var url = "php/forum/index.php";
-    // $.ajax({
-    //     url: url,
-    //     type: "GET",
-    //     async: false,//同步请求用false,异步请求true
-    //     dataType: "html",
-    //     data: {},
-    //     success: function (data) {
-    //         document.getElementById("note_area").innerHTML = data;
-    //     },
-    //     error: function (data, textstatus) {
-    //         //请求不成功返回的提示
-    //     }
-    // });
-
-    // /** 排行榜*/
-    // var url = "php/rank_list.php";
-    // $.ajax({
-    //     url: url,
-    //     type: "GET",
-    //     async: false,//同步请求用false,异步请求true
-    //     dataType: "html",
-    //     data: {},
-    //     success: function (data) {
-    //         document.getElementById("rank_list").innerHTML = data;
-    //     },
-    //     error: function (data, textstatus) {
-    //         //请求不成功返回的提示
-    //     }
-    // });
-</script>
-
-<!--<script>-->
-<!--    function qq_login()-->
-<!--    {-->
-<!--        window.location.href = "lib/Connect2.1/example/oauth/index.php";-->
-<!--    }-->
-<!--</script>-->
 </body>
 </html>;
