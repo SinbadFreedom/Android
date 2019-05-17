@@ -87,7 +87,7 @@ $nick_name = $_POST['nickname'];
 //$channel = $_POST['channel'];
 //$login_type = $_POST['logintype'];
 
-require_once('../../php/mongo_login.php');
+require_once('mongo_login.php');
 /** app登陆qq,wx都采用 unionid，web和app统一*/
 $user_id = login($union_id, $nick_name, $head_img_url);
 
