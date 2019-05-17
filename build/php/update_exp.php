@@ -11,9 +11,11 @@ date_default_timezone_set('PRC');
 
 /** 登录状态检测*/
 if (!isset($_SESSION['user_id'])) {
+    echo '--------------------------NULL user_id--------------------------';
     return;
 }
 $user_id = $_SESSION['user_id'];
+echo '$user_id'. $user_id;
 
 require_once('util_time.php');
 
@@ -41,19 +43,21 @@ $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
 
 /** 获取新用户id*/
-$res = new stdClass();
+//$res = new stdClass();
+echo '+++++++++++++++' . var_dump($response ). '+++++++++++++++';
 
 if ($response->value) {
-    /** 返回最新经验值*/
-    $res->state = 0;
-    $res->exp = $response->value->exp;
+//    /** 返回最新经验值*/
+//    $res->state = 0;
+//    $res->exp = $response->value->exp;
 
     updateExpAddValue($user_id, $manager, $col_today);
     updateExpAddValue($user_id, $manager, $col_week);
     updateExpAddValue($user_id, $manager, $col_month);
-} else {
-    $res->state = -1;
 }
+//else {
+//    $res->state = -1;
+//}
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {
@@ -76,5 +80,6 @@ function updateExpAddValue($user_id, $manager, $col_name)
     $redis->connect('127.0.0.1', 6379);
     /** 加入有序集合*/
     $redis->zAdd($col_name, $exp, $user_id);
+    echo '--------------------------- ' . $exp . '-------------------';
     return $exp;
 }
