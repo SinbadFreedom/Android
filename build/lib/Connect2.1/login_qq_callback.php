@@ -52,6 +52,8 @@ var_dump($data);
 //$data.re
 str_replace('callback(','',$data);
 str_replace(');','',$data);
+echo '-----------1+';
+var_dump($data);
 echo '-----------1+++';
 $data_json = json_decode($data);
 //$access_token = $data_json->access_token;
