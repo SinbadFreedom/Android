@@ -70,5 +70,5 @@ $_SESSION['user_id'] = $user_id;
 
 /** login_ui.php中记录来路url，完成登陆，跳转回去*/
 $from_url = $_SESSION['from_url'];
-header("Location: $from_url");
+//header("Location: $from_url");
 return;
