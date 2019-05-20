@@ -43,8 +43,16 @@ $union_id_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token
 echo '-----------1';
 //$union_id_obj = $qc_info->getUnionId();
 $data = getDataFromUrl($union_id_url);
+/**
+ * 返回字符串
+ * callback( {"client_id":"101576583","openid":"B3EEFF9E07DD30D2E89FEE4C988B8F7F","unionid":"UID_A86FD72CF72028D3332634A0A0C9A22F"} );
+ * 需要去掉 callback( 和  );
+ */
 var_dump($data);
-
+//$data.re
+str_replace('callback(','',$data);
+str_replace(');','',$data);
+echo '-----------1+++';
 $data_json = json_decode($data);
 //$access_token = $data_json->access_token;
 //$open_id = $data_json->openid;
@@ -54,7 +62,14 @@ $union_id = $data_json->unionid;
 $client_id = $data_json->client_id;
 echo $union_id;
 echo '-----------3';
+
+if (!$union_id || !$open_id) {
+    echo 'union_id  or open_id error.';
+    return;
+}
+
 require_once('../../php/mongo_login.php');
+
 $user_id = login($union_id, $open_id, $nick_name, $head_img_url);
 echo $user_id;
 echo '-----------4';
