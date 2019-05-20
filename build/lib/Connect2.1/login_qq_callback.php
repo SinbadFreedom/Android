@@ -30,40 +30,20 @@ $city = $arr['city'];
 $year = $arr['year'];
 $figureurl_type = $arr['figureurl_type'];
 
-/**
-{
-"client_id":"YOUR_APPID",
-"openid":"YOUR_OPENID",
-"unionid":"YOUR_UNIONID"
-}
- */
-
 require_once('../../php/util_curl.php');
 $union_id_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token . '&unionid=1';
-echo '-----------1';
-//$union_id_obj = $qc_info->getUnionId();
 $data = getDataFromUrl($union_id_url);
 /**
  * 返回字符串
  * callback( {"client_id":"101576583","openid":"B3EEFF9E07DD30D2E89FEE4C988B8F7F","unionid":"UID_A86FD72CF72028D3332634A0A0C9A22F"} );
  * 需要去掉 callback( 和  );
  */
-var_dump($data);
 //$data.re
 $data = str_replace('callback(','',$data);
 $data = str_replace(');','',$data);
-echo '-----------1+';
-var_dump($data);
-echo '-----------1+++';
 $data_json = json_decode($data);
-//$access_token = $data_json->access_token;
-//$open_id = $data_json->openid;
-var_dump($data_json);
-echo '-----------2';
 $union_id = $data_json->unionid;
 $client_id = $data_json->client_id;
-echo $union_id;
-echo '-----------3';
 
 if (!$union_id || !$open_id) {
     echo 'union_id  or open_id error.';
@@ -74,7 +54,6 @@ require_once('../../php/mongo_login.php');
 
 $user_id = login($union_id, $open_id, $nick_name, $head_img_url);
 echo $user_id;
-echo '-----------4';
 if ($user_id < 0) {
     echo 'userid error 请重新登陆';
     return;
@@ -87,5 +66,5 @@ $_SESSION['user_id'] = $user_id;
 
 /** login_ui.php中记录来路url，完成登陆，跳转回去*/
 $from_url = $_SESSION['from_url'];
-//header("Location: $from_url");
+header("Location: $from_url");
 return;
