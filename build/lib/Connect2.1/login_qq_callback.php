@@ -50,8 +50,8 @@ $data = getDataFromUrl($union_id_url);
  */
 var_dump($data);
 //$data.re
-str_replace('callback(','',$data);
-str_replace(');','',$data);
+$data = str_replace('callback(','',$data);
+$data = str_replace(');','',$data);
 echo '-----------1+';
 var_dump($data);
 echo '-----------1+++';
