@@ -41,20 +41,12 @@ $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
 
 /** 获取新用户id*/
-//$res = new stdClass();
 
 if ($response->value) {
-//    /** 返回最新经验值*/
-//    $res->state = 0;
-//    $res->exp = $response->value->exp;
-
     updateExpAddValue($user_id, $manager, $col_today);
     updateExpAddValue($user_id, $manager, $col_week);
     updateExpAddValue($user_id, $manager, $col_month);
 }
-//else {
-//    $res->state = -1;
-//}
 
 function updateExpAddValue($user_id, $manager, $col_name)
 {

@@ -37,11 +37,21 @@ $figureurl_type = $arr['figureurl_type'];
 "unionid":"YOUR_UNIONID"
 }
  */
+
+require_once('../../php/util_curl.php');
+$union_id_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token . '&unionid=1';
 echo '-----------1';
-$union_id_obj = $qc_info->getUnionId();
-var_dump($union_id_obj);
+//$union_id_obj = $qc_info->getUnionId();
+$data = getDataFromUrl($url);
+var_dump($data);
+
+$data_json = json_decode($data);
+//$access_token = $data_json->access_token;
+//$open_id = $data_json->openid;
+var_dump($data_json);
 echo '-----------2';
-$union_id = $union_id_obj->unionid;
+$union_id = $data_json->unionid;
+$client_id = $data_json->client_id;
 echo $union_id;
 echo '-----------3';
 require_once('../../php/mongo_login.php');

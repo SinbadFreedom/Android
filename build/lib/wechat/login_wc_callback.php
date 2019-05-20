@@ -8,16 +8,18 @@ if (!isset($_GET['code'])) {
 
 $code = $_GET['code'];
 
-function getDataFromUrl($get_url)
-{
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $get_url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    return $data;
-}
+
+//function getDataFromUrl($get_url)
+//{
+//    $ch = curl_init();
+//    curl_setopt($ch, CURLOPT_URL, $get_url);
+//    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//    curl_setopt($ch, CURLOPT_HEADER, 0);
+//    $data = curl_exec($ch);
+//    curl_close($ch);
+//    return $data;
+//}
+require_once('../../php/util_curl.php');
 
 $url = 'https' . '://ap' . 'i.we' . 'ix' . 'in.q' . 'q.c' . 'om/sn' . 's/oau' . 'th2/ac' . 'cess_' . 'to' . 'ken?ap' . 'pid=wx7' . 'c369' . 'f8fe5340534&sec' . 'ret' . '=' . '163ffc' . 'e441b47' . '6cd12672b69' . '51889ddf' . '&co' . 'de=' . $code . '&grant_type' . '=' . 'au' . 'thor' . 'izatio' . 'n_' . 'code';
 $data = getDataFromUrl($url);
