@@ -42,7 +42,7 @@ require_once('../../php/util_curl.php');
 $union_id_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token . '&unionid=1';
 echo '-----------1';
 //$union_id_obj = $qc_info->getUnionId();
-$data = getDataFromUrl($url);
+$data = getDataFromUrl($union_id_url);
 var_dump($data);
 
 $data_json = json_decode($data);
