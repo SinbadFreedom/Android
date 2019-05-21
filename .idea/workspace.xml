@@ -6,7 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/build/index.php" line="15" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1. 显示时间">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/user_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/user_info.php" afterDir="false" />
     </list>
@@ -67,19 +67,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/php/user_info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="116" column="20" lean-forward="true" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+            <state relative-caret-position="647">
+              <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
               <folding>
-                <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -125,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$_POST['user_id']</find>
       <find>$_SESSION['figure_url'] =</find>
       <find>$head_img_url</find>
       <find>$nick_name</find>
@@ -155,9 +144,9 @@
       <find>$year</find>
       <find>class=&quot;col-1</find>
       <find>class=&quot;col-11&quot;</find>
+      <find>class=&quot;col-10&quot;</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;p</replace>
       <replace>../../img</replace>
       <replace>-9</replace>
       <replace>-2</replace>
@@ -187,6 +176,7 @@
       <replace>$union_id</replace>
       <replace>class=&quot;</replace>
       <replace>style=&quot;width: 100%&quot;</replace>
+      <replace>class=&quot;col-10&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\workplace\git\Android\md\python3</dir>
@@ -531,21 +521,7 @@
       <workItem from="1558352724039" duration="1422000" />
       <workItem from="1558355705352" duration="1792000" />
       <workItem from="1558357511889" duration="1287000" />
-      <workItem from="1558409348985" duration="933000" />
-    </task>
-    <task id="LOCAL-00262" summary="1. 调试app登录catalog.php session">
-      <created>1557906543513</created>
-      <option name="number" value="00262" />
-      <option name="presentableId" value="LOCAL-00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1557906543514</updated>
-    </task>
-    <task id="LOCAL-00263" summary="1. 调试app登录catalog.php session">
-      <created>1557908351985</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1557908351986</updated>
+      <workItem from="1558409348985" duration="1313000" />
     </task>
     <task id="LOCAL-00264" summary="1. $_SESSION['figure_url'] http 替换为https">
       <created>1557908965314</created>
@@ -876,11 +852,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558357665922</updated>
     </task>
-    <option name="localTasksCounter" value="311" />
+    <task id="LOCAL-00311" summary="1. 修改用户信息">
+      <created>1558410465651</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1558410465652</updated>
+    </task>
+    <task id="LOCAL-00312" summary="1. 修改用户信息">
+      <created>1558410736700</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1558410736700</updated>
+    </task>
+    <option name="localTasksCounter" value="313" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402025000" />
+    <option name="totallyTimeSpent" value="402405000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -921,7 +911,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 调试app_login.php" />
     <MESSAGE value="1. 调试app登录catalog.php session" />
     <MESSAGE value="1. $_SESSION['figure_url'] http 替换为https" />
     <MESSAGE value="1. 排行榜头像 http 替换为https" />
@@ -946,7 +935,8 @@
     <MESSAGE value="1. 移除输出" />
     <MESSAGE value="1. qq web unionid" />
     <MESSAGE value="1. 显示时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 显示时间" />
+    <MESSAGE value="1. 修改用户信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改用户信息" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1225,19 +1215,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/user_info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="116" column="20" lean-forward="true" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+        <state relative-caret-position="647">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
