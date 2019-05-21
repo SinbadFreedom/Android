@@ -70,12 +70,10 @@ if ($user_id) {
 </nav>
 
 <div class="container">
+    <div>
+        <img src="<?php echo $_SESSION['figure_url'] ?>">
+    </div>
     <form>
-        <div class="form-group row">
-            <div>
-                <img src="<?php echo $_SESSION['figure_url'] ?>">
-            </div>
-        </div>
         <div class="form-group row">
             <label for="staticEmail" class="col-form-label" style="width: 80px;">昵称:</label>
             <div>
