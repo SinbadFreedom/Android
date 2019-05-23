@@ -39,7 +39,7 @@ if ($user_id) {
 <body>
 
 <div style="background: #2196F3">
-    <img src="/img/web_1.png">
+    <img src="/img/web_3.png">
 </div>
 
 <nav class="navbar navbar-expand navbar-light">
