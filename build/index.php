@@ -79,7 +79,7 @@ session_start();
                 getPageRank(btn_id);
                 break;
             case 'note':
-                getNoteList(param);
+                getNoteList(btn_id, param);
                 break;
             case 'doc':
                 clickBtnClick(btn_id);
@@ -146,11 +146,11 @@ session_start();
         active_rank_list_button(type);
     }
 
-    function getNoteList(tag) {
-        console.log('getNoteList ' + tag);
+    function getNoteList(btn_id, tag) {
+        console.log('getNoteList ' + tag + ' btn_id ' + btn_id);
         let url = '/php/forum/index.php?tag=' + tag;
         ajax_get_url(url, 'note_tag_info');
-        active_note_tag_button(tag);
+        active_note_tag_button(btn_id);
     }
 
     function clickBtnClick(btn_id) {
@@ -291,15 +291,14 @@ session_start();
         $(id_str).addClass("active");
     }
 
-    function active_note_tag_button(tag) {
+    function active_note_tag_button(btn_id) {
         $('#note_content_all').removeClass("active");
-        $('#note_python3\.7\.2').removeClass("active");
+        /** jquery id名字中带有.的特殊处理*/
+        $('[id="note_python3.7.2"]').removeClass("active");
         $('#note_技术讨论').removeClass("active");
         $('#note_灌水乐园').removeClass("active");
-
-        console.log('active_note_tag_button ' + tag);
-        let tag_str = '#note_' + tag;
-        $(tag_str).addClass("active");
+        console.log('active_note_tag_button ' + btn_id);
+        $('[id="' + btn_id + '"]').addClass("active");
     }
 
     function active_language_btn(lan) {
