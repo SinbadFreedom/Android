@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 
-<body>
+<body>button 嵌入的img 屏蔽点击事件
 
 <div style="background: #2196F3">
     <img src="/img/web_3.png">
@@ -26,7 +26,7 @@ session_start();
         if (isset($_SESSION['figure_url'])) {
 //            echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
             echo '<button type="button" id="nav_btn_figure" class="btn btn-success ml-auto">
-                    <img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px" onclick="return false">
+                    <img onclick="javascript:void(0);"  class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px">
                 </button>';
         } else {
             echo '<button type="button" id="nav_btn_login" class="btn btn-success ml-auto">登录</button>';
