@@ -64,8 +64,10 @@ session_start();
 
     function btn_click(e) {
         let btn_id = $(e.target).attr("id");
-        let type = btn_id.split('_')[0];
-        let param = btn_id.split('_')[1];
+        let c_index = btn_id.indexOf("_");
+        let type = btn_id.slice(0, c_index);
+        /** 跳过‘_’*/
+        let param = btn_id.split(c_index + 1);
         switch (type) {
             case 'nav':
                 getPageIndex(btn_id);
@@ -235,7 +237,7 @@ session_start();
                     getPageRank('rank_1');
                 } else if (link_name === '/ajax/note_tag.html') {
                     /** 加载笔记tag html页面完成，加载笔记内容*/
-                    getNoteList('all');
+                    getNoteList('content_all');
                 } else if (link_name === '/ajax/doc.html') {
                     /** 更新语言按钮状态 */
                     active_language_btn(current_lan);
