@@ -3,7 +3,7 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/md/python3.7.2/en/catalog.md" line="26" />
     <bookmark url="file://$PROJECT_DIR$/build/index.php" line="15" />
-    <bookmark url="file://$PROJECT_DIR$/build/index.php" line="241" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/build/index.php" line="243" mnemonic="8" />
     <bookmark url="file://$PROJECT_DIR$/build/php/rank_list.php" line="216" />
   </component>
   <component name="ChangeListManager">
@@ -24,8 +24,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+            <state relative-caret-position="79">
+              <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/ajax/note_tag.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1202">
+              <caret line="23" column="12" selection-start-line="23" selection-end-line="23" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -37,11 +55,6 @@
               <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/php_errors.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -58,15 +71,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3071">
               <caret line="198" column="19" lean-forward="true" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/python3.7.2/en/1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -115,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$res</find>
       <find>$manager</find>
       <find>state:&quot;error&quot;</find>
       <find>index.html</find>
@@ -125,7 +128,6 @@
       <find>ajax/doc.html</find>
       <find>current_lan</find>
       <find>note</find>
-      <find>$tag</find>
       <find>note_tag</find>
       <find>$doc_tag_arr</find>
       <find>jquery</find>
@@ -142,9 +144,11 @@
       <find>content_all</find>
       <find>btn_click</find>
       <find>入的img 屏蔽点击事件</find>
-      <find>all</find>
-      <find>note_</find>
       <find>btn_c</find>
+      <find>all</find>
+      <find>active_note_tag_button</find>
+      <find>$tag</find>
+      <find>note_</find>
     </findStrings>
     <replaceStrings>
       <replace>0413 02:39</replace>
@@ -234,7 +238,6 @@
         <option value="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
-        <option value="$PROJECT_DIR$/build/ajax/note_tag.html" />
         <option value="$PROJECT_DIR$/build/php/forum/note_new_ui.php" />
         <option value="$PROJECT_DIR$/build/ajax/new_note.html" />
         <option value="$PROJECT_DIR$/build/ajax/newNote.html" />
@@ -244,6 +247,7 @@
         <option value="$PROJECT_DIR$/build/ajax/index.html" />
         <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/php/rank_list.php" />
+        <option value="$PROJECT_DIR$/build/ajax/note_tag.html" />
         <option value="$PROJECT_DIR$/build/index.php" />
       </list>
     </option>
@@ -270,6 +274,12 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -605,21 +615,7 @@
       <workItem from="1558924977782" duration="2117000" />
       <workItem from="1558927842938" duration="1792000" />
       <workItem from="1558929649193" duration="2255000" />
-      <workItem from="1558936421025" duration="919000" />
-    </task>
-    <task id="LOCAL-00278" summary="1. 统一变量名">
-      <created>1558028565458</created>
-      <option name="number" value="00278" />
-      <option name="presentableId" value="LOCAL-00278" />
-      <option name="project" value="LOCAL" />
-      <updated>1558028565458</updated>
-    </task>
-    <task id="LOCAL-00279" summary="1. 调试">
-      <created>1558028831267</created>
-      <option name="number" value="00279" />
-      <option name="presentableId" value="LOCAL-00279" />
-      <option name="project" value="LOCAL" />
-      <updated>1558028831267</updated>
+      <workItem from="1558936421025" duration="1427000" />
     </task>
     <task id="LOCAL-00280" summary="1. 调试">
       <created>1558029170556</created>
@@ -950,11 +946,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558936820655</updated>
     </task>
-    <option name="localTasksCounter" value="327" />
+    <task id="LOCAL-00327" summary="1. 修改切割字符串方法，采用slice">
+      <created>1558937415744</created>
+      <option name="number" value="00327" />
+      <option name="presentableId" value="LOCAL-00327" />
+      <option name="project" value="LOCAL" />
+      <updated>1558937415744</updated>
+    </task>
+    <task id="LOCAL-00328" summary="1. 修改切割字符串方法，采用slice">
+      <created>1558937611381</created>
+      <option name="number" value="00328" />
+      <option name="presentableId" value="LOCAL-00328" />
+      <option name="project" value="LOCAL" />
+      <updated>1558937611381</updated>
+    </task>
+    <option name="localTasksCounter" value="329" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482176000" />
+    <option name="totallyTimeSpent" value="482684000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -969,11 +979,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22465315" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22465315" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.30610022" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.30610022" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22222222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1018,7 +1028,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修复头像url" />
     <MESSAGE value="1. 加入wx login" />
     <MESSAGE value="1. 整合登录数据库操作" />
     <MESSAGE value="1. 统一变量名" />
@@ -1043,7 +1052,8 @@
     <MESSAGE value="1. 调整导航图像" />
     <MESSAGE value="1. 移除图片居中css" />
     <MESSAGE value="1. 修改排行榜alert" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改排行榜alert" />
+    <MESSAGE value="1. 修改切割字符串方法，采用slice" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 修改切割字符串方法，采用slice" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1183,13 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/note_tag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/newNote.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1246,13 +1249,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/update_exp.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1316,10 +1312,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/ajax/note_tag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1202">
+          <caret line="23" column="12" selection-start-line="23" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        <state relative-caret-position="79">
+          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
         </state>
       </provider>
     </entry>

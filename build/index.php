@@ -79,6 +79,8 @@ session_start();
                 getPageRank(btn_id);
                 break;
             case 'note':
+                console.log('getNoteList ' + param);
+                console.log('btn_id ' + btn_id);
                 getNoteList(param);
                 break;
             case 'doc':
