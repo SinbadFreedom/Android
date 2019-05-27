@@ -237,7 +237,7 @@ session_start();
                     getPageRank('rank_1');
                 } else if (link_name === '/ajax/note_tag.html') {
                     /** 加载笔记tag html页面完成，加载笔记内容*/
-                    getNoteList('content_all');
+                    getNoteList('note_content_all');
                 } else if (link_name === '/ajax/doc.html') {
                     /** 更新语言按钮状态 */
                     active_language_btn(current_lan);
