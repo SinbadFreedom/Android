@@ -22,8 +22,8 @@ img {
 
     /** 居中 自适应大小*/
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
     max-width: 100%;
     height: auto;
 }
