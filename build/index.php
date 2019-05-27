@@ -67,7 +67,7 @@ session_start();
         let c_index = btn_id.indexOf("_");
         let type = btn_id.slice(0, c_index);
         /** 跳过‘_’*/
-        let param = btn_id.split(c_index + 1);
+        let param = btn_id.slice(c_index + 1);
         switch (type) {
             case 'nav':
                 getPageIndex(btn_id);
