@@ -3,14 +3,13 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/md/python3.7.2/en/catalog.md" line="26" />
     <bookmark url="file://$PROJECT_DIR$/build/index.php" line="15" />
-    <bookmark url="file://$PROJECT_DIR$/build/index.php" line="242" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/build/index.php" line="240" mnemonic="8" />
     <bookmark url="file://$PROJECT_DIR$/build/php/rank_list.php" line="216" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/rank_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/rank_list.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -34,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="28" column="128" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
+            <state relative-caret-position="315">
+              <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -604,21 +603,7 @@
       <workItem from="1558887776061" duration="1456000" />
       <workItem from="1558923034072" duration="1930000" />
       <workItem from="1558924977782" duration="2117000" />
-      <workItem from="1558927842938" duration="1225000" />
-    </task>
-    <task id="LOCAL-00272" summary="1. 修复头像url">
-      <created>1557927371886</created>
-      <option name="number" value="00272" />
-      <option name="presentableId" value="LOCAL-00272" />
-      <option name="project" value="LOCAL" />
-      <updated>1557927371887</updated>
-    </task>
-    <task id="LOCAL-00273" summary="1. 加入wx login">
-      <created>1558026321310</created>
-      <option name="number" value="00273" />
-      <option name="presentableId" value="LOCAL-00273" />
-      <option name="project" value="LOCAL" />
-      <updated>1558026321310</updated>
+      <workItem from="1558927842938" duration="1655000" />
     </task>
     <task id="LOCAL-00274" summary="1. 加入wx login">
       <created>1558026376144</created>
@@ -949,11 +934,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558928605099</updated>
     </task>
-    <option name="localTasksCounter" value="321" />
+    <task id="LOCAL-00321" summary="1. 导航图像屏蔽点击">
+      <created>1558929101033</created>
+      <option name="number" value="00321" />
+      <option name="presentableId" value="LOCAL-00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1558929101033</updated>
+    </task>
+    <task id="LOCAL-00322" summary="1. 导航图像屏蔽点击">
+      <created>1558929337227</created>
+      <option name="number" value="00322" />
+      <option name="presentableId" value="LOCAL-00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1558929337227</updated>
+    </task>
+    <option name="localTasksCounter" value="323" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478435000" />
+    <option name="totallyTimeSpent" value="478865000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1017,7 +1016,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修复post参数" />
     <MESSAGE value="1. 调试用户信息头像" />
     <MESSAGE value="1. 调整用户信息头像 布局" />
     <MESSAGE value="1. 修改web_1.png, alpha&#10;2. 移除部分app_login 参数" />
@@ -1042,7 +1040,8 @@
     <MESSAGE value="1. 图片采用 ali 字体" />
     <MESSAGE value="1. 重构代码。采用ajax分离显示和后端逻辑。" />
     <MESSAGE value="1. 修复排行榜显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修复排行榜显示" />
+    <MESSAGE value="1. 导航图像屏蔽点击" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 导航图像屏蔽点击" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1311,8 +1310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="28" column="128" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
+        <state relative-caret-position="315">
+          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
         </state>
       </provider>
     </entry>

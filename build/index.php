@@ -25,9 +25,7 @@ session_start();
         <?php
         if (isset($_SESSION['figure_url'])) {
 //            echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-            echo '<button type="button" id="nav_btn_figure" class="btn btn-success ml-auto">
-                    <img onclick="javascript:void(0);"  class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px">
-                </button>';
+            echo '<img id="nav_btn_figure"  class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px">';
         } else {
             echo '<button type="button" id="nav_btn_login" class="btn btn-success ml-auto">登录</button>';
         }
