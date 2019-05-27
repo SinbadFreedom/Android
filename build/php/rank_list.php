@@ -85,113 +85,13 @@ if (!$key) {
     return;
 }
 
-//if ($key) {
 $res = $redis->get($key);
 $rank_list = json_decode($res);
-//if ($rank_list && sizeof($rank_list) > 0) {
-/**
- * <tr>
- * <th scope="row">1</th>
- * <td>头像</td>
- * <td>Sinbad</td>
- * <td>95</td>
- * </tr>
- */
-//    if ($type == $TYPE_ALL) {
-//            /** 总榜显示等级*/
-//            $note_list_content = '<table class="table">
-//<thead>
-//        <tr class="table-active">
-//            <th>排名</th>
-//            <th>头像</th>
-//            <th>昵称</th>
-//            <th>等级</th>
-//            <th>经验</th>
-//        </tr>
-//        </thead>
-//        <tbody>';
-//        } else {
-//            /** 其他榜不显示等级*/
-//            $note_list_content = '<table class="table">
-//<thead>
-//        <tr class="table-active">
-//            <th>排名</th>
-//            <th>头像</th>
-//            <th>昵称</th>
-//            <th>经验</th>
-//        </tr>
-//        </thead>
-//        <tbody>';
-//        }
-//    $rank = 1;
-//    foreach ($rank_list as $value) {
-//        $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
-//        $nick_name = $value->nickname;
-//        $exp = $value->exp;
-//        $level = getLevelByExp($exp);
-//
-////            /** 前三名的格式特殊处理*/
-////            switch ($rank) {
-////                case 1:
-////                    $note_list_content .= '<tr class="table-danger">';
-////                    break;
-////                case 2:
-////                    $note_list_content .= '<tr class="table-warning">';
-////                    break;
-////                case 3:
-////                    $note_list_content .= '<tr class="table-success">';
-////                    break;
-////                default:
-////                    $note_list_content .= '<tr>';
-////                    break;
-////            }
-//
-//        if ($type == $TYPE_ALL) {
-//            /** 总榜显示等级*/
-//            $note_list_content .= '<th valign="middle">' . $rank . '</th>'
-//                . '<td>'
-//                . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
-//                . '</td>'
-//                . '<td valign="middle">' . $nick_name . '</td>'
-//                . '<td valign="middle">' . $level . '</td>'
-//                . '<td valign="middle">' . $exp . '</td>'
-//                . '</tr>';
-//        } else {
-//            /** 其他榜不显示等级*/
-//            $note_list_content .= '<th valign="middle">' . $rank . '</th>'
-//                . '<td valign="middle">'
-//                . '<img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px">'
-//                . '</td>'
-//                . '<td valign="middle">' . $nick_name . '</td>'
-//                . '<td valign="middle">' . $exp . '</td>'
-//                . '</tr>';
-//        }
-//
-//        $rank++;
-//    }
-//    $note_list_content .= '</tbody></table>';
-//    } else {
-//        $note_list_content = "<p>到排行榜刷新时间后会出数据,敬请期待.</p>";
-//    }
-//}
 ?>
 
-<!--<div class="btn-group">-->
-<!--    <button id="rank_1" class="btn btn-light active">今日</button>-->
-<!--    <button id="rank_2" class="btn btn-light">昨日</button>-->
-<!--    <button id="rank_3" class="btn btn-light">本周</button>-->
-<!--    <button id="rank_4" class="btn btn-light">上周</button>-->
-<!--    <button id="rank_5" class="btn btn-light">本月</button>-->
-<!--    <button id="rank_6" class="btn btn-light">上月</button>-->
-<!--    <button id="rank_7" class="btn btn-light">总榜</button>-->
-<!--</div>-->
 <div class="alert alert-success">
     <?php echo $title . '  ' . $tip; ?>
 </div>
-
-<!--<div>-->
-<!--    --><?php //echo $note_list_content; ?>
-<!--</div>-->
 
 <table class="table">
     <thead>

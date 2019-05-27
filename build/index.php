@@ -79,8 +79,6 @@ session_start();
                 getPageRank(btn_id);
                 break;
             case 'note':
-                console.log('getNoteList ' + param);
-                console.log('btn_id ' + btn_id);
                 getNoteList(param);
                 break;
             case 'doc':
@@ -294,8 +292,8 @@ session_start();
     }
 
     function active_note_tag_button(tag) {
-        $('#note_all').removeClass("active");
-        $('#note_python3\.7\.2').removeClass("active");
+        $('#note_content_all').removeClass("active");
+        $('#note_python3.7.2').removeClass("active");
         $('#note_技术讨论').removeClass("active");
         $('#note_灌水乐园').removeClass("active");
 
