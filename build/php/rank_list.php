@@ -204,26 +204,26 @@ $rank_list = json_decode($res);
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <?php
-        if ($rank_list) {
-            $str = '';
-            $rank = 1;
-            foreach ($rank_list as $value) {
-                $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
-                $nick_name = $value->nickname;
-                $exp = $value->exp;
-                $level = getLevelByExp($exp);
-                $str .= '<th valign="middle">' . $rank . '</th>'
-                    . '<td><img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px"></td>'
-                    . '<td valign="middle">' . $nick_name . '</td>'
-                    . '<td valign="middle">' . $level . '</td>'
-                    . '<td valign="middle">' . $exp . '</td>';
-                $rank++;
-            }
-            echo $str;
+    <?php
+    if ($rank_list) {
+        $str = '';
+        $rank = 1;
+        foreach ($rank_list as $value) {
+            $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
+            $nick_name = $value->nickname;
+            $exp = $value->exp;
+            $level = getLevelByExp($exp);
+            $str .= '    <tr><th valign="middle">' . $rank . '</th>'
+                . '<td><img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px"></td>'
+                . '<td valign="middle">' . $nick_name . '</td>'
+                . '<td valign="middle">' . $level . '</td>'
+                . '<td valign="middle">' . $exp . '</td>'
+                . '</tr>';
+            $rank++;
         }
-        ?>
-    </tr>
+        echo $str;
+    }
+    ?>
+
     </tbody>
 </table>
