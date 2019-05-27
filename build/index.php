@@ -64,6 +64,7 @@ session_start();
 
     function btn_click(e) {
         let btn_id = $(e.target).attr("id");
+        console.log(' btn_click ' + btn_id);
         let c_index = btn_id.indexOf("_");
         let type = btn_id.slice(0, c_index);
         /** 跳过‘_’*/
@@ -134,6 +135,7 @@ session_start();
     /** 文章tag按钮点击*/
     function getPageTag(tag) {
         current_tag = tag;
+        /** 设置button值*/
         let url = '/ajax/doc.html';
         /** 设置current_tag变量*/
         ajax_get_url(url);
@@ -240,6 +242,9 @@ session_start();
                     /** 加载笔记tag html页面完成，加载笔记内容*/
                     getNoteList('note_content_all');
                 } else if (link_name === '/ajax/doc.html') {
+                    console.log('/ajax/doc.html ' + current_tag);
+                    /** 更新tag按钮值*/
+                    $('#doc_tag').text(current_tag);
                     /** 更新语言按钮状态 */
                     active_language_btn(current_lan);
                     /** 加载文档标题区*/
