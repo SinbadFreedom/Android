@@ -185,9 +185,9 @@ $rank_list = json_decode($res);
 <!--    <button id="rank_6" class="btn btn-light">上月</button>-->
 <!--    <button id="rank_7" class="btn btn-light">总榜</button>-->
 <!--</div>-->
-<p>
+<div class="alert alert-success">
     <?php echo $title . '  ' . $tip; ?>
-</p>
+</div>
 
 <!--<div>-->
 <!--    --><?php //echo $note_list_content; ?>
