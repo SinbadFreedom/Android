@@ -213,7 +213,7 @@ $rank_list = json_decode($res);
             $nick_name = $value->nickname;
             $exp = $value->exp;
             $level = getLevelByExp($exp);
-            $str .= '    <tr><th valign="middle">' . $rank . '</th>'
+            $str .= '<tr><th valign="middle">' . $rank . '</th>'
                 . '<td><img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px"></td>'
                 . '<td valign="middle">' . $nick_name . '</td>'
                 . '<td valign="middle">' . $level . '</td>'
