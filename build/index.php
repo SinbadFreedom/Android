@@ -150,7 +150,7 @@ session_start();
         console.log('getNoteList ' + tag);
         let url = '/php/forum/index.php?tag=' + tag;
         ajax_get_url(url, 'note_tag_info');
-        active_note_tag_button('note_' + tag);
+        active_note_tag_button(tag);
     }
 
     function clickBtnClick(btn_id) {
@@ -293,7 +293,7 @@ session_start();
 
     function active_note_tag_button(tag) {
         $('#note_all').removeClass("active");
-        $('#note_python372').removeClass("active");
+        $('#note_python3\.7\.2').removeClass("active");
         $('#note_技术讨论').removeClass("active");
         $('#note_灌水乐园').removeClass("active");
 
