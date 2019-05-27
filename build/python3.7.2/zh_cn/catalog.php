@@ -11,61 +11,14 @@
        $_SESSION['user_id'] = intval($_POST['userid']);
    }
 ?>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
 
-<div style="background: #2196F3">
-    <img src="/img/web_3.png">
-</div>
-
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-                } else {
-                echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
-                }
-                ?>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container">
-    <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/&nbsppython3.7.2
-    </div>
-
-    <div class="text-right">
-        <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>
-    </div>
-
-    <hr>
-
-    <h2 id='Python3.7.2文档'>Python3.7.2文档</h2>
+<!--<div class="text-right">-->
+<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
+<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
+<!--&lt;!&ndash;    <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
+<!--</div>-->
+<!--<hr>-->
+<h2 id='Python3.7.2文档'>Python3.7.2文档</h2>
 <h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
 <h4 id="2.">2. <a href="2.php">使用Python解释器</a></h4>
 <ul>
@@ -221,30 +174,11 @@
 <li>16.1.4. <a href="16.php#16.1.4.">定制模块</a>   </li></ul></li>
 </ul>
 
-    <h4>最新笔记</h4>
-
-    <div id="note_area">
-        <!-- 评论区-->
-    </div>
-</div>
-
-<script src="/lib/jquery-3.2.1.min.js"></script>
-<script>
-    /** 评论*/
-    var url = "/php/forum/index.php?tag=python3.7.2&show_header=0";
-    $.ajax({
-        url: url,
-        type: "GET",
-        async: false,//同步请求用false,异步请求true
-        dataType: "html",
-        data: {},
-        success: function (data) {
-            document.getElementById("note_area").innerHTML = data;
-        },
-        error: function (data, textstatus) {
-            //请求不成功返回的提示
-        }
-    });
-</script>
-</body>
-</html>
+<!--<script>-->
+<!--    $('a').click(function (e) {-->
+<!--        e.preventDefault();-->
+<!--        let a_url = $(this).attr("href");-->
+<!--        a_url = '/python3.7.2/zh_cn/' + a_url;-->
+<!--        ajax_get_url(a_url)-->
+<!--    });-->
+<!--</script>-->

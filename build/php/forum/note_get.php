@@ -5,7 +5,6 @@
  * Date: 2019/3/15
  * Time: 12:20
  */
-
 session_start();
 
 error_reporting(E_ALL ^ E_NOTICE);
@@ -159,121 +158,65 @@ $reply_rul = '/php/forum/note_reply_summit.php?tag=' . $tag . '&contentid=' . $c
 
 ?>
 
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
-<?php
-if ($show_header == 1) {
-    echo '<div style="background: #2196F3">
-    <img src="/img/web_3.png">
-</div>
+<table>
+    <tbody>
+    <tr>
+        <td style="width: 96px">
+            <img src="<?php echo $author_figure ?>" width="48px" height="48px">
+            <div class="text-center">
+                <span><?php echo $author_name ?></span>
+            </div>
+        </td>
+        <td valign="top">
+            <div class="row">
+                <div>
+                    <span><b><?php echo $title ?></b></span>
+                </div>
+                <div class="ml-auto">
+                    <span><h6><?php echo date("m-d H:i", $create_time) ?></h6></span>
+                </div>
+            </div>
+            <div style="width: 100%">
+                <span><?php echo $content ?></span>
+            </div>
+        </td>
+    </tr>
+    <!-- 回复内容-->
+    <?php echo $reply_html_str ?>
+    </tbody>
+</table>
 
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">';
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php" ><img class="rounded" src="' . $_SESSION['figure_url'] . '" width = "24px" height = "24px" ></a > ';
-                } else {
-                    echo '<a class="nav-link" href="/php/login_ui.php" ><b>登录</b></a>';
-                }
-            echo '</li>
-        </ul>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a>
+    </li>
+    <?php echo $page_before_html_str ?>
+    <?php echo $page_current_str ?>
+    <?php echo $page_after_html_str ?>
+</ul>
+
+<form action="<?php echo $reply_rul; ?>" method="post" id="note_reply">
+    <div class="form-group">
+        <label for="content_reply">发表回复</label>
+        <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
     </div>
-</nav>
-<div class="container">
-    <div>
-        <a href="/index.php">&nbsp首页&nbsp</a>/<a href="/php/forum/index.php">&nbsp笔记&nbsp</a>/ <a href="/php/forum/index.php?tag='. $tag . '">&nbsp' . $tag . '&nbsp</a>/' . $title . '</div>
-    </div>';
-};
-?>
-
-<div class="container">
-    <table>
-        <tbody>
-        <tr>
-            <td style="width: 96px" >
-                <img src="<?php echo $author_figure ?>" width="48px" height="48px">
-                <div class="text-center">
-                    <span><?php echo $author_name ?></span>
-                </div>
-            </td>
-            <td valign="top">
-                <div class="row">
-                    <div>
-                        <span><b><?php echo $title ?></b></span>
-                    </div>
-                    <div class="ml-auto">
-                        <span><h6><?php echo date("m-d H:i", $create_time) ?></h6></span>
-                    </div>
-                </div>
-                <div style="width: 100%">
-                    <span><?php echo $content ?></span>
-                </div>
-            </td>
-        </tr>
-        <!-- 回复内容-->
-        <?php echo $reply_html_str ?>
-        </tbody>
-    </table>
-
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link"
-                                 href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a>
-        </li>
-        <?php echo $page_before_html_str ?>
-        <?php echo $page_current_str ?>
-        <?php echo $page_after_html_str ?>
-    </ul>
-</div>
-
-<div class="container">
-    <form action="<?php echo $reply_rul; ?>" method="post" id="note_reply">
-        <div class="form-group">
-            <label for="content_reply">发表回复</label>
-            <textarea class="form-control" id="reply" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
-        </div>
-        <?php
-        if (isset($_SESSION['figure_url'])) {
-            echo '<button type="submit" class="btn btn-primary ml-auto">发表回复</button>';
-        } else {
-            echo '<a href="/php/login_ui.php"><button type="button" class="btn btn-warning ml-auto">登录后方可回复</button></a>';
-        }
-        ?>
-    </form>
-</div>
-
-<script src="/lib/jquery-3.2.1.min.js"></script>
+    <?php
+    if (isset($_SESSION['figure_url'])) {
+        echo '<button type="submit" class="btn btn-primary ml-auto">发表回复</button>';
+    } else {
+        echo '<a href="/php/login_ui.php"><button type="button" class="btn btn-warning ml-auto">登录后方可回复</button></a>';
+    }
+    ?>
+</form>
 
 <script>
-    $("#note_reply").submit(function () {
-        var reply = $("#reply").val();
-        /** 这里是提交表单前的非空校验*/
-        if (reply === "" || !reply) {
-            alert("请输入回复内容");
-            return false;/*阻止表单提交*/
-        }
-        return true;
-    });
+$("#note_reply").submit(function () {
+    var reply = $("#reply").val();
+    /** 这里是提交表单前的非空校验*/
+    if (reply === "" || !reply) {
+        alert("请输入回复内容");
+        /** 阻止表单提交*/
+        return false;
+    }
+    return true;
+});
 </script>
-</body>
-</html>

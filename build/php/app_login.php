@@ -25,19 +25,6 @@ if (!isset($_POST['unionid'])) {
     echo "param error unionid";
     return;
 }
-//if (!isset($_POST['access_token'])) {
-//    echo "param error 1";
-//    return;
-//}
-//
-//if (!isset($_POST['refresh_token'])) {
-//    echo "param error 2";
-//    return;
-//}
-//
-//if (!isset($_POST['scope'])) {
-//    return;
-//}
 
 if (!isset($_POST['headimgurl'])) {
     echo "param error headimgurl";
@@ -49,43 +36,10 @@ if (!isset($_POST['nickname'])) {
     return;
 }
 
-//if (!isset($_POST['sex'])) {
-//    echo "param error 6";
-//    return;
-//}
-//
-//if (!isset($_POST['province'])) {
-//    echo "param error 7";
-//    return;
-//}
-//
-//if (!isset($_POST['city'])) {
-//    echo "param error 8";
-//    return;
-//}
-
-//if (!isset($_POST['channel'])) {
-//    echo "param error 9";
-//    return;
-//}
-//
-//if (!isset($_POST['logintype'])) {
-//    echo "param error 10";
-//    return;
-//}
-
-//$scope = $_POST['scope'];
 $open_id = $_POST['openid'];
 $union_id = $_POST['unionid'];
-//$access_token = $_POST['access_token'];
-//$refresh_token = $_POST['refresh_token'];
 $head_img_url = $_POST['headimgurl'];
 $nick_name = $_POST['nickname'];
-//$sex = $_POST['sex'];
-//$province = $_POST['province'];
-//$city = $_POST['city'];
-//$channel = $_POST['channel'];
-//$login_type = $_POST['logintype'];
 
 require_once('mongo_login.php');
 /** app登陆qq,wx都采用 unionid，web和app统一*/

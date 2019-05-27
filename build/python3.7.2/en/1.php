@@ -1,62 +1,16 @@
 <?php
    require_once('../../php/update_exp.php');
 ?>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
 
-<div style="background: #2196F3">
-    <img src="/img/web_3.png">
-</div>
+<!--<div class="text-right">-->
+<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
+<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
+<!--&lt;!&ndash;    <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
+<!--</div>-->
 
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-                } else {
-                echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
-                }
-                ?>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!--<hr>-->
 
-<div class="container">
-
-    <div>
-        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp1
-    </div>
-
-    <div class="text-right">
-        <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>
-    </div>
-
-    <hr>
-
-    <h1 id='1.'>1. Whetting Your Appetite</h1>
+<h1 id='1.'>1. Whetting Your Appetite</h1>
 <p>If you do much work on computers, eventually you find that there's some task you'd like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you'd like to write a small custom database, or a specialized GUI application, or a simple game.</p>
 <p>If you're a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you're writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you've written a program that could use an extension language, and you don't want to design and implement a whole new language for your application.</p>
 <p>Python is just the language for you.</p>
@@ -74,22 +28,16 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
 <p>In the next chapter, the mechanics of using the interpreter are explained. This is rather mundane information, but essential for trying out the examples shown later.</p>
 <p>The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes.</p>
 
-    <h4>笔记</h4>
+<h4>笔记</h4>
 
-    <hr>
+<hr>
 
-    <div id="note_area">
-        <!-- 评论区-->
-    </div>
+<div id="note_area">
+    <!-- 评论区-->
+</div>
 
-    <div>
-        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
-        &nbsp</a>/&nbsp1
-    </div>
-
-    <div class="text-right">
-        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
-    </div>
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
@@ -100,23 +48,7 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
     </div>
 </div>
 
-<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "/php/forum/note_get.php?tag=python3.7.2&contentid=1&show_header=0";
-    $.ajax({
-        url: url,
-        type: "GET",
-        async: false,//同步请求用false,异步请求true
-        dataType: "html",
-        data: {},
-        success: function (data) {
-            document.getElementById("note_area").innerHTML = data;
-        },
-        error: function (data, textstatus) {
-            //请求不成功返回的提示
-        }
-    });
+    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=1&show_header=0', 'note_area');
 </script>
-</body>
-</html>

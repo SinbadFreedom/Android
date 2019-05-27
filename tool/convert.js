@@ -2,17 +2,21 @@
 const fs = require('fs');
 const showdown = require('showdown');
 const Handlebars = require("handlebars");
-
 const article_type = process.argv[2];
+/** 语言版本*/
+const lan_arr = [];
+/** 加入支持同时转化多个语言版本*/
+for (let i = 3; i < process.argv.length; i++) {
+    // const language = process.argv[i];
+    lan_arr.push(process.argv[i]);
+}
 
 /** catalog 文件名*/
 const catalogName = "catalog.md";
 /** 版本号 更新内容*/
 const versionName = "version.json";
-// /** 首页*/
-// const indexName = "index.php";
-/** 更多*/
-const moreName = "more.php";
+// /** 更多*/
+// const moreName = "more.php";
 
 /** 全部md文件名*/
 let allFileName = [];
@@ -54,7 +58,7 @@ function isFileStartWithNumber(fileName) {
  * 读取目录中的MD文件
  * @param folderName
  */
-function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_file_name) {
+function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_file_name, language) {
     /** 检测输出目录，不存在则创建*/
     let exist = fs.existsSync(htmlOutBaseFolder);
     if (!exist) {
@@ -65,7 +69,7 @@ function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_f
     for (let index in allFileName) {
         let mdFileNameWithFolder = article_folder + "/" + allFileName[index];
         let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.php');
-        convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName, handlebars_template_file_name);
+        convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName, handlebars_template_file_name, language);
     }
 }
 
@@ -170,7 +174,7 @@ showdown.extension('custom-header-id', function () {
  * @param mdFile
  * @param outHtmlFile
  */
-function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handlebars_template_file_name) {
+function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handlebars_template_file_name, language) {
     let mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
     /**
      * 加入自定义插件 改变生成标题id的规则，
@@ -189,6 +193,7 @@ function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handleba
     /** 目录，关于，首页file_number 不是int*/
     article_config.file_number = fileName.split('.')[0];
     article_config.article_type = article_type;
+    article_config.language = language;
     /** 计算上一篇 下一篇编号*/
     let file_number = parseInt(fileName.split('.')[0]);
     if (file_number > 1) {
@@ -272,7 +277,7 @@ function copyFileByName(article_folder, fileName, htmlOutBaseFolder) {
     fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, finalCatalogData);
 }
 
-function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template_file_name) {
+function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template_file_name, language) {
     /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     console.log("convertCatalog " + catalogName);
@@ -286,12 +291,12 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template
 
     /** 转化目录html，android首屏用*/
     let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.md', '.php');
-    convertSingleFile(catalogName, catalogMdName, outHtmlFileName, handlebars_template_file_name)
+    convertSingleFile(catalogName, catalogMdName, outHtmlFileName, handlebars_template_file_name, language)
 }
 
 /** 加入支持同时转化多个语言版本*/
-for (let i = 3; i < process.argv.length; i++) {
-    const language = process.argv[i];
+for (let i = 0; i < lan_arr.length; i++) {
+    const language = lan_arr[i];
 
     const article_folder = "../md/" + article_type + '/' + language;
     /** handlebars 模板文件*/
@@ -303,10 +308,10 @@ for (let i = 3; i < process.argv.length; i++) {
     /** 获取所有目录下所有数字开头的md文件*/
     getAllMdFileName(article_folder);
     /** 转化全部文件*/
-    convertAllFile(htmlOutBaseFolder, article_folder, template_file_name_doc);
+    convertAllFile(htmlOutBaseFolder, article_folder, template_file_name_doc, language);
     /** 转化目录catalog文件*/
-    convertCatalogMd(article_folder, htmlOutBaseFolder, template_file_name_catalog);
+    convertCatalogMd(article_folder, htmlOutBaseFolder, template_file_name_catalog, language);
     copyFileByName(article_folder, versionName, htmlOutBaseFolder);
     // copyFileByName(article_folder, indexName, htmlOutBaseFolder);
-    copyFileByName(article_folder, moreName, htmlOutBaseFolder);
+    // copyFileByName(article_folder, moreName, htmlOutBaseFolder);
 }

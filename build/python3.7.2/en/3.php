@@ -1,62 +1,16 @@
 <?php
    require_once('../../php/update_exp.php');
 ?>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
 
-<div style="background: #2196F3">
-    <img src="/img/web_3.png">
-</div>
+<!--<div class="text-right">-->
+<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
+<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
+<!--&lt;!&ndash;    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
+<!--</div>-->
 
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-                } else {
-                echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
-                }
-                ?>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!--<hr>-->
 
-<div class="container">
-
-    <div>
-        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp3
-    </div>
-
-    <div class="text-right">
-        <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>
-    </div>
-
-    <hr>
-
-    <h1 id='3.'>3. An Informal Introduction to Python</h1>
+<h1 id='3.'>3. An Informal Introduction to Python</h1>
 <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
 <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
 <p>Some examples:</p>
@@ -436,22 +390,16 @@ The value of i is 65536
 <p><a href="#">1</a> Since <code>**</code> has higher precedence than <code>-</code>, <code>-3**2</code> will be interpreted as <code>-(3**2)</code> and thus result in <code>-9</code>. To avoid this and get <code>9</code>, you can use <code>(-3)**2</code>.</p>
 <p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don't need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
 
-    <h4>笔记</h4>
+<h4>笔记</h4>
 
-    <hr>
+<hr>
 
-    <div id="note_area">
-        <!-- 评论区-->
-    </div>
+<div id="note_area">
+    <!-- 评论区-->
+</div>
 
-    <div>
-        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
-        &nbsp</a>/&nbsp3
-    </div>
-
-    <div class="text-right">
-        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
-    </div>
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
@@ -463,23 +411,7 @@ The value of i is 65536
     </div>
 </div>
 
-<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "/php/forum/note_get.php?tag=python3.7.2&contentid=3&show_header=0";
-    $.ajax({
-        url: url,
-        type: "GET",
-        async: false,//同步请求用false,异步请求true
-        dataType: "html",
-        data: {},
-        success: function (data) {
-            document.getElementById("note_area").innerHTML = data;
-        },
-        error: function (data, textstatus) {
-            //请求不成功返回的提示
-        }
-    });
+    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=3&show_header=0', 'note_area');
 </script>
-</body>
-</html>

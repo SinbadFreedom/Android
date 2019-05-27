@@ -1,62 +1,16 @@
 <?php
    require_once('../../php/update_exp.php');
 ?>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的技术文档网站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="/lib/google-code-prettify/run_prettify.js"></script>
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
-<body>
 
-<div style="background: #2196F3">
-    <img src="/img/web_3.png">
-</div>
+<!--<div class="text-right">-->
+<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
+<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
+<!--&lt;!&ndash;    <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
+<!--</div>-->
 
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php
-                if (isset($_SESSION['figure_url'])) {
-                    echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-                } else {
-                echo '<a class="nav-link" href="/php/login_ui.php"><b>登录</b></a>';
-                }
-                ?>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!--<hr>-->
 
-<div class="container">
-
-    <div>
-        <a href="/index.php">首页</a>/<a href="catalog.php">&nbsppython3.7.2&nbsp</a>/&nbsp4
-    </div>
-
-    <div class="text-right">
-        <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>
-    </div>
-
-    <hr>
-
-    <h1 id='4.'>4. More Control Flow Tools</h1>
+<h1 id='4.'>4. More Control Flow Tools</h1>
 <p>Besides the <a href="#">while</a> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
 <h3 id="4.1.">4.1. if Statements</h3>
 <p>Perhaps the most well-known statement type is the <a href="#">if</a> statement. For example:</p>
@@ -483,22 +437,16 @@ Arguments: spam eggs
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
 
-    <h4>笔记</h4>
+<h4>笔记</h4>
 
-    <hr>
+<hr>
 
-    <div id="note_area">
-        <!-- 评论区-->
-    </div>
+<div id="note_area">
+    <!-- 评论区-->
+</div>
 
-    <div>
-        <a href="/index.php">&nbsp熊猫文档&nbsp</a>/<a href="catalog.php">&nbsppython3.7.2
-        &nbsp</a>/&nbsp4
-    </div>
-
-    <div class="text-right">
-        当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
-    </div>
+<div class="text-right">
+    当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
@@ -510,23 +458,7 @@ Arguments: spam eggs
     </div>
 </div>
 
-<script src="/lib/jquery-3.2.1.min.js"></script>
 <script>
     /** 评论*/
-    var url = "/php/forum/note_get.php?tag=python3.7.2&contentid=4&show_header=0";
-    $.ajax({
-        url: url,
-        type: "GET",
-        async: false,//同步请求用false,异步请求true
-        dataType: "html",
-        data: {},
-        success: function (data) {
-            document.getElementById("note_area").innerHTML = data;
-        },
-        error: function (data, textstatus) {
-            //请求不成功返回的提示
-        }
-    });
+    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=4&show_header=0', 'note_area');
 </script>
-</body>
-</html>

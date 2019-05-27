@@ -1,63 +1,17 @@
 <?php
 session_start();
-
 /** 获取完整的来路URL 记录session,登陆完成后跳转回去*/
 if (isset($_SERVER["HTTP_REFERER"])) {
     $url = $_SERVER["HTTP_REFERER"];
     $_SESSION['from_url'] = $url;
 }
-
 ?>
-<!DOCTYPE html>
-<html lang="zh_CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>熊猫文档-面向程序员的文档站</title>
-    <link rel="stylesheet" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/dashidan.css">
-</head>
 
-<body>
-
-<div style="background: #2196F3">
-    <img src="/img/web_3.png">
+<div align="center" style="margin-top: 3em">
+    <button onclick="login_qq()"><img src="/img/Connect_logo_5.png"></button>
 </div>
-
-<nav class="navbar navbar-expand navbar-light">
-    <div class="container">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/index.php"><b>首页</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/forum/index.php"><b>笔记</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/php/rank_list.php"><b>排行榜</b></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-            <?php
-            if (isset($_SESSION['figure_url'])) {
-                echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-            } else {
-                echo '<a class="nav-link " href="/php/login_ui.php"><b>登录</b></a>';
-            }
-            ?>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container">
-    <div align="center" style="margin-top: 3em">
-        <button onclick="login_qq()"><img src="/img/Connect_logo_5.png"></button>
-    </div>
-    <div align="center" style="margin-top: 2em">
-        <button onclick="login_wx()"><img src="/img/icon48_wx_button.png"></button>
-    </div>
+<div align="center" style="margin-top: 2em">
+    <button onclick="login_wx()"><img src="/img/icon48_wx_button.png"></button>
 </div>
 
 <script>
@@ -71,5 +25,3 @@ if (isset($_SERVER["HTTP_REFERER"])) {
             'https://open.weixin.qq.com/connect/qrconnect?appid=wx7c369f8fe5340534&redirect_uri=' + call_back_url + '&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect';
     }
 </script>
-</body>
-</html>
