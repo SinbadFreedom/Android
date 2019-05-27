@@ -298,7 +298,7 @@ session_start();
         $('#note_灌水乐园').removeClass("active");
 
         console.log('active_note_tag_button ' + tag);
-        let tag_str = '#' + tag;
+        let tag_str = '#note_' + tag;
         $(tag_str).addClass("active");
     }
 
