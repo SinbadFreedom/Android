@@ -79,7 +79,7 @@ session_start();
                 getPageRank(btn_id);
                 break;
             case 'note':
-                getNoteList(btn_id, param);
+                getNoteList(btn_id);
                 break;
             case 'doc':
                 clickBtnClick(btn_id);
@@ -146,11 +146,15 @@ session_start();
         active_rank_list_button(type);
     }
 
-    function getNoteList(btn_id, tag) {
-        console.log('getNoteList ' + tag + ' btn_id ' + btn_id);
-        let url = '/php/forum/index.php?tag=' + tag;
-        ajax_get_url(url, 'note_tag_info');
+    function getNoteList(btn_id) {
+        console.log('getNoteList btn_id ' + btn_id);
         active_note_tag_button(btn_id);
+
+        let c_index = btn_id.indexOf("_");
+        let param = btn_id.slice(c_index + 1);
+
+        let url = '/php/forum/index.php?tag=' + param;
+        ajax_get_url(url, 'note_tag_info');
     }
 
     function clickBtnClick(btn_id) {
@@ -158,18 +162,15 @@ session_start();
             case 'doc_zh_cn':
                 /** 中文*/
                 current_lan = 'zh_cn';
-                /** 加载文档标题区*/
-                ajax_get_url('/' + current_tag + '/' + current_lan + '/catalog.php', 'doc_content');
-                active_language_btn(current_lan);
                 break;
             case 'doc_en':
                 /** 英文*/
                 current_lan = 'en';
-                /** 加载文档标题区*/
-                ajax_get_url('/' + current_tag + '/' + current_lan + '/catalog.php', 'doc_content');
-                active_language_btn(current_lan);
                 break;
         }
+        /** 加载文档标题区*/
+        ajax_get_url('/' + current_tag + '/' + current_lan + '/catalog.php', 'doc_content');
+        active_language_btn(current_lan);
     }
 
     /** 点击创建新笔记按钮*/
@@ -241,8 +242,6 @@ session_start();
                 } else if (link_name === '/ajax/doc.html') {
                     /** 更新语言按钮状态 */
                     active_language_btn(current_lan);
-                    /** 写入文档标记*/
-                    $("#doc_tag").html(current_tag);
                     /** 加载文档标题区*/
                     ajax_get_url('/' + current_tag + '/' + current_lan + '/catalog.php', 'doc_content');
                 } else if (link_name === '/ajax/newNote.html') {
