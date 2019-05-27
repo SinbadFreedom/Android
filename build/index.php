@@ -11,26 +11,25 @@ session_start();
     <link rel="stylesheet" href="/css/dashidan.css">
 </head>
 
-<body>button 嵌入的img 屏蔽点击事件
+<body>
 
 <div style="background: #2196F3">
     <img src="/img/web_3.png">
 </div>
 
 <nav class="navbar navbar-expand navbar-light">
-    <div class="btn-group row" role="group">
+    <div class="btn-group" role="group">
         <button type="button" id="nav_btn_index" class="btn btn-primary">首页</button>
         <button type="button" id="nav_btn_forum" class="btn btn-primary">笔记</button>
         <button type="button" id="nav_btn_rank" class="btn btn-primary">排行榜</button>
-        <?php
-        if (isset($_SESSION['figure_url'])) {
-//            echo '<a class="nav-link" href="/php/user_info.php"><img class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></a>';
-            echo '<img id="nav_btn_figure"  class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px">';
-        } else {
-            echo '<button type="button" id="nav_btn_login" class="btn btn-success ml-auto">登录</button>';
-        }
-        ?>
     </div>
+    <?php
+    if (isset($_SESSION['figure_url'])) {
+        echo '<button type="button" id="nav_btn_figure" class="btn btn-success ml-auto"><img id="nav_btn_figure"  class="rounded" src="' . $_SESSION['figure_url'] . '" width="24px" height="24px"></button>';
+    } else {
+        echo '<button type="button" id="nav_btn_login" class="btn btn-success ml-auto">登录</button>';
+    }
+    ?>
 </nav>
 
 <div id="content_area">
