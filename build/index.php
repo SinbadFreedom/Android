@@ -251,7 +251,7 @@ session_start();
                     ajax_get_url('/' + current_tag + '/' + current_lan + '/catalog.php', 'doc_content');
                 } else if (link_name === '/ajax/newNote.html') {
                     /** 修改标签内容*/
-                    $('#newNote_tag').attr('value', global_new_note_tag);
+                    $('#newNote_tag').text(global_new_note_tag);
                 }
             }
         });
