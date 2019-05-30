@@ -32,7 +32,7 @@ if ($user_id) {
     $res->name = $user_info->nickname;
     $res->exp = $user_info->exp;
     $res->create_time = date('Y-m-d', $user_info->create_time);
-    $res->level = $user_info->level;
+    $res->level = $level;
     $res->exp_max = $exp_max;
     $res->percent = $percent;
 } else {
@@ -40,48 +40,3 @@ if ($user_id) {
 }
 
 echo json_encode($res);
-?>
-
-<!--<form>-->
-<!--    <div class="form-group row">-->
-<!--        <label for="staticEmail" class="col-form-label" style="width: 80px;">昵称:</label>-->
-<!--        <div>-->
-<!--            <input type="text" readonly class="form-control-plaintext" id="staticEmail"-->
-<!--                   value="--><?php //echo $nick_name ?><!--">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label for="staticEmail" class="col-form-label" style="width: 80px;">ID:</label>-->
-<!--        <div>-->
-<!--            <input type="text" readonly class="form-control-plaintext" id="staticEmail"-->
-<!--                   value="--><?php //echo $user_id ?><!--">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label for="staticEmail" class="col-form-label" style="width: 80px;">注册:</label>-->
-<!--        <div>-->
-<!--            <input type="text" readonly class="form-control-plaintext" id="staticEmail"-->
-<!--                   value="--><?php //echo date('Y-m-d', $create_time) ?><!--">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label for="inputPassword" class="col-form-label" style="width: 80px;">等级:</label>-->
-<!--        <div>-->
-<!--            <input type="text" readonly class="form-control-plaintext" id="inputPassword"-->
-<!--                   value="--><?php //echo $level ?><!--">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label for="inputExp" class="col-form-label" style="width: 80px;">经验:</label>-->
-<!--        <div>-->
-<!--            <input type="text" readonly class="form-control-plaintext" id="inputExp"-->
-<!--                   value="--><?php //echo $exp . '/' . $exp_max; ?><!--">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</form>-->
-<!--<div class="progress">-->
-<!--    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"-->
-<!--         style="width: --><?php //echo $percent ?>/*%" aria-valuenow="*/<?php //echo $exp ?><!--" aria-valuemin="0"-->
-<!--         aria-valuemax="--><?php //echo $exp_max ?><!--">-->
-<!--    </div>-->
-<!--</div>-->
