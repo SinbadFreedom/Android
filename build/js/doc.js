@@ -94,7 +94,7 @@ function active_language_btn(lan) {
 
 /** 回复文档点击事件*/
 function docClickBtnSummitReply() {
-    var reply = $('#doc_reply_text').val();
+    let reply = $('#doc_reply_text').val();
     /** 这里是提交表单前的非空校验*/
     if (reply === "" || !reply) {
         alert("请输入回复内容");
@@ -103,7 +103,7 @@ function docClickBtnSummitReply() {
     }
 
     /** 清空回复区*/
-    $('#doc_note').html('');
+    $('#doc_reply_text').text('');
 
     let url_note = '/php/note/note_reply.php';
 
