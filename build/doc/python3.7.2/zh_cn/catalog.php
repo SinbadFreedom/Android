@@ -1,5 +1,5 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
    /** 初始化$_SESSION 数据*/
    if (isset($_POST['headimgurl'])) {
        $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl']);
@@ -18,8 +18,7 @@
 <!--&lt;!&ndash;    <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
 <!--</div>-->
 <!--<hr>-->
-<h2 id='Python3.7.2文档'>Python3.7.2文档</h2>
-<h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
+    <h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
 <h4 id="2.">2. <a href="2.php">使用Python解释器</a></h4>
 <ul>
 <li>2.1. <a href="2.php#2.1.">调用口译员</a><ul>

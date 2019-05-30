@@ -1,5 +1,7 @@
 "use strict";
 const fs = require('fs');
+var path = require('path');
+
 const showdown = require('showdown');
 const Handlebars = require("handlebars");
 const article_type = process.argv[2];
@@ -7,7 +9,6 @@ const article_type = process.argv[2];
 const lan_arr = [];
 /** 加入支持同时转化多个语言版本*/
 for (let i = 3; i < process.argv.length; i++) {
-    // const language = process.argv[i];
     lan_arr.push(process.argv[i]);
 }
 
@@ -15,8 +16,6 @@ for (let i = 3; i < process.argv.length; i++) {
 const catalogName = "catalog.md";
 /** 版本号 更新内容*/
 const versionName = "version.json";
-// /** 更多*/
-// const moreName = "more.php";
 
 /** 全部md文件名*/
 let allFileName = [];
@@ -62,7 +61,8 @@ function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_f
     /** 检测输出目录，不存在则创建*/
     let exist = fs.existsSync(htmlOutBaseFolder);
     if (!exist) {
-        fs.mkdirSync(htmlOutBaseFolder);
+        console.log('convertAllFile htmlOutBaseFolder ' + htmlOutBaseFolder);
+        makeDir(htmlOutBaseFolder);
     }
 
     /** 转化md文件*/
@@ -71,6 +71,31 @@ function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_f
         let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.php');
         convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName, handlebars_template_file_name, language);
     }
+}
+
+/** 创建多级目录*/
+function makeDir(dirpath) {
+    if (!fs.existsSync(dirpath)) {
+        var pathtmp;
+        dirpath.split("/").forEach(function (dirname) {
+            if (pathtmp) {
+                pathtmp = path.join(pathtmp, dirname);
+            } else {
+                /** 如果在linux系统中，第一个dirname的值为空，所以赋值为"/"*/
+                if (dirname) {
+                    pathtmp = dirname;
+                } else {
+                    pathtmp = "/";
+                }
+            }
+            if (!fs.existsSync(pathtmp)) {
+                if (!fs.mkdirSync(pathtmp)) {
+                    return false;
+                }
+            }
+        });
+    }
+    return true;
 }
 
 /**
@@ -303,7 +328,7 @@ for (let i = 0; i < lan_arr.length; i++) {
     let template_file_name_doc = "../md/" + article_type + "/template_doc.handlebars";
     let template_file_name_catalog = "../md/" + article_type + "/template_catalog.handlebars";
     /** pc默认格式文件目录*/
-    let htmlOutBaseFolder = "../build/" + article_type + '/' + language;
+    let htmlOutBaseFolder = "../build/doc/" + article_type + '/' + language;
 
     /** 获取所有目录下所有数字开头的md文件*/
     getAllMdFileName(article_folder);
@@ -312,6 +337,4 @@ for (let i = 0; i < lan_arr.length; i++) {
     /** 转化目录catalog文件*/
     convertCatalogMd(article_folder, htmlOutBaseFolder, template_file_name_catalog, language);
     copyFileByName(article_folder, versionName, htmlOutBaseFolder);
-    // copyFileByName(article_folder, indexName, htmlOutBaseFolder);
-    // copyFileByName(article_folder, moreName, htmlOutBaseFolder);
 }

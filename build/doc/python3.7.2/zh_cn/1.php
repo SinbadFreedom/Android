@@ -1,14 +1,6 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
 ?>
-
-<!--<div class="text-right">-->
-<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
-<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
-<!--&lt;!&ndash;    <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
-<!--</div>-->
-
-<!--<hr>-->
 
 <h1 id='1.'>1. 激发你的胃口</h1>
 <p>如果你在计算机上做了很多工作,最终你会发现有一些你想要自动化的任务.例如,您可能希望对大量文本文件执行搜索和替换,或者以复杂的方式重命名和重新排列一堆照片文件.也许您想编写一个小型自定义数据库,或专门的GUI应用程序,或简单的游戏.</p>
@@ -28,14 +20,6 @@ Python是可扩展的:如果您知道如何使用C编程,则很容易向解释�
 <p>在下一章中,将解释使用解释器的机制.这是相当普通的信息,但对于尝试后面显示的示例至关重要.</p>
 <p>本教程的其余部分通过示例介绍了Python语言和系统的各种功能,从简单的表达式,语句和数据类型开始,通过函数和模块,最后涉及异常和用户定义的类等高级概念.</p>
 
-<h4>笔记</h4>
-
-<hr>
-
-<div id="note_area">
-    <!-- 评论区-->
-</div>
-
 <div class="text-right">
     当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
@@ -44,11 +28,6 @@ Python是可扩展的:如果您知道如何使用C编程,则很容易向解释�
     <div class="col-6 text-right">
     </div>
     <div class="col-6 text-left">
-            <a href="2.php" class="badge badge-primary"> 下一篇 →</a>
+            <button id="doc_next" class="btn btn-light" onclick="doc_go(2)">下一篇 →</button>
     </div>
 </div>
-
-<script>
-    /** 评论*/
-    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=1&show_header=0', 'note_area');
-</script>

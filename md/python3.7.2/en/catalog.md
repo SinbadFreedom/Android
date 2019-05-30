@@ -1,6 +1,3 @@
-Python3.7.2 Document
----
-
 ####1. [Whetting Your Appetite](1.php)   
 ####2. [Using the Python Interpreter](2.php)   
    - 2.1. [Invoking the Interpreter](2.php#2.1.)   

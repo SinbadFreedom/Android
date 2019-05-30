@@ -1,5 +1,5 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
    /** 初始化$_SESSION 数据*/
    if (isset($_POST['headimgurl'])) {
        $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl']);
@@ -18,7 +18,7 @@
 <!--&lt;!&ndash;    <a href="../zh_cn/{{file_number}}.php"><span>&nbsp简体&nbsp</span></a><a href="../en/{{file_number}}.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
 <!--</div>-->
 <!--<hr>-->
-{{{content}}}
+    {{{content}}}
 
 <!--<script>-->
 <!--    $('a').click(function (e) {-->

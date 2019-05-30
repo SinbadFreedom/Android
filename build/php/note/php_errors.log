@@ -1,0 +1,70 @@
+[29-May-2019 09:40:58 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:40:58 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:40:59 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:40:59 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:00 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:00 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:00 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:01 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:01 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:01 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:01 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:02 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:02 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84
+[29-May-2019 09:41:02 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\note\note_get.php:84
+Stack trace:
+#0 D:\workplace\git\Android\build\php\note\note_get.php(84): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\note\note_get.php on line 84

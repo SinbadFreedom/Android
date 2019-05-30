@@ -1,14 +1,6 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
 ?>
-
-<!--<div class="text-right">-->
-<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
-<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
-<!--&lt;!&ndash;    <a href="../zh_cn/1.php"><span>&nbsp简体&nbsp</span></a><a href="../en/1.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
-<!--</div>-->
-
-<!--<hr>-->
 
 <h1 id='1.'>1. Whetting Your Appetite</h1>
 <p>If you do much work on computers, eventually you find that there's some task you'd like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you'd like to write a small custom database, or a specialized GUI application, or a simple game.</p>
@@ -28,14 +20,6 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
 <p>In the next chapter, the mechanics of using the interpreter are explained. This is rather mundane information, but essential for trying out the examples shown later.</p>
 <p>The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes.</p>
 
-<h4>笔记</h4>
-
-<hr>
-
-<div id="note_area">
-    <!-- 评论区-->
-</div>
-
 <div class="text-right">
     当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
@@ -44,11 +28,6 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
     <div class="col-6 text-right">
     </div>
     <div class="col-6 text-left">
-            <a href="2.php" class="badge badge-primary"> 下一篇 →</a>
+            <button id="doc_next" class="btn btn-light" onclick="doc_go(2)">下一篇 →</button>
     </div>
 </div>
-
-<script>
-    /** 评论*/
-    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=1&show_header=0', 'note_area');
-</script>

@@ -1,14 +1,6 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
 ?>
-
-<!--<div class="text-right">-->
-<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
-<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
-<!--&lt;!&ndash;    <a href="../zh_cn/4.php"><span>&nbsp简体&nbsp</span></a><a href="../en/4.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
-<!--</div>-->
-
-<!--<hr>-->
 
 <h1 id='4.'>4. More Control Flow Tools</h1>
 <p>Besides the <a href="#">while</a> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
@@ -437,28 +429,15 @@ Arguments: spam eggs
 <p><em>Footnotes</em></p>
 <p><a href="#">1</a>    Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
 
-<h4>笔记</h4>
-
-<hr>
-
-<div id="note_area">
-    <!-- 评论区-->
-</div>
-
 <div class="text-right">
     当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
     <div class="col-6 text-right">
-            <a href="3.php" class="badge badge-primary">← 上一篇</a>
-            </div>
+            <button id="doc_last" class="btn btn-light" onclick="doc_go(3)">← 上一篇</button>
+    </div>
     <div class="col-6 text-left">
-            <a href="5.php" class="badge badge-primary"> 下一篇 →</a>
+            <button id="doc_next" class="btn btn-light" onclick="doc_go(5)">下一篇 →</button>
     </div>
 </div>
-
-<script>
-    /** 评论*/
-    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=4&show_header=0', 'note_area');
-</script>

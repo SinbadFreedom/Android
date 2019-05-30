@@ -1,14 +1,6 @@
 <?php
-   require_once('../../php/update_exp.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
 ?>
-
-<!--<div class="text-right">-->
-<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
-<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
-<!--&lt;!&ndash;    <a href="../zh_cn/3.php"><span>&nbsp简体&nbsp</span></a><a href="../en/3.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
-<!--</div>-->
-
-<!--<hr>-->
 
 <h1 id='3.'>3. An Informal Introduction to Python</h1>
 <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
@@ -390,28 +382,15 @@ The value of i is 65536
 <p><a href="#">1</a> Since <code>**</code> has higher precedence than <code>-</code>, <code>-3**2</code> will be interpreted as <code>-(3**2)</code> and thus result in <code>-9</code>. To avoid this and get <code>9</code>, you can use <code>(-3)**2</code>.</p>
 <p><a href="#">2</a> Unlike other languages, special characters such as <code>\n</code> have the same meaning with both single (<code>'...'</code>) and double (<code>"..."</code>) quotes. The only difference between the two is that within single quotes you don't need to escape <code>"</code> (but you have to escape <code>\'</code>) and vice versa.</p>
 
-<h4>笔记</h4>
-
-<hr>
-
-<div id="note_area">
-    <!-- 评论区-->
-</div>
-
 <div class="text-right">
     当前有<?php echo mt_rand(0, 99); ?>位同学在看此文章
 </div>
 
 <div class="row center-block text-center">
     <div class="col-6 text-right">
-            <a href="2.php" class="badge badge-primary">← 上一篇</a>
-            </div>
+            <button id="doc_last" class="btn btn-light" onclick="doc_go(2)">← 上一篇</button>
+    </div>
     <div class="col-6 text-left">
-            <a href="4.php" class="badge badge-primary"> 下一篇 →</a>
+            <button id="doc_next" class="btn btn-light" onclick="doc_go(4)">下一篇 →</button>
     </div>
 </div>
-
-<script>
-    /** 评论*/
-    ajax_get_url('/php/forum/note_get.php?tag=python3.7.2&contentid=3&show_header=0', 'note_area');
-</script>

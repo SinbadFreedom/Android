@@ -7,6 +7,11 @@ if (!isset($_GET['tag'])) {
     return;
 }
 
+if (!isset($_GET['language'])) {
+    echo 'param error language';
+    return;
+}
+
 if (!isset($_GET['contentid'])) {
     echo 'param error contentid';
     return;
@@ -34,6 +39,7 @@ if (!isset($_SESSION['user_id'])) {
 
 /** GET参数*/
 $tag = $_GET['tag'];
+$language = $_GET['language'];
 $content_id = intval($_GET['contentid']);
 /** POST参数*/
 $reply = $_POST['reply'];
@@ -54,36 +60,44 @@ $note_reply_info = [
     'editor_name' => $nick_name,
     'editor_figure' => $editor_figure,
     'reply' => $reply,
-    'edit_time' => $time_stamp
+    'edit_time' => $time_stamp,
+    'good' => 0,
+    'bad' => 0
 ];
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert($note_reply_info);
-$col_reply_name = 'db_reply.' . $tag;
+$note_collection_name = $tag . '_' . $language;
+$col_reply_name = 'db_note.' . $note_collection_name;
 $manager->executeBulkWrite($col_reply_name, $bulk);
 
-/** 修改最后编辑相关的标题信息，增加编辑次数*/
-$bulk = new MongoDB\Driver\BulkWrite;
-$bulk->update(
-    ['contentid' => $content_id],
-    ['$set' => ['editor_id' => $user_id, 'editor_name' => $nick_name, 'edit_time' => $time_stamp],
-        '$inc' => ['comment_count' => 1]],
-    ['multi' => false, 'upsert' => false]
-);
-$col_tag_name = 'db_tag.' . $tag;
-$manager->executeBulkWrite($col_tag_name, $bulk);
+///** 修改最后编辑相关的标题信息，增加编辑次数*/
+//$bulk = new MongoDB\Driver\BulkWrite;
+//$bulk->update(
+//    ['contentid' => $content_id],
+//    ['$set' => ['editor_id' => $user_id, 'editor_name' => $nick_name, 'edit_time' => $time_stamp],
+//        '$inc' => ['comment_count' => 1]],
+//    ['multi' => false, 'upsert' => true]
+//);
+//$col_tag_name = 'db_tag.' . $tag;
+//$manager->executeBulkWrite($col_tag_name, $bulk);
 
-/** 更新redis的编辑时间 加入排序列表*/
-$redis = new Redis();
-$redis->connect('127.0.0.1', 6379);
-/**
- * 全部文章更新排序,
- * $score1 是编辑时间
- * $value1 是$tag和$content_id的组合 $tag_$content_id
- */
-$redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
-/** 指定tag更新排序*/
-$redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
+///** 更新redis的编辑时间 加入排序列表*/
+//$redis = new Redis();
+//$redis->connect('127.0.0.1', 6379);
+///**
+// * 全部文章更新排序,
+// * $score1 是编辑时间
+// * $value1 是$tag和$content_id的组合 $tag_$content_id
+// */
+//$redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
+///** 指定tag更新排序*/
+//$redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
 /** 跳转到指定评论页面*/
-$url = 'note_get.php?tag=' . $tag . '&contentid=' . $content_id;
-echo '<script language = "javascript" type = "text/javascript">window.location.href="' . $url . '"</script>';
+//$url = 'note_get.php?tag=' . $tag . '&contentid=' . $content_id;
+//echo '<script language = "javascript" type = "text/javascript">window.location.href="' . $url . '"</script>';
+
+$res = new stdClass();
+$res->state = 0;
+
+echo json_encode($res);

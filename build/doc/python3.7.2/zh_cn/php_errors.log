@@ -1,0 +1,8 @@
+[27-May-2019 17:10:56 UTC] PHP Warning:  require_once(../../php/update_exp.php): failed to open stream: No such file or directory in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:10:56 UTC] PHP Fatal error:  require_once(): Failed opening required '../../php/update_exp.php' (include_path='.;C:\php\pear') in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:11:42 UTC] PHP Warning:  require_once(/php/update_exp.php): failed to open stream: No such file or directory in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:11:42 UTC] PHP Fatal error:  require_once(): Failed opening required '/php/update_exp.php' (include_path='.;C:\php\pear') in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:16:08 UTC] PHP Warning:  require_once(/php/update_exp.php): failed to open stream: No such file or directory in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:16:08 UTC] PHP Fatal error:  require_once(): Failed opening required '/php/update_exp.php' (include_path='.;C:\php\pear') in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:16:24 UTC] PHP Warning:  require_once(/php/update_exp.php): failed to open stream: No such file or directory in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2
+[27-May-2019 17:16:24 UTC] PHP Fatal error:  require_once(): Failed opening required '/php/update_exp.php' (include_path='.;C:\php\pear') in D:\workplace\git\Android\build\doc\python3.7.2\zh_cn\catalog.php on line 2

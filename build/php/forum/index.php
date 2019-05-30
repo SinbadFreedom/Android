@@ -218,7 +218,7 @@ function time2Units($time)
              * 系统文档笔记url示例 统一采用中文笔记url:
              * http://panda-doc.com/python3.7.2/zh_cn/1.php#note_area
              */
-            $content_url = '/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
+            $content_url = '/doc/' . $tag . '/zh_cn/' . $content_id . '.php#note_area';
         } else {
             /**
              * 自建笔记url示例
