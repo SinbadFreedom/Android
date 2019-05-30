@@ -164,7 +164,7 @@ foreach ($cursor as $document) {
         </tr>';
 }
 
-$reply_rul = '/php/forum/note_reply_summit.php?tag=' . $tag . '&contentid=' . $content_id;
+$reply_rul = '/php/forum/note_reply.php?tag=' . $tag . '&contentid=' . $content_id;
 
 ?>
 

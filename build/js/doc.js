@@ -102,7 +102,7 @@ function docClickBtnSummitReply() {
         return false;
     }
 
-    let url_note = '/php/note/note_reply_submit.php';
+    let url_note = '/php/note/note_reply.php';
 
     let data = {};
     data.tag = global_tag;

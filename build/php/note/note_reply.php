@@ -2,38 +2,61 @@
 session_start();
 date_default_timezone_set('PRC');
 
+$time_stamp = time();
+$file = '/workplace/log/log_note_reply_' . date('Y-m-d', $time_stamp) . '.log';
+$content = file_get_contents("php://input");
+$content = $content . " $time_stamp\n";
+file_put_contents($file, $content, FILE_APPEND);
+
+$res = new stdClass();
+
+
 if (!isset($_POST['tag'])) {
-    echo 'param error tag';
+    $res->state = -1;
+    $res->msg = 'param error tag';
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_POST['language'])) {
-    echo 'param error language';
+    $res->state = -2;
+    $res->msg = 'param error language';
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_POST['content_id'])) {
-    echo 'param error content_id';
+    $res->state = -3;
+    $res->msg = 'param error content_id';
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_POST['reply'])) {
-    echo 'param error reply';
+    $res->state = -4;
+    $res->msg = 'param error reply';
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_SESSION['nickname'])) {
-    echo '请先登陆 nickname: ' . $_SESSION['nickname'];
+    $res->state = -5;
+    $res->msg = '请先登陆 nickname: ' . $_SESSION['nickname'];
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_SESSION['figure_url'])) {
-    echo '请先登陆 figure_url: ' . $_SESSION['figure_url'];
+    $res->state = -6;
+    $res->msg = '请先登陆 figure_url: ' . $_SESSION['figure_url'];
+    echo json_encode($res);
     return;
 }
 
 if (!isset($_SESSION['user_id'])) {
-    echo '请先登陆 user_id: ' . $_SESSION['user_id'];
+    $res->state = -7;
+    $res->msg = '请先登陆 user_id: ' . $_SESSION['user_id'];
+    echo json_encode($res);
     return;
 }
 
@@ -97,7 +120,5 @@ $manager->executeBulkWrite($col_reply_name, $bulk);
 //$url = 'note_get.php?tag=' . $tag . '&contentid=' . $content_id;
 //echo '<script language = "javascript" type = "text/javascript">window.location.href="' . $url . '"</script>';
 
-$res = new stdClass();
 $res->state = 0;
-
 echo json_encode($res);
