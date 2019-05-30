@@ -183,29 +183,31 @@ session_start();
         });
     }
 
-    function ajax_post(link_name, data) {
-        console.log("ajax_post: " + link_name);
+    function ajax_post(link_name, data, callback_success) {
+        console.log("ajax_post: " + link_name + " data " + data);
         $.ajax({
             type: 'POST',
             url: link_name,
             data: data,
-            success: function (res) {
-                console.log("ajax_post " + res);
-                if (res.state !== 0) {
-                    console.log("ajax_post res.state !== 0 " + res.state);
-                    return;
-                }
-
-                switch (link_name) {
-                    case '/php/forum/ask_new_summit.php':
-                        /** 提交笔记成功会跳转到笔记页面*/
-                        let url = '/php/forum/ask_get.php?tag=' + res.tag + '&contentid=' + res.content_id;
-                        ajax_get_url(url);
-                        break;
-                }
-            }
+            success: callback_success
+            // success: function (res) {
+            //     console.log("ajax_post " + res);
+            //     if (res.state !== 0) {
+            //         console.log("ajax_post res.state !== 0 " + res.state);
+            //         return;
+            //     }
+            //
+            //     switch (link_name) {
+            //         case '/php/forum/ask_new_summit.php':
+            //             /** 提交笔记成功会跳转到笔记页面*/
+            //             let url = '/php/forum/ask_get.php?tag=' + res.tag + '&contentid=' + res.content_id;
+            //             ajax_get_url(url);
+            //             break;
+            //     }
+            // }
         });
     }
+
 
     /** 全局ajax_get方法*/
     function ajax_get(url_get, callback_success) {

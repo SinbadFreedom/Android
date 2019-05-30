@@ -2,18 +2,18 @@
 session_start();
 date_default_timezone_set('PRC');
 
-if (!isset($_GET['tag'])) {
+if (!isset($_POST['tag'])) {
     echo 'param error tag';
     return;
 }
 
-if (!isset($_GET['language'])) {
+if (!isset($_POST['language'])) {
     echo 'param error language';
     return;
 }
 
-if (!isset($_GET['contentid'])) {
-    echo 'param error contentid';
+if (!isset($_POST['content_id'])) {
+    echo 'param error content_id';
     return;
 }
 
@@ -38,9 +38,9 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 /** GET参数*/
-$tag = $_GET['tag'];
-$language = $_GET['language'];
-$content_id = intval($_GET['contentid']);
+$tag = $_POST['tag'];
+$language = $_POST['language'];
+$content_id = intval($_POST['content_id']);
 /** POST参数*/
 $reply = $_POST['reply'];
 /** SESSION参数*/

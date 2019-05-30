@@ -46,7 +46,7 @@ function updateDocCatalogAndContent() {
     /** 加载目录区内容*/
     ajax_get(url_catalog, docLoadCatalogSuccess);
     /** 加载doc 笔记*/
-    getDocContent();
+    getDocContentAndNote();
 }
 
 /** 加载目录完成回调方法*/
@@ -60,14 +60,19 @@ function docLoadContentSuccess(res) {
 }
 
 /** 加载doc 笔记*/
-function getDocContent() {
+function getDocContentAndNote() {
     /** 滚动条置顶*/
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page;
     /** 加载content区内容*/
     ajax_get(url_doc_content, docLoadContentSuccess);
-    /** 更新评论*/
+
+    getDocNote();
+}
+
+/** 更新评论*/
+function getDocNote() {
     let file_number = global_page.split('.')[0];
     let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number;
     ajax_get(url_note, docLoadNoteSuccess);
@@ -96,8 +101,25 @@ function docClickBtnSummitReply() {
         /** 阻止表单提交*/
         return false;
     }
-    //TODO add reply logic
-    // return true;
+
+    let url_note = '/php/note/note_reply_submit.php';
+
+    let data = {};
+    data.tag = global_tag;
+    data.language = global_lan;
+    data.cotenten_id = global_page.split('.')[0];
+    data.reply = reply;
+    ajax_post(url_note, data, replyPostSuccessCallback);
+}
+
+/** 回复返回数据*/
+function replyPostSuccessCallback(res) {
+    console.log('replyPostSuccessCallback ' + res);
+    let res_obj = JSON.parse(res);
+    if (res_obj.state === 0) {
+        /** 回复成功, 更新笔记*/
+        getDocNote();
+    }
 }
 
 /** 点击目录区域的链接事件处理*/
@@ -108,7 +130,7 @@ function docClickCatalogA(e) {
     /** 更新全局变量 global_page*/
     global_page = a_href;
 
-    getDocContent();
+    getDocContentAndNote();
 }
 
 /** 上/下一篇 按钮处理*/
@@ -116,5 +138,5 @@ function doc_go(doc_num) {
     global_page = doc_num + ".php";
     console.log('doc_go ' + global_page);
 
-    getDocContent();
+    getDocContentAndNote();
 }
