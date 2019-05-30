@@ -102,6 +102,9 @@ function docClickBtnSummitReply() {
         return false;
     }
 
+    /** 清空回复区*/
+    $('#doc_note').html('');
+
     let url_note = '/php/note/note_reply.php';
 
     let data = {};
