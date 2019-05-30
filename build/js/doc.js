@@ -107,7 +107,7 @@ function docClickBtnSummitReply() {
     let data = {};
     data.tag = global_tag;
     data.language = global_lan;
-    data.cotenten_id = global_page.split('.')[0];
+    data.content_id = global_page.split('.')[0];
     data.reply = reply;
     ajax_post(url_note, data, replyPostSuccessCallback);
 }
