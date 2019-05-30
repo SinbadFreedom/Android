@@ -103,7 +103,7 @@ function docClickBtnSummitReply() {
     }
 
     /** 清空回复区*/
-    $('#doc_reply_text').text('');
+    $('#doc_reply_text').val('');
 
     let url_note = '/php/note/note_reply.php';
 
