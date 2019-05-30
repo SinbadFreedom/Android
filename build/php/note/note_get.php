@@ -73,7 +73,7 @@ $note_collection_name = $tag . '_' . $language;
 //$content = $info->content;
 
 /** 笔记翻页*/
-$count_per_page = 20;
+$count_per_page = 10;
 
 $command = new MongoDB\Driver\Command([
     /** $tag 是 collection name */
