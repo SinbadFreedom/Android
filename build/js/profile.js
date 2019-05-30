@@ -25,6 +25,8 @@ function loadProfileDataCallBack(res) {
     let exp_max = res.exp_max;
     let percent = res.percent;
 
+    console.log("name " + name + " id " + id);
+
     $('#profile_name').attr('value', name);
     $('#profile_id').attr('value', id);
     $('#profile_create_time').attr('value', create_time);
