@@ -17,13 +17,14 @@ function loadProfileDataCallBack(res) {
      $res->exp_max = $exp_max;
      $res->percent = $percent;
      */
-    let name = res.name;
-    let id = res.id;
-    let exp = res.exp;
-    let create_time = res.create_time;
-    let level = res.level;
-    let exp_max = res.exp_max;
-    let percent = res.percent;
+    let res_obj = JSON.parse(res);
+    let name = res_obj.name;
+    let id = res_obj.id;
+    let exp = res_obj.exp;
+    let create_time = res_obj.create_time;
+    let level = res_obj.level;
+    let exp_max = res_obj.exp_max;
+    let percent = res_obj.percent;
 
     console.log("name " + name + " id " + id);
 
