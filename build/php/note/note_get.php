@@ -101,8 +101,6 @@ $query = new MongoDB\Driver\Query($filter, $options);
 $col_reply_name = 'db_note.' . $note_collection_name;
 $cursor = $manager->executeQuery($col_reply_name, $query);
 
-//$reply_html_str = '';
-
 $reply_info = [];
 foreach ($cursor as $document) {
     /**
@@ -113,12 +111,6 @@ foreach ($cursor as $document) {
      * 'reply' => $reply,
      * 'edit_time' => $time_stamp,
      */
-//    $document->editor_id;
-//    $editor_name = $document->editor_name;
-//    $editor_figure = $document->editor_figure;
-//    $edit_time = $document->edit_time;
-//    $reply = $document->reply;
-
     $info = new stdClass();
     $info->editor_id = $document->editor_id;
     $info->editor_name = $document->editor_name;
@@ -127,26 +119,6 @@ foreach ($cursor as $document) {
     $info->reply = $document->reply;
 
     array_push($reply_info, $info);
-
-//    /**
-//     * 组成html字符串
-//     */
-//    $reply_html_str .= '<tr>
-//            <td width="96px">
-//                <img src="' . $editor_figure . '" width="48px" height="48px">
-//                <div class="text-center">
-//                    <span>' . $editor_name . '</span>
-//                </div>
-//            </td>
-//            <td width="100%" valign="top">
-//                <div class="row">
-//                    <span class="ml-auto"><small>' . date("m-d H:i", $edit_time) . '</small></span>
-//                </div>
-//                <div>
-//                    <span>' . $reply . '</span>
-//                </div>
-//            </td>
-//        </tr>';
 }
 
 $reply_rul = '/php/forum/note_reply.php?tag=' . $tag . '&contentid=' . $content_id;
