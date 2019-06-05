@@ -34,11 +34,6 @@ if (!is_numeric($_GET['contentid'])) {
 $page = 0;
 if (isset($_GET['page']) && is_numeric($_GET['page'])) {
     $page = intval($_GET['page']);
-    $page = $page - 1;
-
-    if ($page < 0) {
-        $page = 0;
-    }
 }
 
 $tag = $_GET['tag'];
@@ -65,14 +60,10 @@ $command_cursor = $manager->executeCommand('db_note', $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
 $page_max = floor($total_count / $count_per_page);
-if ($total_count > 0) {
-    /** 获取指定区间，分页用*/
-    if ($page > $page_max) {
-        /** 上边界保护*/
-        $page = $page_max;
-    }
-} else {
-    $page = 0;
+
+if ($page > $page_max) {
+    /** 页数越界，直接返回*/
+    return;
 }
 
 /** 第一页不显示last*/
