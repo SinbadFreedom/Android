@@ -1,1 +1,4 @@
 [24-May-2019 23:48:45 PRC] PHP Warning:  Invalid argument supplied for foreach() in D:\workplace\git\Android\build\php\rank_list.php on line 211
+[05-Jun-2019 17:04:19 PRC] PHP Warning:  Invalid argument supplied for foreach() in D:\workplace\git\Android\build\php\rank_list.php on line 91
+[05-Jun-2019 17:05:39 PRC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in D:\workplace\git\Android\build\php\rank_list.php on line 91
+[05-Jun-2019 17:06:00 PRC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in D:\workplace\git\Android\build\php\rank_list.php on line 92

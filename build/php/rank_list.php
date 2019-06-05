@@ -38,45 +38,43 @@ $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 
 $key = null;
-$title = "排行榜";
-$tip = "";
-/** 排行榜按钮状态默认灰色的 secondary，选中类型为primary 蓝色*/
-$btn_state = 'btn-secondary';
+$title = '';
+$tip = '';
 
 switch ($type) {
     case $TYPE_TODAY:
         $key = 'redis_rank_today';
-        $title = "今日排行榜";
+        $title = '今日排行榜';
         $tip = '每分钟更新';
         break;
     case $TYPE_YESTERDAY:
         $key = 'redis_rank_yesterday';
-        $title = "昨日排行榜";
+        $title = '昨日排行榜';
         $tip = '每日0点更新';
         break;
     case $TYPE_WEEK:
         $key = 'redis_rank_week';
-        $title = "本周排行榜";
+        $title = '本周排行榜';
         $tip = '每分钟更新';
         break;
     case $TYPE_WEEK_LAST:
         $key = 'redis_rank_week_last';
-        $title = "上周排行榜";
+        $title = '上周排行榜';
         $tip = '每周一0点更新';
         break;
     case $TYPE_MONTH:
         $key = 'redis_rank_month';
-        $title = "本月排行榜";
+        $title = '本月排行榜';
         $tip = '每分钟更新';
         break;
     case $TYPE_MONTH_LAST:
         $key = 'redis_rank_month_last';
-        $title = "上月排行榜";
+        $title = '上月排行榜';
         $tip = '每月1日0点更新';
         break;
     case $TYPE_ALL:
         $key = 'redis_rank_all';
-        $title = "总排行榜";
+        $title = '总排行榜';
         $tip = '每分钟更新';
         break;
 }
@@ -85,45 +83,30 @@ if (!$key) {
     return;
 }
 
-$res = $redis->get($key);
-$rank_list = json_decode($res);
-?>
-
-<div class="alert alert-success">
-    <?php echo $title . '  ' . $tip; ?>
-</div>
-
-<table class="table">
-    <thead>
-    <tr class="table-active">
-        <th>排名</th>
-        <th>头像</th>
-        <th>昵称</th>
-        <th>等级</th>
-        <th>经验</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    if ($rank_list) {
-        $str = '';
-        $rank = 1;
-        foreach ($rank_list as $value) {
-            $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
-            $nick_name = $value->nickname;
-            $exp = $value->exp;
-            $level = getLevelByExp($exp);
-            $str .= '<tr><th valign="middle">' . $rank . '</th>'
-                . '<td><img class="img-responsive center-block" src="' . $headimgurl . '" width="50px" height="50px"></td>'
-                . '<td valign="middle">' . $nick_name . '</td>'
-                . '<td valign="middle">' . $level . '</td>'
-                . '<td valign="middle">' . $exp . '</td>'
-                . '</tr>';
-            $rank++;
-        }
-        echo $str;
+$rank_info_str = $redis->get($key);
+if ($rank_info_str) {
+    $rank_info_obj = json_decode($rank_info_str);
+}
+//echo $rank_info_str;
+if ($rank_info_obj && count($rank_info_obj) > 0) {
+    $rank = 1;
+    foreach ($rank_info_obj as $value) {
+        /** https替换http*/
+        $headimgurl = str_replace('http://', 'https://', $value->headimgurl);
+        $value->headimgurl = $headimgurl;
+//    $nick_name = $value->nickname;
+        $exp = $value->exp;
+        /** 计算等级*/
+        $value->level = getLevelByExp($exp);
+        /** 排名*/
+        $value->rank = $rank;
+        $rank++;
     }
-    ?>
+}
 
-    </tbody>
-</table>
+$rank_list = json_decode($rank_info_obj);
+
+$res = new stdClass();
+$res->tip = $title . '  ' . $tip;
+$res->info = $rank_info_obj;
+echo json_encode($res);

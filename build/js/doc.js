@@ -1,4 +1,34 @@
-let hbs_note = null;
+/** 笔记模板数据，对应/hbs/note.hbs*/
+const hbs_note = '<table>\n' +
+    '    <tbody>\n' +
+    '    {{#notes}}\n' +
+    '        <tr>\n' +
+    '            <td width="96px">\n' +
+    '                <img src="{{editor_figure}}" width="48px" height="48px">\n' +
+    '                <div class="text-center">\n' +
+    '                    <span>{{editor_name}}</span>\n' +
+    '                </div>\n' +
+    '            </td>\n' +
+    '            <td width="100%" valign="top">\n' +
+    '                <div class="row">\n' +
+    '                    <span class="ml-auto"><small>{{edit_time}}</small></span>\n' +
+    '                </div>\n' +
+    '                <div>\n' +
+    '                    <span>{{reply}}</span>\n' +
+    '                </div>\n' +
+    '            </td>\n' +
+    '        </tr>\n' +
+    '    {{/notes}}\n' +
+    '    </tbody>\n' +
+    '</table>\n' +
+    '\n' +
+    '<div class="btn-group">\n' +
+    '    {{#page_next}}\n' +
+    '        <button id="note_page_next" class="btn btn-light">&or;</button>\n' +
+    '    {{/page_next}}\n' +
+    '</div>\n';
+
+/** 当前笔记页数*/
 let note_page = 0;
 
 function docSuccess(res) {
@@ -78,17 +108,13 @@ function docLoadContentSuccess(res) {
 
 /** 清空笔记*/
 function clearDocNote() {
+    note_page = 0;
     $('#doc_note').html('');
 }
 
 /** 更新笔记*/
 function getDocNote(page_num) {
     note_page = page_num;
-    if (hbs_note == null) {
-        let url = '/ajax/note.hbs';
-        hbs_note = ajax_get_sync(url).responseText;
-    }
-
     console.log('getDocNote note_page ' + note_page);
 
     let file_number = global_page.split('.')[0];
@@ -101,7 +127,7 @@ function docLoadNoteSuccess(res) {
     let data = JSON.parse(res);
     /** 组合模板文件和数据文件，生成html*/
     let html = Mustache.render(hbs_note, data);
-    // $('#doc_note').html(html);
+    /** 采用append添加，而不是采用html()方法直接替换*/
     $('#doc_note').append(html);
     /** 移除事件侦听*/
     $('#doc_note').off('click', 'button', clickBtnNotePage);
