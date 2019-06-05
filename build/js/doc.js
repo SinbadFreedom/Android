@@ -1,3 +1,5 @@
+let hbs_note = null;
+
 function docSuccess(res) {
     console.log('docSuccess');
     /** 更新doc内容区*/
@@ -73,6 +75,12 @@ function getDocContentAndNote() {
 
 /** 更新评论*/
 function getDocNote() {
+    if (hbs_note == null) {
+        let url = '/ajax/note.hbs';
+        hbs_note = ajax_get_sync(url).responseText;
+        console.log('getDocNote hbs_note ' + hbs_note);
+    }
+
     let file_number = global_page.split('.')[0];
     let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number;
     ajax_get(url_note, docLoadNoteSuccess);
@@ -80,7 +88,10 @@ function getDocNote() {
 
 /** 加载doc 笔记 完成回调方法*/
 function docLoadNoteSuccess(res) {
-    $('#doc_note').html(res);
+    let data = res.toString();
+    /** 组合模板文件和数据文件，生成html*/
+    let html = hts2Html(hbs_note, data);
+    $('#doc_note').html(html);
 }
 
 function active_language_btn(lan) {

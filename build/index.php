@@ -40,6 +40,7 @@ session_start();
 <script src="/lib/bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script src="/lib/google-code-prettify/run_prettify.js"></script>
+<script src="/lib/handlebars-4.1.2/handlebars.js"></script>
 
 <script src="/js/index.js"></script>
 <script src="/js/doc.js"></script>
@@ -190,26 +191,10 @@ session_start();
             url: link_name,
             data: data,
             success: callback_success
-            // success: function (res) {
-            //     console.log("ajax_post " + res);
-            //     if (res.state !== 0) {
-            //         console.log("ajax_post res.state !== 0 " + res.state);
-            //         return;
-            //     }
-            //
-            //     switch (link_name) {
-            //         case '/php/forum/ask_new_summit.php':
-            //             /** 提交笔记成功会跳转到笔记页面*/
-            //             let url = '/php/forum/ask_get.php?tag=' + res.tag + '&contentid=' + res.content_id;
-            //             ajax_get_url(url);
-            //             break;
-            //     }
-            // }
         });
     }
 
-
-    /** 全局ajax_get方法*/
+    /** 全局ajax_get方法-异步*/
     function ajax_get(url_get, callback_success) {
         console.log('ajax_get: ' + url_get);
         $.ajax({
@@ -218,11 +203,28 @@ session_start();
         });
     }
 
+    /** 全局ajax_get方法-同步*/
+    function ajax_get_sync(url_get) {
+        console.log('ajax_get_sync: ' + url_get);
+        return $.ajax({
+            async: false,
+            url: url_get
+        });
+    }
+
     /** 刷新content_area区域内容*/
     function refreshContentArea(content) {
         $("#content_area").html(content);
     }
 
+    /** hbs模板和数据转化为html*/
+    function hts2Html(hbs, data) {
+        /** 预编译模板*/
+        let template = Handlebars.compile(hbs);
+        /** 匹配json内容*/
+        let html = template(data);
+        return html;
+    }
 </script>
 </body>
 </html>

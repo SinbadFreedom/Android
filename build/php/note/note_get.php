@@ -69,22 +69,22 @@ if ($total_count > 0) {
 } else {
     $page = 0;
 }
-/** 页数*/
-$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . ($page + 1) . '</a></li>';
-/** 前一页标签*/
-if ($page > 0) {
-    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page - 1) . '">前一页</a></li>';
-} else {
-    /** 第一页隐藏 上一页*/
-    $page_before_html_str = '';
-}
-/** 后一页标签*/
-if ($page < $page_max) {
-    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page + 1) . '">后一页</a></li>';
-} else {
-    /** 最后页隐藏 下一页*/
-    $page_after_html_str = '';
-}
+///** 页数*/
+//$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . ($page + 1) . '</a></li>';
+///** 前一页标签*/
+//if ($page > 0) {
+//    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page - 1) . '">前一页</a></li>';
+//} else {
+//    /** 第一页隐藏 上一页*/
+//    $page_before_html_str = '';
+//}
+///** 后一页标签*/
+//if ($page < $page_max) {
+//    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page + 1) . '">后一页</a></li>';
+//} else {
+//    /** 最后页隐藏 下一页*/
+//    $page_after_html_str = '';
+//}
 
 $filter = ['content_id' => $content_id];
 /** 只返回标题相关内容，不返回文章内容*/
@@ -121,40 +121,6 @@ foreach ($cursor as $document) {
     array_push($reply_info, $info);
 }
 
-$reply_rul = '/php/forum/note_reply.php?tag=' . $tag . '&contentid=' . $content_id;
-
-?>
-
-<table>
-    <tbody>
-    <?php
-    foreach ($reply_info as $info) {
-        echo '<tr>
-                <td width="96px">
-                    <img src="' . $info->editor_figure . '" width="48px" height="48px">
-                    <div class="text-center">
-                        <span>' . $info->editor_name . '</span>
-                    </div>
-                </td>
-                <td width="100%" valign="top">
-                    <div class="row">
-                        <span class="ml-auto"><small>' . $info->edit_time . '</small></span>
-                    </div>
-                    <div>
-                        <span>' . $info->reply . '</span>
-                    </div>
-                </td>
-            </tr>';
-    }
-    ?>
-    </tbody>
-</table>
-
-<ul class="pagination">
-    <li class="page-item"><a class="page-link"
-                             href="/php/forum/note_get.php?tag=<?php echo $tag ?>&contentid=<?php echo $content_id ?>">&nbsp首页&nbsp</a>
-    </li>
-    <?php echo $page_before_html_str ?>
-    <?php echo $page_current_str ?>
-    <?php echo $page_after_html_str ?>
-</ul>
+$res = new stdClass();
+$res->notes = $reply_info;
+echo json_encode($res);
