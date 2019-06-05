@@ -40,7 +40,8 @@ session_start();
 <script src="/lib/bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script src="/lib/google-code-prettify/run_prettify.js"></script>
-<script src="/lib/handlebars-4.1.2/handlebars.js"></script>
+<!--<script src="/lib/handlebars-4.1.2/handlebars.js"></script>-->
+<script src="/lib/mustache/mustache.js"></script>
 
 <script src="/js/index.js"></script>
 <script src="/js/doc.js"></script>

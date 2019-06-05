@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/doc.js" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+            <state relative-caret-position="246">
+              <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -38,16 +39,28 @@
         <entry file="file://$PROJECT_DIR$/build/ajax/note.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/lib/mustache/mustache.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="545" column="19" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/js/doc.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="562">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
+              <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -55,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/note/note_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
+            <state relative-caret-position="2625">
               <caret line="125" column="16" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="16" />
             </state>
           </provider>
@@ -201,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build/php/forum/php_errors.log" />
         <option value="$PROJECT_DIR$/build/python3.7.2/zh_cn/2.php" />
         <option value="$PROJECT_DIR$/build/ajax/doc_language.html" />
         <option value="$PROJECT_DIR$/build/python3.7.2/zh_cn/catalog.php" />
@@ -249,9 +261,10 @@
         <option value="$PROJECT_DIR$/build/ajax/reply.hbs" />
         <option value="$PROJECT_DIR$/build/js/reply.js" />
         <option value="$PROJECT_DIR$/build/ajax/note.hbs" />
-        <option value="$PROJECT_DIR$/build/index.php" />
         <option value="$PROJECT_DIR$/build/php/note/note_get.php" />
+        <option value="$PROJECT_DIR$/build/lib/mustache/mustache.js" />
         <option value="$PROJECT_DIR$/build/js/doc.js" />
+        <option value="$PROJECT_DIR$/build/index.php" />
       </list>
     </option>
   </component>
@@ -266,7 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,44 +295,14 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="note" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7.2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="mustache" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -331,6 +313,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -678,14 +661,8 @@
       <workItem from="1559698666331" duration="1791000" />
       <workItem from="1559700470758" duration="1792000" />
       <workItem from="1559702275418" duration="1820000" />
-      <workItem from="1559704111915" duration="1606000" />
-    </task>
-    <task id="LOCAL-00310" summary="1. 显示时间">
-      <created>1558357665922</created>
-      <option name="number" value="00310" />
-      <option name="presentableId" value="LOCAL-00310" />
-      <option name="project" value="LOCAL" />
-      <updated>1558357665922</updated>
+      <workItem from="1559704111915" duration="1720000" />
+      <workItem from="1559705917258" duration="880000" />
     </task>
     <task id="LOCAL-00311" summary="1. 修改用户信息">
       <created>1558410465651</created>
@@ -1023,11 +1000,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559705734046</updated>
     </task>
-    <option name="localTasksCounter" value="359" />
+    <task id="LOCAL-00359" summary="1. 修改回复">
+      <created>1559705796903</created>
+      <option name="number" value="00359" />
+      <option name="presentableId" value="LOCAL-00359" />
+      <option name="project" value="LOCAL" />
+      <updated>1559705796903</updated>
+    </task>
+    <option name="localTasksCounter" value="360" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="589998000" />
+    <option name="totallyTimeSpent" value="590992000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1042,7 +1026,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21504803" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2171825" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1137,13 +1121,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/example/oauth/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1369,6 +1346,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/reply.js" />
+    <entry file="file://$PROJECT_DIR$/build/php/note/note_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="125" column="16" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1408,38 +1393,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/reply.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="21" selection-start-line="19" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/note.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/note/note_get.php">
+    <entry file="file://$PROJECT_DIR$/build/lib/mustache/mustache.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="125" column="16" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        <state relative-caret-position="488">
+          <caret line="545" column="19" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/js/doc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
