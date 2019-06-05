@@ -59,7 +59,10 @@ function docLoadCatalogSuccess(res) {
 
 /** 加载文档完成回调方法*/
 function docLoadContentSuccess(res) {
+    /** 更新文档内容*/
     $('#doc_content').html(res);
+    /** 清空笔记*/
+    $('#doc_note').html('');
 }
 
 /** 加载doc 笔记*/
@@ -88,7 +91,7 @@ function getDocNote(page_num) {
     let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
     ajax_get(url_note, docLoadNoteSuccess);
 }
-
+/** 下一页评论*/
 function getDocNotePageNext() {
     note_page++;
     console.log('getDocNotePageNext note_page ' + note_page);
