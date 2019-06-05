@@ -88,7 +88,7 @@ function getDocNote() {
 
 /** 加载doc 笔记 完成回调方法*/
 function docLoadNoteSuccess(res) {
-    let data = res.toString();
+    let data = JSON.parse(res);
     console.log('docLoadNoteSuccess ' + data);
     /** 组合模板文件和数据文件，生成html*/
     // let html = hts2Html(hbs_note, data);
