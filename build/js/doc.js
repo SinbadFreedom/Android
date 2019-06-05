@@ -92,6 +92,7 @@ function docLoadNoteSuccess(res) {
     console.log('docLoadNoteSuccess ' + data);
     /** 组合模板文件和数据文件，生成html*/
     let html = hts2Html(hbs_note, data);
+    console.log('docLoadNoteSuccess html ' + html);
     $('#doc_note').html(html);
 }
 
