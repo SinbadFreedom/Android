@@ -49,7 +49,7 @@ function updateDocCatalogAndContent() {
     /** 加载目录区内容*/
     ajax_get(url_catalog, docLoadCatalogSuccess);
     /** 加载doc 笔记*/
-    getDocContentAndNote();
+    updateDocContentAndNote();
 }
 
 /** 加载目录完成回调方法*/
@@ -57,27 +57,31 @@ function docLoadCatalogSuccess(res) {
     $('#doc_catalog').html(res);
 }
 
+/** 加载doc 笔记*/
+function updateDocContentAndNote() {
+    /** 滚动条置顶*/
+    window.scrollTo(0, 0);
+    /** 加载content区内容*/
+    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page;
+    ajax_get(url_doc_content, docLoadContentSuccess);
+    /** 清理笔记*/
+    clearDocNote();
+    /** 加载笔记*/
+    getDocNote(0);
+}
+
 /** 加载文档完成回调方法*/
 function docLoadContentSuccess(res) {
     /** 更新文档内容*/
     $('#doc_content').html(res);
-    /** 清空笔记*/
+}
+
+/** 清空笔记*/
+function clearDocNote() {
     $('#doc_note').html('');
 }
 
-/** 加载doc 笔记*/
-function getDocContentAndNote() {
-    /** 滚动条置顶*/
-    window.scrollTo(0, 0);
-
-    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page;
-    /** 加载content区内容*/
-    ajax_get(url_doc_content, docLoadContentSuccess);
-
-    getDocNote(0);
-}
-
-/** 更新评论*/
+/** 更新笔记*/
 function getDocNote(page_num) {
     note_page = page_num;
     if (hbs_note == null) {
@@ -90,12 +94,6 @@ function getDocNote(page_num) {
     let file_number = global_page.split('.')[0];
     let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
     ajax_get(url_note, docLoadNoteSuccess);
-}
-/** 下一页评论*/
-function getDocNotePageNext() {
-    note_page++;
-    console.log('getDocNotePageNext note_page ' + note_page);
-    getDocNote(note_page);
 }
 
 /** 加载doc 笔记 完成回调方法*/
@@ -119,6 +117,13 @@ function clickBtnNotePage(e) {
         /** 下一页*/
         getDocNotePageNext();
     }
+}
+
+/** 下一页评论*/
+function getDocNotePageNext() {
+    note_page++;
+    console.log('getDocNotePageNext note_page ' + note_page);
+    getDocNote(note_page);
 }
 
 function active_language_btn(lan) {
@@ -170,8 +175,7 @@ function docClickCatalogA(e) {
     console.log('docClickCatalogA ' + a_href);
     /** 更新全局变量 global_page*/
     global_page = a_href;
-
-    getDocContentAndNote();
+    updateDocContentAndNote();
 }
 
 /** 上/下一篇 按钮处理*/
@@ -179,5 +183,5 @@ function doc_go(doc_num) {
     global_page = doc_num + ".php";
     console.log('doc_go ' + global_page);
 
-    getDocContentAndNote();
+    updateDocContentAndNote();
 }
