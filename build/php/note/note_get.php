@@ -34,6 +34,11 @@ if (!is_numeric($_GET['contentid'])) {
 $page = 0;
 if (isset($_GET['page']) && is_numeric($_GET['page'])) {
     $page = intval($_GET['page']);
+    $page = $page - 1;
+
+    if ($page < 0) {
+        $page = 0;
+    }
 }
 
 $tag = $_GET['tag'];
@@ -69,22 +74,15 @@ if ($total_count > 0) {
 } else {
     $page = 0;
 }
-///** 页数*/
-//$page_current_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . $page . '">' . ($page + 1) . '</a></li>';
-///** 前一页标签*/
-//if ($page > 0) {
-//    $page_before_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page - 1) . '">前一页</a></li>';
-//} else {
-//    /** 第一页隐藏 上一页*/
-//    $page_before_html_str = '';
-//}
-///** 后一页标签*/
-//if ($page < $page_max) {
-//    $page_after_html_str = '<li class="page-item"><a class="page-link" href="/php/forum/note_get.php?tag=' . $tag . '&contentid=' . $content_id . '&page=' . ($page + 1) . '">后一页</a></li>';
-//} else {
-//    /** 最后页隐藏 下一页*/
-//    $page_after_html_str = '';
-//}
+
+/** 第一页不显示last*/
+$page_last = $page - 1 < 0 ? 0 : $page - 1;
+
+$page_next = $page + 1 > $page_max ? $page_max : $page + 1;
+if ($page_next == $page_max) {
+    /** 最后一页不显示next*/
+    $page_next = 0;
+}
 
 $filter = ['content_id' => $content_id];
 /** 只返回标题相关内容，不返回文章内容*/
@@ -123,4 +121,5 @@ foreach ($cursor as $document) {
 
 $res = new stdClass();
 $res->notes = $reply_info;
+$res->page_next = $page_max > $page;
 echo json_encode($res);

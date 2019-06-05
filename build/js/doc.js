@@ -1,4 +1,5 @@
 let hbs_note = null;
+let note_page = 0;
 
 function docSuccess(res) {
     console.log('docSuccess');
@@ -70,32 +71,51 @@ function getDocContentAndNote() {
     /** 加载content区内容*/
     ajax_get(url_doc_content, docLoadContentSuccess);
 
-    getDocNote();
+    getDocNote(0);
 }
 
 /** 更新评论*/
-function getDocNote() {
+function getDocNote(page_num) {
+    note_page = page_num;
     if (hbs_note == null) {
         let url = '/ajax/note.hbs';
         hbs_note = ajax_get_sync(url).responseText;
-        console.log('getDocNote hbs_note ' + hbs_note);
     }
 
+    console.log('getDocNote note_page ' + note_page);
+
     let file_number = global_page.split('.')[0];
-    let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number;
+    let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
     ajax_get(url_note, docLoadNoteSuccess);
+}
+
+function getDocNotePageNext() {
+    note_page++;
+    console.log('getDocNotePageNext note_page ' + note_page);
+    getDocNote(note_page);
 }
 
 /** 加载doc 笔记 完成回调方法*/
 function docLoadNoteSuccess(res) {
     let data = JSON.parse(res);
-    console.log('docLoadNoteSuccess ' + data);
     /** 组合模板文件和数据文件，生成html*/
-    // let html = hts2Html(hbs_note, data);
-    // let html = Mustache.to_html(hbs_note, data).replace(/^\s*/mg, '');
     let html = Mustache.render(hbs_note, data);
-    console.log('docLoadNoteSuccess html ' + html);
-    $('#doc_note').html(html);
+    // $('#doc_note').html(html);
+    $('#doc_note').append(html);
+    /** 移除事件侦听*/
+    $('#doc_note').off('click', 'button', clickBtnNotePage);
+    /** 加入事件侦听*/
+    $('#doc_note').on('click', 'button', clickBtnNotePage);
+}
+
+/** 点击note翻页事件*/
+function clickBtnNotePage(e) {
+    let btn_id = $(e.target).attr("id");
+    console.log('clickBtnNotePage btn_id ' + btn_id);
+    if (btn_id === 'note_page_next') {
+        /** 下一页*/
+        getDocNotePageNext();
+    }
 }
 
 function active_language_btn(lan) {
@@ -136,7 +156,7 @@ function replyPostSuccessCallback(res) {
     let res_obj = JSON.parse(res);
     if (res_obj.state === 0) {
         /** 回复成功, 更新笔记*/
-        getDocNote();
+        getDocNote(0);
     }
 }
 
