@@ -92,7 +92,7 @@ function newAskCommit(e) {
 
 /** 问答提交成功回调*/
 function askCommitSuccessCallback(res) {
-    console.log('askCommitSuccessCallback res ' + res);
+    // console.log('askCommitSuccessCallback res ' + res);
     /**
      $res->state = 0;
      $res->tag = $tag;
@@ -101,8 +101,8 @@ function askCommitSuccessCallback(res) {
     let obj = JSON.parse(res);
     let tag = obj.tag;
     /** 返回问答列表*/
-    /** 加载全部内容*/
-    getAskInfo('ask_content_all');
+    let url = '/ajax/ask.html';
+    ajax_get(url, askLoadSuccess);
 }
 
 function askTagClickBtn(e) {
