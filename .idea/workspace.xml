@@ -8,27 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ajax/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/ask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ajax/newAsk.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/newAsk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/4.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/5.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/ask.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/ask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/forum/ask_new_summit.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/ask_new_summit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/note_new_summit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/note_new_ui.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/forum/php_errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/php_errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/util_time.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/util_time.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -48,20 +29,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="2310">
+              <caret line="110" column="16" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/lib/mustache/mustache.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/js/popper.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="569" column="4" lean-forward="true" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
+            <state relative-caret-position="42">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -70,55 +48,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/hbs/ask.hbs">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="4788">
+              <caret line="228" column="20" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="285">
+              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/newAsk.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="49" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/login.html">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/js/doc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="187" column="37" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="37" />
+              <folding>
+                <element signature="e#745#749#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css.map">
+          <provider editor-type-id="sourcemapFileViewerProvider" />
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -131,26 +116,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/profile.html">
+        <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/ajax/rank.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="420">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -167,7 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>click</find>
       <find>&quot;;</find>
       <find>rank.html</find>
       <find>MUs</find>
@@ -197,6 +165,7 @@
       <find>hbs_ask</find>
       <find>catalogName</find>
       <find>$_SESSION['figure_url'</find>
+      <find>ask_new_tag</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;</replace>
@@ -290,13 +259,13 @@
         <option value="$PROJECT_DIR$/build/ajax/ask.html" />
         <option value="$PROJECT_DIR$/build/php/forum/php_errors.log" />
         <option value="$PROJECT_DIR$/build/index.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/ask_new_summit.php" />
         <option value="$PROJECT_DIR$/build/php/util_time.php" />
         <option value="$PROJECT_DIR$/build/php/forum/ask_get.php" />
         <option value="$PROJECT_DIR$/build/hbs/ask.hbs" />
-        <option value="$PROJECT_DIR$/build/js/ask.js" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_catalog.handlebars" />
+        <option value="$PROJECT_DIR$/build/php/forum/ask_new_summit.php" />
+        <option value="$PROJECT_DIR$/build/js/ask.js" />
       </list>
     </option>
   </component>
@@ -311,6 +280,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,18 +292,6 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="hbs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -381,7 +339,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -748,14 +705,12 @@
       <workItem from="1559802685378" duration="1363000" />
       <workItem from="1559804490755" duration="898000" />
       <workItem from="1559807661208" duration="963000" />
-      <workItem from="1559811160090" duration="243000" />
-    </task>
-    <task id="LOCAL-00322" summary="1. 导航图像屏蔽点击">
-      <created>1558929337227</created>
-      <option name="number" value="00322" />
-      <option name="presentableId" value="LOCAL-00322" />
-      <option name="project" value="LOCAL" />
-      <updated>1558929337227</updated>
+      <workItem from="1559811160090" duration="1650000" />
+      <workItem from="1559814124515" duration="1198000" />
+      <workItem from="1559824734727" duration="1198000" />
+      <workItem from="1559828535814" duration="599000" />
+      <workItem from="1559831271292" duration="888000" />
+      <workItem from="1559833091039" duration="175000" />
     </task>
     <task id="LOCAL-00323" summary="1. 导航图像屏蔽点击">
       <created>1558929506144</created>
@@ -1093,11 +1048,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559727260761</updated>
     </task>
-    <option name="localTasksCounter" value="371" />
+    <task id="LOCAL-00371" summary="1. ask 逻辑分离，前端hbs模板构建。&#10;2. 修改doc模板。">
+      <created>1559811623807</created>
+      <option name="number" value="00371" />
+      <option name="presentableId" value="LOCAL-00371" />
+      <option name="project" value="LOCAL" />
+      <updated>1559811623808</updated>
+    </task>
+    <option name="localTasksCounter" value="372" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="619450000" />
+    <option name="totallyTimeSpent" value="624915000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1112,7 +1074,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26520813" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28121665" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1162,7 +1124,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 调整 app_login, wx,QQ app登录采用union_id, 移除暂时不用的参数，整合登录方法。&#10;2. 调整wx 网页登录采用union_id&#10;3. 剩余QQ 网页登录的union_id" />
     <MESSAGE value="1. 修复mongo路径" />
     <MESSAGE value="1. 区分union_id和openid，除了qq web登录，等待审核。" />
     <MESSAGE value="1. 移除不用变量" />
@@ -1187,7 +1148,8 @@
     <MESSAGE value="1. 修改回复mustache 替换handlebars" />
     <MESSAGE value="1. 笔记下一页瀑布流" />
     <MESSAGE value="1. 排行榜 逻辑分离，前段hbs模板构建。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 排行榜 逻辑分离，前段hbs模板构建。" />
+    <MESSAGE value="1. ask 逻辑分离，前端hbs模板构建。&#10;2. 修改doc模板。" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. ask 逻辑分离，前端hbs模板构建。&#10;2. 修改doc模板。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1207,39 +1169,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/php/update_exp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/upload_img.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="17" selection-start-line="27" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_defines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12075">
-          <caret line="575" column="9" selection-start-line="575" selection-start-column="9" selection-end-line="575" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/mongo_login.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/reply.js" />
-    <entry file="file://$PROJECT_DIR$/build/php/note/reply_get.php" />
-    <entry file="file://$PROJECT_DIR$/node_modules/handlebars/lib/handlebars.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/handlebars-4.1.2/handlebars.js" />
     <entry file="file://$PROJECT_DIR$/build/js/reply.js" />
     <entry file="file://$PROJECT_DIR$/build/js/note.js" />
@@ -1257,34 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/rank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1335,18 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="228" column="20" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/php_errors.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
@@ -1361,13 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18333">
           <caret line="886" column="29" selection-start-line="886" selection-start-column="29" selection-end-line="886" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/doc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="95" column="53" lean-forward="true" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1399,13 +1281,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tool/convert.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1427,32 +1302,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+    <entry file="file://$PROJECT_DIR$/build/ajax/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1393">
-          <caret line="137" column="34" lean-forward="true" selection-start-line="137" selection-start-column="34" selection-end-line="137" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_get.php">
+    <entry file="file://$PROJECT_DIR$/build/lib/mustache/mustache.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+        <state relative-caret-position="278">
+          <caret line="547" column="6" lean-forward="true" selection-start-line="547" selection-start-column="6" selection-end-line="547" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/hbs/ask.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        <state relative-caret-position="84">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/rank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/ajax/rank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1470,31 +1378,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/rank.html">
+    <entry file="file://$PROJECT_DIR$/build/ajax/newAsk.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="231">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1509,29 +1396,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/newAsk.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="2310">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/js/popper.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/mustache/mustache.js">
+    <entry file="file://$PROJECT_DIR$/build/php/forum/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="569" column="4" lean-forward="true" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
+        <state relative-caret-position="4788">
+          <caret line="228" column="20" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/doc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="187" column="37" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="37" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#745#749#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

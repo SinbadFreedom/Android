@@ -2,25 +2,28 @@
 session_start();
 date_default_timezone_set('PRC');
 
-if (!isset($_POST['note_tag'])) {
+if (!isset($_POST['tag'])) {
+    echo 'param error tag';
     return;
 }
 
 if (!isset($_POST['title'])) {
+    echo 'param error title';
     return;
 }
 
 if (!isset($_POST['content'])) {
+    echo 'param error content';
     return;
 }
 
 if (!isset($_SESSION['nickname'])) {
-    echo '请先登陆';
+    echo 'param error nickname';
     return;
 }
 
 if (!isset($_SESSION['figure_url'])) {
-    echo '请先登陆';
+    echo 'param error figure_url';
     return;
 }
 
@@ -29,7 +32,7 @@ if (!isset($_SESSION['user_id'])) {
     return;
 }
 
-$tag = $_POST['note_tag'];
+$tag = $_POST['tag'];
 $title = $_POST['title'];
 $content = $_POST['content'];
 

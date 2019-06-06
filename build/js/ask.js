@@ -23,7 +23,7 @@ const hbs_ask = '<table class="table">\n' +
     '    </tbody>\n' +
     '</table>';
 
-let ask_new_type = '';
+let ask_new_tag = '';
 
 function askLoadSuccess(res) {
     console.log('askLoadSuccess');
@@ -41,8 +41,8 @@ function askLoadSuccess(res) {
 
 /** 提问*/
 function askNew(e) {
-    ask_new_type = e.target.innerText;
-    console.log('askNew type ' + ask_new_type);
+    ask_new_tag = e.target.innerText;
+    console.log('askNew type ' + ask_new_tag);
 
     let url = '/ajax/newAsk.html';
     ajax_get(url, loadNewAskSuccess);
@@ -54,7 +54,7 @@ function loadNewAskSuccess(res) {
     /** 替换登录页面框架*/
     refreshContentArea(res);
     /** 更新新建问答标签*/
-    $('#newAsk_tag').text(ask_new_type);
+    $('#newAsk_tag').text(ask_new_tag);
     /** 事件初始化*/
     $('#newAsk_commit').off('click', newAskCommit);
     $('#newAsk_commit').on('click', newAskCommit);
@@ -65,7 +65,7 @@ function newAskCommit(e) {
     let title = $("#newAsk_title").val();
     let content = $("#newAsk_content").val();
     /** 这里是提交表单前的非空校验*/
-    if (ask_new_type === "" || !ask_new_type) {
+    if (ask_new_tag === "" || !ask_new_tag) {
         alert("请选择标签");
         /** 阻止表单提交*/
         return false;
@@ -84,6 +84,7 @@ function newAskCommit(e) {
     }
 
     let data = {};
+    data.tag = ask_new_tag;
     data.title = title;
     data.content = content;
     ajax_post('/php/forum/ask_new_summit.php', data, askCommitSuccessCallback);
