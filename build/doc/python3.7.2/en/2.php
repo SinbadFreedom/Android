@@ -1,7 +1,3 @@
-<?php
-   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
-?>
-
 <h1 id='2.'>2. Using the Python Interpreter</h1>
 <h3 id="2.1.">2.1. Invoking the Interpreter</h3>
 <p>The Python interpreter is usually installed as <code>/usr/local/bin/python3.7</code> on those machines where it is available; putting <code>/usr/local/bin</code> in your Unix shell's search path makes it possible to start it by typing the command:</p>

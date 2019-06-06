@@ -1,7 +1,3 @@
-<?php
-   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
-?>
-
 <h1 id='2.'>2. 使用Python解释器</h1>
 <h3 id="2.1.">2.1. 调用口译员</h3>
 <p>Python解释器通常在那些可用的机器上安装为<code>/ usr / local / bin / python3.7</code>;在你的Unix shell的搜索路径中放置<code>/ usr / local / bin</code>可以通过输入命令来启动它:</p>

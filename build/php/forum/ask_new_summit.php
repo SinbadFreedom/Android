@@ -84,14 +84,9 @@ $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
-/** 跳转到指定评论页面*/
-//$url = 'note_get.php?tag=' . $tag . '&contentid=' . $content_id;
-//echo '<script language = "javascript" type = "text/javascript">window.location.href="' . $url . '"</script>';
-
+/** 返回数据*/
 $res = new stdClass();
 $res->state = 0;
 $res->tag = $tag;
 $res->content_id = $content_id;
-
 echo json_encode($res);
-

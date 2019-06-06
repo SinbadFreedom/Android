@@ -1,7 +1,3 @@
-<?php
-   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
-?>
-
 <h1 id='4.'>4. More Control Flow Tools</h1>
 <p>Besides the <a href="#">while</a> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
 <h3 id="4.1.">4.1. if Statements</h3>

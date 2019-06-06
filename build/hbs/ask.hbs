@@ -1,0 +1,23 @@
+<table class="table">
+    <tbody>
+    {{#ask}}
+        <tr>
+            <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">
+                <b>{{commentcount}}</b>
+            </td>
+            <td style="font-size: 18px">
+                <span>[{{tag}}]</span>
+                <a href="">{{title}}</a>
+                <div class="d-lg-none" style="font-size: 14px">
+                    <div>
+                        <span>{{authorname}}</span><span>{{createtime}}</span><span>{{editorname}}</span>{{edittime}}
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-lg-block text-right">
+                <span>{{authorname}}</span><span>{{createtime}}</span><span>{{editorname}}</span>{{edittime}}
+            </td>
+        </tr>
+    {{/ask}}
+    </tbody>
+</table>

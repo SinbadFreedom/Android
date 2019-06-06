@@ -1,24 +1,4 @@
-<?php
-   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
-   /** 初始化$_SESSION 数据*/
-   if (isset($_POST['headimgurl'])) {
-       $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl']);
-   }
-   if (isset($_POST['nickname'])) {
-       $_SESSION['nickname'] = $_POST['nickname'];
-   }
-   if (isset($_POST['userid'])) {
-       $_SESSION['user_id'] = intval($_POST['userid']);
-   }
-?>
-
-<!--<div class="text-right">-->
-<!--    <button type="button" id="lan_btn_zh_ch" class="btn btn-light active">简体</button>-->
-<!--    <button type="button" id="lan_btn_en" class="btn btn-light">English</button>-->
-<!--&lt;!&ndash;    <a href="../zh_cn/catalog.php"><span>&nbsp简体&nbsp</span></a><a href="../en/catalog.php"><span>&nbspEnglish&nbsp</span></a>&ndash;&gt;-->
-<!--</div>-->
-<!--<hr>-->
-    <h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
+<h4 id="1.">1. <a href="1.php">磨砺你的胃口</a></h4>
 <h4 id="2.">2. <a href="2.php">使用Python解释器</a></h4>
 <ul>
 <li>2.1. <a href="2.php#2.1.">调用口译员</a><ul>
@@ -172,12 +152,3 @@
 <li>16.1.3. <a href="16.php#16.1.3.">交互式启动文件</a>   </li>
 <li>16.1.4. <a href="16.php#16.1.4.">定制模块</a>   </li></ul></li>
 </ul>
-
-<!--<script>-->
-<!--    $('a').click(function (e) {-->
-<!--        e.preventDefault();-->
-<!--        let a_url = $(this).attr("href");-->
-<!--        a_url = '/python3.7.2/zh_cn/' + a_url;-->
-<!--        ajax_get_url(a_url)-->
-<!--    });-->
-<!--</script>-->

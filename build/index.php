@@ -40,7 +40,6 @@ session_start();
 <script src="/lib/bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script src="/lib/google-code-prettify/run_prettify.js"></script>
-<!--<script src="/lib/handlebars-4.1.2/handlebars.js"></script>-->
 <script src="/lib/mustache/mustache.js"></script>
 
 <script src="/js/index.js"></script>
@@ -60,8 +59,6 @@ session_start();
     let current_rank_list = '';
     /** 当前文档显示的文章*/
     let global_page = '1.php';
-    /** 创建问答的tag*/
-    let global_new_ask_tag = '';
 
     $(document).ready(function () {
         /** 事件初始化*/
@@ -71,28 +68,6 @@ session_start();
         let url_index = '/ajax/index.html';
         ajax_get(url_index, indexLoadSuccess);
     });
-
-    function btn_click(e) {
-        let btn_id = $(e.target).attr("id");
-        console.log(' btn_click ' + btn_id);
-        let c_index = btn_id.indexOf("_");
-        let type = btn_id.slice(0, c_index);
-        /** 跳过‘_’*/
-        let param = btn_id.slice(c_index + 1);
-        switch (type) {
-            case 'new':
-                /** 新建笔记*/
-                clickBtnNewNote(param);
-                break;
-            case 'newAsk':
-                /** 新建笔记提交页*/
-                clickBtnNewNoteCommit();
-                break;
-            default:
-                console.log('click default ' + btn_id);
-                break;
-        }
-    }
 
     /** 导航按钮点击事件*/
     function navClickBtn(e) {
@@ -124,42 +99,6 @@ session_start();
         }
     }
 
-    /** 点击创建新笔记按钮*/
-    function clickBtnNewNote(param) {
-        global_new_ask_tag = param;
-        ajax_get_url('/ajax/newAsk.html');
-    }
-
-    /** 点击提交笔记按钮*/
-    function clickBtnNewNoteCommit() {
-        let title = $("#newAsk_title").val();
-        let content = $("#newAsk_content").val();
-        /** 这里是提交表单前的非空校验*/
-        if (global_new_ask_tag === "" || !global_new_ask_tag) {
-            alert("请选择标签");
-            /** 阻止表单提交*/
-            return false;
-        }
-
-        if (title === "" || !title) {
-            alert("请输入标题");
-            /** 阻止表单提交*/
-            return false;
-        }
-
-        if (content === "" || !content) {
-            alert("请输入内容");
-            /** 阻止表单提交*/
-            return false;
-        }
-
-        let data = {};
-        data.ask_tag = global_new_ask_tag;
-        data.title = title;
-        data.content = content;
-        ajax_post('/php/forum/ask_new_summit.php', data);
-    }
-
     /** 导航按钮状态切换*/
     function active_nav_button(id) {
         $("#nav_btn_index").removeClass("active");
@@ -167,22 +106,6 @@ session_start();
         $("#nav_btn_rank").removeClass("active");
         $("#nav_btn_login").removeClass("active");
         $('#' + id).addClass("active");
-    }
-
-    /** ajax异步获取url数据，设置到指定的id区域默认id为content_area*/
-    function ajax_get_url(link_name, content_area_id = 'content_area') {
-        console.log("ajax_get_url: " + link_name);
-        $.ajax({
-            url: link_name,
-            success: function (res) {
-                $("#" + content_area_id).html(res);
-                /** 先清空所有绑定事件，否则会重复调用*/
-                if (link_name === '/ajax/newAsk.html') {
-                    /** 修改标签内容*/
-                    $('#newAsk_tag').text(global_new_ask_tag);
-                }
-            }
-        });
     }
 
     function ajax_post(link_name, data, callback_success) {
@@ -201,15 +124,6 @@ session_start();
         $.ajax({
             url: url_get,
             success: callback_success
-        });
-    }
-
-    /** 全局ajax_get方法-同步*/
-    function ajax_get_sync(url_get) {
-        console.log('ajax_get_sync: ' + url_get);
-        return $.ajax({
-            async: false,
-            url: url_get
         });
     }
 

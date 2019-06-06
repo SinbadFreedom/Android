@@ -1,7 +1,3 @@
-<?php
-   require_once($_SERVER['DOCUMENT_ROOT'].'/php/update_exp.php');
-?>
-
 <h1 id='5.'>5. Data Structures</h1>
 <p>This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
 <h3 id="5.1.">5.1. More on Lists</h3>

@@ -1,9 +1,4 @@
-[28-May-2019 09:48:25 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:53
-Stack trace:
-#0 D:\workplace\git\Android\build\php\forum\note_get.php(53): MongoDB\Driver\Manager->executeQuery('db_tag.python3....', Object(MongoDB\Driver\Query))
-#1 {main}
-  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 53
-[28-May-2019 09:48:26 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\index.php:191
+[06-Jun-2019 08:58:47 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\index.php:191
 Stack trace:
 #0 D:\workplace\git\Android\build\php\forum\index.php(191): MongoDB\Driver\Manager->executeQuery('db_tag.python3....', Object(MongoDB\Driver\Query))
 #1 {main}
