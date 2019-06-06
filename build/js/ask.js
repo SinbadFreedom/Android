@@ -151,7 +151,7 @@ function askLoadInfoSuccess(res) {
     }
 
     let html = Mustache.render(hbs_ask, data);
-    console.log('askLoadInfoSuccess html ' + html);
+    // console.log('askLoadInfoSuccess html ' + html);
     /** 显示ask列表*/
     $('#ask_tag_info').html(html);
 }
