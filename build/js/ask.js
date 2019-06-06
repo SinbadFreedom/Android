@@ -147,7 +147,10 @@ function askLoadInfoSuccess(res) {
     for (let info in info_arr) {
         console.dir(info_arr[info]);
         info_arr[info].createtime = formatDate(info_arr[info].createtime * 1000);
-        info_arr[info].edittime = formatDate(info_arr[info].edittime * 1000);
+        if (info_arr[info].edittime) {
+            /** 有回复的问答，才会有编辑信息*/
+            info_arr[info].edittime = formatDate(info_arr[info].edittime * 1000);
+        }
     }
 
     let html = Mustache.render(hbs_ask, data);
