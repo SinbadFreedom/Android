@@ -101,7 +101,8 @@ function askCommitSuccessCallback(res) {
     let obj = JSON.parse(res);
     let tag = obj.tag;
     /** 返回问答列表*/
-    //TODO
+    /** 加载全部内容*/
+    getAskInfo('ask_content_all');
 }
 
 function askTagClickBtn(e) {
