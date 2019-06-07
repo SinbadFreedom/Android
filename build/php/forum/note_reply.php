@@ -10,6 +10,11 @@ file_put_contents($file, $content, FILE_APPEND);
 
 $res = new stdClass();
 
+if (!isset($_GET['type'])) {
+    echo 'param error type';
+    return;
+}
+
 if (!isset($_POST['tag'])) {
     $res->state = -1;
     $res->msg = 'param error tag';
@@ -59,6 +64,15 @@ if (!isset($_SESSION['user_id'])) {
     return;
 }
 
+$type = $_GET['type'];
+
+if ($type == 'note') {
+    $db_name = 'db_note';
+} else if ($type == 'reply') {
+    $db_name = 'db_reply';
+}
+
+
 /** GET参数*/
 $tag = $_POST['tag'];
 $language = $_POST['language'];
@@ -89,7 +103,7 @@ $note_reply_info = [
 $bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert($note_reply_info);
 $note_collection_name = $tag . '_' . $language;
-$col_reply_name = 'db_note.' . $note_collection_name;
+$col_reply_name = $db_name . '.' . $note_collection_name;
 $manager->executeBulkWrite($col_reply_name, $bulk);
 
 $res->state = 0;

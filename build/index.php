@@ -61,6 +61,7 @@ session_start();
     let global_page = '1.php';
 
     $(document).ready(function () {
+        console.log('index document ready.');
         /** 事件初始化*/
         $('#nav_bar').off('click', 'button', navClickBtn);
         $('#nav_bar').on('click', 'button', navClickBtn);

@@ -10,6 +10,11 @@ session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 date_default_timezone_set('PRC');
 
+if (!isset($_GET['type'])) {
+    echo 'param error type';
+    return;
+}
+
 if (!isset($_GET['tag'])) {
     echo 'param error tag';
     return;
@@ -30,10 +35,19 @@ if (!is_numeric($_GET['contentid'])) {
     return;
 }
 
+
 /** 回复翻页，默认显示第一页*/
 $page = 0;
 if (isset($_GET['page']) && is_numeric($_GET['page'])) {
     $page = intval($_GET['page']);
+}
+
+$type = $_GET['type'];
+
+if ($type == 'note') {
+    $db_name = 'db_note';
+} else if ($type == 'reply') {
+    $db_name = 'db_reply';
 }
 
 $tag = $_GET['tag'];
@@ -43,6 +57,7 @@ $content_id = intval($_GET['contentid']);
 $file = '/workplace/log/log_note_get_' . date('Y-m-d', $time_stamp) . '.log';
 $content = $tag . $language . " $content_id " . " $time_stamp\n";
 file_put_contents($file, $content, FILE_APPEND);
+
 $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
 
 $note_collection_name = $tag . '_' . $language;
@@ -56,7 +71,7 @@ $command = new MongoDB\Driver\Command([
     'query' => ['content_id' => $content_id]
 ]);
 
-$command_cursor = $manager->executeCommand('db_note', $command);
+$command_cursor = $manager->executeCommand($db_name, $command);
 /** 笔记总条数 列表分页用*/
 $total_count = $command_cursor->toArray()[0]->n;
 $page_max = floor($total_count / $count_per_page);
@@ -87,7 +102,7 @@ $options = [
 ];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
-$col_reply_name = 'db_note.' . $note_collection_name;
+$col_reply_name = $db_name . '.' . $note_collection_name;
 $cursor = $manager->executeQuery($col_reply_name, $query);
 
 $reply_info = [];

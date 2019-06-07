@@ -118,7 +118,7 @@ function getDocNote(page_num) {
     console.log('getDocNote note_page ' + note_page);
 
     let file_number = global_page.split('.')[0];
-    let url_note = '/php/note/note_get.php?tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
+    let url_note = '/php/forum/note_get.php?type=note&tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
     ajax_get(url_note, docLoadNoteSuccess);
 }
 
@@ -174,9 +174,10 @@ function docClickBtnSummitReply() {
     /** 清空回复区*/
     $('#doc_reply_text').val('');
 
-    let url_note = '/php/note/note_reply.php';
+    let url_note = '/php/forum/note_reply.php';
 
     let data = {};
+    data.type = 'note';
     data.tag = global_tag;
     data.language = global_lan;
     data.content_id = global_page.split('.')[0];
