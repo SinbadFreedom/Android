@@ -72,7 +72,6 @@ if ($type == 'note') {
     $db_name = 'db_reply';
 }
 
-
 /** GET参数*/
 $tag = $_POST['tag'];
 $language = $_POST['language'];
@@ -105,6 +104,20 @@ $bulk->insert($note_reply_info);
 $note_collection_name = $tag . '_' . $language;
 $col_reply_name = $db_name . '.' . $note_collection_name;
 $manager->executeBulkWrite($col_reply_name, $bulk);
+
+/** 更新回复数量*/
+$query = [
+    "findandmodify" => $tag,
+    "query" => ['contentid' => $content_id],
+    "update" => ['$inc' => ['comment_count' => 1]],
+    'upsert' => false,
+    'new' => true,
+    'fields' => ['comment_count' => 1]
+];
+$command = new MongoDB\Driver\Command($query);
+$command_cursor = $manager->executeCommand('db_tag', $command);
+$response = $command_cursor->toArray()[0];
+$comment_count = $response->value->comment_count;
 
 $res->state = 0;
 $res->tag = $tag;

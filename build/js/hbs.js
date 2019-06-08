@@ -4,7 +4,7 @@ const hbs_ask_list = '<table class="table">\n' +
     '    {{#ask}}\n' +
     '        <tr>\n' +
     '            <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">\n' +
-    '                <b>{{commentcount}}</b>\n' +
+    '                <b>{{comment_count}}</b>\n' +
     '            </td>\n' +
     '            <td style="font-size: 18px">\n' +
     '                <a ask_tag="{{tag}}" ask_content_id="{{contentid}}" href="{{url_content}}">{{title}}</a>\n' +
