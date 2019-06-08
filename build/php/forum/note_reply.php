@@ -107,4 +107,6 @@ $col_reply_name = $db_name . '.' . $note_collection_name;
 $manager->executeBulkWrite($col_reply_name, $bulk);
 
 $res->state = 0;
+$res->tag = $tag;
+$res->content_id = $content_id;
 echo json_encode($res);

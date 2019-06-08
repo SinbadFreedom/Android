@@ -91,8 +91,13 @@ function askInfoLinkClick(e) {
     e.preventDefault();
     let ask_tag = $(e.target).attr('ask_tag');
     let ask_content_id = $(e.target).attr('ask_content_id');
+    getAskInfo(ask_tag, ask_content_id);
+}
+
+/** 获取问答的详细内容*/
+function getAskInfo(tag, content_id) {
     /** 由a标签参数组成url*/
-    let url_content = '/php/forum/ask_info.php?tag=' + ask_tag + '&language=zh_cn&contentid=' + ask_content_id;
+    let url_content = '/php/forum/ask_info.php?tag=' + tag + '&language=zh_cn&contentid=' + content_id;
     console.log('askInfoLinkClick ' + url_content);
     ajax_get(url_content, askInfoLoadSuccess);
 }
@@ -158,8 +163,8 @@ function replyCommitSuccessCallback(res) {
     console.dir(res);
     let res_obj = JSON.parse(res);
     if (res_obj.state === 0) {
-        /** 回复成功, 更新问答*/
-        // getDocNote(0);
+        /** 回复成功, 更新问答内容*/
+        getAskInfo(res_obj.tag, res_obj.content_id);
     }
 }
 
