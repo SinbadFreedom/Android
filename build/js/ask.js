@@ -1,53 +1,3 @@
-/** 笔记模板数据，对应/hbs/ask_list.hbs*/
-const hbs_ask_list = '<table class="table">\n' +
-    '    <tbody>\n' +
-    '    {{#ask}}\n' +
-    '        <tr>\n' +
-    '            <td class="text-center" width="30px" style="vertical-align: middle; font-weight: initial; font-size: 14px">\n' +
-    '                <b>{{commentcount}}</b>\n' +
-    '            </td>\n' +
-    '            <td style="font-size: 18px">\n' +
-    '                <span>[{{tag}}]</span>\n' +
-    '                <a href="{{url_content}}">{{title}}</a>\n' +
-    '                <div class="d-lg-none" style="font-size: 14px">\n' +
-    '                    <div>\n' +
-    '                        <span>{{authorname}}</span><span>{{createtime}}</span><span>{{editorname}}</span>{{edittime}}\n' +
-    '                    </div>\n' +
-    '                </div>\n' +
-    '            </td>\n' +
-    '            <td class="d-none d-lg-block text-right">\n' +
-    '                <span>{{authorname}}</span><span>{{createtime}}</span><span>{{editorname}}</span>{{edittime}}\n' +
-    '            </td>\n' +
-    '        </tr>\n' +
-    '    {{/ask}}\n' +
-    '    </tbody>\n' +
-    '</table>';
-
-/** 笔记模板数据，对应/hbs/ask_info.hbs*/
-const hbs_ask_info = '<table class="table">\n' +
-    '    <tbody>\n' +
-    '    <tr>\n' +
-    '        <td width="96px">\n' +
-    '            <img src="{{author_figure}}" width="48px" height="48px">\n' +
-    '            <div class="text-center">\n' +
-    '                <span>{{authorname}}</span>\n' +
-    '            </div>\n' +
-    '        </td>\n' +
-    '        <td width="100%" valign="top">\n' +
-    '            <div class="row">\n' +
-    '                <span class="ml-auto"><small>{{createtime}}</small></span>\n' +
-    '            </div>\n' +
-    '            <div class="row">\n' +
-    '                <span>{{title}}</span>\n' +
-    '            </div>\n' +
-    '            <div>\n' +
-    '                <span>{{content}}</span>\n' +
-    '            </div>\n' +
-    '        </td>\n' +
-    '    </tr>\n' +
-    '    </tbody>\n' +
-    '</table>';
-
 let ask_new_tag = '';
 
 /** 问答列表数据加载成功*/
@@ -139,7 +89,10 @@ function askTagClickBtn(e) {
 /** 点击问答链接, 获取链接内容*/
 function askInfoLinkClick(e) {
     e.preventDefault();
-    let url_content = $(e.target).attr('href');
+    let ask_tag = $(e.target).attr('ask_tag');
+    let ask_content_id = $(e.target).attr('ask_content_id');
+    /** 由a标签参数组成url*/
+    let url_content = '/php/forum/ask_info.php?tag=' + ask_tag + '&language=zh_cn&contentid=' + ask_content_id;
     console.log('askInfoLinkClick ' + url_content);
     ajax_get(url_content, askInfoLoadSuccess);
 }
@@ -154,6 +107,60 @@ function askInfoLoadSuccess(res) {
     let html = Mustache.render(hbs_ask_info, data.info);
     /** 替换登录页面框架*/
     refreshContentArea(html);
+
+    /** 回复按钮点击事件*/
+    $('#ask_info_btn_reply').off('click', askReplyClick);
+    $('#ask_info_btn_reply').on('click', askReplyClick);
+
+    getAskReply(data.info.tag, 'zh_cn', data.info.contentid, 0);
+}
+
+/** 更新问答回复*/
+function getAskReply(tag, lan, content_id, page_num) {
+    console.log('getAskReply page_num ' + page_num + ' lan ' + lan + ' content_id ' + content_id);
+    let url_ask_reply = '/php/forum/note_get.php?type=reply&tag=' + tag + '&language=' + lan + '&contentid=' + content_id + '&page=' + page_num;
+    ajax_get(url_ask_reply, askReplyLoadSuccess);
+}
+
+/** 问答回复加载成功*/
+function askReplyLoadSuccess(res) {
+    console.log('askReplyLoadSuccess res ' + res);
+    /** hbs 和data 组合html*/
+    let data = JSON.parse(res);
+    let html = Mustache.render(hbs_note, data);
+    $("#ask_info_reply_area").html(html);
+}
+
+/** 点击回复按钮*/
+function askReplyClick(e) {
+    console.log('askReplyClick');
+
+    let reply = $("#ask_info_txt_reply").val();
+    if (reply === "" || !reply) {
+        alert("输入回复内容");
+        /** 阻止表单提交*/
+        return false;
+    }
+
+    let data = {};
+    data.type = 'reply';
+    data.tag = $("#ask_info_tag").text();
+    data.language = 'zh_cn';
+    data.content_id = $("#ask_info_content_id").text();
+    data.reply = reply;
+
+    ajax_post('/php/forum/note_reply.php', data, replyCommitSuccessCallback);
+}
+
+/** 回复提交成功*/
+function replyCommitSuccessCallback(res) {
+    console.log('replyCommitSuccessCallback ' + res);
+    console.dir(res);
+    let res_obj = JSON.parse(res);
+    if (res_obj.state === 0) {
+        /** 回复成功, 更新问答*/
+        // getDocNote(0);
+    }
 }
 
 /** 获取问答列表*/
@@ -191,16 +198,9 @@ function askListLoadSuccess(res) {
     for (let info in info_arr) {
         console.dir(info_arr[info]);
         convertTimeStampToData(info_arr[info])
-        // /** 时间戳转化成毫秒计算日期*/
-        // info_arr[info].createtime = formatDate(info_arr[info].createtime * 1000);
-        // if (info_arr[info].edittime) {
-        //     /** 有回复的问答，才会有编辑信息*/
-        //     info_arr[info].edittime = formatDate(info_arr[info].edittime * 1000);
-        // }
     }
 
     let html = Mustache.render(hbs_ask_list, data);
-    // console.log('askListLoadSuccess html ' + html);
     /** 显示ask列表*/
     $('#ask_tag_info').html(html);
     /** a 标签点击事件*/

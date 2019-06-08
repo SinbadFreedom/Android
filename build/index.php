@@ -43,6 +43,7 @@ session_start();
 <script src="/lib/mustache/mustache.js"></script>
 
 <script src="/js/index.js"></script>
+<script src="/js/hbs.js"></script>
 <script src="/js/doc.js"></script>
 <script src="/js/rank.js"></script>
 <script src="/js/login.js"></script>

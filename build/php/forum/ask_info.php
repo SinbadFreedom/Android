@@ -18,6 +18,9 @@ if (!isset($_GET['contentid']) || !is_numeric($_GET['contentid'])) {
     return;
 }
 
+require_once('../../php/util_curl.php');
+
+
 $tag = $_GET['tag'];
 $lan = $_GET['language'];
 $content_id = intval($_GET['contentid']);
@@ -33,9 +36,11 @@ $options = ['limit' => 1, 'projection' => ['_id' => 0]];
 /** 根据tag和content_id查找对应的文章标题信息*/
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($col_name, $query);
+
 $info = $cursor->toArray()[0];
 /** 加入tag信息*/
 $info->tag = $tag;
+
 $res = new stdClass();
 $res->info = $info;
 

@@ -1,33 +1,3 @@
-/** 笔记模板数据，对应/hbs/note.hbs*/
-const hbs_note = '<table>\n' +
-    '    <tbody>\n' +
-    '    {{#notes}}\n' +
-    '        <tr>\n' +
-    '            <td width="96px">\n' +
-    '                <img src="{{editor_figure}}" width="48px" height="48px">\n' +
-    '                <div class="text-center">\n' +
-    '                    <span>{{editor_name}}</span>\n' +
-    '                </div>\n' +
-    '            </td>\n' +
-    '            <td width="100%" valign="top">\n' +
-    '                <div class="row">\n' +
-    '                    <span class="ml-auto"><small>{{edit_time}}</small></span>\n' +
-    '                </div>\n' +
-    '                <div>\n' +
-    '                    <span>{{reply}}</span>\n' +
-    '                </div>\n' +
-    '            </td>\n' +
-    '        </tr>\n' +
-    '    {{/notes}}\n' +
-    '    </tbody>\n' +
-    '</table>\n' +
-    '\n' +
-    '<div class="btn-group">\n' +
-    '    {{#page_next}}\n' +
-    '        <button id="note_page_next" class="btn btn-light">&or;</button>\n' +
-    '    {{/page_next}}\n' +
-    '</div>\n';
-
 /** 当前笔记页数*/
 let note_page = 0;
 

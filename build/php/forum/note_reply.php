@@ -10,7 +10,7 @@ file_put_contents($file, $content, FILE_APPEND);
 
 $res = new stdClass();
 
-if (!isset($_GET['type'])) {
+if (!isset($_POST['type'])) {
     echo 'param error type';
     return;
 }
@@ -45,14 +45,14 @@ if (!isset($_POST['reply'])) {
 
 if (!isset($_SESSION['nickname'])) {
     $res->state = -5;
-    $res->msg = '请先登陆 nickname: ' . $_SESSION['nickname'];
+    $res->msg = '请先登陆 nickname';
     echo json_encode($res);
     return;
 }
 
 if (!isset($_SESSION['figure_url'])) {
     $res->state = -6;
-    $res->msg = '请先登陆 figure_url: ' . $_SESSION['figure_url'];
+    $res->msg = '请先登陆 figure_url';
     echo json_encode($res);
     return;
 }
@@ -64,7 +64,7 @@ if (!isset($_SESSION['user_id'])) {
     return;
 }
 
-$type = $_GET['type'];
+$type = $_POST['type'];
 
 if ($type == 'note') {
     $db_name = 'db_note';

@@ -1,3 +1,11 @@
+<div class="row">
+    <button type="button" id="ask_info_tag" class="btn btn-light active">{{tag}}</button>
+</div>
+
+<div style="display: none">
+    <span id="ask_info_content_id">{{contentid}}</span>
+</div>
+
 <table class="table">
     <tbody>
     <tr>
@@ -21,3 +29,12 @@
     </tr>
     </tbody>
 </table>
+
+<div id="ask_info_reply_area">
+问答回复区
+</div>
+
+<td width="100%" valign="top">
+    <textarea class=form-control id="ask_info_txt_reply" rows="5" placeholder="输入内容"></textarea>
+    <button id="ask_info_btn_reply" class="btn btn-primary">回复</button>
+</td>
