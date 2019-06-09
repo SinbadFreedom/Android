@@ -59,11 +59,12 @@ const hbs_ask_info = '<div class="row">\n' +
     '问答回复区\n' +
     '</div>\n' +
     '\n' +
-    '<td width="100%" valign="top">\n' +
-    '    <textarea class=form-control id="ask_info_txt_reply" rows="5" placeholder="输入内容"></textarea>\n' +
-    '    <button id="ask_info_btn_reply" class="btn btn-primary">回复</button>\n' +
-    '</td>\n' +
-    '\n';
+    '<textarea class=form-control id="ask_info_txt_reply" rows="5" placeholder="输入内容"></textarea>\n' +
+    '\n' +
+    '<div id="ask_info_login_state">\n' +
+    '    <button class="btn btn-warning" id="ask_info_btn_login">登陆后可提交</button>\n' +
+    '<!--    <button id="ask_info_btn_reply" class="btn btn-primary">回复</button>-->\n' +
+    '</div>';
 
 /** 笔记模板数据，对应/hbs/note.hbs*/
 const hbs_note = '<table>\n' +

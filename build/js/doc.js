@@ -5,14 +5,24 @@ function docSuccess(res) {
     console.log('docSuccess');
     /** 更新doc内容区*/
     refreshContentArea(res);
+
+    /** 判断登录状态*/
+    if (global_login_state) {
+        /** 已经登录显示 提交按钮，没有登录显示默认按钮*/
+        let html = '<button id="doc_reply_commit" class="btn btn-primary">提交</button>';
+        $('#doc_login_state').html(html);
+    }
+
     /** 移除事件侦听*/
     $('#doc_lan').off('click', 'button', docClickBtnLan);
     $('#doc_reply_commit').off('click', docClickBtnSummitReply);
+    $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
     $('#doc_reply_commit').on('click', docClickBtnSummitReply);
+    $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
 
     /** 更新tag按钮值*/
@@ -129,6 +139,12 @@ function active_language_btn(lan) {
     console.log('active_language_btn ' + lan);
     let lan_str = '#doc_' + lan;
     $(lan_str).addClass("active");
+}
+
+/** 点击登陆后科技条按钮*/
+function docClickBtnLogin() {
+    /** 显示登录页*/
+    showLoginPage();
 }
 
 /** 回复文档点击事件*/

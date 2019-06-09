@@ -16,6 +16,11 @@ function askLoadSuccess(res) {
 
 /** 提问*/
 function askNew(e) {
+    if (!global_login_state) {
+        alert('请先登录');
+        return;
+    }
+
     ask_new_tag = e.target.innerText;
     console.log('askNew type ' + ask_new_tag);
 
@@ -30,9 +35,24 @@ function loadNewAskSuccess(res) {
     refreshContentArea(res);
     /** 更新新建问答标签*/
     $('#newAsk_tag').text(ask_new_tag);
+
+    /** 判断登陆状态*/
+    if (global_login_state) {
+        /** 已经登录显示 提交按钮，没有登录显示默认按钮*/
+        let html = '<button class="btn btn-primary" id="newAsk_commit">提交</button>';
+        $('#newAsk_login_state').html(html);
+    }
+
     /** 事件初始化*/
+    $('#newAsk_login').off('click', newAskLogin);
     $('#newAsk_commit').off('click', newAskCommit);
+    $('#newAsk_login').on('click', newAskLogin);
     $('#newAsk_commit').on('click', newAskCommit);
+}
+
+function newAskLogin() {
+    /** 显示登陆页面*/
+    showLoginPage();
 }
 
 /** 提交问答*/
@@ -113,11 +133,26 @@ function askInfoLoadSuccess(res) {
     /** 替换登录页面框架*/
     refreshContentArea(html);
 
+    /** 判断登录状态*/
+    if (global_login_state) {
+        /** 已经登录显示 提交按钮，没有登录显示默认按钮*/
+        let html = '<button id="ask_info_btn_reply" class="btn btn-primary">提交</button>';
+        $('#ask_info_login_state').html(html);
+    }
+
     /** 回复按钮点击事件*/
+    $('#ask_info_btn_login').off('click', askRelyLogin);
     $('#ask_info_btn_reply').off('click', askReplyClick);
+
+    $('#ask_info_btn_login').on('click', askRelyLogin);
     $('#ask_info_btn_reply').on('click', askReplyClick);
 
     getAskReply(data.info.tag, 'zh_cn', data.info.contentid, 0);
+}
+
+function askRelyLogin() {
+    /** 显示登陆页面*/
+    showLoginPage();
 }
 
 /** 更新问答回复*/

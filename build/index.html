@@ -52,6 +52,8 @@
     let global_lan = 'zh_cn';
     /** 当前文档显示的文章*/
     let global_page = '1.php';
+    /** 登陆状态*/
+    let global_login_state = false;
 
     $(document).ready(function () {
         console.log('index document ready.');
@@ -70,6 +72,7 @@
     function onGetFigureUrl(res) {
         console.log('onGetFigureUrl res ' + res);
         if (res) {
+            global_login_state = true;
             /** 已经登陆，获取头像信息, 显示头像图标*/
             let login_state_btn = '<button type="button" id="nav_btn_figure" class="btn btn-success ml-auto"><img id="nav_btn_figure"  class="rounded" src="' + res + '" width="24px" height="24px"></button>';
             $("#index_login_state").html(login_state_btn);
@@ -96,14 +99,19 @@
                 ajax_get(url, rankLoadSuccess);
                 break;
             case 'nav_btn_login':
-                url = '/ajax/login.html';
-                ajax_get(url, loginLoadSuccess);
+                showLoginPage();
                 break;
             case 'nav_btn_figure':
                 url = '/ajax/profile.html';
                 ajax_get(url, loadProfileSuccess);
                 break;
         }
+    }
+
+    /** 显示登录页面*/
+    function showLoginPage() {
+        let url = '/ajax/login.html';
+        ajax_get(url, loginLoadSuccess);
     }
 
     /** 导航按钮状态切换*/
