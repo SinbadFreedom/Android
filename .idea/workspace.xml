@@ -50,20 +50,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+            <state relative-caret-position="310">
+              <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/lib/wechat/login_wc_callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="104" column="27" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="27" />
+            <state relative-caret-position="293">
+              <caret line="102" column="26" lean-forward="true" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -263,8 +263,8 @@
         <option value="$PROJECT_DIR$/build/index.php" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/build/php/forum/index.php" />
-        <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
         <option value="$PROJECT_DIR$/build/lib/wechat/login_wc_callback.php" />
+        <option value="$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php" />
       </list>
     </option>
   </component>
@@ -752,14 +752,7 @@
       <workItem from="1559980604404" duration="668000" />
       <workItem from="1560052274532" duration="608000" />
       <workItem from="1560058817927" duration="1787000" />
-      <workItem from="1560060618961" duration="308000" />
-    </task>
-    <task id="LOCAL-00333" summary="1. 修改笔记tag id">
-      <created>1558939596733</created>
-      <option name="number" value="00333" />
-      <option name="presentableId" value="LOCAL-00333" />
-      <option name="project" value="LOCAL" />
-      <updated>1558939596733</updated>
+      <workItem from="1560060618961" duration="335000" />
     </task>
     <task id="LOCAL-00334" summary="1. 修改笔记tag id">
       <created>1558940155934</created>
@@ -1097,11 +1090,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560060807889</updated>
     </task>
-    <option name="localTasksCounter" value="382" />
+    <task id="LOCAL-00382" summary="1. rename index.php to index.html">
+      <created>1560060941329</created>
+      <option name="number" value="00382" />
+      <option name="presentableId" value="LOCAL-00382" />
+      <option name="project" value="LOCAL" />
+      <updated>1560060941329</updated>
+    </task>
+    <option name="localTasksCounter" value="383" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="660400000" />
+    <option name="totallyTimeSpent" value="660427000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1143,7 +1143,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 移除输出" />
     <MESSAGE value="1. qq web unionid" />
     <MESSAGE value="1. 显示时间" />
     <MESSAGE value="1. 修改用户信息" />
@@ -1168,7 +1167,8 @@
     <MESSAGE value="1. ask info and reply" />
     <MESSAGE value="1. update reply count" />
     <MESSAGE value="1. figure_login btn" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. figure_login btn" />
+    <MESSAGE value="1. rename index.php to index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. rename index.php to index.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1520,17 +1520,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
+    <entry file="file://$PROJECT_DIR$/build/lib/wechat/login_wc_callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="293">
+          <caret line="102" column="26" lean-forward="true" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/wechat/login_wc_callback.php">
+    <entry file="file://$PROJECT_DIR$/build/lib/Connect2.1/login_qq_callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="104" column="27" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="27" />
+        <state relative-caret-position="310">
+          <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
         </state>
       </provider>
     </entry>
