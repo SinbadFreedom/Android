@@ -176,6 +176,8 @@ function replyPostSuccessCallback(res) {
     console.log('replyPostSuccessCallback ' + res);
     let res_obj = JSON.parse(res);
     if (res_obj.state === 0) {
+        /** 清空笔记*/
+        clearDocNote();
         /** 回复成功, 更新笔记*/
         getDocNote(0);
     }
