@@ -50,13 +50,13 @@ function rankInfoLoadSuccess(res) {
 
 /** 更新排行榜按钮状态*/
 function active_rank_list_button(id) {
-    $('#rank_1').removeClass("active");
-    $('#rank_2').removeClass("active");
-    $('#rank_3').removeClass("active");
-    $('#rank_4').removeClass("active");
-    $('#rank_5').removeClass("active");
-    $('#rank_6').removeClass("active");
-    $('#rank_7').removeClass("active");
+    $('#rank_1').removeClass('active');
+    $('#rank_2').removeClass('active');
+    $('#rank_3').removeClass('active');
+    $('#rank_4').removeClass('active');
+    $('#rank_5').removeClass('active');
+    $('#rank_6').removeClass('active');
+    $('#rank_7').removeClass('active');
 
     console.log('active_rank_list_button ' + id);
     let id_str = '#' + id;
