@@ -1,1 +1,6 @@
 [08-Jun-2019 13:47:00 PRC] PHP Notice:  Undefined index: nickname in D:\workplace\git\Android\build\php\forum\note_reply.php on line 48
+[10-Jun-2019 11:10:55 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74

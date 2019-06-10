@@ -8,26 +8,26 @@
     </div>
 </div>
 
-<div class="row">
-    <div id="doc_catalog" class="col-3">
+<div id="doc_catalog"
+     style="position: fixed; top: 94px; bottom: 0; width: 333px; height: auto; z-index: 99; overflow: auto">
+</div>
+
+<div style="position: fixed; top: 94px; bottom: 0; margin-left: 380px; z-index: 199; overflow: auto">
+    <div id="doc_content">
+
     </div>
 
-    <div class="col-9">
-        <div id="doc_content">
+    <label>发表笔记</label>
+    <textarea class="form-control" id="doc_reply_text" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
 
-        </div>
+    <div id="doc_login_state">
+        <button id="doc_reply_login" class="btn btn-warning">登陆后可回复</button>
 
-        <label>发表笔记</label>
-        <textarea class="form-control" id="doc_reply_text" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
-        <div id="doc_login_state">
-            <button id="doc_reply_login" class="btn btn-warning">登陆后可回复</button>
-<!--            <button id="doc_reply_commit" class="btn btn-primary">提交</button>-->
-        </div>
+    </div>
 
-        <label>笔记</label>
-        <hr>
-        <div id="doc_note">
+    <label>笔记</label>
+    <hr>
+    <div id="doc_note">
 
-        </div>
     </div>
 </div>
