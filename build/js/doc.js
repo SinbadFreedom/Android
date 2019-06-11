@@ -69,8 +69,6 @@ function docLoadCatalogSuccess(res) {
 
 /** 加载doc 笔记*/
 function updateDocContentAndNote() {
-    /** 滚动条置顶*/
-    window.scrollTo(0, 0);
     /** 加载content区内容*/
     let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page;
     ajax_get(url_doc_content, docLoadContentSuccess);
@@ -84,6 +82,20 @@ function updateDocContentAndNote() {
 function docLoadContentSuccess(res) {
     /** 更新文档内容*/
     $('#doc_content').html(res);
+
+    /** 更新滚动条位置*/
+    console.log('docLoadContentSuccess global_page ' + global_page);
+    let arr = global_page.split('#');
+    if (arr.length > 1) {
+        /** 滚动条至锚点*/
+        let anchor = arr[1];
+        let off_top = $('[id="' + anchor + '"]').offset().top;
+        /** 锚点位置减去网站导航栏距离*/
+        $("#doc_content_stroll_area").scrollTop(off_top - 94);
+    } else {
+        /** 滚动条置顶*/
+        $("#doc_content_stroll_area").scrollTop(0);
+    }
 }
 
 /** 清空笔记*/
