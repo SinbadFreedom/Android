@@ -2,14 +2,16 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/md/python3.7.2/en/catalog.md" line="23" />
-    <bookmark url="file://$PROJECT_DIR$/build/js/doc.js" line="78" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/build/php/single/ask_info.php" line="19" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1.  stroll anchor">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ajax/doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/dashidan.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/dashidan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/doc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/ask.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/ask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/forum/ask_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/ask_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/forum/php_errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/forum/php_errors.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/util_curl.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/util_curl.php" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -26,33 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="10" />
+            <state relative-caret-position="1722">
+              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -60,17 +40,67 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/js/doc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3647">
-              <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
+            <state relative-caret-position="1953">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/single/ask_info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/util_curl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/crontab/update_rank_minute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/single/php_errors.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/js/ask.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4662">
-              <caret line="222" column="4" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="26" />
+            <state relative-caret-position="466">
+              <caret line="130" column="4" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -96,11 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clickBtnNotePage</find>
-      <find>docClickBtnLoginReply</find>
-      <find>docClickBtnSummitReply</find>
-      <find>newAsk.html</find>
-      <find>输入内容</find>
       <find>ask_info_btn_reply</find>
       <find>newAsk_login_state</find>
       <find>newAsk</find>
@@ -126,6 +151,11 @@
       <find>display: block</find>
       <find>remove</find>
       <find>docLoadContentSuccess</find>
+      <find>GetQueryString</find>
+      <find>hts2Html</find>
+      <find>require_once</find>
+      <find>updateNavBtn</find>
+      <find>ask_content_id</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;col-10&quot;</replace>
@@ -176,9 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build/js/login.js" />
-        <option value="$PROJECT_DIR$/build/php/profile.php" />
-        <option value="$PROJECT_DIR$/build/js/profile.js" />
         <option value="$PROJECT_DIR$/build/php/note/note_reply_summit.php" />
         <option value="$PROJECT_DIR$/build/php/note/php_errors.log" />
         <option value="$PROJECT_DIR$/build/ajax/reply.js" />
@@ -217,16 +244,19 @@
         <option value="$PROJECT_DIR$/build/php/figure_url.php" />
         <option value="$PROJECT_DIR$/build/hbs/note.hbs" />
         <option value="$PROJECT_DIR$/build/php/forum/note_get.php" />
-        <option value="$PROJECT_DIR$/build/php/forum/ask_info.php" />
         <option value="$PROJECT_DIR$/build/js/hbs.js" />
         <option value="$PROJECT_DIR$/build/hbs/ask_info.hbs" />
-        <option value="$PROJECT_DIR$/build/js/ask.js" />
         <option value="$PROJECT_DIR$/build/ajax/newAsk.html" />
-        <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js" />
         <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/js/doc.js" />
         <option value="$PROJECT_DIR$/build/ajax/doc.html" />
+        <option value="$PROJECT_DIR$/build/php/single/php_errors.log" />
+        <option value="$PROJECT_DIR$/build/php/util_curl.php" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/build/php/forum/ask_info.php" />
+        <option value="$PROJECT_DIR$/build/php/single/ask_info.php" />
+        <option value="$PROJECT_DIR$/build/js/ask.js" />
       </list>
     </option>
   </component>
@@ -241,7 +271,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,49 +287,12 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7.2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="hbs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,7 +300,7 @@
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="single" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -319,6 +311,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -331,25 +324,25 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/hbs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/php/single" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workplace\git\Android\build\hbs" />
-      <recent name="D:\workplace\git\Android\build\img" />
-      <recent name="D:\workplace\git\Android\build\php\crontab" />
-      <recent name="D:\workplace\git\Android\build\php\forum" />
-      <recent name="D:\workplace\git\Android\build\lib\bootstrap-4.3.1-dist\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workplace\git\Android\build\php\forum" />
       <recent name="D:\workplace\git\Android\build\hbs" />
       <recent name="D:\workplace\git\Android\build\php\note" />
       <recent name="D:\workplace\git\Android\build\php" />
       <recent name="D:\workplace\git\Android\build\lib\Connect2.1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Android\build\php\single" />
+      <recent name="D:\workplace\git\Android\build\hbs" />
+      <recent name="D:\workplace\git\Android\build\img" />
+      <recent name="D:\workplace\git\Android\build\php\crontab" />
+      <recent name="D:\workplace\git\Android\build\php\forum" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -749,14 +742,15 @@
       <workItem from="1560497022290" duration="1065000" />
       <workItem from="1560734321357" duration="1166000" />
       <workItem from="1560736292722" duration="1792000" />
-      <workItem from="1560738101091" duration="1408000" />
-    </task>
-    <task id="LOCAL-00340" summary="1. 修改doc tag button text">
-      <created>1558953212649</created>
-      <option name="number" value="00340" />
-      <option name="presentableId" value="LOCAL-00340" />
-      <option name="project" value="LOCAL" />
-      <updated>1558953212649</updated>
+      <workItem from="1560738101091" duration="1794000" />
+      <workItem from="1560753092904" duration="599000" />
+      <workItem from="1560755806953" duration="648000" />
+      <workItem from="1560757615887" duration="1380000" />
+      <workItem from="1560759424987" duration="599000" />
+      <workItem from="1560761245735" duration="1085000" />
+      <workItem from="1560763058296" duration="1792000" />
+      <workItem from="1560764866284" duration="1793000" />
+      <workItem from="1560766673705" duration="39000" />
     </task>
     <task id="LOCAL-00341" summary="1. 修改doc tag button text">
       <created>1558953375795</created>
@@ -1094,11 +1088,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560219767327</updated>
     </task>
-    <option name="localTasksCounter" value="389" />
+    <task id="LOCAL-00389" summary="1.  small screen auto adapter">
+      <created>1560739735043</created>
+      <option name="number" value="00389" />
+      <option name="presentableId" value="LOCAL-00389" />
+      <option name="project" value="LOCAL" />
+      <updated>1560739735043</updated>
+    </task>
+    <option name="localTasksCounter" value="390" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="700758000" />
+    <option name="totallyTimeSpent" value="709079000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1113,11 +1114,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22145145" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24279615" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3845316" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3845316" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22222222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1140,9 +1141,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 重构代码。采用ajax分离显示和后端逻辑。" />
-    <MESSAGE value="1. 修复排行榜显示" />
-    <MESSAGE value="1. 导航图像屏蔽点击" />
     <MESSAGE value="1. 调整导航图像" />
     <MESSAGE value="1. 移除图片居中css" />
     <MESSAGE value="1. 修改排行榜alert" />
@@ -1165,7 +1163,10 @@
     <MESSAGE value="1. note reply" />
     <MESSAGE value="1. catalog, doc , stroll alone" />
     <MESSAGE value="1.  stroll anchor" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.  stroll anchor" />
+    <MESSAGE value="1.  small screen porting" />
+    <MESSAGE value="1.  small screen adapter" />
+    <MESSAGE value="1.  small screen auto adapter" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.  small screen auto adapter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1185,22 +1186,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/js/popper.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css.map">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="sourcemapFileViewerProvider" />
@@ -1231,16 +1216,6 @@
             <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/util_curl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1386,13 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-558">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/hbs/rank.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1510,17 +1478,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4662">
-          <caret line="222" column="4" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="210">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1533,26 +1497,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="1722">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/js/doc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3647">
-          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
+        <state relative-caret-position="1953">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
+    <entry file="file://$PROJECT_DIR$/build/php/util_curl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/crontab/update_rank_minute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/single/php_errors.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/single/ask_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="130" column="4" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
         </state>
       </provider>
     </entry>

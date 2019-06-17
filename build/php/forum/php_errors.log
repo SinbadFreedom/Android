@@ -4,3 +4,4 @@ Stack trace:
 #0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
 #1 {main}
   thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[17-Jun-2019 17:21:58 PRC] PHP Warning:  Creating default object from empty value in D:\workplace\git\Android\build\php\forum\ask_info.php on line 42

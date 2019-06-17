@@ -118,12 +118,18 @@ function askInfoLinkClick(e) {
 function getAskInfo(tag, content_id) {
     /** 由a标签参数组成url*/
     let url_content = '/php/forum/ask_info.php?tag=' + tag + '&language=zh_cn&contentid=' + content_id;
-    console.log('askInfoLinkClick ' + url_content);
+    console.log('getAskInfo tag ' + tag + ' content_id ' + content_id);
     ajax_get(url_content, askInfoLoadSuccess);
 }
 
 /** 问答详细信息加载成功*/
 function askInfoLoadSuccess(res) {
+    if (!res) {
+        console.error('askInfoLoadSuccess res null');
+        return;
+    }
+
+    console.dir(res);
     console.log('askInfoLoadSuccess ' + res);
     let data = JSON.parse(res);
     /** 时间戳转化为日期格式*/

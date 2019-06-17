@@ -2,6 +2,7 @@
 
 function getDataFromUrl($get_url)
 {
+    echo 'getDataFromUrl ' . $get_url;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $get_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

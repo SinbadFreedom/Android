@@ -63,6 +63,26 @@
         /** 获取头像信息，如果没有则显示登录按钮*/
         let url_figure = '/php/figure_url.php';
         ajax_get(url_figure, onGetFigureUrl);
+
+        /**
+         * 通过get参数，初始化页面
+         * url 示例:
+         * http://localhost/php/single/ask_info.php?nav=ask&tag=%E6%8A%80%E6%9C%AF%E8%AE%A8%E8%AE%BA&language=zh_cn&contentid=100051
+         */
+        let nav = getQueryString('nav');
+        if (nav) {
+            if (nav === 'ask') {
+                /** 跳转至问答*/
+                global_tag = getQueryString('tag');
+                global_lan = getQueryString('language');
+
+                let content_id = getQueryString('contentid');
+                // updateNavBtn('nav_btn_ask');
+                active_nav_button('nav_btn_ask');
+
+                getAskInfo(global_tag, content_id);
+            }
+        }
     });
 
     function onGetFigureUrl(res) {
@@ -143,13 +163,21 @@
         $("#content_area").html(content);
     }
 
-    /** hbs模板和数据转化为html*/
-    function hts2Html(hbs, data) {
-        /** 预编译模板*/
-        let template = Handlebars.compile(hbs);
-        /** 匹配json内容*/
-        let html = template(data);
-        return html;
+    // /** hbs模板和数据转化为html*/
+    // function hts2Html(hbs, data) {
+    //     /** 预编译模板*/
+    //     let template = Handlebars.compile(hbs);
+    //     /** 匹配json内容*/
+    //     let html = template(data);
+    //     return html;
+    // }
+
+    /** 获取get参数*/
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
     }
 </script>
 </body>

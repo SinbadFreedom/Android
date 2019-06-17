@@ -39,9 +39,14 @@ $cursor = $manager->executeQuery($col_name, $query);
 
 $info = $cursor->toArray()[0];
 /** 加入tag信息*/
-$info->tag = $tag;
-
+/** 返回数据*/
 $res = new stdClass();
-$res->info = $info;
+if ($info) {
+    $info->tag = $tag;
+    $res->state = 0;
+    $res->info = $info;
+} else {
+    $res->state = -1;
+}
 
-echo json_encode($res);
+return json_encode($res);
