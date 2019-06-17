@@ -21,7 +21,7 @@ if (!isset($_GET['contentid']) || !is_numeric($_GET['contentid'])) {
 require_once('../../php/util_curl.php');
 
 
-$tag = $_GET['tag'];
+$tag = urldecode($_GET['tag']);
 $lan = $_GET['language'];
 $content_id = intval($_GET['contentid']);
 
