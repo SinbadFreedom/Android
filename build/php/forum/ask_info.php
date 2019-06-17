@@ -49,4 +49,4 @@ if ($info) {
     $res->state = -1;
 }
 
-return json_encode($res);
+echo json_encode($res);
