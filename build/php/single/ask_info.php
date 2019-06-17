@@ -47,9 +47,11 @@ if ($info) {
     $res->state = 0;
     $res->info = $info;
     /** 数据成功*/
-    echo json_encode($res);
+//    echo json_encode($res);
     require_once('../../index.html');
+    return json_encode($res);
 } else {
     $res->state = -1;
-    echo json_encode($res);
+//    echo json_encode($res);
 }
+
