@@ -40,6 +40,11 @@ $cursor = $manager->executeQuery($col_name, $query);
 $info = $cursor->toArray()[0];
 /** 加入tag信息*/
 /** 返回数据*/
+echo '--------------1';
+echo '$col_name ' . $col_name;
+echo '$tag ' . $tag;
+echo '$content_id ' . $content_id;
+echo '--------------2';
 $res = new stdClass();
 if ($info) {
     $info->tag = $tag;
