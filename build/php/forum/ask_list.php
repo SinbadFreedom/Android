@@ -64,7 +64,11 @@ foreach ($res as $key => $value) {
 
     /** 加入tag信息*/
     $info->tag = $tag;
-    $info->url_content = '/php/forum/ask_info.php?tag=' . $tag . '&language=' . $lan . '&contentid=' . $content_id;
+    /**
+     * 点击新窗口打开链接 url 示例：
+     * /index.html?tag=%E6%8A%80%E6%9C%AF%E8%AE%A8%E8%AE%BA&language=zh_cn&contentid=100051&nav=ask
+     */
+    $info->url_content = '/index.html?nav=ask&tag=' . $tag . '&language=' . $lan . '&contentid=' . $content_id;
     array_push($ask_arr, $info);
 }
 
