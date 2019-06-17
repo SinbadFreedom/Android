@@ -2,6 +2,11 @@
     <button type="button" id="doc_tag" class="btn btn-light">
 
     </button>
+
+    <div class="d-sm-block d-md-none">
+        <button type="button" id="doc_btn_catalog" class="btn btn-primary active">目录</button>
+    </div>
+
     <div id="doc_lan" class="ml-auto">
         <button type="button" id="doc_zh_cn" class="btn btn-light active">简体</button>
         <button type="button" id="doc_en" class="btn btn-light">English</button>
@@ -9,25 +14,28 @@
 </div>
 
 <div id="doc_catalog"
-     style="position: fixed; top: 94px; bottom: 0; width: 333px; overflow: auto">
+     style="position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98" class="col-md-3 col-12">
 </div>
 
-<div id="doc_content_stroll_area" style="position: fixed; top: 94px; bottom: 0; margin-left: 360px; overflow: auto">
-    <div id="doc_content">
+<div class="row justify-content-end">
+    <div id="doc_content_stroll_area" style="position: fixed; top: 94px; bottom: 0; overflow: auto"
+         class="col-md-9 col-12 d-none d-sm-none d-md-block">
+        <div id="doc_content">
 
-    </div>
+        </div>
 
-    <label>发表笔记</label>
-    <textarea class="form-control" id="doc_reply_text" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
+        <label>发表笔记</label>
+        <textarea class="form-control" id="doc_reply_text" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
 
-    <div id="doc_login_state">
-        <button id="doc_reply_login" class="btn btn-warning">登陆后可回复</button>
+        <div id="doc_login_state">
+            <button id="doc_reply_login" class="btn btn-warning">登陆后可回复</button>
 
-    </div>
+        </div>
 
-    <label>笔记</label>
-    <hr>
-    <div id="doc_note">
+        <label>笔记</label>
+        <hr>
+        <div id="doc_note">
 
+        </div>
     </div>
 </div>

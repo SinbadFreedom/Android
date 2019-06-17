@@ -24,10 +24,6 @@ h2 {
     padding-left: 10px;
 }
 
-/*html {*/
-/*    height: 100%;*/
-/*}*/
-
 body {
     min-height: 100%;
     font-family: "Helvetica", sans-serif;
@@ -65,30 +61,7 @@ pre.prettyprint {
     /*border: 1px solid #888*/
 }
 
-/*.row {*/
-/*    margin-left: 0px;*/
-/*    margin-right: 0px;*/
-/*}*/
-
-/*hr {*/
-/*    margin-top: 0.2em;*/
-/*    margin-bottom: 0.2em;*/
-/*}*/
-
-/*.navbar-light .navbar-nav .nav-link {*/
-/*    color: #000000!important;*/
-/*}*/
-
-/*.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {*/
-/*    !*color: rgba(0,0,0,.9);*!*/
-/*    color: #ffffff!important;*/
-/*}*/
-
 .row {
     margin-right: 0;
     margin-left: 0;
 }
-/*.panda_border {*/
-/*    border: 1px solid transparent;*/
-/*    border-radius: .25rem;*/
-/*}*/

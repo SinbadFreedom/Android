@@ -2,12 +2,13 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/md/python3.7.2/en/catalog.md" line="23" />
-    <bookmark url="file://$PROJECT_DIR$/build/js/doc.js" line="76" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/build/js/doc.js" line="78" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
+    <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="1.  stroll anchor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ajax/doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/css/dashidan.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/dashidan.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/doc.js" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -25,12 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="126">
+              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
               <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -38,19 +40,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/index.html">
+        <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+            <state relative-caret-position="210">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/js/doc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="81" column="37" lean-forward="true" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+            <state relative-caret-position="3647">
+              <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
             </state>
           </provider>
         </entry>
@@ -58,17 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/js/ask.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="4662">
               <caret line="222" column="4" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132258">
-              <caret line="6311" column="42" selection-start-line="6311" selection-start-column="42" selection-end-line="6311" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -94,9 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>doc.html</find>
-      <find>note_get.php</find>
-      <find>docLoadNoteSuccess</find>
       <find>clickBtnNotePage</find>
       <find>docClickBtnLoginReply</find>
       <find>docClickBtnSummitReply</find>
@@ -124,6 +123,9 @@
       <find>offset(</find>
       <find>doc_content</find>
       <find>id=</find>
+      <find>display: block</find>
+      <find>remove</find>
+      <find>docLoadContentSuccess</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;col-10&quot;</replace>
@@ -221,10 +223,10 @@
         <option value="$PROJECT_DIR$/build/js/ask.js" />
         <option value="$PROJECT_DIR$/build/ajax/newAsk.html" />
         <option value="$PROJECT_DIR$/build/index.html" />
-        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js" />
-        <option value="$PROJECT_DIR$/build/ajax/doc.html" />
+        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/build/js/doc.js" />
+        <option value="$PROJECT_DIR$/build/ajax/doc.html" />
       </list>
     </option>
   </component>
@@ -731,14 +733,23 @@
       <workItem from="1560172615628" duration="1792000" />
       <workItem from="1560215195046" duration="906000" />
       <workItem from="1560216967375" duration="1794000" />
-      <workItem from="1560218780918" duration="908000" />
-    </task>
-    <task id="LOCAL-00339" summary="1. 修改doc tag button text">
-      <created>1558952856926</created>
-      <option name="number" value="00339" />
-      <option name="presentableId" value="LOCAL-00339" />
-      <option name="project" value="LOCAL" />
-      <updated>1558952856927</updated>
+      <workItem from="1560218780918" duration="1587000" />
+      <workItem from="1560230063628" duration="1793000" />
+      <workItem from="1560231872184" duration="859000" />
+      <workItem from="1560234884513" duration="607000" />
+      <workItem from="1560243066690" duration="599000" />
+      <workItem from="1560244873783" duration="675000" />
+      <workItem from="1560247991346" duration="599000" />
+      <workItem from="1560259946058" duration="599000" />
+      <workItem from="1560304805526" duration="881000" />
+      <workItem from="1560306869887" duration="599000" />
+      <workItem from="1560389821185" duration="1172000" />
+      <workItem from="1560393540762" duration="661000" />
+      <workItem from="1560494080760" duration="599000" />
+      <workItem from="1560497022290" duration="1065000" />
+      <workItem from="1560734321357" duration="1166000" />
+      <workItem from="1560736292722" duration="1792000" />
+      <workItem from="1560738101091" duration="1408000" />
     </task>
     <task id="LOCAL-00340" summary="1. 修改doc tag button text">
       <created>1558953212649</created>
@@ -1076,11 +1087,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560172039745</updated>
     </task>
-    <option name="localTasksCounter" value="388" />
+    <task id="LOCAL-00388" summary="1.  stroll anchor">
+      <created>1560219767327</created>
+      <option name="number" value="00388" />
+      <option name="presentableId" value="LOCAL-00388" />
+      <option name="project" value="LOCAL" />
+      <updated>1560219767327</updated>
+    </task>
+    <option name="localTasksCounter" value="389" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="685005000" />
+    <option name="totallyTimeSpent" value="700758000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1095,11 +1113,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18676628" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22145145" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3845316" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3845316" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22222222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1122,7 +1140,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 图片采用 ali 字体" />
     <MESSAGE value="1. 重构代码。采用ajax分离显示和后端逻辑。" />
     <MESSAGE value="1. 修复排行榜显示" />
     <MESSAGE value="1. 导航图像屏蔽点击" />
@@ -1147,7 +1164,8 @@
     <MESSAGE value="1. change button state with login state" />
     <MESSAGE value="1. note reply" />
     <MESSAGE value="1. catalog, doc , stroll alone" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. catalog, doc , stroll alone" />
+    <MESSAGE value="1.  stroll anchor" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.  stroll anchor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1184,8 +1202,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/forum/tag_list.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1485,24 +1503,17 @@
     <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/prettify.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132258">
+        <state relative-caret-position="824">
           <caret line="6311" column="42" selection-start-line="6311" selection-start-column="42" selection-end-line="6311" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4662">
+          <caret line="222" column="4" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1513,27 +1524,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/ask.js">
+    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="222" column="4" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
+    <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/js/doc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="81" column="37" lean-forward="true" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+        <state relative-caret-position="3647">
+          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

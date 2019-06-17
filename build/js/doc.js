@@ -18,12 +18,14 @@ function docSuccess(res) {
     $('#doc_reply_commit').off('click', docClickBtnSummitReply);
     $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
+    $('#doc_btn_catalog').off('click', docBtnCatalog);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
     $('#doc_reply_commit').on('click', docClickBtnSummitReply);
     $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
+    $('#doc_btn_catalog').on('click', docBtnCatalog);
 
     /** 更新tag按钮值*/
     $('#doc_tag').text(global_tag);
@@ -81,10 +83,18 @@ function updateDocContentAndNote() {
 /** 加载文档完成回调方法*/
 function docLoadContentSuccess(res) {
     /** 更新文档内容*/
-    $('#doc_content').html(res);
+    let display = $('#doc_content_stroll_area').css('display');
+    if (display === 'none') {
+        /** 内容区域是小屏隐藏状态，则显示文章内容区，隐藏目录区*/
+        $('#doc_content_stroll_area').removeClass('d-none');
+        $('#doc_content_stroll_area').removeClass('d-sm-none');
+        $('#doc_catalog').addClass('d-none');
+        $('#doc_catalog').addClass('d-sm-none');
+    }
 
+    $('#doc_content').html(res);
     /** 更新滚动条位置*/
-    console.log('docLoadContentSuccess global_page ' + global_page);
+    console.log('docLoadContentSuccess global_page ' + global_page + " display " + display);
     let arr = global_page.split('#');
     if (arr.length > 1) {
         /** 滚动条至锚点*/
@@ -211,4 +221,15 @@ function doc_go(doc_num) {
     console.log('doc_go ' + global_page);
 
     updateDocContentAndNote();
+}
+
+/** 小屏显示的目录按钮点击事件*/
+function docBtnCatalog(e) {
+    console.log('docBtnCatalog ');
+    /** 与 docLoadContentSuccess 方法对应*/
+    /** 内容区域是小屏隐藏状态，点击目录按钮，则隐藏文章内容区，显示目录区*/
+    $('#doc_content_stroll_area').addClass('d-none');
+    $('#doc_content_stroll_area').addClass('d-sm-none');
+    $('#doc_catalog').removeClass('d-none');
+    $('#doc_catalog').removeClass('d-sm-none');
 }
