@@ -41,6 +41,8 @@ $info = $cursor->toArray()[0];
 /** 加入tag信息*/
 /** 返回数据*/
 echo '---------1';
+echo '$col_name ' . $col_name;
+echo '$content_id ' . $content_id;
 var_dump($info);
 echo '---------2';
 $res = new stdClass();
