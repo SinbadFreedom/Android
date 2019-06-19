@@ -7,12 +7,12 @@
 <div class="row center-block text-center">
     <div class="col-6 text-right">
         {{#if last}}
-            <button id="doc_last" class="btn btn-light" onclick="doc_go({{last}})">← 上一篇</button>
+            <button id="doc_last" class="btn btn-light" onclick="updateDocAndNote({{last}})">← 上一篇</button>
         {{/if}}
     </div>
     <div class="col-6 text-left">
         {{#if next}}
-            <button id="doc_next" class="btn btn-light" onclick="doc_go({{next}})">下一篇 →</button>
+            <button id="doc_next" class="btn btn-light" onclick="updateDocAndNote({{next}})">下一篇 →</button>
         {{/if}}
     </div>
 </div>

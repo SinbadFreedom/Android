@@ -1,4 +1,4 @@
-<h1 id='1.'>1. Whetting Your Appetite</h1>
+<h1 id='1_'>1. Whetting Your Appetite</h1>
 <p>If you do much work on computers, eventually you find that there's some task you'd like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you'd like to write a small custom database, or a specialized GUI application, or a simple game.</p>
 <p>If you're a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you're writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you've written a program that could use an extension language, and you don't want to design and implement a whole new language for your application.</p>
 <p>Python is just the language for you.</p>
@@ -24,6 +24,6 @@ Python is extensible: if you know how to program in C it is easy to add a new bu
     <div class="col-6 text-right">
     </div>
     <div class="col-6 text-left">
-            <button id="doc_next" class="btn btn-light" onclick="doc_go(2)">下一篇 →</button>
+            <button id="doc_next" class="btn btn-light" onclick="updateDocAndNote(2)">下一篇 →</button>
     </div>
 </div>

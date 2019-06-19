@@ -1,0 +1,19 @@
+{{#catalog}}
+    <div class="d-flex justify-content-start align-items-lg-start">
+        <button catalog_title_id="{{id}}" class="btn">+</button>
+        <a catalog_doc_id="{{id}}" catalog_anchor="{{anchor}}" href="{{url}}"
+           class="list-group-item list-group-item-action">{{title}}</a>
+    </div>
+    <div id="catalog_sub_{{id}}" style="display: none">
+        {{#sub_1}}
+            <a catalog_doc_id={{id}} catalog_anchor="{{anchor}}" href="{{url}}"
+               style="padding-left: 3em"
+               class="list-group-item list-group-item-action">{{title}}</a>
+            {{#sub_2}}
+                <a catalog_doc_id={{id}} catalog_anchor="{{anchor}}" href="{{url}}"
+                   style="padding-left: 4em"
+                   class="list-group-item list-group-item-action">{{title}}</a>
+            {{/sub_2}}
+        {{/sub_1}}
+    </div>
+{{/catalog}}

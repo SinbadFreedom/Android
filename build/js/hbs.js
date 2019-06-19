@@ -95,3 +95,24 @@ const hbs_note = '<table>\n' +
     '        <button id="note_page_next" class="btn btn-light">&or;</button>\n' +
     '    {{/page_next}}\n' +
     '</div>\n';
+
+/** 目录模板数据，对应/hbs/catalog.hbs*/
+const hbs_catalog = '{{#catalog}}\n' +
+    '    <div class="d-flex justify-content-start align-items-lg-start">\n' +
+    '        <button catalog_title_id="{{id}}" class="btn">+</button>\n' +
+    '        <a catalog_doc_id="{{id}}" catalog_anchor="{{anchor}}" href="{{url}}"\n' +
+    '           class="list-group-item list-group-item-action">{{title}}</a>\n' +
+    '    </div>\n' +
+    '    <div id="catalog_sub_{{id}}" style="display: none">\n' +
+    '        {{#sub_1}}\n' +
+    '            <a catalog_doc_id={{id}} catalog_anchor="{{anchor}}" href="{{url}}"\n' +
+    '               style="padding-left: 3em"\n' +
+    '               class="list-group-item list-group-item-action">{{title}}</a>\n' +
+    '            {{#sub_2}}\n' +
+    '                <a catalog_doc_id={{id}} catalog_anchor="{{anchor}}" href="{{url}}"\n' +
+    '                   style="padding-left: 4em"\n' +
+    '                   class="list-group-item list-group-item-action">{{title}}</a>\n' +
+    '            {{/sub_2}}\n' +
+    '        {{/sub_1}}\n' +
+    '    </div>\n' +
+    '{{/catalog}}';

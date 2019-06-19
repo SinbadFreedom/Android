@@ -47,7 +47,9 @@
     /** 语言状态*/
     let global_lan = 'zh_cn';
     /** 当前文档显示的文章*/
-    let global_page = '1.php';
+    let global_page = '1';
+    /** 当前文档显示的文章的锚点*/
+    let global_anchor = '1_';
     /** 登陆状态*/
     let global_login_state = false;
 
@@ -67,7 +69,7 @@
         /**
          * 通过get参数，初始化页面
          * url 示例:
-         * http://localhost/php/single/ask_info.php?nav=ask&tag=%E6%8A%80%E6%9C%AF%E8%AE%A8%E8%AE%BA&language=zh_cn&contentid=100051
+         * /index.html?tag=%E6%8A%80%E6%9C%AF%E8%AE%A8%E8%AE%BA&language=zh_cn&contentid=100051&nav=ask
          */
         let nav = getQueryString('nav');
         if (nav) {
@@ -77,7 +79,6 @@
                 global_lan = getQueryString('language');
 
                 let content_id = getQueryString('contentid');
-                // updateNavBtn('nav_btn_ask');
                 active_nav_button('nav_btn_ask');
 
                 getAskInfo(global_tag, content_id);
@@ -162,15 +163,6 @@
     function refreshContentArea(content) {
         $("#content_area").html(content);
     }
-
-    // /** hbs模板和数据转化为html*/
-    // function hts2Html(hbs, data) {
-    //     /** 预编译模板*/
-    //     let template = Handlebars.compile(hbs);
-    //     /** 匹配json内容*/
-    //     let html = template(data);
-    //     return html;
-    // }
 
     /** 获取get参数*/
     function getQueryString(name) {

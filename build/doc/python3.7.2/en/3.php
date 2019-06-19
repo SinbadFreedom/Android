@@ -1,4 +1,4 @@
-<h1 id='3.'>3. An Informal Introduction to Python</h1>
+<h1 id='3_'>3. An Informal Introduction to Python</h1>
 <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<a href="#">>>></a> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
 <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
 <p>Some examples:</p>
@@ -7,9 +7,9 @@ spam = 1  # and this is the second comment
           # ... and now a third!
 text = "# This is not a comment because it's inside quotes."
 </code></pre>
-<h3 id="3.1.">3.1. Using Python as a Calculator</h3>
+<h3 id="3_1_">3.1. Using Python as a Calculator</h3>
 <p>Let's try some simple Python commands. Start the interpreter and wait for the primary prompt, <code>&gt;&gt;&gt;</code>. (It shouldn't take long.)</p>
-<h4 id="3.1.1.">3.1.1. Numbers</h4>
+<h4 id="3_1_1_">3.1.1. Numbers</h4>
 <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code> work just like in most other languages (for example, Pascal or C); parentheses (<code>()</code>) can be used for grouping. For example:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; 2 + 2
@@ -73,7 +73,7 @@ NameError: name 'n' is not defined
 </code></pre>
 <p>This variable should be treated as read-only by the user. Don't explicitly assign a value to it - you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
 <p>In addition to <a href="#">int</a> and <a href="#">float</a>, Python supports other types of numbers, such as <a href="#">Decimal</a> and <a href="#">Fraction</a>. Python also has built-in support for <a href="#">complex numbers</a>, and uses the j or J suffix to indicate the imaginary part (e.g. <code>3+5j</code>).</p>
-<h4 id="3.1.2.">3.1.2. Strings</h4>
+<h4 id="3_1_2_">3.1.2. Strings</h4>
 <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>) with the same result [2]. \ can be used to escape quotes:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; 'spam eggs'  # single quotes
@@ -257,7 +257,7 @@ TypeError: 'str' object does not support item assignment
 <p>Information about string formatting with str.format().</p>
 <p><a href="#">printf-style String Formatting</a></p>
 <p>The old formatting operations invoked when strings are the left operand of the % operator are described in more detail here.</p>
-<h4 id="3.1.3.">3.1.3. Lists</h4>
+<h4 id="3_1_3_">3.1.3. Lists</h4>
 <p>Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; squares = [1, 4, 9, 16, 25]
@@ -335,7 +335,7 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; x[0][1]
 'b'
 </code></pre>
-<h3 id="3.2.">3.2. First Steps Towards Programming</h3>
+<h3 id="3_2_">3.2. First Steps Towards Programming</h3>
 <p>Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the <a href="#">Fibonacci series</a> as follows:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; # Fibonacci series:
@@ -384,9 +384,9 @@ The value of i is 65536
 
 <div class="row center-block text-center">
     <div class="col-6 text-right">
-            <button id="doc_last" class="btn btn-light" onclick="doc_go(2)">← 上一篇</button>
+            <button id="doc_last" class="btn btn-light" onclick="updateDocAndNote(2)">← 上一篇</button>
     </div>
     <div class="col-6 text-left">
-            <button id="doc_next" class="btn btn-light" onclick="doc_go(4)">下一篇 →</button>
+            <button id="doc_next" class="btn btn-light" onclick="updateDocAndNote(4)">下一篇 →</button>
     </div>
 </div>

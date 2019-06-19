@@ -1,9 +1,11 @@
 a, a:hover, a:visited, a:link {
     text-decoration: none;
 }
+
 a {
     color: #1c79c0;
 }
+
 a:hover {
     color: #f0ad4e;
 }
@@ -18,10 +20,6 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-h2 {
-    padding-left: 10px;
 }
 
 body {
@@ -39,6 +37,7 @@ h1 {
 }
 
 h2 {
+    padding-left: 10px;
     font-size: 1.8rem;
 }
 
@@ -65,3 +64,18 @@ pre.prettyprint {
     margin-right: 0;
     margin-left: 0;
 }
+/** 覆写bootstrap*/
+.list-group-item {
+    padding: .25rem 0.75rem;
+    border: 0;
+    border-radius: .25rem;!important;
+}
+
+/*.list-group-item:last-child {*/
+/*    border-radius: .25rem;*/
+/*}*/
+
+/*.list-group-item:first-child {*/
+/*    border-radius: .25rem;*/
+/*}*/
+

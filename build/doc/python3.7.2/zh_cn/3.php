@@ -1,4 +1,4 @@
-<h1 id='3.'>3. Python的非正式简介</h1>
+<h1 id='3_'>3. Python的非正式简介</h1>
 <p>在以下示例中,输入和输出通过是否存在提示来区分(<a href="#">>>></a>和…):要重复示例,必须在提示符后出现提示时出现提示;从解释器输出不以提示开头的行. 请注意,示例中一行上的辅助提示意味着您必须键入一个空行;这用于结束多行命令. </p>
 <p>本手册中的许多示例,即使是在交互式提示符下输入的示例,都包含注释.  Python中的注释以井号字符#开头,并延伸到物理行的末尾. 注释可能出现在行的开头或跟随空格或代码,但不在字符串文字中. 字符串文字中的哈希字符只是一个哈希字符. 由于注释是为了澄清代码而不是由Python解释,因此在键入示例时可能会省略它们. </p>
 <p>一些例子:</p>
@@ -7,9 +7,9 @@ spam = 1#,这是第二条评论
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;#...现在是第三个!
 text ="#这不是评论,因为它在引号内. "
 </code></pre>
-<h3 id="3.1.">3.1. 使用Python作为计算器</h3>
+<h3 id="3_1_">3.1. 使用Python作为计算器</h3>
 <p>让我们尝试一些简单的Python命令. 启动解释器并等待主要提示符<code>&gt;&gt;&gt;</code>.  (不应该花很长时间. )</p>
-<h4 id="3.1.1.">3.1.1. 数字</h4>
+<h4 id="3_1_1_">3.1.1. 数字</h4>
 <p>解释器充当一个简单的计算器:您可以在其上键入表达式,它将写入值. 表达式语法很简单:运算符<code>+</code>,<code>-</code>,<code>*</code>和<code>/</code>就像大多数其他语言一样工作(例如,Pascal或C);括号(<code>()</code>)可用于分组. 例如:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; 2 + 2
@@ -73,7 +73,7 @@ NameError:未定义名称"n"
 </code></pre>
 <p>该变量应被用户视为只读. 不要为其显式赋值 - 您将创建一个具有相同名称的独立局部变量,以使用其魔术行为屏蔽内置变量. </p>
 <p>除了<a href="#">int</a>和<a href="#">float</a>之外,Python还支持其他类型的数字,例如<a href="#">Decimal</a>和<a href="#">Fraction</a>.  Python还内置了对<a href="#">复数</a>的支持,并使用j或J后缀来表示虚部(例如<code>3 + 5j</code>). </p>
-<h4 id="3.1.2.">3.1.2. 字符串</h4>
+<h4 id="3_1_2_">3.1.2. 字符串</h4>
 <p>除了数字,Python还可以操作字符串,这可以通过多种方式表达. 它们可以用单引号(<code>'''</code>)或双引号(<code>"..."</code>)括起来,结果相同[2].  \可用于转义引号:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt;'垃圾邮件'#单引号
@@ -257,7 +257,7 @@ TypeError:'str'对象不支持项目分配
 <p>有关str.format()的字符串格式的信息. </p>
 <p><a href="#">printf-style String Formatting</a></p>
 <p>当字符串是%运算符的左操作数时调用的旧格式化操作在此处更详细地描述. </p>
-<h4 id="3.1.3.">3.1.3. 清单</h4>
+<h4 id="3_1_3_">3.1.3. 清单</h4>
 <p>Python知道许多复合数据类型,用于将其他值组合在一起. 最通用的是列表,它可以写成方括号之间的逗号分隔值(项)列表. 列表可能包含不同类型的项目,但通常项目都具有相同的类型. </p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt; square = [1,4,9,16,25]
@@ -335,7 +335,7 @@ TypeError:'str'对象不支持项目分配
 &gt;&gt;&gt; x [0] [1]
 'B'
 </code></pre>
-<h3 id="3.2.">3.2. 迈向编程的第一步</h3>
+<h3 id="3_2_">3.2. 迈向编程的第一步</h3>
 <p>当然,我们可以将Python用于更复杂的任务,而不是将两个和两个一起添加. 例如,我们可以编写<a href="#">Fibonacci系列</a>的初始子序列,如下所示:</p>
 <pre class='prettyprint'><code>&gt;&gt;&gt;
 &gt;&gt;&gt;#斐波那契系列:
@@ -384,7 +384,7 @@ i的值是65536
 
 <div class="row center-block text-center">
     <div class="col-6 text-right">
-            <button id="doc_last" class="btn btn-light" onclick="doc_go(2)">← 上一篇</button>
+            <button id="doc_last" class="btn btn-light" onclick="updateDocAndNote(2)">← 上一篇</button>
     </div>
     <div class="col-6 text-left">
     </div>

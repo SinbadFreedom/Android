@@ -1,6 +1,6 @@
 "use strict";
 const fs = require('fs');
-var path = require('path');
+const path = require('path');
 
 const showdown = require('showdown');
 const Handlebars = require("handlebars");
@@ -13,7 +13,7 @@ for (let i = 3; i < process.argv.length; i++) {
 }
 
 /** catalog 文件名*/
-const catalogName = "catalog.md";
+const catalogName = "catalog.txt";
 /** 版本号 更新内容*/
 const versionName = "version.json";
 
@@ -76,7 +76,7 @@ function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_f
 /** 创建多级目录*/
 function makeDir(dirpath) {
     if (!fs.existsSync(dirpath)) {
-        var pathtmp;
+        let pathtmp;
         dirpath.split("/").forEach(function (dirname) {
             if (pathtmp) {
                 pathtmp = path.join(pathtmp, dirname);
@@ -111,7 +111,8 @@ showdown.extension('custom-header-id-for-title-1', function () {
                 text = text.replace(setextRegexH1, function (wholeMatch, m1) {
                     var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
                         hLevel = 1,
-                        hID = " id='" + m1.split(" ")[0] + "'",
+                        /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
+                        hID = (" id='" + m1.split(" ")[0] + "'").replace(/\./g, '_'),
                         hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
                     return showdown.subParser('hashBlock')(hashBlock, options, globals);
                 });
@@ -134,7 +135,8 @@ showdown.extension('custom-header-id-for-title-2', function () {
                 text = text.replace(setextRegexH2, function (wholeMatch, m1) {
                     var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
                         hLevel = 2,
-                        hID = " id='" + m1.split(" ")[0] + "'",
+                        /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
+                        hID = (" id='" + m1.split(" ")[0] + "'").replace(/\./g, '_'),
                         hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
                     return showdown.subParser('hashBlock')(hashBlock, options, globals);
                 });
@@ -179,7 +181,8 @@ showdown.extension('custom-header-id', function () {
                      * id 为 2.2.1
                      */
                     let titleId = hText.split(" ")[0];
-
+                    /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
+                    titleId = titleId.replace(/\./g, '_');
 
                     // create the appropriate HTML
                     var header = '<h' + hLevel + ' id="' + titleId + '">' + hText + '</h' + hLevel + '>';
@@ -302,7 +305,7 @@ function copyFileByName(article_folder, fileName, htmlOutBaseFolder) {
     fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, finalCatalogData);
 }
 
-function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template_file_name, language) {
+function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
     /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     console.log("convertCatalog " + catalogName);
@@ -314,9 +317,108 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, handlebars_template
     /** 写入文件*/
     fs.writeFileSync(catalogMdName, finalCatalogData);
 
+    let lines = finalCatalogData.split('\r\n');
+
+    let chapter_arr = [];
+
+    for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        console.log('line ：' + line);
+        let anchor = line.split(' ')[0];
+        let id = line.split('.')[0];
+        /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
+        anchor = anchor.replace(/\./g, '_');
+
+        let chapter_obj = {};
+        chapter_obj.id = id;
+        chapter_obj.url = '/doc/' + article_type + '/' + language + '/' + id + '.php';
+        chapter_obj.anchor = anchor;
+        chapter_obj.title = line;
+
+        if (i + 1 < lines.length) {
+            let temp_line_1 = lines[i + 1].trim();
+            let temp_anchor_sub_1 = temp_line_1.split(' ')[0];
+            temp_anchor_sub_1 = temp_anchor_sub_1.replace(/\./g, '_');
+
+            if (temp_anchor_sub_1.startsWith(anchor)) {
+                /** 下一个主标题*/
+
+                /** 标题索引自增*/
+                i++;
+                /** 一级子标题*/
+                chapter_obj.sub_1 = [];
+
+                for (; i < lines.length; i++) {
+                    let line_sub_1 = lines[i].trim();
+                    let anchor_sub_1 = line_sub_1.split(' ')[0];
+                    anchor_sub_1 = anchor_sub_1.replace(/\./g, '_');
+
+                    if (!anchor_sub_1.startsWith(anchor)) {
+                        /** 下一个主标题*/
+                        i--;
+                        break;
+                    }
+
+                    console.log(' line_sub_1 ：' + line_sub_1);
+
+                    let sub_1_obj = {};
+                    sub_1_obj.anchor = anchor_sub_1;
+                    sub_1_obj.title = line_sub_1;
+
+                    chapter_obj.sub_1.push(sub_1_obj);
+
+                    if (i + 1 < lines.length) {
+                        let temp_line_2 = lines[i + 1].trim();
+                        let temp_anchor_2 = temp_line_2.split(' ')[0];
+                        temp_anchor_2 = temp_anchor_2.replace(/\./g, '_');
+
+                        if (temp_anchor_2.startsWith(anchor_sub_1)) {
+                            /** 标题索引自增*/
+                            i++;
+                            /** 二级子标题*/
+                            for (; i < lines.length; i++) {
+                                let line_sub_2 = lines[i].trim();
+
+                                let anchor_sub_2 = line_sub_2.split(' ')[0];
+                                anchor_sub_2 = anchor_sub_2.replace(/\./g, '_');
+
+                                if (!anchor_sub_2.startsWith(anchor_sub_1)) {
+                                    /** 下一个一级标题，或者下一个主题*/
+                                    i--;
+                                    break;
+                                }
+
+                                console.log('   line_sub_2 ：' + line_sub_2);
+
+                                let sub_2_obj = {};
+                                sub_2_obj.anchor = anchor_sub_2;
+                                sub_2_obj.title = line_sub_2;
+
+                                if (!sub_1_obj.sub_2) {
+                                    sub_1_obj.sub_2 = [];
+                                }
+
+                                sub_1_obj.sub_2.push(sub_2_obj);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        chapter_arr.push(chapter_obj);
+    }
+
+    // console.log('----------------1');
+    // console.log(JSON.stringify(chapter_arr));
+    // console.log('----------------2');
+
     /** 转化目录html，android首屏用*/
-    let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.md', '.php');
-    convertSingleFile(catalogName, catalogMdName, outHtmlFileName, handlebars_template_file_name, language)
+    let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.txt', '.json');
+    /** 写入文件*/
+    let final_data = {};
+    final_data.catalog = chapter_arr;
+    fs.writeFileSync(outHtmlFileName, JSON.stringify(final_data));
 }
 
 /** 加入支持同时转化多个语言版本*/
@@ -326,7 +428,6 @@ for (let i = 0; i < lan_arr.length; i++) {
     const article_folder = "../md/" + article_type + '/' + language;
     /** handlebars 模板文件*/
     let template_file_name_doc = "../md/" + article_type + "/template_doc.handlebars";
-    let template_file_name_catalog = "../md/" + article_type + "/template_catalog.handlebars";
     /** pc默认格式文件目录*/
     let htmlOutBaseFolder = "../build/doc/" + article_type + '/' + language;
 
@@ -334,7 +435,8 @@ for (let i = 0; i < lan_arr.length; i++) {
     getAllMdFileName(article_folder);
     /** 转化全部文件*/
     convertAllFile(htmlOutBaseFolder, article_folder, template_file_name_doc, language);
-    /** 转化目录catalog文件*/
-    convertCatalogMd(article_folder, htmlOutBaseFolder, template_file_name_catalog, language);
+    /** 版本配置文件*/
     copyFileByName(article_folder, versionName, htmlOutBaseFolder);
+
+    convertCatalogMd(article_folder, htmlOutBaseFolder, language);
 }

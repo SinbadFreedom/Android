@@ -18,6 +18,7 @@ function docSuccess(res) {
     $('#doc_reply_commit').off('click', docClickBtnSummitReply);
     $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
+    $('#doc_catalog').off('click', 'button', docClickCatalogBtn);
     $('#doc_btn_catalog').off('click', docBtnCatalog);
 
     /** 加入事件侦听*/
@@ -25,54 +26,63 @@ function docSuccess(res) {
     $('#doc_reply_commit').on('click', docClickBtnSummitReply);
     $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
+    $('#doc_catalog').on('click', 'button', docClickCatalogBtn);
     $('#doc_btn_catalog').on('click', docBtnCatalog);
 
     /** 更新tag按钮值*/
     $('#doc_tag').text(global_tag);
     /** 更新目录和内容*/
-    updateDocCatalogAndContent();
+    resetCatalogAndDoc();
 }
 
 /** 按钮点击事件处理*/
 function docClickBtnLan(e) {
     let btn_id = $(e.target).attr("id");
     console.log('docClickBtnLan btn_id ' + btn_id);
-    switch (btn_id) {
-        case 'doc_zh_cn':
-            /** 中文*/
-            global_lan = 'zh_cn';
-            /** 更新文档语言*/
-            updateDocCatalogAndContent();
-            break;
-        case 'doc_en':
-            /** 英文*/
-            global_lan = 'en';
-            /** 更新文档语言*/
-            updateDocCatalogAndContent();
-            break;
+    if (btn_id === 'doc_zh_cn') {
+        /** 中文*/
+        global_lan = 'zh_cn';
+    } else if (btn_id === 'doc_en') {
+        /** 英文*/
+        global_lan = 'en';
     }
+
+    resetCatalogAndDoc();
 }
 
-function updateDocCatalogAndContent() {
+/** 更新目录和文档区，用于初始化和语言切换*/
+function resetCatalogAndDoc() {
+    console.log('resetCatalogAndDoc');
     /** 加载文档标题区*/
-    let url_catalog = '/doc/' + global_tag + '/' + global_lan + '/catalog.php';
+    let url_catalog = '/doc/' + global_tag + '/' + global_lan + '/catalog.json';
     /** 语言按钮状态*/
     active_language_btn(global_lan);
     /** 加载目录区内容*/
     ajax_get(url_catalog, docLoadCatalogSuccess);
     /** 加载doc 笔记*/
-    updateDocContentAndNote();
+    updateDocAndNote(global_page, global_anchor);
 }
 
 /** 加载目录完成回调方法*/
 function docLoadCatalogSuccess(res) {
-    $('#doc_catalog').html(res);
+    /** 转化模板数据*/
+    let html = Mustache.render(hbs_catalog, res);
+    $('#doc_catalog').html(html);
+    /** 更新目录区*/
+    updateCatalogTitle(global_page, global_anchor);
 }
 
 /** 加载doc 笔记*/
-function updateDocContentAndNote() {
+function updateDocAndNote(doc_id, doc_anchor) {
+    if (!doc_anchor) {
+        /** 兼容文档中的 上/下一页按钮点击事件*/
+        doc_anchor = doc_id + '_';
+    }
+    /** 更新目录区*/
+    updateCatalogTitle(doc_id, doc_anchor);
+
     /** 加载content区内容*/
-    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page;
+    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page + '.php';
     ajax_get(url_doc_content, docLoadContentSuccess);
     /** 清理笔记*/
     clearDocNote();
@@ -94,14 +104,19 @@ function docLoadContentSuccess(res) {
 
     $('#doc_content').html(res);
     /** 更新滚动条位置*/
-    console.log('docLoadContentSuccess global_page ' + global_page + " display " + display);
-    let arr = global_page.split('#');
-    if (arr.length > 1) {
-        /** 滚动条至锚点*/
-        let anchor = arr[1];
-        let off_top = $('[id="' + anchor + '"]').offset().top;
-        /** 锚点位置减去网站导航栏距离*/
-        $("#doc_content_stroll_area").scrollTop(off_top - 94);
+    console.log('docLoadContentSuccess global_page ' + global_page + " global_anchor " + global_anchor);
+    if (global_anchor) {
+        /**
+         * 滚动条至锚点
+         * offsetTop是dom对象的属性，
+         * jquery获取dom对象的方法是，获取数组的第一个元素$('#ID')[0]
+         */
+        let dom = $('#' + global_anchor)[0];
+        if (dom) {
+            let offsetTop = dom.offsetTop;
+            /** 锚点位置减去网站导航栏距离*/
+            $("#doc_content_stroll_area").scrollTop(offsetTop);
+        }
     } else {
         /** 滚动条置顶*/
         $("#doc_content_stroll_area").scrollTop(0);
@@ -119,8 +134,7 @@ function getDocNote(page_num) {
     note_page = page_num;
     console.log('getDocNote note_page ' + note_page);
 
-    let file_number = global_page.split('.')[0];
-    let url_note = '/php/forum/note_get.php?type=note&tag=' + global_tag + '&language=' + global_lan + '&contentid=' + file_number + '&page=' + page_num;
+    let url_note = '/php/forum/note_get.php?type=note&tag=' + global_tag + '&language=' + global_lan + '&contentid=' + global_page + '&page=' + page_num;
     ajax_get(url_note, docLoadNoteSuccess);
 }
 
@@ -188,7 +202,7 @@ function docClickBtnSummitReply() {
     data.type = 'note';
     data.tag = global_tag;
     data.language = global_lan;
-    data.content_id = global_page.split('.')[0];
+    data.content_id = global_page;
     data.reply = reply;
     ajax_post(url_note, data, replyPostSuccessCallback);
 }
@@ -208,19 +222,57 @@ function replyPostSuccessCallback(res) {
 /** 点击目录区域的链接事件处理*/
 function docClickCatalogA(e) {
     e.preventDefault();
-    let a_href = $(e.target).attr("href");
-    console.log('docClickCatalogA ' + a_href);
-    /** 更新全局变量 global_page*/
-    global_page = a_href;
-    updateDocContentAndNote();
+    let doc_id = $(e.target).attr("catalog_doc_id");
+    let doc_anchor = $(e.target).attr("catalog_anchor");
+
+    console.log('docClickCatalogA global_page ' + global_page + ' global_anchor ' + global_anchor);
+
+    updateDocAndNote(doc_id, doc_anchor);
 }
 
-/** 上/下一篇 按钮处理*/
-function doc_go(doc_num) {
-    global_page = doc_num + ".php";
-    console.log('doc_go ' + global_page);
+/** 点击目录区的按钮事件： 展开/收起 目录标题*/
+function docClickCatalogBtn(e) {
+    let doc_id = $(e.target).attr("catalog_title_id");
+    console.log('docClickCatalogBtn doc_id ' + doc_id);
+    /** +/- 符号切换*/
+    let text = $(e.target).text();
+    console.log('docClickCatalogBtn text ' + text);
+    if (text === '+') {
+        $(e.target).text('-');
+        /** 展开子目录*/
+        $('#catalog_sub_' + doc_id).css('display', 'block');
+    } else if (text === '-') {
+        $(e.target).text('+');
+        /** 收起子目录*/
+        $('#catalog_sub_' + doc_id).css('display', 'none');
+    }
+}
 
-    updateDocContentAndNote();
+/**
+ * 更新目录active状态， 切换 +/- 符号，展开子标题
+ * 点击目录标题，上/下 页时使用
+ * 更新全局变量，global_page global_anchor
+ */
+function updateCatalogTitle(doc_id, doc_anchor) {
+    /** 计算上一次显示active的标题id和当前要显示active的id*/
+    console.log('updateCatalogTitle doc_id ' + doc_id + ' doc_anchor ' + doc_anchor);
+    /** 上个标题状态移除active*/
+    $('[catalog_anchor="' + global_anchor + '"]').removeClass('active');
+    /** 标题状态切换为active*/
+    $('[catalog_anchor="' + doc_anchor + '"]').addClass('active');
+
+    /** 合并上次展开的目录*/
+    $('#catalog_sub_' + global_page).css('display', 'none');
+    /** +/- 符号切换 */
+    $('[catalog_title_id="' + global_page + '"]').text("+");
+    /** 展开子目录*/
+    $('#catalog_sub_' + doc_id).css('display', 'block');
+    /** +/- 符号切换 */
+    $('[catalog_title_id="' + doc_id + '"]').text("-");
+
+    /** 更新全局变量 global_page, global_anchor*/
+    global_page = doc_id;
+    global_anchor = doc_anchor;
 }
 
 /** 小屏显示的目录按钮点击事件*/
