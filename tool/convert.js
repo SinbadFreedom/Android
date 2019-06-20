@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const showdown = require('showdown');
-const Handlebars = require("handlebars");
+// const Handlebars = require("handlebars");
 const article_type = process.argv[2];
 /** 语言版本*/
 const lan_arr = [];
@@ -68,7 +68,7 @@ function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_f
     /** 转化md文件*/
     for (let index in allFileName) {
         let mdFileNameWithFolder = article_folder + "/" + allFileName[index];
-        let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.php');
+        let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.html');
         convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName, handlebars_template_file_name, language);
     }
 }
@@ -212,36 +212,39 @@ function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handleba
         {extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
 
     let htmlData = converter.makeHtml(mdData);
-    /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
-    console.log("-------------------------------------------------------");
-    console.log("convertFile " + mdFileNameWithFolder + " to: " + outHtmlFile);
-    console.log("-------------------------------------------------------");
-    let article_config = {};
-    article_config.content = htmlData;
-    /** 目录，关于，首页file_number 不是int*/
-    article_config.file_number = fileName.split('.')[0];
-    article_config.article_type = article_type;
-    article_config.language = language;
-    /** 计算上一篇 下一篇编号*/
-    let file_number = parseInt(fileName.split('.')[0]);
-    if (file_number > 1) {
-        article_config.last = file_number - 1;
-    }
-
-    if (file_number < allFileName.length) {
-        article_config.next = file_number + 1;
-    }
-    /**  读取handlebars模板数据 默认pc文件 读取template_article.hbs*/
-    let mustache_data = fs.readFileSync(handlebars_template_file_name, 'utf-8');
-    /** 转化为html数据*/
-    const compiled = Handlebars.compile(mustache_data);
-    let finalData = compiled(article_config);
+    // /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
+    // console.log("-------------------------------------------------------");
+    // console.log("convertFile " + mdFileNameWithFolder + " to: " + outHtmlFile);
+    // console.log("-------------------------------------------------------");
+    // let article_config = {};
+    // article_config.content = htmlData;
+    // /** 目录，关于，首页file_number 不是int*/
+    // article_config.file_number = fileName.split('.')[0];
+    // article_config.article_type = article_type;
+    // article_config.language = language;
+    // /** 计算上一篇 下一篇编号*/
+    // let file_number = parseInt(fileName.split('.')[0]);
+    // if (file_number > 1) {
+    //     article_config.last = file_number - 1;
+    // }
+    //
+    // if (file_number < allFileName.length) {
+    //     article_config.next = file_number + 1;
+    // }
+    // /**  读取handlebars模板数据 默认pc文件 读取template_article.hbs*/
+    // let mustache_data = fs.readFileSync(handlebars_template_file_name, 'utf-8');
+    // /** 转化为html数据*/
+    // const compiled = Handlebars.compile(mustache_data);
+    // let finalData = compiled(article_config);
     /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
-    finalData = finalData.replace(/<pre>/g, "<pre class='prettyprint'>");
+    // finalData = finalData.replace(/<pre>/g, "<pre class='prettyprint'>");
+    htmlData = htmlData.replace(/<pre>/g, "<pre class='prettyprint'>");
     /** 全角转化为半角*/
-    finalData = fullAngleToHalfAngle(finalData);
+    // finalData = fullAngleToHalfAngle(finalData);
+    htmlData = fullAngleToHalfAngle(htmlData);
     /** 写入文件*/
-    fs.writeFileSync(outHtmlFile, finalData);
+    // fs.writeFileSync(outHtmlFile, finalData);
+    fs.writeFileSync(outHtmlFile, htmlData);
     console.log("convertFile OK.");
 }
 
@@ -330,8 +333,9 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
         anchor = anchor.replace(/\./g, '_');
 
         let chapter_obj = {};
-        chapter_obj.id = id;
-        chapter_obj.url = '/doc/' + article_type + '/' + language + '/' + id + '.php';
+        chapter_obj.id = parseInt(id);
+        // chapter_obj.url = '/doc/' + article_type + '/' + language + '/' + id + '.html';
+        chapter_obj.url = '/index.html?nav=doc&type=' + article_type + '&language=' + language + '&id=' + id;
         chapter_obj.anchor = anchor;
         chapter_obj.title = line;
 

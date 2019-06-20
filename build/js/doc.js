@@ -1,6 +1,8 @@
 /** 当前笔记页数*/
 let note_page = 0;
 
+let catalog_content = null;
+
 function docSuccess(res) {
     console.log('docSuccess');
     /** 更新doc内容区*/
@@ -20,6 +22,8 @@ function docSuccess(res) {
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
     $('#doc_catalog').off('click', 'button', docClickCatalogBtn);
     $('#doc_btn_catalog').off('click', docBtnCatalog);
+    $('#doc_last').off('click', docBtnGoLast);
+    $('#doc_next').off('click', docBtnGoNext);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
@@ -28,6 +32,9 @@ function docSuccess(res) {
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
     $('#doc_catalog').on('click', 'button', docClickCatalogBtn);
     $('#doc_btn_catalog').on('click', docBtnCatalog);
+    $('#doc_last').on('click', docBtnGoLast);
+    $('#doc_next').on('click', docBtnGoNext);
+
 
     /** 更新tag按钮值*/
     $('#doc_tag').text(global_tag);
@@ -65,8 +72,9 @@ function resetCatalogAndDoc() {
 
 /** 加载目录完成回调方法*/
 function docLoadCatalogSuccess(res) {
+    catalog_content = res;
     /** 转化模板数据*/
-    let html = Mustache.render(hbs_catalog, res);
+    let html = Mustache.render(hbs_catalog, catalog_content);
     $('#doc_catalog').html(html);
     /** 更新目录区*/
     updateCatalogTitle(global_page, global_anchor);
@@ -82,7 +90,7 @@ function updateDocAndNote(doc_id, doc_anchor) {
     updateCatalogTitle(doc_id, doc_anchor);
 
     /** 加载content区内容*/
-    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page + '.php';
+    let url_doc_content = '/doc/' + global_tag + '/' + global_lan + '/' + global_page + '.html';
     ajax_get(url_doc_content, docLoadContentSuccess);
     /** 清理笔记*/
     clearDocNote();
@@ -121,6 +129,9 @@ function docLoadContentSuccess(res) {
         /** 滚动条置顶*/
         $("#doc_content_stroll_area").scrollTop(0);
     }
+
+    /** 更新上/下一篇按钮*/
+    updateBtnLastAndNext();
 }
 
 /** 清空笔记*/
@@ -284,4 +295,67 @@ function docBtnCatalog(e) {
     $('#doc_content_stroll_area').addClass('d-sm-none');
     $('#doc_catalog').removeClass('d-none');
     $('#doc_catalog').removeClass('d-sm-none');
+}
+
+/** 上一篇*/
+function docBtnGoLast() {
+    if (global_page > 1) {
+        /** 有上一页*/
+        global_page -= 1;
+        console.log('docBtnGoLast block global_page ' + global_page);
+        let doc_anchor = global_page + '_';
+        updateDocAndNote(global_page, doc_anchor);
+    } else {
+        /** 无上一页*/
+        console.log('docBtnGoLast none global_page ' + global_page);
+    }
+}
+
+/** 下一篇*/
+function docBtnGoNext() {
+    for (let i = 0; i < catalog_content.catalog.length; i++) {
+        if (catalog_content.catalog[i].id === (global_page + 1)) {
+            global_page += 1;
+            console.log('docBtnGoNext block global_page ' + global_page);
+            let doc_anchor = global_page + '_';
+            updateDocAndNote(global_page, doc_anchor);
+            break;
+        }
+    }
+
+    /** 无下一页*/
+    console.log('docBtnGoNext none global_page ' + global_page);
+}
+
+/** 更新上/下一篇按钮*/
+function updateBtnLastAndNext() {
+    if (global_page > 1) {
+        console.log('docBtnGoLast block global_page ' + global_page);
+        /** 有上一页*/
+        $('#doc_last').css('display', 'inline');
+    } else {
+        console.log('docBtnGoLast none global_page ' + global_page);
+        /** 无上一页*/
+        $('#doc_last').css('display', 'none');
+    }
+
+
+    let contain_next = false;
+    for (let i = 0; i < catalog_content.catalog.length; i++) {
+        if (catalog_content.catalog[i].id === global_page + 1) {
+            contain_next = true;
+            break;
+        }
+    }
+
+    if (contain_next) {
+        console.log('docBtnGoNext block global_page ' + global_page);
+        /** 有下一页*/
+        $('#doc_next').css('display', 'inline');
+    } else {
+        console.log('docBtnGoNext none global_page ' + global_page);
+        /** 无下一页*/
+        $('#doc_next').css('display', 'none');
+    }
+
 }

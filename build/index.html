@@ -47,7 +47,7 @@
     /** 语言状态*/
     let global_lan = 'zh_cn';
     /** 当前文档显示的文章*/
-    let global_page = '1';
+    let global_page = 1;
     /** 当前文档显示的文章的锚点*/
     let global_anchor = '1_';
     /** 登陆状态*/
@@ -168,7 +168,6 @@
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);
-        // if (r != null) return unescape(r[2]);
         if (r != null) return r[2];
         return null;
     }

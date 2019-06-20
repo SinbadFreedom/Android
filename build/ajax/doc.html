@@ -14,7 +14,7 @@
 </div>
 
 <div id="doc_catalog" class="col-md-3 col-12"
-     style="position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98; padding-left: 0; padding-right: 0" >
+     style="position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98; padding-left: 0; padding-right: 0">
 </div>
 
 <div class="row justify-content-end">
@@ -24,12 +24,24 @@
 
         </div>
 
+        <div class="row center-block text-center">
+            <div class="col-6 text-right">
+                <button id="doc_last" class="btn btn-light">← 上一篇</button>
+            </div>
+            <div class="col-6 text-left">
+                <button id="doc_next" class="btn btn-light">下一篇 →</button>
+            </div>
+        </div>
+
+        <div class="alert alert-primary" role="alert">
+            <span>当前有</span><span id="doc_online_num">93</span><span>位同学在看此文章</span>
+        </div>
+
         <label>发表笔记</label>
         <textarea class="form-control" id="doc_reply_text" name="reply" rows="5" placeholder="请输入回复内容"></textarea>
 
         <div id="doc_login_state">
             <button id="doc_reply_login" class="btn btn-warning">登陆后可回复</button>
-
         </div>
 
         <label>笔记</label>
@@ -38,4 +50,5 @@
 
         </div>
     </div>
+
 </div>
