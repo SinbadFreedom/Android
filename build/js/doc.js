@@ -322,7 +322,6 @@ function docBtnGoNext() {
     for (let i = 0; i < catalog_content.catalog.length; i++) {
         if (catalog_content.catalog[i].id === (global_page + 1)) {
             global_page += 1;
-            console.log('docBtnGoNext block global_page ' + global_page);
             let doc_anchor = global_page + '_';
             updateDocAndNote(global_page, doc_anchor);
             break;
@@ -348,7 +347,6 @@ function updateBtnLastAndNext() {
 
     let contain_next = false;
     for (let i = 0; i < catalog_content.catalog.length; i++) {
-        console.log("catalog_content.catalog[i].id " + catalog_content.catalog[i].id);
         if (catalog_content.catalog[i].id === global_page + 1) {
             contain_next = true;
             break;
