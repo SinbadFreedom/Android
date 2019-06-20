@@ -102,6 +102,9 @@ function updateDocAndNote(doc_id, doc_anchor) {
 function docLoadContentSuccess(res) {
     /** 更新文档内容*/
     let display = $('#doc_content_stroll_area').css('display');
+
+    $('#doc_content').html(res);
+
     if (display === 'none') {
         /** 内容区域是小屏隐藏状态，则显示文章内容区，隐藏目录区*/
         $('#doc_content_stroll_area').removeClass('d-none');
@@ -110,7 +113,6 @@ function docLoadContentSuccess(res) {
         $('#doc_catalog').addClass('d-sm-none');
     }
 
-    $('#doc_content').html(res);
     /** 更新滚动条位置*/
     console.log('docLoadContentSuccess global_page ' + global_page + " global_anchor " + global_anchor);
     if (global_anchor) {
@@ -234,6 +236,7 @@ function replyPostSuccessCallback(res) {
 function docClickCatalogA(e) {
     e.preventDefault();
     let doc_id = $(e.target).attr("catalog_doc_id");
+    doc_id = parseInt(doc_id);
     let doc_anchor = $(e.target).attr("catalog_anchor");
 
     console.log('docClickCatalogA global_page ' + global_page + ' global_anchor ' + global_anchor);
@@ -342,6 +345,7 @@ function updateBtnLastAndNext() {
 
     let contain_next = false;
     for (let i = 0; i < catalog_content.catalog.length; i++) {
+        console.log("catalog_content.catalog[i].id " + catalog_content.catalog[i].id);
         if (catalog_content.catalog[i].id === global_page + 1) {
             contain_next = true;
             break;
