@@ -334,8 +334,7 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
 
         let chapter_obj = {};
         chapter_obj.id = parseInt(id);
-        // chapter_obj.url = '/doc/' + article_type + '/' + language + '/' + id + '.html';
-        chapter_obj.url = '/index.html?nav=doc&type=' + article_type + '&language=' + language + '&id=' + id;
+        chapter_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor;
         chapter_obj.anchor = anchor;
         chapter_obj.title = line;
 
@@ -368,6 +367,7 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
                     let sub_1_obj = {};
                     sub_1_obj.anchor = anchor_sub_1;
                     sub_1_obj.title = line_sub_1;
+                    sub_1_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor_sub_1;
 
                     chapter_obj.sub_1.push(sub_1_obj);
 
@@ -397,6 +397,7 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
                                 let sub_2_obj = {};
                                 sub_2_obj.anchor = anchor_sub_2;
                                 sub_2_obj.title = line_sub_2;
+                                sub_2_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor_sub_2;
 
                                 if (!sub_1_obj.sub_2) {
                                     sub_1_obj.sub_2 = [];

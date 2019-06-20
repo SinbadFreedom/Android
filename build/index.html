@@ -33,7 +33,6 @@
 <script src="/lib/google-code-prettify/prettify.js"></script>
 <script src="/lib/mustache/mustache.js"></script>
 
-<script src="/js/index.js"></script>
 <script src="/js/hbs.js"></script>
 <script src="/js/doc.js"></script>
 <script src="/js/rank.js"></script>
@@ -83,6 +82,14 @@
                 active_nav_button('nav_btn_ask');
 
                 getAskInfo(global_tag, content_id);
+            } else if (nav === 'doc') {
+                /** 跳转至文档*/
+                global_tag = getQueryString('tag');
+                global_lan = getQueryString('language');
+                global_page = getQueryString('contentid');
+                global_anchor = getQueryString('anchor');
+
+                initDocPage();
             }
         }
     });
@@ -172,6 +179,37 @@
         if (r != null) return r[2];
         return null;
     }
+
+    /** 加载index.html页面完成*/
+    function indexLoadSuccess(res) {
+        console.log('indexLoadSuccess');
+        /** 更新index内容区*/
+        refreshContentArea(res);
+        /** 事件初始化*/
+        $('#index_tag').off('click', 'button', indexClickBtnTag);
+        $('#index_tag').on('click', 'button', indexClickBtnTag);
+    }
+
+    /** 文章tag按钮点击*/
+    function indexClickBtnTag(e) {
+        let btn_id = $(e.target).attr("id");
+        console.log('indexClickBtnTag btn_id ' + btn_id);
+        let c_index = btn_id.indexOf("_");
+        /** 跳过‘_’*/
+        let param = btn_id.slice(c_index + 1);
+        /** 设置全局变量global_tag*/
+        global_tag = param;
+
+        initDocPage();
+    }
+
+    /** 加载doc框架*/
+    function initDocPage() {
+        let url_doc = '/ajax/doc.html';
+        /** 加载doc.html, 完成后执行回调*/
+        ajax_get(url_doc, docSuccess);
+    }
+
 </script>
 </body>
 </html>
