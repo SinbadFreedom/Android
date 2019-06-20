@@ -2,6 +2,7 @@
 let note_page = 0;
 
 let catalog_content = null;
+let doc_anchor_pos_arr = null;
 
 function docSuccess(res) {
     console.log('docSuccess');
@@ -24,6 +25,7 @@ function docSuccess(res) {
     $('#doc_btn_catalog').off('click', docBtnCatalog);
     $('#doc_last').off('click', docBtnGoLast);
     $('#doc_next').off('click', docBtnGoNext);
+    // $('#doc_content_stroll_area').off('stroll', docStrollEvent);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
@@ -34,6 +36,9 @@ function docSuccess(res) {
     $('#doc_btn_catalog').on('click', docBtnCatalog);
     $('#doc_last').on('click', docBtnGoLast);
     $('#doc_next').on('click', docBtnGoNext);
+    // $('#doc_content_stroll_area').on('stroll', docStrollEvent);
+
+    $('#doc_content_stroll_area').scroll(docStrollEvent);
 
 
     /** 更新tag按钮值*/
@@ -72,6 +77,7 @@ function resetCatalogAndDoc() {
 
 /** 加载目录完成回调方法*/
 function docLoadCatalogSuccess(res) {
+    /** 整体目录*/
     catalog_content = res;
     /** 转化模板数据*/
     let html = Mustache.render(hbs_catalog, catalog_content);
@@ -137,6 +143,9 @@ function docLoadContentSuccess(res) {
 
     /** google pretty 代码高亮*/
     PR.prettyPrint();
+
+    /** 更新本文目录数据对象*/
+    updateDocAnchorInfo();
 }
 
 /** 清空笔记*/
@@ -292,6 +301,7 @@ function updateCatalogTitle(doc_id, doc_anchor) {
     global_anchor = doc_anchor;
 }
 
+
 /** 小屏显示的目录按钮点击事件*/
 function docBtnCatalog(e) {
     console.log('docBtnCatalog ');
@@ -362,5 +372,102 @@ function updateBtnLastAndNext() {
         /** 无下一页*/
         $('#doc_next').css('display', 'none');
     }
+}
 
+/** 获取本文的锚点信息，目录中的对应的本文的锚点名称，及文档中锚点对应的坐标*/
+function updateDocAnchorInfo() {
+    doc_anchor_pos_arr = [];
+
+    for (let i = 0; i < catalog_content.catalog.length; i++) {
+        if (catalog_content.catalog[i].id === global_page) {
+            let title_main = catalog_content.catalog[i];
+
+            /** 本文章所有锚点名称，包括主标题，一级，二级子标题*/
+            /** 主标题anchor*/
+            let dom_title = $('#' + title_main.anchor)[0];
+            let title_obj = {};
+            title_obj.anchor_name = title_main.anchor;
+            title_obj.anchor_off_set_top = dom_title.offsetTop;
+            doc_anchor_pos_arr.push(title_obj);
+
+            if (title_main.sub_1) {
+                /** 一级子标题anchor*/
+                for (let j in title_main.sub_1) {
+                    let sub_1 = title_main.sub_1[j];
+
+                    let dom_sub_1 = $('#' + sub_1.anchor)[0];
+                    let sub_1_obj = {};
+                    sub_1_obj.anchor_name = sub_1.anchor;
+                    sub_1_obj.anchor_off_set_top = dom_sub_1.offsetTop;
+                    doc_anchor_pos_arr.push(sub_1_obj);
+
+                    if (sub_1.sub_2) {
+                        /** 二级子标题anchor*/
+                        for (let k in sub_1.sub_2) {
+                            let sub_2 = sub_1.sub_2[k];
+
+                            let dom_sub_2 = $('#' + sub_2.anchor)[0];
+                            let sub_2_obj = {};
+                            sub_2_obj.anchor_name = sub_2.anchor;
+                            sub_2_obj.anchor_off_set_top = dom_sub_2.offsetTop;
+                            doc_anchor_pos_arr.push(sub_2_obj);
+                        }
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+
+/** 滚动条上一次的偏移量，用来判断是上划还是下划*/
+let last_stroll_pos = 0;
+
+/** 文档区滚动条滚动事件*/
+function docStrollEvent(e) {
+    if (doc_anchor_pos_arr) {
+        /** 根据本文目录对象的锚点数据，更新目录active 的锚点*/
+        let stroll_top = $("#doc_content_stroll_area").scrollTop();
+        /** 判断当前锚点位置与 滚动条strollTop的关系， 如果超过下一个锚点位置，则更新当前锚点*/
+
+        /** 是否是下划*/
+        let is_down;
+
+        if (last_stroll_pos < stroll_top) {
+            /** 下划*/
+            is_down = true;
+        } else if (last_stroll_pos > stroll_top) {
+            /** 上划*/
+            is_down = false;
+        }
+
+        for (let i = 0; i < doc_anchor_pos_arr.length; i++) {
+            if (doc_anchor_pos_arr[i].anchor_name === global_anchor) {
+                if (is_down) {
+                    /** 下划，计算下一个锚点*/
+                    if (i < doc_anchor_pos_arr.length - 1) {
+                        let next_off_set = doc_anchor_pos_arr[i + 1].anchor_off_set_top;
+                        if (stroll_top >= next_off_set) {
+                            /** 更新目录区下一个锚点*/
+                            updateCatalogTitle(global_page, doc_anchor_pos_arr[i + 1].anchor_name);
+                        }
+                    }
+                } else {
+                    /** 上划，计算上一个*/
+                    if (i > 0) {
+                        let last_off_set = doc_anchor_pos_arr[i - 1].anchor_off_set_top;
+                        if (stroll_top <= last_off_set) {
+                            /** 更新目录区下一个锚点*/
+                            updateCatalogTitle(global_page, doc_anchor_pos_arr[i - 1].anchor_name);
+                        }
+                    }
+                }
+
+                break;
+            }
+        }
+
+        /** 更新坐标偏移*/
+        last_stroll_pos = stroll_top;
+    }
 }
