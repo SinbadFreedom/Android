@@ -238,7 +238,7 @@ function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handleba
     // let finalData = compiled(article_config);
     /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
     // finalData = finalData.replace(/<pre>/g, "<pre class='prettyprint'>");
-    htmlData = htmlData.replace(/<pre>/g, "<pre class='prettyprint'>");
+    htmlData = htmlData.replace(/<pre>/g, '<pre class="prettyprint">');
     /** 全角转化为半角*/
     // finalData = fullAngleToHalfAngle(finalData);
     htmlData = fullAngleToHalfAngle(htmlData);

@@ -32,12 +32,6 @@ body {
     color: #212121;
 }
 
-pre {
-    font-size: 90%;
-    background-color: #eee;
-    border-radius: 6px;
-}
-
 nav {
     position: absolute;
     top: 0;
@@ -53,10 +47,9 @@ h2 {
     font-size: 1.8rem;
 }
 
-/** 复写google pretty*/
-pre.prettyprint {
-    padding: 2px;
-    border: none;!important;
+/** 复写google pretty */
+pre {
+    border-radius: .25rem;
 }
 
 /** 覆写bootstrap*/

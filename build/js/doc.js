@@ -134,6 +134,9 @@ function docLoadContentSuccess(res) {
 
     /** 更新上/下一篇按钮*/
     updateBtnLastAndNext();
+
+    /** google pretty 代码高亮*/
+    PR.prettyPrint();
 }
 
 /** 清空笔记*/

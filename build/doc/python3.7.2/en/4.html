@@ -2,7 +2,7 @@
 <p>Besides the <a href="#">while</a> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
 <h3 id="4_1_">4.1. if Statements</h3>
 <p>Perhaps the most well-known statement type is the <a href="#">if</a> statement. For example:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; x = int(input("Please enter an integer: "))
 Please enter an integer: 42
 &gt;&gt;&gt; if x &lt; 0:
@@ -20,7 +20,7 @@ More
 <p>There can be zero or more <a href="#">elif</a> parts, and the <a href="#">else</a> part is optional. The keyword <code>'elif'</code> is short for <code>'else if'</code>, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the <code>switch</code> or <code>case</code> statements found in other languages.</p>
 <h3 id="4_2_">4.2. for Statements</h3>
 <p>The <a href="#">for</a> statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python's for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; # Measure some strings:
 ... words = ['cat', 'window', 'defenestrate']
 &gt;&gt;&gt; for w in words:
@@ -31,7 +31,7 @@ window 6
 defenestrate 12
 </code></pre>
 <p>If you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items), it is recommended that you first make a copy. Iterating over a sequence does not implicitly make a copy. The slice notation makes this especially convenient:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; for w in words[:]:  # Loop over a slice copy of the entire list.
 ...     if len(w) &gt; 6:
 ...         words.insert(0, w)
@@ -42,7 +42,7 @@ defenestrate 12
 <p>With for w in words:, the example would attempt to create an infinite list, inserting defenestrate over and over again.</p>
 <h3 id="4_3_">4.3. The range() Function</h3>
 <p>If you do need to iterate over a sequence of numbers, the built-in function <a href="#">range()</a> comes in handy. It generates arithmetic progressions:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; for i in range(5):
 ...     print(i)
 ...
@@ -53,7 +53,7 @@ defenestrate 12
 4
 </code></pre>
 <p>The given end point is never part of the generated sequence; <code>range(10)</code> generates 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the 'step'):</p>
-<pre class='prettyprint'><code>range(5, 10)
+<pre class="prettyprint"><code>range(5, 10)
    5, 6, 7, 8, 9
 
 range(0, 10, 3)
@@ -63,7 +63,7 @@ range(-10, -100, -30)
   -10, -40, -70
 </code></pre>
 <p>To iterate over the indices of a sequence, you can combine <a href="#">range()</a> and <a href="#">len()</a> as follows:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; a = ['Mary', 'had', 'a', 'little', 'lamb']
 &gt;&gt;&gt; for i in range(len(a)):
 ...     print(i, a[i])
@@ -76,13 +76,13 @@ range(-10, -100, -30)
 </code></pre>
 <p>In most such cases, however, it is convenient to use the <a href="#">enumerate()</a> function, see <a href="#">Looping Techniques</a>.</p>
 <p>A strange thing happens if you just print a range:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; print(range(10))
 range(0, 10)
 </code></pre>
 <p>In many ways the object returned by <a href="#">range()</a> behaves as if it is a list, but in fact it isn't. It is an object which returns the successive items of the desired sequence when you iterate over it, but it doesn't really make the list, thus saving space.</p>
 <p>We say such an object is iterable, that is, suitable as a target for functions and constructs that expect something from which they can obtain successive items until the supply is exhausted. We have seen that the <a href="#">for</a> statement is such an iterator. The function <a href="#">list()</a> is another; it creates lists from iterables:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; list(range(5))
 [0, 1, 2, 3, 4]
 </code></pre>
@@ -90,7 +90,7 @@ range(0, 10)
 <h3 id="4_4_">4.4. break and continue Statements, and else Clauses on Loops</h3>
 <p>The <a href="#">break</a> statement, like in C, breaks out of the innermost enclosing <a href="#">for</a> or <a href="#">while</a> loop.</p>
 <p>Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the list (with <a href="#">for</a>) or when the condition becomes false (with <a href="#">while</a>), but not when the loop is terminated by a <a href="#">break</a> statement. This is exemplified by the following loop, which searches for prime numbers:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; for n in range(2, 10):
 ...     for x in range(2, n):
 ...         if n % x == 0:
@@ -112,7 +112,7 @@ range(0, 10)
 <p>(Yes, this is the correct code. Look closely: the <code>else</code> clause belongs to the <a href="#">for</a> loop, not the <a href="#">if</a> statement.)</p>
 <p>When used with a loop, the <code>else</code> clause has more in common with the <code>else</code> clause of a <a href="#">try</a> statement than it does that of <a href="#">if</a> statements: a try statement's <a href="#">else</a> clause runs when no exception occurs, and a loop's <code>else</code> clause runs when no <code>break</code> occurs. For more on the <code>try</code> statement and exceptions, see <a href="#">Handling Exceptions</a>.</p>
 <p>The <a href="#">continue</a> statement, also borrowed from C, continues with the next iteration of the loop:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; for num in range(2, 10):
 ...     if num % 2 == 0:
 ...         print("Found an even number", num)
@@ -129,26 +129,26 @@ Found a number 9
 </code></pre>
 <h3 id="4_5_">4.5. pass Statements</h3>
 <p>The <a href="#">pass</a> statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; while True:
 ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
 ...
 </code></pre>
 <p>This is commonly used for creating minimal classes:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; class MyEmptyClass:
 ...     pass
 ...
 </code></pre>
 <p>Another place <a href="#">pass</a> can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def initlog(*args):
 ...     pass   # Remember to implement this!
 ...
 </code></pre>
 <h3 id="4_6_">4.6. Defining Functions</h3>
 <p>We can create a function that writes the Fibonacci series to an arbitrary boundary:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def fib(n):    # write Fibonacci series up to n
 ...     """Print a Fibonacci series up to n."""
 ...     a, b = 0, 1
@@ -166,7 +166,7 @@ Found a number 9
 <p>The execution of a function introduces a new symbol table used for the local variables of the function. More precisely, all variable assignments in a function store the value in the local symbol table; whereas variable references first look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symbol table, and finally in the table of built-in names. Thus, global variables cannot be directly assigned a value within a function (unless named in a <a href="#">global</a> statement), although they may be referenced.</p>
 <p>The actual parameters (arguments) to a function call are introduced in the local symbol table of the called function when it is called; thus, arguments are passed using call by value (where the value is always an object reference, not the value of the object). <a href="#">1</a> When a function calls another function, a new local symbol table is created for that call.</p>
 <p>A function definition introduces the function name in the current symbol table. The value of the function name has a type that is recognized by the interpreter as a user-defined function. This value can be assigned to another name which can then also be used as a function. This serves as a general renaming mechanism:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; fib
 &lt;function fib at 10042ed0&gt;
 &gt;&gt;&gt; f = fib
@@ -174,13 +174,13 @@ Found a number 9
 0 1 1 2 3 5 8 13 21 34 55 89
 </code></pre>
 <p>Coming from other languages, you might object that <code>fib</code> is not a function but a procedure since it doesn't return a value. In fact, even functions without a <a href="#">return</a> statement do return a value, albeit a rather boring one. This value is called <code>None</code> (it's a built-in name). Writing the value <code>None</code> is normally suppressed by the interpreter if it would be the only value written. You can see it if you really want to using <a href="#">print()</a>:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; fib(0)
 &gt;&gt;&gt; print(fib(0))
 None
 </code></pre>
 <p>It is simple to write a function that returns a list of the numbers of the Fibonacci series, instead of printing it:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def fib2(n):  # return Fibonacci series up to n
 ...     """Return a list containing the Fibonacci series up to n."""
 ...     result = []
@@ -203,7 +203,7 @@ None
 <p>It is also possible to define functions with a variable number of arguments. There are three forms, which can be combined.</p>
 <h4 id="4_7_1_">4.7.1. Default Argument Values</h4>
 <p>The most useful form is to specify a default value for one or more arguments. This creates a function that can be called with fewer arguments than it is defined to allow. For example:</p>
-<pre class='prettyprint'><code>def ask_ok(prompt, retries=4, reminder='Please try again!'):
+<pre class="prettyprint"><code>def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
         ok = input(prompt)
         if ok in ('y', 'ye', 'yes'):
@@ -223,7 +223,7 @@ None
 </ul>
 <p>This example also introduces the <a href="#">in</a> keyword. This tests whether or not a sequence contains a certain value.</p>
 <p>The default values are evaluated at the point of function definition in the defining scope, so that</p>
-<pre class='prettyprint'><code>i = 5
+<pre class="prettyprint"><code>i = 5
 
 def f(arg=i):
     print(arg)
@@ -233,7 +233,7 @@ f()
 </code></pre>
 <p>will print <code>5</code>.</p>
 <p>Important warning: The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes. For example, the following function accumulates the arguments passed to it on subsequent calls:</p>
-<pre class='prettyprint'><code>def f(a, L=[]):
+<pre class="prettyprint"><code>def f(a, L=[]):
     L.append(a)
     return L
 
@@ -247,7 +247,7 @@ This will print
 [1, 2, 3]
 </code></pre>
 <p>If you don't want the default to be shared between subsequent calls, you can write the function like this instead:</p>
-<pre class='prettyprint'><code>def f(a, L=None):
+<pre class="prettyprint"><code>def f(a, L=None):
     if L is None:
         L = []
     L.append(a)
@@ -255,14 +255,14 @@ This will print
 </code></pre>
 <h4 id="4_7_2_">4.7.2. Keyword Arguments</h4>
 <p>Functions can also be called using <a href="#">keyword arguments</a> of the form <code>kwarg=value</code>. For instance, the following function:</p>
-<pre class='prettyprint'><code>def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+<pre class="prettyprint"><code>def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
     print("-- This parrot wouldn't", action, end=' ')
     print("if you put", voltage, "volts through it.")
     print("-- Lovely plumage, the", type)
     print("-- It's", state, "!")
 </code></pre>
 <p>accepts one required argument (<code>voltage</code>) and three optional arguments (<code>state</code>, <code>action</code>, and <code>type</code>). This function can be called in any of the following ways:</p>
-<pre class='prettyprint'><code>parrot(1000)                                          # 1 positional argument
+<pre class="prettyprint"><code>parrot(1000)                                          # 1 positional argument
 parrot(voltage=1000)                                  # 1 keyword argument
 parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
 parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
@@ -270,13 +270,13 @@ parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
 parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
 </code></pre>
 <p>but all the following calls would be invalid:</p>
-<pre class='prettyprint'><code>parrot()                     # required argument missing
+<pre class="prettyprint"><code>parrot()                     # required argument missing
 parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
 parrot(110, voltage=220)     # duplicate value for the same argument
 parrot(actor='John Cleese')  # unknown keyword argument
 </code></pre>
 <p>In a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. <code>actor</code> is not a valid argument for the <code>parrot</code> function), and their order is not important. This also includes non-optional arguments (e.g. <code>parrot(voltage=1000)</code> is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def function(a):
 ...     pass
 ...
@@ -286,7 +286,7 @@ Traceback (most recent call last):
 TypeError: function() got multiple values for keyword argument 'a'
 </code></pre>
 <p>When a final formal parameter of the form <code>**name</code> is present, it receives a dictionary (see <a href="#">Mapping Types - dict</a>) containing all keyword arguments except for those corresponding to a formal parameter. This may be combined with a formal parameter of the form <code>*name</code> (described in the next subsection) which receives a tuple containing the positional arguments beyond the formal parameter list. (<code>*name</code> must occur before <code>**name</code>.) For example, if we define a function like this:</p>
-<pre class='prettyprint'><code>def cheeseshop(kind, *arguments, **keywords):
+<pre class="prettyprint"><code>def cheeseshop(kind, *arguments, **keywords):
     print("-- Do you have any", kind, "?")
     print("-- I'm sorry, we're all out of", kind)
     for arg in arguments:
@@ -296,14 +296,14 @@ TypeError: function() got multiple values for keyword argument 'a'
         print(kw, ":", keywords[kw])
 </code></pre>
 <p>It could be called like this:</p>
-<pre class='prettyprint'><code>cheeseshop("Limburger", "It's very runny, sir.",
+<pre class="prettyprint"><code>cheeseshop("Limburger", "It's very runny, sir.",
            "It's really very, VERY runny, sir.",
            shopkeeper="Michael Palin",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
 </code></pre>
 <p>and of course it would print:</p>
-<pre class='prettyprint'><code>-- Do you have any Limburger ?
+<pre class="prettyprint"><code>-- Do you have any Limburger ?
 -- I'm sorry, we're all out of Limburger
 It's very runny, sir.
 It's really very, VERY runny, sir.
@@ -315,11 +315,11 @@ sketch : Cheese Shop Sketch
 <p>Note that the order in which the keyword arguments are printed is guaranteed to match the order in which they were provided in the function call.</p>
 <h4 id="4_7_3_">4.7.3. Arbitrary Argument Lists</h4>
 <p>Finally, the least frequently used option is to specify that a function can be called with an arbitrary number of arguments. These arguments will be wrapped up in a tuple (see <a href="#">Tuples and Sequences</a>). Before the variable number of arguments, zero or more normal arguments may occur.</p>
-<pre class='prettyprint'><code>def write_multiple_items(file, separator, *args):
+<pre class="prettyprint"><code>def write_multiple_items(file, separator, *args):
     file.write(separator.join(args))
 </code></pre>
 <p>Normally, these <code>variadic</code> arguments will be last in the list of formal parameters, because they scoop up all remaining input arguments that are passed to the function. Any formal parameters which occur after the <code>*args</code> parameter are 'keyword-only' arguments, meaning that they can only be used as keywords rather than positional arguments.</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def concat(*args, sep="/"):
 ...     return sep.join(args)
 ...
@@ -330,7 +330,7 @@ sketch : Cheese Shop Sketch
 </code></pre>
 <h4 id="4_7_4_">4.7.4. Unpacking Argument Lists</h4>
 <p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <a href="#">range()</a> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; list(range(3, 6))            # normal call with separate arguments
 [3, 4, 5]
 &gt;&gt;&gt; args = [3, 6]
@@ -338,7 +338,7 @@ sketch : Cheese Shop Sketch
 [3, 4, 5]
 </code></pre>
 <p>In the same fashion, dictionaries can deliver keyword arguments with the <code>**</code>-operator:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def parrot(voltage, state='a stiff', action='voom'):
 ...     print("-- This parrot wouldn't", action, end=' ')
 ...     print("if you put", voltage, "volts through it.", end=' ')
@@ -350,7 +350,7 @@ sketch : Cheese Shop Sketch
 </code></pre>
 <h4 id="4_7_5_">4.7.5. Lambda Expressions</h4>
 <p>Small anonymous functions can be created with the <a href="#">lambda</a> keyword. This function returns the sum of its two arguments: <code>lambda a, b: a+b</code>. Lambda functions can be used wherever function objects are required. They are syntactically restricted to a single expression. Semantically, they are just syntactic sugar for a normal function definition. Like nested function definitions, lambda functions can reference variables from the containing scope:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def make_incrementor(n):
 ...     return lambda x: x + n
 ...
@@ -361,7 +361,7 @@ sketch : Cheese Shop Sketch
 43
 </code></pre>
 <p>The above example uses a lambda expression to return a function. Another use is to pass a small function as an argument:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 &gt;&gt;&gt; pairs.sort(key=lambda pair: pair[1])
 &gt;&gt;&gt; pairs
@@ -373,7 +373,7 @@ sketch : Cheese Shop Sketch
 <p>If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description. The following lines should be one or more paragraphs describing the object's calling conventions, its side effects, etc.</p>
 <p>The Python parser does not strip indentation from multi-line string literals in Python, so tools that process documentation have to strip indentation if desired. This is done using the following convention. The first non-blank line after the first line of the string determines the amount of indentation for the entire documentation string. (We can't use the first line since it is generally adjacent to the string's opening quotes so its indentation is not apparent in the string literal.) Whitespace "equivalent" to this indentation is then stripped from the start of all lines of the string. Lines that are indented less should not occur, but if they occur all their leading whitespace should be stripped. Equivalence of whitespace should be tested after expansion of tabs (to 8 spaces, normally).</p>
 <p>Here is an example of a multi-line docstring:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def my_function():
 ...     """Do nothing, but document it.
 ...
@@ -389,7 +389,7 @@ Do nothing, but document it.
 <h4 id="4_7_7_">4.7.7. Function Annotations</h4>
 <p><a href="#">Function annotations</a> are completely optional metadata information about the types used by user-defined functions (see <a href="#">PEP 3107</a> and <a href="#">PEP 484</a> for more information).</p>
 <p><a href="#">Annotations</a> are stored in the <code>__annotations__</code> attribute of the function as a dictionary and have no effect on any other part of the function. Parameter annotations are defined by a colon after the parameter name, followed by an expression evaluating to the value of the annotation. Return annotations are defined by a literal <code>-&gt;</code>, followed by an expression, between the parameter list and the colon denoting the end of the <a href="#">def</a> statement. The following example has a positional argument, a keyword argument, and the return value annotated:</p>
-<pre class='prettyprint'><code>&gt;&gt;&gt;
+<pre class="prettyprint"><code>&gt;&gt;&gt;
 &gt;&gt;&gt; def f(ham: str, eggs: str = 'eggs') -&gt; str:
 ...     print("Annotations:", f.__annotations__)
 ...     print("Arguments:", ham, eggs)

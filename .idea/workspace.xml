@@ -1,13 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/build/js/doc.js" line="264" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/build/js/doc.js" line="267" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ajax/doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/css/dashidan.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/dashidan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/en/5.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/en/5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/doc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-Splus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-aea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-agc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-apollo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-basic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-cbm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-cl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-clj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-dart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-erl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-erlang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-ex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-exs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-fs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-go.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-hs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-kotlin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lasso.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lassoscript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-latex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lgt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lisp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-ll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-llvm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-logtalk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-ls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lsp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-lua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-matlab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-ml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-mumps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-nemerle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-pascal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-proto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-r.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-rd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-rkt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-rust.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-s.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-scala.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-scm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-sql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-ss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-swift.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-tcl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-tex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-vb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-vbs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-vhd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-vhdl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-wiki.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-xq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-xquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-yaml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/lang-yml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/skins/desert.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/skins/doxy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/skins/sons-of-obsidian.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/google-code-prettify/skins/sunburst.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/convert.js" beforeDir="false" afterPath="$PROJECT_DIR$/tool/convert.js" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -25,81 +98,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/figure_url.php">
+        <entry file="file://$PROJECT_DIR$/build/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1218">
+              <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1974">
-              <caret line="94" column="33" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/hbs/catalog.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="1282" selection-start-line="5" selection-start-column="1282" selection-end-line="5" selection-end-column="1282" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12663">
-              <caret line="603" column="19" selection-start-line="603" selection-start-column="19" selection-end-line="603" selection-end-column="19" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/catalog.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/js/doc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="238" column="30" lean-forward="true" selection-start-line="238" selection-start-column="30" selection-end-line="238" selection-end-column="30" />
+            <state relative-caret-position="288">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/tool/convert.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="228" column="8" lean-forward="true" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/profile.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/show_util_time.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -114,12 +187,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chapter_obj_sub_1</find>
-      <find>sub_1_obj</find>
-      <find>sub_2</find>
-      <find>line_sub_1</find>
-      <find>-</find>
-      <find>[</find>
       <find />
       <find>convertSingleFile</find>
       <find>Mustache</find>
@@ -144,6 +211,12 @@
       <find>doc_catalog</find>
       <find>doc_content_stroll_area</find>
       <find>catalog_content</find>
+      <find>http://</find>
+      <find>http</find>
+      <find>htt</find>
+      <find>rfs</find>
+      <find>prettify.css</find>
+      <find>prettify</find>
     </findStrings>
     <replaceStrings>
       <replace>nav_btn_login</replace>
@@ -240,11 +313,11 @@
         <option value="$PROJECT_DIR$/md/python3.7.2/zh_cn/catalog.txt" />
         <option value="$PROJECT_DIR$/build/doc/python3.7.2/en/1.php" />
         <option value="$PROJECT_DIR$/md/python3.7.2/template_doc.handlebars" />
-        <option value="$PROJECT_DIR$/tool/convert.js" />
-        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
-        <option value="$PROJECT_DIR$/build/index.html" />
-        <option value="$PROJECT_DIR$/build/js/doc.js" />
         <option value="$PROJECT_DIR$/build/ajax/doc.html" />
+        <option value="$PROJECT_DIR$/tool/convert.js" />
+        <option value="$PROJECT_DIR$/build/js/doc.js" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
       </list>
     </option>
   </component>
@@ -259,7 +332,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,7 +381,60 @@
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="python3.7.2" type="462c0819:PsiDirectoryNode" />
+              <item name="zh_cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="hbs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-reboot.css" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="google-code-prettify" type="462c0819:PsiDirectoryNode" />
+              <item name="skins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -364,6 +489,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -376,25 +502,25 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/md/python3.7.2/en" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workplace\git\Android\md\python3.7.2\en" />
-      <recent name="D:\workplace\git\Android\build\doc\python3.7.2\en" />
-      <recent name="D:\workplace\git\Android\md\python3.7.2\zh_cn" />
-      <recent name="D:\workplace\git\Android\build\doc\python3.7.2\zh_cn" />
-      <recent name="D:\workplace\git\Android\build\php\single" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workplace\git\Android\build\php\forum" />
       <recent name="D:\workplace\git\Android\build\hbs" />
       <recent name="D:\workplace\git\Android\build\php\note" />
       <recent name="D:\workplace\git\Android\build\php" />
       <recent name="D:\workplace\git\Android\build\lib\Connect2.1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Android\build\lib" />
+      <recent name="D:\workplace\git\Android\md\python3.7.2\en" />
+      <recent name="D:\workplace\git\Android\build\doc\python3.7.2\en" />
+      <recent name="D:\workplace\git\Android\md\python3.7.2\zh_cn" />
+      <recent name="D:\workplace\git\Android\build\doc\python3.7.2\zh_cn" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -849,14 +975,9 @@
       <workItem from="1561000356161" duration="2373000" />
       <workItem from="1561006744849" duration="2046000" />
       <workItem from="1561011418659" duration="1792000" />
-      <workItem from="1561013256444" duration="1417000" />
-    </task>
-    <task id="LOCAL-00360" summary="1. 修改回复mustache 替换handlebars">
-      <created>1559706842010</created>
-      <option name="number" value="00360" />
-      <option name="presentableId" value="LOCAL-00360" />
-      <option name="project" value="LOCAL" />
-      <updated>1559706842011</updated>
+      <workItem from="1561013256444" duration="1724000" />
+      <workItem from="1561015083749" duration="1815000" />
+      <workItem from="1561016913140" duration="1075000" />
     </task>
     <task id="LOCAL-00361" summary="1. 修改回复mustache 替换handlebars">
       <created>1559706895747</created>
@@ -1194,11 +1315,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561008107054</updated>
     </task>
-    <option name="localTasksCounter" value="409" />
+    <task id="LOCAL-00409" summary="1. promote ui">
+      <created>1561014790798</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1561014790798</updated>
+    </task>
+    <option name="localTasksCounter" value="410" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="785187000" />
+    <option name="totallyTimeSpent" value="788384000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1213,11 +1341,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2588047" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26467448" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.16884531" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.16884531" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2342048" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31154683" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1240,7 +1368,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. 修改笔记tag id" />
     <MESSAGE value="1. 修改doc tag button text" />
     <MESSAGE value="1. 调整架构分离 js php html" />
     <MESSAGE value="1. 修改回复" />
@@ -1265,7 +1392,8 @@
     <MESSAGE value="1. catalog state promote" />
     <MESSAGE value="1. change doc.php to html" />
     <MESSAGE value="1. remove unused code" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. remove unused code" />
+    <MESSAGE value="1. promote ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. promote ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1277,8 +1405,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/js/doc.js</url>
-          <line>349</line>
-          <properties lambdaOrdinal="-1" />
+          <line>352</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -1298,95 +1425,11 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/version.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tool/convert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7119">
-          <caret line="339" column="33" lean-forward="true" selection-start-line="339" selection-start-column="33" selection-end-line="339" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/hbs/rank.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/hbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/profile.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/rank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="63" lean-forward="true" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/ajax/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/newAsk.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/rank.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/catalog.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1405,20 +1448,6 @@
           <folding>
             <element signature="e#1576#1580#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1509,10 +1538,10 @@
     <entry file="file://$PROJECT_DIR$/build/php/figure_url.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
+    <entry file="file://$PROJECT_DIR$/build/hbs/catalog.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1974">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="33" />
+        <state relative-caret-position="147">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1539,28 +1568,103 @@
     <entry file="file://$PROJECT_DIR$/build/php/show_util_time.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/doc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="238" column="30" lean-forward="true" selection-start-line="238" selection-start-column="30" selection-end-line="238" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/hbs/catalog.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/doc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="504">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/doxy.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/skins/desert.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="72" selection-start-column="72" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/prettify.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-reboot.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="157" selection-start-column="157" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="42" column="97" selection-start-line="42" selection-start-column="97" selection-end-line="42" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/google-code-prettify/run_prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tool/convert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="228" column="8" lean-forward="true" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/doc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1218">
+          <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/en/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/3.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.2/zh_cn/catalog.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/css/dashidan.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
