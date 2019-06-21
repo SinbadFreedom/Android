@@ -25,7 +25,6 @@ function docSuccess(res) {
     $('#doc_btn_catalog').off('click', docBtnCatalog);
     $('#doc_last').off('click', docBtnGoLast);
     $('#doc_next').off('click', docBtnGoNext);
-    // $('#doc_content_stroll_area').off('stroll', docStrollEvent);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
@@ -36,10 +35,8 @@ function docSuccess(res) {
     $('#doc_btn_catalog').on('click', docBtnCatalog);
     $('#doc_last').on('click', docBtnGoLast);
     $('#doc_next').on('click', docBtnGoNext);
-    // $('#doc_content_stroll_area').on('stroll', docStrollEvent);
 
     $('#doc_content_stroll_area').scroll(docStrollEvent);
-
 
     /** 更新tag按钮值*/
     $('#doc_tag').text(global_tag);

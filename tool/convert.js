@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const showdown = require('showdown');
-// const Handlebars = require("handlebars");
 const article_type = process.argv[2];
 /** 语言版本*/
 const lan_arr = [];
@@ -212,38 +211,11 @@ function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile, handleba
         {extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
 
     let htmlData = converter.makeHtml(mdData);
-    // /** 不转化index.md, 采用单独的模板, 这里只转化文章内容*/
-    // console.log("-------------------------------------------------------");
-    // console.log("convertFile " + mdFileNameWithFolder + " to: " + outHtmlFile);
-    // console.log("-------------------------------------------------------");
-    // let article_config = {};
-    // article_config.content = htmlData;
-    // /** 目录，关于，首页file_number 不是int*/
-    // article_config.file_number = fileName.split('.')[0];
-    // article_config.article_type = article_type;
-    // article_config.language = language;
-    // /** 计算上一篇 下一篇编号*/
-    // let file_number = parseInt(fileName.split('.')[0]);
-    // if (file_number > 1) {
-    //     article_config.last = file_number - 1;
-    // }
-    //
-    // if (file_number < allFileName.length) {
-    //     article_config.next = file_number + 1;
-    // }
-    // /**  读取handlebars模板数据 默认pc文件 读取template_article.hbs*/
-    // let mustache_data = fs.readFileSync(handlebars_template_file_name, 'utf-8');
-    // /** 转化为html数据*/
-    // const compiled = Handlebars.compile(mustache_data);
-    // let finalData = compiled(article_config);
     /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
-    // finalData = finalData.replace(/<pre>/g, "<pre class='prettyprint'>");
     htmlData = htmlData.replace(/<pre>/g, '<pre class="prettyprint">');
     /** 全角转化为半角*/
-    // finalData = fullAngleToHalfAngle(finalData);
     htmlData = fullAngleToHalfAngle(htmlData);
     /** 写入文件*/
-    // fs.writeFileSync(outHtmlFile, finalData);
     fs.writeFileSync(outHtmlFile, htmlData);
     console.log("convertFile OK.");
 }
@@ -414,10 +386,6 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
         chapter_arr.push(chapter_obj);
     }
 
-    // console.log('----------------1');
-    // console.log(JSON.stringify(chapter_arr));
-    // console.log('----------------2');
-
     /** 转化目录html，android首屏用*/
     let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.txt', '.json');
     /** 写入文件*/
@@ -426,13 +394,30 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
     fs.writeFileSync(outHtmlFileName, JSON.stringify(final_data));
 }
 
+/** 组合js文件*/
+function combineAllJsFile() {
+    let js_folder = '../src/js/';
+    let files = fs.readdirSync(js_folder);
+    /** 清空all.js*/
+    fs.writeFileSync('../build/js/all.js', '');
+    /** 组合js*/
+    files.forEach(function (file) {
+        if (file.endsWith('.js')) {
+            /** 只获取已经添加数字的文件,这个数字是从1开始的*/
+            console.log(" sub_file: " + file);
+            let jsData = fs.readFileSync(js_folder + file, 'utf-8');
+            fs.writeFileSync('../build/js/all.js', jsData, {encoding: 'utf8', flag: 'a'});
+        }
+    });
+}
+
 /** 加入支持同时转化多个语言版本*/
 for (let i = 0; i < lan_arr.length; i++) {
     const language = lan_arr[i];
 
-    const article_folder = "../md/" + article_type + '/' + language;
+    const article_folder = "../src/md/" + article_type + '/' + language;
     /** handlebars 模板文件*/
-    let template_file_name_doc = "../md/" + article_type + "/template_doc.handlebars";
+    let template_file_name_doc = "../src/md/" + article_type + "/template_doc.handlebars";
     /** pc默认格式文件目录*/
     let htmlOutBaseFolder = "../build/doc/" + article_type + '/' + language;
 
@@ -445,3 +430,6 @@ for (let i = 0; i < lan_arr.length; i++) {
 
     convertCatalogMd(article_folder, htmlOutBaseFolder, language);
 }
+
+/** 组合js文件*/
+combineAllJsFile();
