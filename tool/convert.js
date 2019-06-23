@@ -98,10 +98,10 @@ function makeDir(dirpath) {
 }
 
 /**
- * 匹配一级标题 ===, 修改id，以空格为拆分，前边的作为 h1 的id
+ * 匹配主标题 ***, 修改id，以空格为拆分，前边的作为 h1 的id
  */
-showdown.extension('custom-header-id-for-title-1', function () {
-    let setextRegexH1 = /^(.+)[ \t]*\n=+[ \t]*\n+/gm;
+showdown.extension('custom-header-id-for-title', function () {
+    let setextRegexH1 = /^(.+)[ \t]*\n\*+[ \t]*\n+/gm;
 
     return [{
         type: 'listener',
@@ -124,16 +124,16 @@ showdown.extension('custom-header-id-for-title-1', function () {
 });
 
 /**
- * 匹配二级标题 ---, 修改id，以空格为拆分，前边的作为 h2 的id
+ * 匹配一级子标题 ===, 修改id，以空格为拆分，前边的作为 h1 的id
  */
-showdown.extension('custom-header-id-for-title-2', function () {
-    let setextRegexH2 = /^(.+)[ \t]*\n-+[ \t]*\n+/gm;
+showdown.extension('custom-header-id-for-title-sub-1', function () {
+    let setextRegexH1 = /^(.+)[ \t]*\n=+[ \t]*\n+/gm;
 
     return [{
         type: 'listener',
         listeners: {
             'headers.before': function (event, text, converter, options, globals) {
-                text = text.replace(setextRegexH2, function (wholeMatch, m1) {
+                text = text.replace(setextRegexH1, function (wholeMatch, m1) {
                     let spanGamut = showdown.subParser('spanGamut')(m1, options, globals);
                     let hLevel = 2;
                     /** 通过标题名称，按空格切分，得出id*/
@@ -149,54 +149,79 @@ showdown.extension('custom-header-id-for-title-2', function () {
     }];
 });
 
-
 /**
- *  加入自定义插件改变标题id规则 只对以"#"开头的标题生效(#,##,###...######),
- *  "==="及"---"对应的标题id 采用上边的两个方法。
- *
- *  插件参考：
- *  https://jsfiddle.net/tivie/107yuueg/
- *
+ * 匹配二级子标题 ---, 修改id，以空格为拆分，前边的作为 h2 的id
  */
-showdown.extension('custom-header-id', function () {
-    // var rgx = /^(#{1,6})[ \t]*(.+?) *\{: *#([\S]+?)\}[ \t]*#*$/gmi;
-    /** 匹配标题*/
-    let rgx = /^(#{1,6})[ \t]*(.+?) *[ \t]*#*$/gmi;
+showdown.extension('custom-header-id-for-title-sub-2', function () {
+    let setextRegexH2 = /^(.+)[ \t]*\n-+[ \t]*\n+/gm;
 
     return [{
         type: 'listener',
         listeners: {
             'headers.before': function (event, text, converter, options, globals) {
-                text = text.replace(rgx, function (wm, hLevel, hText, hCustomId) {
-                    // find how many # there are at the beggining of the header
-                    // these will define the header level
-                    hLevel = hLevel.length;
-
-                    // since headers can have markdown in them (ex: # some *italic* header)
-                    // we need to pass the text to the span parser
-                    hText = showdown.subParser('spanGamut')(hText, options, globals);
-                    /**
-                     * id规则为标题字符串以空格符拆分，前边的字符串。
-                     * 比如:
-                     * 2.2.1. 源代码编码
-                     * id 为 2.2.1
-                     */
-                    let title_id = hText.split(" ")[0];
+                text = text.replace(setextRegexH2, function (wholeMatch, m1) {
+                    let spanGamut = showdown.subParser('spanGamut')(m1, options, globals);
+                    let hLevel = 3;
+                    /** 通过标题名称，按空格切分，得出id*/
+                    let title_id = m1.split(" ")[0];
                     /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
                     title_id = title_id.replace(/\./g, '_');
-
-                    // create the appropriate HTML
-                    let header = '<h' + hLevel + ' id="' + title_id + '">' + hText + '</h' + hLevel + '>';
-
-                    // hash block to prevent any further modification
-                    return showdown.subParser('hashBlock')(header, options, globals);
+                    let hashBlock = '<h' + hLevel + ' id="' + title_id + '">' + spanGamut + '</h' + hLevel + '>';
+                    return showdown.subParser('hashBlock')(hashBlock, options, globals);
                 });
-                // return the changed text
                 return text;
             }
         }
     }];
 });
+
+
+// /**
+//  *  加入自定义插件改变标题id规则 只对以"#"开头的标题生效(#,##,###...######),
+//  *  "==="及"---"对应的标题id 采用上边的两个方法。
+//  *
+//  *  插件参考：
+//  *  https://jsfiddle.net/tivie/107yuueg/
+//  *
+//  */
+// showdown.extension('custom-header-id', function () {
+//     // var rgx = /^(#{1,6})[ \t]*(.+?) *\{: *#([\S]+?)\}[ \t]*#*$/gmi;
+//     /** 匹配标题*/
+//     let rgx = /^(#{1,6})[ \t]*(.+?) *[ \t]*#*$/gmi;
+//
+//     return [{
+//         type: 'listener',
+//         listeners: {
+//             'headers.before': function (event, text, converter, options, globals) {
+//                 text = text.replace(rgx, function (wm, hLevel, hText, hCustomId) {
+//                     // find how many # there are at the beggining of the header
+//                     // these will define the header level
+//                     hLevel = hLevel.length;
+//
+//                     // since headers can have markdown in them (ex: # some *italic* header)
+//                     // we need to pass the text to the span parser
+//                     hText = showdown.subParser('spanGamut')(hText, options, globals);
+//                     /**
+//                      * id规则为标题字符串以空格符拆分，前边的字符串。
+//                      * 比如:
+//                      * 2.2.1. 源代码编码
+//                      * id 为 2.2.1
+//                      */
+//                     let title_id = hText.split(" ")[0];
+//                     /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
+//                     title_id = title_id.replace(/\./g, '_');
+//
+//                     // create the appropriate HTML
+//                     let header = '<h' + hLevel + ' id="' + title_id + '">' + hText + '</h' + hLevel + '>';
+//
+//                     // hash block to prevent any further modification
+//                     return showdown.subParser('hashBlock')(header, options, globals);
+//                 });
+//                 return text;
+//             }
+//         }
+//     }];
+// });
 
 /**
  * Mardown文件转化为html文件
@@ -210,7 +235,7 @@ function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile) {
      * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
      */
     let converter = new showdown.Converter(
-        {extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
+        {extensions: [/*'custom-header-id',*/ 'custom-header-id-for-title', 'custom-header-id-for-title-sub-1', 'custom-header-id-for-title-sub-2']});
 
     let htmlData = converter.makeHtml(mdData);
     /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
@@ -294,7 +319,8 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
     /** 写入文件*/
     fs.writeFileSync(catalogMdName, finalCatalogData);
 
-    let lines = finalCatalogData.split('\r\n');
+    // let lines = finalCatalogData.split('\r\n');
+    let lines = finalCatalogData.split('\n');
 
     let chapter_arr = [];
 

@@ -38,15 +38,6 @@ nav {
     background: linear-gradient(36deg, #0dd3ff, #0389ff, #1c79c0);
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    padding-left: 10px;
-    font-size: 1.8rem;
-}
-
 /** 复写google pretty */
 pre {
     border-radius: .25rem;
