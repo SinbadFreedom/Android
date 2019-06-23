@@ -1,6 +1,6 @@
 <h1 id="10_">10. Brief Tour of the Standard Library</h1>
 <h2 id="10_1_">10.1. Operating System Interface</h2>
-<p>The "os" module provides dozens of functions for interacting with the operating system:</p>
+<p>The <code>os</code> module provides dozens of functions for interacting with the operating system:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import os
 &gt;&gt;&gt; os.getcwd()      # Return the current working directory
 'C:\\Python37'
@@ -8,15 +8,15 @@
 &gt;&gt;&gt; os.system('mkdir today')   # Run the command mkdir in the system shell
 0
 </code></pre>
-<p>Be sure to use the "import os" style instead of "from os import *". This will keep "os.open()" from shadowing the built-in "open()" function which operates much differently.</p>
-<p>The built-in "dir()" and "help()" functions are useful as interactive aids for working with large modules like "os":</p>
+<p>Be sure to use the <code>import os</code> style instead of <code>from os import *</code>. This will keep <code>os.open()</code> from shadowing the built-in <code>open()</code> function which operates much differently.</p>
+<p>The built-in <code>dir()</code> and <code>help()</code> functions are useful as interactive aids for working with large modules like <code>os</code>:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import os
 &gt;&gt;&gt; dir(os)
 &lt;returns a list of all module functions&gt;
 &gt;&gt;&gt; help(os)
 &lt;returns an extensive manual page created from the module's docstrings&gt;
 </code></pre>
-<p>For daily file and directory management tasks, the "shutil" module provides a higher level interface that is easier to use:</p>
+<p>For daily file and directory management tasks, the <code>shutil</code> module provides a higher level interface that is easier to use:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import shutil
 &gt;&gt;&gt; shutil.copyfile('data.db', 'archive.db')
 'archive.db'
@@ -24,26 +24,26 @@
 'installdir'
 </code></pre>
 <h2 id="10_2_">10.2. File Wildcards</h2>
-<p>The "glob" module provides a function for making file lists from directory wildcard searches:</p>
+<p>The <code>glob</code> module provides a function for making file lists from directory wildcard searches:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import glob
 &gt;&gt;&gt; glob.glob('*.py')
 ['primes.py', 'random.py', 'quote.py']
 </code></pre>
 <h2 id="10_3_">10.3. Command Line Arguments</h2>
-<p>Common utility scripts often need to process command line arguments. These arguments are stored in the "sys" module's <em>argv</em> attribute as a list. For instance the following output results from running "python demo.py one two three" at the command line:</p>
+<p>Common utility scripts often need to process command line arguments. These arguments are stored in the <code>sys</code> module's <em>argv</em> attribute as a list. For instance the following output results from running <code>python demo.py one two three</code> at the command line:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import sys
 &gt;&gt;&gt; print(sys.argv)
 ['demo.py', 'one', 'two', 'three']
 </code></pre>
-<p>The "getopt" module processes <em>sys.argv</em> using the conventions of the Unix "getopt()" function. More powerful and flexible command line processing is provided by the "argparse" module.</p>
+<p>The <code>getopt</code> module processes <em>sys.argv</em> using the conventions of the Unix <code>getopt()</code> function. More powerful and flexible command line processing is provided by the <code>argparse</code> module.</p>
 <h2 id="10_4_">10.4. Error Output Redirection and Program Termination</h2>
-<p>The "sys" module also has attributes for <em>stdin</em>, <em>stdout</em>, and <em>stderr</em>. The latter is useful for emitting warnings and error messages to make them visible even when <em>stdout</em> has been redirected:</p>
+<p>The <code>sys</code> module also has attributes for <em>stdin</em>, <em>stdout</em>, and <em>stderr</em>. The latter is useful for emitting warnings and error messages to make them visible even when <em>stdout</em> has been redirected:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; sys.stderr.write('Warning, log file not found starting a new one\n')
 Warning, log file not found starting a new one
 </code></pre>
-<p>The most direct way to terminate a script is to use "sys.exit()".</p>
+<p>The most direct way to terminate a script is to use <code>sys.exit()</code>.</p>
 <h2 id="10_5_">10.5. String Pattern Matching</h2>
-<p>The "re" module provides regular expression tools for advanced string processing. For complex matching and manipulation, regular expressions offer succinct, optimized solutions:</p>
+<p>The <code>re</code> module provides regular expression tools for advanced string processing. For complex matching and manipulation, regular expressions offer succinct, optimized solutions:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import re
 &gt;&gt;&gt; re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
 ['foot', 'fell', 'fastest']
@@ -55,14 +55,14 @@ Warning, log file not found starting a new one
 'tea for two'
 </code></pre>
 <h2 id="10_6_">10.6. Mathematics</h2>
-<p>The "math" module gives access to the underlying C library functions for floating point math:</p>
+<p>The <code>math</code> module gives access to the underlying C library functions for floating point math:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import math
 &gt;&gt;&gt; math.cos(math.pi / 4)
 0.70710678118654757
 &gt;&gt;&gt; math.log(1024, 2)
 10.0
 </code></pre>
-<p>The "random" module provides tools for making random selections:</p>
+<p>The <code>random</code> module provides tools for making random selections:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import random
 &gt;&gt;&gt; random.choice(['apple', 'pear', 'banana'])
 'apple'
@@ -73,7 +73,7 @@ Warning, log file not found starting a new one
 &gt;&gt;&gt; random.randrange(6)    # random integer chosen from range(6)
 4
 </code></pre>
-<p>The "statistics" module calculates basic statistical properties (the mean, median, variance, etc.) of numeric data:</p>
+<p>The <code>statistics</code> module calculates basic statistical properties (the mean, median, variance, etc.) of numeric data:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import statistics
 &gt;&gt;&gt; data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
 &gt;&gt;&gt; statistics.mean(data)
@@ -85,7 +85,7 @@ Warning, log file not found starting a new one
 </code></pre>
 <p>The SciPy project <a href="https://scipy.org">https://scipy.org</a> has many other modules for numerical computations.</p>
 <h2 id="10_7_">10.7. Internet Access</h2>
-<p>There are a number of modules for accessing the internet and processing internet protocols. Two of the simplest are "urllib.request" for retrieving data from URLs and "smtplib" for sending mail:</p>
+<p>There are a number of modules for accessing the internet and processing internet protocols. Two of the simplest are <code>urllib.request</code> for retrieving data from URLs and <code>smtplib</code> for sending mail:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; from urllib.request import urlopen
 &gt;&gt;&gt; with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
 ...     for line in response:
@@ -107,7 +107,7 @@ Warning, log file not found starting a new one
 </code></pre>
 <p>(Note that the second example needs a mailserver running on localhost.)</p>
 <h2 id="10_8_">10.8. Dates and Times</h2>
-<p>The "datetime" module supplies classes for manipulating dates and times in both simple and complex ways. While date and time arithmetic is supported, the focus of the implementation is on efficient member extraction for output formatting and manipulation. The module also supports objects that are timezone aware.</p>
+<p>The <code>datetime</code> module supplies classes for manipulating dates and times in both simple and complex ways. While date and time arithmetic is supported, the focus of the implementation is on efficient member extraction for output formatting and manipulation. The module also supports objects that are timezone aware.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; # dates are easily constructed and formatted
 &gt;&gt;&gt; from datetime import date
 &gt;&gt;&gt; now = date.today()
@@ -123,7 +123,7 @@ datetime.date(2003, 12, 2)
 14368
 </code></pre>
 <h2 id="10_9_">10.9. Data Compression</h2>
-<p>Common data archiving and compression formats are directly supported by modules including: "zlib", "gzip", "bz2", "lzma", "zipfile" and "tarfile".</p>
+<p>Common data archiving and compression formats are directly supported by modules including: <code>zlib</code>, <code>gzip</code>, <code>bz2</code>, <code>lzma</code>, <code>zipfile</code> and <code>tarfile</code>.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; import zlib
 &gt;&gt;&gt; s = b'witch which has which witches wrist watch'
 &gt;&gt;&gt; len(s)
@@ -138,17 +138,17 @@ b'witch which has which witches wrist watch'
 </code></pre>
 <h2 id="10_10_">10.10. Performance Measurement</h2>
 <p>Some Python users develop a deep interest in knowing the relative performance of different approaches to the same problem. Python provides a measurement tool that answers those questions immediately.</p>
-<p>For example, it may be tempting to use the tuple packing and unpacking feature instead of the traditional approach to swapping arguments. The "timeit" module quickly demonstrates a modest performance advantage:</p>
+<p>For example, it may be tempting to use the tuple packing and unpacking feature instead of the traditional approach to swapping arguments. The <code>timeit</code> module quickly demonstrates a modest performance advantage:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; from timeit import Timer
 &gt;&gt;&gt; Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
 0.57535828626024577
 &gt;&gt;&gt; Timer('a,b = b,a', 'a=1; b=2').timeit()
 0.54962537085770791
 </code></pre>
-<p>In contrast to "timeit"'s fine level of granularity, the "profile" and "pstats" modules provide tools for identifying time critical sections in larger blocks of code.</p>
+<p>In contrast to <code>timeit</code>'s fine level of granularity, the <code>profile</code> and <code>pstats</code> modules provide tools for identifying time critical sections in larger blocks of code.</p>
 <h2 id="10_11_">10.11. Quality Control</h2>
 <p>One approach for developing high quality software is to write tests for each function as it is developed and to run those tests frequently during the development process.</p>
-<p>The "doctest" module provides a tool for scanning a module and validating tests embedded in a program's docstrings. Test construction is as simple as cutting-and-pasting a typical call along with its results into the docstring. This improves the documentation by providing the user with an example and it allows the doctest module to make sure the code remains true to the documentation:</p>
+<p>The <code>doctest</code> module provides a tool for scanning a module and validating tests embedded in a program's docstrings. Test construction is as simple as cutting-and-pasting a typical call along with its results into the docstring. This improves the documentation by providing the user with an example and it allows the doctest module to make sure the code remains true to the documentation:</p>
 <pre class="prettyprint"><code>def average(values):
     """Computes the arithmetic mean of a list of numbers.
 
@@ -160,7 +160,7 @@ b'witch which has which witches wrist watch'
 import doctest
 doctest.testmod()   # automatically validate the embedded tests
 </code></pre>
-<p>The "unittest" module is not as effortless as the "doctest" module, but it allows a more comprehensive set of tests to be maintained in a separate file:</p>
+<p>The <code>unittest</code> module is not as effortless as the <code>doctest</code> module, but it allows a more comprehensive set of tests to be maintained in a separate file:</p>
 <pre class="prettyprint"><code>import unittest
 
 class TestStatisticalFunctions(unittest.TestCase):
@@ -176,11 +176,11 @@ class TestStatisticalFunctions(unittest.TestCase):
 unittest.main()  # Calling from the command line invokes all tests
 </code></pre>
 <h2 id="10_12_">10.12. Batteries Included</h2>
-<p>Python has a "batteries included" philosophy. This is best seen through the sophisticated and robust capabilities of its larger packages. For example:</p>
+<p>Python has a <code>batteries included</code> philosophy. This is best seen through the sophisticated and robust capabilities of its larger packages. For example:</p>
 <ul>
-<li><p>The "xmlrpc.client" and "xmlrpc.server" modules make implementing remote procedure calls into an almost trivial task. Despite the modules names, no direct knowledge or handling of XML is needed.</p></li>
-<li><p>The "email" package is a library for managing email messages, including MIME and other <strong>RFC 2822</strong>-based message documents. Unlike "smtplib" and "poplib" which actually send and receive messages, the email package has a complete toolset for building or decoding complex message structures (including attachments) and for implementing internet encoding and header protocols.</p></li>
-<li><p>The "json" package provides robust support for parsing this popular data interchange format. The "csv" module supports direct reading and writing of files in Comma-Separated Value format, commonly supported by databases and spreadsheets. XML processing is supported by the "xml.etree.ElementTree", "xml.dom" and "xml.sax" packages. Together, these modules and packages greatly simplify data interchange between Python applications and other tools.</p></li>
-<li><p>The "sqlite3" module is a wrapper for the SQLite database library, providing a persistent database that can be updated and accessed using slightly nonstandard SQL syntax.</p></li>
-<li><p>Internationalization is supported by a number of modules including "gettext", "locale", and the "codecs" package.</p></li>
+<li><p>The <code>xmlrpc.client</code> and <code>xmlrpc.server</code> modules make implementing remote procedure calls into an almost trivial task. Despite the modules names, no direct knowledge or handling of XML is needed.</p></li>
+<li><p>The <code>email</code> package is a library for managing email messages, including MIME and other <strong>RFC 2822</strong>-based message documents. Unlike <code>smtplib</code> and <code>poplib</code> which actually send and receive messages, the email package has a complete toolset for building or decoding complex message structures (including attachments) and for implementing internet encoding and header protocols.</p></li>
+<li><p>The <code>json</code> package provides robust support for parsing this popular data interchange format. The <code>csv</code> module supports direct reading and writing of files in Comma-Separated Value format, commonly supported by databases and spreadsheets. XML processing is supported by the <code>xml.etree.ElementTree</code>, <code>xml.dom</code> and <code>xml.sax</code> packages. Together, these modules and packages greatly simplify data interchange between Python applications and other tools.</p></li>
+<li><p>The <code>sqlite3</code> module is a wrapper for the SQLite database library, providing a persistent database that can be updated and accessed using slightly nonstandard SQL syntax.</p></li>
+<li><p>Internationalization is supported by a number of modules including <code>gettext</code>, <code>locale</code>, and the <code>codecs</code> package.</p></li>
 </ul>

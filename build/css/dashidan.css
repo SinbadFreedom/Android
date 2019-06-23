@@ -27,7 +27,7 @@ body {
     font-family: "Helvetica", sans-serif;
     font-weight: 300;
     letter-spacing: .56px;
-    font-size: 16px;
+    /*font-size: 16px;*/
     line-height: 26px;
     color: #212121;
 }
