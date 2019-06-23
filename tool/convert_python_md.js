@@ -11,11 +11,6 @@ for (let i = 3; i < process.argv.length; i++) {
     lan_arr.push(process.argv[i]);
 }
 
-/** catalog 文件名*/
-const catalogName = "catalog.txt";
-/** 版本号 更新内容*/
-const versionName = "version.json";
-
 /** 全部md文件名*/
 let allFileName = [];
 
@@ -56,7 +51,7 @@ function isFileStartWithNumber(fileName) {
  * 读取目录中的MD文件
  * @param folderName
  */
-function convertAllFile(htmlOutBaseFolder, article_folder) {
+function convertAllFile(htmlOutBaseFolder, article_folder, handlebars_template_file_name, language) {
     /** 检测输出目录，不存在则创建*/
     let exist = fs.existsSync(htmlOutBaseFolder);
     if (!exist) {
@@ -64,12 +59,6 @@ function convertAllFile(htmlOutBaseFolder, article_folder) {
         makeDir(htmlOutBaseFolder);
     }
 
-    /** 转化md文件*/
-    for (let index in allFileName) {
-        let mdFileNameWithFolder = article_folder + "/" + allFileName[index];
-        let outHtmlFileName = htmlOutBaseFolder + "/" + allFileName[index].replace('.md', '.html');
-        convertSingleFile(allFileName[index], mdFileNameWithFolder, outHtmlFileName);
-    }
 }
 
 /** 创建多级目录*/
@@ -161,7 +150,7 @@ showdown.extension('custom-header-id-for-title-2', function () {
 showdown.extension('custom-header-id', function () {
     // var rgx = /^(#{1,6})[ \t]*(.+?) *\{: *#([\S]+?)\}[ \t]*#*$/gmi;
     /** 匹配标题*/
-    let rgx = /^(#{1,6})[ \t]*(.+?) *[ \t]*#*$/gmi;
+    var rgx = /^(#{1,6})[ \t]*(.+?) *[ \t]*#*$/gmi;
 
     return [{
         type: 'listener',
@@ -198,29 +187,6 @@ showdown.extension('custom-header-id', function () {
     }];
 });
 
-/**
- * Mardown文件转化为html文件
- * @param mdFile
- * @param outHtmlFile
- */
-function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile) {
-    let mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
-    /**
-     * 加入自定义插件 改变生成标题id的规则，
-     * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
-     */
-    let converter = new showdown.Converter(
-        {extensions: ['custom-header-id', 'custom-header-id-for-title-1', 'custom-header-id-for-title-2']});
-
-    let htmlData = converter.makeHtml(mdData);
-    /** <code> 标签加上 google-code-pretty class, 使用正则表达式全部替换，不用正则的话，只替一个 */
-    htmlData = htmlData.replace(/<pre>/g, '<pre class="prettyprint">');
-    /** 全角转化为半角*/
-    htmlData = fullAngleToHalfAngle(htmlData);
-    /** 写入文件*/
-    fs.writeFileSync(outHtmlFile, htmlData);
-    console.log("convertFile OK.");
-}
 
 /** 全角转化为半角*/
 function fullAngleToHalfAngle(str) {
@@ -269,167 +235,18 @@ function fullAngleToHalfAngle(str) {
     return s;
 }
 
-function copyFileByName(article_folder, fileName, htmlOutBaseFolder) {
-    /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    console.log("copyFileByName " + fileName);
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    let catalogMdName = article_folder + "/" + fileName;
-    let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
-    /** 全角转化为半角*/
-    let finalCatalogData = fullAngleToHalfAngle(catalogData);
-    /** 写入文件*/
-    fs.writeFileSync(htmlOutBaseFolder + "/" + fileName, finalCatalogData);
-}
-
-function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
-    /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    console.log("convertCatalog " + catalogName);
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    let catalogMdName = article_folder + "/" + catalogName;
-    let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
-    /** 全角转化为半角*/
-    let finalCatalogData = fullAngleToHalfAngle(catalogData);
-    /** 写入文件*/
-    fs.writeFileSync(catalogMdName, finalCatalogData);
-
-    let lines = finalCatalogData.split('\r\n');
-
-    let chapter_arr = [];
-
-    for (let i = 0; i < lines.length; i++) {
-        let line = lines[i].trim();
-        console.log('line ：' + line);
-        let anchor = line.split(' ')[0];
-        let id = line.split('.')[0];
-        /** 将id中的. 替换为_, jquery的选择器与.有冲突*/
-        anchor = anchor.replace(/\./g, '_');
-
-        let chapter_obj = {};
-        chapter_obj.id = parseInt(id);
-        chapter_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor;
-        chapter_obj.anchor = anchor;
-        chapter_obj.title = line;
-
-        if (i + 1 < lines.length) {
-            let temp_line_1 = lines[i + 1].trim();
-            let temp_anchor_sub_1 = temp_line_1.split(' ')[0];
-            temp_anchor_sub_1 = temp_anchor_sub_1.replace(/\./g, '_');
-
-            if (temp_anchor_sub_1.startsWith(anchor)) {
-                /** 下一个主标题*/
-
-                /** 标题索引自增*/
-                i++;
-                /** 一级子标题*/
-                chapter_obj.sub_1 = [];
-
-                for (; i < lines.length; i++) {
-                    let line_sub_1 = lines[i].trim();
-                    let anchor_sub_1 = line_sub_1.split(' ')[0];
-                    anchor_sub_1 = anchor_sub_1.replace(/\./g, '_');
-
-                    if (!anchor_sub_1.startsWith(anchor)) {
-                        /** 下一个主标题*/
-                        i--;
-                        break;
-                    }
-
-                    console.log(' line_sub_1 ：' + line_sub_1);
-
-                    let sub_1_obj = {};
-                    sub_1_obj.anchor = anchor_sub_1;
-                    sub_1_obj.title = line_sub_1;
-                    sub_1_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor_sub_1;
-
-                    chapter_obj.sub_1.push(sub_1_obj);
-
-                    if (i + 1 < lines.length) {
-                        let temp_line_2 = lines[i + 1].trim();
-                        let temp_anchor_2 = temp_line_2.split(' ')[0];
-                        temp_anchor_2 = temp_anchor_2.replace(/\./g, '_');
-
-                        if (temp_anchor_2.startsWith(anchor_sub_1)) {
-                            /** 标题索引自增*/
-                            i++;
-                            /** 二级子标题*/
-                            for (; i < lines.length; i++) {
-                                let line_sub_2 = lines[i].trim();
-
-                                let anchor_sub_2 = line_sub_2.split(' ')[0];
-                                anchor_sub_2 = anchor_sub_2.replace(/\./g, '_');
-
-                                if (!anchor_sub_2.startsWith(anchor_sub_1)) {
-                                    /** 下一个一级标题，或者下一个主题*/
-                                    i--;
-                                    break;
-                                }
-
-                                console.log('   line_sub_2 ：' + line_sub_2);
-
-                                let sub_2_obj = {};
-                                sub_2_obj.anchor = anchor_sub_2;
-                                sub_2_obj.title = line_sub_2;
-                                sub_2_obj.url = '/index.html?nav=doc&tag=' + article_type + '&language=' + language + '&contentid=' + id + "&anchor=" + anchor_sub_2;
-
-                                if (!sub_1_obj.sub_2) {
-                                    sub_1_obj.sub_2 = [];
-                                }
-
-                                sub_1_obj.sub_2.push(sub_2_obj);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        chapter_arr.push(chapter_obj);
-    }
-
-    /** 转化目录html，android首屏用*/
-    let outHtmlFileName = htmlOutBaseFolder + "/" + catalogName.replace('.txt', '.json');
-    /** 写入文件*/
-    let final_data = {};
-    final_data.catalog = chapter_arr;
-    fs.writeFileSync(outHtmlFileName, JSON.stringify(final_data));
-}
-
-/** 组合js文件*/
-function combineAllJsFile() {
-    let js_folder = '../src/js/';
-    let files = fs.readdirSync(js_folder);
-    /** 清空all.js*/
-    fs.writeFileSync('../build/js/all.js', '');
-    /** 组合js*/
-    files.forEach(function (file) {
-        if (file.endsWith('.js')) {
-            /** 只获取已经添加数字的文件,这个数字是从1开始的*/
-            console.log(" sub_file: " + file);
-            let jsData = fs.readFileSync(js_folder + file, 'utf-8');
-            fs.writeFileSync('../build/js/all.js', jsData, {encoding: 'utf8', flag: 'a'});
-        }
-    });
-}
-
 /** 加入支持同时转化多个语言版本*/
 for (let i = 0; i < lan_arr.length; i++) {
     const language = lan_arr[i];
 
     const article_folder = "../src/md/" + article_type + '/' + language;
+    /** handlebars 模板文件*/
+    let template_file_name_doc = "../src/md/" + article_type + "/template_doc.handlebars";
     /** pc默认格式文件目录*/
     let htmlOutBaseFolder = "../build/doc/" + article_type + '/' + language;
 
     /** 获取所有目录下所有数字开头的md文件*/
     getAllMdFileName(article_folder);
     /** 转化全部文件*/
-    convertAllFile(htmlOutBaseFolder, article_folder);
-    /** 版本配置文件*/
-    copyFileByName(article_folder, versionName, htmlOutBaseFolder);
-
-    convertCatalogMd(article_folder, htmlOutBaseFolder, language);
+    convertAllFile(htmlOutBaseFolder, article_folder, template_file_name_doc, language);
 }
-
-/** 组合js文件*/
-combineAllJsFile();
