@@ -1,0 +1,22 @@
+百度，谷歌翻译迥异部分：
+
+2.md
+
+The interpreter's line-editing features include interactive editing, history substitution and code completion on systems that support readline.
+
+google:
+解释器的行编辑功能包括支持readline的系统上的交互式编辑，历史替换和代码完成。
+baidu:
+解释器的行编辑功能包括交互式编辑、历史替换和支持readline的系统上的代码完成。
+
+结合上下文的意思,google翻译胜出。
+
+
+4.md
+No argument may receive a value more than once.
+google:
+没有参数可能会多次收到一个值。
+baidu:
+参数最多只能接收一次值。
+
+结合上下文的意思,baidu翻译胜出。
