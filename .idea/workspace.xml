@@ -3,29 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/10.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/11.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/12.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/13.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/14.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/15.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/16.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/3.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/4.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/5.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/6.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/7.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/8.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/9.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/3.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/4.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/4.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/convert.js" beforeDir="false" afterPath="$PROJECT_DIR$/tool/convert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/convert_python_md.js" beforeDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -57,25 +36,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="726">
-                <caret line="512" column="4" selection-start-line="512" selection-start-column="4" selection-end-line="512" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/1.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="189">
-                <caret line="9" column="359" selection-start-line="9" selection-start-column="355" selection-end-line="9" selection-end-column="359" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/tool/convert.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="202" column="36" lean-forward="true" selection-start-line="202" selection-start-column="36" selection-end-line="202" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -83,9 +47,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/2.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="399">
-                <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="143" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="1134">
+                <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
               </first_editor>
               <second_editor />
             </state>
@@ -128,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
+            <state relative-caret-position="1512">
               <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
             </state>
           </provider>
@@ -179,7 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.</find>
       <find>\n</find>
       <find>===========</find>
       <find>template_doc</find>
@@ -209,6 +172,7 @@
       <find>Tuples</find>
       <find>Sequence</find>
       <find>Annotations</find>
+      <find>fullAngleToHalfAngle</find>
     </findStrings>
     <replaceStrings>
       <replace>$language</replace>
@@ -301,7 +265,6 @@
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/16.md" />
         <option value="$PROJECT_DIR$/build/css/dashidan.css" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md" />
-        <option value="$PROJECT_DIR$/tool/convert.js" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/3.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" />
@@ -310,6 +273,7 @@
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/google vs baidu in translate" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" />
+        <option value="$PROJECT_DIR$/tool/convert.js" />
       </list>
     </option>
   </component>
@@ -374,25 +338,7 @@
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7.4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7.4" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7.4" type="462c0819:PsiDirectoryNode" />
-              <item name="zh_cn" type="462c0819:PsiDirectoryNode" />
+              <item name="tool" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -951,21 +897,20 @@
       <workItem from="1562732281397" duration="1793000" />
       <workItem from="1562734088469" duration="2178000" />
       <workItem from="1562742910118" duration="1795000" />
-      <workItem from="1562744730640" duration="809000" />
-    </task>
-    <task id="LOCAL-00378" summary="1. ask info and reply">
-      <created>1559976521429</created>
-      <option name="number" value="00378" />
-      <option name="presentableId" value="LOCAL-00378" />
-      <option name="project" value="LOCAL" />
-      <updated>1559976521429</updated>
-    </task>
-    <task id="LOCAL-00379" summary="1. ask info and reply">
-      <created>1559978641244</created>
-      <option name="number" value="00379" />
-      <option name="presentableId" value="LOCAL-00379" />
-      <option name="project" value="LOCAL" />
-      <updated>1559978641245</updated>
+      <workItem from="1562744730640" duration="1859000" />
+      <workItem from="1562746609846" duration="599000" />
+      <workItem from="1562900180600" duration="598000" />
+      <workItem from="1563156734688" duration="1197000" />
+      <workItem from="1563170720448" duration="1285000" />
+      <workItem from="1563172530908" duration="598000" />
+      <workItem from="1563174428115" duration="599000" />
+      <workItem from="1563177717760" duration="599000" />
+      <workItem from="1563237635134" duration="592000" />
+      <workItem from="1563240206788" duration="599000" />
+      <workItem from="1563242019955" duration="599000" />
+      <workItem from="1563244371685" duration="1201000" />
+      <workItem from="1563246427620" duration="599000" />
+      <workItem from="1563255873695" duration="1736000" />
     </task>
     <task id="LOCAL-00380" summary="1. update reply count">
       <created>1559981182191</created>
@@ -1296,11 +1241,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562719682951</updated>
     </task>
-    <option name="localTasksCounter" value="427" />
+    <task id="LOCAL-00427" summary="1. translate 4.md">
+      <created>1562745575334</created>
+      <option name="number" value="00427" />
+      <option name="presentableId" value="LOCAL-00427" />
+      <option name="project" value="LOCAL" />
+      <updated>1562745575334</updated>
+    </task>
+    <task id="LOCAL-00428" summary="1. translate 4.md">
+      <created>1562745593355</created>
+      <option name="number" value="00428" />
+      <option name="presentableId" value="LOCAL-00428" />
+      <option name="project" value="LOCAL" />
+      <updated>1562745593355</updated>
+    </task>
+    <option name="localTasksCounter" value="429" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="887772000" />
+    <option name="totallyTimeSpent" value="899623000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1315,7 +1274,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17235859" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1995731" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1342,7 +1301,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. rename index.php to index.html" />
     <MESSAGE value="1. change button state with login state" />
     <MESSAGE value="1. note reply" />
     <MESSAGE value="1. catalog, doc , stroll alone" />
@@ -1367,7 +1325,8 @@
     <MESSAGE value="1. add python 3.7.4 en" />
     <MESSAGE value="1. edit python 3.7.4 en &lt;code&gt;" />
     <MESSAGE value="1. translate 1,2,3.md catalog" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. translate 1,2,3.md catalog" />
+    <MESSAGE value="1. translate 4.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. translate 4.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1394,13 +1353,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/catalog.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17812" selection-start-column="17812" selection-end-column="17812" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/version.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1536,13 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tool/convert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/catalog.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1604,11 +1549,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="294">
+            <caret line="294" column="27" selection-start-line="294" selection-start-column="18" selection-end-line="294" selection-end-column="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="189">
-            <caret line="9" column="359" selection-start-line="9" selection-start-column="355" selection-end-line="9" selection-end-column="359" />
+          <first_editor relative-caret-position="105">
+            <caret line="5" column="99" selection-start-line="5" selection-start-column="99" selection-end-line="5" selection-end-column="99" />
           </first_editor>
           <second_editor />
         </state>
@@ -1616,9 +1571,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/2.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="399">
-            <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="143" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1134">
+            <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
           </first_editor>
           <second_editor />
         </state>
@@ -1651,6 +1606,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1678,20 +1640,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
+    <entry file="file://$PROJECT_DIR$/tool/convert_python_md.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+        <state relative-caret-position="2436">
+          <caret line="191" column="29" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="726">
-            <caret line="512" column="4" selection-start-line="512" selection-start-column="4" selection-end-line="512" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/tool/convert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="202" column="36" lean-forward="true" selection-start-line="202" selection-start-column="36" selection-end-line="202" selection-end-column="36" />
         </state>
       </provider>
     </entry>
