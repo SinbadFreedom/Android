@@ -328,13 +328,6 @@ function searchSuccess(res) {
 
     $('#doc_search_res').html(res_str);
     $('#doc_search_res').css('display', 'block');
-
-    //TODO  显示结果区，
-    //TODO  增加结果点击事件
-    //TODO 增加失去焦点隐藏结果区
-    // $('#doc_search_res')
-
-
 }
 
 /** 检索框输入事件*/
