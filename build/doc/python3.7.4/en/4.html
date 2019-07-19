@@ -1,6 +1,6 @@
 <h1 id="4_">4. More Control Flow Tools</h1>
 <p>Besides the <code>while</code> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
-<h2 id="4_1_">4.1. <code>if</code> Statements</h2>
+<h2 id="4_1_">4.1. <code>if</code>语句</h2>
 <p>Perhaps the most well-known statement type is the <code>if</code> statement. For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; x = int(input("Please enter an integer: "))
 Please enter an integer: 42
@@ -17,7 +17,7 @@ Please enter an integer: 42
 More
 </code></pre>
 <p>There can be zero or more <code>elif</code> parts, and the <code>else</code> part is optional. The keyword '<code>elif</code>' is short for 'else if', and is useful to avoid excessive indentation. An  <code>if</code> … <code>elif</code> … <code>elif</code> … sequence is a substitute for the <code>switch</code> or <code>case</code> statements found in other languages.</p>
-<h2 id="4_2_">4.2. <code>for</code> Statements</h2>
+<h2 id="4_2_">4.2. <code>for</code>语句</h2>
 <p>The <code>for</code> statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as <code>C</code>), Python's <code>for</code> statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; # Measure some strings:
 ... words = ['cat', 'window', 'defenestrate']
@@ -37,7 +37,7 @@ defenestrate 12
 ['defenestrate', 'cat', 'window', 'defenestrate']
 </code></pre>
 <p>With <code>for w in words:</code>, the example would attempt to create an infinite list, inserting <code>defenestrate</code> over and over again.</p>
-<h2 id="4_3_">4.3. The <code>range()</code> Function</h2>
+<h2 id="4_3_">4.3. <code>range()</code>函数</h2>
 <p>If you do need to iterate over a sequence of numbers, the built-in function <code>range()</code> comes in handy. It generates arithmetic progressions:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for i in range(5):
 ...     print(i)
@@ -80,7 +80,7 @@ range(0, 10)
 [0, 1, 2, 3, 4]
 </code></pre>
 <p>Later we will see more functions that return iterables and take iterables as argument.</p>
-<h2 id="4_4_">4.4. <code>break</code> and <code>continue</code> Statements, and <code>else</code> Clauses on Loops</h2>
+<h2 id="4_4_">4.4. <code>break</code>和<code>continue</code>语句, 及循环中的<code>else</code>分句</h2>
 <p>The <code>break</code> statement, like in C, breaks out of the innermost enclosing <code>for</code> or <code>while</code> loop.</p>
 <p>Loop statements may have an <code>else</code> clause; it is executed when the loop terminates through exhaustion of the list (with <code>for</code>) or when the condition becomes false (with <code>while</code>), but not when the loop is terminated by a <code>break</code> statement. This is exemplified by the following loop, which searches for prime numbers:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for n in range(2, 10):
@@ -118,7 +118,7 @@ Found a number 7
 Found an even number 8
 Found a number 9
 </code></pre>
-<h2 id="4_5_">4.5. <code>pass</code> Statements</h2>
+<h2 id="4_5_">4.5. <code>pass</code>语句</h2>
 <p>The <code>pass</code> statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; while True:
 ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
@@ -134,7 +134,7 @@ Found a number 9
 ...     pass   # Remember to implement this!
 ...
 </code></pre>
-<h2 id="4_6_">4.6. Defining Functions</h2>
+<h2 id="4_6_">4.6. 定义函数</h2>
 <p>We can create a function that writes the Fibonacci series to an arbitrary boundary:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def fib(n):    # write Fibonacci series up to n
 ...     """Print a Fibonacci series up to n."""
@@ -183,9 +183,9 @@ None
 <li><p>The <code>return</code> statement returns with a value from a function. <code>return</code> without an expression argument returns <code>None</code>. Falling off the end of a function also returns <code>None</code>.</p></li>
 <li><p>The statement <code>result.append(a)</code> calls a <em>method</em> of the list object <code>result</code>. A method is a function that 'belongs' to an object and is named <code>obj.methodname</code>, where <code>obj</code> is some object (this may be an expression), and <code>methodname</code> is the name of a method that is defined by the object's type. Different types define different methods. Methods of different types may have the same name without causing ambiguity. (It is possible to define your own object types and methods, using <em>classes</em>, see Classes) The method <code>append()</code> shown in the example is defined for list objects; it adds a new element at the end of the list. In this example it is equivalent to <code>result = result + [a]</code>, but more efficient.</p></li>
 </ul>
-<h2 id="4_7_">4.7. More on Defining Functions</h2>
+<h2 id="4_7_">4.7. 关于定义函数的补充</h2>
 <p>It is also possible to define functions with a variable number of arguments. There are three forms, which can be combined.</p>
-<h3 id="4_7_1_">4.7.1. Default Argument Values</h3>
+<h3 id="4_7_1_">4.7.1. 默认参数值</h3>
 <p>The most useful form is to specify a default value for one or more arguments. This creates a function that can be called with fewer arguments than it is defined to allow. For example:</p>
 <pre class="prettyprint"><code>def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
@@ -237,7 +237,7 @@ print(f(3))
     L.append(a)
     return L
 </code></pre>
-<h3 id="4_7_2_">4.7.2. Keyword Arguments</h3>
+<h3 id="4_7_2_">4.7.2. 关键字参数</h3>
 <p>Functions can also be called using <em>keyword arguments</em> of the form <code>kwarg=value</code>. For instance, the following function:</p>
 <pre class="prettyprint"><code>def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
     print("-- This parrot wouldn't", action, end=' ')
@@ -328,7 +328,7 @@ sketch : Cheese Shop Sketch
 &gt;&gt;&gt; parrot(**d)
 -- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
 </code></pre>
-<h3 id="4_7_5_">4.7.5. Lambda Expressions</h3>
+<h3 id="4_7_5_">4.7.5. Lambda表达式</h3>
 <p>Small anonymous functions can be created with the <code>lambda</code> keyword. This function returns the sum of its two arguments: <code>lambda a, b: a+b</code>. Lambda functions can be used wherever function objects are required. They are syntactically restricted to a single expression. Semantically, they are just syntactic sugar for a normal function definition. Like nested function definitions, lambda functions can reference variables from the containing scope:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def make_incrementor(n):
 ...     return lambda x: x + n
@@ -345,7 +345,7 @@ sketch : Cheese Shop Sketch
 &gt;&gt;&gt; pairs
 [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 </code></pre>
-<h3 id="4_7_6_">4.7.6. Documentation Strings</h3>
+<h3 id="4_7_6_">4.7.6. 文档字符串</h3>
 <p>Here are some conventions about the content and formatting of documentation strings.</p>
 <p>The first line should always be a short, concise summary of the object's purpose. For brevity, it should not explicitly state the object's name or type, since these are available by other means (except if the name happens to be a verb describing a function's operation). This line should begin with a capital letter and end with a period.</p>
 <p>If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description. The following lines should be one or more paragraphs describing the object's calling conventions, its side effects, etc.</p>
@@ -363,7 +363,7 @@ Do nothing, but document it.
 
     No, really, it doesn't do anything.
 </code></pre>
-<h3 id="4_7_7_">4.7.7. Function Annotations</h3>
+<h3 id="4_7_7_">4.7.7. 函数注解</h3>
 <p>Function annotations are completely optional metadata information about the types used by user-defined functions (see <strong>PEP 3107</strong> and <strong>PEP 484</strong> for more information).</p>
 <p><em>Annotations</em> are stored in the <code>__annotations__</code> attribute of the function as a dictionary and have no effect on any other part of the function. Parameter annotations are defined by a colon after the parameter name, followed by an expression evaluating to the value of the annotation. Return annotations are defined by a literal <code>-&gt;</code>, followed by an expression, between the parameter list and the colon denoting the end of the <code>def</code> statement. The following example has a positional argument, a keyword argument, and the return value annotated:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def f(ham: str, eggs: str = 'eggs') -&gt; str:
@@ -376,7 +376,7 @@ Annotations: {'ham': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;, 'eggs':
 Arguments: spam eggs
 'spam and eggs'
 </code></pre>
-<h2 id="4_8_">4.8. Intermezzo: Coding Style</h2>
+<h2 id="4_8_">4.8. Intermezzo:编码样式</h2>
 <p>Now that you are about to write longer, more complex pieces of Python, it is a good time to talk about <em>coding style</em>. Most languages can be written (or more concise, <em>formatted</em>) in different styles; some are more readable than others. Making it easy for others to read your code is always a good idea, and adopting a nice coding style helps tremendously for that.</p>
 <p>For Python, <strong>PEP 8</strong> has emerged as the style guide that most projects adhere to; it promotes a very readable and eye-pleasing coding style. Every Python developer should read it at some point; here are the most important points extracted for you:</p>
 <ul>

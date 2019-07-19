@@ -1,0 +1,50 @@
+<h1 id="2_">2. 使用Python解释器</h1>
+<h2 id="2_1_">2.1. 调用解释器</h2>
+<p>Python解释器通常在那些可用的计算机上安装为<code>/usr/local/bin/python3.7</code>(译者注:这个路径不是windows路径,可理解为linux系统); 将<code>/usr/local/bin</code>放在你的Unix shell的搜索路径中,可以通过输入命令来启动它:</p>
+<pre class="prettyprint"><code>python3.7
+</code></pre>
+<p>在shell命令行中. [1] 由于解释器所在目录的选择是一个安装选项,所以可以选择其他位置;请咨询您当地的Python大师或系统管理员.(例如,<code>/usr/local/python</code>是一个受欢迎的替代位置.)</p>
+<p>在Windows计算机中,Python通常安装在<code>c:\python37</code>中,但在运行安装程序时可以更改此设置.要将此目录添加到path(译者注:这里指环境变量的path变量)中,可以在命令提示窗口中键入以下命令: </p>
+<pre class="prettyprint"><code>set path=%path%;C:\python37
+</code></pre>
+<p>在主要提示符下键入文件结束字符 (Unix系统<code>Control-D</code>, Window系统<code>Control-Z</code>) 会导致解释器以零状态(译者注:默认状态)退出.如果这不起作用,您可以通过键入以下命令退出解释器:<code>quit()</code>.</p>
+<p>解释器的行编辑功能包括支持readline的系统上的交互式编辑,历史替换和代码完成.也许检查是否支持命令行编辑最快的方式是在第一个Python提示符下输入<code>Control-P</code>.如果发出嘟嘟声,您可以进行命令行编辑;有关按键的介绍,请参阅附录交互式输入编辑和历史替换.如果没有发生任何事情,或者如果回显<code>^P</code>,则命令行编辑不可用; 你只能使用退格键从当前行中删除字符.</p>
+<p>解释器的操作有点像Unix shell:当使用连接到tty设备的标准输入调用时,它以交互方式读取和执行命令; 当使用文件名参数或文件作为标准输入调用时,它从该文件读取并执行<em>脚本</em>.</p>
+<p>启动解释器的第二种方法是<code>python -c command [arg] ...</code>,它执行<em>command</em>中的语句,类似于shell的<code>-c</code>选项.由于Python语句通常包含空格或shell特有的其他字符,因此通常建议使用单引号引用<em>command</em>.</p>
+<p>一些Python模块也可用作脚本. 这些可以使用<code>python -m module [arg] ...</code>来调用,它执行<em>module</em>的源文件,就像你在命令行中拼写出它的全名一样.</p>
+<p>使用脚本文件时,运行脚本之后进入交互模式有时很有用. 这可以通过在脚本之前传递<code>-i</code>来完成.</p>
+<p>命令行和环境中描述了所有命令行选项. </p>
+<h3 id="2_1_1_">2.1.1. 参数传递</h3>
+<p>当参数传递给解释器时,脚本名称和其后的附加参数将变为字符串列表并分配给<code>sys</code>模块中的<code>argv</code>变量.您可以通过执行<code>import sys</code>来访问此列表.列表的长度至少为一; 当没有给出脚本和参数时,<code>sys.argv [0]</code>是一个空字符串.当脚本名称为<code>'-'</code>(表示标准输入)时,<code>sys.argv [0]</code>设置为<code>'-'</code>.当使用<code>-c</code> <em>命令</em>时,<code>sys.argv [0]</code>设置为<code>-c</code>.当使用<code>-m</code> <em>模块</em>时,<code>sys.argv [0]</code>被设置为所定位模块的全名.在<code>-c</code> <em>命令</em>或<code>-m</code> <em>模块</em>之后找到的选项不会被Python解释器的选项处理所消耗,而是留在<code>sys.argv</code>中供命令或模块处理.</p>
+<h3 id="2_1_2_">2.1.2. 交互模式</h3>
+<p>当从tty读取命令时,解释器被称为处于<em>交互模式</em>.在这种模式下,它会提示下一个带有<em>主提示</em>的命令,通常是三个大于号(<code>&gt;&gt;&gt;</code>);对于延续线,它会提示<em>辅助提示</em>,默认为三个点(<code>...</code>).解释程序会在打印第一个提示之前打印一条欢迎消息,说明其版本号和版权声明:</p>
+<pre class="prettyprint"><code>$ python3.7
+Python 3.7 (default, Sep 16 2015, 09:25:04)
+[GCC 4.8.2] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+</code></pre>
+<p>进入多线构造时需要延续线. 举个例子,看看这个<code>if</code>语句:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; the_world_is_flat = True
+&gt;&gt;&gt; if the_world_is_flat:
+...     print("Be careful not to fall off!")
+...
+Be careful not to fall off!
+</code></pre>
+<p>有关交互模式的更多信息,请参阅交互模式.</p>
+<h2 id="2_2_">2.2. 解释器及其环境</h2>
+<h3 id="2_2_1_">2.2.1. 源码编码</h3>
+<p>默认情况下,Python源文件被视为以UTF-8编码.在该编码中,世界上大多数语言的字符可以同时用于字符串文字,标识符和注释中 - 尽管标准库仅使用ASCII字符作为标识符,这是任何可移植代码都应遵循的约定.要正确显示所有这些字符,编辑器必须识别该文件是UTF-8,并且必须使用支持文件中所有字符的字体.</p>
+<p>要声明非默认编码,应在文件的<em>首</em>行添加一个特殊注释行. 语法如下:</p>
+<pre class="prettyprint"><code># -*- coding: encoding -*-
+</code></pre>
+<p>其中<em>encoding</em>是Python支持的有效"编解码器"之一.</p>
+<p>例如,要声明要使用Windows-1252编码,源代码文件的第一行应为:</p>
+<pre class="prettyprint"><code># -*- coding: cp1252 -*-
+</code></pre>
+<p><em>首行</em>规则的一个例外是当源代码以UNIX"shebang"(译者注:这里指<code>#!</code>符号)行开头时. 在这种情况下,应将编码声明添加为文件的第二行. 例如:</p>
+<pre class="prettyprint"><code>#!/usr/bin/env python3
+# -*- coding: cp1252 -*-
+</code></pre>
+<p>-[脚注]-</p>
+<p>[1] 在Unix上,Python 3.x解释器默认情况下不安装名为"python"的可执行文件,因此它不会与同时安装的Python 2.x可执行文件冲突.</p>

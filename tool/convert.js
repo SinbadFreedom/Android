@@ -181,7 +181,13 @@ showdown.extension('custom-header-id-for-title-sub-2', function () {
  * @param outHtmlFile
  */
 function convertSingleFile(fileName, mdFileNameWithFolder, outHtmlFile) {
-    let mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
+    let mdData;
+    try {
+        mdData = fs.readFileSync(mdFileNameWithFolder, 'utf-8');
+    } catch (e) {
+        console.error('error. convertSingleFile mdFileNameWithFolder ' + mdFileNameWithFolder);
+        return;
+    }
     /**
      * 加入自定义插件 改变生成标题id的规则，
      * 一级标题 ===， 二级标题 ---， 其他标题(#,##...######), 三种情况区分，用3个插件分别对应
@@ -374,6 +380,27 @@ function convertCatalogMd(article_folder, htmlOutBaseFolder, language) {
     fs.writeFileSync(outHtmlFileName, JSON.stringify(final_data));
 }
 
+function convertCatalogSearch(article_folder, article_type, language) {
+    /** 直接复制txt文件,转化全/半角,android客户端 目录区 用*/
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    console.log("convertCatalog " + catalogName);
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    let catalogMdName = article_folder + "/" + catalogName;
+    let catalogData = fs.readFileSync(catalogMdName, 'utf-8');
+    /** 全部转小写*/
+    catalogData = catalogData.toLowerCase();
+    /** 全角转化为半角*/
+    let finalCatalogData = fullAngleToHalfAngle(catalogData);
+    /** 写入文件*/
+    fs.writeFileSync(catalogMdName, finalCatalogData);
+
+    let lines = finalCatalogData.split('\n');
+    let outFileName = "../build/php/search/" + article_type + '_' + language + '.json';
+    /** 写入文件*/
+    fs.writeFileSync(outFileName, JSON.stringify(lines));
+}
+
+
 /** 组合js文件*/
 function combineAllJsFile() {
     let js_folder = '../src/js/';
@@ -403,10 +430,12 @@ for (let i = 0; i < lan_arr.length; i++) {
     getAllMdFileName(article_folder);
     /** 转化全部文件*/
     convertAllFile(htmlOutBaseFolder, article_folder);
-    /** 版本配置文件*/
-    copyFileByName(article_folder, versionName, htmlOutBaseFolder);
+    // /** 版本配置文件*/
+    // copyFileByName(article_folder, versionName, htmlOutBaseFolder);
 
     convertCatalogMd(article_folder, htmlOutBaseFolder, language);
+
+    convertCatalogSearch(article_folder, article_type, language);
 }
 
 /** 组合js文件*/

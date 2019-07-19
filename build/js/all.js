@@ -299,9 +299,11 @@ function docSuccess(res) {
     $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
     $('#doc_catalog').off('click', 'button', docClickCatalogBtn);
+    $('#doc_search_res').off('click', 'span', docClickSearchResSpan);
     $('#doc_btn_catalog').off('click', docBtnCatalog);
     $('#doc_last').off('click', docBtnGoLast);
     $('#doc_next').off('click', docBtnGoNext);
+    $('#doc_search').off('input propertychange', docBtnSearchOnChange);
 
     /** 加入事件侦听*/
     $('#doc_lan').on('click', 'button', docClickBtnLan);
@@ -309,9 +311,11 @@ function docSuccess(res) {
     $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
     $('#doc_catalog').on('click', 'button', docClickCatalogBtn);
+    $('#doc_search_res').on('click', 'span', docClickSearchResSpan);
     $('#doc_btn_catalog').on('click', docBtnCatalog);
     $('#doc_last').on('click', docBtnGoLast);
     $('#doc_next').on('click', docBtnGoNext);
+    $('#doc_search').on('input propertychange', docBtnSearchOnChange);
 
     $('#doc_content_stroll_area').scroll(docStrollEvent);
 
@@ -585,6 +589,70 @@ function docBtnCatalog(e) {
     $('#doc_content_stroll_area').addClass('d-sm-none');
     $('#doc_catalog').removeClass('d-none');
     $('#doc_catalog').removeClass('d-sm-none');
+}
+
+/** 检索返回数据*/
+function searchSuccess(res) {
+    console.log('searchSuccess ' + res);
+    let res_obj = JSON.parse(res);
+
+    let res_str = '';
+    res_obj.data.forEach(function (element) {
+        console.log('element ' + element);
+        let str = '<span class="list-group-item">' + element + '</span>';
+        res_str += str;
+    });
+
+    $('#doc_search_res').html(res_str);
+    $('#doc_search_res').css('display', 'block');
+
+    //TODO  显示结果区，
+    //TODO  增加结果点击事件
+    //TODO 增加失去焦点隐藏结果区
+    // $('#doc_search_res')
+
+
+}
+
+/** 检索框输入事件*/
+function docBtnSearchOnChange(e) {
+    let val = $(e.target).val();
+    if (val.length > 0) {
+        /** 转小写*/
+        val = val.toLowerCase();
+        /** 移除两端空格*/
+        val.trim();
+        console.log('docBtnSearchOnChange val ' + val);
+        /** 检索输入信息*/
+        let type = global_tag + '_' + global_lan;
+        let url = '/php/search/search.php?type=' + type + '&keys=' + val;
+        ajax_get(url, searchSuccess);
+    } else {
+        /** 清空搜索框，隐藏内容*/
+        clearSearchInput();
+    }
+}
+
+/** 清空搜索框，隐藏内容*/
+function clearSearchInput() {
+    $('#doc_search_res').html('');
+    $('#doc_search').val('');
+    $('#doc_search').text('');
+}
+
+/** 点击搜索结果区*/
+function docClickSearchResSpan(e) {
+    e.preventDefault();
+    let text = $(e.target).text();
+    let title = text.split(' ')[0];
+    let doc_id = parseInt(text.split('.')[0]);
+    let doc_anchor = title.replace(/\./g, '_');
+    /** 清空搜索结果*/
+    clearSearchInput();
+    /** 跳转到指定文档*/
+    console.log('docClickSearchResSpan doc_id ' + doc_id + ' doc_anchor ' + doc_anchor);
+    updateDocAndNote(doc_id, doc_anchor);
+
 }
 
 /** 上一篇*/
