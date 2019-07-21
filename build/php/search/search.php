@@ -14,6 +14,12 @@ $max_result = 9;
 $type = $_GET['type'];
 $keys = $_GET['keys'];
 
+/** search log*/
+$time_stamp = time();
+$file = '/workplace/log/log_search_' . date('Y-m-d', $time_stamp) . '.log';
+$content = $type . ' ' . $keys . ' ' . $time_stamp. "\n";
+file_put_contents($file, $content, FILE_APPEND);
+
 $json_file_name = $type . '.json';
 
 $json_string = file_get_contents($json_file_name);
@@ -54,7 +60,7 @@ for ($i = 0; $i < $data_len; $i++) {
         /** 匹配全部key,放入查找结果array*/
         if (count($res_data) < $max_result) {
             array_push($res_data, $str);
-        } else{
+        } else {
             /** 超过上限停止搜索*/
             break;
         }
