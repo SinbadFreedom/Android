@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/all.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php/search/php_errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/search/php_errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/search/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/search/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -37,79 +38,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/doc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="330" column="1" selection-start-line="330" selection-start-column="1" selection-end-line="330" selection-end-column="1" />
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="306">
+                <caret line="499" column="14" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="14" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/php/search/search.php">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="294">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/7.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="56" column="59" lean-forward="true" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="4641">
+                <caret line="221" column="82" selection-start-line="221" selection-start-column="75" selection-end-line="221" selection-end-column="82" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1722">
+              <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/show_util_time.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/php_errors.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/php/app_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="252">
               <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/hbs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2457">
-              <caret line="117" selection-start-line="117" selection-end-line="117" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/build/php/mongo_login.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/php/figure_url.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -124,13 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>content_area</find>
-      <find>doc_btn_catalog</find>
-      <find>e.</find>
-      <find>docBtnSearchOnChange</find>
-      <find>ajax_get</find>
-      <find>search</find>
-      <find>for</find>
       <find>inhtm</find>
       <find>innerText</find>
       <find>inner</find>
@@ -154,6 +153,13 @@
       <find>doc_search</find>
       <find>TODO</find>
       <find>$time_stamp</find>
+      <find>dictionari</find>
+      <find>(x</find>
+      <find>list comp</find>
+      <find>listcomp</find>
+      <find>List Comprehensions</find>
+      <find>r row in mat</find>
+      <find>Sequences</find>
     </findStrings>
     <replaceStrings>
       <replace>$language</replace>
@@ -205,9 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/4.md" />
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/6.md" />
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/7.md" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/8.md" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/9.md" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/10.md" />
@@ -217,7 +220,6 @@
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/16.md" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/5.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/2.md" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/en/5.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/6.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/7.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/8.md" />
@@ -236,7 +238,6 @@
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/4.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/google vs baidu in translate" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" />
         <option value="$PROJECT_DIR$/build/doc/python3.7.4/en/catalog.json" />
         <option value="$PROJECT_DIR$/tool/covert_search.js" />
@@ -252,10 +253,15 @@
         <option value="$PROJECT_DIR$/build/ajax/doc.html" />
         <option value="$PROJECT_DIR$/build/hbs/search_res.hbs" />
         <option value="$PROJECT_DIR$/src/js/hbs.js" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" />
         <option value="$PROJECT_DIR$/src/js/doc.js" />
         <option value="$PROJECT_DIR$/build/php/forum/ask_list.php" />
         <option value="$PROJECT_DIR$/build/php/search/search.php" />
+        <option value="$PROJECT_DIR$/build/php/search/php_errors.log" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/en/5.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" />
       </list>
     </option>
   </component>
@@ -286,13 +292,6 @@
               <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
@@ -358,25 +357,25 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tool" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workplace\git\Android\tool" />
-      <recent name="D:\workplace\git\Android\src\md\python3.7.4\zh_cn" />
-      <recent name="D:\workplace\git\Android\src\md\python3.7.4\en" />
-      <recent name="D:\workplace\git\Android\src\md\python3.7.2" />
-      <recent name="D:\workplace\git\Android\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workplace\git\Android\origin" />
       <recent name="D:\workplace\git\Android\src\md\python3.7.2" />
       <recent name="D:\workplace\git\Android\src" />
       <recent name="D:\workplace\git\Android\build\php\forum" />
       <recent name="D:\workplace\git\Android\build\hbs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workplace\git\Android\src\md\python3.7.4\zh_cn" />
+      <recent name="D:\workplace\git\Android\tool" />
+      <recent name="D:\workplace\git\Android\src\md\python3.7.4\en" />
+      <recent name="D:\workplace\git\Android\src\md\python3.7.2" />
+      <recent name="D:\workplace\git\Android\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -959,14 +958,22 @@
       <workItem from="1563546299128" duration="375000" />
       <workItem from="1563671118357" duration="598000" />
       <workItem from="1563672890602" duration="599000" />
-      <workItem from="1563697131343" duration="822000" />
-    </task>
-    <task id="LOCAL-00383" summary="1. rename index.php to index.html">
-      <created>1560061010237</created>
-      <option name="number" value="00383" />
-      <option name="presentableId" value="LOCAL-00383" />
-      <option name="project" value="LOCAL" />
-      <updated>1560061010237</updated>
+      <workItem from="1563697131343" duration="1493000" />
+      <workItem from="1563756465619" duration="1167000" />
+      <workItem from="1563759986366" duration="1788000" />
+      <workItem from="1563761791245" duration="1793000" />
+      <workItem from="1563763608473" duration="1256000" />
+      <workItem from="1563776966397" duration="780000" />
+      <workItem from="1563778770428" duration="1198000" />
+      <workItem from="1563780576690" duration="599000" />
+      <workItem from="1563782383612" duration="599000" />
+      <workItem from="1563784204939" duration="966000" />
+      <workItem from="1563786012809" duration="599000" />
+      <workItem from="1564487650133" duration="1763000" />
+      <workItem from="1564489429670" duration="1792000" />
+      <workItem from="1564491235446" duration="1792000" />
+      <workItem from="1564493053305" duration="1793000" />
+      <workItem from="1564494858823" duration="275000" />
     </task>
     <task id="LOCAL-00384" summary="1. rename index.php to index.html">
       <created>1560061080398</created>
@@ -1304,11 +1311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563546400343</updated>
     </task>
-    <option name="localTasksCounter" value="432" />
+    <task id="LOCAL-00432" summary="1. add doc search log">
+      <created>1563698027123</created>
+      <option name="number" value="00432" />
+      <option name="presentableId" value="LOCAL-00432" />
+      <option name="project" value="LOCAL" />
+      <updated>1563698027123</updated>
+    </task>
+    <option name="localTasksCounter" value="433" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="946404000" />
+    <option name="totallyTimeSpent" value="965235000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1323,7 +1337,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29348987" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20384204" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1340,17 +1354,41 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="14" visible="true" weight="0.25490198" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
       <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20384204" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15141612" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16448802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31154683" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3278867" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="14" visible="true" weight="0.25490198" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. catalog, doc , stroll alone" />
     <MESSAGE value="1.  stroll anchor" />
     <MESSAGE value="1.  small screen porting" />
     <MESSAGE value="1.  small screen adapter" />
@@ -1375,7 +1413,8 @@
     <MESSAGE value="1. translate 4.md" />
     <MESSAGE value="1. remove convert_python_md.js" />
     <MESSAGE value="1. add doc search" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. add doc search" />
+    <MESSAGE value="1. add doc search log" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. add doc search log" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1402,127 +1441,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="651">
-            <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="357">
-            <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/5.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/catalog.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17812" selection-start-column="17812" selection-end-column="17812" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/search_catalog.json" />
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/search_catalog.json" />
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/catalog.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/catalog_search.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/catalog_search.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="20" selection-end-line="127" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/search.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143640">
-          <caret line="6840" column="4" selection-start-line="6840" selection-start-column="4" selection-end-line="6840" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/version.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/search/python_3.7.4_en.php" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6510">
-          <caret line="310" column="17" selection-start-line="310" selection-start-column="11" selection-end-line="310" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/4.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="9429">
-            <caret line="449" selection-start-line="449" selection-end-line="449" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="441">
-            <caret line="21" column="57" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="57" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tool/covert_search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4515">
-          <caret line="215" column="14" selection-start-line="215" selection-start-column="14" selection-end-line="215" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/3.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc/python3.7.4/en/4.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tool/covert_search_catalog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/search/php_errors.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/ask.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2016">
@@ -1614,27 +1532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/search/python3.7.4_en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/search/python3.7.4_zh_cn.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="117" selection-start-column="117" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/catalog.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1649,6 +1546,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/doc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6930">
+          <caret line="330" column="1" selection-start-line="330" selection-start-column="1" selection-end-line="330" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="56" column="59" lean-forward="true" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/hbs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2457">
@@ -1656,52 +1586,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/doc.js">
+    <entry file="file://$PROJECT_DIR$/build/php/search/php_errors.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.min.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="330" column="1" selection-start-line="330" selection-start-column="1" selection-end-line="330" selection-end-column="1" />
+        <state relative-caret-position="441">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
+    <entry file="file://$PROJECT_DIR$/build/bdunion.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/util_time.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/util_level.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/util_curl.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/upload_img.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/search/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/forum_init.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_info.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/note_get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="56" column="59" lean-forward="true" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+        <state relative-caret-position="343">
+          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/search/python3.7.4_en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" selection-start-column="42" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/search/python3.7.4_zh_cn.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/rank_list.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/profile.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="546">
+            <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/6.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/7.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="4641">
+            <caret line="221" column="82" selection-start-line="221" selection-start-column="75" selection-end-line="221" selection-end-column="82" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1722">
+          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/show_util_time.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/php_errors.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build/php/app_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="252">
           <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+    <entry file="file://$PROJECT_DIR$/build/php/mongo_login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/figure_url.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="306">
+            <caret line="499" column="14" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/search/search.php">
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="294">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
         </state>
       </provider>
     </entry>

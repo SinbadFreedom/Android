@@ -6,6 +6,7 @@ The interpreter's line-editing features include interactive editing, history sub
 
 google:
 解释器的行编辑功能包括支持readline的系统上的交互式编辑，历史替换和代码完成。
+
 baidu:
 解释器的行编辑功能包括交互式编辑、历史替换和支持readline的系统上的代码完成。
 
@@ -13,10 +14,132 @@ baidu:
 
 
 4.md
+
 No argument may receive a value more than once.
+
 google:
 没有参数可能会多次收到一个值。
+
 baidu:
 参数最多只能接收一次值。
 
 结合上下文的意思,baidu翻译胜出。
+
+
+5.md
+
+Reverse the elements of the list in place.
+
+google
+反转列表中的元素。
+
+baidu
+在适当的位置反转列表元素。
+
+结合上下文，list.reverse()是反转列表中的元素的作用。google翻译胜出。
+
+
+however, lists are not efficient for this purpose.
+
+google
+但是，列表不能用于此目的。
+
+baidu
+但是，列表并不是有效的。
+
+结合上下文，这里是指“但是，这样对于列表并不高效”。两个翻译都不很精准。
+
+
+To implement a queue, use `collections.deque` which was designed to have fast appends and pops from both ends.
+
+google
+要实现队列，请使用`collections.deque`，它设计为具有快速追加和两端弹出。
+
+baidu
+为了实现尾巴，使用`收藏'，已经设计好从两个末尾都有快速的附着物和流行物。
+
+结合上下文，都不狠精准。翻译为“要实现队列，请使用`collections.deque`，它为具有两端快速追加和读取而设计。”
+
+
+
+There is a way to remove an item from a list given its index instead of its value: the `del` statement.
+
+google:
+有一种方法可以从给定索引的列表中删除项而不是它的值：`del`语句。
+
+baidu:
+有一种方法可以从给定索引而不是其值的列表中删除一个项：“del”语句。
+
+采用：
+有一种方法可以根据给定索引而不是它的值从列表中删除项：`del`语句。
+
+
+
+
+A special problem is the construction of tuples containing 0 or 1 items: the syntax has some extra quirks to accommodate these.
+
+google:
+一个特殊的问题是包含0或1项的元组的构造：语法有一些额外的奇怪之处来适应这些。
+
+baidu:
+一个特殊的问题是包含0或1项的元组的构造：语法有一些额外的奇怪之处来适应这些。
+
+采用百度。
+
+
+Sequence unpacking requires that there are as many variables on the left side of the equals sign as there are elements in the sequence.
+
+google:
+序列解包需要在等号的左侧有尽可能多的变量，因为序列中有元素。
+
+baidu:
+序列解包要求等号左侧的变量与序列中的元素一样多。
+
+采用baidu
+
+
+Note that multiple assignment is really just a combination of tuple packing and sequence unpacking.
+
+google:
+请注意，多重赋值实际上只是元组打包和序列解包的组合。
+
+baidu:
+注意，多重分配实际上只是元组打包和序列解包的组合。
+
+Dictionaries are sometimes found in other languages as `associative memories` or `associative arrays`.
+
+google:
+词典有时在其他语言中被称为“关联记忆”或“关联数组”。
+
+baidu:
+词典有时在其他语言中被发现为“关联存储器”或“关联数组”。
+
+采用:
+词典有时在其他语言中被称为“关联存储器”或“关联数组”。
+
+
+
+strings and numbers can always be keys.
+
+
+google:
+字符串和数字总是键。
+
+baidu:
+字符串和数字始终可以是键。
+
+采用: baidu
+
+
+Comparisons can be chained.
+
+g:
+比较可以链接。
+
+b:
+Comparisons can be chained.
+可以链接比较。
+
+采用Baidu。
+
+

@@ -1,4 +1,4 @@
-Function    函数
+    函数
 script      脚本
 Modules     模块
 Package     包
@@ -71,3 +71,13 @@ Tuples      元组
 Sequences   序列
 Annotations 注释
 tab         制表符
+dictionary  字典
+comprehension 推导式
+tuple       元组
+listcomp    列表推导式
+context     上下文
+Unpacking   解包
+immutable   不可变的
+namedtuples 命名元组
+mutable     可变的
+key         键

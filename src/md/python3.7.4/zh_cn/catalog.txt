@@ -31,15 +31,15 @@
 5.1. lists补充信息
 5.1.1. 将lists作为堆栈
 5.1.2. 将lists作为队列
-5.1.3. list comprehensions
-5.1.4. nested list comprehensions
+5.1.3. 列表推导式
+5.1.4. 嵌套列表推导式
 5.2. "del" 语句
-5.3. tuples and sequences
+5.3. 元组和序列
 5.4. sets
-5.5. dictionaries
+5.5. 字典
 5.6. 循环
-5.7. more on conditions
-5.8. comparing sequences and other types
+5.7. 附加条件
+5.8. 比较序列和其他类型
 6. 模块
 6.1. 有关模块的更多信息
 6.1.1. 以脚本形式运行模块
