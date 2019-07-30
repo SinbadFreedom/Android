@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/search/php_errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/search/php_errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -49,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+            <state relative-caret-position="462">
+              <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -68,12 +64,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="4641">
-                <caret line="221" column="82" selection-start-line="221" selection-start-column="75" selection-end-line="221" selection-end-column="82" />
+              <first_editor relative-caret-position="593">
+                <caret line="210" column="18" lean-forward="true" selection-start-line="210" selection-start-column="18" selection-end-line="210" selection-end-column="18" />
               </first_editor>
               <second_editor />
             </state>
@@ -973,14 +969,7 @@
       <workItem from="1564489429670" duration="1792000" />
       <workItem from="1564491235446" duration="1792000" />
       <workItem from="1564493053305" duration="1793000" />
-      <workItem from="1564494858823" duration="275000" />
-    </task>
-    <task id="LOCAL-00384" summary="1. rename index.php to index.html">
-      <created>1560061080398</created>
-      <option name="number" value="00384" />
-      <option name="presentableId" value="LOCAL-00384" />
-      <option name="project" value="LOCAL" />
-      <updated>1560061080398</updated>
+      <workItem from="1564494858823" duration="1373000" />
     </task>
     <task id="LOCAL-00385" summary="1. change button state with login state">
       <created>1560070299367</created>
@@ -1318,11 +1307,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563698027123</updated>
     </task>
-    <option name="localTasksCounter" value="433" />
+    <task id="LOCAL-00433" summary="trans 5.md">
+      <created>1564495145079</created>
+      <option name="number" value="00433" />
+      <option name="presentableId" value="LOCAL-00433" />
+      <option name="project" value="LOCAL" />
+      <updated>1564495145080</updated>
+    </task>
+    <option name="localTasksCounter" value="434" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="965235000" />
+    <option name="totallyTimeSpent" value="966333000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1389,7 +1385,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1.  stroll anchor" />
     <MESSAGE value="1.  small screen porting" />
     <MESSAGE value="1.  small screen adapter" />
     <MESSAGE value="1.  small screen auto adapter" />
@@ -1414,7 +1409,8 @@
     <MESSAGE value="1. remove convert_python_md.js" />
     <MESSAGE value="1. add doc search" />
     <MESSAGE value="1. add doc search log" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. add doc search log" />
+    <MESSAGE value="trans 5.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="trans 5.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1674,16 +1670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="4641">
-            <caret line="221" column="82" selection-start-line="221" selection-start-column="75" selection-end-line="221" selection-end-column="82" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1722">
@@ -1722,8 +1708,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        <state relative-caret-position="462">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/5.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="593">
+            <caret line="210" column="18" lean-forward="true" selection-start-line="210" selection-start-column="18" selection-end-line="210" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
