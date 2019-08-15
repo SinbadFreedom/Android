@@ -1,0 +1,98 @@
+数据持久化
+**********
+
+本章中描述的模块支持在磁盘上以持久形式存储 Python 数据。 "pickle" 和
+"marshal" 模块可以将许多 Python 数据类型转换为字节流，然后从字节中重新
+创建对象。 各种与 DBM 相关的模块支持一系列基于散列的文件格式，这些格式
+存储字符串到其他字符串的映射。
+
+本章中描述的模块列表是：
+
+* "pickle" —— Python 对象序列化
+
+  * 与其他 Python 模块间的关系
+
+    * 与 "marshal" 间的关系
+
+    * 与 "json" 模块的比较
+
+  * 数据流格式
+
+  * 模块接口
+
+  * What can be pickled and unpickled?
+
+  * Pickling Class Instances
+
+    * Persistence of External Objects
+
+    * Dispatch Tables
+
+    * Handling Stateful Objects
+
+  * Restricting Globals
+
+  * 性能
+
+  * 示例
+
+* "copyreg" --- Register "pickle" support functions
+
+  * 示例
+
+* "shelve" --- Python object persistence
+
+  * Restrictions
+
+  * 示例
+
+* "marshal" --- Internal Python object serialization
+
+* "dbm" --- Interfaces to Unix "databases"
+
+  * "dbm.gnu" --- GNU's reinterpretation of dbm
+
+  * "dbm.ndbm" --- Interface based on ndbm
+
+  * "dbm.dumb" --- Portable DBM implementation
+
+* "sqlite3" --- SQLite 数据库 DB-API 2.0 接口模块
+
+  * 模块函数和常量
+
+  * 连接对象（Connection）
+
+  * Cursor 对象
+
+  * 行对象*Row*
+
+  * 异常
+
+  * SQLite 与 Python 类型
+
+    * 概述
+
+    * Using adapters to store additional Python types in SQLite
+      databases
+
+      * Letting your object adapt itself
+
+      * Registering an adapter callable
+
+    * Converting SQLite values to custom Python types
+
+    * Default adapters and converters
+
+  * Controlling Transactions
+
+  * Using "sqlite3" efficiently
+
+    * Using shortcut methods
+
+    * Accessing columns by name instead of by index
+
+    * 使用连接作为上下文管理器
+
+  * 常见问题
+
+    * 多线程

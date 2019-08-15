@@ -1,0 +1,189 @@
+数据类型
+********
+
+本章节描述的模块提供了一系列专门的数据类型例如日期与时间、固定类型的数
+组、堆队列、同步队列与集合等。
+
+Python 同样提供一些内置的数据类型，特别的， "dict" ， "list" ， "set"
+与 "fromzenset" 以及 "tuple" 。 "str" 类通常指 Unicode 字符串，并且
+"bytes" 通常指二进制数据。
+
+本章包含以下模块的文档：
+
+* "datetime" --- 基本的日期和时间类型
+
+  * 有效的类型
+
+  * "timedelta" 类对象
+
+  * "date" 对象
+
+  * "datetime" 对象
+
+  * "time" Objects
+
+  * "tzinfo" 对象
+
+  * "timezone" Objects
+
+  * "strftime()" and "strptime()" Behavior
+
+* "calendar" --- 日历相关函数
+
+* "collections" --- 容器数据类型
+
+  * "ChainMap" 对象
+
+    * "ChainMap" 例子和方法
+
+  * "Counter" 对象
+
+  * "deque" 对象
+
+    * "deque" 用法
+
+  * "defaultdict" 对象
+
+    * "defaultdict" 例子
+
+  * "namedtuple()" 命名元组的工厂函数
+
+  * "OrderedDict" 对象
+
+    * "OrderedDict" 例子和用法
+
+  * "UserDict" 对象
+
+  * "UserList" 对象
+
+  * "UserString" 对象
+
+* "collections.abc" --- 容器的抽象基类
+
+  * 容器抽象基类
+
+* "heapq" --- 堆队列算法
+
+  * 基本示例
+
+  * Priority Queue Implementation Notes
+
+  * Theory
+
+* "bisect" --- 数组二分查找算法
+
+  * 搜索有序列表
+
+  * 其他示例
+
+* "array" --- Efficient arrays of numeric values
+
+* "weakref" --- 弱引用
+
+  * 弱引用对象
+
+  * 示例
+
+  * Finalizer Objects
+
+  * Comparing finalizers with "__del__()" methods
+
+* "types" --- Dynamic type creation and names for built-in types
+
+  * Dynamic Type Creation
+
+  * Standard Interpreter Types
+
+  * Additional Utility Classes and Functions
+
+  * Coroutine Utility Functions
+
+* "copy" --- 浅层 (shallow) 和深层 (deep) 复制操作
+
+* "pprint" --- 数据美化输出
+
+  * PrettyPrinter Objects
+
+  * 示例
+
+* "reprlib" --- Alternate "repr()" implementation
+
+  * Repr Objects
+
+  * Subclassing Repr Objects
+
+* "enum" --- Support for enumerations
+
+  * 模块内容
+
+  * Creating an Enum
+
+  * Programmatic access to enumeration members and their attributes
+
+  * Duplicating enum members and values
+
+  * Ensuring unique enumeration values
+
+  * Using automatic values
+
+  * Iteration
+
+  * 比较
+
+  * Allowed members and attributes of enumerations
+
+  * Restricted Enum subclassing
+
+  * Pickling
+
+  * Functional API
+
+  * Derived Enumerations
+
+    * IntEnum
+
+    * IntFlag
+
+    * 标志
+
+    * Others
+
+  * Interesting examples
+
+    * Omitting values
+
+      * Using "auto"
+
+      * Using "object"
+
+      * Using a descriptive string
+
+      * Using a custom "__new__()"
+
+    * OrderedEnum
+
+    * DuplicateFreeEnum
+
+    * Planet
+
+    * TimePeriod
+
+  * How are Enums different?
+
+    * Enum Classes
+
+    * Enum Members (aka instances)
+
+    * Finer Points
+
+      * Supported "__dunder__" names
+
+      * Supported "_sunder_" names
+
+      * "Enum" member type
+
+      * Boolean value of "Enum" classes and members
+
+      * "Enum" classes with methods
+
+      * Combining members of "Flag"

@@ -1,0 +1,232 @@
+Tk图形用户界面(GUI)
+*******************
+
+Tcl/Tk集成到Python中已经有一些年头了。Python程序员可以通过 "tkinter"
+包和它的扩展， "tkinter.tix" 模块和 "tkinter.ttk" 模块，来使用这套鲁棒
+的、平台无关的窗口工具集。
+
+"tkinter" 包使用面向对象的方式对Tcl/Tk进行了一层薄包装。使用 "tkinter"
+，你不需要写Tcl代码，但可能需要参考Tk文档，甚至Tcl文档。 "tkinter" 使
+用Python类，对Tk的窗体小部件（Widgets）进行了一系列的封装。除此之外，
+内部模块 "_tkinter" 针对Python和Tcl之间的交互，提供了一套线程安全的机
+制。
+
+"tkinter" 最大的优点就一个字：快，再一个，是Python自带的。尽管官方文档
+不太完整，但有其他资源可以参考，比如Tk手册，教程等。 "tkinter" 也以比
+较过时的外观为人所知，但在Tk 8.5中，这一点得到了极大的改观。除此之外，
+如果有兴趣，还有其他的一些GUI库可供使用。更多信息，请参考 其他图形用户
+界面（GUI）包  小节。
+
+* "tkinter" --- Tcl/Tk的Python接口
+
+  * Tkinter 模块
+
+  * Tkinter Life Preserver
+
+    * How To Use This Section
+
+    * A Simple Hello World Program
+
+  * A (Very) Quick Look at Tcl/Tk
+
+  * Mapping Basic Tk into Tkinter
+
+  * How Tk and Tkinter are Related
+
+  * Handy Reference
+
+    * Setting Options
+
+    * The Packer
+
+    * Packer Options
+
+    * Coupling Widget Variables
+
+    * The Window Manager
+
+    * Tk Option Data Types
+
+    * Bindings and Events
+
+    * The index Parameter
+
+    * Images
+
+  * File Handlers
+
+* "tkinter.ttk" --- Tk themed widgets
+
+  * Using Ttk
+
+  * Ttk Widgets
+
+  * Widget
+
+    * Standard Options
+
+    * Scrollable Widget Options
+
+    * Label Options
+
+    * Compatibility Options
+
+    * Widget States
+
+    * ttk.Widget
+
+  * Combobox
+
+    * 选项
+
+    * Virtual events
+
+    * ttk.Combobox
+
+  * Spinbox
+
+    * 选项
+
+    * Virtual events
+
+    * ttk.Spinbox
+
+  * Notebook
+
+    * 选项
+
+    * Tab Options
+
+    * Tab Identifiers
+
+    * Virtual Events
+
+    * ttk.Notebook
+
+  * Progressbar
+
+    * 选项
+
+    * ttk.Progressbar
+
+  * Separator
+
+    * 选项
+
+  * Sizegrip
+
+    * Platform-specific notes
+
+    * Bugs
+
+  * Treeview
+
+    * 选项
+
+    * Item Options
+
+    * Tag Options
+
+    * Column Identifiers
+
+    * Virtual Events
+
+    * ttk.Treeview
+
+  * Ttk Styling
+
+    * Layouts
+
+* "tkinter.tix" --- Extension widgets for Tk
+
+  * Using Tix
+
+  * Tix Widgets
+
+    * Basic Widgets
+
+    * File Selectors
+
+    * Hierarchical ListBox
+
+    * Tabular ListBox
+
+    * Manager Widgets
+
+    * Image Types
+
+    * Miscellaneous Widgets
+
+    * Form Geometry Manager
+
+  * Tix Commands
+
+* "tkinter.scrolledtext" --- 滚动文字控件
+
+* IDLE
+
+  * 目录
+
+    * 文件目录 （命令行和编辑器）
+
+    * 编辑目录（命令行和编辑器）
+
+    * Format menu (Editor window only)
+
+    * Run menu (Editor window only)
+
+    * Shell menu (Shell window only)
+
+    * Debug menu (Shell window only)
+
+    * Options menu (Shell and Editor)
+
+    * Window menu (Shell and Editor)
+
+    * Help menu (Shell and Editor)
+
+    * Context Menus
+
+  * Editing and navigation
+
+    * Editor windows
+
+    * Key bindings
+
+    * Automatic indentation
+
+    * Completions
+
+    * Calltips
+
+    * Code Context
+
+    * Python Shell window
+
+    * Text colors
+
+  * Startup and code execution
+
+    * Command line usage
+
+    * Startup failure
+
+    * Running user code
+
+    * User output in Shell
+
+    * Developing tkinter applications
+
+    * Running without a subprocess
+
+  * Help and preferences
+
+    * Help sources
+
+    * Setting preferences
+
+    * IDLE on macOS
+
+    * Extensions
+
+* 其他图形用户界面（GUI）包

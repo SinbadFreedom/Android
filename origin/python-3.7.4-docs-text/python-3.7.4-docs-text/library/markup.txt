@@ -1,0 +1,158 @@
+结构化标记处理工具
+******************
+
+Python 支持各种模块，以处理各种形式的结构化数据标记。 这包括使用标准通
+用标记语言（SGML）和超文本标记语言（HTML）的模块，以及使用可扩展标记语
+言（XML）的几个接口。
+
+* "html" --- 超文本标记语言支持
+
+* "html.parser" --- 简单的 HTML 和 XHTML 解析器
+
+  * HTML 解析器的示例程序
+
+  * "HTMLParser" 方法
+
+  * 示例
+
+* "html.entities" --- HTML 一般实体的定义
+
+* XML处理模块
+
+  * XML 漏洞
+
+  * "defusedxml" 和 "defusedexpat" 软件包
+
+* "xml.etree.ElementTree" --- The ElementTree XML API
+
+  * 教程
+
+    * XML tree and elements
+
+    * Parsing XML
+
+    * Pull API for non-blocking parsing
+
+    * Finding interesting elements
+
+    * Modifying an XML File
+
+    * Building XML documents
+
+    * Parsing XML with Namespaces
+
+    * Additional resources
+
+  * XPath support
+
+    * 示例
+
+    * Supported XPath syntax
+
+  * 参考引用
+
+    * 函数
+
+    * Element Objects
+
+    * ElementTree Objects
+
+    * QName Objects
+
+    * TreeBuilder Objects
+
+    * XMLParser Objects
+
+    * XMLPullParser Objects
+
+    * 异常
+
+* "xml.dom" --- The Document Object Model API
+
+  * 模块内容
+
+  * Objects in the DOM
+
+    * DOMImplementation Objects
+
+    * Node Objects
+
+    * NodeList Objects
+
+    * DocumentType Objects
+
+    * Document Objects
+
+    * Element Objects
+
+    * Attr Objects
+
+    * NamedNodeMap Objects
+
+    * Comment Objects
+
+    * Text and CDATASection Objects
+
+    * ProcessingInstruction Objects
+
+    * 异常
+
+  * Conformance
+
+    * Type Mapping
+
+    * Accessor Methods
+
+* "xml.dom.minidom" --- Minimal DOM implementation
+
+  * DOM Objects
+
+  * DOM Example
+
+  * minidom and the DOM standard
+
+* "xml.dom.pulldom" --- Support for building partial DOM trees
+
+  * DOMEventStream Objects
+
+* "xml.sax" --- Support for SAX2 parsers
+
+  * SAXException Objects
+
+* "xml.sax.handler" --- Base classes for SAX handlers
+
+  * ContentHandler Objects
+
+  * DTDHandler Objects
+
+  * EntityResolver Objects
+
+  * ErrorHandler Objects
+
+* "xml.sax.saxutils" --- SAX Utilities
+
+* "xml.sax.xmlreader" --- Interface for XML parsers
+
+  * XMLReader Objects
+
+  * IncrementalParser Objects
+
+  * Locator Objects
+
+  * InputSource Objects
+
+  * The "Attributes" Interface
+
+  * The "AttributesNS" Interface
+
+* "xml.parsers.expat" --- Fast XML parsing using Expat
+
+  * XMLParser Objects
+
+  * ExpatError Exceptions
+
+  * 示例
+
+  * Content Model Descriptions
+
+  * Expat error constants

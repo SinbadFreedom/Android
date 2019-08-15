@@ -1,0 +1,98 @@
+调试和分析
+**********
+
+这些库可以帮助你进行Python开发：调试器使你能够逐步执行代码，分析堆栈帧
+并设置断点等，而分析器运行代码并为你提供执行时间的详细分类，从而使你能
+够找出你程序中的瓶颈。
+
+* "bdb" --- Debugger framework
+
+* "faulthandler" --- Dump the Python traceback
+
+  * Dumping the traceback
+
+  * Fault handler state
+
+  * Dumping the tracebacks after a timeout
+
+  * Dumping the traceback on a user signal
+
+  * Issue with file descriptors
+
+  * 示例
+
+* "pdb" --- Python的调试器
+
+  * Debugger Commands
+
+* The Python Profilers
+
+  * Introduction to the profilers
+
+  * Instant User's Manual
+
+  * "profile" and "cProfile" Module Reference
+
+  * The "Stats" Class
+
+  * What Is Deterministic Profiling?
+
+  * Limitations
+
+  * Calibration
+
+  * Using a custom timer
+
+* "timeit" --- 测量小代码片段的执行时间
+
+  * 基本示例
+
+  * Python 接口
+
+  * 命令行界面
+
+  * 示例
+
+* "trace" --- Trace or track Python statement execution
+
+  * Command-Line Usage
+
+    * Main options
+
+    * Modifiers
+
+    * Filters
+
+  * Programmatic Interface
+
+* "tracemalloc" --- Trace memory allocations
+
+  * 示例
+
+    * Display the top 10
+
+    * Compute differences
+
+    * Get the traceback of a memory block
+
+    * Pretty top
+
+  * API
+
+    * 函数
+
+    * DomainFilter
+
+    * Filter
+
+    * Frame
+
+    * Snapshot
+
+    * Statistic
+
+    * StatisticDiff
+
+    * Trace
+
+    * Traceback
