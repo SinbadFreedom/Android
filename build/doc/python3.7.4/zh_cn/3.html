@@ -1,16 +1,16 @@
-<h1 id="3_">3. 关于python的非正式介绍</h1>
-<p>在以下示例中,输入和输出通过是否存在提示来区分(<code>&gt;&gt;&gt;</code>和<code>...</code>):要重复示例,必须在提示出现后输入所有内容; 不以提示开头的行是解释器的输出.请注意,示例中一行上的辅助提示意味着您必须键入一个空行; 这用于结束多行命令.</p>
-<p>本手册中的许多示例,即使是在交互式提示符下输入的示例,都包含注释.Python中的注释以哈希字符<code>#</code>开头,并延伸到物理行的末尾.注释可能出现在行的开头或跟随空格或代码,但不在字符串文字中.由于注释是为了阐明代码而不是由Python解释,因此在输入示例时可以省略它们.</p>
-<p>示例:</p>
+<h1 id="3_">3. Python 的非正式介绍</h1>
+<p>在下面的例子中,通过提示符 (<code>&gt;&gt;&gt;</code> 与 <code>...</code>) 的出现与否来区分输入和输出:如果你想复现这些例子,当提示符出现后,你必须在提示符后键入例子中的每一个词;不以提示符开头的那些行是解释器的输出.注意例子中某行中出现第二个提示符意味着你必须键入一个空白行;这是用来结束多行命令的.</p>
+<p>这个手册中的许多例子都包含注释,甚至交互性命令中也有.Python中的注释以井号 # 开头,并且一直延伸到该文本行结束为止.注释可以出现在一行的开头或者是空白和代码的后边,但是不能出现在字符串中间.字符串中的井号就是井号.因为注释是用来阐明代码的,不会被 Python 解释,所以在键入这些例子时,注释是可以被忽略的.</p>
+<p>几个例子:</p>
 <pre class="prettyprint"><code># this is the first comment
 spam = 1  # and this is the second comment
           # ... and now a third!
 text = "# This is not a comment because it's inside quotes."
 </code></pre>
-<h2 id="3_1_">3.1. 使用python作为计算器</h2>
-<p>我们来尝试一些简单的Python命令. 启动解释器并等待主要提示符<code>&gt;&gt;&gt;</code>. (不会花很长时间.)</p>
-<h3 id="3_1_1_">3.1.1. Numbers</h3>
-<p>解释器作为一个简单的计算器:您可以在解释器中输入表达式,它将写出值.表达式语法很简单:运算符<code>+</code>,<code>-</code>,<code>*</code>和<code>/</code>就像大多数其他语言一样工作(例如,Pascal或C); 括号(<code>()</code>)可用于分组.例如</p>
+<h2 id="3_1_">3.1. Python 作为计算器使用</h2>
+<p>让我们尝试一些简单的 Python 命令.启动解释器,等待界面中的提示符,<code>&gt;&gt;&gt;</code> (这应该花不了多少时间).</p>
+<h3 id="3_1_1_">3.1.1. 数字</h3>
+<p>解释器就像一个简单的计算器一样:你可以在里面输入一个表达式然后它会写出答案. 表达式的语法很直接:运算符 <code>+</code>,<code>-</code>,<code>*</code>,<code>/</code> 的用法和其他大部分语言一样(比如 Pascal 或者 C 语言);括号 (<code>()</code>) 用来分组.比如:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 2 + 2
 4
 &gt;&gt;&gt; 50 - 5*6
@@ -20,8 +20,8 @@ text = "# This is not a comment because it's inside quotes."
 &gt;&gt;&gt; 8 / 5  # division always returns a floating point number
 1.6
 </code></pre>
-<p>整数(例如"2", "4", "0")类型为<code>int</code>,小数(例如<code>5.0</code>, <code>1.6</code>)类型为<code>float</code>.我们会在本教程后面看到有关数值类型的更多信息.</p>
-<p>除法(<code>/</code>)总是返回一个浮点数. 你可以用<code>//</code>运算符做<em>向下取整</em>并获得整数结果(丢弃任何小数结果); 计算余数你可以使用<code>%</code>:</p>
+<p>整数(比如 <code>2</code>,<code>4</code>,<code>20</code> )有 <code>int</code> 类型,有小数部分的(比如 <code>5.0</code>,<code>1.6</code> )有 float 类型.在这个手册的后半部分我们会看到更多的数值类型.</p>
+<p>除法运算 (<code>/</code>) 永远返回浮点数类型.如果要做 floor division 得到一个整数结果(忽略小数部分)你可以使用 <code>//</code> 运算符;如果要计算余数,可以使用 <code>%</code></p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 17 / 3  # classic division returns a float
 5.666666666666667
 &gt;&gt;&gt;
@@ -32,29 +32,29 @@ text = "# This is not a comment because it's inside quotes."
 &gt;&gt;&gt; 5 * 3 + 2  # result * divisor + remainder
 17
 </code></pre>
-<p>在python语言中,可以使用<code>**</code>运算符计算幂[1]:</p>
+<p>在Python中,可以使用 ** 运算符来计算乘方 [1]</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 5 ** 2  # 5 squared
 25
 &gt;&gt;&gt; 2 ** 7  # 2 to the power of 7
 128
 </code></pre>
-<p>等号(<code>=</code>)用于为变量赋值.之后,在下一个交互式提示之前,不会显示任何结果:</p>
+<p>等号 (<code>=</code>) 用于给一个变量赋值.然后在下一个交互提示符之前不会有结果显示出来:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; width = 20
 &gt;&gt;&gt; height = 5 * 9
 &gt;&gt;&gt; width * height
 900
 </code></pre>
-<p>如果变量没有<code>定义</code>(赋值),尝试使用它会给你一个错误:</p>
+<p>如果一个变量未定义(未赋值),试图使用它时会向你提示错误:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; n  # try to access an undefined variable
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 NameError: name 'n' is not defined
 </code></pre>
-<p>Python完全支持浮点数;具有混合类型操作数的运算符将整数操作数转换为浮点:</p>
+<p>Python中提供浮点数的完整支持;包含多种混合类型运算数的运算会把整数转换为浮点数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 4 * 3.75 - 1
 14.0
 </code></pre>
-<p>在交互模式下,最后打印的表达式被赋值给变量<code>_</code>. 这意味着当您使用Python作为桌面计算器时,继续计算会更容易一些,例如:</p>
+<p>在交互模式下,上一次打印出来的表达式被赋值给变量 _.这意味着当你把Python用作桌面计算器时,继续计算会相对简单,比如:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; tax = 12.5 / 100
 &gt;&gt;&gt; price = 100.50
 &gt;&gt;&gt; price * tax
@@ -64,10 +64,10 @@ NameError: name 'n' is not defined
 &gt;&gt;&gt; round(_, 2)
 113.06
 </code></pre>
-<p>该变量应被用户视为只读. 不要为它显式赋值 - 你将创建一个具有相同名称的独立局部变量,用其魔术行为掩盖内置变量.</p>
-<p>除了<code>int</code>和<code>float</code>之外,Python还支持其他类型的数字,例如"小数"和"分数".Python还内置了对复数的支持,并使用<code>j</code>或<code>J</code>后缀来表示虚部(例如<code>3 + 5j</code>).</p>
-<h3 id="3_1_2_">3.1.2. Strings</h3>
-<p>除了数字,Python还可以操作字符串,这可以通过多种方式表达.它们可以用单引号(<code>'...'</code>)或双引号(<code>"..."</code>)括起来,结果相同[2]. <code>\</code>可用于转义引号:</p>
+<p>这个变量应该被使用者当作是只读类型.不要向它显式地赋值--你会创建一个和它名字相同独立的本地变量,它会使用魔法行为屏蔽内部变量.</p>
+<p>除了 <code>int</code> 和 <code>float</code>,Python也支持其他类型的数字,例如 Decimal 或者 Fraction.Python 也内置对 复数 的支持,使用后缀 <code>j</code> 或者 <code>J</code> 就可以表示虚数部分(例如 <code>3+5j</code> ).</p>
+<h3 id="3_1_2_">3.1.2. 字符串</h3>
+<p>除了数字,Python 也可以操作字符串.字符串有多种形式,可以使用单引号(<code>'……'</code>),双引号(<code>"……"</code>)都可以获得同样的结果 [2].反斜杠 <code>\</code> 可以用来转义:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 'spam eggs'  # single quotes
 'spam eggs'
 &gt;&gt;&gt; 'doesn\'t'  # use \' to escape the single quote...
@@ -81,7 +81,7 @@ NameError: name 'n' is not defined
 &gt;&gt;&gt; '"Isn\'t," they said.'
 '"Isn\'t," they said.'
 </code></pre>
-<p>在交互式解释器中,输出字符串用引号括起来,特殊字符用反斜杠转义.虽然这有时看起来可能与输入不同(括起来的引号可能会改变),但这两个字符串是等效的如果字符串包含单引号而不包含双引号,则该字符串将用双引号括起来,否则将用单引号括起来.<code>print()</code>函数通过省略括号引号和打印转义字符和特殊字符来产生更易读的输出:</p>
+<p>在交互式解释器中,输出的字符串外面会加上引号,特殊字符会使用反斜杠来转义. 虽然有时这看起来会与输入不一样(外面所加的引号可能会改变),但两个字符串是相同的. 如果字符串中有单引号而没有双引号,该字符串外将加双引号来表示,否则就加单引号. print() 函数会生成可读性更强的输出,即略去两边的引号,并且打印出经过转义的特殊字符:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; '"Isn\'t," they said.'
 '"Isn\'t," they said.'
 &gt;&gt;&gt; print('"Isn\'t," they said.')
@@ -93,41 +93,41 @@ NameError: name 'n' is not defined
 First line.
 Second line.
 </code></pre>
-<p>如果你不希望用<code>\</code>开头的字符被解释为特殊字符,你可以通过在第一个引号之前添加<code>r</code>来使用<em>原始字符串</em>:</p>
+<p>如果你不希望前置了 <code>\</code> 的字符转义成特殊字符,可以使用 <em>原始字符串</em> 方式,在引号前添加 <code>r</code> 即可:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; print('C:\some\name')  # here \n means newline!
 C:\some
 ame
 &gt;&gt;&gt; print(r'C:\some\name')  # note the r before the quote
 C:\some\name
 </code></pre>
-<p>字符串文字可以跨越多行.一种方法是使用三引号:<code>"""..."""</code>或<code>'''...'''</code>.行尾自动包含在字符串中,但可以通过在行尾添加<code>\</code>来防止这种情况.例如:</p>
+<p>字符串字面值可以跨行连续输入.一种方式是用三重引号:"""…""" 或 '''…'''.字符串中的回车换行会自动包含到字符串中,如果不想包含,在行尾添加一个 <code>\</code> 即可.如下例:</p>
 <pre class="prettyprint"><code>print("""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
      -H hostname               Hostname to connect to
 """)
 </code></pre>
-<p>生成以下输出(请注意,不包括初始换行符):</p>
+<p>将产生如下输出(注意最开始的换行没有包括进来):</p>
 <pre class="prettyprint"><code>Usage: thingy [OPTIONS]
      -h                        Display this usage message
      -H hostname               Hostname to connect to
 </code></pre>
-<p>字符串可以用<code>+</code>运算符连接(粘合在一起),并用<code>*</code>重复:</p>
+<p>字符串可以用 <code>+</code> 进行连接(粘到一起),也可以用 <code>*</code> 进行重复:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; # 3 times 'un', followed by 'ium'
 &gt;&gt;&gt; 3 * 'un' + 'ium'
 'unununium'
 </code></pre>
-<p>相邻的两个或多个<em>字符串文本</em>(即括在引号之间的文本)会自动连接起来. </p>
+<p>相邻的两个或多个 <em>字符串字面值</em> (引号引起来的字符)将会自动连接到一起.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 'Py' 'thon'
 'Python'
 </code></pre>
-<p>当您想要断开长字符串时,此功能特别有用:</p>
-<pre class="prettyprint"><code>&gt;&gt;&gt; text = ('Put several strings within parentheses '
+<p>把很长的字符串拆开分别输入的时候尤其有用:</p>
+<pre class="prettyprint"><code>&gt;&gt; text = ('Put several strings within parentheses '
 ...         'to have them joined together.')
 &gt;&gt;&gt; text
 'Put several strings within parentheses to have them joined together.'
 </code></pre>
-<p>这仅适用于两个文字,而不是变量或表达式:</p>
+<p>只能对两个字面值这样操作,变量或表达式不行:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; prefix = 'Py'
 &gt;&gt;&gt; prefix 'thon'  # can't concatenate a variable and a string literal
   File "&lt;stdin&gt;", line 1
@@ -140,18 +140,18 @@ SyntaxError: invalid syntax
                    ^
 SyntaxError: invalid syntax
 </code></pre>
-<p>如果要连接变量或变量和文字,请使用<code>+</code>:</p>
+<p>如果你想连接变量,或者连接变量和字面值,可以用 <code>+</code> 号:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; prefix + 'thon'
 'Python'
 </code></pre>
-<p>字符串可以<em>索引</em>(下标),第一个字符的索引为0.没有单独的字符类型(译者注:例如java有char类型,表示单独一个字符,与字符串String类型有区别.); 一个字符只是一个大小为1的字符串:</p>
+<p>字符串是可以被 <em>索引</em> (下标访问)的,第一个字符索引是 0.单个字符并没有特殊的类型,只是一个长度为一的字符串:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word = 'Python'
 &gt;&gt;&gt; word[0]  # character in position 0
 'P'
 &gt;&gt;&gt; word[5]  # character in position 5
 'n'
 </code></pre>
-<p>索引也可能是负数,从右边开始计算:</p>
+<p>索引也可以用负数,这种会从右边开始数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[-1]  # last character
 'n'
 &gt;&gt;&gt; word[-2]  # second-last character
@@ -159,20 +159,20 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; word[-6]
 'P'
 </code></pre>
-<p>请注意,由于-0与0相同,因此负索引从-1开始.</p>
-<p>除索引之外,还支持<em>切片</em>.索引用于获取单个字符,切片*允许您获取子字符串:</p>
+<p>注意 -0 和 0 是一样的,所以负数索引从 -1 开始.</p>
+<p>除了索引,字符串还支持 <em>切片</em>.索引可以得到单个字符,而 <em>切片</em> 可以获取子字符串:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[0:2]  # characters from position 0 (included) to 2 (excluded)
 'Py'
 &gt;&gt;&gt; word[2:5]  # characters from position 2 (included) to 5 (excluded)
 'tho'
 </code></pre>
-<p>请注意如何始终包括开始和结束.这确保<code>s[:i] + s[i:]</code>始终等于<code>s</code>:</p>
+<p>注意切片的开始总是被包括在结果中,而结束不被包括.这使得 <code>s[:i] + s[i:]</code> 总是等于 <code>s</code></p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[:2] + word[2:]
 'Python'
 &gt;&gt;&gt; word[:4] + word[4:]
 'Python'
 </code></pre>
-<p>切片索引具有有用的默认值;省略的第一个索引默认为零,省略的第二个索引默认为要切片的字符串的大小.</p>
+<p>切片的索引有默认值;省略开始索引时默认为0,省略结束索引时默认为到字符串的结束:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[:2]   # character from the beginning to position 2 (excluded)
 'Py'
 &gt;&gt;&gt; word[4:]   # characters from position 4 (included) to the end
@@ -180,29 +180,28 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; word[-2:]  # characters from the second-last (included) to the end
 'on'
 </code></pre>
-<p>记住切片工作方式的一种方法是将索引视为<em>字符之间的</em>点,第一个字符的左边缘编号为0.由<em>n</em>个字符组成的字符串的最后一个字符的右边缘具有索引<em>n</em>,例如:</p>
+<p>您也可以这么理解切片:将索引视作指向字符 之间 ,第一个字符的左侧标为0,最后一个字符的右侧标为 n ,其中 n 是字符串长度.例如:</p>
 <pre class="prettyprint"><code>+---+---+---+---+---+---+
 | P | y | t | h | o | n |
 +---+---+---+---+---+---+
-  0   1   2   3   4   5
- -6  -5  -4  -3  -2  -1
+0   1   2   3   4   5   6
 </code></pre>
-<p>(译者注:上述代码中与原文不同,译者认为原文的标记方式带来理解上的困难.为了方便理解去掉了倒数第二排数字的最后一个数字6.对齐了数字位置.可参考英文版对比.)</p>
-<p>第一行数字给出了字符串中索引0 … 6的位置; 第二行给出相应的负指数.从<code>i</code>到<code>j</code>的切片分别由标记为<code>i</code>和<code>j</code>的边之间的所有字符组成.</p>
-<p>对于非负索引,如果两个索引都在界限内,则切片的长度就是索引的差.例如,<code>word[1:3]</code>的长度是2.</p>
-<p>尝试使用过大的索引将导致错误:</p>
+<p>-6  -5  -4  -3  -2  -1</p>
+<p>第一行数标注了字符串非负的索引的位置,第二行标注了对应的负的索引.那么从 <em>i</em> 到 <em>j</em> 的切片就包括了标有 <em>i</em> 和 <em>j</em> 的位置之间的所有字符.</p>
+<p>对于使用非负索引的切片,如果索引不越界,那么得到的切片长度就是起止索引之差.例如, <code>word[1:3]</code> 的长度为2.</p>
+<p>使用过大的索引会产生一个错误:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[42]  # the word only has 6 characters
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 IndexError: string index out of range
 </code></pre>
-<p>尽管如此,当用于切片时,超出范围的切片索引被优雅的处理: </p>
+<p>但是,切片中的越界索引会被自动处理:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[4:42]
 'on'
 &gt;&gt;&gt; word[42:]
 ''
 </code></pre>
-<p>Python字符串无法更改---它们是<em>不可变的</em>.因此,给字符串中的索引位置赋值会导致错误:</p>
+<p>Python 中的字符串不能被修改,它们是 immutable 的.因此,向字符串的某个索引位置赋值会产生一个错误:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; word[0] = 'J'
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -212,35 +211,35 @@ Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 TypeError: 'str' object does not support item assignment
 </code></pre>
-<p>如果需要不同的字符串,应创建一个新字符串: </p>
+<p>如果需要一个不同的字符串,应当新建一个:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; 'J' + word[1:]
 'Jython'
 &gt;&gt;&gt; word[:2] + 'py'
 'Pypy'
 </code></pre>
-<p>内置函数<code>len()</code>返回字符串的长度:</p>
+<p>内建函数 len() 返回一个字符串的长度:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; s = 'supercalifragilisticexpialidocious'
 &gt;&gt;&gt; len(s)
 34
 </code></pre>
 <p>参见:</p>
 <p>文本序列类型 --- str
-     字符串是<em>序列类型</em>的示例,并支持此类类型支持的公共操作.</p>
-<p>String 方法
-     字符串支持大量用于基本转换和搜索的方法.</p>
-<p>格式化的字符串文字
-     具有嵌入式表达式的字符串文字.</p>
+     字符串是一种 <em>序列类型</em> ,因此也支持序列类型的各种操作.</p>
+<p>字符串的方法
+     字符串支持许多变换和查找的方法.</p>
 <p>格式字符串语法
-     有关使用<code>str.format()</code>进行字符串格式化的信息.</p>
-<p>printf样式字符串格式
-     当字符串是<code>%</code>运算符的左操作数时调用的旧格式设置操作将在此处详细描述. </p>
-<h3 id="3_1_3_">3.1.3. Lists</h3>
-<p>Python知道许多<em>复合</em>数据类型,用于将其他值组合在一起.最通用的是<em>list</em>,它可以写成方括号之间逗号分隔值(项)的列表.列表可能包含不同类型的项,但通常所有项都具有相同的类型.</p>
+    内嵌表达式的字符串字面值.</p>
+<p>格式字符串语法
+     使用 str.format() 进行字符串格式化.</p>
+<p>printf 风格的字符串格式化
+     这里详述了使用 <code>%</code> 运算符进行字符串格式化.</p>
+<h3 id="3_1_3_">3.1.3. 列表</h3>
+<p>Python 中可以通过组合一些值得到多种 <em>复合</em> 数据类型.其中最常用的 <em>列表</em> ,可以通过方括号括起,逗号分隔的一组值得到.一个 <em>列表</em> 可以包含不同类型的元素,但通常使用时各个元素类型相同:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; squares = [1, 4, 9, 16, 25]
 &gt;&gt;&gt; squares
 [1, 4, 9, 16, 25]
 </code></pre>
-<p>与字符串(以及所有其他内置<em>序列</em>类型)一样,列表也可以被索引和切片:</p>
+<p>和字符串(以及各种内置的 sequence 类型)一样,列表也支持索引和切片:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; squares[0]  # indexing returns the item
 1
 &gt;&gt;&gt; squares[-1]
@@ -248,15 +247,15 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; squares[-3:]  # slicing returns a new list
 [9, 16, 25]
 </code></pre>
-<p>所有切片操作都返回包含所请求元素的新列表. 这意味着以下切片返回列表的新(浅)副本(译者注:关于深复制和浅复制,后续会出一个专门的文章说明):</p>
+<p>所有的切片操作都返回一个新列表,这个新列表包含所需要的元素.就是说,如下的切片会返回列表的一个新的(浅)拷贝:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; squares[:]
 [1, 4, 9, 16, 25]
 </code></pre>
-<p>列表还支持连接等操作:</p>
+<p>列表同样支持拼接操作:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; squares + [36, 49, 64, 81, 100]
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 </code></pre>
-<p>与<em>不可变</em>的字符串不同,列表是<em>可变</em>类型,即可以更改其内容: </p>
+<p>与 immutable 的字符串不同, 列表是一个 mutable 类型,就是说,它自己的内容可以改变:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; cubes = [1, 8, 27, 65, 125]  # something's wrong here
 &gt;&gt;&gt; 4 ** 3  # the cube of 4 is 64, not 65!
 64
@@ -264,13 +263,13 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; cubes
 [1, 8, 27, 64, 125]
 </code></pre>
-<p>您还可以使用<code>append()</code><em>方法</em>在列表末尾添加新项(稍后我们将看到更多关于方法的信息): </p>
+<p>你也可以在列表结尾,通过 <code>append()</code> <em>方法</em> 添加新元素 (我们会在后面解释更多关于方法的内容):</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; cubes.append(216)  # add the cube of 6
 &gt;&gt;&gt; cubes.append(7 ** 3)  # and the cube of 7
 &gt;&gt;&gt; cubes
 [1, 8, 27, 64, 125, 216, 343]
 </code></pre>
-<p>也可以分配切片,这甚至可以改变列表的大小或完全清除它:</p>
+<p>给切片赋值也是可以的,这样甚至可以改变列表大小,或者把列表整个清空:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 &gt;&gt;&gt; letters
 ['a', 'b', 'c', 'd', 'e', 'f', 'g']
@@ -287,12 +286,12 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; letters
 []
 </code></pre>
-<p>内置函数<code>len()</code>也适用于列表:</p>
+<p>内置函数 len() 也可以作用到列表上:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; letters = ['a', 'b', 'c', 'd']
 &gt;&gt;&gt; len(letters)
 4
 </code></pre>
-<p>可以嵌套列表(创建包含其他列表的列表),例如:</p>
+<p>也可以嵌套列表 (创建包含其他列表的列表), 比如说:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; a = ['a', 'b', 'c']
 &gt;&gt;&gt; n = [1, 2, 3]
 &gt;&gt;&gt; x = [a, n]
@@ -303,8 +302,8 @@ TypeError: 'str' object does not support item assignment
 &gt;&gt;&gt; x[0][1]
 'b'
 </code></pre>
-<h2 id="3_2_">3.2. 编程第一步</h2>
-<p>当然,我们可以将Python用于更复杂的任务,而不是将两个和两个添加在一起.例如,我们可以写一个斐波那契级数的初始子序列,如下所示:</p>
+<h2 id="3_2_">3.2. 走向编程的第一步</h2>
+<p>当然,我们可以将 Python 用于更复杂的任务,而不是仅仅两个和两个一起添加. 例如,我们可以编写 斐波那契数列 的初始子序列,如下所示:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; # Fibonacci series:
 ... # the sum of two elements defines the next
 ... a, b = 0, 1
@@ -320,27 +319,35 @@ TypeError: 'str' object does not support item assignment
 5
 8
 </code></pre>
-<p>此示例介绍了几个新特性. </p>
+<p>这个例子引入了几个新的特点.</p>
 <ul>
-<li><p>第一行包含<em>多重赋值</em>:变量<code>a</code>和<code>b</code>同时获取新值0和1.在最后一行中,它再次被使用,说明在进行任何赋值之前,右侧的表达式都是先被计算出来的.右侧表达式从左到右进行计算.</p></li>
-<li><p>只要条件(这里:<code>a&lt;10</code>)保持为真,<code>while</code>循环就会执行.在Python中,就像在C中一样,任何非零整数值都表示真; 零表示假.条件也可以是字符串或列表值,实际上可以是任何序列; 何长度非零的东西都表示真,空序列表示假.该示例中使用的测试是简单的比较.标准比较运算符的编写方式与C中相同:<code>&lt;</code>(小于),<code>&gt;</code>(大于),<code>==</code>(等于),<code>&lt;=</code>(小于或等于),<code>&gt;=</code>(大于或等于)和<code>!=</code>(不等于).</p></li>
-<li><p>循环的<em>body</em>是<em>缩进</em>:缩进是Python对语句进行分组的方式.在交互式提示符下,您必须为每个缩进行输入一个tab(译者注:制表符)或空格.实际上,您将使用文本编辑器为Python准备更复杂的输入;所有合适的文本编辑器都具有自动缩进功能.当以交互方式输入复合语句时,后面必须跟一个空行以指示完成(因为解析器无法猜测您何时键入了最后一行).请注意,基本块中的每一行必须缩进相同的数量.</p></li>
-<li><p><code>print()</code>函数写出给定参数的值.它与仅处理多个参数,浮点数量和字符串的方式不同,只是编写您想要编写的表达式(正如我们之前在计算器示例中所做的那样).打印字符串时不带引号,并在项目之间插入空格,因此您可以很好地格式化项,如:</p></li>
+<li><p>第一行含有一个 <em>多重赋值</em>: 变量 <code>a</code> 和 <code>b</code> 同时得到了新值 0 和 1. 最后一行又用了一次多重赋值, 这体现出了右手边的表达式,在任何赋值发生之前就被求值了.右手边的表达式是从左到右被求值的.</p></li>
+<li><p>while 循环只要它的条件(这里指: <code>a &lt; 10</code>)保持为真就会一直执行.Python 和 C 一样,任何非零整数都为真;零为假.这个条件也可以是字符串或是列表的值,事实上任何序列都可以;长度非零就为真,空序列就为假.在这个例子里,判断条件是一个简单的比较.标准的比较操作符的写法和 C 语言里是一样: <code>&lt;</code> (小于), <code>&gt;</code> (大于), <code>==</code> (等于), <code>&lt;=</code>(小于或等于), <code>&gt;=</code> (大于或等于)以及 <code>!=</code> (不等于).</p></li>
+<li><p><em>循环体</em> 是 <em>缩进的</em> :缩进是 Python 组织语句的方式.在交互式命令行里,你得给每个缩进的行敲下 Tab 键或者(多个)空格键.实际上用文本编辑器的话,你要准备更复杂的输入方式;所有像样的文本编辑器都有自动缩进的设置.交互式命令行里,当一个组合的语句输入时, 需要在最后敲一个空白行表示完成(因为语法分析器猜不出来你什么时候打的是最后一行).注意,在同一块语句中的每一行,都要缩进相同的长度.</p></li>
+<li><p>print() 函数将所有传进来的参数值打印出来. 它和直接输入你要显示的表达式(比如我们之前在计算器的例子里做的)不一样, print() 能处理多个参数,包括浮点数,字符串. 字符串会打印不带引号的内容, 并且在参数项之间会插入一个空格, 这样你就可以很好的把东西格式化, 像这样:</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>i = 256*256
+      print('The value of i is', i)
+      The value of i is 65536</p>
+    </blockquote>
+  </blockquote>
+</blockquote></li>
+<li><p>关键字参数 <code>end</code> 可以用来取消输出后面的换行, 或是用另外一个字符串来结尾:</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>a, b = 0, 1
+      while a &lt; 1000:
+      …     print(a, end=',')
+      …     a, b = b, a+b
+      …
+      0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</p>
+    </blockquote>
+  </blockquote>
+</blockquote></li>
 </ul>
-<pre class="prettyprint"><code>      &gt;&gt;&gt; i = 256*256
-      &gt;&gt;&gt; print('The value of i is', i)
-      The value of i is 65536
-</code></pre>
-<ul>
-<li>关键字参数<em>end</em>可用于避免输出后出现换行符,或以其他字符串结束输出:</li>
-</ul>
-<pre class="prettyprint"><code>      &gt;&gt;&gt; a, b = 0, 1
-      &gt;&gt;&gt; while a &lt; 1000:
-      ...     print(a, end=',')
-      ...     a, b = b, a+b
-      ...
-      0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
-</code></pre>
-<p>-[脚注]-</p>
-<p>[1] 由于<code>**</code>的优先级高于<code>-</code>,因此<code>-3**2</code>将被解释为<code>-(3**2)</code>从而得到<code>-9</code>.为了避免这种情况并得到<code>9</code>,您可以使用<code>(-3)**2</code>.</p>
-<p>[2] 与其他语言不同,诸如<code>\n</code>等特殊字符的含义与单引号(<code>'...'</code>)和双引号(<code>"..."</code>)相同.两者之间的唯一区别是,在单引号中,您不需要转义<code>"</code>(但您必须转义<code>\'</code>),反之亦然. </p>
+<p>脚注</p>
+<p>[1] 因为 <code>**</code> 比 <code>-</code> 有更高的优先级, 所以 <code>-3**2</code>会被解释成 <code>-(3**2)</code> ,因此结果是 <code>-9</code>. 为了避免这个并且得到结果 <code>9</code>, 你可以用这个式子 <code>(-3)**2</code>.</p>
+<p>[2] 和其他语言不一样的是, 特殊字符比如说 <code>\n</code> 在单引号 (<code>'...'</code>) 和双引号 (<code>"..."</code>) 里有一样的意义. 这两种引号唯一的区别是,你不需要在单引号里转义双引号 <code>"</code> (但是你必须把单引号转义成 <code>\'</code>) , 反之亦然.</p>

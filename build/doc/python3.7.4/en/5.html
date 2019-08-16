@@ -1,31 +1,33 @@
 <h1 id="5_">5. Data Structures</h1>
 <p>This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
 <h2 id="5_1_">5.1. More on Lists</h2>
-<p>The list data type has some more methods. Here are all of the methods of list objects:</p>
+<p>The list data type has some more methods.  Here are all of the methods of list objects:</p>
 <ul>
 <li><p>list.append(x)</p>
-<p>Add an item to the end of the list. Equivalent to <code>a[len(a):] = [x]</code>.</p></li>
+<p>Add an item to the end of the list.  Equivalent to "a[len(a):] = [x]".</p></li>
 <li><p>list.extend(iterable)</p>
-<p>Extend the list by appending all the items from the iterable. Equivalent to <code>a[len(a):] = iterable</code>.</p></li>
+<p>Extend the list by appending all the items from the iterable.
+Equivalent to "a[len(a):] = iterable".</p></li>
 <li><p>list.insert(i, x)</p>
-<p>Insert an item at a given position. The first argument is the index of the element before which to insert, so <code>a.insert(0, x)</code> inserts at the front of the list, and <code>a.insert(len(a), x)</code> is equivalent to <code>a.append(x)</code>.</p></li>
+<p>Insert an item at a given position.  The first argument is the index of the element before which to insert, so "a.insert(0, x)" inserts at the front of the list, and "a.insert(len(a), x)" is equivalent to "a.append(x)".</p></li>
 <li><p>list.remove(x)</p>
-<p>Remove the first item from the list whose value is equal to <em>x</em>. It raises a <code>ValueError</code> if there is no such item.</p></li>
+<p>Remove the first item from the list whose value is equal to <em>x</em>. It raises a "ValueError" if there is no such item.</p></li>
 <li><p>list.pop([i])</p>
-<p>Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list. (The square brackets around the <em>i</em> in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)</p></li>
+<p>Remove the item at the given position in the list, and return it. If no index is specified, "a.pop()" removes and returns the last item in the list.  (The square brackets around the <em>i</em> in the method signature denote that the parameter is optional, not that you should type square brackets at that position.  You will see this notation frequently in the Python Library Reference.)</p></li>
 <li><p>list.clear()</p>
-<p>Remove all items from the list. Equivalent to <code>del a[:]</code>.</p></li>
+<p>Remove all items from the list.  Equivalent to "del a[:]".</p></li>
 <li><p>list.index(x[, start[, end]])</p>
-<p>Return zero-based index in the list of the first item whose value is equal to <em>x</em>. Raises a <code>ValueError</code> if there is no such item.</p>
-<p>The optional arguments <em>start</em> and <em>end</em> are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the <em>start</em> argument.</p></li>
+<p>Return zero-based index in the list of the first item whose value is equal to <em>x</em>. Raises a "ValueError" if there is no such item.</p>
+<p>The optional arguments <em>start</em> and <em>end</em> are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list.  The returned index is computed relative to the beginning of the full sequence rather than the <em>start</em> argument.</p></li>
 <li><p>list.count(x)</p>
 <p>Return the number of times <em>x</em> appears in the list.</p></li>
 <li><p>list.sort(key=None, reverse=False)</p>
-<p>Sort the items of the list in place (the arguments can be used for sort customization, see <code>sorted()</code> for their explanation).</p></li>
+<p>Sort the items of the list in place (the arguments can be used for
+sort customization, see "sorted()" for their explanation).</p></li>
 <li><p>list.reverse()</p>
 <p>Reverse the elements of the list in place.</p></li>
 <li><p>list.copy()</p>
-<p>Return a shallow copy of the list. Equivalent to <code>a[:]</code>.</p></li>
+<p>Return a shallow copy of the list.  Equivalent to "a[:]".</p></li>
 </ul>
 <p>An example that uses most of the list methods:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
@@ -49,9 +51,9 @@
 &gt;&gt;&gt; fruits.pop()
 'pear'
 </code></pre>
-<p>You might have noticed that methods like <code>insert</code>, <code>remove</code> or <code>sort</code> that only modify the list have no return value printed -- they return the default <code>None</code>. [1]  This is a design principle for all mutable data structures in Python.</p>
+<p>You might have noticed that methods like "insert", "remove" or "sort" that only modify the list have no return value printed -- they return the default "None". [1]  This is a design principle for all mutable data structures in Python.</p>
 <h3 id="5_1_1_">5.1.1. Using Lists as Stacks</h3>
-<p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (<code>last-in, first-out</code>). To add an item to the top of the stack, use <code>append()</code>. To retrieve an item from the top of the stack, use <code>pop()</code> without an explicit index. For example:</p>
+<p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved ("last-in, first-out").  To add an item to the top of the stack, use "append()".  To retrieve an item from the top of the stack, use "pop()" without an explicit index.  For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; stack = [3, 4, 5]
 &gt;&gt;&gt; stack.append(6)
 &gt;&gt;&gt; stack.append(7)
@@ -69,8 +71,8 @@
 [3, 4]
 </code></pre>
 <h3 id="5_1_2_">5.1.2. Using Lists as Queues</h3>
-<p>It is also possible to use a list as a queue, where the first element added is the first element retrieved (<code>first-in, first-out</code>); however, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
-<p>To implement a queue, use <code>collections.deque</code> which was designed to have fast appends and pops from both ends. For example:</p>
+<p>It is also possible to use a list as a queue, where the first element added is the first element retrieved ("first-in, first-out"); however, lists are not efficient for this purpose.  While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
+<p>To implement a queue, use "collections.deque" which was designed to have fast appends and pops from both ends.  For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; from collections import deque
 &gt;&gt;&gt; queue = deque(["Eric", "John", "Michael"])
 &gt;&gt;&gt; queue.append("Terry")           # Terry arrives
@@ -87,19 +89,19 @@ deque(['Michael', 'Terry', 'Graham'])
 <p>For example, assume we want to create a list of squares, like:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; squares = []
 &gt;&gt;&gt; for x in range(10):
-...    squares.append(x**2)
+...     squares.append(x**2)
 ...
 &gt;&gt;&gt; squares
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 </code></pre>
-<p>Note that this creates (or overwrites) a variable named <code>x</code> that still exists after the loop completes. We can calculate the list of squares without any side effects using:</p>
+<p>Note that this creates (or overwrites) a variable named "x" that still exists after the loop completes.  We can calculate the list of squares without any side effects using:</p>
 <pre class="prettyprint"><code>squares = list(map(lambda x: x**2, range(10)))
 </code></pre>
 <p>or, equivalently:</p>
 <pre class="prettyprint"><code>squares = [x**2 for x in range(10)]
 </code></pre>
 <p>which is more concise and readable.</p>
-<p>A list comprehension consists of brackets containing an expression followed by a <code>for</code> clause, then zero or more <code>for</code> or <code>if</code> clauses. The result will be a new list resulting from evaluating the expression in the context of the <code>for</code> and <code>if</code> clauses which follow it. For example, this listcomp combines the elements of two lists if they are not equal:</p>
+<p>A list comprehension consists of brackets containing an expression followed by a "for" clause, then zero or more "for" or "if" clauses. The result will be a new list resulting from evaluating the expression in the context of the "for" and "if" clauses which follow it. For example, this listcomp combines the elements of two lists if they are not equal:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
 [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
 </code></pre>
@@ -113,8 +115,8 @@ deque(['Michael', 'Terry', 'Graham'])
 &gt;&gt;&gt; combs
 [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
 </code></pre>
-<p>Note how the order of the <code>for</code> and <code>if</code> statements is the same in both these snippets.</p>
-<p>If the expression is a tuple (e.g. the <code>(x, y)</code> in the previous example), it must be parenthesized.</p>
+<p>Note how the order of the "for" and "if" statements is the same in both these snippets.</p>
+<p>If the expression is a tuple (e.g. the "(x, y)" in the previous example), it must be parenthesized.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; vec = [-4, -2, 0, 2, 4]
 &gt;&gt;&gt; # create a new list with the values doubled
 &gt;&gt;&gt; [x*2 for x in vec]
@@ -136,7 +138,7 @@ deque(['Michael', 'Terry', 'Graham'])
 &gt;&gt;&gt; [x, x**2 for x in range(6)]
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
     [x, x**2 for x in range(6)]
-               ^
+              ^
 SyntaxError: invalid syntax
 &gt;&gt;&gt; # flatten a list using a listcomp with two 'for'
 &gt;&gt;&gt; vec = [[1,2,3], [4,5,6], [7,8,9]]
@@ -161,7 +163,7 @@ SyntaxError: invalid syntax
 <pre class="prettyprint"><code>&gt;&gt;&gt; [[row[i] for row in matrix] for i in range(4)]
 [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
 </code></pre>
-<p>As we saw in the previous section, the nested listcomp is evaluated in the context of the <code>for</code> that follows it, so this example is equivalent to:</p>
+<p>As we saw in the previous section, the nested listcomp is evaluated in the context of the "for" that follows it, so this example is equivalent to:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; transposed = []
 &gt;&gt;&gt; for i in range(4):
 ...     transposed.append([row[i] for row in matrix])
@@ -181,13 +183,13 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; transposed
 [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
 </code></pre>
-<p>In the real world, you should prefer built-in functions to complex flow statements. The <code>zip()</code> function would do a great job for this use case:</p>
+<p>In the real world, you should prefer built-in functions to complex flow statements. The "zip()" function would do a great job for this use case:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; list(zip(*matrix))
 [(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
 </code></pre>
 <p>See Unpacking Argument Lists for details on the asterisk in this line.</p>
-<h2 id="5_2_">5.2. The <code>del</code> statement</h2>
-<p>There is a way to remove an item from a list given its index instead of its value: the <code>del</code> statement. This differs from the <code>pop()</code> method which returns a value. The <code>del</code> statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example:</p>
+<h2 id="5_2_">5.2. The "del" statement</h2>
+<p>There is a way to remove an item from a list given its index instead of its value: the "del" statement.  This differs from the "pop()" method which returns a value.  The "del" statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice).  For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; a = [-1, 1, 66.25, 333, 333, 1234.5]
 &gt;&gt;&gt; del a[0]
 &gt;&gt;&gt; a
@@ -199,12 +201,12 @@ SyntaxError: invalid syntax
 &gt;&gt;&gt; a
 []
 </code></pre>
-<p><code>del</code> can also be used to delete entire variables:</p>
+<p>"del" can also be used to delete entire variables:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; del a
 </code></pre>
-<p>Referencing the name <code>a</code> hereafter is an error (at least until another value is assigned to it). We'll find other uses for <code>del</code> later.</p>
+<p>Referencing the name "a" hereafter is an error (at least until another value is assigned to it).  We'll find other uses for "del" later.</p>
 <h2 id="5_3_">5.3. Tuples and Sequences</h2>
-<p>We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of <em>sequence</em> data types (see Sequence Types --- list, tuple, range). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the <em>tuple</em>.</p>
+<p>We saw that lists and strings have many common properties, such as indexing and slicing operations.  They are two examples of <em>sequence</em> data types (see Sequence Types --- list, tuple, range).  Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the <em>tuple</em>.</p>
 <p>A tuple consists of a number of values separated by commas, for instance:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; t = 12345, 54321, 'hello!'
 &gt;&gt;&gt; t[0]
@@ -225,9 +227,9 @@ TypeError: 'tuple' object does not support item assignment
 &gt;&gt;&gt; v
 ([1, 2, 3], [3, 2, 1])
 </code></pre>
-<p>As you see, on output tuples are always enclosed in parentheses, so that nested tuples are interpreted correctly; they may be input with or without surrounding parentheses, although often parentheses are necessary anyway (if the tuple is part of a larger expression). It is not possible to assign to the individual items of a tuple, however it is possible to create tuples which contain mutable objects, such as lists.</p>
-<p>Though tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are <em>immutable</em>, and usually contain a heterogeneous sequence of elements that are accessed via unpacking (see later in this section) or indexing (or even by attribute in the case of <code>namedtuples</code>). Lists are <em>mutable</em>, and their elements are usually homogeneous and are accessed by iterating over the list.</p>
-<p>A special problem is the construction of tuples containing 0 or 1 items: the syntax has some extra quirks to accommodate these. Empty tuples are constructed by an empty pair of parentheses; a tuple with one item is constructed by following a value with a comma (it is not sufficient to enclose a single value in parentheses). Ugly, but effective. For example:</p>
+<p>As you see, on output tuples are always enclosed in parentheses, so that nested tuples are interpreted correctly; they may be input with or without surrounding parentheses, although often parentheses are necessary anyway (if the tuple is part of a larger expression).  It is not possible to assign to the individual items of a tuple, however it is possible to create tuples which contain mutable objects, such as lists.</p>
+<p>Though tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are <em>immutable</em>, and usually contain a heterogeneous sequence of elements that are accessed via unpacking (see later in this section) or indexing (or even by attribute in the case of "namedtuples"). Lists are <em>mutable</em>, and their elements are usually homogeneous and are accessed by iterating over the list.</p>
+<p>A special problem is the construction of tuples containing 0 or 1 items: the syntax has some extra quirks to accommodate these.  Empty tuples are constructed by an empty pair of parentheses; a tuple with one item is constructed by following a value with a comma (it is not sufficient to enclose a single value in parentheses). Ugly, but effective.  For example:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; empty = ()
 &gt;&gt;&gt; singleton = 'hello',    # &lt;-- note trailing comma
 &gt;&gt;&gt; len(empty)
@@ -237,13 +239,13 @@ TypeError: 'tuple' object does not support item assignment
 &gt;&gt;&gt; singleton
 ('hello',)
 </code></pre>
-<p>The statement <code>t = 12345, 54321, 'hello!'</code> is an example of <em>tuple packing</em>: the values <code>12345</code>, <code>54321</code> and <code>'hello!'</code> are packed together in a tuple. The reverse operation is also possible:</p>
+<p>The statement "t = 12345, 54321, 'hello!'" is an example of <em>tuple packing</em>: the values "12345", "54321" and "'hello!'" are packed together in a tuple. The reverse operation is also possible:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; x, y, z = t
 </code></pre>
-<p>This is called, appropriately enough, <em>sequence unpacking</em> and works for any sequence on the right-hand side. Sequence unpacking requires that there are as many variables on the left side of the equals sign as there are elements in the sequence. Note that multiple assignment is really just a combination of tuple packing and sequence unpacking.</p>
+<p>This is called, appropriately enough, <em>sequence unpacking</em> and works for any sequence on the right-hand side.  Sequence unpacking requires that there are as many variables on the left side of the equals sign as there are elements in the sequence.  Note that multiple assignment is really just a combination of tuple packing and sequence unpacking.</p>
 <h2 id="5_4_">5.4. Sets</h2>
-<p>Python also includes a data type for <em>sets</em>. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
-<p>Curly braces or the <code>set()</code> function can be used to create sets. Note: to create an empty set you have to use <code>set()</code>, not <code>{}</code>; the latter creates an empty dictionary, a data structure that we discuss in the next section.</p>
+<p>Python also includes a data type for <em>sets</em>.  A set is an unordered collection with no duplicate elements.  Basic uses include membership testing and eliminating duplicate entries.  Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
+<p>Curly braces or the "set()" function can be used to create sets. Note: to create an empty set you have to use "set()", not "{}"; the latter creates an empty dictionary, a data structure that we discuss in the next section.</p>
 <p>Here is a brief demonstration:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 &gt;&gt;&gt; print(basket)                      # show that duplicates have been removed
@@ -274,10 +276,10 @@ False
 {'r', 'd'}
 </code></pre>
 <h2 id="5_5_">5.5. Dictionaries</h2>
-<p>Another useful data type built into Python is the <em>dictionary</em> (see Mapping Types --- dict). Dictionaries are sometimes found in other languages as <code>associative memories</code> or <code>associative arrays</code>. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by <em>keys</em>, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like <code>append()</code> and <code>extend()</code>.</p>
-<p>It is best to think of a dictionary as a set of <em>key: value</em> pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: <code>{}</code>. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.</p>
-<p>The main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with <code>del</code>. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.</p>
-<p>Performing <code>list(d)</code> on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use <code>sorted(d)</code> instead). To check whether a single key is in the dictionary, use the <code>in</code> keyword.</p>
+<p>Another useful data type built into Python is the <em>dictionary</em> (see Mapping Types --- dict). Dictionaries are sometimes found in other languages as "associative memories" or "associative arrays".  Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by <em>keys</em>, which can be any immutable type; strings and numbers can always be keys.  Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like "append()" and "extend()".</p>
+<p>It is best to think of a dictionary as a set of <em>key: value</em> pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: "{}". Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.</p>
+<p>The main operations on a dictionary are storing a value with some key and extracting the value given the key.  It is also possible to delete a key:value pair with "del". If you store using a key that is already in use, the old value associated with that key is forgotten.  It is an error to extract a value using a non-existent key.</p>
+<p>Performing "list(d)" on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use "sorted(d)" instead). To check whether a single key is in the dictionary, use the "in" keyword.</p>
 <p>Here is a small example using a dictionary:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; tel = {'jack': 4098, 'sape': 4139}
 &gt;&gt;&gt; tel['guido'] = 4127
@@ -298,7 +300,7 @@ True
 &gt;&gt;&gt; 'jack' not in tel
 False
 </code></pre>
-<p>The <code>dict()</code> constructor builds dictionaries directly from sequences of key-value pairs:</p>
+<p>The "dict()" constructor builds dictionaries directly from sequences of key-value pairs:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
 {'sape': 4139, 'guido': 4127, 'jack': 4098}
 </code></pre>
@@ -311,7 +313,7 @@ False
 {'sape': 4139, 'guido': 4127, 'jack': 4098}
 </code></pre>
 <h2 id="5_6_">5.6. Looping Techniques</h2>
-<p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the <code>items()</code> method.</p>
+<p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the "items()" method.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; knights = {'gallahad': 'the pure', 'robin': 'the brave'}
 &gt;&gt;&gt; for k, v in knights.items():
 ...     print(k, v)
@@ -319,7 +321,7 @@ False
 gallahad the pure
 robin the brave
 </code></pre>
-<p>When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the <code>enumerate()</code> function.</p>
+<p>When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the "enumerate()" function.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for i, v in enumerate(['tic', 'tac', 'toe']):
 ...     print(i, v)
 ...
@@ -327,7 +329,7 @@ robin the brave
 1 tac
 2 toe
 </code></pre>
-<p>To loop over two or more sequences at the same time, the entries can be paired with the <code>zip()</code> function.</p>
+<p>To loop over two or more sequences at the same time, the entries can be paired with the "zip()" function.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; questions = ['name', 'quest', 'favorite color']
 &gt;&gt;&gt; answers = ['lancelot', 'the holy grail', 'blue']
 &gt;&gt;&gt; for q, a in zip(questions, answers):
@@ -337,7 +339,7 @@ What is your name?  It is lancelot.
 What is your quest?  It is the holy grail.
 What is your favorite color?  It is blue.
 </code></pre>
-<p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the <code>reversed()</code> function.</p>
+<p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the "reversed()" function.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for i in reversed(range(1, 10, 2)):
 ...     print(i)
 ...
@@ -347,7 +349,7 @@ What is your favorite color?  It is blue.
 3
 1
 </code></pre>
-<p>To loop over a sequence in sorted order, use the <code>sorted()</code> function which returns a new sorted list while leaving the source unaltered.</p>
+<p>To loop over a sequence in sorted order, use the "sorted()" function which returns a new sorted list while leaving the source unaltered.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
 &gt;&gt;&gt; for f in sorted(set(basket)):
 ...     print(f)
@@ -369,20 +371,20 @@ pear
 [56.2, 51.7, 55.3, 52.5, 47.8]
 </code></pre>
 <h2 id="5_7_">5.7. More on Conditions</h2>
-<p>The conditions used in <code>while</code> and <code>if</code> statements can contain any operators, not just comparisons.</p>
-<p>The comparison operators <code>in</code> and <code>not in</code> check whether a value occurs (does not occur) in a sequence. The operators <code>is</code> and <code>is not</code> compare whether two objects are really the same object; this only matters for mutable objects like lists. All comparison operators have the same priority, which is lower than that of all numerical operators.</p>
-<p>Comparisons can be chained. For example, <code>a &lt; b == c</code> tests whether <code>a</code> is less than <code>b</code> and moreover <code>b</code> equals <code>c</code>.</p>
-<p>Comparisons may be combined using the Boolean operators <code>and</code> and <code>or</code>, and the outcome of a comparison (or of any other Boolean expression) may be negated with <code>not</code>. These have lower priorities than comparison operators; between them, <code>not</code> has the highest priority and <code>or</code> the lowest, so that <code>A and not B or C</code> is equivalent to <code>(A and (not B)) or C</code>. As always, parentheses can be used to express the desired composition.</p>
-<p>The Boolean operators <code>and</code> and <code>or</code> are so-called <em>short-circuit</em> operators: their arguments are evaluated from left to right, and evaluation stops as soon as the outcome is determined. For example, if <code>A</code> and <code>C</code> are true but <code>B</code> is false, <code>A and B and C</code> does not evaluate the expression <code>C</code>. When used as a general value and not as a Boolean, the return value of a short-circuit operator is the last evaluated argument.</p>
-<p>It is possible to assign the result of a comparison or other Boolean expression to a variable. For example,</p>
+<p>The conditions used in "while" and "if" statements can contain any operators, not just comparisons.</p>
+<p>The comparison operators "in" and "not in" check whether a value occurs (does not occur) in a sequence.  The operators "is" and "is not" compare whether two objects are really the same object; this only matters for mutable objects like lists.  All comparison operators have the same priority, which is lower than that of all numerical operators.</p>
+<p>Comparisons can be chained.  For example, "a &lt; b == c" tests whether "a" is less than "b" and moreover "b" equals "c".</p>
+<p>Comparisons may be combined using the Boolean operators "and" and "or", and the outcome of a comparison (or of any other Boolean expression) may be negated with "not".  These have lower priorities than comparison operators; between them, "not" has the highest priority and "or" the lowest, so that "A and not B or C" is equivalent to "(A and (not B)) or C". As always, parentheses can be used to express the desired composition.</p>
+<p>The Boolean operators "and" and "or" are so-called <em>short-circuit</em> operators: their arguments are evaluated from left to right, and evaluation stops as soon as the outcome is determined.  For example, if "A" and "C" are true but "B" is false, "A and B and C" does not evaluate the expression "C".  When used as a general value and not as a Boolean, the return value of a short-circuit operator is the last evaluated argument.</p>
+<p>It is possible to assign the result of a comparison or other Boolean expression to a variable.  For example,</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
 &gt;&gt;&gt; non_null = string1 or string2 or string3
 &gt;&gt;&gt; non_null
 'Trondheim'
 </code></pre>
-<p>Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing <code>=</code> in an expression when <code>==</code> was intended.</p>
+<p>Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing "=" in an expression when "==" was intended.</p>
 <h2 id="5_8_">5.8. Comparing Sequences and Other Types</h2>
-<p>Sequence objects may be compared to other objects with the same sequence type. The comparison uses <em>lexicographical</em> ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively. If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one. Lexicographical ordering for strings uses the Unicode code point number to order individual characters. Some examples of comparisons between sequences of the same type:</p>
+<p>Sequence objects may be compared to other objects with the same sequence type. The comparison uses <em>lexicographical</em> ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively.  If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one.  Lexicographical ordering for strings uses the Unicode code point number to order individual characters.  Some examples of comparisons between sequences of the same type:</p>
 <pre class="prettyprint"><code>(1, 2, 3)              &lt; (1, 2, 4)
 [1, 2, 3]              &lt; [1, 2, 4]
 'ABC' &lt; 'C' &lt; 'Pascal' &lt; 'Python'
@@ -391,6 +393,6 @@ pear
 (1, 2, 3)             == (1.0, 2.0, 3.0)
 (1, 2, ('aa', 'ab'))   &lt; (1, 2, ('abc', 'a'), 4)
 </code></pre>
-<p>Note that comparing objects of different types with <code>&lt;</code> or <code>&gt;</code> is legal provided that the objects have appropriate comparison methods. For example, mixed numeric types are compared according to their numeric value, so 0 equals 0.0, etc. Otherwise, rather than providing an arbitrary ordering, the interpreter will raise a <code>TypeError</code> exception.</p>
+<p>Note that comparing objects of different types with "<" or ">" is legal provided that the objects have appropriate comparison methods. For example, mixed numeric types are compared according to their numeric value, so 0 equals 0.0, etc.  Otherwise, rather than providing an arbitrary ordering, the interpreter will raise a "TypeError" exception.</p>
 <p>-[ Footnotes ]-</p>
-<p>[1] Other languages may return the mutated object, which allows method chaining, such as <code>d-&gt;insert("a")-&gt;remove("b")-&gt;sort();</code>.</p>
+<p>[1] Other languages may return the mutated object, which allows method chaining, such as "d-&gt;insert("a")-&gt;remove("b")-&gt;sort();".</p>

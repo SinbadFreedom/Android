@@ -2,974 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/about.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/bugs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/abstract.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/allocation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/apiabiversion.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/arg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/bool.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/buffer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/bytearray.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/bytes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/capsule.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/cell.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/code.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/codec.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/complex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/concrete.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/contextvars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/conversion.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/coro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/datetime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/descriptor.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/dict.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/float.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/function.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/gcsupport.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/gen.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/init.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/intro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/iter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/iterator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/long.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/mapping.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/marshal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/memory.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/memoryview.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/method.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/module.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/none.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/number.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/objbuffer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/object.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/objimpl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/refcounting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/reflection.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/sequence.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/set.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/slice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/stable.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/structures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/sys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/tuple.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/type.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/typeobj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/unicode.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/utilities.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/veryhigh.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/c-api/weakref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/contents.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/copyright.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distributing/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/apiref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/builtdist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/commandref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/configfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/packageindex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/setupscript.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/sourcedist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/distutils/uploading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/building.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/embedding.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/newtypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/newtypes_tutorial.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/extending/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/design.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/general.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/gui.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/installed.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/library.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/programming.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/glossary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/argparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/clinic.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/cporting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/curses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/descriptor.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/functional.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/instrumentation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/ipaddress.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/logging-cookbook.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/logging.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/pyporting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/regex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/sockets.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/sorting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/unicode.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/howto/urllib2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/install/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/installing/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/2to3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/__future__.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/__main__.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/_dummy_thread.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/_thread.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/abc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/aifc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/allos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/archiving.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/argparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/array.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ast.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asynchat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-api-index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-dev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-eventloop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-future.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-llapi-index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-platforms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-policy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-protocol.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-queue.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-stream.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-subprocess.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-sync.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio-task.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncio.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/asyncore.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/atexit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/audioop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/base64.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/bdb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/binary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/binascii.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/binhex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/bisect.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/builtins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/bz2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/calendar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/cgi.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/cgitb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/chunk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/cmath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/cmd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/code.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/codecs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/codeop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/collections.abc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/collections.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/colorsys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/compileall.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/concurrency.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/concurrent.futures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/concurrent.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/configparser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/constants.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/contextlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/contextvars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/copyreg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/crypt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/crypto.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/csv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ctypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/curses.ascii.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/curses.panel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/curses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/custominterp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/dataclasses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/datatypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/datetime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/dbm.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/debug.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/decimal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/development.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/difflib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/dis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/distribution.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/distutils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/doctest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/dummy_threading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.charset.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.compat32-message.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.contentmanager.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.encoders.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.errors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.generator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.header.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.headerregistry.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.iterators.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.message.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.mime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.policy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/email.utils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ensurepip.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/enum.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/errno.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/faulthandler.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/fcntl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/filecmp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/fileformats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/fileinput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/filesys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/fnmatch.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/formatter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/fractions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/frameworks.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ftplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/functional.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/functions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/functools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/gc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/getopt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/getpass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/gettext.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/glob.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/grp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/gzip.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/hashlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/heapq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/hmac.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/html.entities.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/html.parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/html.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/http.client.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/http.cookiejar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/http.cookies.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/http.server.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/http.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/i18n.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/idle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/imaplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/imghdr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/imp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/importlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/inspect.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/internet.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/intro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/io.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ipaddress.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ipc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/itertools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/json.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/keyword.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/language.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/linecache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/locale.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/logging.config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/logging.handlers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/logging.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/lzma.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/macpath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/mailbox.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/mailcap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/markup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/marshal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/math.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/mimetypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/misc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/mm.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/mmap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/modulefinder.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/modules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/msilib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/msvcrt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/multiprocessing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/netdata.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/netrc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/nis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/nntplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/numbers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/numeric.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/operator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/optparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/os.path.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/os.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ossaudiodev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/othergui.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pathlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pdb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/persistence.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pickle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pickletools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pipes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pkgutil.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/platform.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/plistlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/poplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/posix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pprint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/profile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pty.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pwd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/py_compile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pyclbr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pydoc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/pyexpat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/python.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/queue.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/quopri.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/random.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/re.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/readline.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/reprlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/resource.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/rlcompleter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/runpy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sched.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/secrets.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/select.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/selectors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/shelve.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/shlex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/shutil.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/signal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/site.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/smtpd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/smtplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sndhdr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/socket.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/socketserver.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/spwd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sqlite3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/ssl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/stat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/statistics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/stdtypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/string.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/stringprep.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/struct.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/subprocess.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sunau.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/superseded.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/symbol.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/symtable.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/sysconfig.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/syslog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tabnanny.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tarfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/telnetlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tempfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/termios.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/textwrap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/threading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/time.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/timeit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tkinter.scrolledtext.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tkinter.tix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tkinter.ttk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tkinter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/token.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tokenize.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/trace.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/traceback.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tracemalloc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/tty.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/turtle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/types.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/typing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/undoc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/unicodedata.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/unittest.mock-examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/unittest.mock.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/unittest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/unix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/urllib.error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/urllib.parse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/urllib.request.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/urllib.robotparser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/urllib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/uu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/uuid.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/venv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/warnings.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/wave.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/weakref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/webbrowser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/winreg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/winsound.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/wsgiref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xdrlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.dom.minidom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.dom.pulldom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.dom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.etree.elementtree.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.sax.handler.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.sax.reader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.sax.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.sax.utils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xml.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xmlrpc.client.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xmlrpc.server.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/xmlrpc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/zipapp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/zipfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/zipimport.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/library/zlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/about.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/bugs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/abstract.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/allocation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/apiabiversion.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/arg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/bool.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/buffer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/bytearray.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/bytes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/capsule.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/cell.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/code.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/codec.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/complex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/concrete.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/contextvars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/conversion.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/coro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/datetime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/descriptor.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/dict.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/float.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/function.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/gcsupport.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/gen.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/init.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/intro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/iter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/iterator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/long.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/mapping.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/marshal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/memory.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/memoryview.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/method.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/module.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/none.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/number.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/objbuffer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/object.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/objimpl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/refcounting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/reflection.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/sequence.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/set.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/slice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/stable.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/structures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/sys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/tuple.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/type.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/typeobj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/unicode.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/utilities.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/veryhigh.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/c-api/weakref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/contents.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/copyright.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distributing/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/apiref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/builtdist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/commandref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/configfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/packageindex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/setupscript.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/sourcedist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/distutils/uploading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/building.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/embedding.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/newtypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/newtypes_tutorial.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/extending/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/design.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/extending.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/general.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/gui.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/installed.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/library.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/programming.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/faq/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/glossary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/argparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/clinic.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/cporting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/curses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/descriptor.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/functional.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/instrumentation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/ipaddress.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/logging-cookbook.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/logging.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/pyporting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/regex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/sockets.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/sorting.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/unicode.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/howto/urllib2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/install/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/installing/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/2to3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/__future__.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/__main__.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/_dummy_thread.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/_thread.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/abc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/aifc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/allos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/archiving.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/argparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/array.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ast.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asynchat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-api-index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-dev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-eventloop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-future.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-llapi-index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-platforms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-policy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-protocol.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-queue.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-stream.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-subprocess.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-sync.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio-task.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncio.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/asyncore.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/atexit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/audioop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/base64.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/bdb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/binary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/binascii.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/binhex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/bisect.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/builtins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/bz2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/calendar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/cgi.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/cgitb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/chunk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/cmath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/cmd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/code.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/codecs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/codeop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/collections.abc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/collections.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/colorsys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/compileall.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/concurrency.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/concurrent.futures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/concurrent.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/configparser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/constants.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/contextlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/contextvars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/copyreg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/crypt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/crypto.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/csv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ctypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/curses.ascii.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/curses.panel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/curses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/custominterp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/dataclasses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/datatypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/datetime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/dbm.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/debug.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/decimal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/development.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/difflib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/dis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/distribution.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/distutils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/doctest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/dummy_threading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.charset.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.compat32-message.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.contentmanager.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.encoders.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.errors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.generator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.header.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.headerregistry.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.iterators.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.message.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.mime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.policy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/email.utils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ensurepip.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/enum.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/errno.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/exceptions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/faulthandler.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/fcntl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/filecmp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/fileformats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/fileinput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/filesys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/fnmatch.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/formatter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/fractions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/frameworks.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ftplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/functional.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/functions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/functools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/gc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/getopt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/getpass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/gettext.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/glob.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/grp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/gzip.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/hashlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/heapq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/hmac.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/html.entities.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/html.parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/html.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/http.client.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/http.cookiejar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/http.cookies.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/http.server.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/http.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/i18n.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/idle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/imaplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/imghdr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/imp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/importlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/inspect.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/internet.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/intro.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/io.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ipaddress.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ipc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/itertools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/json.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/keyword.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/language.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/linecache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/locale.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/logging.config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/logging.handlers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/logging.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/lzma.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/macpath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/mailbox.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/mailcap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/markup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/marshal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/math.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/mimetypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/misc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/mm.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/mmap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/modulefinder.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/modules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/msilib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/msvcrt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/multiprocessing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/netdata.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/netrc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/nis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/nntplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/numbers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/numeric.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/operator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/optparse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/os.path.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/os.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ossaudiodev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/othergui.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/parser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pathlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pdb.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/persistence.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pickle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pickletools.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pipes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pkgutil.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/platform.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/plistlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/poplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/posix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pprint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/profile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pty.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pwd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/py_compile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pyclbr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pydoc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/pyexpat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/python.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/queue.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/quopri.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/random.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/re.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/readline.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/reprlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/resource.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/rlcompleter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/runpy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sched.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/secrets.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/select.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/selectors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/shelve.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/shlex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/shutil.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/signal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/site.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/smtpd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/smtplib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sndhdr.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/socket.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/socketserver.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/spwd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sqlite3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/ssl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/stat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/statistics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/stdtypes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/string.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/stringprep.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/struct.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/subprocess.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sunau.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/superseded.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/symbol.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/symtable.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sys.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/sysconfig.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/syslog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tabnanny.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tarfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/telnetlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tempfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/termios.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/textwrap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/threading.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/time.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/timeit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tkinter.scrolledtext.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tkinter.tix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tkinter.ttk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tkinter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/token.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tokenize.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/trace.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/traceback.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tracemalloc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/tty.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/turtle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/types.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/typing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/undoc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/unicodedata.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/unittest.mock-examples.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/unittest.mock.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/unittest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/unix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/urllib.error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/urllib.parse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/urllib.request.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/urllib.robotparser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/urllib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/uu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/uuid.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/venv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/warnings.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/wave.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/weakref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/webbrowser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/winreg.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/winsound.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/wsgiref.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xdrlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.dom.minidom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.dom.pulldom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.dom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.etree.elementtree.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.sax.handler.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.sax.reader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.sax.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.sax.utils.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xml.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xmlrpc.client.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xmlrpc.server.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/xmlrpc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/zipapp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/zipfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/zipimport.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/library/zlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/compound_stmts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/datamodel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/executionmodel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/expressions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/grammar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/lexical_analysis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/simple_stmts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/reference/toplevel_components.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/appendix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/appetite.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/classes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/controlflow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/datastructures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/errors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/floatingpoint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/inputoutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/interactive.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/interpreter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/modules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/stdlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/stdlib2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/venv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/tutorial/whatnow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/cmdline.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/editors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/mac.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/unix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/using/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/2.7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/3.7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/changelog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/python-3.7.4-docs-text/whatsnew/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/compound_stmts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/datamodel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/executionmodel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/expressions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/grammar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/lexical_analysis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/simple_stmts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/reference/toplevel_components.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/appendix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/appetite.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/classes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/controlflow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/datastructures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/errors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/floatingpoint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/inputoutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/interactive.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/interpreter.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/introduction.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/modules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/stdlib.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/stdlib2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/venv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/whatnow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/cmdline.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/editors.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/mac.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/unix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/using/windows.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/2.7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/3.7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/changelog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/origin/python-3.7.4-docs-text/whatsnew/index.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/10.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/10.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/11.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/11.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/12.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/12.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/13.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/13.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/14.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/14.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/15.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/15.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/16.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/16.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/2.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/3.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/4.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/4.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/5.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/5.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/6.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/6.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/7.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/7.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/8.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/8.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/en/9.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/en/9.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/10.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/11.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/12.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/13.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/14.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/15.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/16.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/5.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/6.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/7.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/8.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/en/9.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/en/9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/catalog.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/catalog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/php/search/python3.7.4_zh_cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/php/search/python3.7.4_zh_cn.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
@@ -1002,11 +61,47 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/14.md">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/12.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="357">
-                <caret line="17" column="322" selection-start-line="17" selection-start-column="322" selection-end-line="17" selection-end-column="322" />
+              <first_editor relative-caret-position="467">
+                <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/12.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="705">
+                <caret line="142" column="27" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="27" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/13.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="735">
+                <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/14.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="315">
+                <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
               </first_editor>
               <second_editor />
             </state>
@@ -1017,8 +112,54 @@
         <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/15.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
+              <first_editor relative-caret-position="152">
+                <caret line="164" selection-start-line="164" selection-end-line="164" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/15.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="432">
+                <caret line="182" selection-start-line="182" selection-end-line="182" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/16.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="761">
+                <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
               <first_editor relative-caret-position="824">
-                <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+                <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
               </first_editor>
               <second_editor />
             </state>
@@ -1026,72 +167,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/16.md">
+        <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="1328">
-                <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+              <first_editor relative-caret-position="137">
+                <caret line="20" selection-start-line="20" selection-end-line="20" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/classes.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="50" selection-end-line="915" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/errors.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="53" selection-end-line="409" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/controlflow.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="16" selection-end-line="720" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/datastructures.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" selection-end-line="684" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/floatingpoint.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="46" lean-forward="true" selection-end-line="301" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/index.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/appendix.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="47" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -1108,7 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.html(</find>
       <find>css</find>
       <find>alert</find>
       <find>catalog_anchor</find>
@@ -1138,6 +219,7 @@
       <find>hines where you have installed from</find>
       <find>.</find>
       <find />
+      <find>是朝着静</find>
     </findStrings>
     <replaceStrings>
       <replace>ask_</replace>
@@ -1188,18 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/12.md" />
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/15.md" />
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/16.md" />
-        <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/5.md" />
-        <option value="$PROJECT_DIR$/build/css/dashidan.css" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/google vs baidu in translate" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" />
-        <option value="$PROJECT_DIR$/build/doc/python3.7.4/en/catalog.json" />
-        <option value="$PROJECT_DIR$/tool/covert_search.js" />
-        <option value="$PROJECT_DIR$/build/doc/python3.7.4/en/search.json" />
-        <option value="$PROJECT_DIR$/tool/covert_search_catalog.js" />
         <option value="$PROJECT_DIR$/build/doc/python3.7.4/en/search_catalog.json" />
         <option value="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/search_catalog.json" />
         <option value="$PROJECT_DIR$/build/doc/python3.7.4/zh_cn/catalog_search.json" />
@@ -1216,11 +286,7 @@
         <option value="$PROJECT_DIR$/build/php/search/php_errors.log" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/6.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md" />
-        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/appendix.txt" />
         <option value="$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/appetite.txt" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/1.md" />
@@ -1239,6 +305,22 @@
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/14.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/15.md" />
         <option value="$PROJECT_DIR$/src/md/python3.7.4/en/16.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/6.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/7.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/8.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/9.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/10.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/11.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/12.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/13.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/14.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/15.md" />
+        <option value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn/16.md" />
       </list>
     </option>
   </component>
@@ -1335,6 +417,14 @@
             <path>
               <item name="Android" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="md" type="462c0819:PsiDirectoryNode" />
+              <item name="python3.7.4" type="462c0819:PsiDirectoryNode" />
+              <item name="zh_cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
               <item name="tool" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -1353,7 +443,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/origin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/md/python3.7.4/zh_cn" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -1367,8 +457,8 @@
       <recent name="D:\workplace\git\Android\build\hbs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workplace\git\Android\origin" />
       <recent name="D:\workplace\git\Android\src\md\python3.7.4\zh_cn" />
+      <recent name="D:\workplace\git\Android\origin" />
       <recent name="D:\workplace\git\Android\tool" />
       <recent name="D:\workplace\git\Android\src\md\python3.7.4\en" />
       <recent name="D:\workplace\git\Android\src\md\python3.7.2" />
@@ -1996,14 +1086,20 @@
       <workItem from="1565774149293" duration="1793000" />
       <workItem from="1565775955957" duration="599000" />
       <workItem from="1565838121439" duration="796000" />
-      <workItem from="1565839893460" duration="1268000" />
-    </task>
-    <task id="LOCAL-00386" summary="1. note reply">
-      <created>1560070586229</created>
-      <option name="number" value="00386" />
-      <option name="presentableId" value="LOCAL-00386" />
-      <option name="project" value="LOCAL" />
-      <updated>1560070586229</updated>
+      <workItem from="1565839893460" duration="1888000" />
+      <workItem from="1565848758035" duration="1813000" />
+      <workItem from="1565855590674" duration="1792000" />
+      <workItem from="1565857395626" duration="1473000" />
+      <workItem from="1565859202604" duration="1793000" />
+      <workItem from="1565861008736" duration="814000" />
+      <workItem from="1565864266646" duration="1793000" />
+      <workItem from="1565866075515" duration="1794000" />
+      <workItem from="1565867881708" duration="1850000" />
+      <workItem from="1565922697395" duration="1323000" />
+      <workItem from="1565924922980" duration="1792000" />
+      <workItem from="1565926728061" duration="2283000" />
+      <workItem from="1565933765661" duration="1021000" />
+      <workItem from="1565935571562" duration="2131000" />
     </task>
     <task id="LOCAL-00387" summary="1. catalog, doc , stroll alone">
       <created>1560172039744</created>
@@ -2341,11 +1437,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564496310972</updated>
     </task>
-    <option name="localTasksCounter" value="435" />
+    <task id="LOCAL-00435" summary="init python 3.7.4 en doc">
+      <created>1565841197508</created>
+      <option name="number" value="00435" />
+      <option name="presentableId" value="LOCAL-00435" />
+      <option name="project" value="LOCAL" />
+      <updated>1565841197509</updated>
+    </task>
+    <option name="localTasksCounter" value="436" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1004193000" />
+    <option name="totallyTimeSpent" value="1026485000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -2357,15 +1460,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27267876" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12059765" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.15141612" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16448802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39869282" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31154683" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2412,7 +1514,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1.  small screen porting" />
     <MESSAGE value="1.  small screen adapter" />
     <MESSAGE value="1.  small screen auto adapter" />
     <MESSAGE value="1.  add php single ask url show page" />
@@ -2437,7 +1538,8 @@
     <MESSAGE value="1. add doc search" />
     <MESSAGE value="1. add doc search log" />
     <MESSAGE value="trans 5.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="trans 5.md" />
+    <MESSAGE value="init python 3.7.4 en doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="init python 3.7.4 en doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2464,116 +1566,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/php/profile.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="546">
-            <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/谷歌和百度的中文翻译对比">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3024">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="10563">
-            <caret line="503" selection-start-line="503" selection-end-line="503" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/trans">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/show_util_time.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/php_errors.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/app_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/mongo_login.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/figure_url.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/6.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="385">
-            <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/catalog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/catalog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="273">
-            <caret line="13" column="87" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="87" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/faq/gui.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/appendix.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/origin/python-3.7.4rc1-docs-text/tutorial/appetite.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -2586,16 +1578,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="693">
             <caret line="33" column="283" selection-start-line="33" selection-start-column="283" selection-end-line="33" selection-end-column="283" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="882">
-            <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
           </first_editor>
           <second_editor />
         </state>
@@ -2747,16 +1729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/12.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="740">
-            <caret line="141" column="68" selection-start-line="141" selection-start-column="68" selection-end-line="141" selection-end-column="68" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/whatnow.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -2798,10 +1770,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/errors.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="53" selection-end-line="409" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/controlflow.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="16" selection-end-line="720" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/16.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="819">
+            <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.2/en/1.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="10710">
+            <caret line="510" selection-start-line="510" selection-end-line="510" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/5.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="10710">
+            <caret line="510" column="2" selection-start-line="510" selection-start-column="2" selection-end-line="510" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/6.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="7161">
+            <caret line="341" column="12" selection-start-line="341" selection-start-column="12" selection-end-line="341" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/7.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="6678">
+            <caret line="318" selection-start-line="318" selection-end-line="318" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/8.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="6090">
+            <caret line="290" column="64" selection-start-line="290" selection-start-column="64" selection-end-line="290" selection-end-column="64" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/9.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="10920">
+            <caret line="520" selection-start-line="520" selection-end-line="520" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="315">
+            <caret line="15" column="86" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -2812,32 +1879,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/index.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/errors.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="53" selection-end-line="409" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/floatingpoint.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="15" column="46" lean-forward="true" selection-end-line="301" />
+          <caret line="15" column="46" selection-end-line="301" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/15.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="824">
-            <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/index.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/origin/python-3.7.4-docs-text/tutorial/appendix.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -2846,11 +1896,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/16.md">
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/10.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1328">
-            <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+          <first_editor relative-caret-position="726">
+            <caret line="262" column="46" selection-start-line="262" selection-start-column="46" selection-end-line="262" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/11.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1419">
+            <caret line="298" selection-start-line="298" selection-end-line="298" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/12.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="467">
+            <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/12.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="705">
+            <caret line="142" column="27" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/13.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="735">
+            <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/14.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/en/15.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="152">
+            <caret line="164" selection-start-line="164" selection-end-line="164" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/15.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="432">
+            <caret line="182" selection-start-line="182" selection-end-line="182" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/16.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="761">
+            <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/3.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="824">
+            <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/md/python3.7.4/zh_cn/1.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="137">
+            <caret line="20" selection-start-line="20" selection-end-line="20" />
           </first_editor>
           <second_editor />
         </state>

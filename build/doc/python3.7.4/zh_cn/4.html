@@ -1,7 +1,7 @@
-<h1 id="4_">4. 更多控制流工具</h1>
-<p>除了刚刚介绍的<code>while</code>语句之外,Python还知道其他语言中常见的控制流语句,并且有一些曲折.</p>
-<h2 id="4_1_">4.1. <code>if</code>语句</h2>
-<p>也许最着名的语句类型是<code>if</code>语句. 例如:</p>
+<h1 id="*">* 4. 其他流程控制工具</h1>
+<p>除了刚刚介绍过的 while 语句,Python中也有其他语言常用的流程控制语句,只是稍有不同.</p>
+<h2 id="4_1_">4.1. if 语句</h2>
+<p>可能最为人所熟知的编程语句就是 <code>if</code> 语句了.例如:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; x = int(input("Please enter an integer: "))
 Please enter an integer: 42
 &gt;&gt;&gt; if x &lt; 0:
@@ -16,9 +16,9 @@ Please enter an integer: 42
 ...
 More
 </code></pre>
-<p>可以有零个或多个<code>elif</code>部分,<code>else</code>部分是可选的.关键字<code>elif</code>是<code>else if</code>的缩写,有助于避免过度缩进.<code>if</code>…<code>elif</code>…<code>elif</code>…序列可以替代其他语言中的<code>switch</code>或<code>case</code>语句.</p>
-<h2 id="4_2_">4.2. <code>for</code>语句</h2>
-<p>Python中的<code>for</code>语句与C或Pascal中使用的语句略有不同.不是总是迭代数字的算术级数(如在Pascal中),或者让用户能够定义迭代步骤和停止条件(如<code>C</code>),Python的<code>for</code>语句按它们出现在序列中的顺序排列迭代任何序列的项(列表或字符串).</p>
+<p>可以有零个或多个 <code>elif</code> 部分,以及一个可选的 <code>else</code> 部分. 关键字 'elif' 是 'else if' 的缩写,适合用于避免过多的缩进. 一个 if … elif … elif … 序列可以看作是其他语言中的 <code>switch</code> 或 <code>case</code> 语句的替代.</p>
+<h2 id="4_2_">4.2. for 语句</h2>
+<p>Python 中的 for 语句与你在 C 或 Pascal 中可能用到的有所不同. Python 中的 for 语句并不总是对算术递增的数值进行迭代(如同 Pascal),或是给予用户定义迭代步骤和暂停条件的能力(如同 C),而是对任意序列进行迭代(例如列表或字符串),条目的迭代顺序与它们在序列中出现的顺序一致. 例如(此处英文为双关语):</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; # Measure some strings:
 ... words = ['cat', 'window', 'defenestrate']
 &gt;&gt;&gt; for w in words:
@@ -28,7 +28,7 @@ cat 3
 window 6
 defenestrate 12
 </code></pre>
-<p>如果您需要修改在循环内迭代的序列(例如复制所选项),建议您先复制一份.迭代序列不会隐式生成副本.切片表示法使这特别方便:</p>
+<p>如果在循环内需要修改序列中的值(比如重复某些选中的元素),推荐你先拷贝一份副本.对序列进行循环不代表制作了一个副本进行操作.切片操作使这件事非常简单:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for w in words[:]:  # Loop over a slice copy of the entire list.
 ...     if len(w) &gt; 6:
 ...         words.insert(0, w)
@@ -36,9 +36,9 @@ defenestrate 12
 &gt;&gt;&gt; words
 ['defenestrate', 'cat', 'window', 'defenestrate']
 </code></pre>
-<p>使用<code>for w in words:</code>,该示例将尝试创建一个无限列表,反复插入<code>defenestrate</code>.</p>
+<p>如果写成 <code>for w in words:</code>,这个示例就会创建无限长的列表,一次又一次重复地插入 <code>defenestrate</code>.</p>
 <h2 id="4_3_">4.3. <code>range()</code>函数</h2>
-<p>如果需要迭代一系列数字,内置函数<code>range()</code>就派上用场了.它生成算术进度:</p>
+<p>如果你确实需要遍历一个数字序列,内置函数 range() 会派上用场.它生成算术级数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for i in range(5):
 ...     print(i)
 ...
@@ -48,7 +48,7 @@ defenestrate 12
 3
 4
 </code></pre>
-<p>给定的端点绝不是生成序列的一部分;<code>range(10)</code>生成10个值,长度为10的序列项的合法索引.可以让范围从另一个数字开始,或者指定不同的增量(甚至是负数;有时这称为<code>步长</code>):</p>
+<p>给定的终止数值并不在要生成的序列里;<code>range(10)</code> 会生成10个值,并且是以合法的索引生成一个长度为10的序列.range也可以以另一个数字开头,或者以指定的幅度增加(甚至是负数;有时这也被叫做 '步进')</p>
 <pre class="prettyprint"><code>range(5, 10)
    5, 6, 7, 8, 9
 
@@ -58,7 +58,7 @@ range(0, 10, 3)
 range(-10, -100, -30)
   -10, -40, -70
 </code></pre>
-<p>要循环访问序列的索引,可以将<code>range()</code>和<code>len()</code>组合如下:</p>
+<p>要以序列的索引来迭代,您可以将 <code>range()</code> 和 <code>len()</code> 组合如下:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; a = ['Mary', 'had', 'a', 'little', 'lamb']
 &gt;&gt;&gt; for i in range(len(a)):
 ...     print(i, a[i])
@@ -69,20 +69,20 @@ range(-10, -100, -30)
 3 little
 4 lamb
 </code></pre>
-<p>然而,在大多数这种情况下,使用<code>enumerate()</code>函数很方便,请参见循环技术. </p>
-<p>如果只打印一个<code>range</code>,会发生一件奇怪的事情:</p>
+<p>然而,在大多数这类情况下,使用 <code>enumerate()</code> 函数比较方便,请参见 循环的技巧 .</p>
+<p>如果你只打印 <code>range</code>,会出现奇怪的结果:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; print(range(10))
 range(0, 10)
 </code></pre>
-<p>在许多方面,<code>range()</code>返回的对象的行为就像是一个列表,但实际上它不是.它是一个对象,迭代它时返回所需序列的连续项,但它并不真正使列表,从而节省空间.</p>
-<p>我们说这样的对象是<em>可遍历的</em>,也就是说,适合作为期望可以获得连续项的函数和构造的目标.我们已经看到,<code>for</code>语句就是这样一个<em>迭代器</em>.<code>list()</code>是另一个函数; 它从iterables创建列表:</p>
+<p>range() 所返回的对象在许多方面表现得像一个列表,但实际上却并不是.此对象会在你迭代它时基于所希望的序列返回连续的项,但它没有真正生成列表,这样就能节省空间.</p>
+<p>我们说这样的对象是 <em>可迭代的</em> ,也就是说,适合作为函数和结构体的参数,这些函数和结构体期望在迭代结束之前可以从中获取连续的元素.我们已经看到 <code>for</code> 语句就是这样一个<em>迭代器</em>.函数 <code>list()</code> 是另外一个;它从可迭代对象中创建列表.</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; list(range(5))
 [0, 1, 2, 3, 4]
 </code></pre>
-<p>稍后我们将看到更多返回iterables并将iterables作为参数的函数.</p>
-<h2 id="4_4_">4.4. <code>break</code>和<code>continue</code>语句,及循环中的<code>else</code>分句</h2>
-<p><code>break</code>语句与C中的语句一样,从最内部的封闭<code>for</code>或<code>while</code>循环中中断. </p>
-<p>循环语句可能有一个<code>else</code>子句; 它是在循环通过列表耗尽(使用<code>for</code>)或条件变为false(使用<code>while</code>)而终止时执行的,而不是在循环被<code>break</code>语句终止时执行的(译者注:这一点与其他的语言,如java,js等不同).通过以下循环来举例说明,该循环搜索素数:</p>
+<p>后面,我们会看到更多返回可迭代对象的函数,和以可迭代对象作为参数的函数.</p>
+<h2 id="4_4_">4.4. break 和 continue 语句,以及循环中的 else 子句</h2>
+<p>break 语句,和 C 中的类似,用于跳出最近的 <code>for</code> 或 <code>while</code> 循环.</p>
+<p>循环语句可能带有一个 else 子句;它会在循环遍历完列表 (使用 for) 或是在条件变为假 (使用 while) 的时候被执行,但是不会在循环被 break 语句终止时被执行. 这可以通过以下搜索素数的循环为例来进行说明:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for n in range(2, 10):
 ...     for x in range(2, n):
 ...         if n % x == 0:
@@ -101,9 +101,9 @@ range(0, 10)
 8 equals 2 * 4
 9 equals 3 * 3
 </code></pre>
-<p>(是的,这是正确的代码.仔细看看:<code>else</code>子句属于<code>for</code>循环,<strong>不</strong>属于<code>if</code>语句.)</p>
-<p>当与循环一起使用时,<code>else</code>子句与<code>try</code>语句的<code>else</code>子句比<code>if</code>语句有更多的共同点:<code>try</code>语句的<code>else</code>子句在不发生异常时运行,而循环的<code>else</code>子句在不发生<code>break</code>时运行.(译者注:这里不同于其他语言,如java,js等,需要仔细看代码理解.)有关<code>try</code>语句和异常的更多信息,请参阅处理异常.</p>
-<p><code>continue</code>语句,也是参考C语言的实现,将继续循环的下一个迭代:</p>
+<p>(是的,这是正确的代码.仔细看: <code>else</code> 子句属于 <code>for</code> 循环, <strong>不</strong>属于 <code>if</code> 语句.)</p>
+<p>当和循环一起使用时,<code>else</code> 子句与 try 语句中的 <code>else</code> 子句的共同点多于 <code>if</code> 语句中的子句: try 语句中的 <code>else</code> 子句会在未发生异常时执行,而循环中的 <code>else</code> 子句则会在未发生 <code>break</code> 时执行. 有关 try 语句和异常的更多信息,请参阅 处理异常.</p>
+<p>continue 语句也是借鉴自 C 语言,表示继续循环中的下一次迭代:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; for num in range(2, 10):
 ...     if num % 2 == 0:
 ...         print("Found an even number", num)
@@ -118,24 +118,24 @@ Found a number 7
 Found an even number 8
 Found a number 9
 </code></pre>
-<h2 id="4_5_">4.5. <code>pass</code>语句</h2>
-<p><code>pass</code>语句什么都不做. 当语法需要语句但程序不需要操作时,可以使用它. 例如:</p>
+<h2 id="4_5_">4.5. pass 语句</h2>
+<p>pass 语句什么也不做.当语法上需要一个语句,但程序需要什么动作也不做时,可以使用它.例如:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; while True:
 ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
 ...
 </code></pre>
-<p>这通常用于创建最小类:</p>
+<p>这通常用于创建最小的类:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; class MyEmptyClass:
 ...     pass
 ...
 </code></pre>
-<p><code>pass</code>另一个作用是可以作函数或条件体的占位符,当你处理新代码时,可以让你继续思考更抽象的层次. <code>pass</code>被自动忽略:</p>
+<p>pass 的另一个可以使用的场合是在你编写新的代码时作为一个函数或条件子句体的占位符,允许你保持在更抽象的层次上进行思考. pass 会被静默地忽略:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def initlog(*args):
 ...     pass   # Remember to implement this!
 ...
 </code></pre>
 <h2 id="4_6_">4.6. 定义函数</h2>
-<p>我们可以创建一个将斐波那契级数写入任意边界的函数: </p>
+<p>我们可以创建一个输出任意范围内 Fibonacci 数列的函数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def fib(n):    # write Fibonacci series up to n
 ...     """Print a Fibonacci series up to n."""
 ...     a, b = 0, 1
@@ -148,23 +148,23 @@ Found a number 9
 ... fib(2000)
 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
 </code></pre>
-<p>关键字<code>def</code>引入了函数<em>定义</em>. 它必须后跟函数名称和带括号的形式参数列表. 构成函数体的语句从下一行开始,并且必须缩进.</p>
-<p>函数体的第一个语句可以选择是字符串文字; 此字符串文字是函数的文档字符串,或<em>文档字符串</em>.(有关文档字符串的更多信息,请参阅文档字符串部分.有些工具使用文档字符串自动生成在线或印刷文档,或让用户以交互方式浏览代码; 在您编写的代码中包含docstrings是一种很好的做法,因此要养成习惯.</p>
-<p>函数的<em>执行</em>引入了一个用于函数局部变量的新符号表.更确切地说,函数中的所有变量赋值都将值存储在本地符号表中;而变量引用首先查找本地符号表,然后查找封闭函数的本地符号表,然后查找全局符号表,最后查找内置名称表.因此,不能在函数中直接为封闭函数的全局变量和变量赋值(除非,对于全局变量,在<code>global</code>语句中命名,或者对于封闭函数的变量,在<code>nonlocal</code>语句中命名),虽然他们可能被引用.(译者注:这一段有些绕,不好懂,初学可以暂时绕过,继续看完回头再看.)</p>
-<p>函数调用的实际参数(参数)在被调用函数被调用时引入该函数的本地符号表中;因此,使用<em>call by value</em>传递参数(其中<em>value</em>始终是对象<em>引用</em>,而不是对象的值).[1]当函数调用另一个函数时,将为该调用创建一个新的本地符号表.</p>
-<p>函数定义在当前符号表中引入函数名.函数名的值的类型被解释器识别为用户定义的函数.该值可以分配给另一个名称,该名称也可以用作函数.这是一种通用的重命名机制:</p>
+<p>关键字 def 引入一个函数 定义.它必须后跟函数名称和带括号的形式参数列表.构成函数体的语句从下一行开始,并且必须缩进.</p>
+<p>函数体的第一个语句可以(可选的)是字符串文字;这个字符串文字是函数的文档字符串或 <em>docstring</em> .(有关文档字符串的更多信息,请参阅 文档字符串 部分)有些工具使用文档字符串自动生成在线或印刷文档,或者让用户以交互式的形式浏览代码;在你编写的代码中包含文档字符串是一种很好的做法,所以要养成习惯.</p>
+<p>函数的 <em>执行</em> 会引入一个用于函数局部变量的新符号表. 更确切地说,函数中所有的变量赋值都将存储在局部符号表中;而变量引用会首先在局部符号表中查找,然后是外层函数的局部符号表,最后是内置名称表. 因此,全局变量和外层函数的变量不能在函数内部直接赋值(除非是在 global 语句中定义的全局变量,或者是在 nonlocal 语句中定义的外层函数的变量),尽管它们可以被引用.</p>
+<p>在函数被调用时,实际参数(实参)会被引入被调用函数的本地符号表中;因此,实参是通过 <em>按值调用</em> 传递的(其中 <em>值</em> 始终是对象 <em>引用</em> 而不是对象的值).[1] 当一个函数调用另外一个函数时,将会为该调用创建一个新的本地符号表.</p>
+<p>函数定义会把函数名引入当前的符号表中.函数名称的值具有解释器将其识别为用户定义函数的类型.这个值可以分配给另一个名称,该名称也可以作为一个函数使用.这用作一般的重命名机制:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; fib
 &lt;function fib at 10042ed0&gt;
 &gt;&gt;&gt; f = fib
 &gt;&gt;&gt; f(100)
 0 1 1 2 3 5 8 13 21 34 55 89
 </code></pre>
-<p>由于<code>fib</code>不返回值,因此来自其他语言的用户可能会认为它不是函数而是过程.实际上,即使是没有<code>return</code>语句的函数也会返回一个值,尽管它是一个相当无聊的值.该值称为<code>None</code>(它是内置名称).如果只写入值<code>None</code>,则解释器通常会禁止写入该值.如果您真的想使用<code>print()</code>,可以看到它: </p>
+<p>如果你学过其他语言,你可能会认为 <code>fib</code> 不是函数而是一个过程,因为它并不返回值.事实上,即使没有 <code>return</code> 语句的函数也会返回一个值,尽管它是一个相当无聊的值.这个值称为 <code>None</code> (它是内置名称).一般来说解释器不会打印出单独的返回值 <code>None</code> ,如果你真想看到它,你可以使用 print()</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; fib(0)
 &gt;&gt;&gt; print(fib(0))
 None
 </code></pre>
-<p>简单的编写一个函数返回Fibonacci系列的数字列表,而不是打印它:</p>
+<p>写一个返回斐波那契数列的列表,而不是打印出来的函数,非常简单:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def fib2(n):  # return Fibonacci series up to n
 ...     """Return a list containing the Fibonacci series up to n."""
 ...     result = []
@@ -178,15 +178,15 @@ None
 &gt;&gt;&gt; f100                # write the result
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 </code></pre>
-<p>与往常一样,这个示例演示了一些新的Python特性: </p>
+<p>此示例中,像往常一样,演示了一些新的 Python 功能:</p>
 <ul>
-<li><p><code>return</code>语句返回函数的值.没有表达式参数的<code>return</code>返回<code>None</code>.从函数结尾离开也会返回<code>None</code>.</p></li>
-<li><p>语句<code>result.append(a)</code>调用列表对象<code>result</code>的<em>方法</em>.方法是'属于'对象的函数,名为<code>obj.methodname</code>,其中<code>obj</code>是某个对象(可能是表达式),<code>methodname</code>是由对象类型定义的方法的名称.不同类型定义不同的方法.不同类型的方法可以具有相同的名称而不会引起歧义.(可以使用<em>classes</em>定义自己的对象类型和方法,参见类)示例中显示的方法<code>append()</code>是为列表对象定义的;它在列表的末尾添加了一个新元素.在这个例子中,它相当于<code>result = result + [a]</code>,但效率更高.</p></li>
+<li><p>return 语句会从函数内部返回一个值. 不带表达式参数的 <code>return</code> 会返回 <code>None</code>. 函数执行完毕退出也会返回 <code>None</code>.</p></li>
+<li><p><code>result.append(a)</code> 语句调用了列表对象 <code>result</code> 的 <em>方法</em> .方法是"属于"一个对象的函数,它被命名为 <code>obj.methodname</code> ,其中 <code>obj</code> 是某个对象(也可能是一个表达式), <code>methodname</code> 是由对象类型中定义的方法的名称.不同的类型可以定义不同的方法.不同类型的方法可以有相同的名称而不会引起歧义.(可以使用 类 定义自己的对象类型和方法,请参阅 类 )示例中的方法 <code>append()</code> 是为列表对象定义的;它会在列表的最后添加一个新的元素.在这个示例中它相当于 <code>result = result + [a]</code> ,但更高效.</p></li>
 </ul>
-<h2 id="4_7_">4.7. 关于定义函数的补充</h2>
-<p>也可以使用可变数量的参数定义函数. 有三种形式可以组合.</p>
-<h3 id="4_7_1_">4.7.1. 默认参数值</h3>
-<p>最有用的形式是为一个或多个参数指定默认值.这将创建一个可以调用少于定义的参数数量的函数.例如:</p>
+<h2 id="4_7_">4.7. 函数定义的更多形式</h2>
+<p>给函数定义有可变数目的参数也是可行的.这里有三种形式,可以组合使用.</p>
+<h3 id="4_7_1_">4.7.1. 参数默认值</h3>
+<p>最有用的形式是对一个或多个参数指定一个默认值.这样创建的函数,可以用比定义时允许的更少的参数调用,比如:</p>
 <pre class="prettyprint"><code>def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
         ok = input(prompt)
@@ -199,14 +199,14 @@ None
             raise ValueError('invalid user response')
         print(reminder)
 </code></pre>
-<p>可以通过多种方式调用此函数:</p>
+<p>这个函数可以通过几种方式调用:</p>
 <ul>
-<li><p>只提供强制性参数:<code>ask_ok('Do you really want to quit?')</code></p></li>
-<li><p>给出一个可选参数:<code>ask_ok('OK to overwrite the file?', 2)</code></p></li>
-<li><p>甚至给出所有参数:<code>ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')</code></p></li>
+<li><p>只给出必需的参数:<code>ask_ok('Do you really want to quit?')</code></p></li>
+<li><p>给出一个可选的参数:<code>ask_ok('OK to overwrite the file?', 2)</code></p></li>
+<li><p>或者给出所有的参数:<code>ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')</code></p></li>
 </ul>
-<p>此示例还引入了<code>in</code>关键字.这将测试序列是否包含某个值.</p>
-<p>默认值在函数<em>定义</em>范围内的定义点进行计算,以便进行计算</p>
+<p>这个示例还介绍了 <code>in</code> 关键字.它可以测试一个序列是否包含某个值.</p>
+<p>默认值是在 <em>定义过程</em> 中在函数定义处计算的,所以</p>
 <pre class="prettyprint"><code>i = 5
 
 def f(arg=i):
@@ -215,8 +215,8 @@ def f(arg=i):
 i = 6
 f()
 </code></pre>
-<p>will print <code>5</code>.</p>
-<p><strong>重要警告:</strong> 默认值只计算一次.当默认值是可变对象(如列表,字典或大多数类的实例)时,这会有所不同.例如,以下函数累积在后续调用中传递给它的参数:</p>
+<p>会打印 <code>5</code>.</p>
+<p><strong>重要警告:</strong> 默认值只会执行一次.这条规则在默认值为可变对象(列表,字典以及大多数类实例)时很重要.比如,下面的函数会存储在后续调用中传递给它的参数:</p>
 <pre class="prettyprint"><code>def f(a, L=[]):
     L.append(a)
     return L
@@ -225,12 +225,12 @@ print(f(1))
 print(f(2))
 print(f(3))
 </code></pre>
-<p>这将输出</p>
+<p>这将打印出</p>
 <pre class="prettyprint"><code>[1]
 [1, 2]
 [1, 2, 3]
 </code></pre>
-<p>如果不希望在后续调用之间共享默认值,则可以编写如下函数:</p>
+<p>如果你不想要在后续调用之间共享默认值,你可以这样写这个函数:</p>
 <pre class="prettyprint"><code>def f(a, L=None):
     if L is None:
         L = []
@@ -238,14 +238,14 @@ print(f(3))
     return L
 </code></pre>
 <h3 id="4_7_2_">4.7.2. 关键字参数</h3>
-<p>也可以使用<code>kwarg=value</code>形式的<em>关键字参数</em>来调用函数. 例如,以下函数:</p>
+<p>也可以使用形如 <code>kwarg=value</code> 的 关键字参数 来调用函数.例如下面的函数:</p>
 <pre class="prettyprint"><code>def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
     print("-- This parrot wouldn't", action, end=' ')
     print("if you put", voltage, "volts through it.")
     print("-- Lovely plumage, the", type)
     print("-- It's", state, "!")
 </code></pre>
-<p>接受一个必需参数(<code>voltage</code>)和三个可选参数(<code>state</code>,<code>action</code>和<code>type</code>).此函数可以以下任意方式调用:</p>
+<p>接受一个必需的参数(<code>voltage</code>)和三个可选的参数(<code>state</code>, <code>action</code>,和 <code>type</code>).这个函数可以通过下面的任何一种方式调用:</p>
 <pre class="prettyprint"><code>parrot(1000)                                          # 1 positional argument
 parrot(voltage=1000)                                  # 1 keyword argument
 parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
@@ -253,13 +253,13 @@ parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
 parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
 parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
 </code></pre>
-<p>但以下所有调用都将无效:</p>
+<p>但下面的函数调用都是无效的:</p>
 <pre class="prettyprint"><code>parrot()                     # required argument missing
 parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
 parrot(110, voltage=220)     # duplicate value for the same argument
 parrot(actor='John Cleese')  # unknown keyword argument
 </code></pre>
-<p>在函数调用中,关键字参数必须遵循位置参数.传递的所有关键字参数必须与函数接受的参数之一匹配(例如<code>actor</code>不是<code>parrot</code>函数的有效参数),并且它们的顺序并不重要.这还包括非可选参数(例如<code>parrot(voltage = 1000)</code>也是有效的).参数最多只能接收一次值.下面是一个由于这种限制而失败的例子:</p>
+<p>在函数调用中,关键字参数必须跟随在位置参数的后面.传递的所有关键字参数必须与函数接受的其中一个参数匹配(比如 <code>actor</code> 不是函数 <code>parrot</code> 的有效参数),它们的顺序并不重要.这也包括非可选参数,(比如 <code>parrot(voltage=1000)</code> 也是有效的).不能对同一个参数多次赋值.下面是一个因为此限制而失败的例子:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def function(a):
 ...     pass
 ...
@@ -268,7 +268,7 @@ Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 TypeError: function() got multiple values for keyword argument 'a'
 </code></pre>
-<p>当存在形式为<code>**name</code>的最终形式参数时,它会接收一个字典(请参阅映射类型--- dict),其中包含除了与形式参数相对应的所有关键字参数.这可以与<code>* name</code>形式的形式参数(在下一小节中描述)结合,该形式参数接收包含形式参数列表之外的位置参数的元组.(<code>* name</code>必须出现在<code>** name</code>之前.)例如,如果我们定义一个这样的函数:</p>
+<p>当存在一个形式为 <code>**name</code> 的正式形参时,它会接收一个字典 (参见 映射类型 --- dict),其中包含除了与正式形参相对应的关键字参数以外的所有关键字参数. 这可以与一个形式为 <code>*name</code>,接收一个包含除了正式形参列表以外的位置参数的 元组 的正式形参 (将在下一小节介绍) 组合使用 (<code>*name</code> 必须出现在 <code>**name</code> 之前.) 例如,如果我们这样定义一个函数:</p>
 <pre class="prettyprint"><code>def cheeseshop(kind, *arguments, **keywords):
     print("-- Do you have any", kind, "?")
     print("-- I'm sorry, we're all out of", kind)
@@ -278,14 +278,14 @@ TypeError: function() got multiple values for keyword argument 'a'
     for kw in keywords:
         print(kw, ":", keywords[kw])
 </code></pre>
-<p>可以像这样调用:</p>
+<p>它可以像这样调用:</p>
 <pre class="prettyprint"><code>cheeseshop("Limburger", "It's very runny, sir.",
            "It's really very, VERY runny, sir.",
            shopkeeper="Michael Palin",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
 </code></pre>
-<p>会输出:</p>
+<p>当然它会打印:</p>
 <pre class="prettyprint"><code>-- Do you have any Limburger ?
 -- I'm sorry, we're all out of Limburger
 It's very runny, sir.
@@ -295,13 +295,13 @@ shopkeeper : Michael Palin
 client : John Cleese
 sketch : Cheese Shop Sketch
 </code></pre>
-<p>请注意,输出关键字参数的顺序保证与函数调用中提供它们的顺序相匹配.</p>
-<h3 id="4_7_3_">4.7.3. Arbitrary Argument Lists</h3>
-<p>最后,最不常用的选项是指定可以使用任意数量的参数调用函数.这些参数将被包含在一个元组中(参见元组和序列).在可变数量的参数之前,可能会出现零个或多个正常参数.</p>
+<p>注意打印时关键字参数的顺序保证与调用函数时提供它们的顺序是相匹配的.</p>
+<h3 id="4_7_3_">4.7.3. 任意的参数列表</h3>
+<p>最后,最不常用的选项是可以使用任意数量的参数调用函数.这些参数会被包含在一个元组里(参见 元组和序列 ).在可变数量的参数之前,可能会出现零个或多个普通参数.:</p>
 <pre class="prettyprint"><code>def write_multiple_items(file, separator, *args):
     file.write(separator.join(args))
 </code></pre>
-<p>通常,这些<code>variadic</code>参数将是形式参数列表中的最后一个,因为它们会收集传递给函数的所有剩余输入参数.在<code>args</code>参数之后出现的任何形式参数都是仅关键字参数,这意味着它们只能是关键字而不是位置参数.</p>
+<p>一般来说,这些 <code>可变参数</code> 将在形式参数列表的末尾,因为它们收集传递给函数的所有剩余输入参数.出现在 <code>*args</code> 参数之后的任何形式参数都是 '仅关键字参数',也就是说它们只能作为关键字参数而不能是位置参数.:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def concat(*args, sep="/"):
 ...     return sep.join(args)
 ...
@@ -310,15 +310,15 @@ sketch : Cheese Shop Sketch
 &gt;&gt;&gt; concat("earth", "mars", "venus", sep=".")
 'earth.mars.venus'
 </code></pre>
-<h3 id="4_7_4_">4.7.4. Unpacking Argument Lists</h3>
-<p>当参数已经在列表或元组中但需要为需要单独位置参数的函数调用解包时,会发生相反的情况.例如,内置的<code>range()</code>函数需要单独的<em>start</em>和<em>stop</em>参数.如果它们不是单独可用的,请使用<code>*</code>运算符编写函数调用以从列表或元组中解压缩参数:</p>
+<h3 id="4_7_4_">4.7.4. 解包参数列表</h3>
+<p>当参数已经在列表或元组中但需要为需要单独位置参数的函数调用解包时,会发生相反的情况.例如,内置的<code>range()</code> 函数需要单独的 <em>start</em> 和 <em>stop</em> 参数.如果它们不能单独使用,请使用 <code>*</code> 运算符编写函数调用以从列表或元组中解包参数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; list(range(3, 6))            # normal call with separate arguments
 [3, 4, 5]
 &gt;&gt;&gt; args = [3, 6]
 &gt;&gt;&gt; list(range(*args))            # call with arguments unpacked from a list
 [3, 4, 5]
 </code></pre>
-<p>以相同的方式,字典可以使用<code>**</code>运算符提供关键字参数:</p>
+<p>以同样的方式,字典可以使用 <code>**</code> 运算符来提供关键字参数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def parrot(voltage, state='a stiff', action='voom'):
 ...     print("-- This parrot wouldn't", action, end=' ')
 ...     print("if you put", voltage, "volts through it.", end=' ')
@@ -328,8 +328,8 @@ sketch : Cheese Shop Sketch
 &gt;&gt;&gt; parrot(**d)
 -- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
 </code></pre>
-<h3 id="4_7_5_">4.7.5. Lambda表达式</h3>
-<p>可以使用<code>lambda</code>关键字创建小型匿名函数.此函数返回其两个参数的总和:<code>lambda a,b:a + b</code>.Lambda函数可以在需要函数对象的任何地方使用.它们在语法上限于单个表达式.从语义上讲,它们只是正常函数定义的语法糖.与嵌套函数定义一样,lambda函数可以引用包含范围的变量:</p>
+<h3 id="4_7_5_">4.7.5. Lambda 表达式</h3>
+<p>可以用 lambda 关键字来创建一个小的匿名函数.这个函数返回两个参数的和: <code>lambda a, b: a+b</code> .Lambda函数可以在需要函数对象的任何地方使用.它们在语法上限于单个表达式.从语义上来说,它们只是正常函数定义的语法糖.与嵌套函数定义一样,lambda函数可以引用包含范围的变量:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def make_incrementor(n):
 ...     return lambda x: x + n
 ...
@@ -339,7 +339,7 @@ sketch : Cheese Shop Sketch
 &gt;&gt;&gt; f(1)
 43
 </code></pre>
-<p>上面的示例使用lambda表达式返回一个函数.另一个用途是传递一个小函数作为参数:</p>
+<p>上面的例子使用一个lambda表达式来返回一个函数.另一个用法是传递一个小函数作为参数:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 &gt;&gt;&gt; pairs.sort(key=lambda pair: pair[1])
 &gt;&gt;&gt; pairs
@@ -347,10 +347,10 @@ sketch : Cheese Shop Sketch
 </code></pre>
 <h3 id="4_7_6_">4.7.6. 文档字符串</h3>
 <p>以下是有关文档字符串的内容和格式的一些约定.</p>
-<p>第一行应始终是对象目的的简短摘要.为简洁起见,它不应显式声明对象的名称或类型,因为这些可通过其他方式获得(除非名称恰好是描述函数操作的动词).该行应以大写字母开头,以句点结尾.</p>
-<p>如果文档字符串中有更多行,则第二行应为空白,从而在视觉上将摘要与其余描述分开.以下行应该是一个或多个段落,描述对象的调用约定,其副作用等.</p>
-<p>Python解析器不会从Python中删除多行字符串文字的缩进,因此处理文档的工具必须根据需要去除缩进.这是使用以下约定完成的.字符串第一行之<em>后</em>的第一个非空白行确定整个文档字符串的缩进量.(我们不能使用第一行,因为它通常与字符串的开头引号相邻,因此它的缩进在字符串文字中不明显.)然后从字符串的所有行的开头剥离与该缩进相等的空格<code>等效</code>. 缩进的行不应该出现,但是如果它们出现,则应该剥离它们的所有前导空格.应在扩展标签后测试空白的等效性(通常为8个空格).</p>
-<p>以下是多行文档字符串的示例:</p>
+<p>第一行应该是对象目的的简要概述.为简洁起见,它不应显式声明对象的名称或类型,因为这些可通过其他方式获得(除非名称恰好是描述函数操作的动词).这一行应以大写字母开头,以句点结尾.</p>
+<p>如果文档字符串中有更多行,则第二行应为空白,从而在视觉上将摘要与其余描述分开.后面几行应该是一个或多个段落,描述对象的调用约定,它的副作用等.</p>
+<p>Python解析器不会从Python中删除多行字符串文字的缩进,因此处理文档的工具必须在需要时删除缩进.这是使用以下约定完成的.文档字符串第一行 之后 的第一个非空行确定整个文档字符串的缩进量.(我们不能使用第一行,因为它通常与字符串的开头引号相邻,因此它的缩进在字符串文字中不明显.)然后从字符串的所有行的开头剥离与该缩进 "等效" 的空格. 缩进的行不应该出现,但是如果它们出现,则应该剥离它们的所有前导空格.应在扩展标签后测试空白的等效性(通常为8个空格).</p>
+<p>下面是一个多行文档字符串的例子:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def my_function():
 ...     """Do nothing, but document it.
 ...
@@ -363,9 +363,9 @@ Do nothing, but document it.
 
     No, really, it doesn't do anything.
 </code></pre>
-<h3 id="4_7_7_">4.7.7. 函数注解</h3>
-<p>函数注释是关于用户定义函数使用的类型的完全可选元数据信息(有关更多信息,请参阅** PEP 3107 <strong>和</strong> PEP 484 **).</p>
-<p><em>注释</em>作为字典存储在函数的<code>__annotations__</code>属性中,对函数的任何其他部分都没有影响.参数注释由参数名称后面的冒号定义,后跟一个表达式,用于评估注释的值.返回注释由文字<code>-&gt;</code>定义,后跟表达式,在参数列表和冒号之间表示<code>def</code>语句的结尾.以下示例具有位置参数,关键字参数和带注释的返回值:</p>
+<h3 id="4_7_7_">4.7.7. 函数标注</h3>
+<p>函数标注 是关于用户自定义函数中使用的类型的完全可选元数据信息(有关详情请参阅 PEP 3107 和 PEP 484 ).</p>
+<p>函数标注 以字典的形式存放在函数的 <strong>annotations</strong> 属性中,并且不会影响函数的任何其他部分. 形参标注的定义方式是在形参名称后加上冒号,后面跟一个表达式,该表达式会被求值为标注的值. 返回值标注的定义方式是加上一个组合符号 <code>-&gt;</code>,后面跟一个表达式,该标注位于形参列表和表示 <code>def</code> 语句结束的冒号之间. 下面的示例有一个位置参数,一个关键字参数以及返回值带有相应标注:</p>
 <pre class="prettyprint"><code>&gt;&gt;&gt; def f(ham: str, eggs: str = 'eggs') -&gt; str:
 ...     print("Annotations:", f.__annotations__)
 ...     print("Arguments:", ham, eggs)
@@ -376,21 +376,21 @@ Annotations: {'ham': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;, 'eggs':
 Arguments: spam eggs
 'spam and eggs'
 </code></pre>
-<h2 id="4_8_">4.8. Intermezzo:编码样式</h2>
-<p>现在您要编写更长,更复杂的Python,现在是谈论<em>编码风格</em>的好时机.大多数语言都可以用不同的样式编写(或更简洁,<em>格式化</em>);有些比其他人更具可读性.让其他人轻松阅读您的代码始终是一个好主意,采用一种不错的编码风格对此非常有帮助.</p>
-<p>对于Python,** PEP 8 **已成为大多数项目所遵循的风格指南; 它促进了一种非常易读且令人赏心悦目的编码风格. 每个Python开发人员都应该在某个时候阅读它; 以下是为您提取的最重要的要点:</p>
+<h2 id="4_8_">4.8. 小插曲:编码风格</h2>
+<p>现在你将要写更长,更复杂的Python代码,是时候讨论一下 <em>代码风格</em>.大多数语言都能使用不同的风格编写(或更简洁,格式化的);有些比其他的更具有可读性.能让其他人轻松阅读你的代码总是一个好主意,采用一种好的编码风格对此有很大帮助.</p>
+<p>对于Python,PEP 8 已经成为大多数项目所遵循的风格指南;它促进了一种非常易读且令人赏心悦目的编码风格.每个Python开发人员都应该在某个时候阅读它;以下是为你提取的最重要的几个要点:</p>
 <ul>
-<li><p>使用4空间缩进,不使用制表符.</p>
-<p>4个空格是小缩进(允许更大的嵌套深度)和大缩进(更易于读取)之间的一个很好折衷.制表符会带来混乱,最好不要使用.</p></li>
-<li><p>换行,使其不超过79个字符.</p>
-<p>这有助于用户使用小屏幕,并使在大屏幕上并排显示多个代码文件成为可能.</p></li>
-<li><p>使用空行分隔函数和类,以及函数内较大的代码块. </p></li>
-<li><p>如果可能的话,将评论放在他们自己的一行上.</p></li>
-<li><p>使用docstrings.</p></li>
-<li><p>在操作符周围和逗号后使用空格,但不能直接在包围结构内:<code>a = f(1, 2) + g(3, 4)</code>.</p></li>
-<li><p>一致地命名您的类和函数; 惯例是对类使用<code>CamelCase</code>,对函数和方法使用<code>lower_case_with_underscores</code>. 始终使用<code>self</code>作为第一个方法参数的名称(有关类和方法的更多信息,请参阅类的初步查看).</p></li>
-<li><p>如果您的代码旨在用于国际环境,请不要使用花哨的编码. Python的默认值,UTF-8甚至纯ASCII在任何情况下都能最好地工作.</p></li>
-<li><p>同样,如果说不同语言的人阅读或维护代码的可能性很小,不要在标识符中使用非ASCII字符.</p></li>
+<li><p>使用4个空格缩进,不要使用制表符.</p>
+<p>4个空格是一个在小缩进(允许更大的嵌套深度)和大缩进(更容易阅读)的一种很好的折中方案.制表符会引入混乱,最好不要使用它.</p></li>
+<li><p>换行,使一行不超过79个字符.</p>
+<p>这有助于使用小型显示器的用户,并且可以在较大的显示器上并排放置多个代码文件.</p></li>
+<li><p>使用空行分隔函数和类,以及函数内的较大的代码块. </p></li>
+<li><p>如果可能,把注释放到单独的一行.</p></li>
+<li><p>使用文档字符串.</p></li>
+<li><p>在运算符前后和逗号后使用空格,但不能直接在括号内使用: <code>a = f(1, 2) + g(3, 4)</code>.</p></li>
+<li><p>以一致的规则为你的类和函数命名;按照惯例应使用 <code>UpperCamelCase</code> 来命名类,而以 <code>lowercase_with_underscores</code> 来命名函数和方法. 始终应使用 <code>self</code> 来命名第一个方法参数 (有关类和方法的更多信息请参阅 初探类).</p></li>
+<li><p>如果你的代码旨在用于国际环境,请不要使用花哨的编码.Python 默认的 UTF-8 或者纯 ASCII 在任何情况下都能有最好的表现.</p></li>
+<li><p>同样,哪怕只有很小的可能,遇到说不同语言的人阅读或维护代码,也不要在标识符中使用非ASCII字符.</p></li>
 </ul>
-<p>-[脚注]-</p>
-<p>[1] 实际上,<em>通过对象引用</em>调用将是一个更好的描述,因为如果传递了一个可变对象,调用者将看到被调用者对它做出的任何更改(插入到列表中的项).</p>
+<p>脚注</p>
+<p>[1] 实际上,<em>通过对象引用调用</em> 会是一个更好的表述,因为如果传递的是可变对象,则调用者将看到被调用者对其做出的任何更改(插入到列表中的元素).</p>
