@@ -1,0 +1,198 @@
+<h1 id="10_">10. 标准库简介</h1>
+<h2 id="10_1_">10.1. 操作系统接口</h2>
+<p>os 模块提供了许多与操作系统交互的函数:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.getcwd()      # Return the current working directory
+'C:\\Python37'
+&gt;&gt;&gt; os.chdir('/server/accesslogs')   # Change current working directory
+&gt;&gt;&gt; os.system('mkdir today')   # Run the command mkdir in the system shell
+0
+</code></pre>
+<p>一定要使用 <code>import os</code> 而不是 <code>from os import *</code> .这将避免内建的 <code>open()</code> 函数被 <code>os.open()</code> 隐式替换掉,它们的使用方式大不相同.</p>
+<p>内置的 <code>dir()</code> 和 <code>help()</code> 函数可用作交互式辅助工具,用于处理大型模块,如 os:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; dir(os)
+&lt;returns a list of all module functions&gt;
+&gt;&gt;&gt; help(os)
+&lt;returns an extensive manual page created from the module's docstrings&gt;
+</code></pre>
+<p>对于日常文件和目录管理任务, shutil 模块提供了更易于使用的更高级别的接口:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import shutil
+&gt;&gt;&gt; shutil.copyfile('data.db', 'archive.db')
+'archive.db'
+&gt;&gt;&gt; shutil.move('/build/executables', 'installdir')
+'installdir'
+</code></pre>
+<h2 id="10_2_">10.2. 文件通配符</h2>
+<p>glob 模块提供了一个在目录中使用通配符搜索创建文件列表的函数:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import glob
+&gt;&gt;&gt; glob.glob('*.py')
+['primes.py', 'random.py', 'quote.py']
+</code></pre>
+<h2 id="10_3_">10.3. 命令行参数</h2>
+<p>通用实用程序脚本通常需要处理命令行参数.这些参数作为列表存储在 sys 模块的 <em>argv</em> 属性中.例如,以下输出来自在命令行运行 <code>python demo.py one two three</code></p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; print(sys.argv)
+['demo.py', 'one', 'two', 'three']
+</code></pre>
+<p>The "argparse" module provides a mechanism to process command line arguments. It should always be preferred over directly processing "sys.argv" manually.</p>
+<p>Take, for example, the below snippet of code:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import argparse
+&gt;&gt;&gt; from getpass import getuser
+&gt;&gt;&gt; parser = argparse.ArgumentParser(description='An argparse example.')
+&gt;&gt;&gt; parser.add_argument('name', nargs='?', default=getuser(), help='The name of someone to greet.')
+&gt;&gt;&gt; parser.add_argument('--verbose', '-v', action='count')
+&gt;&gt;&gt; args = parser.parse_args()
+&gt;&gt;&gt; greeting = ["Hi", "Hello", "Greetings! its very nice to meet you"][args.verbose % 3]
+&gt;&gt;&gt; print(f'{greeting}, {args.name}')
+&gt;&gt;&gt; if not args.verbose:
+&gt;&gt;&gt;     print('Try running this again with multiple "-v" flags!')
+</code></pre>
+<h2 id="10_4_">10.4. 错误输出重定向和程序终止</h2>
+<p>sys 模块还具有 stdin , stdout 和 stderr 的属性.后者对于发出警告和错误消息非常有用,即使在 stdout 被重定向后也可以看到它们:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; sys.stderr.write('Warning, log file not found starting a new one\n')
+Warning, log file not found starting a new one
+</code></pre>
+<p>终止脚本的最直接方法是使用 <code>sys.exit()</code> .</p>
+<h2 id="10_5_">10.5. 字符串模式匹配</h2>
+<p>re 模块为高级字符串处理提供正则表达式工具.对于复杂的匹配和操作,正则表达式提供简洁,优化的解决方案:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import re
+&gt;&gt;&gt; re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
+['foot', 'fell', 'fastest']
+&gt;&gt;&gt; re.sub(r'(\b[a-z]+) \1', r'\1', 'cat in the the hat')
+'cat in the hat'
+</code></pre>
+<p>当只需要简单的功能时,首选字符串方法因为它们更容易阅读和调试:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; 'tea for too'.replace('too', 'two')
+'tea for two'
+</code></pre>
+<h2 id="10_6_">10.6. 数学</h2>
+<p>math 模块提供对浮点数学的底层C库函数的访问:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.cos(math.pi / 4)
+0.70710678118654757
+&gt;&gt;&gt; math.log(1024, 2)
+10.0
+</code></pre>
+<p>random 模块提供了进行随机选择的工具:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import random
+&gt;&gt;&gt; random.choice(['apple', 'pear', 'banana'])
+'apple'
+&gt;&gt;&gt; random.sample(range(100), 10)   # sampling without replacement
+[30, 83, 16, 4, 8, 81, 41, 50, 18, 33]
+&gt;&gt;&gt; random.random()    # random float
+0.17970987693706186
+&gt;&gt;&gt; random.randrange(6)    # random integer chosen from range(6)
+4
+</code></pre>
+<p>statistics 模块计算数值数据的基本统计属性(均值,中位数,方差等):</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import statistics
+&gt;&gt;&gt; data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+&gt;&gt;&gt; statistics.mean(data)
+1.6071428571428572
+&gt;&gt;&gt; statistics.median(data)
+1.25
+&gt;&gt;&gt; statistics.variance(data)
+1.3720238095238095
+</code></pre>
+<p>SciPy项目 <a href="https://scipy.org">https://scipy.org</a> 有许多其他模块用于数值计算.</p>
+<h2 id="10_7_">10.7. 互联网访问</h2>
+<p>有许多模块可用于访问互联网和处理互联网协议.其中两个最简单的 urllib.request 用于从URL检索数据,以及 smtplib 用于发送邮件:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; from urllib.request import urlopen
+&gt;&gt;&gt; with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
+...     for line in response:
+...         line = line.decode('utf-8')  # Decoding the binary data to text.
+...         if 'EST' in line or 'EDT' in line:  # look for Eastern Time
+...             print(line)
+
+&lt;BR&gt;Nov. 25, 09:43:32 PM EST
+
+&gt;&gt;&gt; import smtplib
+&gt;&gt;&gt; server = smtplib.SMTP('localhost')
+&gt;&gt;&gt; server.sendmail('soothsayer@example.org', 'jcaesar@example.org',
+... """To: jcaesar@example.org
+... From: soothsayer@example.org
+...
+... Beware the Ides of March.
+... """)
+&gt;&gt;&gt; server.quit()
+</code></pre>
+<p>(请注意,第二个示例需要在localhost上运行的邮件服务器.)</p>
+<h2 id="10_8_">10.8. 日期和时间</h2>
+<p>datetime 模块提供了以简单和复杂的方式操作日期和时间的类.虽然支持日期和时间算法,但实现的重点是有效的成员提取以进行输出格式化和操作.该模块还支持可感知时区的对象.</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; # dates are easily constructed and formatted
+&gt;&gt;&gt; from datetime import date
+&gt;&gt;&gt; now = date.today()
+&gt;&gt;&gt; now
+datetime.date(2003, 12, 2)
+&gt;&gt;&gt; now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
+'12-02-03. 02 Dec 2003 is a Tuesday on the 02 day of December.'
+
+&gt;&gt;&gt; # dates support calendar arithmetic
+&gt;&gt;&gt; birthday = date(1964, 7, 31)
+&gt;&gt;&gt; age = now - birthday
+&gt;&gt;&gt; age.days
+14368
+</code></pre>
+<h2 id="10_9_">10.9. 数据压缩</h2>
+<p>常见的数据存档和压缩格式由模块直接支持,包括:zlib, gzip, bz2, lzma, zipfile 和 tarfile.:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; import zlib
+&gt;&gt;&gt; s = b'witch which has which witches wrist watch'
+&gt;&gt;&gt; len(s)
+41
+&gt;&gt;&gt; t = zlib.compress(s)
+&gt;&gt;&gt; len(t)
+37
+&gt;&gt;&gt; zlib.decompress(t)
+b'witch which has which witches wrist watch'
+&gt;&gt;&gt; zlib.crc32(s)
+226805979
+</code></pre>
+<h2 id="10_10_">10.10. 性能测量</h2>
+<p>一些Python用户对了解同一问题的不同方法的相对性能产生了浓厚的兴趣. Python提供了一种可以立即回答这些问题的测量工具.</p>
+<p>例如,元组封包和拆包功能相比传统的交换参数可能更具吸引力.timeit 模块可以快速演示在运行效率方面一定的优势:</p>
+<pre class="prettyprint"><code>&gt;&gt;&gt; from timeit import Timer
+&gt;&gt;&gt; Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
+0.57535828626024577
+&gt;&gt;&gt; Timer('a,b = b,a', 'a=1; b=2').timeit()
+0.54962537085770791
+</code></pre>
+<p>与 timeit 的精细粒度级别相反, profile 和 pstats 模块提供了用于在较大的代码块中识别时间关键部分的工具.</p>
+<h2 id="10_11_">10.11. 质量控制</h2>
+<p>开发高质量软件的一种方法是在开发过程中为每个函数编写测试,并在开发过程中经常运行这些测试.</p>
+<p>doctest 模块提供了一个工具,用于扫描模块并验证程序文档字符串中嵌入的测试.测试构造就像将典型调用及其结果剪切并粘贴到文档字符串一样简单.这通过向用户提供示例来改进文档,并且它允许doctest模块确保代码保持对文档的真实:</p>
+<pre class="prettyprint"><code>def average(values):
+    """Computes the arithmetic mean of a list of numbers.
+
+    &gt;&gt;&gt; print(average([20, 30, 70]))
+    40.0
+    """
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()   # automatically validate the embedded tests
+</code></pre>
+<p>unittest 模块不像 doctest 模块那样易于使用,但它允许在一个单独的文件中维护更全面的测试集:</p>
+<pre class="prettyprint"><code>import unittest
+
+class TestStatisticalFunctions(unittest.TestCase):
+
+    def test_average(self):
+        self.assertEqual(average([20, 30, 70]), 40.0)
+        self.assertEqual(round(average([1, 5, 7]), 1), 4.3)
+        with self.assertRaises(ZeroDivisionError):
+            average([])
+        with self.assertRaises(TypeError):
+            average(20, 30, 70)
+
+unittest.main()  # Calling from the command line invokes all tests
+</code></pre>
+<h2 id="10_12_">10.12. 自带电池</h2>
+<p>Python有"自带电池"的理念.通过其包的复杂和强大功能可以最好地看到这一点.例如:</p>
+<ul>
+<li><p>Python有"自带电池"的理念.通过其包的复杂和强大功能可以最好地看到这一点.例如:</p></li>
+<li><p>email 包是一个用于管理电子邮件的库,包括MIME和其他:基于 RFC 2822 的邮件文档.与 smtplib 和 poplib 实际上发送和接收消息不同,电子邮件包具有完整的工具集,用于构建或解码复杂的消息结构(包括附件)以及实现互联网编码和标头协议.</p></li>
+<li><p>json 包为解析这种流行的数据交换格式提供了强大的支持. csv 模块支持以逗号分隔值格式直接读取和写入文件,这些格式通常由数据库和电子表格支持. XML处理由 xml.etree.ElementTree , xml.dom 和 xml.sax 包支持.这些模块和软件包共同大大简化了Python应用程序和其他工具之间的数据交换.</p></li>
+<li><p>sqlite3 模块是SQLite数据库库的包装器,提供了一个可以使用稍微非标准的SQL语法更新和访问的持久数据库.</p></li>
+<li><p>国际化由许多模块支持,包括 gettext , locale ,以及 codecs 包.</p></li>
+</ul>
