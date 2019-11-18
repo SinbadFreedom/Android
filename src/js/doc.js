@@ -17,7 +17,7 @@ function docSuccess(res) {
     }
 
     /** 移除事件侦听*/
-    $('#doc_lan').off('click', 'a', docClickBtnLan);
+    $('#doc_lan').off('click', 'button', docClickBtnLan);
     $('#doc_reply_commit').off('click', docClickBtnSummitReply);
     $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
@@ -29,7 +29,7 @@ function docSuccess(res) {
     $('#doc_search').off('input propertychange', docBtnSearchOnChange);
 
     /** 加入事件侦听*/
-    $('#doc_lan').on('click', 'a', docClickBtnLan);
+    $('#doc_lan').on('click', 'button', docClickBtnLan);
     $('#doc_reply_commit').on('click', docClickBtnSummitReply);
     $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
