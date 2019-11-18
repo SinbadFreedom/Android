@@ -1,21 +1,33 @@
 <div class="row">
-    <button id="doc_tag" class="btn btn-outline-primary" disabled>
+<!--    <button id="doc_tag" class="btn btn-outline-primary" disabled>-->
 
-    </button>
+<!--    </button>-->
 
+    <div class="dropdown">
+        <button id="doc_tag" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Doc
+        </button>
+        <div id="doc_lan" class="dropdown-menu" aria-labelledby="doc_tag">
+            <button type="button" id="doc_zh_cn" class="btn btn-secondary active">简</button>
+            <button type="button" id="doc_en" class="btn btn-secondary">En</button>
+        </div>
+    </div>
+
+    <input id="doc_search" style="width: 100%; margin-top: 0.5em" class="form-control" placeholder="Search...">
+</div>
+<div class="row">
     <div class="d-sm-block d-md-none">
         <button type="button" id="doc_btn_catalog" class="btn btn-secondary active">目录</button>
     </div>
 
-    <div id="doc_lan" class="ml-auto">
-        <button type="button" id="doc_zh_cn" class="btn btn-secondary active">简</button>
-        <button type="button" id="doc_en" class="btn btn-secondary">En</button>
-    </div>
+<!--    <div id="doc_lan" class="ml-auto">-->
+<!--        <button type="button" id="doc_zh_cn" class="btn btn-secondary active">简</button>-->
+<!--        <button type="button" id="doc_en" class="btn btn-secondary">En</button>-->
+<!--    </div>-->
 </div>
 
 <div class="col-md-3 col-xl-2 col-12"
      style="position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98; padding-left: 0; padding-right: 0">
-    <input id="doc_search" style="width: 100%; margin-top: 0.5em" class="form-control" placeholder="Search...">
 
 
     <div id="doc_catalog" style="margin-top: 0.5em">
