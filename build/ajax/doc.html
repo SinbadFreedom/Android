@@ -1,35 +1,25 @@
 <div class="row">
-    <!--    <button id="doc_tag" class="btn btn-outline-primary" disabled>-->
+    <button id="doc_tag" class="btn btn-outline-primary" disabled>
 
-    <!--    </button>-->
-
-    <!--    <div class="dropdown">-->
-    <button id="doc_tag" class="btn btn-secondary" type="button">
-        Doc
     </button>
-    <button type="button" id="doc_btn_catalog" class="btn btn-secondary d-sm-block d-md-none">目录</button>
 
-    <!--        <div id="doc_lan" class="dropdown-menu" aria-labelledby="doc_tag">-->
-    <button type="button" id="doc_lan" class="btn btn-secondary active">简</button>
-    <!--        <button type="button" id="doc_en" class="btn btn-secondary">En</button>-->
-    <!--        </div>-->
-    <!--    </div>-->
+    <button id="doc_btn_catalog" class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"
+             focusable="false"><title>Menu</title>
+            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
+                  d="M4 7h22M4 15h22M4 23h22"></path>
+        </svg>
+    </button>
 
-    <input id="doc_search" class="form-control" placeholder="Search...">
+    <div class="ml-auto">
+        <button type="button" id="doc_lan" class="btn btn-secondary active">En</button>
+    </div>
 </div>
 
-<!--<div class="row">-->
-<!--    <div class="d-sm-block d-md-none">-->
-<!--        <button type="button" id="doc_btn_catalog" class="btn btn-secondary active">目录</button>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;    <div id="doc_lan" class="ml-auto">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <button type="button" id="doc_zh_cn" class="btn btn-secondary active">简</button>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <button type="button" id="doc_en" class="btn btn-secondary">En</button>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
-<!--</div>-->
-
 <div class="col-md-3 col-xl-2 col-12"
-     style="position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98; padding-left: 0; padding-right: 0">
+     style="background-color: white; position: fixed; top: 94px; bottom: 0; overflow: auto; z-index: 98; padding-left: 0; padding-right: 0">
+    <input id="doc_search" style="width: 100%; margin-top: 0.5em" class="form-control" placeholder="Search...">
+
 
     <div id="doc_catalog" style="margin-top: 0.5em">
         正在加载文章内容...
@@ -38,14 +28,15 @@
 
 
 <div id="doc_search_res" class="list-group"
-     style="border: 1px solid #6c757d;position: fixed; top: 142px; z-index: 99; display: none">
+     style="border: 1px solid #6c757d; position: fixed; top: 142px; z-index: 99; display: none">
     搜索内容...
 </div>
 
 
 <div class="row justify-content-end">
-    <div id="doc_content_stroll_area" style="position: fixed; top: 94px; bottom: 0; overflow: auto"
-         class="col-xl-10 col-md-9 col-12 d-none d-sm-none d-md-block">
+    <div id="doc_content_stroll_area"
+         style="background-color: white; position: fixed; top: 94px; bottom: 0; overflow: auto"
+         class="col-xl-10 col-md-9 col-12 d-md-block">
         <div id="doc_content">
             正在加载文章内容...
         </div>

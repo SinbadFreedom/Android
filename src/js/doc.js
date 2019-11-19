@@ -17,7 +17,7 @@ function docSuccess(res) {
     }
 
     /** 移除事件侦听*/
-    $('#doc_lan').off('click', 'button', docClickBtnLan);
+    $('#doc_lan').off('click', docClickBtnLan);
     $('#doc_reply_commit').off('click', docClickBtnSummitReply);
     $('#doc_reply_login').off('click', docClickBtnLogin);
     $('#doc_catalog').off('click', 'a', docClickCatalogA);
@@ -29,7 +29,7 @@ function docSuccess(res) {
     $('#doc_search').off('input propertychange', docBtnSearchOnChange);
 
     /** 加入事件侦听*/
-    $('#doc_lan').on('click', 'button', docClickBtnLan);
+    $('#doc_lan').on('click', docClickBtnLan);
     $('#doc_reply_commit').on('click', docClickBtnSummitReply);
     $('#doc_reply_login').on('click', docClickBtnLogin);
     $('#doc_catalog').on('click', 'a', docClickCatalogA);
@@ -50,14 +50,15 @@ function docSuccess(res) {
 
 /** 按钮点击事件处理*/
 function docClickBtnLan(e) {
-    let btn_id = $(e.target).attr("id");
-    console.log('docClickBtnLan btn_id ' + btn_id);
-    if (btn_id === 'doc_zh_cn') {
+    let text = $(e.target).text();
+    if (text === '简') {
         /** 中文*/
         global_lan = 'zh_cn';
-    } else if (btn_id === 'doc_en') {
+        $(e.target).text('En');
+    } else if (text === 'En') {
         /** 英文*/
         global_lan = 'en';
+        $(e.target).text('简');
     }
 
     resetCatalogAndDoc();
@@ -108,17 +109,11 @@ function updateDocAndNote(doc_id, doc_anchor) {
 /** 加载文档完成回调方法*/
 function docLoadContentSuccess(res) {
     /** 更新文档内容*/
-    let display = $('#doc_content_stroll_area').css('display');
-
     $('#doc_content').html(res);
 
-    if (display === 'none') {
-        /** 内容区域是小屏隐藏状态，则显示文章内容区，隐藏目录区*/
-        $('#doc_content_stroll_area').removeClass('d-none');
-        $('#doc_content_stroll_area').removeClass('d-sm-none');
-        $('#doc_catalog').addClass('d-none');
-        $('#doc_catalog').addClass('d-sm-none');
-    }
+    /** 内容区域是小屏隐藏状态，则显示文章内容区，隐藏目录区*/
+    $('#doc_content_stroll_area').css('z-index', 99);
+    $('#doc_catalog').css('z-index', 90);
 
     /** 更新滚动条位置*/
     console.log('docLoadContentSuccess global_page ' + global_page + " global_anchor " + global_anchor);
@@ -308,10 +303,13 @@ function docBtnCatalog(e) {
     console.log('docBtnCatalog ');
     /** 与 docLoadContentSuccess 方法对应*/
     /** 内容区域是小屏隐藏状态，点击目录按钮，则隐藏文章内容区，显示目录区*/
-    $('#doc_content_stroll_area').addClass('d-none');
-    $('#doc_content_stroll_area').addClass('d-sm-none');
-    $('#doc_catalog').removeClass('d-none');
-    $('#doc_catalog').removeClass('d-sm-none');
+    // $('#doc_content_stroll_area').addClass('d-none');
+    // $('#doc_content_stroll_area').addClass('d-sm-none');
+    // $('#doc_catalog').removeClass('d-none');
+    // $('#doc_catalog').removeClass('d-sm-none');
+
+    $('#doc_content_stroll_area').css('z-index', 90);
+    $('#doc_catalog').css('z-index', 99);
 }
 
 /** 检索返回数据*/
