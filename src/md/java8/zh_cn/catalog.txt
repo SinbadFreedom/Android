@@ -1,0 +1,61 @@
+1. jdk8新增语法特性简介
+1.1 jdk8新增主要语法特性
+1.2 java函数接口(functional interface)
+1.3 lambda表达式
+1.4 方法引用(method reference)
+1.5 default方法
+1.6 批量数据操作(bulk dataoperations)
+1.7 总结
+1.8 参考文章
+2. jdk8函数式接口
+2.1 函数式接口定义
+2.2 函数式接口应用场景
+2.3 @functionalinterface注解
+2.4 java函数式接口里允许定义default方法
+2.5 java函数式接口里允许定义静态方法
+2.6 函数式接口里允许定义java.lang.object里的public方法
+2.7 jdk中的函数式接口举例
+2.8 参考文章
+3. java兰姆达(lambda)表达式
+3.1 什么是lambda表达式
+3.2 命令式编程(imperative programming)
+3.3 函数式编程(functional programming)
+3.4 java为什么会引入lambda表达式
+3.5 lambda表达式的优点
+3.6 参考文章
+4. java拉姆达(lambda)表达式应用
+4.1 lambda表达式语法
+4.1.1 lambda表达式基本语法
+4.1.2 lambda表达式示例
+4.2 lambda应用举例
+4.2.1 lambda应用例1
+4.2.1 lambda应用例2
+4.2.3 lambda应用例3
+4.3 java使用lambda表达式对集合排序
+4.3.1 java使用comparator排序
+4.3.2 java使用lambda表达式对集合排序示例
+4.4 拉姆达(lambda)表达式在流式操作中的应用
+4.5 参考文章
+5. jdk8的default方法
+5.1 java为什么引入default方法
+5.2 default方法应用
+5.3 default方法调用
+5.4 参考文章
+6. jdk8方法引用
+6.1 java方法引用的概念
+6.2 java方法引用的种类
+6.2.1 java静态方法引用
+6.2.2 java某个对象的方法引用
+6.2.3 java特定类的任意对象的方法引用
+6.2.4 java构造方法引用
+6.3 参考文章
+7. jdk8集合类库的批量数据操作
+7.1 java批量操作接口
+7.2 java流式(stream)api
+7.3 中间操作
+7.3.1 java数据流过滤filter
+7.3.2 map
+7.4 终结操作
+7.4.1 收集器(collectors)
+7.5 java并行和串行处理数据
+7.6 参考文章

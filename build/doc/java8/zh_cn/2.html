@@ -1,0 +1,103 @@
+<h1 id="2_">2. JDK8函数式接口</h1>
+<p>JDK8.0开始新增了函数式接口.</p>
+<h2 id="2_1">2.1 函数式接口定义</h2>
+<p>java 函数式接口(Functional Interface)是指只有一个抽象方法的接口.这种类型的接口也称为SAM(Single Abstract Method).</p>
+<h2 id="2_2">2.2 函数式接口应用场景</h2>
+<p>函数式接口主要应用在Lambda表达式上.如定义了一个函数式接口如下:</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+@FunctionalInterface
+interface GreetingService 
+{
+    void sayMessage(String message);
+}
+</code></pre>
+<p>那么就可以使用Lambda表达式来表示该接口的一个实现.</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+GreetingService greetService1 = message -&gt; System.out.println("Hello " + message);
+</code></pre>
+<div class="bs-callout bs-callout-warning">
+    JDK8.0之前一般是用匿名类实现的.
+</div>
+<h2 id="2_3">2.3 @FunctionalInterface注解</h2>
+<p>JDK8为函数式接口引入了一个新注解@FunctionalInterface,主要用于编译级错误检查.加上该注解,当你写的接口不符合函数式接口定义的时候,编译器会报错.例:</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+@FunctionalInterface
+interface GreetingService
+{
+    void sayMessage(String message);
+}
+</code></pre>
+<div class="bs-callout bs-callout-warning">
+    <h4>@FunctionalInterface注解</h4>
+    加不加@FunctionalInterface对于接口是不是函数式接口没有影响,该注解提醒编译器去检查该接口是否仅包含一个抽象方法.
+    加上该注解表示该接口中只能有一个抽象方法.如果接口中包含了两个或以上的抽象方法, 则违反了函数式接口的定义.采用Eclipse或者Intelij IDEA等IDE会提示错误.
+</div>
+<h2 id="2_4">2.4 java函数式接口里允许定义default方法</h2>
+<p>default方法也是<a href="https://panda-doc.com/article/java/jdk8/1.html">JDK8新增语法特性</a>.接口中使用该关键字表示该方法是可以在接口中直接实现该方法.函数式接口里是可以包含default方法,因为default方法不是抽象方法,其有一个默认实现,所以是符合函数式接口的定义的.如下代码不会报错:</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+@FunctionalInterface
+interface GreetingService
+{
+    void sayMessage(String message);
+
+    default void doSomeMoreWork1()
+    {
+        // Method body
+    }
+
+    default void doSomeMoreWork2()
+    {
+        // Method body
+    }
+}
+</code></pre>
+<h2 id="2_5">2.5 java函数式接口里允许定义静态方法</h2>
+<p>函数式接口里是可以包含静态方法,因为静态方法不能是抽象方法,是一个已经实现了的方法,所以是符合函数式接口的定义的.如下代码不会报错:</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+@FunctionalInterface
+interface GreetingService 
+{
+    void sayMessage(String message);
+    static void printHello(){
+        System.out.println("Hello");
+    }
+}
+</code></pre>
+<h2 id="2_6">2.6 函数式接口里允许定义java.lang.Object里的public方法</h2>
+<p>函数式接口里是可以包含Object里的public方法.这些方法对于函数式接口来说,不被当成是抽象方法(虽然它们是抽象方法).因为任何一个函数式接口的实现,默认都继承了Object类,包含了来自java.lang.Object里对这些抽象方法的实现.如下代码不会报错:</p>
+<pre class="prettyprint"><code class="java language-java">/**
+ * 熊猫文档 https://panda-doc.com
+ */
+@FunctionalInterface
+interface GreetingService  
+{
+    void sayMessage(String message);
+
+    @Override
+    boolean equals(Object obj);
+}
+</code></pre>
+<h2 id="2_7">2.7 JDK中的函数式接口举例</h2>
+<pre class="prettyprint"><code class="java language-java">java.lang.Runnable,
+
+java.awt.event.ActionListener, 
+
+java.util.Comparator,
+
+java.util.concurrent.Callable
+
+java.util.function包下的接口,如Consumer,Predicate,Supplier等
+</code></pre>
+<h2 id="2_8">2.8 参考文章</h2>
+<p><a href="http://www.linuxidc.com/Linux/2016-09/135437.htm">http://www.linuxidc.com/Linux/2016-09/135437.htm</a></p>
+<p><a href="http://www.techempower.com/blog/2013/03/26/everything-about-java-8/">http://www.techempower.com/blog/2013/03/26/everything-about-java-8/</a></p>
