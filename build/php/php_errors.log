@@ -2,3 +2,27 @@
 [05-Jun-2019 17:04:19 PRC] PHP Warning:  Invalid argument supplied for foreach() in D:\workplace\git\Android\build\php\rank_list.php on line 91
 [05-Jun-2019 17:05:39 PRC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in D:\workplace\git\Android\build\php\rank_list.php on line 91
 [05-Jun-2019 17:06:00 PRC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in D:\workplace\git\Android\build\php\rank_list.php on line 92
+[19-Nov-2019 14:13:25 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
+[19-Nov-2019 14:27:19 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
+[19-Nov-2019 14:27:21 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
+[19-Nov-2019 14:27:22 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38

@@ -940,9 +940,9 @@ $(document).ready(function () {
     let url_index = '/ajax/index.html';
     ajax_get(url_index, indexLoadSuccess);
 
-    /** 获取头像信息，如果没有则显示登录按钮*/
-    let url_figure = '/php/figure_url.php';
-    ajax_get(url_figure, onGetFigureUrl);
+    // /** 获取头像信息，如果没有则显示登录按钮*/
+    // let url_figure = '/php/figure_url.php';
+    // ajax_get(url_figure, onGetFigureUrl);
 
     /**
      * 通过get参数，初始化页面
@@ -1067,6 +1067,10 @@ function indexLoadSuccess(res) {
     /** 事件初始化*/
     $('#index_tag').off('click', 'button', indexClickBtnTag);
     $('#index_tag').on('click', 'button', indexClickBtnTag);
+
+    /** 获取头像信息，如果没有则显示登录按钮*/
+    let url_figure = '/php/figure_url.php';
+    ajax_get(url_figure, onGetFigureUrl);
 }
 
 /** 文章tag按钮点击*/
