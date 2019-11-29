@@ -1,6 +1,6 @@
 <h1 id="20_">20. Java设计模式</h1>
 <p>软件设计领域的四位世界级大师Gang Of Four (GoF):Erich Gamma,Richard Helm,Ralph Johnson,John Vlissides合著了一本非常著名的书<Design Patterns - Elements of Reusable Object-Oriented Software>翻译的中文名为<设计模式:可复用面向对象软件的基础>.书中提出了23种基本设计模式,从理论高度提炼并规范了设计模式,对面向对象软件设计产生了巨大影响.</p>
-<p><img src="http://localhost/img/java/basic/19-1.jpg" alt="图19-1" width="480" height="307" /></p>
+<p><img src="https://panda-doc.com/img/java/basic/19-1.jpg" alt="图19-1" width="480" height="307" /></p>
 <h2 id="20_1">20.1 设计模式简介</h2>
 <p>总体来说设计模式分为三大类:</p>
 <ul>
@@ -12,7 +12,7 @@
 <h2 id="20_2">20.2 单例模式</h2>
 <p>单例模式即是只产生一个对象的模式.在Java中,每次使用new<a href="http://dashidan.com/article/java/addenda/3.html">关键字</a>,就会产生一个新的<a href="http://dashidan.com/article/java/basic/13.html">Java对象</a>. 有时我们需要只有一个对象产生,比如一些管理类,全局管理其它模块时,这个管理类适合采用单例模式.</p>
 <p>普通的单例模式分为2种,懒汉式和饿汉式.懒汉式比较懒,用到的时候才创建对象,饿汉式不讲理,你用不用我都创建好放着.  </p>
-<p><img src="http://localhost/img/common/secret.jpg" alt="降龙十八掌秘籍" width="396" height="269" /></p>
+<p><img src="https://panda-doc.com/img/common/secret.jpg" alt="降龙十八掌秘籍" width="396" height="269" /></p>
 <p>普通单例模式的秘籍:</p>
 <ul>
 <li>将构造函数定义为私有private,只能在本类中创建,不能被继承. </li>
@@ -164,7 +164,7 @@ class Product2 extends Product {
 </code></pre>
 <h2 id="20_4">20.4 观察者模式</h2>
 <p>观察者模式(也称为发布(publish)-订阅(Subscribe)模式,模型-视图(View)模式,源-收听者(Listener)模式或从属者模式).是一个非常棒的降低代码耦合度的方式.</p>
-<p><img src="http://localhost/img/common/secret.jpg" alt="降龙十八掌秘籍" width="396" height="269" /></p>
+<p><img src="https://panda-doc.com/img/common/secret.jpg" alt="降龙十八掌秘籍" width="396" height="269" /></p>
 <p>观察者模式的秘籍:</p>
 <ul>
 <li>观察者在发布者对象上注册消息侦听,加入消息侦听列表</li>

@@ -1,11 +1,11 @@
 <h1 id="13_">13. Java对象</h1>
 <p>Java是面向对象编程(Object Oriented Programming)语言.java面向对象的三大特点:封装,继承和多态.</p>
 <h2 id="13_1">13.1 中万事万物皆对象?</h2>
-<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<p><img src="https://panda-doc.com/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
 <p>这个说法的由来,是因为java中所有的类默认都继承自Object类.但这个说法是不准确的.很多资料中这样说,曾经给我带来过很大的困扰.Java属于强类型语言,方法作为属性存在于对象中,不作为独立的对象存在.所以说在Java中万事万物皆对象的说法是不准确的,方法和基本类型变量都不是对象的概念.在一些弱类型语言比如javascript,方法也可以作为对象的概念来使用,作为参数传递,这一点和java是有区别的.</p>
 <h2 id="13_2">13.2 面向对象编程思想</h2>
 <p>提到面向对象,不得不提到面向过程编程.以C语言为例,每个方法作为一个执行过程存在,面向过程编程是一种面向计算机思维,从计算机执行的角度思考编写代码的编程方式.从面向过程编程的基础上,发展出来了一种新的编程思想,面向对象编程,来应对更复杂的应用场景.面向对象编程是一种面向<code>人</code>的逻辑思维的编程方式,将代码中的通用性抽象出来,模拟现实世界的归类,建立程序模型,编写代码的过程.对于程序员更加友好,对于复杂度更高的程序更易于控制.</p>
-<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" />  </p>
+<p><img src="https://panda-doc.com/img/common/example.jpg" alt="举个栗子" width="224" height="296" />  </p>
 <p>在生物分类学中,分为"界门纲目科属种",按照生物的种群和等级划分.</p>
 <ul>
 <li><p>猫:
@@ -203,7 +203,7 @@ class TestObject {
 <h2 id="13_5">13.5 对象的封装</h2>
 <h3 id="13_5_1">13.5.1 通过private关键字隐藏数据</h3>
 <p>java对象的封装是把过程和数据隐藏起来,对数据的访问只能通过已定义的接口.面向对象计算始于这个基本概念.通过private关键字可以将变量或者方法设置为只有本类可以访问,其他类无法访问该数据,这样便实现了数据的隐藏.  </p>
-<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
+<p><img src="https://panda-doc.com/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
 <p>你有一只宠物,宠物的名字你不希望别人随便改,可以将宠物的名字设置为私有private.</p>
 <pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson6;
 
@@ -392,7 +392,7 @@ Dog eatBone.
 <li>子类重写父类的方法.</li>
 <li>父类引用指向子类.</li>
 </ul>
-<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
+<p><img src="https://panda-doc.com/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
 <p>猫和狗都继承自宠物类,宠物有吃的行为.猫吃鱼狗吃骨头,他们吃的行为不一样.我们可以采用多态的方式来实现.</p>
 <ul>
 <li>java多态代码示例  </li>
@@ -424,7 +424,7 @@ Dog eat
 </code></pre>
 <h2 id="13_8">13.8 引用当前对象与父对象</h2>
 <h3 id="13_8_1">13.8.1 this关键字</h3>
-<p>this在java编程是<a href="http://localhost/article/java/addenda/3.html">java保留关键字</a>,用来引用当前对象,super关键字引用当前对象的父对象.</p>
+<p>this在java编程是<a href="https://panda-doc.com/article/java/addenda/3.html">java保留关键字</a>,用来引用当前对象,super关键字引用当前对象的父对象.</p>
 <p>获取当前对象的索引.如果省略"this."系统会默认自动添加加上"this."来指向当前对象.以下代码中的setName方法,该方法中的传入的参数name与成员变量name重名,这时需要用"this.name"来表明引用成员变量.  </p>
 <ul>
 <li>java this关键字代码示例</li>
@@ -589,7 +589,7 @@ public class Demo9 {
 <li>如果一个类继承于一个抽象类,则子类必须实现父类的抽象方法.如果子类没有实现父类的抽象方法,则必须将子类也定义为为abstract类.  </li>
 </ul>
 <h3 id="13_9_3">13.9.3 抽象类创建对象</h3>
-<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<p><img src="https://panda-doc.com/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
 <ul>
 <li>抽象类不能用来创建对象吗?</li>
 </ul>

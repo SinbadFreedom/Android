@@ -57,7 +57,7 @@ char c1 = '人';
 <li>java数字类型的最大值和最小值
 计算机存储整形数据是以<a href="http://dashidan.com/article/java/basic/17.html#1">二进制</a>方式存储,有符号数据类型(byte, short, int, long, float)最小值为"-2^n",最大值为"2^-1","n"为占用字节数.无符号类型(char)最小值为0,最大值为2^16(65535).存储浮点类型数据表示范围太大,采用科学计数法方式存储,所以范围会整数型大很多.</li>
 </ul>
-<p><img src="http://localhost/img/java/basic/5-3.jpg" alt="图5-3" width="360" height="360" /></p>
+<p><img src="https://panda-doc.com/img/java/basic/5-3.jpg" alt="图5-3" width="360" height="360" /></p>
 <h3 id="5_1_3">5.1.3 数字类型变量默认值和取值范围</h3>
 <p>在java里面定义一个变量,如果不主动给它赋值,系统会自动给它赋一个初始值值,这个值叫做"默认值".这一点比c/c++要只能一些.下面的表格中列出了Java数字类型变量默认值和取值范围.</p>
 <table class="table table-bordered table-responsive text-center">
@@ -215,7 +215,7 @@ a
 <p>字符串类型是<a href="http://dashidan.com/article/java/basic/13.html#2">对象</a>类型,不属于基础类型.赋值的时候属于<a href="http://dashidan.com/article/java/basic/13.html#4">值传递</a>.在Java语言中,字符串String是不可变(final)的.Java在运行时保存了一个字符串池(String pool),这使String成为了一个特别的类.</p>
 <h3 id="5_3_1">5.3.1 中字符串为什么是不可变的</h3>
 <p>只有当字符串是不可变的,字符串池才有可能实现.字符串池的实现可以在运行时节约很多内存(heap)空间,因为不同的字符串变量都指向池中的同一个字符串.但如果字符串是可变的,那么字符串池技术将不能实现.因为这样的话,如果变量改变了它的值,那么其它指向这个值的变量的值也会一起改变.</p>
-<p><img src="http://localhost/img/java/basic/5-4.jpg" alt="图5-4" width="400" height="400" /></p>
+<p><img src="https://panda-doc.com/img/java/basic/5-4.jpg" alt="图5-4" width="400" height="400" /></p>
 <h3 id="5_3_2">5.3.2 中字符串不可变有什么优点</h3>
 <ul>
 <li>由于字符串的值是不可变的, 无改变字符串指向的对象的值,避免安全漏洞.</li>
@@ -312,12 +312,12 @@ s1 熊猫文档
 String b=a;
 </code></pre>
 <p>a和b是不同的两个引用,我们使用了两个定义语句来定义它们. 但它们的值是一样的, 都指向同一个对象 "This is a Text!".如图:</p>
-<p><img src="http://localhost/img/java/basic/5-1.png" alt="图5-1" width="480" height="102" /></p>
+<p><img src="https://panda-doc.com/img/java/basic/5-1.png" alt="图5-1" width="480" height="102" /></p>
 <div class="bs-callout bs-callout-success">
     <h4>String对象的值本身是不可更改的</h4>
     <p>像`b = "World";` `b = a;`这种情况不是改变了"World" 这一对象的值, 而是改变了它的引用b的值使之指向了另一个String对象a.</p>
 </div>
-<p><img src="http://localhost/img/java/basic/5-2.png" alt="图5-2" width="480" height="117" /></p>
+<p><img src="https://panda-doc.com/img/java/basic/5-2.png" alt="图5-2" width="480" height="117" /></p>
 <h3 id="5_4_2">5.4.2 引用类型</h3>
 <p>java3种引用类型</p>
 <ul>

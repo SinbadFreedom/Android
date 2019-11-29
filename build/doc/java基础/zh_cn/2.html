@@ -7,16 +7,16 @@
 <p>选中Java SE Development Kit 8u144中的Accept License Agreement.</p>
 <p>根据自己的操作系统选择对应的安装包下载, windows, mac os, 或者linux.以windows为例,需要区分是32位还是64位操作系统.windows x86是32位版本,windows x64是64位版本.</p>
 <p><a href="http://dashidan.com/article/windows/faq/1.html#1">windows系统是32位还是64位</a></p>
-<p><img src="http://localhost/img/java/basic/2-1.png" alt="图2-1" width="480" height="482" />   </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-1.png" alt="图2-1" width="480" height="482" />   </p>
 <h2 id="2_2">2.2 windows安装jdk</h2>
 <p>windows安装jdk非常简单, 像安装普通软件一样.点击下一步直到完成,采用默认安装配置.需要注意的是如果修改jdk安装目录, 要选择英文或者拼音的目录, 不要使用中文目录, 来避免一些由于中文编码不支持所可能带来的问题.</p>
 <h2 id="2_3">2.3 windows7配置Java环境变量</h2>
 <h3 id="2_3_1">2.3.1 选择高级系统设置</h3>
 <p>选择步骤:计算机-&gt;点右键-&gt;属性-&gt;高级系统设置. 如图:</p>
-<p><img src="http://localhost/img/java/basic/2-2.png" alt="图2-2" width="480" height="216" />   </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-2.png" alt="图2-2" width="480" height="216" />   </p>
 <h3 id="2_3_2">2.3.2 设置环境变量</h3>
 <p>设置java环境变量步骤:在高级系统设置弹出窗口中点击-&gt;环境变量.如图:</p>
-<p><img src="http://localhost/img/java/basic/2-3.png" alt="图2-3" width="420" height="442" />  </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-3.png" alt="图2-3" width="420" height="442" />  </p>
 <h3 id="2_3_3">2.3.3 新建用户变量</h3>
 <p>在用户变量栏中点击-&gt;新建按钮, 在弹出页面变量名一栏中输入:</p>
 <pre class="prettyprint"><code>classpath
@@ -29,7 +29,7 @@
     <p>由".;"加"JDK安装目录"加"lib"组成.其中"."表示当前程序运行当前路径.</p>
 </div>
 <p>Java用户变量classpath配置.如图:</p>
-<p><img src="http://localhost/img/java/basic/2-4.png" alt="图2-4" width="394" height="406" />   </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-4.png" alt="图2-4" width="394" height="406" />   </p>
 <h3 id="2_3_4">2.3.4 配置系统变量</h3>
 <p>在"系统变量"栏中找到Path-&gt;点击"编辑"按钮增加</p>
 <ul>
@@ -45,7 +45,7 @@ win10操作系统增加环境变量时会新建一个属性,不需要加分号.<
 <pre class="prettyprint"><code>C:\Program Files\Java\jdk1.8.0_144\bin
 </code></pre>
 <p>如图:<br />
-<img src="http://localhost/img/java/basic/2-5.png" alt="图2-5" width="394" height="406" />   </p>
+<img src="https://panda-doc.com/img/java/basic/2-5.png" alt="图2-5" width="394" height="406" />   </p>
 <h3 id="2_3_5">2.3.5 JDK与JRE</h3>
 <p>JDK是java开发工具集成包,开发,编译java程序必须安装.jre(Java Runtime Environment)是java运行时环境.在一些不需要编译java源文件只需要运行java程序的环境中只装JRE也可以.</p>
 <p>Java默认安装目录"C:\Program Files\Java\jdk1.8.0<em>144".在"jdk1.8.0</em>144"的同级目录有个文件夹"jre1.8.0_144",是Java运行环境(Java Runtime Environment).</p>
@@ -60,19 +60,19 @@ win10操作系统增加环境变量时会新建一个属性,不需要加分号.<
 <pre class="prettyprint"><code>java -version
 </code></pre>
 <p>输出java版本号信息说明配置正确.如图:</p>
-<p><img src="http://localhost/img/java/basic/2-6.png" alt="图2-6" width="480" height="151" />   </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-6.png" alt="图2-6" width="480" height="151" />   </p>
 <h3 id="2_5_3">2.5.3 测试用户变量配置</h3>
 <p>在命令提示符中输入javac命令:</p>
 <pre class="prettyprint"><code>javac
 </code></pre>
 <p>javac 命令是编译java程序的命令这个命令如果输出javac命令行信息说明java用户环境变量配置正确.如图:</p>
-<p><img src="http://localhost/img/java/basic/2-7.png" alt="图2-7" width="480" height="289" />   </p>
+<p><img src="https://panda-doc.com/img/java/basic/2-7.png" alt="图2-7" width="480" height="289" />   </p>
 <div class="bs-callout bs-callout-danger">
     <h4>执行java,javac错误提示</h4>
     如果执行java命令时在命令行窗口提示错误,表示环境变量配置有问题,需要<a href="#2.3">检查Java环境变量配置</a>.<br>
     运行java命令提示'javac'不是内部或外部命令,也不是可运行的程序或批处理文件.<a href="#2.3">检查Java用户变量配置</a>
 </div>
 <h2 id="2_6">2.6 相关文章</h2>
-<p><a href="http://localhost/article/java/addenda/4.html">linux搭建Java开发环境</a></p>
-<p><a href="http://localhost/article/linux/centos/9.html">CentOS配置java环境变量</a></p>
-<p><img src="http://localhost/img/common/greatman.jpg" alt="图" width="333" height="320" /></p>
+<p><a href="https://panda-doc.com/article/java/addenda/4.html">linux搭建Java开发环境</a></p>
+<p><a href="https://panda-doc.com/article/linux/centos/9.html">CentOS配置java环境变量</a></p>
+<p><img src="https://panda-doc.com/img/common/greatman.jpg" alt="图" width="333" height="320" /></p>
