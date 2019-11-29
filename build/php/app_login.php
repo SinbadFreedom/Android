@@ -40,6 +40,7 @@ $open_id = $_POST['openid'];
 $union_id = $_POST['unionid'];
 $head_img_url = $_POST['headimgurl'];
 $nick_name = $_POST['nickname'];
+$url_reload = $_POST['url_reload'];
 
 require_once('mongo_login.php');
 /** app登陆qq,wx都采用 unionid，web和app统一*/
@@ -50,8 +51,13 @@ $_SESSION['figure_url'] = str_replace('http://', 'https://', $_POST['headimgurl'
 $_SESSION['nickname'] = $nick_name;
 $_SESSION['user_id'] = $user_id;
 
-/** 返回用户id*/
-$res = new stdClass;
-$res->user_id = $user_id;
+///** 返回用户id*/
+//$res = new stdClass;
+//$res->user_id = $user_id;
+//
+//echo json_encode($res);
 
-echo json_encode($res);
+header('content-type:text/html;charset=utf-8');
+//$url='index.php';
+//立即跳转至目标页面
+echo '<script>window.location.href="' . $url_reload . '";</script>';
