@@ -1,0 +1,168 @@
+<h1 id="18_">18. Java转义字符</h1>
+<p>所有的ASCII码都可以用"\"加数字(一般是8进制数字)来表示. Java语言中定义了一些字母前加"\"来表示特殊含义的字符,如\0,\t,\n等,称为转义字符(Escape Character).</p>
+<h2 id="18_1">18.1 斜线与反斜线</h2>
+<ul>
+<li><p>斜线
+java编程中/斜线(slash),又称为forward slash (前斜线),原本是标点符号.起源于古罗马,中世纪时用作逗号(而当时的双斜线//是被当作连接号的,后来演化成等号=). Linux系统文件路径使用.</p></li>
+<li><p>反斜线 
+java \反斜线(backslash),Windows系统文件路径,程序编码转义,Unicode编码等都使用.</p></li>
+</ul>
+<h2 id="18_2">18.2 a转义字符</h2>
+<p>转义字符,用单引号标识,是char类型.java转义字符中斜杠"/"与反斜杠"\",不可互换.</p>
+<h3 id="18_2_1">18.2.1 八进制转</h3>
+<p>八进制转义+1到3位5数字范围'\000'~'\377'."\0"表示空字符</p>
+<h3 id="18_2_2">18.2.2 Unicode转义字符</h3>
+<p>\u+四个十六进制数字0~65535."\u0000"表示空字符.</p>
+<p>java常用Unicode字符对照表</p>
+<ul>
+<li>点的转义:. -&gt; u002E</li>
+<li>美元符号的转义:$ -&gt; u0024</li>
+<li>乘方符号的转义:^ -&gt; u005E</li>
+<li>左大括号的转义:{ -&gt; u007B</li>
+<li>左方括号的转义:[ -&gt; u005B</li>
+<li>左圆括号的转义:( -&gt; u0028</li>
+<li>竖线的转义:| -&gt; u007C</li>
+<li>右圆括号的转义:) -&gt; u0029</li>
+<li>星号的转义:* -&gt; u002A</li>
+<li>加号的转义:+ -&gt; u002B</li>
+<li>问号的转义:? -&gt; u003F</li>
+<li>反斜杠的转义: -&gt; u005C</li>
+</ul>
+<h3 id="18_2_3">18.2.3 特殊字符转义</h3>
+<ul>
+<li>\" : 转义为双引号</li>
+<li>\' : 转义为单引号</li>
+<li>\\ : 转义为反斜线</li>
+<li>\' : 转义为单引号</li>
+</ul>
+<h3 id="18_2_4">18.2.4 制表符转义</h3>
+<ul>
+<li>\r 转义为回车</li>
+<li>\n 转义为换行</li>
+<li>\f 转义为走纸换页</li>
+<li>\t 转义为横向跳格</li>
+<li>\b 转义为退格</li>
+</ul>
+<h3 id="18_2_5">18.2.5 转义字符表</h3>
+<table class="table table-bordered table-responsive">
+    <caption>转义字符表</caption>
+    <thead>
+        <tr class="success">
+            <td>转义字符</td>
+            <td>意义</td>
+            <td>ASCII码值(十进制)</td>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr class="active">
+            <td>\b</td>
+            <td>退格(BS),将当前位置移到前一列</td>
+            <td>8</td>
+        </tr>
+        <tr class="active">
+            <td>\f</td>
+            <td>换页(FF),将当前位置移到下页开头</td>
+            <td>12</td>
+        </tr>
+        <tr class="active">
+            <td>\n</td>
+            <td>换行(LF) ,将当前位置移到下一行开头</td>
+            <td>10</td>
+        </tr>
+        <tr class="active">
+            <td>\r</td>
+            <td>回车(CR) ,将当前位置移到本行开头</td>
+            <td>13</td>
+        </tr>
+        <tr class="active">
+            <td>\t</td>
+            <td>水平制表(HT) (跳到下一个TAB位置)</td>
+            <td>9</td>
+        </tr>
+        <tr class="active">
+            <td>\\</td>
+            <td>代表一个反斜线字符''\'</td>
+            <td>92</td>
+        </tr>
+        <tr class="active">
+            <td>\'</td>
+            <td>代表一个单引号(撇号)字符</td>
+            <td>39</td>
+        </tr>
+        <tr class="active">
+            <td>\"</td>
+            <td>代表一个双引号字符</td>
+            <td>34</td>
+        </tr>
+        <tr class="active">
+            <td>\0</td>
+            <td>空字符(NULL)</td>
+            <td>0</td>
+        </tr>
+        <tr class="active">
+            <td>\000</td>
+            <td>1到3位八进制数所代表的任意字符</td>
+            <td>三位八进制,范围'\000'~'\377'</td>
+        </tr>
+        <tr class="active">
+            <td>\u0000</td>
+            <td>Unicode转义字符:\u + 四个十六进制数字,\u0000:空字符 </td>
+            <td>四个十六进制数字;0~65535</td>
+        </tr>        
+    </tbody>
+</table>
+<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<ul>
+<li>在网上其他的一些资料中提到了\?和\x转义字符.
+然而Java中并没有这两个转义字符.\x`为C++语言中的16进制转义字符.</li>
+</ul>
+<p>附带真相的代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson18;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 18.Java转义字符
+ * 转义字符/?和/x
+ */
+public class Demo2 {
+    public static void main(String[] args) {
+        /** 定义以下变量都是错误的*/
+//        char c = '\?';
+//        char f = '\x01';
+    }
+}
+</code></pre>
+<p>示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson18;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 18.Java转义字符
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        char a = '\\';
+        char b = '\"';
+        /** 这个会报错,Java中无法转义\? */
+        char d = '\'';
+        /** 8进制整数*/
+        char e = '\100';
+        /** unicode变化转义*/
+        char g = '\u1111';
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("d: " + d);
+        System.out.println("e: " + e);
+        System.out.println("g: " + g);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a: \
+b: "
+d: '
+e: @
+g: ᄑ
+</code></pre>

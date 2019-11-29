@@ -1,0 +1,287 @@
+<h1 id="16_">16. Java异常</h1>
+<p>Java异常是Java提供的一种识别及响应错误的一致性机制.</p>
+<h2 id="16_1">16.1 异常机制相关关键字</h2>
+<h3 id="16_1_1">16.1.1 异常相关关键字</h3>
+<p>异常机制相关关键字有: try,catch,finally,throw,throws.关键字解释:</p>
+<ul>
+<li>try: 用于监听.将被监听的代码(可能抛出异常的代码)放在try语句块之内,当try语句块内发生异常时,异常就被抛出.</li>
+<li>catch: 用来捕获try语句块中发生的异常.</li>
+<li>finally: finally语句块总是会被执行.主要用于回收在try块里打开的物理资源(如文件,网络连接,数据库连接等).</li>
+<li>throw 用于抛出异常.</li>
+<li>throws 用在方法签名中,用于声明该方法可能抛出的异常.</li>
+</ul>
+<p>finally语句中加入return语句与和处理?
+只有finally块执行完成之后,才会执行try或者catch块中的return或者throw语句.如果finally中使用了return或者throw等终止方法的语句,则就不会跳回执行,直接停止.</p>
+<h2 id="16_2">16.2 异常框架</h2>
+<p>将可抛出(Throwable)的结构分为三种类型:</p>
+<ul>
+<li>编译异常(Checked Exception)</li>
+<li>运行时异常(RuntimeException)</li>
+<li>错误(Error)</li>
+</ul>
+<p>异常框架继承关系如图:
+<img src="http://localhost/img/java/basic/15-1.jpg" alt="图15-1" width="327" height="243" /></p>
+<h3 id="16_2_1">16.2.1 Throwable</h3>
+<p>Throwable是Java语言中所有错误或异常的父类,包含两个子类:Error和Exception.它们通常用于指示发生了异常情况.Throwable包含了其线程创建时线程执行堆栈的快照,提供了printStackTrace()等接口用于获取堆栈跟踪数据等信息.</p>
+<h3 id="16_2_2">16.2.2 RuntimeException</h3>
+<p>运行时异常RuntimeException是那些可能在Java虚拟机正常运行期间抛出的异常的父类,简称运行时异常.RuntimeException及其子类都被称为运行时异常.Java编译器不会检查运行时异常.当程序中可能出现这类异常时,倘若既"没有通过throws声明抛出它",也"没有用try-catch语句捕获它",还是会编译通过.虽然Java编译器不会检查运行时异常,但是我们也可以通过throws进行声明抛出,也可以通过try-catch对它进行捕获处理.如果产生运行时异常,则需要通过修改代码来进行避免.</p>
+<p>常见的运行时异常RuntimeException举例:   </p>
+<ul>
+<li>除数为零时产生的ArithmeticException异常</li>
+<li>数组越界时产生的IndexOutOfBoundsException异常</li>
+<li>fail-fail机制产生的ConcurrentModificationException异常等,都属于运行时异常.  </li>
+</ul>
+<p>常见运行时异常:</p>
+<table class="table table-bordered table-responsive">
+    <caption>java常见运行时异常</caption>
+    <thead>
+        <tr class="success">
+            <td>异常</td>
+            <td>描述</td>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr class="active">
+            <td>ArithmeticException</td>
+            <td>除数为零异常</td>
+        </tr>
+        <tr>
+            <td>ArrayIndexOutOfBoundsException</td>
+            <td>数组越界</td>
+        </tr>
+        <tr class="active">
+            <td>ClassCastException</td>
+            <td>对象转型错误</td>
+        </tr>
+        <tr>
+            <td>IllegalArgumentException</td>
+            <td>参数不合法</td>
+        </tr>
+        <tr class="active">
+            <td>IndexOutOfBoundsException</td>
+            <td>指示某排序索引(例如对数组,字符串或向量的排序)超出范围</td>
+        </tr>
+        <tr>
+            <td>NegativeArraySizeException</td>
+            <td>数组长度为负值</td>
+        </tr>
+        <tr class="active">
+            <td>NullPointerException</td>
+            <td>空指针异常</td>
+        </tr>
+        <tr>
+            <td>NumberFormatException</td>
+            <td>当应用程序试图将字符串转换成一种数值类型,但该字符串不能转换为适当格式时,抛出该异常.</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="16_2_3">16.2.3 编译异常Exception</h3>
+<p>Exception类以及Exception的子类中除了"运行时异常"之外的其它子类都属于被检查异常.此类异常,要么通过throws进行声明抛出,要么通过try-catch进行捕获处理,否则不能通过编译.</p>
+<p>常见编译异常:</p>
+<table class="table table-bordered table-responsive">
+    <caption>java常见编译异常</caption>
+    <thead>
+        <tr class="success">
+            <td>异常</td>
+            <td>描述</td>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr class="active">
+            <td>ClassNotFoundException</td>
+            <td>应用程序试图加载类时,找不到相应的类,抛出该异常.</td>
+        </tr>
+        <tr>
+            <td>FileNotFoundException</td>
+            <td>文件不存在异常</td>
+        </tr>
+        <tr class="active">
+            <td>ClassCastException</td>
+            <td>对象转型错误</td>
+        </tr>
+        <tr>
+            <td>InterruptedException</td>
+            <td>一个线程被另一个线程中断,抛出该异常.</td>
+        </tr>
+        <tr class="active">
+            <td>NoSuchFieldException</td>
+            <td>请求的变量不存在</td>
+        </tr>
+        <tr>
+            <td>NoSuchMethodException</td>
+            <td>请求的方法不存在</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="16_2_4">16.2.4 Error</h3>
+<p>java Error类及其子类统称错误.用于指示试图捕获的严重问题,大多数这样的错误都是异常条件.和运行时异常一样,编译器也不会检查Error.当资源不足,约束失败,或是其它导致程序无法继续运行的条件发生时,就产生错误.程序本身无法修复这些错误.例:VirtualMachineError就属于错误.</p>
+<p>按照Java惯例,不应该实现任何新的Error子类,需要自定义异常可以采用Exception类.</p>
+<h3 id="16_2_5">16.2.5 该用哪一种异常</h3>
+<p>对于可以恢复的条件使用被检查异常,对于程序错误使用运行时异常.虚拟机及系统错误采用Error.</p>
+<h2 id="16_3">16.3 捕获异常</h2>
+<p>使用try和catch关键字可以捕获异常.try/catch代码块放在异常可能发生的地方.java try/catch语法:</p>
+<pre class="prettyprint"><code class="java language-java">try {
+    /** 程序代码*/
+} catch (Exception e) {
+    /** 异常处理*/
+}
+</code></pre>
+<p>一个try代码块后面跟随多个catch代码块的情况就叫多重捕获.可以在try语句后面添加任意数量的catch块.如果保护代码中发生异常,异常被抛给第一个catch块.如果抛出异常的数据类型与捕获异常类型匹配,就会被捕获.如果不匹配,它会被传递给下一个catch块.直到异常被捕获或者通过所有的catch块.</p>
+<p>多个catch情况语法如下:</p>
+<pre class="prettyprint"><code class="java language-java">try {
+    /** 程序代码*/
+} catch (Exception1 e) {
+    /** 异常处理*/
+} catch (Exception1 e) {
+    /** 异常处理*/
+}
+</code></pre>
+<h2 id="16_4">16.4 抛出异常</h2>
+<p>可以使用throw关键字抛出一个异常.如果一个方法没有捕获一个编译异常,那么该方法必须使用throws关键字来声明.throws关键字放在方法签名的尾部.</p>
+<pre class="prettyprint"><code class="java language-java">public static void testThrow() {
+    /** 方法体*/
+    throw new NullPointerException();
+}
+</code></pre>
+<p>java抛出异常示例:</p>
+<pre class="prettyprint"><code class="java language-java">public static void testThrows() throws NullPointerException {
+    /** 方法体*/
+}
+</code></pre>
+<p>一个java方法可以声明抛出多个异常,多个异常之间用逗号隔开.例如,下面的方法声明抛出<code>NullPointerException</code>和<code>ArithmeticException</code>示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">public static void testThrows() throws NullPointerException,ArithmeticException {
+    /** 方法体*/
+}
+</code></pre>
+<h2 id="16_5">16.5 finally关键字</h2>
+<p>java finally是<a href="http://dashidan.com/article/java/addenda/3.html">java保留关键字</a>中的一个,用来创建在try代码块后面执行的代码块.无论是否发生异常,finally代码块中的代码总会被执行.在finally代码块中,可以运关闭链接,释放系统资源等必须要执行的语句.finally代码块出现在catch代码块最后.语法如下:</p>
+<pre class="prettyprint"><code class="java language-java">try {
+    /** 方法体*/
+} catch (Exception e) {
+    /** 异常处理*/
+} finally {
+    /** finally语句*/
+}
+</code></pre>
+<p>finally 块并非强制添加.try 代码后不能既没catch块也没finally块.示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson16;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 16.Java异常
+ * 测试finally return
+ */
+public class Demo2 {
+    public static void main(String[] args) {
+        int result = testFinallyReturn();
+        System.out.println("result: " + result);
+    }
+
+    public static int testFinallyReturn() {
+        int a;
+        try {
+            a = 1;
+            /** 抛出异常*/
+            System.out.println("抛出异常");
+            throw new NullPointerException();
+        } catch (NullPointerException e) {
+            a = 2;
+            /** 捕获异常*/
+            System.out.println("捕获异常");
+            e.printStackTrace();
+            /** 注意这里没有返回*/
+            System.out.println("注意这里没有返回");
+            return a;
+        } finally {
+            a = 3;
+            System.out.println("finally执行返回");
+            /** 抛出异常后,执行finally的语句,如果这里返回,不再执行catch中语句*/
+            return a;
+        }
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>抛出异常
+捕获异常
+注意这里没有返回
+finally执行返回
+result: 3
+java.lang.NullPointerException
+    at com.panda-doc.lesson16.Demo2.testFinallyReturn(Demo2.java:21)
+    at com.panda-doc.lesson16.Demo2.main(Demo2.java:11)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:497)
+    at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+</code></pre>
+<h2 id="16_6">16.6 自定义异常</h2>
+<p>在Java中自定义异常需要注意:</p>
+<ul>
+<li>所有异常都必须是 Throwable 的子类.</li>
+<li>如果想写一个检查性异常类,则需要继承 Exception 类.</li>
+<li>如果想写一个运行时异常类,那么需要继承 RuntimeException 类.</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson16;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 16.Java异常
+ * 自定义异常
+ */
+public class SelfException extends Exception {
+}
+</code></pre>
+<p>示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson16;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 16.Java异常
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        try {
+            /** 方法体*/
+            testThrow();
+            testThrows();
+        } catch (NullPointerException e) {
+            /** 异常处理*/
+            System.out.println("run catch NullPointerException.");
+            e.printStackTrace();
+        } catch (Exception e) {
+            /** 异常处理*/
+            System.out.println("run catch Exception.");
+            e.printStackTrace();
+        } finally {
+            /** finally语句*/
+            System.out.println("run finally.");
+        }
+    }
+
+    public static void testThrow() {
+        /** 方法体*/
+        throw new NullPointerException();
+    }
+
+    public static void testThrows() throws NullPointerException,ArithmeticException {
+        /** 方法体*/
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>java.lang.NullPointerException
+at com.panda-doc.lesson16.Demo1.testThrow(Demo1.java:30)
+at com.panda-doc.lesson16.Demo1.main(Demo1.java:12)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:497)
+at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+run catch NullPointerException.
+run finally.
+</code></pre>

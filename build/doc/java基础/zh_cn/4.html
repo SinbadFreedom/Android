@@ -1,0 +1,54 @@
+<h1 id="4_">4. Java代码注释</h1>
+<p>注释也叫做注解.程序员写出的代码一方面是让计算机读懂并执行,另一方面是需要人能更好的理解和维护. 注释就是为了方便人的理解,给代码加上语言解释.这部分只需要人来读懂而计算机不执行. 注释分为单行注释和多行注释.</p>
+<h2 id="4_1">4.1 单行注释</h2>
+<p>以"//"开头,表示这一行是注释.单行注释示例:</p>
+<pre class="prettyprint"><code class="java language-java">    //这是一个简单的注释
+    //熊猫文档
+    //http://dashidan.com 
+</code></pre>
+<h2 id="4_2">4.2 多行注释</h2>
+<p>以<code>/*</code>开头,以<code>*/</code>结尾,表示这区间的代码是注释.</p>
+<h3 id="4_2_1">4.2.1 多行注释例1</h3>
+<pre class="prettyprint"><code class="java language-java">    /*
+        这是一个多行注释
+        熊猫文档
+        http://dashidan.com 
+    */  
+</code></pre>
+<h3 id="4_2_2">4.2.2 多行注释例2</h3>
+<p>比例1好看,标准格式.推荐采用这种注释风格, 代码比较美观.</p>
+<pre class="prettyprint"><code class="java language-java">    /*
+     *  这还是一个
+     *  多行注释
+     */ 
+</code></pre>
+<h3 id="4_2_3">4.2.3 区块注释例3</h3>
+<p>java多行注释也可以用于代码一行间注释掉其中的以<code>/*</code>开头,以<code>*/</code>结尾的一部分代码.</p>
+<pre class="prettyprint"><code class="java language-java">    System.out.println("HelloWorld/*熊猫文档*/");   
+</code></pre>
+<p>这个代码中的"/<em>熊猫文档</em>/"这一部分作为注释不会输出.</p>
+<p>示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson4;
+
+/**
+ * 熊猫文档-panda-doc.com
+ *
+ * Java教程基础篇: 4. Java代码注释
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        // 单行注释示例 System.out.println("这行不输出");
+        /**
+         * 多行注释示例
+         * System.out.println("这行不输出");
+         */
+        /** 区块注释示例*/
+        System.out.println("区块注释示例"/* 熊猫文档 这些不输出*/);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>区块注释示例
+</code></pre>
+<h2 id="4_3">4.3 代码编辑工具</h2>
+<p>开始写简单的java程序的时候可以采用<a href="http://dashidan.com/article/java/basic/6.html#2">文本编辑工具</a>, 随着代码量的提高,采用可视化工具,带自动补全和拼写检查的<a href="http://dashidan.com/article/java/basic/6.html#3">Java集成开发工具</a>写代码会极大的提高开发效率.</p>

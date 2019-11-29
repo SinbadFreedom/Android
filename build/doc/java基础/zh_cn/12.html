@@ -1,0 +1,99 @@
+<h1 id="12_">12. Java静态变量与常量</h1>
+<p>java语言中static修饰的成员变量和成员方法习惯上称为静态变量和静态方法,可以直接通过类名来访问.只要这个类被加载,java虚拟机就能根据类名在运行时数据区的方法区内定找到他们.因此static修饰的变量和方法,可以在它所属的对象创建之前访问,不用创建对象.</p>
+<h2 id="12_1">12.1 静态变量</h2>
+<h3 id="12_1_1">12.1.1 静态变量访问语法</h3>
+<pre class="prettyprint"><code>类名.静态方法名(参数列表...) 
+类名.静态变量名&lt;/p&gt; 
+</code></pre>
+<h3 id="12_1_2">12.1.2 静态变量分类</h3>
+<p>按照是否静态的对类成员变量进行分类可分两种:</p>
+<ul>
+<li>被static修饰的变量,叫静态变量或类变量.   </li>
+<li>没有被static修饰的变量,叫实例变量.</li>
+</ul>
+<h3 id="12_1_3">12.1.3 静态变量与实例变量区别</h3>
+<ul>
+<li>静态变量在内存中只有一个拷贝,JVM只为静态分配一次内存.在加载类的过程中完成静态变量的内存分配.可用类名直接访问,当然也可以通过<a href="http://dashidan.com/article/java/basic/13.html">对象</a>来访问(不推荐). </li>
+<li>对于实例变量,每创建一个实例,就会为实例变量分配一次内存,实例变量可以在内存中有多个拷贝,互不影响,需要通过实例的引用来访问.</li>
+</ul>
+<h3 id="12_1_4">12.1.4 静态变量应用场景</h3>
+<ul>
+<li>在对象之间共享值时</li>
+<li>方便访问变量时</li>
+</ul>
+<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
+<p>猫都有4条腿,2只眼睛一张嘴.这3条属性是猫的通用属性,我们便可以把这三个属性设置为static静态变量.</p>
+<ul>
+<li>java静态变量命名</li>
+</ul>
+<p>在定义静态变量时,通常将所有字母大写,与实例变量作区分.命名规范参考<a href="http://dashidan.com/article/java/addenda/5.html">阿里巴巴java开发手册</a>.</p>
+<ul>
+<li>java调用静态方法</li>
+</ul>
+<p>java静态方法可以直接通过<a href="http://dashidan.com/article/java/basic/10.html#1">类</a>名调用,任何的实例也可以调用.因此静态方法只能访问所属类的静态变量和静态方法,不能用<a href="http://dashidan.com/article/java/basic/10.html#2">this</a>和super关键字.不能直接访问所属类的实例变量和实例方法(没有static修饰的成员变量和成员方法).</p>
+<ul>
+<li>java静态方法示例代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson12;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * java教程基础篇: 12.java静态变量与常量
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        /** 出处猫的静态属性*/
+        System.out.println("MOUSE_NUM: " + Cat.MOUSE_NUM);
+        System.out.println("EYE_NUM: " + Cat.EYE_NUM);
+        System.out.println("LEG_NUM: " + Cat.LEG_NUM);
+    }
+}
+</code></pre>
+<p>Cat类:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson12;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * java教程基础篇: 12.java静态变量与常量
+ * Cat 类
+ */
+public class Cat {
+    public static int MOUSE_NUM = 1;
+    public static int EYE_NUM = 2;
+    public static int LEG_NUM = 4;
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>MOUSE_NUM: 1
+EYE_NUM: 2
+LEG_NUM: 4
+</code></pre>
+<h2 id="12_2">12.2 常量final关键字</h2>
+<p>final是一个<a href="http://localhost/article/java/addenda/3.html">java保留关键字</a>,可以声明成员变量,方法,类以及局部变量.被声明final的变量,一但赋值便不能再次修改.编译器会检查代码,如果你试图将变量再次初始化的话,编译器会报编译错误.final变量经常和static关键字一起使用作为常量.</p>
+<p>涉及到了很多类的继承相关的概念,可以参考<a href="http://dashidan.com/article/java/basic/13.html">java对象</a>相关的文章后,再回头看这些知识就很好理解了.   </p>
+<h3 id="12_2_1">12.2.1 常量定义举例</h3>
+<pre class="prettyprint"><code class="java language-java">public static final WEB_NAME = "熊猫文档."
+public static final WEB_URL = "http://dashidan.com"
+</code></pre>
+<h3 id="12_2_2">12.2.2 final关键字要点</h3>
+<ul>
+<li>方法前面加上final关键字,代表这个方法不可以被子类的方法重写.</li>
+<li>类名前面加上final关键字,代表这个方法不可以被继承.</li>
+<li>final关键字可以用于成员变量,局部变量,方法以及类.</li>
+<li>final成员变量必须在声明的时候初始化或者在构造器中初始化,否则就会报编译错误.</li>
+<li>不能对final变量再次赋值. </li>
+<li>fina局部变量必须在声明时赋值.</li>
+<li>在匿名类中所有变量都必须是final变量.</li>
+<li>final方法不能被重写.</li>
+<li>final类不能被继承.</li>
+<li>接口中声明的所有变量本身是final的.</li>
+<li>final和abstract这两个关键字是反相关的,final类就不可能是abstract的.</li>
+<li>final方法在编译阶段绑定,称为静态绑定(static binding). </li>
+<li>没有在声明时初始化final变量的称为空白final变量(blank final variable), 必须在构造器中初始化,或者调用this()初始化. 否则编译器会报错.</li>
+<li>将类,方法,变量声明为final能够提高性能,这样JVM就有机会进行估计,然后优化.</li>
+<li>按照java代码惯例,final变量就是常量,而且通常常量名要大写</li>
+<li>对于集合对象声明为final指的是引用不能被更改,但可以向其中增加,删除或者改变内容.</li>
+</ul>
+<p>final关键字相关文章:<a href="http://localhost/article/java/basic/23.html">23.final关键字作用详解</a></p>

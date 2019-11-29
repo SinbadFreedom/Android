@@ -1,0 +1,133 @@
+<h1 id="22_">22. jvm参数优化</h1>
+<p>Java虚拟机简称JVM(Java Virtual Machine).像一个构造十分精密的仪器, 提供了一些可以调控机器运行状态的参数.</p>
+<p>这些参数需要根据自己的实际的生产环境的要求来设置.就像头文字D中的那辆车86, 只有经过对应的配置和调试, 才能达到跑车的最优性能.</p>
+<p><img src="http://localhost/img/java/basic/22-1.jpg" alt="豆腐店自家用" width="480" height="288" /></p>
+<p>不同的厂家的SDK有不同的配置, 我们以sun公司出品的官方JDK为例介绍下JVM参数.</p>
+<h2 id="22_1">22.1 jvm参数标准配置选项</h2>
+<pre class="prettyprint"><code>-d32          使用 32 位数据模型 (如果可用)
+-d64          使用 64 位数据模型 (如果可用)
+-server       选择 "server" VM
+              默认 VM 是 server.
+
+-cp &lt;目录和 zip/jar 文件的类搜索路径&gt;
+-classpath &lt;目录和 zip/jar 文件的类搜索路径&gt;
+              用 ; 分隔的目录, JAR 档案
+              和 ZIP 档案列表, 用于搜索类文件.
+-D&lt;名称&gt;=&lt;值&gt;
+              设置系统属性
+-verbose:[class|gc|jni]
+              启用详细输出
+-version      输出产品版本并退出
+-version:&lt;值&gt;
+              警告: 此功能已过时, 将在
+              未来发行版中删除.
+              需要指定的版本才能运行
+-showversion  输出产品版本并继续
+-jre-restrict-search | -no-jre-restrict-search
+              警告: 此功能已过时, 将在
+              未来发行版中删除.
+              在版本搜索中包括/排除用户专用 JRE
+-? -help      输出此帮助消息
+-X            输出非标准选项的帮助
+-ea[:&lt;packagename&gt;...|:&lt;classname&gt;]
+-enableassertions[:&lt;packagename&gt;...|:&lt;classname&gt;]
+              按指定的粒度启用断言
+-da[:&lt;packagename&gt;...|:&lt;classname&gt;]
+-disableassertions[:&lt;packagename&gt;...|:&lt;classname&gt;]
+              禁用具有指定粒度的断言
+-esa | -enablesystemassertions
+              启用系统断言
+-dsa | -disablesystemassertions
+              禁用系统断言
+-agentlib:&lt;libname&gt;[=&lt;选项&gt;]
+              加载本机代理库 &lt;libname&gt;, 例如 -agentlib:hprof
+              另请参阅 -agentlib:jdwp=help 和 -agentlib:hprof=help
+-agentpath:&lt;pathname&gt;[=&lt;选项&gt;]
+              按完整路径名加载本机代理库
+-javaagent:&lt;jarpath&gt;[=&lt;选项&gt;]
+              加载 Java 编程语言代理, 请参阅 java.lang.instrument
+-splash:&lt;imagepath&gt;
+              使用指定的图像显示启动屏幕
+</code></pre>
+<h2 id="22_2">22.2 jvm参数非标准配置选项</h2>
+<pre class="prettyprint"><code>-Xmixed           混合模式执行 (默认)
+-Xint             仅解释模式执行
+-Xbootclasspath:&lt;用 ; 分隔的目录和 zip/jar 文件&gt;
+                  设置搜索路径以引导类和资源
+-Xbootclasspath/a:&lt;用 ; 分隔的目录和 zip/jar 文件&gt;
+                  附加在引导类路径末尾
+-Xbootclasspath/p:&lt;用 ; 分隔的目录和 zip/jar 文件&gt;
+                  置于引导类路径之前
+-Xdiag            显示附加诊断消息
+-Xnoclassgc       禁用类垃圾收集
+-Xincgc           启用增量垃圾收集
+-Xloggc:&lt;file&gt;    将 GC 状态记录在文件中 (带时间戳)
+-Xbatch           禁用后台编译
+-Xms&lt;size&gt;        设置初始 Java 堆大小 示例:
+                    -Xms6291456
+                    -Xms6144k
+                    -Xms6m
+                    -Xms1g
+-Xmx&lt;size&gt;        设置最大 Java 堆大小
+-Xss&lt;size&gt;        设置 Java 线程堆栈大小
+-Xprof            输出 cpu 配置文件数据
+-Xfuture          启用最严格的检查, 预期将来的默认值
+-Xrs              减少 Java/VM 对操作系统信号的使用 (请参阅文档)
+-Xcheck:jni       对 JNI 函数执行其他检查
+-Xshare:off       不尝试使用共享类数据
+-Xshare:auto      在可能的情况下使用共享类数据 (默认)
+-Xshare:on        要求使用共享类数据, 否则将失败.
+-XshowSettings    显示所有设置并继续
+-XshowSettings:all
+                  显示所有设置并继续
+-XshowSettings:vm 显示所有与 vm 相关的设置并继续
+-XshowSettings:properties
+                  显示所有属性设置并继续
+-XshowSettings:locale
+                  显示所有与区域设置相关的设置并继续
+</code></pre>
+<h2 id="22_3">22.3 jvm参数性能优化示例</h2>
+<ul>
+<li><p>高吞吐量(<code>Higher Throughput</code>)JVM性能优化示例:</p>
+<p>java -d64 -server -XX:+AggressiveOpts -XX:+UseLargePages -Xmn10g  -Xms26g -Xmx26g </p></li>
+<li><p>低延迟(<code>Lower Response Time</code>)JVM性能优化示例:</p>
+<p>java -d64 -XX:+UseG1GC -Xms26g Xmx26g -XX:MaxGCPauseMillis=500 -XX:+PrintGCTimeStamps </p></li>
+</ul>
+<h2 id="22_4">22.4 著名中间件jvm参数配置</h2>
+<h3 id="22_4_1">22.4.1 zookeeperJVM参数设置</h3>
+<pre class="prettyprint"><code>-XX:+HeapDumpOnOutOfMemoryError 
+-XX:OnOutOfMemoryError=kill -9 %p 
+-Xmx1000m 
+-Dcom.sun.management.jmxremote 
+-Dcom.sun.management.jmxremote.local.only=false 
+</code></pre>
+<h3 id="22_4_2">22.4.2 apolloJVM参数设置</h3>
+<pre class="prettyprint"><code>-ea 
+-server 
+-Xmx1G 
+-XX:+HeapDumpOnOutOfMemoryError 
+-XX:-UseBiasedLocking 
+-Dcom.sun.management.jmxremote 
+</code></pre>
+<h3 id="22_4_3">22.4.3 jvm参数说明</h3>
+<ul>
+<li>-XX:+HeapDumpOnOutOfMemoryError参数表示当JVM发生内存溢出时,自动生成信息文件.</li>
+<li>-XX:HeapDumpPath=${path} 生成信息文件的路径.也可以指定文件名称.例如: </li>
+<li>-XX:HeapDumpPath=${path}/java<em>heapdump.hprof. 如果不指定文件名,默认名为:java</em>pid<em>date</em>time_heapDump.hprof.</li>
+<li>-Dcom.sun.management.jmxremote 通过JMX的方式远程监控JVM的运行情况.</li>
+</ul>
+<h2 id="22_5">22.5 jvm参数建议配置</h2>
+<p>以下是个人建议, 不一定使用全部场景.根据自己的应用场景配置.不要过分纠结有时采用更高配置的硬件更有效.</p>
+<pre class="prettyprint"><code>-d64
+-Xms4g
+-Xmx8g
+-XX:+HeapDumpOnOutOfMemoryError
+-Dcom.sun.management.jmxremote.port=9999
+-Dcom.sun.management.jmxremote.ssl=false
+-Dcom.sun.management.jmxremote.authenticate=false
+-Djava.rmi.server.hostname=192.168.1.100
+</code></pre>
+<p>-Djava.rmi.server.hostnam 这个参数后边的ip要修改为服务器IP, 否则Jconsole无法连接到远程服务器.</p>
+<h2 id="22_6">22.6 jvm参数参考文章</h2>
+<p><a href="https://docs.oracle.com/cd/E22289_01/html/821-1274/configuring-the-default-jvm-and-java-arguments.html">配置jvm和java参数</a></p>
+<p><a href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html">java技术文档</a></p>

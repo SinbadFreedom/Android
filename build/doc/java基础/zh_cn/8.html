@@ -1,0 +1,147 @@
+<h1 id="8_">8. Java方法</h1>
+<p>Java方法是语句的集合.</p>
+<h2 id="8_1">8.1 方法的定义</h2>
+<p>一般情况的java方法定义:</p>
+<pre class="prettyprint"><code>修饰符 返回值类型 方法名(参数类型 参数名){
+    ...
+    方法体
+    ...
+    return 返回值;
+}
+</code></pre>
+<p><img src="http://localhost/img/java/basic/14-1.jpg" alt="图14-1" width="381" height="198" />   </p>
+<h2 id="8_2">8.2 方法修饰符</h2>
+<p>可选,告诉编译器如何调用该方法.定义该方法的访问类型.java方法修饰符类型:</p>
+<ul>
+<li>public: 可以公开访问,类似公共财产.所有类都可以访问.</li>
+<li>private: 私有的,类似个人资产.只有本类可以访问.   </li>
+<li>protect: 保护的,类似家族资产.有继承关系的类可以访问.</li>
+<li>default: 默认,类似家族资产.同一个包中的类可以访问.</li>
+</ul>
+<h2 id="8_3">8.3 静态方法static</h2>
+<p>用static修饰的java方法,表示该方法是静态方法,属于类本身不用创建对象,可以类名加"."调用.静态方法调用同一个类中的其他静态方法可以直接调用.没有staic修饰的方法表名该方属于<a href="http://dashidan.com/article/java/basic/13.html">对象</a>要先创建对象, 通过创建的对象变量名加"."才可以调用.</p>
+<h2 id="8_4">8.4 方法返回值类型</h2>
+<h3 id="8_4_1">8.4.1 加入返回值的数据类型</h3>
+<p>如果再方法修饰词中加入了返回值的数据类型,最后必须有return语句,return语句返回的数据类型和修饰词需保持一致.如:int表示返回整数,定义了返回类型的方法,示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">public int testReturnInt(){
+    System.out.println("return int.");
+    return 100; 
+}
+</code></pre>
+<h3 id="8_4_2">8.4.2 void修饰方法</h3>
+<p>使用void关键词修饰的java方法表示不返回任何数据, 该方法可以没有return语句,或者通过return结束方法, 但不能通过return语句返回值.</p>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">public void testVoid(){
+    System.out.println("void");
+}
+</code></pre>
+<h2 id="8_5">8.5 方法名</h2>
+<p>方法的名字,可以根据功能取名,方便理解.</p>
+<h3 id="8_5_1">8.5.1 方法命名规则</h3>
+<ul>
+<li>必须以字母或_或$开头.</li>
+<li>可以包括数字,但不能以数字开头.</li>
+</ul>
+<p>java命名规则可以参考<a href="http://dashidan.com/article/java/addenda/5.html">阿里巴巴Java开发手册</a>,在学java编程之初养成良好的编程习惯.</p>
+<h2 id="8_6">8.6 方法参数</h2>
+<p>java方法参数是指方法名后边括号内的内容.java方法参数根据方法可以有可以没有.</p>
+<h3 id="8_6_1">8.6.1 无参数的方法</h3>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">public static void test(){
+    // 方法体
+}
+</code></pre>
+<h3 id="8_6_2">8.6.2 有参数的方法</h3>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">// 返回2个数相加的值,调用该方法时,需要传入2个整型参数,a和b.
+public static int addInt(int a,int b){
+    return a + b;
+}
+</code></pre>
+<p>有参数的java方法示例代码中需要注意的地方:</p>
+<ul>
+<li>返回2个数相加的值,调用该方法时,需要传入2个整型参数,a和b一一对应.</li>
+</ul>
+<h2 id="8_7">8.7 方法体</h2>
+<p>java方法体是逻辑语句的集合.从上到下,顺序执行(单线程环境).学习初期练习写的代码几乎都是单线程的,初期可以忽略<a href="http://dashidan.com/article/java/basic/19.html">java线程</a>问题.</p>
+<h3 id="8_7_1">8.7.1 方法示例代码</h3>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson8;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 8.Java方法
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        testFunc();
+    }
+
+    /**
+     * 无返回值的方法
+     */
+    public static void testFunc() {
+        int a = 1;
+        int b = 2;
+        /** 将a,b 传入相加的方法处理,将结果赋值给c,a + b = 3,故执行完方法,c为3.*/
+        int c = addInt(a,b);
+        System.out.println(c);
+    }
+
+    /**
+     * 传入2个值,参数按照顺序对应.上面方法的变量`a`,赋值给参数`p0`,变量`b`,赋值给参数`p1`.
+     * 将这两个值相加,并将结果返回
+     */
+    public static int addInt(int p0,int p1) {
+        return p0 + p1;
+    }
+}
+</code></pre>
+<p>输出</p>
+<pre class="prettyprint"><code>3
+</code></pre>
+<p>java方法示例代码中需要注意的地方:</p>
+<ul>
+<li>传入2个值,参数按照顺序对应.上面方法的变量a,赋值给参数p0,变量b,赋值给参数p1.</li>
+</ul>
+<h3 id="8_7_2">8.7.2 return关键字</h3>
+<p>return语句可以使其从当前方法中退出.返回到调用该方法的语句处.继续程序的执行.返回语句有两种格式:无返回值和有返回值:</p>
+<ul>
+<li>return有返回值,返回一个值给调用该方法的语句.返回值的数据类型必须与方法声明中的返回值类型一致.</li>
+<li>return无返回值,当方法说明中用void声明无返回值时,不返回任何值.</li>
+</ul>
+<p>return语句通常用在一个方法体的最后,退出该方法并返回一个值.单独的return语句用在一个方法体的中间时,会产生编译错误,因这会导致后续语句执行不到.可以通过把return语句嵌入<a href="http://dashidan.com/article/java/basic/9.html#1">流程控制语句</a>(如:if…else)来使程序在未执行完方法中的所有语句时退出.</p>
+<ul>
+<li>return关键字示例代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * return 语句
+ */
+public class Demo6 {
+    public static void main(String[] args) {
+        /** 执行无返回值的方法*/
+        testReturn(1);
+        int b = testReturnInt(2,3);
+        System.out.println("执行有返回值的方法: " + b);
+
+    }
+
+    public static void testReturn(int value) {
+        System.out.println("执行无返回值的方法: " + value);
+    }
+
+    public static int testReturnInt(int p0,int p1) {
+        return p0 + p1;
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>执行无返回值的方法: 1
+执行有返回值的方法: 5
+</code></pre>

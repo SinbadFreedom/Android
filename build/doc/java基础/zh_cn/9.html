@@ -1,0 +1,447 @@
+<h1 id="9_">9. Java流程控制</h1>
+<p>流程控制语句是编程语言中的核心之一,可以分为分支语句(if,else),跳转语句(switch)和循环语句(for,while). </p>
+<h2 id="9_1">9.1 java分支语句if-else</h2>
+<p>java语言中if,else属于分支语句,意思是根据条件执行语句.if-else流程控制中,只会执行判断条件为真(true)方法体的代码,不满足条件的不执行.</p>
+<h3 id="9_1_1">9.1.1 最基本的if-else语句</h3>
+<p>如果if括号中的条件为真(true),则执行if对应大括号内的语句. 如果if括号中的条件为假(false),则执行else对应大括号内的语句.    </p>
+<pre class="prettyprint"><code class="java language-java">int a = 0;
+int b = 1;
+if(a &gt; b){
+    System.out.println(a);
+} else {
+    System.out.println(b);
+}
+</code></pre>
+<h3 id="9_1_2">9.1.2 if-else if-else</h3>
+<ul>
+<li>如果if括号中的条件为真(true),则执行if对应大括号内的语句.  </li>
+<li>如果if括号中的条件为假(false),则顺次往下判断else if对应大括号内的条件是否为真.  </li>
+<li>如果条件为真,则执行大括号对应的语句.</li>
+<li>如果条件为假,则继续向下判断.   </li>
+</ul>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        int a = 0;
+        int b = 1;
+        if (a &gt; b) {
+            System.out.println("a &gt; b");
+        } else if (a == b) {
+            System.out.println("a == b");
+        } else {
+            System.out.println("a &lt; b");
+        }
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a &lt; b
+</code></pre>
+<h2 id="9_2">9.2 跳转语句switch</h2>
+<p>switch语句是一种条件控制语句,由case,break,default(可省略)组成. </p>
+<h3 id="9_2_1">9.2.1 switch语句规则</h3>
+<p>switch根据一个传入的参数,从case后":"的数据,找到和传入的参数相同的值.执行对应的case部分的代码,到break结束,结束switch语句.如果没有满足的case情况,则执行default对应的语句,结束switch语句.</p>
+<ul>
+<li>switch语句结构示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">switch (var) {
+    case 1:
+        System.out.println(1);
+        break;
+    case 2:
+        System.out.println(2);
+        break;
+    case 3:
+        System.out.println(3);
+        break;
+    default:
+        System.out.println("default : " + var);
+        break;
+}
+</code></pre>
+<ul>
+<li>java调用switch语句示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * 基础switch case
+ */
+public class Demo2 {
+
+    public static void main(String[] args) {
+        int num = 2;
+        baseSwitch(num);
+    }
+
+    /**
+     * switch case基本模型
+     *
+     * @param var 传入的参数,通过该参数找到case对应的值,执行对应的代码.
+     */
+    public static void baseSwitch(int var) {
+        switch (var) {
+            case 1:
+                System.out.println(1);
+                break;
+            case 2:
+                System.out.println(2);
+                break;
+            case 3:
+                System.out.println(3);
+                break;
+            default:
+                System.out.println("default : " + var);
+                break;
+        }
+        System.out.println("switch over.");
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>2
+switch over.
+</code></pre>
+<ul>
+<li>case没有break会怎样?</li>
+</ul>
+<p>case如果没有break就会继续往下执行,不中断switch语句,直到遇到break,或者switch结尾.</p>
+<ul>
+<li>switch语句中case如果没有break示例代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * 测试case没有break的情况
+ */
+public class Demo3 {
+
+    public static void main(String[] args) {
+        int num = 2;
+        testSwitchWithoutbreak(num);
+    }
+
+    /**
+     * 测试case没有break的情况
+     *
+     * @param var 传入的case参数
+     */
+    public static void testSwitchWithoutbreak(int var) {
+        switch (var) {
+            case 1:
+                System.out.println(1);
+            case 2:
+                System.out.println(2);
+            case 3:
+                System.out.println(3);
+                break;
+            default:
+                System.out.println(4);
+                break;
+        }
+        System.out.println("switch over.");
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>2
+3
+switch over.
+</code></pre>
+<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有1个" width="480" height="388" /></p>
+<div class="bs-callout bs-callout-danger">
+    <h4>网上很多文章说switch只支持整数型和字符(`char`)型.</h4>
+    <p>那是以前了. JDK7.0开始switch case已经支持字符串类型了.</p>
+</div>
+<ul>
+<li>switch case支持字符串java代码示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * switch case参数为字符串
+ */
+public class Demo4 {
+
+    public static void main(String[] args) {
+        String str = "a";
+        testSwitchCaseString(str);
+    }
+
+    /**
+     * 测试switch case参数为字符串
+     *
+     * @param var 传入的case字符串
+     */
+    public static void testSwitchCaseString(String var) {
+        switch (var) {
+            case "a":
+                System.out.println("a");
+                break;
+            case "b":
+                System.out.println("b");
+                break;
+            case "c":
+                System.out.println("c");
+                break;
+            default:
+                System.out.println("default");
+                break;
+        }
+        System.out.println("switch over.");
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a
+switch over.
+</code></pre>
+<h2 id="9_3">9.3 循环语句</h2>
+<p>循环就是同样的规则重复执行.Java基本循环控制有3种:for,while,do…while.</p>
+<h3 id="9_3_1">9.3.1 for循环   </h3>
+<p>java for循环基本表达方式:</p>
+<pre class="prettyprint"><code>for(定义变量及初始值; 循环继续执行条件; 循环每执行一次变量的变化){
+    //循环体
+}
+</code></pre>
+<p>java for循环示例代码:</p>
+<pre class="prettyprint"><code>for (int i = 0; i &lt; 3; i++) {
+    System.out.println("i: " + i);
+}
+</code></pre>
+<p>java for循环执行步骤</p>
+<p>1.第一步设定一个整型变量(以下以变量i为例),并设定初始值i = 0.<br />
+2.第二步判断循环继续执行条件i&lt;3,是否为true,如果为true,继续第三步,如果为false则结束循环.<br />
+3.第二步满足i&lt;3(true)时,执行循环体(打印出变量i的值).<br />
+4.第三步执行完循环体后,执行"循环每执行一次变量的变化",为(i++),这时i的值加1,从0变为1.<br />
+5.开始循环执行第二步的判断,直到循环结束.   </p>
+<h3 id="9_3_2">9.3.2 while循环</h3>
+<p>先判断是否结束循环,再执行循环体.while循环执行步骤:</p>
+<p>1.第一步判断"循环继续执行条件i&lt;3",是否为true,如果为true,继续第二步,如果为false则结束循环.</p>
+<p>2.第二步执行循环体(打印出变量i的值,i值加1).</p>
+<p>3.开始循环执行第二步的判断,直到循环结束.</p>
+<p>java while循环基本表达方式:</p>
+<pre class="prettyprint"><code>while(循环继续执行条件){
+    //循环体
+}
+</code></pre>
+<p>java while循环示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">int i = 0;
+while (i &lt; 3) {
+    System.out.println("i: " + i);
+    i++;
+}
+</code></pre>
+<h3 id="9_3_3">9.3.3 do…while循环</h3>
+<p>先执行循环体,再判断是否结束循环.java do…while循环执行步骤:</p>
+<p>1.第一步执行循环体(打印出变量i的值,i值加1).</p>
+<p>2.第二步判断"循环继续执行条件i&lt;3",是否为true,如果为true,继续第二步,如果为false则结束循环.</p>
+<p>3.开始循环执行第一步的语句,直到循环结束.   </p>
+<p>java do…while循环基本表达方式:</p>
+<pre class="prettyprint"><code class="java language-java">do{
+    //循环体
+} while(循环继续执行条件);
+</code></pre>
+<p>java do…while循环示例代码:</p>
+<pre class="prettyprint"><code>int i = 0;
+do {
+    System.out.println("i: " + i);
+    i++;
+} while (i &lt; 3);
+</code></pre>
+<h3 id="9_3_4">9.3.4 continue关键字</h3>
+<p>在java循环体中的continue关键字的作用是从continue处停止当前的逻辑执行,并且继续进入下一次循环.</p>
+<p>java for循环continue示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">for (int i = 0; i &lt; 3; i++) {
+    if (i == 1) {
+        continue;
+    }
+    System.out.println("i: " + i);
+}
+</code></pre>
+<p>java while循环continue示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">int i = 0;
+while (i &lt; 3) {
+    if (i == 1) {
+        continue;
+    }
+    System.out.println("i: " + i);
+    i++;
+}
+</code></pre>
+<p>java for while循环continue示例代码需要注意的地方:</p>
+<ul>
+<li>在for循环和while循环中,continue语句作用一样.当"i==1"时,执行了continue语句,跳过了后续的语句,所以没有输出"i: 1".</li>
+</ul>
+<h3 id="9_3_5">9.3.5 break关键字</h3>
+<p>在java循环体中的break关键字的作用是结束当前的循环.</p>
+<p>java for循环break示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">for (int i = 0; i &lt; 3; i++) {
+    if (i == 1) {
+        break;
+    }
+    System.out.println("i: " + i);
+}
+</code></pre>
+<p>java while循环break示例代码</p>
+<pre class="prettyprint"><code>int i = 0;
+while(i &lt; 3){
+    if(i == 1){
+        break;
+    }
+    System.out.println("i: " + i);
+    i++;
+}
+</code></pre>
+<h3 id="9_3_6">9.3.6 循环体中return关键字</h3>
+<p>在循环体中使用return关键字也是退出该方法.<a href="http://dashidan.com/article/java/basic/8.html#7">return语句</a>.</p>
+<h3 id="9_3_7">9.3.7 死循环</h3>
+<p>当程序进入循环中,如果符合继续执行循环的条件一直为true,程序就会无限执行这个循环体的代码,导致无法执行下一句语句,这种情况就叫死循环. 开发过程中需要注意这点. </p>
+<p>最简单的java死循环的例子:</p>
+<pre class="prettyprint"><code>while(true){
+    ...
+}
+</code></pre>
+<p>java死循环示例代码:</p>
+<p>一旦程序进入死循环状态, 程序会一直执行这个循环体中的语句.</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * 死循环
+ */
+public class Demo7 {
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("死循环");
+        }
+    }
+}
+</code></pre>
+<p>输出</p>
+<pre class="prettyprint"><code>死循环
+死循环
+死循环
+死循环
+死循环
+死循环
+死循环
+...
+</code></pre>
+<p>java死循环的作用:</p>
+<p>在编写程序逻辑出现错误进入死循环时程序会抱住cpu资源不放,会一直执行下去消耗系统的性能.难道死循环一无是处吗?不是的.在一些特定情况下我们需要通过死循环来实现持续执行,比如在<a href="http://dashidan.com/article/java/basic/19.html">Java多线程</a>环境中我们经常采用死循环来间隔一段时间执行程序实现循环检测等.</p>
+<h2 id="9_4">9.4 流程控制语句示例代码</h2>
+<p>java代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇:9.Java流程控制
+ * Java循环语句
+ */
+public class Demo5 {
+    public static void main(String[] args) {
+        /** for循环基本表达方式*/
+        System.out.println("for循环基本表达方式");
+        for (int i = 0; i &lt; 3; i++) {
+            System.out.println("i: " + i);
+        }
+        System.out.println("while循环基本表达方式");
+        /** while循环基本表达方式*/
+        int i = 0;
+        while (i &lt; 3) {
+            System.out.println("i: " + i);
+            i++;
+        }
+        System.out.println("do...while循环基本表达方式");
+        /** do...while循环基本表达方式*/
+        i = 0;
+        do {
+            System.out.println("i: " + i);
+            i++;
+        } while (i &lt; 3);
+        System.out.println("continue 在for循环中");
+        /** continue 在for循环中*/
+        for (i = 0; i &lt; 3; i++) {
+            if (i == 1) {
+                continue;
+            }
+            System.out.println("i: " + i);
+        }
+
+        System.out.println("continue 在while循环中");
+        i = 0;
+        while (i &lt; 3) {
+            i++;
+            if (i == 1) {
+                continue;
+            }
+            System.out.println("i: " + i);
+        }
+
+        /**
+         * 在for循环和while循环中,break语句作用一样.
+         * 当`i==1`时,执行了break语句,结束了循环.所以只有`i: 0`的输出.
+         */
+        System.out.println("break在for循环中");
+        for (i = 0; i &lt; 3; i++) {
+            if (i == 1) {
+                break;
+            }
+            System.out.println("i: " + i);
+        }
+        System.out.println("break在while循环中");
+        i = 0;
+        while (i &lt; 3) {
+            if (i == 1) {
+                break;
+            }
+            System.out.println("i: " + i);
+            i++;
+        }
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>for循环基本表达方式
+i: 0
+i: 1
+i: 2
+while循环基本表达方式
+i: 0
+i: 1
+i: 2
+do...while循环基本表达方式
+i: 0
+i: 1
+i: 2
+continue 在for循环中
+i: 0
+i: 2
+continue 在while循环中
+i: 2
+i: 3
+break在for循环中
+i: 0
+break在while循环中
+i: 0
+</code></pre>

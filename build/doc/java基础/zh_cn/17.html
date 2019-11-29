@@ -1,0 +1,275 @@
+<h1 id="17_">17. Java位运算</h1>
+<p>位运算是通过二进制计算的方式来改变数据.位运算表达式由操作数和位运算符组成,实现对整数类型的二进制数进行位运算.位运算符可以分为逻辑运算符(包括~,&amp;,|和^)及移位运算符(包括"&gt;&gt;","<<"和">&gt;&gt;").</p>
+<h2 id="17_1">17.1 进位方式</h2>
+<h3 id="17_1_1">17.1.1 二进制补码</h3>
+<p>在Java语言中,二进制数使用补码表示,最高位为符号位,正数的符号位为0,负数为1.补码的表示规则:</p>
+<ul>
+<li>正数的最高位为0,其余各位代表数值本身(二进制数).</li>
+<li>对于负数,通过对该数绝对值的补码按位取反,再对整个数加1.</li>
+</ul>
+<h3 id="17_1_2">17.1.2 2进制</h3>
+<p>2进制即为满2进1.第n位表示2^(n-1)(即2的n-1次幂).数据在计算机内存中以二进制的形式存储.以int类型举例,占4个字节共32位(1个字节占8位).数字100,int类型的二进制数:</p>
+<pre class="prettyprint"><code>0000 0000 0000 0000 0110 0100
+</code></pre>
+<p>二进制数字太长,不便于理解.因此C,C++以及java中都没有提供在代码直接写二进制数的方法.</p>
+<h3 id="17_1_3">17.1.3 8进制</h3>
+<p>8进制即为满8进1.第n位表示8^(n-1)(即8的n-1次幂).一个数如果采用八进制,必须在它前面加上一个数字0.用8进制表达时,不能少了最前边的数字0.否则计算机会当成10进制处理.但用<code>转义字符</code>表达时,不能加0.例:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        /** 10进制*/
+        int a = 100;
+        /** 8进制*/
+        int b = 0100;
+        System.out.println("a: " + a + " b: " + b);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a: 100 b: 64
+</code></pre>
+<h3 id="17_1_4">17.1.4 16进制</h3>
+<p>16进制即为满16进1.第n位表示16^(n-1)(即16的n-1次幂).10-15的数字分别以字母a到f表示,不区分大小小.16进制数必须以0x开头.0x中的0是数字0,而不是字母O.x不区分大小写.  </p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        /** 10进制*/
+        int a = 100;
+        /** 8进制*/
+        int b = 0100;
+        /** 16进制*/
+        int c = 0x100;
+        System.out.println("a: " + a + " b: " + b + " c: " + c);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a: 100 b: 64 c: 256
+</code></pre>
+<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<p>java 8进制和16进制只能用来表达无符号的正整数?</p>
+<p>网上有资料这样说,但这个是错误的.8进制和16进制同样可以表示负数.</p>
+<p>附带真相的代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        int d = -0100;
+        int e = -0x100;
+        System.out.println("d: " + d + " e: " + e);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>d: -64 e: -256
+</code></pre>
+<h2 id="17_2">17.2 位运算逻辑运算符</h2>
+<p>位运算逻辑运算符包括: 与(&amp;),非(~),或(|),异或(^).</p>
+<h3 id="17_2_1">17.2.1 逻辑与(&amp;)</h3>
+<p>当两边操作数的位同时为1时,结果为1,否则为0.</p>
+<pre class="prettyprint"><code>1100&amp;1010=1000 
+</code></pre>
+<ul>
+<li>位运算如何判断奇偶?</li>
+</ul>
+<p>偶数的最低位是0,奇数的最低位是1.通过这个原理,我们可以根据整数二进制最后一位与1比较,判断奇偶.</p>
+<ul>
+<li>位运算判断奇偶代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+import java.util.Random;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ * 位运算判断奇偶
+ */
+public class Demo2 {
+    public static void main(String[] args) {
+        /** 随机一个整数*/
+        int a = new Random().nextInt();
+        /** 判断奇偶性*/
+        String numStr = ((a &amp; 1) == 1) ? "奇数" : "偶数";
+        System.out.println("随机数为: " + a + " 是: " + numStr);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>随机数为: 476218275 是: 奇数
+</code></pre>
+<h3 id="17_2_2">17.2.2 逻辑或(|)</h3>
+<p>当两边操作数的位有一边为1时,结果为1,否则为0.</p>
+<pre class="prettyprint"><code>1100|1010=1110
+</code></pre>
+<h3 id="17_2_3">17.2.3 逻辑非(~)</h3>
+<p>按位取反.0变1,1变0.负数在内存中的表现是,按位取反再加1.</p>
+<h3 id="17_2_4">17.2.4 逻辑异或(^)</h3>
+<p>按位异或.参与运算的两个值,如果两个相应位相同,则结果为0,否则为1.0异或任何数等于任何数,1异或任何数等于任何数取反,任何数异或自己等于把自己置0</p>
+<p>即:</p>
+<pre class="prettyprint"><code>0^0=0
+1^0=1 
+0^1=1 
+1^1=0
+</code></pre>
+<ul>
+<li>java通过位运算不用临时变量交换两个数</li>
+</ul>
+<p>一个非常经典的面试题.通过按位异或运算,可以实现两个值的交换,而不必使用临时变量.这个很酷.数a两次异或同一个数b(a=a^b^b)仍然为原值.交换两个整数a,b的值,可通过下列语句实现:</p>
+<p>代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ * 不用临时变量交换两个数
+ */
+public class Demo3 {
+    public static void main(String[] args) {
+        /** 数a两次异或同一个数b(a=a^b^b)仍然为原值.*/
+        int a = 100;
+        int b = 666;
+
+        a = a ^ b;
+        b = b ^ a;
+        a = a ^ b;
+
+        System.out.println("a: " + a + " b " + b);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a: 666 b 100
+</code></pre>
+<h2 id="17_3">17.3 移位运算符</h2>
+<p>java移位运算符包括:</p>
+<ul>
+<li>"&lt;&lt;":左移位</li>
+<li>"&gt;&gt;":带符号右移</li>
+<li>"&gt;&gt;&gt;":无符号右移</li>
+</ul>
+<h3 id="17_3_1">17.3.1 左移位运算符(&lt;&lt;)</h3>
+<p>使指定值的所有位都向左移规定的次数,丢弃最高位,在低位补0.在数字没有溢出的前提下,对于正数和负数,左移一位都相当于乘以2的1次方,左移n位就相当于乘以2的n次方.如果位数超过了该类型的最大位数,该值将变为负值.</p>
+<p>格式:</p>
+<pre class="prettyprint"><code>value &lt;&lt; num 
+</code></pre>
+<p>num 指定要移位值value 移动的位数.如果移动的位数超过了该类型的最大位数,那么编译器会对移动的位数取模.如对int型移动33位,实际上只移动了33%32=1位.</p>
+<p>以<code>4&lt;&lt;2</code>为例,位移运算能计算过程:</p>
+<p>1.把3转换为二进制数字0000 0000 0000 0000 0000 0000 0000 0100.<br />
+2.把该数字高位(左侧)的两个零移出,其他的数字都朝左平移2位.<br />
+3.在低位(右侧)的两个空位补零.得到的最终结果是0000 0000 0000 0000 0000 0000 0001 0000,转换为十进制是12.</p>
+<p>java位移运算符代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ * 移位运算符
+ */
+public class Demo4 {
+    public static void main(String[] args) {
+        int a = 4;
+        int b = a &lt;&lt; 2;
+        System.out.println("a: " + a + " b: " + b);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>a: 4 b: 16
+</code></pre>
+<h3 id="17_3_2">17.3.2 有符号右移位运算符&gt;&gt;</h3>
+<p>使指定值的所有位都向右移规定的次数.正数在高位插入0,负数则在高位插入1.右移一位相当于除2,右移n位相当于除以2的n次方.格式如下:</p>
+<pre class="prettyprint"><code>value &gt;&gt; num 
+</code></pre>
+<p>num 指定要移位值value 移动的位数.</p>
+<p>有符号右移位运算符示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ * 移位运算符
+ */
+public class Demo4 {
+    public static void main(String[] args) {
+        int a = 4;
+        int b = a &lt;&lt; 2;
+        System.out.println("a: " + a + " b: " + b);
+
+        int c = 1000;
+        int d = c &gt;&gt; 2;
+        System.out.println("c: " + a + " d: " + d);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>c: 1000 d: 250
+</code></pre>
+<h3 id="17_3_3">17.3.3 无符号右移位运算符(&gt;&gt;&gt;)</h3>
+<p>无符号右移位运算符忽略了符号位扩展,无论正负,都在高位插入0.只是对32位和64位的值有意义.这一运算符是C或C++没有的.格式如下:</p>
+<pre class="prettyprint"><code>value &gt;&gt;&gt; num 
+</code></pre>
+<p>num指定要移位值value移动的位数.</p>
+<p>无符号右移位运算符示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson17;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 17.Java位运算
+ * 移位运算符
+ */
+public class Demo4 {
+    public static void main(String[] args) {
+        int e = -1;
+        int f = e &gt;&gt;&gt; 2;
+        System.out.println("e: " + e + " f: " + f);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>e: -1 f: 1073741823
+</code></pre>
+<ul>
+<li>&gt;&gt;&gt;和&gt;&gt;的区别</li>
+</ul>
+<p>在执行运算时,&gt;&gt;&gt;运算符的操作数高位补0,而&gt;&gt;运算符的操作数高位移入原来高位的值.</p>
+<h3 id="17_3_4">17.3.4 char,byte或者short移位</h3>
+<p>在移位前,它们会自动转换成一个int.移位操作符右端的那个数(转化成二进制)的5个低位才会用到,即x&lt;&lt;y,是指y的低5位才有用,即不能大于32.对于long也是同样道理(6个低位).这样可防止我们在一个int数里移动不切实际的位数.</p>
+<h3 id="17_3_5">17.3.5 位运算需要事项</h3>
+<ul>
+<li>右移一位相当于除以2,左移一位(在不溢出的情况下)相当于乘以2.</li>
+<li>移位运算速度高于乘除运算.</li>
+<li>若进行位逻辑运算的两个操作数的数据长度不同,则返回值应该是数据长度较长的数据类型. </li>
+<li>按位异或可以不使用临时变量完成两个值的交换,也可以使某个整型数的特定位的值翻转.  </li>
+<li>按位与运算可以用来屏蔽特定的位,也可以用来取某个数型数中某些特定的位.  </li>
+<li>按位或运算可以用来对某个整型数的特定位的值置l.</li>
+<li>数a两次异或同一个数b(a^b^b),仍然为原值.</li>
+</ul>
+<h2 id="17_4">17.4 位运算符的优先级</h2>
+<p>位运算符~的优先级最高,其次是<<,>&gt;和&gt;&gt;&gt;,再次是&amp;,然后是^,优先级最低的是|.</p>
+<p>如下所示:</p>
+<pre class="prettyprint"><code>~ 高于 &lt;&lt;,&gt;&gt;,&gt;&gt;&gt; 高于 &amp; 高于 &amp; 高于 ^ 高于 |
+</code></pre>
+<p><a href="http://localhost/article/java/basic/7.html#9">java运算符优先级表</a></p>

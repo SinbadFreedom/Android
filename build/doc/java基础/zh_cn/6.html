@@ -1,0 +1,120 @@
+<h1 id="6_">6. Java集成开发环境</h1>
+<p>工欲善其事,必先利其器.--<论语·卫灵公篇></p>
+<p>写代码的时候一般有几种方式: 命令行直接输入,通过文本编辑工具和通过集成开发环境.</p>
+<h2 id="6_1">6.1 命令行直接输入</h2>
+<p>这个一般适合脚本类的语言,比如:python,nodejs等,可以直接通过命令行执行一些简单的逻辑.Java语言不支持这种模式,因为Java需要从源码编译为二进制文件,由于这个预编译的机制,所以无法这样实现.这里仅作了解即可.这个相当于是: 拿手拧螺丝.</p>
+<p><img src="http://localhost/img/java/basic/a-a.png" alt="图a-a" width="230" height="238" /></p>
+<h2 id="6_2">6.2 常用文本编辑工具</h2>
+<p>文本类的工具在编程中,比较常用.现在有很多人保有采用文本工具编程的习惯.这个相当于是:拿螺丝刀拧螺丝.</p>
+<p><img src="http://localhost/img/java/basic/a-b.png" alt="图a-b" width="438" height="399" /></p>
+<h3 id="6_2_1">6.2.1 常用的文本工具及下载链接</h3>
+<ul>
+<li>nodepad++,免费软件,支持多种语言字符高亮的插件,功能强大.<a href="https://notepad-plus-plus.org/">官网下载地址</a></li>
+<li>UltraEdit,付费软件,历史悠久的文本编辑器,功能也很丰富,有二进制查找功能.<a href="http://www.ultraedit.com/">官网下载地址</a>.</li>
+<li>记事本,windows自带.中文编辑的时候会带BOM,导致有事中文会显示乱码.</li>
+<li>Sublime Text,也是一个很常用的文本编辑器.<a href="http://www.sublimetext.com/">官网下载地址</a></li>
+<li>Atom 一个为了21世纪的文本编辑器. <a href="https://atom.io/">官网下载地址</a>.</li>
+</ul>
+<p>还有其他的,略去不表,可以选择自己喜欢的使用. 如果做简单项目使用这些工具还可以. 相对来说,我更推荐采用集成开发环境,来减少编码过程中的冗余操作. 节省时间.</p>
+<h2 id="6_3">6.3 集成开发环境(IDE)简介</h2>
+<p>集成开发环境简称IDE(Integrated Development Environment). 集成了代码编辑,编译,运行,输出,调试,代码自动补全,语法检查等功能.这个相当于: 拿电动螺丝刀拧螺丝</p>
+<p><img src="http://localhost/img/java/basic/a-c.png" alt="图a-c" width="480" height="389" /></p>
+<p>Java常用集成开发环境编码工具IDE:</p>
+<ul>
+<li>Eclipse: 免费,老牌IDE,这个工具十年前独领风骚.但那是过去了.现在我们有了更好的选择. </li>
+<li>Intelij IDEA,有免费版和付费版.这个是新时代的领袖.获过很多奖,功能比Eclipse强大,操作更加便捷.个人感觉,代码量多的项目,仅从敲代码的方面来说,使用这个工具比eclipse效率至少提高了5~10%.</li>
+</ul>
+<div class="bs-callout bs-callout-success">
+    <h4>推荐采用Intelij IDEA.</h4>
+    废话不多说,直接开跑车.
+</div>
+<h2 id="6_4">6.4 Intelij IDEA基本使用</h2>
+<p>这里只介绍基本的使用方法,后续会出一个专门的系列来详细介绍这个开发工具的使用.</p>
+<h3 id="6_4_1">6.4.1 Intelij IDEA下载</h3>
+<p>Intelij IDEA有社区版和商业版,社区版是免费的.商业版可以付费购买,也可以免费试用但每到半个小时就会自动退出IDE.推荐采用商业版的试用版,功能全,免费试用.</p>
+<p><a href="http://www.jetbrains.com/idea/download/download-thanks.html?platform=windows">社区版下载地址</a></p>
+<p><a href="https://www.jetbrains.com/idea/download/#section=windows">商业版下载地址</a></p>
+<h3 id="6_4_2">6.4.2 Intelij IDEA安装步骤</h3>
+<p>Intelij IDEA安装第一步点击next,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-1.png" alt="图a-1" width="480" height="372" /></p>
+<p>第二步选择安装目录,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-2.png" alt="图a-2" width="480" height="372" /></p>
+<p>第三步选择桌面图标,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-3.png" alt="图a-3" width="480" height="372" /></p>
+<p>第四步点下一步,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-4.png" alt="图a-4" width="480" height="372" /></p>
+<p>第五步Intelij IDEA安装完成,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-5.png" alt="图a-5" width="480" height="372" /></p>
+<h3 id="6_4_3">6.4.3 Intelij IDEA配置文件setting.jar</h3>
+<p>我在这里放一个自己使用了很久的Intelij IDEA配置文件, 定义了界面主题和格式化代码的配置.直接下载保存即可.熟悉了以后也可以根据自己的喜好修改.</p>
+<p><a href="http://localhost/download/java/dashidan.com.jar">IDEA配置文件setting.jar下载链接</a></p>
+<h3 id="6_4_4">6.4.4 打开IDE选择试用版</h3>
+<p><img src="http://localhost/img/java/basic/a-6.png" alt="图a-6" width="428" height="374" /></p>
+<h3 id="6_4_5">6.4.5 导入Intelij IDEA配置文件setting.jar</h3>
+<p>点击configure-&gt;import setting,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-7.png" alt="图a-7" width="480" height="432" /></p>
+<p>选择上一步下载的配置文件dashidan.com.jar.</p>
+<h2 id="6_5">6.5 Intelij IDEA运行Java项目</h2>
+<h3 id="6_5_1">6.5.1 下载Java教程示例源码</h3>
+<p><a href="https://codeload.github.com/zflh/lession_java/zip/master">示例代码下载链接</a>.</p>
+<p>在电脑D盘建立一个文件目录workplace.这个目录作为工作目录,将源码解压缩,并复制到这个目录中.示例源码中对应目录结构介绍:src为源码目录,以网站域名倒叙作为包名(com.panda-doc).</p>
+<p>java源码目录与java教程文章id一一对应:</p>
+<pre class="prettyprint"><code>lesson3 对应第3篇教程
+...
+lesson20 对应第20篇教程
+</code></pre>
+<p>java教程源码结构如下:</p>
+<pre class="prettyprint"><code>lesson_java
+    -src 源码目录
+        -com.panda-doc 以网站域名倒叙作为包名
+            -lesson3 3.HelloWorld 对应的源码
+            -lesson6 6.Java基础类型变量 对应的源码
+</code></pre>
+<h3 id="6_5_2">6.5.2 Intelij IDEA导入java源码项目</h3>
+<p>按图操作</p>
+<ul>
+<li>第1步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-8.png" alt="图a-8" width="480" height="349" /></p>
+<ul>
+<li>第2步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-9.png" alt="图a-9" width="440" height="590" /></p>
+<ul>
+<li>第3步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-10.png" alt="图a-10" width="480" height="448" /></p>
+<ul>
+<li>第4步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-11.png" alt="图a-11" width="480" height="448" /></p>
+<ul>
+<li>第5步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-12.png" alt="图a-12" width="480" height="448" /></p>
+<ul>
+<li>第6步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-13.png" alt="图a-13" width="480" height="448" /></p>
+<ul>
+<li>第7步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-14.png" alt="图a-14" width="480" height="448" /></p>
+<ul>
+<li>第8步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-15.png" alt="图a-15" width="480" height="448" /></p>
+<ul>
+<li>第9步</li>
+</ul>
+<p><img src="http://localhost/img/java/basic/a-16.png" alt="图a-16" width="480" height="448" /></p>
+<p>最后打开项目后,出现每日提示,有兴趣的同学看一下,也可以关闭,在以后的使用过程中逐渐熟悉.</p>
+<h3 id="6_5_3">6.5.3 Intelij IDEA运行java代码源码</h3>
+<p>打开src目录中的lesson3目录中HelloWorld文件,显示如图:</p>
+<p><img src="http://localhost/img/java/basic/a-17.png" alt="图a-17" width="480" height="286" /></p>
+<p>在想运行的源码上点击右键(例如:HelloWorld)-&gt;Run HelloWrold.main().如图:</p>
+<p><img src="http://localhost/img/java/basic/a-18.png" alt="图a-18" width="480" height="768" /></p>
+<h3 id="6_5_4">6.5.4 查看Intelij IDEA控制台输出</h3>
+<p>在Intelij IDEA运行java程序运行后,在IDE(代码编辑器)的下方是控制台区,会显示程序输出,如图:</p>
+<p><img src="http://localhost/img/java/basic/a-19.png" alt="图a-19" width="480" height="160" /></p>
+<p>到这里Intelij IDEA基本使用就完成了.</p>

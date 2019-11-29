@@ -1,0 +1,183 @@
+<h1 id="14_">14. Java包装类</h1>
+<p>Java语言是一个面向对象的语言,但Java中的基本数据类型却是不面向对象的.这在实际使用时存在很多的不便.为了解决这个不足(例如:集合类中只能存放对象,不能存放基本类型数据),在设计类时为每个基本数据类型设计了一个对应的类进行代表,这样八个基本数据类型对应的类统称为包装类(Wrapper Class),也翻译为外覆类或数据类型类.</p>
+<h2 id="14_1">14.1 包装类对应表</h2>
+<p>在这八个类名中,除了Integer和Character类,其它六个类的类名和基本数据类型相比,只是类名的第一个字母大写.</p>
+<table class="table table-bordered table-responsive">
+    <caption>包装类对应表</caption>
+    <thead>
+        <tr class="success">
+            <td>基本数据类型</td>
+            <td>包装类</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td>byte</td>
+            <td>Byte</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>Boolean</td>
+        </tr>
+        <tr class="active">
+            <td>boolean</td>
+            <td>Boolean</td>
+        </tr>
+        <tr>
+            <td>short</td>
+            <td>Short</td>
+        </tr>
+        <tr class="active">
+            <td>char</td>
+            <td>Character</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>Integer</td>
+        </tr>
+        <tr class="active">
+            <td>long</td>
+            <td>Long</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>Float</td>
+        </tr>
+        <tr class="active">
+            <td>double</td>
+            <td>Double</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="14_2">14.2 包装类的用途</h2>
+<p>java包装类的用途主要包含两种</p>
+<ul>
+<li>作为和基本数据类型对应的类类型存在,方便涉及到对象的操作.</li>
+<li>包含每种基本数据类型的相关属性如最大值,最小值等,以及相关的操作方法.</li>
+</ul>
+<h2 id="14_3">14.3 包装类用法</h2>
+<p>由于java编程中这八个包装类的使用比较类似,以常用的Integer类为例,介绍包装类的应用.</p>
+<h3 id="14_3_1">14.3.1 通过包装类实现int和Integer类之间的转换</h3>
+<p>使用Integer类的构造方法和intValue()方法实现这些基本类型和包装类之间的相互转换.</p>
+<p>java代码示例:</p>
+<pre class="prettyprint"><code class="java language-java">/** 将int类型转换为Integer类型*/
+int intNum = 10;
+Integer integer = new Integer(intNum);
+/** 将Integer类型转换为int类型*/
+int intValue = integer.intValue();
+</code></pre>
+<h3 id="14_3_2">14.3.2 Integer类常用方法</h3>
+<ul>
+<li>parseInt()方法</li>
+</ul>
+<p>该方法的作用是将字符串转换为对应的数值.如果字符串都包含的不是都是数字字符,则程序执行将出现异常报错.代码示例:</p>
+<pre class="prettyprint"><code class="java language-java">String s = "123";
+int n = Integer.parseInt(s);
+//将字符串"120"按照十进制转换为int,则结果为120
+int n = Integer.parseInt("120",10);
+//将字符串"12"按照十六进制转换为int,则结果为18
+int n = Integer.parseInt("12",16);
+//将字符串"ff"按照十六进制转换为int,则结果为255
+int n = Integer.parseInt("ff",16);
+</code></pre>
+<ul>
+<li>toString()方法</li>
+</ul>
+<p>该方法的作用是将int类型转换为对应的String类型.代码示例:</p>
+<pre class="prettyprint"><code class="java language-java">int m = 1000;
+String s = Integer.toString(m);
+//将int值转换为特定进制的字符串:
+</code></pre>
+<h3 id="14_3_3">14.3.3 整数转化为字符串</h3>
+<p>java语言有2种方式可以实现整数转化为字符串:</p>
+<ul>
+<li>Integer.toString()方法</li>
+<li>整数 + ""方式</li>
+</ul>
+<p>这两种从结果上都能让我们得到预期的结果.我们通过测试这两种方式的效率来比较一下.得出的结论是采用整数+""方式实现java整数转化为字符串比Integer.toString()的方式快了10倍左右.附带真像的代码:</p>
+<ul>
+<li>整数转化为字符串效率测试</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson14;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 14.Java包装类
+ * 整数转化为字符串
+ */
+public class Demo2 {
+    public static void main(String[] args) {
+        int count = 100000;
+        long t1 = System.currentTimeMillis();
+        System.out.println("");
+        for (int i = 0; i &lt; count; i++) {
+            Integer in = new Integer(100);
+            String s1 = in.toString();
+        }
+        long t2 = System.currentTimeMillis();
+        System.out.println(" t2 - t1 " + (t2 - t1));
+        for (int i = 0; i &lt; count; i++) {
+            String s2 = 100 + "";
+        }
+        long t3 = System.currentTimeMillis();
+
+        System.out.println(" t3 - t2 " + (t3 - t2));
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>t2 - t1 12
+t3 - t2 1
+</code></pre>
+<h2 id="14_3">14.3 自动装包/拆包</h2>
+<p>JDK自1.5(5.0)版本引入了自动拆装箱(Autoboxing/unboxing)的语法,也就是在进行基本数据类型和对应的包装类转换时,系统将自动进行,大大方便了代码的书写.</p>
+<pre class="prettyprint"><code class="java language-java">/** int类型会自动转换为Integer类型*/
+int n = 12;
+/** Integer类型会自动转换为int类型*/
+Integer m = n;
+</code></pre>
+<ul>
+<li>自动装包/拆包代码示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson14;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 14.Java包装类
+ */
+public class Demo1 {
+    public static void main(String[] args) {
+        /** 将int类型转换为Integer类型*/
+        int intNum = 10;
+        Integer integer = new Integer(intNum);
+        /** 将Integer类型转换为int类型*/
+        int intValue = integer.intValue();
+        System.out.println(" intNum " + intNum + " intValue " + intValue);
+
+        /** 将字符串"666"按照十进制转换为int,则结果为666*/
+        int n0 = Integer.parseInt("666");
+        int n1 = Integer.parseInt("666",10);
+        /** 将字符串"12"按照十六进制转换为int,则结果为18*/
+        int n2 = Integer.parseInt("12",16);
+        /** 将字符串"FF"按照十六进制转换为int,则结果为255*/
+        int n3 = Integer.parseInt("FF",16);
+        System.out.println("n0 : " + n0 + " n1: " + n1 + " n2: " + n2 + " n3: " + n3);
+
+
+        /** int类型会自动转换为Integer类型*/
+        int n = 12;
+        /** Integer类型会自动转换为int类型*/
+        Integer m = n;
+        if (m == n) {
+            System.out.println(m == n);
+        }
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code> intNum 10 intValue 10
+n0 : 666 n1: 666 n2: 18 n3: 255
+true
+</code></pre>

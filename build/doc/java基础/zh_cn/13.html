@@ -1,0 +1,795 @@
+<h1 id="13_">13. Java对象</h1>
+<p>Java是面向对象编程(Object Oriented Programming)语言.java面向对象的三大特点:封装,继承和多态.</p>
+<h2 id="13_1">13.1 中万事万物皆对象?</h2>
+<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<p>这个说法的由来,是因为java中所有的类默认都继承自Object类.但这个说法是不准确的.很多资料中这样说,曾经给我带来过很大的困扰.Java属于强类型语言,方法作为属性存在于对象中,不作为独立的对象存在.所以说在Java中万事万物皆对象的说法是不准确的,方法和基本类型变量都不是对象的概念.在一些弱类型语言比如javascript,方法也可以作为对象的概念来使用,作为参数传递,这一点和java是有区别的.</p>
+<h2 id="13_2">13.2 面向对象编程思想</h2>
+<p>提到面向对象,不得不提到面向过程编程.以C语言为例,每个方法作为一个执行过程存在,面向过程编程是一种面向计算机思维,从计算机执行的角度思考编写代码的编程方式.从面向过程编程的基础上,发展出来了一种新的编程思想,面向对象编程,来应对更复杂的应用场景.面向对象编程是一种面向<code>人</code>的逻辑思维的编程方式,将代码中的通用性抽象出来,模拟现实世界的归类,建立程序模型,编写代码的过程.对于程序员更加友好,对于复杂度更高的程序更易于控制.</p>
+<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" />  </p>
+<p>在生物分类学中,分为"界门纲目科属种",按照生物的种群和等级划分.</p>
+<ul>
+<li><p>猫:
+动物界-&gt;脊索动物门-&gt;哺乳纲-&gt;哺乳纲-&gt;食肉目-&gt;猫科-&gt;猫属-&gt;猫种</p></li>
+<li><p>虎:
+动物界-&gt;脊索动物门-&gt;哺乳纲-&gt;哺乳纲-&gt;食肉目-&gt;猫科-&gt;豹属-&gt;虎种</p></li>
+</ul>
+<p>猫和虎同处于猫科,是猫科子类中的一种,具有猫科的全部属性.用Java面向对象的思想来编程可以这样表达:</p>
+<p>猫科作为父类,猫和虎作子类,继承自猫科拥有父类猫科的全部属性,独有的属性写在子类(猫类或虎类)中.</p>
+<h2 id="13_3">13.3 构造函数</h2>
+<p>java构造函数是一种特殊的函数.构造函数与类名相同,可以有参数也可以无参数,在对象被创建时自动执行.</p>
+<h3 id="13_3_1">13.3.1 构造函数的作用</h3>
+<ul>
+<li>在创建对象时完成完成对象数据成员的初始化</li>
+<li>为对象数据成员开辟内存空间</li>
+<li>为对象创建标识符</li>
+</ul>
+<h3 id="13_3_2">13.3.2 默认构造函数</h3>
+<p>java编程中如果没有显式的定义构造函数,编译器会为类生成一个默认的构造函数,称为默认构造函数.默认构造函数名与类名相同,没有参数.默认构造函数在代码中看不到,在编译时自动生成.</p>
+<ul>
+<li>java默认构造函数代码示例:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">public class Demo1 {
+    // 默认构造函数
+    public Demo1(){
+    }
+}
+</code></pre>
+<h3 id="13_3_3">13.3.3 构造函数的特点</h3>
+<p>java编程中无论是用户自定义的构造函数还是默认构造函数都主要有以下特点:   </p>
+<ul>
+<li>在对象被创建时自动执行.</li>
+<li>构造函数的函数名与类名相同.</li>
+<li>没有返回值类型,也没有返回值.</li>
+<li>构造函数不能被显式调用.</li>
+</ul>
+<h3 id="13_3_4">13.3.4 构造函数的执行</h3>
+<p>通常是通过new关键字创建对象时执行.</p>
+<h3 id="13_3_5">13.3.5 构造函数示例代码</h3>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 构造函数的执行
+ */
+public class Demo1 {
+
+    public static void main(String args[]) {
+        System.out.println("Demo1运行开始");
+        TestStructure testStructure = new TestStructure(1,"熊猫文档","dashidan.com");
+        int id = testStructure.getId();
+        String url = testStructure.getUrl();
+        String name = testStructure.getName();
+        System.out.println("id " + id + " url " + url + " name " + name);
+        System.out.println("运行完毕");
+    }
+}
+
+/**
+ * 测试构造方法类
+ */
+class TestStructure {
+    private int id;
+    private String name;
+    private String url;
+
+    /**
+     * 构造函数
+     */
+    public TestStructure(int id,String name,String url) {
+        /** 构造函数初始化成员变量*/
+        System.out.println("执行TestStructure构造函数");
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        System.out.println("id " + id + " name " + name + " url " + url);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>Demo1运行开始
+执行TestStructure构造函数
+id 1 name 熊猫文档 url dashidan.com
+id 1 url dashidan.com name 熊猫文档
+运行完毕
+</code></pre>
+<ul>
+<li>java编程没有析构函数
+c++除了构造函数,还有析构函数的概念.析构函数也是一种特殊的成员函数.它执行与构造函数相反的操作,通常用于撤消对象时的一些清理任务,如释放分配给对象的内存空间等.Java语言编程中只有构造函数,而没有析构函数.</li>
+</ul>
+<h2 id="13_4">13.4 方法参数的值传递与引用传递</h2>
+<p>Java中方法中给变量赋值有2种方式: 值传递和引用传递.传递基本类型,String参数时是值传递.传递引用类型参数时,是引用传递.</p>
+<h3 id="13_4_1">13.4.1 值传递</h3>
+<p>java值传递传递的是值的拷贝.也就是说传递参数时,将值拷贝了一份,与原有变量不再有关系.<a href="http://dashidan.com/article/java/basic/5.html#1">基本类型</a>和<a href="http://dashidan.com/article/java/basic/5.html#2">字符串类型</a>传递采用的是值传递.</p>
+<p>示例代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 值传递
+ */
+public class Demo2 {
+
+    public static void main(String[] args) {
+        int a = 1;
+        String name = "大屎蛋";
+        changeValue(a,name);
+        /** 原值不变*/
+        System.out.println("原值 a : " + a);
+        /** 原字符串不变*/
+        System.out.println("原值 name : " + name);
+    }
+
+    public static void changeValue(int num,String str) {
+        num++;
+        /** 输出改变的值,改变了参数的值,原值不变*/
+        System.out.println("changeValue num : " + num);
+        /** 添加字符串,改变了作为参数传进来的字符串的值,原字符串不变*/
+        str += "dashidan.com";
+        System.out.println("changeValue str : " + str);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>changeValue num : 2
+changeValue str : 大屎蛋dashidan.com
+原值 a : 1
+原值 name : 大屎蛋
+</code></pre>
+<h3 id="13_4_2">13.4.2 引用传递</h3>
+<p>java引用传递是指给索引对象赋值时,将对象内存的地址作为参数传递.新的对象与原有指向同一份数据.当修改对象的变量时,原有指向改数据的对象都发生改变.  </p>
+<ul>
+<li>java引用传递代码示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 引用传递
+ */
+public class Demo3 {
+    public static void main(String[] args) {
+        TestObject testObject1 = new TestObject();
+        testObject1.setName("熊猫文档");
+        /** 对象赋值,这里是引用传递,testObject1 将对象地址赋值给 testObject2,他们指向同一个对象*/
+        TestObject testObject2 = testObject1;
+        System.out.println("修改前 testObject1 name " + testObject1.getName());
+        System.out.println("修改前 testObject2 name " + testObject2.getName());
+        /** 改变 testObject2 的name,testObject1的name也发生变化,因为他们指向同一个数据*/
+        testObject2.setName("dashidan.com");
+        System.out.println("修改后 testObject1 name " + testObject1.getName());
+        System.out.println("修改后 testObject2 name " + testObject2.getName());
+    }
+}
+
+/**
+ * 引用传递测试对象
+ */
+class TestObject {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>修改前 testObject1 name 熊猫文档
+修改前 testObject2 name 熊猫文档
+修改后 testObject1 name dashidan.com
+修改后 testObject2 name dashidan.com
+</code></pre>
+<h2 id="13_5">13.5 对象的封装</h2>
+<h3 id="13_5_1">13.5.1 通过private关键字隐藏数据</h3>
+<p>java对象的封装是把过程和数据隐藏起来,对数据的访问只能通过已定义的接口.面向对象计算始于这个基本概念.通过private关键字可以将变量或者方法设置为只有本类可以访问,其他类无法访问该数据,这样便实现了数据的隐藏.  </p>
+<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
+<p>你有一只宠物,宠物的名字你不希望别人随便改,可以将宠物的名字设置为私有private.</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson6;
+
+/**
+ * 熊猫文档-panda-doc.com
+ *
+ * Java教程进阶篇: 5.Java对象(4):封装
+ */
+public class Pet {
+    /** 私有属性名字*/
+    private String name;
+}
+</code></pre>
+<h3 id="13_5_2">13.5.2 公开数据访问接口</h3>
+<p>你这只宠物的名字编程私有之后,你希望给他改个名字,可以将改名的方法设置为公开方法.这样就能通过统一的开放接口来设置宠物的名字,并且可以开放一个获取名字的接口,来获得这个私有的属性值.  </p>
+<ul>
+<li>java公开数据访问接口示例代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 引用传递
+ */
+public class Demo3 {
+    public static void main(String[] args) {
+        TestObject testObject1 = new TestObject();
+        testObject1.setName("熊猫文档");
+        /** 对象赋值,这里是引用传递,testObject1 将对象地址赋值给 testObject2,他们指向同一个对象*/
+        TestObject testObject2 = testObject1;
+        System.out.println("修改前 testObject1 name " + testObject1.getName());
+        System.out.println("修改前 testObject2 name " + testObject2.getName());
+        /** 改变 testObject2 的name,testObject1的name也发生变化,因为他们指向同一个数据*/
+        testObject2.setName("dashidan.com");
+        System.out.println("修改后 testObject1 name " + testObject1.getName());
+        System.out.println("修改后 testObject2 name " + testObject2.getName());
+    }
+}
+
+/**
+ * 引用传递测试对象
+ */
+class TestObject {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>哈拆迁
+</code></pre>
+<p>java对象的封装示例代码需要注意的地方</p>
+<ul>
+<li>对象赋值,这里是引用传递,testObject1 将对象地址赋值给 testObject2,他们指向同一个对象.</li>
+<li>改变 testObject2 的name,testObject1的name也发生变化,因为他们指向同一个数据.</li>
+</ul>
+<h2 id="13_6">13.6 对象的继承</h2>
+<p>Java继承的本质是子类继承父类,拥有父类的属性和方法,是代码复用基础.子类可以有自己的方法和属性.java编程采用的是单根继承,是指单个类只能继承一个父类.在c++中是多根继承,一个类可以同时继承多个父类.</p>
+<h3 id="13_6_1">13.6.1 继承方式</h3>
+<p>java语言通过关键字extends实现继承.我们以猫和狗继承是宠物,宠物都有"走"的行为.猫有"吃鱼"的行为,狗有"吃骨头"的行为为例实现这个继承关系.</p>
+<ul>
+<li>父类Pet:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * Pet类 作为 父类
+ */
+public class Pet {
+
+    public void walk() {
+        System.out.println("Pet walk");
+    }
+
+    public void eat() {
+        System.out.println("Pet eat");
+    }
+}
+</code></pre>
+<ul>
+<li>子类Cat:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * Cat 继承自 Pet类
+ */
+public class Cat extends Pet {
+    public void eatFish() {
+        System.out.println("Cat eatFish.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Cat eat");
+    }
+}
+</code></pre>
+<ul>
+<li>子类Dog:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * Dog 继承自 Pet类
+ */
+public class Dog extends Pet {
+    public void eatBone() {
+        System.out.println("Dog eatBone.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Dog eat");
+    }
+}
+</code></pre>
+<ul>
+<li>java执行类</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ */
+public class Demo5 {
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        /** 调用父类的方法*/
+        cat.walk();
+        dog.walk();
+        /** 调用子类的方法*/
+        cat.eatFish();
+        dog.eatBone();
+    }
+
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>Pet walk
+Pet walk
+Cat eatFish.
+Dog eatBone.
+</code></pre>
+<h3 id="13_6_2">13.6.2 对象静态绑定与动态绑定</h3>
+<p>java对象绑定指的是一个方法的调用与方法所在的类(方法主体)关联起来.java对象绑定分为静态绑定和动态绑定.</p>
+<ul>
+<li>静态绑定</li>
+</ul>
+<p>静态绑定也称作前期绑定.java中的方法只有final,static,private和构造方法是静态绑定.静态绑定发生在编译时,静态绑定用<a href="http://dashidan.com/article/java/basic/10.html#1">类信息</a>来完成.</p>
+<ul>
+<li>动态绑定</li>
+</ul>
+<p>动态绑定(dynamic binding)也称作后期绑定.java程序运行时根据具体对象的类型进行绑定.动态绑定发生在运行时.动态绑定则需要用对象信息来完成.</p>
+<h2 id="13_7">13.7 对象的多态</h2>
+<h3 id="13_7_1">13.7.1 运行时判断对象类型</h3>
+<p>当子类和父类存在同一个方法,子类覆写了父类的方法,程序在运行时调用父类的方法还是子类覆写的方法呢?Java的多态解决了整个问题.java虚拟机在程序运行时根据对象类型来判断执行对应对象的方法.</p>
+<h3 id="13_7_2">13.7.2 多态的前提条件</h3>
+<ul>
+<li>有继承关系.</li>
+<li>子类重写父类的方法.</li>
+<li>父类引用指向子类.</li>
+</ul>
+<p><img src="http://localhost/img/common/example.jpg" alt="举个栗子" width="224" height="296" /></p>
+<p>猫和狗都继承自宠物类,宠物有吃的行为.猫吃鱼狗吃骨头,他们吃的行为不一样.我们可以采用多态的方式来实现.</p>
+<ul>
+<li>java多态代码示例  </li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程进阶篇: 7.Java对象(6):静态绑定动态绑定与多态
+ */
+public class Demo6 {
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        /**
+         * cat 和 dog 覆写了 父类的方法 eat 调用eat方法 时动态判断对象类型
+         * cat 对象 执行了 Cat中的 eat方法
+         * dog 对象 执行了 Dog中的 eat方法
+         */
+        cat.eat();
+        dog.eat();
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>Cat eat
+Dog eat
+</code></pre>
+<h2 id="13_8">13.8 引用当前对象与父对象</h2>
+<h3 id="13_8_1">13.8.1 this关键字</h3>
+<p>this在java编程是<a href="http://localhost/article/java/addenda/3.html">java保留关键字</a>,用来引用当前对象,super关键字引用当前对象的父对象.</p>
+<p>获取当前对象的索引.如果省略"this."系统会默认自动添加加上"this."来指向当前对象.以下代码中的setName方法,该方法中的传入的参数name与成员变量name重名,这时需要用"this.name"来表明引用成员变量.  </p>
+<ul>
+<li>java this关键字代码示例</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ *
+ * Java教程进阶篇: 8.Java对象(7):引用当前对象与父对象:this,super
+ * Pet类
+ */
+public class Pet {
+    /**
+     * 私有成员变量name
+     */
+    private String name;
+
+    public String getName() {
+        /** 默认可以省略this.系统会自动加上this.*/
+        return name;
+    }
+
+    public void setName(String name) {
+        /** this.name 通过this来表明引用当前对象成员变量name*/
+        this.name = name;
+    }
+}
+</code></pre>
+<h3 id="13_8_2">13.8.2 super关键字</h3>
+<p>java编程中super关键字引用当前对象的父对象.需要访问父类方法或者变量的时候,可以使用super.来访问.</p>
+<ul>
+<li>java super关键字示例代码</li>
+</ul>
+<p>在调用Cat类的eat()方法时,方法体中通过super.eat()调用了父类的eat()方法.故父类的eat()方法被执行,"Pet eat."输出到控制台.</p>
+<ul>
+<li>Cat类:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * Cat 继承自 Pet类
+ */
+public class Cat extends Pet {
+    public void eatFish() {
+        System.out.println("Cat eatFish.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Cat eat");
+    }
+
+    /**
+     *调用父类方法
+     */
+    public void petEat() {
+        super.eat();
+    }
+}
+</code></pre>
+<ul>
+<li>运行程序:</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson9;
+
+/**
+ * 熊猫文档-panda-doc.com
+ *
+ * Java教程进阶篇: 8.Java对象(7):引用当前对象与父对象:this,super
+ */
+public class Demo1 {
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.eat();
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>Pet eat.
+</code></pre>
+<h3 id="13_8_3">13.8.3 this与super在构造函数中的应用</h3>
+<ul>
+<li>super和this均需放在构造方法内第一行.否则编译不通过.</li>
+</ul>
+<p>每个子类构造方法的第一条语句,都是隐式调用super(),如果父类没有这种形式的构造函数,那么在编译的时候就会报错.</p>
+<ul>
+<li>this和super不能同时出现在一个构造函数里面.  </li>
+</ul>
+<p>因为this必然会调用其它的构造函数,其它的构造函数必然也会有super语句的存在.所以在同一个构造函数里面有相同的语句,就失去了语句的意义,编译器也不通过.  </p>
+<ul>
+<li>java static环境不能使用this,super关键字</li>
+</ul>
+<p>this和super都指的是对象,是动态绑定,所以都不能在static环境中使用(静态绑定)包括: static变量,static方法,static语句块.</p>
+<h2 id="13_9">13.9 抽象方法与抽象类</h2>
+<h3 id="13_9_1">13.9.1 抽象方法</h3>
+<p>抽象方法是一种特殊的方法,只有声明,而没有具体的实现.抽象方法必须用abstract关键字进行修饰.抽象方法的声明格式为:   </p>
+<pre class="prettyprint"><code class="java language-java">public abstract void eat();
+</code></pre>
+<h3 id="13_9_2">13.9.2 抽象类</h3>
+<p>如果一个类含有抽象方法,则称这个类为抽象类,抽象类必须在类前用abstract关键字修饰.只要包含抽象方法,必须命名为抽象类.抽象类也可以包含普通方法.</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 抽象方法与抽象类
+ * AbstractPet类 作为 父类 抽象类
+ */
+public abstract class AbstractPet {
+    public abstract void sleep();
+}
+</code></pre>
+<p>Fish类作为子类:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 抽象方法与抽象类
+ * Fish 类 继承自 AbstractPet类
+ */
+public class Fish extends AbstractPet {
+    /**
+     *实现抽象方法 sleep
+     */
+    @Override
+    public void sleep() {
+        System.out.println("Never sleep.");
+    }
+}
+</code></pre>
+<p>运行类:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 抽象方法与抽象类
+ */
+public class Demo9 {
+    public static void main(String[] args) {
+        Fish fish = new Fish();
+        fish.sleep();
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>Never sleep.
+</code></pre>
+<h3 id="13_9_3">13.9.3 编程中抽象类与普通类的区别</h3>
+<ul>
+<li>抽象方法必须为public或protected.private关键字修饰的类不能被子类继承,子类无法实现该方法.缺省情况下默认为public.</li>
+<li>如果一个类继承于一个抽象类,则子类必须实现父类的抽象方法.如果子类没有实现父类的抽象方法,则必须将子类也定义为为abstract类.  </li>
+</ul>
+<h3 id="13_9_3">13.9.3 抽象类创建对象</h3>
+<p><img src="http://localhost/img/common/truth.jpg" alt="真相只有一个" width="480" height="388" /></p>
+<ul>
+<li>抽象类不能用来创建对象吗?</li>
+</ul>
+<p>答案是:抽象类可以被用new的方式创建.通过"匿名内部类"方式创建.虽然可以用new的方式创建抽象类,但不建议在复杂对象使用,这样做失去了抽象的意义.附带真相的代码:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 抽象类创建对象
+ */
+public class Demo10 {
+    public static void main(String[] args) {
+        AbstractPet abstractPet = new AbstractPet() {
+            @Override
+            public void sleep() {
+                System.out.println("AbstractPet sleep");
+            }
+        };
+        abstractPet.sleep();
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>AbstractPet sleep.
+</code></pre>
+<ul>
+<li>java @Override标签</li>
+</ul>
+<p>示例代码中<a href="http://dashidan.com/article/java/addenda/1.html">@Override标签作用</a></p>
+<h2 id="13_10">13.10 接口</h2>
+<p>java接口interface在软件工程中,泛指供其他人调用的方法或者函数.从这里可以体会到Java语言设计者的初衷-对行为的抽象.  </p>
+<h3 id="13_10_1">13.10.1 接口的声明</h3>
+<p>java编程中用interface关键字声明接口.接口中可以含有变量和方法.但是要注意,jdk8之前的版本中,接口中的变量会被隐式地指定为"public static final"变量.接口中的方法必须都是抽象方法.在jdk8以后接口中可以加入<a href="http://dashidan.com/article/java/jdk8/5.html#1">default方法</a>.  </p>
+<pre class="prettyprint"><code class="java language-java">public interface Pet{
+...
+}
+</code></pre>
+<h3 id="13_10_2">13.10.2 接口的实现</h3>
+<p>一个类实现特定的接口需要使用implements关键字.需要实现该接口中定义的方法,如果没有全部实现,需要将该类声明为abstract.  </p>
+<pre class="prettyprint"><code class="java language-java">public class Bird implements IPet {
+...
+}
+</code></pre>
+<ul>
+<li>java接口示例代码</li>
+</ul>
+<p>IPet接口:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * 接口 IPet
+ */
+public interface IPet {
+    void eat();
+}
+</code></pre>
+<p>Bird类:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * 接口
+ */
+public class Bird implements IPet {
+    @Override
+    public void eat() {
+        System.out.println("Bird eat.");
+    }
+}
+</code></pre>
+<p>运行类:</p>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象的继承
+ * 接口
+ */
+public class Demo11 {
+    public static void main(String[] args) {
+        Bird bird = new Bird();
+        bird.eat();
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>Bird eat.
+</code></pre>
+<h3 id="13_10_3">13.10.3 抽象类和接口的区别</h3>
+<ul>
+<li>抽象类可以提供成员方法的实现细节,而接口中只能存在"public abstract"方法.</li>
+<li>抽象类中的成员变量可以是各种类型,而接口中的成员变量只能是"public static final"类型.</li>
+<li>接口中不能含有静态代码块以及静态方法,而抽象类可以有静态代码块和静态方法.</li>
+<li>一个类只能继承一个抽象类,而一个类却可以实现多个接口.</li>
+<li>抽象类作为很多子类的父类,它是一种模板式设计,而接口是一种行为规范.</li>
+<li>抽象类和接口所反映的设计理念是不同的,抽象类所代表的是"is-a"的关系,而接口所代表的是"like-a"的关系.</li>
+</ul>
+<h2 id="13_11">13.11 对象实例类型判断</h2>
+<p>Java中的instanceof是二目<a href="http://dashidan.com/article/java/basic/7.html">运算符</a>,返回一个布尔值,是用来在运行时判断对象是否是指定类的实例.</p>
+<h3 id="13_11_1">13.11.1 instanceof用法</h3>
+<ul>
+<li>java instanceof语法</li>
+</ul>
+<pre class="prettyprint"><code>boolean result = object instanceof class
+</code></pre>
+<ul>
+<li>java instanceof用法示例代码</li>
+</ul>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象实例类型判断
+ */
+public class Demo12 {
+    public static void main(String[] args) {
+        Pet pet = new Pet();
+        boolean isInstance = pet instanceof Pet;
+        System.out.println("pet instanceof Pet: " + isInstance);
+        Cat cat = new Cat();
+        /** 子类也属于父类的一个实例*/
+        isInstance = cat instanceof Pet;
+        System.out.println("cat instanceof Pet: " + isInstance);
+    }
+}
+</code></pre>
+<p>输出:</p>
+<pre class="prettyprint"><code>pet instanceof Pet: true
+cat instanceof Pet: true
+</code></pre>
+<h2 id="13_12">13.12 对象向上转型和向下转型</h2>
+<p>java中子类对象转为父类对象称为向上转型,反之称为向下转型.</p>
+<h3 id="13_12_1">13.12.1 向上转型</h3>
+<p>java对象向上转型时,子类独有的方法会遗失,只保留父类拥有的方法.如果子类覆写了父类的方法则调用子类的这个方法.向上转型不用强制转型. </p>
+<h3 id="13_12_2">13.12.2 向下转型</h3>
+<p>java编程中父类引用的对象转换为子类类型称为向下转型.向下转型需要强制转型,类型与转型类型需要一致,不一致会报错.</p>
+<h3 id="13_12_3">13.12.3 对象向上转型和向下转型示例代码</h3>
+<pre class="prettyprint"><code class="java language-java">package com.panda-doc.lesson13;
+
+/**
+ * 熊猫文档-panda-doc.com
+ * &lt;p&gt;
+ * Java教程基础篇: 13.Java对象
+ * 对象向上转型和向下转型
+ */
+public class Demo13 {
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        /**
+         * testUpcasting 需要传入父类Pet实例,这里传入的是子类cat实例的引用
+         * 自动向上转型
+         * 由于子类Cat覆写了父类的cat()方法,执行子类的eat()方法
+         */
+        testUpCasting(cat);
+
+
+        /** 父类对象的引用,指向子类实例*/
+        Pet pet = new Cat();
+        /**
+         * testUpcasting 需要传入父类Pet实例,这里传入的是父类Pet的引用
+         * 强制向下转型
+         * 由于子类Cat覆写了父类的cat()方法,执行子类的eat()方法
+         */
+        testDownCasting((Cat) pet);
+    }
+
+    /**
+     * 测试向上转型
+     */
+    public static void testUpCasting(Pet pet) {
+        pet.eat();
+    }
+
+    /**
+     * 测试向下转型
+     */
+    public static void testDownCasting(Cat pet) {
+        pet.eat();
+    }
+}
+</code></pre>
+<p>输出:   </p>
+<pre class="prettyprint"><code>Cat eat.
+Cat eat.
+</code></pre>
+<p>java对象向上转型和向下转型示例代码注意地方:</p>
+<ul>
+<li>testUpcasting 需要传入父类Pet实例,这里传入的是子类cat实例的引用,自动向上转型,由于子类Cat覆写了父类的cat()方法,执行子类的eat()方法.</li>
+<li>testUpcasting 需要传入父类Pet实例,这里传入的是父类Pet的引用,强制向下转型,由于子类Cat覆写了父类的cat()方法,执行子类的eat()方法.</li>
+</ul>
