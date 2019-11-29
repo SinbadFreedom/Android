@@ -26,3 +26,15 @@ Stack trace:
 #0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
 #1 {main}
   thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
+[29-Nov-2019 20:35:02 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
+[29-Nov-2019 20:35:04 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\rank_list.php:38
+Stack trace:
+#0 D:\workplace\git\Android\build\php\rank_list.php(38): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\rank_list.php on line 38
