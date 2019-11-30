@@ -107,7 +107,7 @@ function active_nav_button(id) {
 }
 
 function ajax_post(link_name, data, callback_success) {
-    console.log("ajax_post: " + link_name + " data " + data);
+    console.log("ajax_post: " + link_name + " data " + JSON.stringify(data));
     $.ajax({
         type: 'POST',
         url: link_name,
