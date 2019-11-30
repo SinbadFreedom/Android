@@ -225,10 +225,11 @@ function getAskList(btn_id) {
 function active_ask_tag_button(btn_id) {
     console.log('active_ask_tag_button ' + btn_id);
     $('#ask_content_all').removeClass("active");
+
     /** jquery id名字中带有"."的特殊处理*/
     $('[id="ask_python"]').removeClass("active");
-    $('#ask_技术讨论').removeClass("active");
-    $('#ask_灌水乐园').removeClass("active");
+    $('#ask_java').removeClass("active");
+    $('#ask_综合').removeClass("active");
 
     $('[id="' + btn_id + '"]').addClass("active");
 }
@@ -1028,7 +1029,7 @@ function active_nav_button(id) {
 }
 
 function ajax_post(link_name, data, callback_success) {
-    console.log("ajax_post: " + link_name + " data " + data);
+    console.log("ajax_post: " + link_name + " data " + JSON.stringify(data));
     $.ajax({
         type: 'POST',
         url: link_name,
