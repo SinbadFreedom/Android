@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f1d93af-79c0-4d4a-bc9b-a6a747347622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build/ajax/newAsk.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/newAsk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ajax/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/ajax/ask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/ask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ask.js" afterDir="false" />
     </list>
     <ignored path="node_modules/" />
     <ignored path=".idea/" />
@@ -46,26 +48,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/ask.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+            <state relative-caret-position="252">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/ask.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+            <state relative-caret-position="2268">
+              <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -128,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onGetFigureUrl res</find>
       <find>nvalid appkey</find>
       <find>catalogName</find>
       <find>http://dashidan.com/article/</find>
@@ -153,11 +154,12 @@
       <find>index_tag</find>
       <find>python</find>
       <find>灌水乐园</find>
-      <find>ask_new</find>
       <find>newAsk_commit</find>
       <find>tag</find>
       <find>ask_new_comm</find>
       <find>ask_new_summ</find>
+      <find>ask_tag</find>
+      <find>ask_new</find>
     </findStrings>
     <replaceStrings>
       <replace>'click'</replace>
@@ -260,10 +262,10 @@
         <option value="$PROJECT_DIR$/build/disclaimer.html" />
         <option value="$PROJECT_DIR$/build/ajax/index.html" />
         <option value="$PROJECT_DIR$/build/ajax/disclaimer.html" />
-        <option value="$PROJECT_DIR$/src/js/ask.js" />
-        <option value="$PROJECT_DIR$/build/ajax/ask.html" />
         <option value="$PROJECT_DIR$/build/ajax/newAsk.html" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
+        <option value="$PROJECT_DIR$/build/ajax/ask.html" />
+        <option value="$PROJECT_DIR$/src/js/ask.js" />
       </list>
     </option>
   </component>
@@ -1067,21 +1069,8 @@
       <workItem from="1575080306911" duration="1535000" />
       <workItem from="1575083240949" duration="599000" />
       <workItem from="1575085050200" duration="599000" />
-      <workItem from="1575088976497" duration="1360000" />
-    </task>
-    <task id="LOCAL-00412" summary="1. open doc link in new win">
-      <created>1561019852118</created>
-      <option name="number" value="00412" />
-      <option name="presentableId" value="LOCAL-00412" />
-      <option name="project" value="LOCAL" />
-      <updated>1561019852118</updated>
-    </task>
-    <task id="LOCAL-00413" summary="1. update catalog active，when stroll the doc">
-      <created>1561025608448</created>
-      <option name="number" value="00413" />
-      <option name="presentableId" value="LOCAL-00413" />
-      <option name="project" value="LOCAL" />
-      <updated>1561025608448</updated>
+      <workItem from="1575088976497" duration="1481000" />
+      <workItem from="1575090784716" duration="681000" />
     </task>
     <task id="LOCAL-00414" summary="1. promote bootstrap">
       <created>1561080418141</created>
@@ -1412,11 +1401,25 @@
       <option name="project" value="LOCAL" />
       <updated>1575090079015</updated>
     </task>
-    <option name="localTasksCounter" value="461" />
+    <task id="LOCAL-00461" summary="修复 ask">
+      <created>1575090665518</created>
+      <option name="number" value="00461" />
+      <option name="presentableId" value="LOCAL-00461" />
+      <option name="project" value="LOCAL" />
+      <updated>1575090665518</updated>
+    </task>
+    <task id="LOCAL-00462" summary="修复 ask">
+      <created>1575090763154</created>
+      <option name="number" value="00462" />
+      <option name="presentableId" value="LOCAL-00462" />
+      <option name="project" value="LOCAL" />
+      <updated>1575090763154</updated>
+    </task>
+    <option name="localTasksCounter" value="463" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1101765000" />
+    <option name="totallyTimeSpent" value="1102567000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1429,14 +1432,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16115262" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16275346" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.30718955" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21786493" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.30718955" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21786493" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31154683" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1744,16 +1746,24 @@
     <entry file="file://$PROJECT_DIR$/build/php/forum/note_reply.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/php_errors.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_list.php">
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        <state relative-caret-position="1197">
+          <caret line="57" column="54" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2268">
+          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1771,38 +1781,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/php_errors.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_add.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/php/forum/tag_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/ajax/ask.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/php/forum/ask_new_summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="54" />
+        <state relative-caret-position="252">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/ask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+        <state relative-caret-position="546">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>

@@ -22,6 +22,7 @@ function askNew(e) {
     }
 
     ask_new_tag = e.target.innerText;
+    ask_new_tag = ask_new_tag.toLowerCase();
     console.log('askNew type ' + ask_new_tag);
 
     let url = '/ajax/newAsk.html';
