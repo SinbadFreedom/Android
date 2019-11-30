@@ -978,7 +978,7 @@ function onGetFigureUrl(res) {
     if (res) {
         global_login_state = true;
         /** 已经登陆，获取头像信息, 显示头像图标*/
-        let login_state_btn = '<button type="button" id="nav_btn_figure" class="btn btn-success ml-auto"><img id="nav_btn_figure"  class="rounded" src="' + res + '" width="24px" height="24px"></button>';
+        let login_state_btn = '<button type="button" id="nav_btn_figure" class="btn ml-auto"><img id="nav_btn_figure"  class="rounded" src="' + res + '" width="24px" height="24px"></button>';
         $("#index_login_state").html(login_state_btn);
     }
 }
