@@ -1067,6 +1067,8 @@ function indexLoadSuccess(res) {
     /** 事件初始化*/
     $('#index_tag').off('click', 'button', indexClickBtnTag);
     $('#index_tag').on('click', 'button', indexClickBtnTag);
+    $('#index_disclaimer').off('click', initDisclaimer);
+    $('#index_disclaimer').on('click', initDisclaimer);
 
     /** 获取头像信息，如果没有则显示登录按钮*/
     let url_figure = '/php/figure_url.php';
@@ -1091,6 +1093,19 @@ function initDocPage() {
     let url_doc = '/ajax/doc.html';
     /** 加载doc.html, 完成后执行回调*/
     ajax_get(url_doc, docSuccess);
+}
+
+/** 免责声明*/
+function initDisclaimer() {
+    let url_doc = '/ajax/disclaimer.html';
+    /** disclaimer.html, 完成后执行回调*/
+    ajax_get(url_doc, disclaimerSuccess);
+}
+
+function disclaimerSuccess(res) {
+    console.log('disclaimerSuccess');
+    /** 更新doc内容区*/
+    refreshContentArea(res);
 }function loginLoadSuccess(res) {
     console.log('loginLoadSuccess');
     /** 替换登录页面框架*/
