@@ -59,6 +59,9 @@ function onGetFigureUrl(res) {
         /** 已经登陆，获取头像信息, 显示头像图标*/
         let login_state_btn = '<button type="button" id="nav_btn_figure" class="btn btn-primary ml-auto"><img id="nav_btn_figure"  class="rounded" src="' + res + '" width="24px" height="24px"></button>';
         $("#index_login_state").html(login_state_btn);
+        /** 更新经验*/
+        let url_exp = '/php/update_exp.php';
+        ajax_get(url_exp);
     }
 }
 

@@ -41,7 +41,6 @@ $command_cursor = $manager->executeCommand('db_account', $command);
 $response = $command_cursor->toArray()[0];
 
 /** 获取新用户id*/
-
 if ($response->value) {
     updateExpAddValue($user_id, $manager, $col_today);
     updateExpAddValue($user_id, $manager, $col_week);
