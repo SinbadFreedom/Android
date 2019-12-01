@@ -87,6 +87,9 @@ $redis->zAdd('content_all', $time_stamp, $tag . '_' . $content_id);
 /** 指定tag更新排序*/
 $redis->zAdd($tag, $time_stamp, $tag . '_' . $content_id);
 
+/** 更新经验*/
+require_once('../update_exp.php');
+
 /** 返回数据*/
 $res = new stdClass();
 $res->state = 0;

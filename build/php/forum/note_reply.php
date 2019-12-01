@@ -119,6 +119,9 @@ $command_cursor = $manager->executeCommand('db_tag', $command);
 $response = $command_cursor->toArray()[0];
 $comment_count = $response->value->comment_count;
 
+/** 更新经验*/
+require_once('../update_exp.php');
+
 $res->state = 0;
 $res->tag = $tag;
 $res->content_id = $content_id;
