@@ -52,5 +52,5 @@ $_SESSION['nickname'] = $nick_name;
 $_SESSION['user_id'] = $user_id;
 
 header('content-type:text/html;charset=utf-8');
-//立即跳转至目标页面
+/** 立即跳转至目标页面*/
 echo '<script>window.location.href="' . $url_reload . '";</script>';

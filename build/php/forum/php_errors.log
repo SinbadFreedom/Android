@@ -5619,3 +5619,132 @@ Stack trace:
 #0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
 #1 {main}
   thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:47:56 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:48:20 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\forum\ask_list.php:34
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\ask_list.php(34): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\ask_list.php on line 34
+[01-Dec-2019 09:48:23 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\forum\ask_list.php:34
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\ask_list.php(34): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\ask_list.php on line 34
+[01-Dec-2019 09:48:24 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:49:24 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:49:26 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:39 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:41 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:44 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:44 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:46 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:46 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:46 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:46 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:46 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:48 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:50:52 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:51:12 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\forum\ask_list.php:34
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\ask_list.php(34): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\ask_list.php on line 34
+[01-Dec-2019 09:51:14 PRC] PHP Fatal error:  Uncaught RedisException: 由于目标计算机积极拒绝，无法连接。
+ in D:\workplace\git\Android\build\php\forum\ask_list.php:34
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\ask_list.php(34): Redis->connect('127.0.0.1', 6379)
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\ask_list.php on line 34
+[01-Dec-2019 09:51:15 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:51:16 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:53:33 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:55:54 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:55:59 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
+[01-Dec-2019 09:56:14 PRC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017'] in D:\workplace\git\Android\build\php\forum\note_get.php:74
+Stack trace:
+#0 D:\workplace\git\Android\build\php\forum\note_get.php(74): MongoDB\Driver\Manager->executeCommand('db_note', Object(MongoDB\Driver\Command))
+#1 {main}
+  thrown in D:\workplace\git\Android\build\php\forum\note_get.php on line 74
