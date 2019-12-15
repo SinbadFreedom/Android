@@ -1,0 +1,869 @@
+<h1 id="19_">19. 支持的协议和封装协议</h1>
+<h2 id="19_1">19.1 file://</h2>
+<p>file:// - 访问本地文件系统</p>
+<h3 id="">说明</h3>
+<p><em>文件系统</em> 是 PHP 使用的默认封装协议,展现了本地文件系统. 当指定了一个相对路径(不以/,\,\\或 Windows 盘符开头的路径)提供的路径将基于当前的工作目录. 在很多情况下是脚本所在的目录,除非被修改了. 使用 CLI 的时候,目录默认是脚本被调用时所在的目录.</p>
+<p>在某些函数里,例如 <a href="function.fopen.html">fopen()</a> 和 <a href="function.file-get-contents.html">file_get_contents()</a>, <em>include_path</em> 会可选地搜索,也作为相对的路径.</p>
+<h3 id="-1">用法</h3>
+<ul>
+<li>/path/to/file.ext</li>
+<li>relative/path/to/file.ext</li>
+<li>fileInCwd.ext</li>
+<li>C:/path/to/winfile.ext</li>
+<li>C:\path\to\winfile.ext</li>
+<li>\\smbserver\share\path\to\winfile.ext</li>
+<li>file:///path/to/file.ext</li>
+</ul>
+<h3 id="-2">可选项</h3>
+<p><strong>封装协议概要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a> 影响</p>
+<p>No</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes</p>
+<p>允许添加</p>
+<p>Yes</p>
+<p>允许同时读和写</p>
+<p>Yes</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>Yes</p>
+<h3 id="-3">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.0.0</p>
+<p>添加了 <em>file://</em>.</p>
+<h2 id="19_2">19.2 http://</h2>
+<h2 id="https://">https://</h2>
+<p>http:// -- https:// - 访问 HTTP(s) 网址</p>
+<h3 id="-4">说明</h3>
+<p>允许通过 HTTP 1.0 的 GET方法,以只读访问文件或资源. HTTP 请求会附带一个 <em>Host:</em> 头,用于兼容基于域名的虚拟主机. 如果在你的 php.ini 文件中或字节流上下文(context)配置了 <a href="filesystem.configuration.html#ini.user-agent">user_agent</a> 字符串,它也会被包含在请求之中.</p>
+<p>数据流允许读取资源的 <em>body</em>,而 headers 则储存在了 <a href="reserved.variables.httpresponseheader.html">$http_response_header</a> 变量里.</p>
+<p>如果需要知道文档资源来自哪个 URL(经过所有重定向的处理后), 需要处理数据流返回的系列响应报头(response headers).</p>
+<p>The <a href="filesystem.configuration.html#ini.from">from</a> directive will be used for the <em>From:</em> header if set and not overwritten by the <a href="context.html">上下文(Context)选项和参数</a>.</p>
+<h3 id="-5">用法</h3>
+<ul>
+<li>http://example.com</li>
+<li>http://example.com/file.php?var1=val1&amp;var2=val2</li>
+<li>http://user:password@example.com</li>
+<li>https://example.com</li>
+<li>https://example.com/file.php?var1=val1&amp;var2=val2</li>
+<li>https://user:password@example.com</li>
+</ul>
+<h3 id="-6">可选项</h3>
+<p><strong>封装协议概要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a> 限制</p>
+<p>Yes</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>No</p>
+<p>允许添加</p>
+<p>No</p>
+<p>允许同时读和写</p>
+<p>N/A</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<h3 id="-7">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.3.7</p>
+<p>检测 IIS 服务器避免 <em>"SSL: Fatal Protocol Error"</em> 错误.</p>
+<p>4.3.0</p>
+<p>添加 <em>https://</em>.</p>
+<p>4.0.5</p>
+<p>增加了对重定向的支持.</p>
+<h3 id="-8">范例</h3>
+<p><strong>Example #1 检测重定向后最终的 URL</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$url = 'http://www.example.com/redirecting_page.php';  
+
+$fp = fopen($url, 'r');  
+
+$meta_data = stream_get_meta_data($fp);  
+foreach ($meta_data['wrapper_data'] as $response) {  
+
+    /* 我们是否被重定向了? */  
+    if (strtolower(substr($response, 0, 10)) == 'location: ') {  
+
+        /* 更新我们被重定向后的 $url */  
+        $url = substr($response, 10);  
+    }  
+
+}  
+
+?&gt;
+</code></pre>
+<h3 id="-9">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: <a href="book.openssl.html">openssl</a> 扩展启用后才能够支持 HTTPS 协议.</p>
+</blockquote>
+<p>HTTP 连接是只读的;还不支持对一个 HTTP 资源进行写数据或者复制文件.</p>
+<p>比如发送 <em>POST</em> 和 <em>PUT</em> 请求, 可以在 <a href="context.http.html">HTTP Contexts</a> 的支持下实现.</p>
+<h3 id="-10">参见</h3>
+<ul>
+<li><a href="context.http.html">HTTP context 选项</a></li>
+<li><a href="reserved.variables.httpresponseheader.html">$http_response_header</a></li>
+<li><a href="function.stream-get-meta-data.html">stream_get_meta_data()</a> - 从封装协议文件指针中取得报头/元数据</li>
+</ul>
+<h2 id="19_3">19.3 ftp://</h2>
+<h2 id="ftps://">ftps://</h2>
+<p>ftp:// -- ftps:// - 访问 FTP(s) URLs</p>
+<h3 id="-11">说明</h3>
+<p>允许通过 FTP 读取存在的文件,以及创建新文件. 如果服务器不支持被动(passive)模式的 FTP,连接会失败.</p>
+<p>打开文件后你既可以读也可以写,但是不能同时进行. 当远程文件已经存在于 ftp 服务器上,如果尝试打开并写入文件的时候, 未指定上下文(context)选项 <em>overwrite</em>,连接会失败. 如果要通过 FTP 覆盖存在的文件, 指定上下文(context)的 <em>overwrite</em> 选项来打开,写入. 另外可使用 <a href="ref.ftp.html">FTP 扩展</a>来代替.</p>
+<p>如果你设置了 php.ini 中的 <a href="filesystem.configuration.html#ini.from">from</a> 指令, 这个值会作为匿名(anonymous)ftp 的密码.</p>
+<h3 id="-12">用法</h3>
+<ul>
+<li>ftp://example.com/pub/file.txt</li>
+<li>ftp://user:password@example.com/pub/file.txt</li>
+<li>ftps://example.com/pub/file.txt</li>
+<li>ftps://user:password@example.com/pub/file.txt</li>
+</ul>
+<h3 id="-13">可选项</h3>
+<p><strong>封装协议概要</strong></p>
+<p>属性</p>
+<p>PHP 4</p>
+<p>PHP 5</p>
+<p>受 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a> 影响</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes (仅支持新文件)</p>
+<p>Yes (新文件/启用 <code>overwrite</code> 后已存在的文件)</p>
+<p>允许添加</p>
+<p>No</p>
+<p>Yes</p>
+<p>允许同时读和写</p>
+<p>No</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>自 5.0.0 起:仅仅 <a href="function.filesize.html">filesize()</a>, <a href="function.filetype.html">filetype()</a>, <a href="function.file-exists.html">file_exists()</a>, <a href="function.is-file.html">is_file()</a> 和 <a href="function.is-dir.html">is_dir()</a>. 自 PHP 5.1.0 起: <a href="function.filemtime.html">filemtime()</a>.</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>Yes</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>Yes</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>Yes</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<p>Yes</p>
+<h3 id="-14">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.3.0</p>
+<p>增加 <em>ftps://</em>.</p>
+<h3 id="-15">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>FTPS 仅在 <a href="book.openssl.html">openssl</a> 扩展开启时有效.</p>
+  <p>如果服务器不支持 SSL,这个连接会降级(falls back)到普通未加密的 ftp.</p>
+  <p><strong>Note</strong>: <strong>追加</strong><br />
+  自 PHP 5.0.0 起文件可以通过 <em>ftp://</em> URL 封装器来追加(append). 在之前的版本,尝试通过 <em>ftp://</em> 来追加一个文件将会导致错误.</p>
+</blockquote>
+<h3 id="-16">参见</h3>
+<ul>
+<li><a href="context.ftp.html">FTP context options</a></li>
+</ul>
+<h2 id="19_4">19.4 php://</h2>
+<p>php:// - 访问各个输入/输出流(I/O streams)</p>
+<h3 id="-17">说明</h3>
+<p>PHP 提供了一些杂项输入/输出(IO)流,允许访问 PHP 的输入输出流,标准输入输出和错误描述符, 内存中,磁盘备份的临时文件流以及可以操作其他读取写入文件资源的过滤器.</p>
+<h4 id="phpstdinphpstdoutphpstderr">php://stdin, php://stdout 和 php://stderr</h4>
+<p>php://stdin,php://stdout 和 php://stderr 允许直接访问 PHP 进程相应的输入或者输出流. 数据流引用了复制的文件描述符,所以如果你打开 php://stdin 并在之后关了它, 仅是关闭了复制品,真正被引用的 <strong><code>STDIN</code></strong> 并不受影响. 注意 PHP 在这方面的行为有很多 BUG 直到 PHP 5.2.1. 推荐你简单使用常量 <strong><code>STDIN</code></strong>, <strong><code>STDOUT</code></strong> 和 <strong><code>STDERR</code></strong> 来代替手工打开这些封装器.</p>
+<p>php://stdin 是只读的, php://stdout 和 php://stderr 是只写的.</p>
+<h4 id="phpinput">php://input</h4>
+<p>php://input 是个可以访问请求的原始数据的只读流. POST 请求的情况下,最好使用 php://input 来代替 <a href="reserved.variables.httprawpostdata.html">$HTTP_RAW_POST_DATA</a>,因为它不依赖于特定的 php.ini 指令. 而且,这样的情况下 <a href="reserved.variables.httprawpostdata.html">$HTTP_RAW_POST_DATA</a> 默认没有填充, 比激活 <a href="ini.core.html#ini.always-populate-raw-post-data">always_populate_raw_post_data</a> 潜在需要更少的内存. <em>enctype="multipart/form-data"</em> 的时候 php://input 是无效的.</p>
+<blockquote>
+  <p><strong>Note</strong>: 在 PHP 5.6 之前 php://input 打开的数据流只能读取一次; 数据流不支持 seek 操作. 不过,依赖于 SAPI 的实现,请求体数据被保存的时候, 它可以打开另一个 php://input 数据流并重新读取. 通常情况下,这种情况只是针对 POST 请求,而不是其他请求方式,比如 PUT 或者 PROPFIND.</p>
+</blockquote>
+<h4 id="phpoutput">php://output</h4>
+<p>php://output 是一个只写的数据流, 允许你以 <a href="function.print.html">print</a> 和 <a href="function.echo.html">echo</a> 一样的方式 写入到输出缓冲区.</p>
+<h4 id="phpfd">php://fd</h4>
+<p>php://fd 允许直接访问指定的文件描述符. 例如 php://fd/3 引用了文件描述符 3.</p>
+<h4 id="phpmemoryphptemp">php://memory 和 php://temp</h4>
+<p>php://memory 和 php://temp 是一个类似文件 包装器的数据流,允许读写临时数据. 两者的唯一区别是 php://memory 总是把数据储存在内存中, 而 php://temp 会在内存量达到预定义的限制后(默认是 2MB)存入临时文件中. 临时文件位置的决定和 <a href="function.sys-get-temp-dir.html">sys_get_temp_dir()</a> 的方式一致.</p>
+<p>php://temp 的内存限制可通过添加 <em>/maxmemory:NN</em> 来控制,<em>NN</em> 是以字节为单位,保留在内存的最大数据量,超过则使用临时文件.</p>
+<h4 id="phpfilter">php://filter</h4>
+<p>php://filter 是一种元封装器, 设计用于数据流打开时的<a href="filters.html">筛选过滤</a>应用. 这对于一体式(all-in-one)的文件函数非常有用,类似 <a href="function.readfile.html">readfile()</a>, <a href="function.file.html">file()</a> 和 <a href="function.file-get-contents.html">file_get_contents()</a>, 在数据流内容读取之前没有机会应用其他过滤器.</p>
+<p>php://filter 目标使用以下的参数作为它路径的一部分. 复合过滤链能够在一个路径上指定.详细使用这些参数可以参考具体范例.</p>
+<p><strong>php://filter 参数</strong></p>
+<p>名称</p>
+<p>描述</p>
+<p><em>resource=<要过滤的数据流></em></p>
+<p>这个参数是必须的.它指定了你要筛选过滤的数据流.</p>
+<p><em>read=<读链的筛选列表></em></p>
+<p>该参数可选.可以设定一个或多个过滤器名称,以管道符(<em>|</em>)分隔.</p>
+<p><em>write=<写链的筛选列表></em></p>
+<p>该参数可选.可以设定一个或多个过滤器名称,以管道符(<em>|</em>)分隔.</p>
+<p><em><;两个链的筛选列表></em></p>
+<p>任何没有以 <em>read=</em> 或 <em>write=</em> 作前缀 的筛选器列表会视情况应用于读或写链.</p>
+<h3 id="-18">可选项</h3>
+<p><strong>封装协议摘要(针对 <em>php://filter</em>,参考被筛选的封装器.)</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-include">allow_url_include</a></p>
+<p>仅 <em>php://input</em>, <em>php://stdin</em>, <em>php://memory</em> 和 <em>php://temp</em>.</p>
+<p>允许读取</p>
+<p>仅 <em>php://stdin</em>, <em>php://input</em>, <em>php://fd</em>, <em>php://memory</em> 和 <em>php://temp</em>.</p>
+<p>允许写入</p>
+<p>仅 <em>php://stdout</em>, <em>php://stderr</em>, <em>php://output</em>, <em>php://fd</em>, <em>php://memory</em> 和 <em>php://temp</em>.</p>
+<p>允许追加</p>
+<p>仅 <em>php://stdout</em>, <em>php://stderr</em>, <em>php://output</em>, <em>php://fd</em>, <em>php://memory</em> 和 <em>php://temp</em>(等于写入)</p>
+<p>允许同时读写</p>
+<p>仅 <em>php://fd</em>, <em>php://memory</em> 和 <em>php://temp</em>.</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>仅 <em>php://memory</em> 和 <em>php://temp</em>.</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<p>仅仅支持 <a href="function.stream-select.html">stream_select()</a></p>
+<p><em>php://stdin</em>, <em>php://stdout</em>, <em>php://stderr</em>, <em>php://fd</em> 和 <em>php://temp</em>.</p>
+<h3 id="-19">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.6.0</p>
+<p>php://input 可反复使用.</p>
+<p>5.3.6</p>
+<p>增加 php://fd.</p>
+<p>5.1.0</p>
+<p>增加 php://memory 和 php://temp.</p>
+<p>5.0.0</p>
+<p>增加 php://filter.</p>
+<h3 id="-20">范例</h3>
+<p><strong>Example #1 php://temp/maxmemory</strong></p>
+<p>这个可选选项允许设置 php://temp 开始使用临时文件前的最大内存限制.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// Set the limit to 5 MB.  
+$fiveMBs = 5 * 1024 * 1024;  
+$fp = fopen("php://temp/maxmemory:$fiveMBs", 'r+');  
+
+fputs($fp, "hello\n");  
+
+// Read what we have written.  
+rewind($fp);  
+echo stream_get_contents($fp);  
+?&gt;
+</code></pre>
+<p><strong>Example #2 php://filter/resource=<待过滤的数据流></strong></p>
+<p>这个参数必须位于 php://filter 的末尾,并且指向需要过滤筛选的数据流.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+/* 这简单等同于:  
+  readfile("http://www.example.com");  
+  实际上没有指定过滤器 */  
+
+readfile("php://filter/resource=http://www.example.com");  
+?&gt;
+</code></pre>
+<p><strong>Example #3 php://filter/read=<读链需要应用的过滤器列表></strong></p>
+<p>这个参数采用一个或以管道符 <em>|</em> 分隔的多个过滤器名称.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+/* 这会以大写字母输出 www.example.com 的全部内容 */  
+readfile("php://filter/read=string.toupper/resource=http://www.example.com");  
+
+/* 这会和以上所做的一样,但还会用 ROT13 加密. */  
+readfile("php://filter/read=string.toupper|string.rot13/resource=http://www.example.com");  
+?&gt;
+</code></pre>
+<p><strong>Example #4 php://filter/write=<写链需要应用的过滤器列表></strong></p>
+<p>这个参数采用一个或以管道符 <em>|</em> 分隔的多个过滤器名称.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+/* 这会通过 rot13 过滤器筛选出字符 "Hello World"  
+  然后写入当前目录下的 example.txt */  
+file_put_contents("php://filter/write=string.rot13/resource=example.txt","Hello World");  
+?&gt;
+</code></pre>
+<p><strong>Example #5 php://memory 和 php://temp 是一次性的</strong></p>
+<p>php://memory 和 php://temp 是一次性的,比如:stream 流关闭后,就无法再次得到以前的内容了.</p>
+<p><code>file_put_contents('php://memory', 'PHP');  
+echo file_get_contents('php://memory'); // 啥也没有</code></p>
+<h2 id="19_5">19.5 zlib://</h2>
+<h2 id="bzip2://">bzip2://</h2>
+<h2 id="zip://">zip://</h2>
+<p>zlib:// -- bzip2:// -- zip:// - 压缩流</p>
+<h3 id="-21">说明</h3>
+<p>compress.zlib:// and compress.bzip2://</p>
+<p>zlib: 的功能类似 <a href="function.gzopen.html">gzopen()</a>,但是 其数据流还能被 <a href="function.fread.html">fread()</a> 和其他文件系统函数使用. 自 PHP 4.3.0 后这个不建议被使用,因为会和其他带":"字符的文件名混淆; 请使用 compress.zlib:// 作为替代.</p>
+<p>compress.zlib://, compress.bzip2:// 和 <a href="function.gzopen.html">gzopen()</a>,<a href="function.bzopen.html">bzopen()</a> 是相等的.并且可以在不支持 fopencookie 的系统中使用.</p>
+<p><a href="book.zip.html">ZIP 扩展</a> 注册了 zip: 封装器. 自 PHP 7.2.0 和 libzip 1.2.0+ 起,加密归档开始支持密码,允许数据流中使用密码. 字节流上下文(stream contexts)中使用 <em>'password'</em> 选项设置密码.</p>
+<h3 id="-22">可选项</h3>
+<ul>
+<li>compress.zlib://file.gz</li>
+<li>compress.bzip2://file.bz2</li>
+<li>zip://archive.zip#dir/file.txt</li>
+</ul>
+<h3 id="-23">用法</h3>
+<p><strong>封装协议摘要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes(除了 <em>zip://</em>)</p>
+<p>允许附加</p>
+<p>Yes(除了 <em>zip://</em>)</p>
+<p>允许同时读写</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No,请使用普通的 <em>file://</em> 封装器统计压缩文件.</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No,请使用 <em>file://</em> 封装器删除压缩文件.</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<h2 id="19_6">19.6 data://</h2>
+<p>data:// - 数据(RFC 2397)</p>
+<h3 id="-24">说明</h3>
+<p>自 PHP 5.2.0 起 data:(<a href="http://www.faqs.org/rfcs/rfc2397">» RFC 2397</a>)数据流封装器开始有效.</p>
+<h3 id="-25">用法</h3>
+<ul>
+<li>data://text/plain;base64,</li>
+</ul>
+<h3 id="-26">可选项</h3>
+<p><strong>封装协议摘要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-include">allow_url_include</a></p>
+<p>Yes</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>No</p>
+<p>允许追加</p>
+<p>No</p>
+<p>允许同时读写</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<h3 id="-27">范例</h3>
+<p><strong>Example #1 打印 data:// 的内容</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// 打印 "I love PHP"  
+echo file_get_contents('data://text/plain;base64,SSBsb3ZlIFBIUAo=');  
+?&gt;
+</code></pre>
+<p><strong>Example #2 获取媒体类型</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$fp   = fopen('data://text/plain;base64,', 'r');  
+$meta = stream_get_meta_data($fp);  
+
+// 打印 "text/plain"  
+echo $meta['mediatype'];  
+?&gt;
+</code></pre>
+<h2 id="19_7">19.7 glob://</h2>
+<p>glob:// - 查找匹配的文件路径模式</p>
+<h3 id="-28">说明</h3>
+<p>glob: 数据流包装器自 PHP 5.3.0 起开始有效.</p>
+<h3 id="-29">用法</h3>
+<ul>
+<li>glob://</li>
+</ul>
+<h3 id="-30">可选项</h3>
+<p><strong>封装协议摘要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-include">allow_url_include</a></p>
+<p>No</p>
+<p>允许读取</p>
+<p>No</p>
+<p>允许写入</p>
+<p>No</p>
+<p>允许附加</p>
+<p>No</p>
+<p>允许同时读写</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<h3 id="-31">范例</h3>
+<p><strong>Example #1 基本用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// 循环 ext/spl/examples/ 目录里所有 *.php 文件  
+// 并打印文件名和文件尺寸  
+$it = new DirectoryIterator("glob://ext/spl/examples/*.php");  
+foreach($it as $f) {  
+    printf("%s: %.1FK\n", $f-&gt;getFilename(), $f-&gt;getSize()/1024);  
+}  
+?&gt;
+</code></pre>
+<p>tree.php: 1.0K
+findregex.php: 0.6K
+findfile.php: 0.7K
+dba_dump.php: 0.9K
+nocvsdir.php: 1.1K
+phar_from_dir.php: 1.0K
+ini_groups.php: 0.9K
+directorytree.php: 0.9K
+dba_array.php: 1.1K
+class_tree.php: 1.8K</p>
+<h2 id="19_8">19.8 phar://</h2>
+<p>phar:// - PHP 归档</p>
+<h3 id="-32">说明</h3>
+<p>phar:// 数据流包装器自 PHP 5.3.0 起开始有效.详细的描述可参见 <a href="phar.using.stream.html">Phar 数据流包装器</a>.</p>
+<h3 id="-33">用法</h3>
+<ul>
+<li>phar://</li>
+</ul>
+<h3 id="-34">可选项</h3>
+<p><strong>封装协议摘要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>支持 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>支持 <a href="filesystem.configuration.html#ini.allow-url-include">allow_url_include</a></p>
+<p>No</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes</p>
+<p>允许附加</p>
+<p>No</p>
+<p>允许同时读写</p>
+<p>Yes</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>Yes</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>Yes</p>
+<h3 id="-35">参见</h3>
+<ul>
+<li><a href="context.phar.html">Phar 上下文(context)选项</a></li>
+</ul>
+<h2 id="19_9">19.9 ssh2://</h2>
+<p>ssh2:// - Secure Shell 2</p>
+<h3 id="-36">说明</h3>
+<p>ssh2.shell:// ssh2.exec:// ssh2.tunnel:// ssh2.sftp:// ssh2.scp:// PHP 4.3.0 and up (PECL)</p>
+<blockquote>
+  <p><strong>Note</strong>: <strong>该封装器默认没有激活</strong><br />
+  为了使用 ssh2.*:// 封装协议, 你必须安装来自 <a href="https://pecl.php.net/">» PECL</a> 的 <a href="https://pecl.php.net/package/ssh2">» SSH2</a> 扩展.</p>
+</blockquote>
+<p>除了支持传统的 URI 登录信息,ssh2 封装协议也支持通过 URL 的主机(host)部分来复用打开连接.</p>
+<h3 id="-37">用法</h3>
+<ul>
+<li>ssh2.shell://user:pass@example.com:22/xterm</li>
+<li>ssh2.exec://user:pass@example.com:22/usr/local/bin/somecmd</li>
+<li>ssh2.tunnel://user:pass@example.com:22/192.168.0.1:14</li>
+<li>ssh2.sftp://user:pass@example.com:22/path/to/filename</li>
+</ul>
+<h3 id="-38">可选项</h3>
+<p><strong>封装协议概要</strong></p>
+<p>属性</p>
+<p>ssh2.shell</p>
+<p>ssh2.exec</p>
+<p>ssh2.tunnel</p>
+<p>ssh2.sftp</p>
+<p>ssh2.scp</p>
+<p>受 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a> 影响</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>No</p>
+<p>允许追加</p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes(当服务器支持的时候)</p>
+<p>No</p>
+<p>允许同时读和写</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes</p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes</p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes</p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes</p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<p>No</p>
+<p>No</p>
+<p>Yes</p>
+<p>No</p>
+<p><strong>上下文选项(Context)</strong></p>
+<p>名称</p>
+<p>用法</p>
+<p>默认</p>
+<p><em>session</em></p>
+<p>重复使用预连接的 ssh2 资源</p>
+<p><em>sftp</em></p>
+<p>重复使用预先分配的 sftp 资源</p>
+<p><em>methods</em></p>
+<p>密钥交换(key exchange),主机密钥(hostkey),cipher,压缩和 MAC 方法</p>
+<p><em>callbacks</em></p>
+<p><em>username</em></p>
+<p>以该用户名连接</p>
+<p><em>password</em></p>
+<p>使用的密码来进行密码验证</p>
+<p><em>pubkey_file</em></p>
+<p>用于验证的公钥(public key)文件</p>
+<p><em>privkey_file</em></p>
+<p>用于验证的私钥(private key)文件</p>
+<p><em>env</em></p>
+<p>需要设置的环境变量的关联数组</p>
+<p><em>term</em></p>
+<p>在分配一个 pty 时请求的终端类型</p>
+<p><em>term_width</em></p>
+<p>在分配一个 pty 时请求的终端宽度</p>
+<p><em>term_height</em></p>
+<p>在分配一个 pty 时请求的终端宽度高度</p>
+<p><em>term_units</em></p>
+<p>term_width 和 term_height 的单位</p>
+<p><strong><code>SSH2_TERM_UNIT_CHARS</code></strong></p>
+<h3 id="-39">范例</h3>
+<p><strong>Example #1 从一个活动连接中打开字节流</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$session = ssh2_connect('example.com', 22);  
+ssh2_auth_pubkey_file($session, 'username', '/home/username/.ssh/id_rsa.pub',  
+                                            '/home/username/.ssh/id_rsa', 'secret');  
+$stream = fopen("ssh2.tunnel://$session/remote.example.com:1234", 'r');  
+?&gt;
+</code></pre>
+<p><strong>Example #2 This $session variable must be kept available!</strong></p>
+<p>In order to use the ssh2.*://$session wrappers you must keep the $session resouce variable. The code below will not have the desired effect:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$session = ssh2_connect('example.com', 22);  
+ssh2_auth_pubkey_file($session, 'username', '/home/username/.ssh/id_rsa.pub',  
+                                            '/home/username/.ssh/id_rsa', 'secret');  
+$connection_string = "ssh2.sftp://$session/";  
+unset($session);  
+$stream = fopen($connection_string . "path/to/file", 'r');  
+?&gt;
+</code></pre>
+<p>unset() closes the session, because $connection_string does not hold a reference to the $session variable, just a string cast derived from it. This also happens when the <a href="function.unset.html">unset()</a> is implicit because of leaving scope (like in a function).</p>
+<h2 id="19_10">19.10 rar://</h2>
+<p>rar:// - RAR</p>
+<h3 id="-40">说明</h3>
+<p>The wrapper takes the url encoded path to the RAR archive (relative or absolute), an optional asterik (<em>*</em>), an optional number sign (<em>#</em>) and an optional url encoded entry name, as stored in the archive. Specifying an entry name requires the number sign; a leading forward slash in the entry name is optional.</p>
+<p>This wrapper can open both files and directories. When opening directories, the asterisk sign forces the directory entries names to be returned unencoded. If it's not specified, they will be returned url encoded – the reason for this is to allow the wrapper to be correctly used with built-in functionality like the <a href="class.recursivedirectoryiterator.html">RecursiveDirectoryIterator</a> in the presence of file names that seem like url encoded data.</p>
+<p>If the pound sign and the entry name part are not included, the root of the archive will be displayed. This differs from regular directories in that the resulting stream will not contain information such as the modification time, as the root directory is not stored in an individual entry in the archive. The usage of the wrapper with <a href="class.recursivedirectoryiterator.html">RecursiveDirectoryIterator</a> requires the number sign to be included in the URL when accessing the root, so that the URLs of the children may be constructed correctly.</p>
+<blockquote>
+  <p><strong>Note</strong>: <strong>This wrapper is not enabled by default</strong><br />
+  In order to use the rar:// wrapper, you must install the <a href="https://pecl.php.net/package/rar">» rar</a> extension available from <a href="https://pecl.php.net/">» PECL</a>.</p>
+</blockquote>
+<p>rar:// Available since PECL rar 3.0.0</p>
+<h3 id="-41">用法</h3>
+<ul>
+<li>rar://<url encoded archive name>[*][#[<url encoded entry name>]]</li>
+</ul>
+<h3 id="-42">可选项</h3>
+<p><strong>Wrapper Summary</strong></p>
+<p>Attribute</p>
+<p>Supported</p>
+<p>Restricted by <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>Restricted by <a href="filesystem.configuration.html#ini.allow-url-include">allow_url_include</a></p>
+<p>No</p>
+<p>Allows Reading</p>
+<p>Yes</p>
+<p>Allows Writing</p>
+<p>No</p>
+<p>Allows Appending</p>
+<p>No</p>
+<p>Allows Simultaneous Reading and Writing</p>
+<p>No</p>
+<p>Supports <a href="function.stat.html">stat()</a></p>
+<p>Yes</p>
+<p>Supports <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>Supports <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>Supports <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>Supports <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<p><strong>Context options</strong></p>
+<p>Name</p>
+<p>Usage</p>
+<p>Default</p>
+<p><em>open_password</em></p>
+<p>The password used to encrypt the headers of the archive, if any. WinRAR will encrypt all the files with the same password as the headers password when the later is present, so for archives with encrypted headers, <em>file_password</em> will be ignored.</p>
+<p><em>file_password</em></p>
+<p>The password used to encrypt a file, if any. If the headers are also encrypted, this option will be ignored in favor of <em>open_password</em>. The reason there are two options is to cover the possibility of supporting archives with different headers and file passwords, should those archives arise. Note that if the archive does not have its headers encrypted, <em>open_password</em> will be ignored and this option must be used instead.</p>
+<p><em>volume_callback</em></p>
+<p>A callback to determine the path of missing volumes. See <a href="rararchive.open.html">RarArchive::open()</a> for more information.</p>
+<h3 id="-43">范例</h3>
+<p><strong>Example #1 Traversing a RAR archive</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class MyRecDirIt extends RecursiveDirectoryIterator {  
+    function current() {  
+        return rawurldecode($this-&gt;getSubPathName()) .  
+            (is_dir(parent::current())?" [DIR]":"");  
+    }  
+}  
+
+$f = "rar://" . rawurlencode(dirname(__FILE__)) .  
+    DIRECTORY_SEPARATOR . 'dirs_and_extra_headers.rar#';  
+
+$it = new RecursiveTreeIterator(new MyRecDirIt($f));  
+
+foreach ($it as $s) {  
+    echo $s, "\n";  
+}  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>|-allow_everyone_ni [DIR]
+|-file1.txt
+|-file2_אּ.txt
+|-with_streams.txt
+\-אּ [DIR]
+  |-אּ\%2Fempty%2E [DIR]
+  | \-אּ\%2Fempty%2E\file7.txt
+  |-אּ\empty [DIR]
+  |-אּ\file3.txt
+  |-אּ\file4_אּ.txt
+  \-אּ\אּ_2 [DIR]
+    |-אּ\אּ_2\file5.txt
+    \-אּ\אּ_2\file6_אּ.txt</p>
+<p><strong>Example #2 Opening an encrypted file (header encryption)</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$stream = fopen("rar://" .  
+    rawurlencode(dirname(__FILE__)) . DIRECTORY_SEPARATOR .  
+    'encrypted_headers.rar' . '#encfile1.txt', "r", false,  
+    stream_context_create(  
+        array(  
+            'rar' =&gt;  
+                array(  
+                    'open_password' =&gt; 'samplepassword'  
+                )  
+            )  
+        )  
+    );  
+var_dump(stream_get_contents($stream));  
+/* creation and last access date is opt-in in WinRAR, hence most  
+ * files don't have them */  
+var_dump(fstat($stream));  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>string(26) "Encrypted file 1 contents."
+Array
+(
+    [0] =&gt; 0
+    [1] =&gt; 0
+    [2] =&gt; 33206
+    [3] =&gt; 1
+    [4] =&gt; 0
+    [5] =&gt; 0
+    [6] =&gt; 0
+    [7] =&gt; 26
+    [8] =&gt; 0
+    [9] =&gt; 1259550052
+    [10] =&gt; 0
+    [11] =&gt; -1
+    [12] =&gt; -1
+    [dev] =&gt; 0
+    [ino] =&gt; 0
+    [mode] =&gt; 33206
+    [nlink] =&gt; 1
+    [uid] =&gt; 0
+    [gid] =&gt; 0
+    [rdev] =&gt; 0
+    [size] =&gt; 26
+    [atime] =&gt; 0
+    [mtime] =&gt; 1259550052
+    [ctime] =&gt; 0
+    [blksize] =&gt; -1
+    [blocks] =&gt; -1
+)</p>
+<h2 id="19_11">19.11 ogg://</h2>
+<p>ogg:// - 音频流</p>
+<h3 id="-44">说明</h3>
+<p>通过包装器 ogg:// 读取的文件, 是作为 <em>OGG/Vorbis</em> 格式的压缩音频编码. 同样,通过包装器 ogg:// 写入或追加的数据格式也是压缩音频. 当 <a href="function.stream-get-meta-data.html">stream_get_meta_data()</a> 用于一个打开读取的 <em>OGG/Vorbis</em> 文件时,会返回关于数据流的详细信息,包含了 <code>vendor</code> 标签,任何内含的 <code>comments</code>, <code>channels</code> 数字,采样率(<code>rate</code>),以及 用 <code>bitrate_lower</code>,<code>bitrate_upper</code>, <code>bitrate_nominal</code> 和 <code>bitrate_window</code> 描述的可变比特率范围.</p>
+<p>ogg:// PHP 4.3.0 及以上(PECL)</p>
+<blockquote>
+  <p><strong>Note</strong>: <strong>该封装器默认未激活</strong><br />
+  要使用 ogg:// 封装器,您必须安装 <a href="https://pecl.php.net/package/oggvorbis">» OGG/Vorbis</a> 扩展. 可以在 <a href="https://pecl.php.net/">» PECL</a> 上找到.</p>
+</blockquote>
+<h3 id="-45">用法</h3>
+<ul>
+<li>ogg://soundfile.ogg</li>
+<li>ogg:///path/to/soundfile.ogg</li>
+<li>ogg://http://www.example.com/path/to/soundstream.ogg</li>
+</ul>
+<h3 id="-46">可选项</h3>
+<p><strong>封装协议摘要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受限于 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a></p>
+<p>No</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes</p>
+<p>允许附加</p>
+<p>Yes</p>
+<p>允许同时读写</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<p><strong>上下文选项</strong></p>
+<p>Name</p>
+<p>Usage</p>
+<p>Default</p>
+<p>Mode</p>
+<p><em>pcm_mode</em></p>
+<p>读取时使用如下 PCM 编码之一: <strong><code>OGGVORBIS_PCM_U8</code></strong>,<strong><code>OGGVORBIS_PCM_S8</code></strong>, <strong><code>OGGVORBIS_PCM_U16_BE</code></strong>,<strong><code>OGGVORBIS_PCM_S16_BE</code></strong>, <strong><code>OGGVORBIS_PCM_U16_LE</code></strong> 和 <strong><code>OGGVORBIS_PCM_S16_LE</code></strong>. (8 或 16 位,签名或未签名,大或小的 <em>endian</em>)</p>
+<p>OGGVORBIS_PCM_S16_LE</p>
+<p>读取</p>
+<p><em>rate</em></p>
+<p>输入数据的采样率,单位为 Hz</p>
+<p>44100</p>
+<p>写入/附加</p>
+<p><em>bitrate</em></p>
+<p>若给的值为整数,则是用固定的比特率进行编码.(16000 到 131072)若给的值为浮点数,则使用可变的比特率(质.(-1.0 到 1.0)</p>
+<p>128000</p>
+<p>写入/附加</p>
+<p><em>channels</em></p>
+<p>要编码的声道的数量,典型为 1 (单声道), 或 2 (立体声).最高支持 16 声道.</p>
+<p>2</p>
+<p>写入/附加</p>
+<p><em>comments</em></p>
+<p>编码到音轨头部的字符串数组.</p>
+<p>写入/附加</p>
+<h3 id="-47">范例</h3>
+<h2 id="19_12">19.12 expect://</h2>
+<p>expect:// - 处理交互式的流</p>
+<h3 id="-48">说明</h3>
+<p>由 expect:// 封装协议打开的数据流 PTY 通过提供了对进程 stdio,stdout 和 stderr 的访问.</p>
+<blockquote>
+  <p><strong>Note</strong>: <strong>该封装协议默认未开启</strong><br />
+  为了使用 expect:// 封装器,你必须安装 <a href="https://pecl.php.net/">» PECL</a> 上的 <a href="https://pecl.php.net/package/expect">» Expect</a> 扩展.</p>
+</blockquote>
+<p>expect:// PHP 4.3.0 and up (PECL)</p>
+<h3 id="-49">用法</h3>
+<ul>
+<li>expect://command</li>
+</ul>
+<h3 id="-50">可选项</h3>
+<p><strong>封装协议概要</strong></p>
+<p>属性</p>
+<p>支持</p>
+<p>受 <a href="filesystem.configuration.html#ini.allow-url-fopen">allow_url_fopen</a> 影响</p>
+<p>No</p>
+<p>允许读取</p>
+<p>Yes</p>
+<p>允许写入</p>
+<p>Yes</p>
+<p>允许添加</p>
+<p>Yes</p>
+<p>允许同时读和写</p>
+<p>No</p>
+<p>支持 <a href="function.stat.html">stat()</a></p>
+<p>No</p>
+<p>支持 <a href="function.unlink.html">unlink()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rename.html">rename()</a></p>
+<p>No</p>
+<p>支持 <a href="function.mkdir.html">mkdir()</a></p>
+<p>No</p>
+<p>支持 <a href="function.rmdir.html">rmdir()</a></p>
+<p>No</p>
+<h3 id="-51">范例</h3>

@@ -1,0 +1,2554 @@
+<h1 id="9_">9. 类与对象</h1>
+<h3 id="9_1">9.1 简介</h3>
+<p>自 PHP 5 起完全重写了对象模型以得到更佳性能和更多特性.这是自 PHP 4 以来的最大变化.PHP 5 具有完整的对象模型.</p>
+<p>PHP 5 中的新特性包括<a href="language.oop5.visibility.html">访问控制</a>,<a href="language.oop5.abstract.html">抽象类</a>和 <a href="language.oop5.final.html">final</a> 类与方法,附加的<a href="language.oop5.magic.html">魔术方法</a>,<a href="language.oop5.interfaces.html">接口</a>,<a href="language.oop5.cloning.html">对象复制</a>和<a href="language.oop5.typehinting.html">类型约束</a>.</p>
+<p>PHP 对待对象的方式与引用和句柄相同,即每个变量都持有对象的引用,而不是整个对象的拷贝.参见<a href="language.oop5.references.html">对象和引用</a>.</p>
+<p><strong>Tip</strong></p>
+<p>请参见<a href="userlandnaming.html">用户空间命名指南</a>.</p>
+<h3 id="9_2">9.2 基本概念</h3>
+<h3 id="class">class</h3>
+<p>每个类的定义都以关键字 <em>class</em> 开头,后面跟着类名,后面跟着一对花括号,里面包含有类的属性与方法的定义.</p>
+<p>类名可以是任何非 PHP <a href="reserved.html">保留字</a>的合法标签.一个合法类名以字母或下划线开头,后面跟着若干字母,数字或下划线.以正则表达式表示为:<em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>.</p>
+<p>一个类可以包含有属于自己的<a href="language.oop5.constants.html">常量</a>,<a href="language.oop5.properties.html">变量</a>(称为"属性")以及函数(称为"方法").</p>
+<p><strong>Example #1 简单的类定义</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class SimpleClass  
+{  
+    // 声明属性  
+    public $var = 'a default value';  
+
+    // 声明方法  
+    public function displayVar() {  
+        echo $this-&gt;var;  
+    }  
+}  
+?&gt;
+</code></pre>
+<p>当一个方法在类定义内部被调用时,有一个可用的伪变量 $this.$this 是一个到主叫对象的引用(通常是该方法所从属的对象,但如果是从第二个对象<a href="language.oop5.static.html">静态</a>调用时也可能是另一个对象).</p>
+<p><strong>Example #2 $this 伪变量的示例</strong></p>
+<p>We're assuming that error_reporting is disabled for this example; otherwise the following code would trigger deprecated and strict notices, respectively, depending on the PHP version.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class A  
+{  
+    function foo()  
+    {  
+        if (isset($this)) {  
+            echo '$this is defined (';  
+            echo get_class($this);  
+            echo ")\n";  
+        } else {  
+            echo "\$this is not defined.\n";  
+        }  
+    }  
+}  
+
+class B  
+{  
+    function bar()  
+    {  
+        A::foo();  
+    }  
+}  
+
+$a = new A();  
+$a-&gt;foo();  
+
+A::foo();  
+
+$b = new B();  
+$b-&gt;bar();  
+
+B::bar();  
+?&gt;
+</code></pre>
+<p>Output of the above example in PHP 5:</p>
+<p>$this is defined (A)
+$this is not defined.
+$this is defined (B)
+$this is not defined.</p>
+<p>Output of the above example in PHP 7:</p>
+<p>$this is defined (A)
+$this is not defined.
+$this is not defined.
+$this is not defined.</p>
+<h3 id="new">new</h3>
+<p>要创建一个类的实例,必须使用 <em>new</em> 关键字.当创建新对象时该对象总是被赋值,除非该对象定义了<a href="language.oop5.decon.html">构造函数</a>并且在出错时抛出了一个<a href="language.exceptions.html">异常</a>.类应在被实例化之前定义(某些情况下则必须这样).</p>
+<p>如果在 <em>new</em> 之后跟着的是一个包含有类名的字符串 <a href="language.types.string.html">string</a>,则该类的一个实例被创建.如果该类属于一个命名空间,则必须使用其完整名称.</p>
+<p><strong>Example #3 创建实例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$instance = new SimpleClass();  
+
+// 也可以这样做:  
+$className = 'Foo';  
+$instance = new $className(); // Foo()  
+?&gt;
+</code></pre>
+<p>在类定义内部,可以用 <em>new self</em> 和 <em>new parent</em> 创建新对象.</p>
+<p>当把一个对象已经创建的实例赋给一个新变量时,新变量会访问同一个实例,就和用该对象赋值一样.此行为和给函数传递入实例时一样.可以用<a href="language.oop5.cloning.html">克隆</a>给一个已创建的对象建立一个新实例.</p>
+<p><strong>Example #4 对象赋值</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$instance = new SimpleClass();  
+
+$assigned   =  $instance;  
+$reference  =&amp; $instance;  
+
+$instance-&gt;var = '$assigned will have this value';  
+
+$instance = null; // $instance and $reference become null  
+
+var_dump($instance);  
+var_dump($reference);  
+var_dump($assigned);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>NULL
+NULL
+object(SimpleClass)#1 (1) {
+   ["var"]=&gt;
+     string(30) "$assigned will have this value"
+}</p>
+<p>PHP 5.3.0 引进了两个新方法来创建一个对象的实例:</p>
+<p><strong>Example #5 创建新对象</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Test  
+{  
+    static public function getNew()  
+    {  
+        return new static;  
+    }  
+}  
+
+class Child extends Test  
+{}  
+
+$obj1 = new Test();  
+$obj2 = new $obj1;  
+var_dump($obj1 !== $obj2);  
+
+$obj3 = Test::getNew();  
+var_dump($obj3 instanceof Test);  
+
+$obj4 = Child::getNew();  
+var_dump($obj4 instanceof Child);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>bool(true)
+bool(true)
+bool(true)</p>
+<p>PHP 5.4.0 起,可以通过一个表达式来访问新创建对象的成员:</p>
+<p><strong>Example #6 访问新创建对象的成员</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo (new DateTime())-&gt;format('Y');  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>2016</p>
+<h3 id="propertiesandmethods">Properties and methods</h3>
+<p>Class properties and methods live in separate "namespaces", so it is possible to have a property and a method with the same name. Referring to both a property and a method has the same notation, and whether a property will be accessed or a method will be called, solely depends on the context, i.e. whether the usage is a variable access or a function call.</p>
+<p><strong>Example #7 Property access vs. method call</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Foo  
+{  
+    public $bar = 'property';  
+
+    public function bar() {  
+        return 'method';  
+    }  
+}  
+
+$obj = new Foo();  
+echo $obj-&gt;bar, PHP_EOL, $obj-&gt;bar(), PHP_EOL;`
+
+以上例程会输出:
+
+property
+method
+
+That means that calling an [anonymous function](functions.anonymous.html) which has been assigned to a property is not directly possible. Instead the property has to be assigned to a variable first, for instance. As of PHP 7.0.0 it is possible to call such a property directly by enclosing it in parentheses.
+
+**Example #8 Calling an anonymous function stored in a property**
+</code></pre>
+<p>php
+&lt;?php<br />
+class Foo<br />
+{<br />
+    public $bar;  </p>
+<pre class="prettyprint"><code>public function __construct() {  
+    $this-&gt;bar = function() {  
+        return 42;  
+    };  
+}  
+</code></pre>
+<p>}  </p>
+<p>$obj = new Foo();  </p>
+<p>// as of PHP 5.3.0:<br />
+$func = $obj-&gt;bar;<br />
+echo $func(), PHP_EOL;  </p>
+<p>// alternatively, as of PHP 7.0.0:<br />
+echo ($obj-&gt;bar)(), PHP_EOL;`</p>
+<p>以上例程会输出:</p>
+<p>42</p>
+<h3 id="extends">extends</h3>
+<p>一个类可以在声明中用 <em>extends</em> 关键字继承另一个类的方法和属性.PHP不支持多重继承,一个类只能继承一个基类.</p>
+<p>被继承的方法和属性可以通过用同样的名字重新声明被覆盖.但是如果父类定义方法时使用了 <a href="language.oop5.final.html">final</a>,则该方法不可被覆盖.可以通过 <a href="language.oop5.paamayim-nekudotayim.html">parent::</a> 来访问被覆盖的方法或属性.</p>
+<p>当覆盖方法时,参数必须保持一致否则 PHP 将发出 <strong><code>E_STRICT</code></strong> 级别的错误信息.但构造函数例外,构造函数可在被覆盖时使用不同的参数.</p>
+<p><strong>Example #9 简单的类继承</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class ExtendClass extends SimpleClass  
+{  
+    // Redefine the parent method  
+    function displayVar()  
+    {  
+        echo "Extending class\n";  
+        parent::displayVar();  
+    }  
+}  
+
+$extended = new ExtendClass();  
+$extended-&gt;displayVar();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Extending class
+a default value</p>
+<h3 id="class-1">::class</h3>
+<p>自 PHP 5.5 起,关键词 <em>class</em> 也可用于类名的解析.使用 <em>ClassName::class</em> 你可以获取一个字符串,包含了类 <em>ClassName</em> 的完全限定名称.这对使用了 <a href="language.namespaces.html">命名空间</a> 的类尤其有用.</p>
+<p><strong>Example #10 类名的解析</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+namespace NS {  
+    class ClassName {  
+    }  
+
+    echo ClassName::class;  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>NS\ClassName</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>The class name resolution using <em>::class</em> is a compile time transformation. That means at the time the class name string is created no autoloading has happened yet. As a consequence, class names are expanded even if the class does not exist. No error is issued in that case.</p>
+</blockquote>
+<h3 id="9_3">9.3 属性</h3>
+<p>类的变量成员叫做"属性",或者叫"字段","特征",在本文档统一称为"属性".属性声明是由关键字 <em>public</em>,<em>protected</em> 或者 <em>private</em> 开头,然后跟一个普通的变量声明来组成.属性中的变量可以初始化,但是初始化的值必须是常数,这里的常数是指 PHP 脚本在编译阶段时就可以得到其值,而不依赖于运行时的信息才能求值.</p>
+<p>有关 <em>public</em>,<em>protected</em> 和 <em>private</em> 的更多详细信息,请查看<a href="language.oop5.visibility.html">访问控制(可见性)</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>为了向后兼容 PHP 4,PHP 5 声明属性依然可以直接使用关键字 <em>var</em> 来替代(或者附加于)<em>public</em>,<em>protected</em> 或 <em>private</em>.但是已不再需要 <em>var</em> 了.在 PHP 5.0 到 5.1.3,<em>var</em> 会被认为是废弃的,而且抛出 <strong><code>E_STRICT</code></strong> 警告,但是 5.1.3 之后就不再认为是废弃,也不会抛出警告.</p>
+  <p>如果直接使用 <em>var</em> 声明属性,而没有用 <em>public</em>,<em>protected</em> 或 <em>private</em> 之一,PHP 5 会将其视为 <em>public</em>.</p>
+</blockquote>
+<p>在类的成员方法里面,可以用 <em>-></em>(对象运算符):$this-&gt;property(其中 <em>property</em> 是该属性名)这种方式来访问非静态属性.静态属性则是用 <em>::</em>(双冒号):self::$property 来访问.更多静态属性与非静态属性的区别参见 <a href="language.oop5.static.html">Static 关键字</a>.</p>
+<p>当一个方法在类定义内部被调用时,有一个可用的伪变量 $this.$this 是一个到主叫对象的引用(通常是该方法所从属的对象,但如果是从第二个对象<a href="language.oop5.static.html">静态</a>调用时也可能是另一个对象).</p>
+<p><strong>Example #1 属性声明</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class SimpleClass  
+{  
+   // 错误的属性声明  
+   public $var1 = 'hello ' . 'world';  
+   public $var2 = &lt;&lt;&lt;EOD  
+hello world  
+EOD;  
+   public $var3 = 1+2;  
+   public $var4 = self::myStaticMethod();  
+   public $var5 = $myVar;  
+
+   // 正确的属性声明  
+   public $var6 = myConstant;  
+   public $var7 = array(true, false);  
+
+   //在 PHP 5.3.0 及之后,下面的声明也正确  
+   public $var8 = &lt;&lt;&lt;'EOD'  
+hello world  
+EOD;  
+}  
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>更多关于类/对象的处理函数,请查看<a href="ref.classobj.html">类/对象函数</a>.</p>
+</blockquote>
+<p>跟 <a href="language.types.string.html#language.types.string.syntax.heredoc">heredocs</a> 不同,<a href="language.types.string.html#language.types.string.syntax.nowdoc">nowdocs</a> 可在任何静态数据上下文中使用,包括属性声明.</p>
+<p><strong>Example #2 示例:使用 nowdoc 初始化属性</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class foo {  
+   // 自 5.3.0 起  
+   public $bar = &lt;&lt;&lt;'EOT'  
+bar  
+EOT;  
+}  
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>Nowdoc 支持是在 PHP 5.3.0 新增的.</p>
+</blockquote>
+<h3 id="9_4">9.4 类常量</h3>
+<p>可以把在类中始终保持不变的值定义为常量.在定义和使用常量的时候不需要使用 $ 符号.</p>
+<p>常量的值必须是一个定值,不能是变量,类属性,数学运算的结果或函数调用.</p>
+<p>接口(interface)中也可以定义常量.更多示例见文档中的<a href="language.oop5.interfaces.html">接口</a>部分.</p>
+<p>自 PHP 5.3.0 起,可以用一个变量来动态调用类.但该变量的值不能为关键字(如 <em>self</em>,<em>parent</em> 或 <em>static</em>).</p>
+<p><strong>Example #1 定义和使用一个类常量</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyClass  
+{  
+    const constant = 'constant value';  
+
+    function showConstant() {  
+        echo  self::constant . "\n";  
+    }  
+}  
+
+echo MyClass::constant . "\n";  
+
+$classname = "MyClass";  
+echo $classname::constant . "\n"; // 自 5.3.0 起  
+
+$class = new MyClass();  
+$class-&gt;showConstant();  
+
+echo $class::constant."\n"; // 自 PHP 5.3.0 起  
+?&gt;
+</code></pre>
+<p><strong>Example #2 静态数据示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class foo {  
+    // 自 PHP 5.3.0 起  
+    const bar = &lt;&lt;&lt;'EOT'  
+bar  
+EOT;  
+}  
+?&gt;
+</code></pre>
+<p>和 heredoc 不同,nowdoc 可以用在任何静态数据中.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>Nowdoc 支持是在 PHP 5.3.0 新增的.</p>
+</blockquote>
+<h3 id="9_5">9.5 类的自动加载</h3>
+<p>在编写面向对象(OOP) 程序时,很多开发者为每个类新建一个 PHP 文件. 这会带来一个烦恼:每个脚本的开头,都需要包含(include)一个长长的列表(每个类都有个文件).</p>
+<p>在 PHP 5 中,已经不再需要这样了. <a href="function.spl-autoload-register.html">spl_autoload_register()</a> 函数可以注册任意数量的自动加载器,当使用尚未被定义的类(class)和接口(interface)时自动去加载.通过注册自动加载器,脚本引擎在 PHP 出错失败前有了最后一个机会加载所需的类.</p>
+<p><strong>Tip</strong></p>
+<p>尽管 <a href="function.autoload.html">__autoload()</a> 函数也能自动加载类和接口,但更建议使用 <a href="function.spl-autoload-register.html">spl_autoload_register()</a> 函数. <a href="function.spl-autoload-register.html">spl_autoload_register()</a> 提供了一种更加灵活的方式来实现类的自动加载(同一个应用中,可以支持任意数量的加载器,比如第三方库中的).因此,不再建议使用 <a href="function.autoload.html">__autoload()</a> 函数,在以后的版本中它可能被弃用.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在 PHP 5.3 之前,__autoload 函数抛出的异常不能被 <a href="language.exceptions.html">catch</a> 语句块捕获并会导致一个致命错误(Fatal Error). 自 PHP 5.3 起,能够 thrown 自定义的异常(Exception),随后自定义异常类即可使用. __autoload 函数可以递归的自动加载自定义异常类.</p>
+  <p><strong>Note</strong>:</p>
+  <p>自动加载不可用于 PHP 的 CLI <a href="features.commandline.html">交互模式</a>.</p>
+  <p><strong>Note</strong>:</p>
+  <p>如果类名比如被用于 <a href="function.call-user-func.html">call_user_func()</a>,则它可能包含一些危险的字符,比如 <em>../</em>. 建议您在这样的函数中不要使用用户的输入,起码需要在 <a href="function.autoload.html">__autoload()</a> 时验证下输入.</p>
+</blockquote>
+<p><strong>Example #1 自动加载示例</strong></p>
+<p>本例尝试分别从 MyClass1.php 和 MyClass2.php 文件中加载 <em>MyClass1</em> 和 <em>MyClass2</em> 类.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+spl_autoload_register(function ($class_name) {  
+    require_once $class_name . '.php';  
+});  
+
+$obj  = new MyClass1();  
+$obj2 = new MyClass2();  
+?&gt;
+</code></pre>
+<p><strong>Example #2 另一个例子</strong></p>
+<p>本例尝试加载接口 <em>ITest</em>.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+spl_autoload_register(function ($name) {  
+    var_dump($name);  
+});  
+
+class Foo implements ITest {  
+}  
+
+/*  
+string(5) "ITest"  
+
+Fatal error: Interface 'ITest' not found in ...  
+*/  
+?&gt;
+</code></pre>
+<p><strong>Example #3 自动加载在 PHP 5.3.0+ 中的异常处理</strong></p>
+<p>本例抛出一个异常并在 try/catch 语句块中演示.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+spl_autoload_register(function ($name) {  
+    echo "Want to load $name.\n";  
+    throw new Exception("Unable to load $name.");  
+});  
+
+try {  
+    $obj = new NonLoadableClass();  
+} catch (Exception $e) {  
+    echo $e-&gt;getMessage(), "\n";  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Want to load NonLoadableClass.
+Unable to load NonLoadableClass.</p>
+<p><strong>Example #4 自动加载在 PHP 5.3.0+ 中的异常处理 - 没有自定义异常机制</strong></p>
+<p>本例将一个异常抛给不存在的自定义异常处理函数.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+spl_autoload_register(function ($name) {  
+    echo "Want to load $name.\n";  
+    throw new MissingException("Unable to load $name.");  
+});  
+
+try {  
+    $obj = new NonLoadableClass();  
+} catch (Exception $e) {  
+    echo $e-&gt;getMessage(), "\n";  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Want to load NonLoadableClass.
+Want to load MissingException.</p>
+<p>Fatal error: Class 'MissingException' not found in testMissingException.php on line 4</p>
+<h3 id="">参见</h3>
+<ul>
+<li><a href="function.unserialize.html">unserialize()</a></li>
+<li><a href="var.configuration.html#unserialize-callback-func">unserialize_callback_func</a></li>
+<li><a href="function.spl-autoload-register.html">spl_autoload_register()</a></li>
+<li><a href="function.spl-autoload.html">spl_autoload()</a></li>
+<li><a href="function.autoload.html">__autoload()</a></li>
+</ul>
+<h3 id="9_6">9.6 构造函数和析构函数</h3>
+<h3 id="-1">构造函数</h3>
+<p><strong>__construct</strong> ([ <a href="language.pseudo-types.html#language.types.mixed">mixed</a> <code>$args</code> [, <code>$...</code> ]] ) : void</p>
+<p>PHP 5 允行开发者在一个类中定义一个方法作为构造函数.具有构造函数的类会在每次创建新对象时先调用此方法,所以非常适合在使用对象之前做一些初始化工作.</p>
+<blockquote>
+  <p><strong>Note</strong>: 如果子类中定义了构造函数则不会隐式调用其父类的构造函数.要执行父类的构造函数,需要在子类的构造函数中调用 <strong>parent::__construct()</strong>.如果子类没有定义构造函数则会如同一个普通的类方法一样从父类继承(假如没有被定义为 private 的话).</p>
+</blockquote>
+<p><strong>Example #1 使用新标准的构造函数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class BaseClass {  
+   function __construct() {  
+       print "In BaseClass constructor\n";  
+   }  
+}  
+
+class SubClass extends BaseClass {  
+   function __construct() {  
+       parent::__construct();  
+       print "In SubClass constructor\n";  
+   }  
+}  
+
+class OtherSubClass extends BaseClass {  
+    // inherits BaseClass's constructor  
+}  
+
+// In BaseClass constructor  
+$obj = new BaseClass();  
+
+// In BaseClass constructor  
+// In SubClass constructor  
+$obj = new SubClass();  
+
+// In BaseClass constructor  
+$obj = new OtherSubClass();  
+?&gt;
+</code></pre>
+<p>为了实现向后兼容性,如果 PHP 5 在类中找不到 <a href="language.oop5.decon.html#object.construct">__construct()</a> 函数并且也没有从父类继承一个的话,它就会尝试寻找旧式的构造函数,也就是和类同名的函数.因此唯一会产生兼容性问题的情况是:类中已有一个名为 <strong>__construct()</strong> 的方法却被用于其它用途时.</p>
+<p>与其它方法不同,当 <a href="language.oop5.decon.html#object.construct">__construct()</a> 被与父类 <a href="language.oop5.decon.html#object.construct">__construct()</a> 具有不同参数的方法覆盖时,PHP 不会产生一个 <strong><code>E_STRICT</code></strong> 错误信息.</p>
+<p>自 PHP 5.3.3 起,在命名空间中,与类名同名的方法不再作为构造函数.这一改变不影响不在命名空间中的类.</p>
+<p><strong>Example #2 Constructors in namespaced classes</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+namespace Foo;  
+class Bar {  
+    public function Bar() {  
+        // treated as constructor in PHP 5.3.0-5.3.2  
+        // treated as regular method as of PHP 5.3.3  
+    }  
+}  
+?&gt;
+</code></pre>
+<h3 id="-2">析构函数</h3>
+<p><strong>__destruct</strong> ( void ) : void</p>
+<p>PHP 5 引入了析构函数的概念,这类似于其它面向对象的语言,如 C++.析构函数会在到某个对象的所有引用都被删除或者当对象被显式销毁时执行.</p>
+<p><strong>Example #3 析构函数示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyDestructableClass {  
+   function __construct() {  
+       print "In constructor\n";  
+       $this-&gt;name = "MyDestructableClass";  
+   }  
+
+   function __destruct() {  
+       print "Destroying " . $this-&gt;name . "\n";  
+   }  
+}  
+
+$obj = new MyDestructableClass();  
+?&gt;
+</code></pre>
+<p>和构造函数一样,父类的析构函数不会被引擎暗中调用.要执行父类的析构函数,必须在子类的析构函数体中显式调用 <strong>parent::__destruct()</strong>.此外也和构造函数一样,子类如果自己没有定义析构函数则会继承父类的.</p>
+<p>析构函数即使在使用 <a href="function.exit.html">exit()</a> 终止脚本运行时也会被调用.在析构函数中调用 <a href="function.exit.html">exit()</a> 将会中止其余关闭操作的运行.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>析构函数在脚本关闭时调用,此时所有的 HTTP 头信息已经发出.脚本关闭时的工作目录有可能和在 SAPI(如 apache)中时不同.</p>
+  <p><strong>Note</strong>:</p>
+  <p>试图在析构函数(在脚本终止时被调用)中抛出一个异常会导致致命错误.</p>
+</blockquote>
+<h3 id="9_7">9.7 访问控制(可见性)</h3>
+<p>对属性或方法的访问控制,是通过在前面添加关键字 <em>public</em>(公有),<em>protected</em>(受保护)或 <em>private</em>(私有)来实现的.被定义为公有的类成员可以在任何地方被访问.被定义为受保护的类成员则可以被其自身以及其子类和父类访问.被定义为私有的类成员则只能被其定义所在的类访问.</p>
+<h3 id="-3">属性的访问控制</h3>
+<p>类属性必须定义为公有,受保护,私有之一.如果用 <em>var</em> 定义,则被视为公有.</p>
+<p><strong>Example #1 属性声明</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+/**  
+ * Define MyClass  
+ */  
+class MyClass  
+{  
+    public $public = 'Public';  
+    protected $protected = 'Protected';  
+    private $private = 'Private';  
+
+    function printHello()  
+    {  
+        echo $this-&gt;public;  
+        echo $this-&gt;protected;  
+        echo $this-&gt;private;  
+    }  
+}  
+
+$obj = new MyClass();  
+echo $obj-&gt;public; // 这行能被正常执行  
+echo $obj-&gt;protected; // 这行会产生一个致命错误  
+echo $obj-&gt;private; // 这行也会产生一个致命错误  
+$obj-&gt;printHello(); // 输出 Public,Protected 和 Private  
+
+
+/**  
+ * Define MyClass2  
+ */  
+class MyClass2 extends MyClass  
+{  
+    // 可以对 public 和 protected 进行重定义,但 private 而不能  
+    protected $protected = 'Protected2';  
+
+    function printHello()  
+    {  
+        echo $this-&gt;public;  
+        echo $this-&gt;protected;  
+        echo $this-&gt;private;  
+    }  
+}  
+
+$obj2 = new MyClass2();  
+echo $obj2-&gt;public; // 这行能被正常执行  
+echo $obj2-&gt;private; // 未定义 private  
+echo $obj2-&gt;protected; // 这行会产生一个致命错误  
+$obj2-&gt;printHello(); // 输出 Public,Protected2 和 Undefined  
+
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>: 为了兼容性考虑,在 PHP 4 中使用 <em>var</em> 关键字对变量进行定义的方法在 PHP 5 中仍然有效(只是作为 public 关键字的一个别名).在 PHP 5.1.3 之前的版本,该语法会产生一个 <strong><code>E_STRICT</code></strong> 警告.</p>
+</blockquote>
+<h3 id="-4">方法的访问控制</h3>
+<p>类中的方法可以被定义为公有,私有或受保护.如果没有设置这些关键字,则该方法默认为公有.</p>
+<p><strong>Example #2 方法声明</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+/**  
+ * Define MyClass  
+ */  
+class MyClass  
+{  
+    // 声明一个公有的构造函数  
+    public function __construct() { }  
+
+    // 声明一个公有的方法  
+    public function MyPublic() { }  
+
+    // 声明一个受保护的方法  
+    protected function MyProtected() { }  
+
+    // 声明一个私有的方法  
+    private function MyPrivate() { }  
+
+    // 此方法为公有  
+    function Foo()  
+    {  
+        $this-&gt;MyPublic();  
+        $this-&gt;MyProtected();  
+        $this-&gt;MyPrivate();  
+    }  
+}  
+
+$myclass = new MyClass;  
+$myclass-&gt;MyPublic(); // 这行能被正常执行  
+$myclass-&gt;MyProtected(); // 这行会产生一个致命错误  
+$myclass-&gt;MyPrivate(); // 这行会产生一个致命错误  
+$myclass-&gt;Foo(); // 公有,受保护,私有都可以执行  
+
+
+/**  
+ * Define MyClass2  
+ */  
+class MyClass2 extends MyClass  
+{  
+    // 此方法为公有  
+    function Foo2()  
+    {  
+        $this-&gt;MyPublic();  
+        $this-&gt;MyProtected();  
+        $this-&gt;MyPrivate(); // 这行会产生一个致命错误  
+    }  
+}  
+
+$myclass2 = new MyClass2;  
+$myclass2-&gt;MyPublic(); // 这行能被正常执行  
+$myclass2-&gt;Foo2(); // 公有的和受保护的都可执行,但私有的不行  
+
+class Bar   
+{  
+    public function test() {  
+        $this-&gt;testPrivate();  
+        $this-&gt;testPublic();  
+    }  
+
+    public function testPublic() {  
+        echo "Bar::testPublic\n";  
+    }  
+
+    private function testPrivate() {  
+        echo "Bar::testPrivate\n";  
+    }  
+}  
+
+class Foo extends Bar   
+{  
+    public function testPublic() {  
+        echo "Foo::testPublic\n";  
+    }  
+
+    private function testPrivate() {  
+        echo "Foo::testPrivate\n";  
+    }  
+}  
+
+$myFoo = new foo();  
+$myFoo-&gt;test(); // Bar::testPrivate   
+                // Foo::testPublic  
+?&gt;
+</code></pre>
+<h3 id="-5">其它对象的访问控制</h3>
+<p>同一个类的对象即使不是同一个实例也可以互相访问对方的私有与受保护成员.这是由于在这些对象的内部具体实现的细节都是已知的.</p>
+<p><strong>Example #3 访问同一个对象类型的私有成员</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Test  
+{  
+    private $foo;  
+
+    public function __construct($foo)  
+    {  
+        $this-&gt;foo = $foo;  
+    }  
+
+    private function bar()  
+    {  
+        echo 'Accessed the private method.';  
+    }  
+
+    public function baz(Test $other)  
+    {  
+        // We can change the private property:  
+        $other-&gt;foo = 'hello';  
+        var_dump($other-&gt;foo);  
+
+        // We can also call the private method:  
+        $other-&gt;bar();  
+    }  
+}  
+
+$test = new Test('test');  
+
+$test-&gt;baz(new Test('other'));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>string(5) "hello"
+Accessed the private method.</p>
+<h3 id="9_8">9.8 对象继承</h3>
+<p>继承已为大家所熟知的一个程序设计特性,PHP 的对象模型也使用了继承.继承将会影响到类与类,对象与对象之间的关系.</p>
+<p>比如,当扩展一个类,子类就会继承父类所有公有的和受保护的方法.除非子类覆盖了父类的方法,被继承的方法都会保留其原有功能.</p>
+<p>继承对于功能的设计和抽象是非常有用的,而且对于类似的对象增加新功能就无须重新再写这些公用的功能.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>除非使用了自动加载,否则一个类必须在使用之前被定义.如果一个类扩展了另一个,则父类必须在子类之前被声明.此规则适用于类继承其它类与接口.</p>
+</blockquote>
+<p><strong>Example #1 继承示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class foo  
+{  
+    public function printItem($string)   
+    {  
+        echo 'Foo: ' . $string . PHP_EOL;  
+    }  
+
+    public function printPHP()  
+    {  
+        echo 'PHP is great.' . PHP_EOL;  
+    }  
+}  
+
+class bar extends foo  
+{  
+    public function printItem($string)  
+    {  
+        echo 'Bar: ' . $string . PHP_EOL;  
+    }  
+}  
+
+$foo = new foo();  
+$bar = new bar();  
+$foo-&gt;printItem('baz'); // Output: 'Foo: baz'  
+$foo-&gt;printPHP();       // Output: 'PHP is great'   
+$bar-&gt;printItem('baz'); // Output: 'Bar: baz'  
+$bar-&gt;printPHP();       // Output: 'PHP is great'  
+
+?&gt;
+</code></pre>
+<h3 id="9_9">9.9 范围解析操作符 (::)</h3>
+<p>范围解析操作符(也可称作 Paamayim Nekudotayim)或者更简单地说是一对冒号,可以用于访问<a href="language.oop5.static.html">静态</a>成员,<a href="language.oop5.constants.html">类常量</a>,还可以用于覆盖类中的属性和方法.</p>
+<p>当在类定义之外引用到这些项目时,要使用类名.</p>
+<p>自 PHP 5.3.0 起,可以通过变量来引用类,该变量的值不能是关键字(如 <em>self</em>,<em>parent</em> 和 <em>static</em>).</p>
+<p>把 Paamayim Nekudotayim 选作双冒号操作符的名字似乎有些奇怪.然而,这是 Zend 开发小组在写 Zend Engine 0.5(被用于 PHP 3 中)时所作出的决定.事实上这个词在希伯莱文就是双冒号的意思.</p>
+<p><strong>Example #1 在类的外部使用 :: 操作符</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyClass {  
+    const CONST_VALUE = 'A constant value';  
+}  
+
+$classname = 'MyClass';  
+echo $classname::CONST_VALUE; // 自 PHP 5.3.0 起  
+
+echo MyClass::CONST_VALUE;  
+?&gt;
+</code></pre>
+<p>self,parent 和 static 这三个特殊的关键字是用于在类定义的内部对其属性或方法进行访问的.</p>
+<p><strong>Example #2 在类定义内部使用 ::</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class OtherClass extends MyClass  
+{  
+    public static $my_static = 'static var';  
+
+    public static function doubleColon() {  
+        echo parent::CONST_VALUE . "\n";  
+        echo self::$my_static . "\n";  
+    }  
+}  
+
+$classname = 'OtherClass';  
+echo $classname::doubleColon(); // 自 PHP 5.3.0 起  
+
+OtherClass::doubleColon();  
+?&gt;
+</code></pre>
+<p>当一个子类覆盖其父类中的方法时,PHP 不会调用父类中已被覆盖的方法.是否调用父类的方法取决于子类.这种机制也作用于<a href="language.oop5.decon.html">构造函数和析构函数</a>,<a href="language.oop5.overloading.html">重载</a>以及<a href="language.oop5.magic.html">魔术方法</a>.</p>
+<p><strong>Example #3 调用父类的方法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyClass  
+{  
+    protected function myFunc() {  
+        echo "MyClass::myFunc()\n";  
+    }  
+}  
+
+class OtherClass extends MyClass  
+{  
+    // 覆盖了父类的定义  
+    public function myFunc()  
+    {  
+        // 但还是可以调用父类中被覆盖的方法  
+        parent::myFunc();  
+        echo "OtherClass::myFunc()\n";  
+    }  
+}  
+
+$class = new OtherClass();  
+$class-&gt;myFunc();  
+?&gt;
+</code></pre>
+<p>参见 <a href="language.oop5.basic.html#language.oop5.basic.class.this">伪变量的示例</a>.</p>
+<h3 id="9_10">9.10 Static(静态)关键字</h3>
+<p><strong>Tip</strong></p>
+<p>本页说明了用 <em>static</em> 关键字来定义静态方法和属性.<em>static</em> 也可用于<a href="language.variables.scope.html#language.variables.scope.static">定义静态变量</a>以及<a href="language.oop5.late-static-bindings.html">后期静态绑定</a>.参见上述页面了解 <em>static</em> 在其中的用法.</p>
+<p>声明类属性或方法为静态,就可以不实例化类而直接访问.静态属性不能通过一个类已实例化的对象来访问(但静态方法可以).</p>
+<p>为了兼容 PHP 4,如果没有指定<a href="language.oop5.visibility.html">访问控制</a>,属性和方法默认为公有.</p>
+<p>由于静态方法不需要通过对象即可调用,所以伪变量 $this 在静态方法中不可用.</p>
+<p>静态属性不可以由对象通过 -&gt; 操作符来访问.</p>
+<p>用静态方式调用一个非静态方法会导致一个 <strong><code>E_STRICT</code></strong> 级别的错误.</p>
+<p>就像其它所有的 PHP 静态变量一样,静态属性只能被初始化为文字或常量,不能使用表达式.所以可以把静态属性初始化为整数或数组,但不能初始化为另一个变量或函数返回值,也不能指向一个对象.</p>
+<p>自 PHP 5.3.0 起,可以用一个变量来动态调用类.但该变量的值不能为关键字 <em>self</em>,<em>parent</em> 或 <em>static</em>.</p>
+<p><strong>Example #1 静态属性示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Foo  
+{  
+    public static $my_static = 'foo';  
+
+    public function staticValue() {  
+        return self::$my_static;  
+    }  
+}  
+
+class Bar extends Foo  
+{  
+    public function fooStatic() {  
+        return parent::$my_static;  
+    }  
+}  
+
+
+print Foo::$my_static . "\n";  
+
+$foo = new Foo();  
+print $foo-&gt;staticValue() . "\n";  
+print $foo-&gt;my_static . "\n";      // Undefined "Property" my_static   
+
+print $foo::$my_static . "\n";  
+$classname = 'Foo';  
+print $classname::$my_static . "\n"; // As of PHP 5.3.0  
+
+print Bar::$my_static . "\n";  
+$bar = new Bar();  
+print $bar-&gt;fooStatic() . "\n";  
+?&gt;  
+   &lt;/programlisting&gt;  
+  &lt;/example&gt;  
+
+  &lt;example&gt;  
+   &lt;title&gt;静态方法示例&lt;/title&gt;  
+    &lt;programlisting role="php"&gt;  
+&lt;![CDATA[  
+&lt;?php  
+class Foo {  
+    public static function aStaticMethod() {  
+        // ...  
+    }  
+}  
+
+Foo::aStaticMethod();  
+$classname = 'Foo';  
+$classname::aStaticMethod(); // 自 PHP 5.3.0 起  
+?&gt;
+</code></pre>
+<h3 id="9_11">9.11 抽象类</h3>
+<p>PHP 5 支持抽象类和抽象方法.定义为抽象的类不能被实例化.任何一个类,如果它里面至少有一个方法是被声明为抽象的,那么这个类就必须被声明为抽象的.被定义为抽象的方法只是声明了其调用方式(参数),不能定义其具体的功能实现.</p>
+<p>继承一个抽象类的时候,子类必须定义父类中的所有抽象方法;另外,这些方法的<a href="language.oop5.visibility.html">访问控制</a>必须和父类中一样(或者更为宽松).例如某个抽象方法被声明为受保护的,那么子类中实现的方法就应该声明为受保护的或者公有的,而不能定义为私有的.此外方法的调用方式必须匹配,即类型和所需参数数量必须一致.例如,子类定义了一个可选参数,而父类抽象方法的声明里没有,则两者的声明并无冲突. 这也适用于 PHP 5.4 起的构造函数.在 PHP 5.4 之前的构造函数声明可以不一样的.</p>
+<p><strong>Example #1 抽象类示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+abstract class AbstractClass  
+{  
+ // 强制要求子类定义这些方法  
+    abstract protected function getValue();  
+    abstract protected function prefixValue($prefix);  
+
+    // 普通方法(非抽象方法)  
+    public function printOut() {  
+        print $this-&gt;getValue() . "\n";  
+    }  
+}  
+
+class ConcreteClass1 extends AbstractClass  
+{  
+    protected function getValue() {  
+        return "ConcreteClass1";  
+    }  
+
+    public function prefixValue($prefix) {  
+        return "{$prefix}ConcreteClass1";  
+    }  
+}  
+
+class ConcreteClass2 extends AbstractClass  
+{  
+    public function getValue() {  
+        return "ConcreteClass2";  
+    }  
+
+    public function prefixValue($prefix) {  
+        return "{$prefix}ConcreteClass2";  
+    }  
+}  
+
+$class1 = new ConcreteClass1;  
+$class1-&gt;printOut();  
+echo $class1-&gt;prefixValue('FOO_') ."\n";  
+
+$class2 = new ConcreteClass2;  
+$class2-&gt;printOut();  
+echo $class2-&gt;prefixValue('FOO_') ."\n";  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>ConcreteClass1
+FOO_ConcreteClass1
+ConcreteClass2
+FOO_ConcreteClass2</p>
+<p><strong>Example #2 抽象类示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+abstract class AbstractClass  
+{  
+    // 我们的抽象方法仅需要定义需要的参数  
+    abstract protected function prefixName($name);  
+
+}  
+
+class ConcreteClass extends AbstractClass  
+{  
+
+    // 我们的子类可以定义父类签名中不存在的可选参数  
+    public function prefixName($name, $separator = ".") {  
+        if ($name == "Pacman") {  
+            $prefix = "Mr";  
+        } elseif ($name == "Pacwoman") {  
+            $prefix = "Mrs";  
+        } else {  
+            $prefix = "";  
+        }  
+        return "{$prefix}{$separator}{$name}";  
+    }  
+}  
+
+$class = new ConcreteClass;  
+echo $class-&gt;prefixName("Pacman"), "\n";  
+echo $class-&gt;prefixName("Pacwoman"), "\n";  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Mr. Pacman
+Mrs. Pacwoman</p>
+<p>老代码中如果没有自定义类或函数被命名为"abstract",则应该能不加修改地正常运行.</p>
+<h3 id="9_12">9.12 对象接口</h3>
+<p>使用接口(interface),可以指定某个类必须实现哪些方法,但不需要定义这些方法的具体内容.</p>
+<p>接口是通过 <em>interface</em> 关键字来定义的,就像定义一个标准的类一样,但其中定义所有的方法都是空的.</p>
+<p>接口中定义的所有方法都必须是公有,这是接口的特性.</p>
+<p>需要注意的是,在接口中定义一个<a href="language.oop5.decon.html#language.oop5.decon.constructor">构造方法</a>是被允许的.在有些场景下这可能会很有用,例如用于工厂模式时.</p>
+<h3 id="_implements_">实现(<em>implements</em>)</h3>
+<p>要实现一个接口,使用 <em>implements</em> 操作符.类中必须实现接口中定义的所有方法,否则会报一个致命错误.类可以实现多个接口,用逗号来分隔多个接口的名称.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在 PHP 5.3.9 之前,实现多个接口时,接口中的方法不能有重名,因为这可能会有歧义.在最近的 PHP 版本中,只要这些重名的方法签名相同,这种行为就是允许的.</p>
+  <p><strong>Note</strong>:</p>
+  <p>接口也可以继承,通过使用 <a href="language.oop5.inheritance.html">extends</a> 操作符.</p>
+  <p><strong>Note</strong>:</p>
+  <p>类要实现接口,必须使用和接口中所定义的方法完全一致的方式.否则会导致致命错误.</p>
+</blockquote>
+<h3 id="__"><em>常量</em></h3>
+<p>接口中也可以定义常量.接口常量和<a href="language.oop5.constants.html">类常量</a>的使用完全相同,但是不能被子类或子接口所覆盖.</p>
+<h3 id="-6">范例</h3>
+<p><strong>Example #1 接口示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+// 声明一个'iTemplate'接口  
+interface iTemplate  
+{  
+    public function setVariable($name, $var);  
+    public function getHtml($template);  
+}  
+
+
+// 实现接口  
+// 下面的写法是正确的  
+class Template implements iTemplate  
+{  
+    private $vars = array();  
+
+    public function setVariable($name, $var)  
+    {  
+        $this-&gt;vars[$name] = $var;  
+    }  
+
+    public function getHtml($template)  
+    {  
+        foreach($this-&gt;vars as $name =&gt; $value) {  
+            $template = str_replace('{' . $name . '}', $value, $template);  
+        }  
+
+        return $template;  
+    }  
+}  
+
+// 下面的写法是错误的,会报错,因为没有实现 getHtml():  
+// Fatal error: Class BadTemplate contains 1 abstract methods  
+// and must therefore be declared abstract (iTemplate::getHtml)  
+class BadTemplate implements iTemplate  
+{  
+    private $vars = array();  
+
+    public function setVariable($name, $var)  
+    {  
+        $this-&gt;vars[$name] = $var;  
+    }  
+}  
+?&gt;
+</code></pre>
+<p><strong>Example #2 可扩充的接口</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+interface a  
+{  
+    public function foo();  
+}  
+
+interface b extends a  
+{  
+    public function baz(Baz $baz);  
+}  
+
+// 正确写法  
+class c implements b  
+{  
+    public function foo()  
+    {  
+    }  
+
+    public function baz(Baz $baz)  
+    {  
+    }  
+}  
+
+// 错误写法会导致一个致命错误  
+class d implements b  
+{  
+    public function foo()  
+    {  
+    }  
+
+    public function baz(Foo $foo)  
+    {  
+    }  
+}  
+?&gt;
+</code></pre>
+<p><strong>Example #3 继承多个接口</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+interface a  
+{  
+    public function foo();  
+}  
+
+interface b  
+{  
+    public function bar();  
+}  
+
+interface c extends a, b  
+{  
+    public function baz();  
+}  
+
+class d implements c  
+{  
+    public function foo()  
+    {  
+    }  
+
+    public function bar()  
+    {  
+    }  
+
+    public function baz()  
+    {  
+    }  
+}  
+?&gt;
+</code></pre>
+<p><strong>Example #4 使用接口常量</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+interface a  
+{  
+    const b = 'Interface constant';  
+}  
+
+// 输出接口常量  
+echo a::b;  
+
+// 错误写法,因为常量不能被覆盖.接口常量的概念和类常量是一样的.  
+class b implements a  
+{  
+    const b = 'Class constant';  
+}  
+?&gt;
+</code></pre>
+<p>接口加上类型约束,提供了一种很好的方式来确保某个对象包含有某些方法.参见 <a href="language.operators.type.html">instanceof</a> 操作符和<a href="language.oop5.typehinting.html">类型约束</a>.</p>
+<h3 id="9_13">9.13 Trait</h3>
+<p>自 PHP 5.4.0 起,PHP 实现了一种代码复用的方法,称为 trait.</p>
+<p>Trait 是为类似 PHP 的单继承语言而准备的一种代码复用机制.Trait 为了减少单继承语言的限制,使开发人员能够自由地在不同层次结构内独立的类中复用 method.Trait 和 Class 组合的语义定义了一种减少复杂性的方式,避免传统多继承和 Mixin 类相关典型问题.</p>
+<p>Trait 和 Class 相似,但仅仅旨在用细粒度和一致的方式来组合功能. 无法通过 trait 自身来实例化.它为传统继承增加了水平特性的组合;也就是说,应用的几个 Class 之间不需要继承.</p>
+<p><strong>Example #1 Trait 示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait ezcReflectionReturnInfo {  
+    function getReturnType() { /*1*/ }  
+    function getReturnDescription() { /*2*/ }  
+}  
+
+class ezcReflectionMethod extends ReflectionMethod {  
+    use ezcReflectionReturnInfo;  
+    /* ... */  
+}  
+
+class ezcReflectionFunction extends ReflectionFunction {  
+    use ezcReflectionReturnInfo;  
+    /* ... */  
+}  
+?&gt;
+</code></pre>
+<h3 id="-7">优先级</h3>
+<p>从基类继承的成员会被 trait 插入的成员所覆盖.优先顺序是来自当前类的成员覆盖了 trait 的方法,而 trait 则覆盖了被继承的方法.</p>
+<p><strong>Example #2 优先顺序示例</strong></p>
+<p>从基类继承的成员被插入的 SayWorld Trait 中的 MyHelloWorld 方法所覆盖.其行为 MyHelloWorld 类中定义的方法一致.优先顺序是当前类中的方法会覆盖 trait 方法,而 trait 方法又覆盖了基类中的方法.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Base {  
+    public function sayHello() {  
+        echo 'Hello ';  
+    }  
+}  
+
+trait SayWorld {  
+    public function sayHello() {  
+        parent::sayHello();  
+        echo 'World!';  
+    }  
+}  
+
+class MyHelloWorld extends Base {  
+    use SayWorld;  
+}  
+
+$o = new MyHelloWorld();  
+$o-&gt;sayHello();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Hello World!</p>
+<p><strong>Example #3 另一个优先级顺序的例子</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait HelloWorld {  
+    public function sayHello() {  
+        echo 'Hello World!';  
+    }  
+}  
+
+class TheWorldIsNotEnough {  
+    use HelloWorld;  
+    public function sayHello() {  
+        echo 'Hello Universe!';  
+    }  
+}  
+
+$o = new TheWorldIsNotEnough();  
+$o-&gt;sayHello();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Hello Universe!</p>
+<h3 id="trait">多个 trait</h3>
+<p>通过逗号分隔,在 use 声明列出多个 trait,可以都插入到一个类中.</p>
+<p><strong>Example #4 多个 trait 的用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait Hello {  
+    public function sayHello() {  
+        echo 'Hello ';  
+    }  
+}  
+
+trait World {  
+    public function sayWorld() {  
+        echo 'World';  
+    }  
+}  
+
+class MyHelloWorld {  
+    use Hello, World;  
+    public function sayExclamationMark() {  
+        echo '!';  
+    }  
+}  
+
+$o = new MyHelloWorld();  
+$o-&gt;sayHello();  
+$o-&gt;sayWorld();  
+$o-&gt;sayExclamationMark();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Hello World!</p>
+<h3 id="-8">冲突的解决</h3>
+<p>如果两个 trait 都插入了一个同名的方法,如果没有明确解决冲突将会产生一个致命错误.</p>
+<p>为了解决多个 trait 在同一个类中的命名冲突,需要使用 <em>insteadof</em> 操作符来明确指定使用冲突方法中的哪一个.</p>
+<p>以上方式仅允许排除掉其它方法,<em>as</em> 操作符可以 为某个方法引入别名. 注意,<em>as</em> 操作符不会对方法进行重命名,也不会影响其方法.</p>
+<p><strong>Example #5 冲突的解决</strong></p>
+<p>在本例中 Talker 使用了 trait A 和 B.由于 A 和 B 有冲突的方法,其定义了使用 trait B 中的 smallTalk 以及 trait A 中的 bigTalk.</p>
+<p>Aliased_Talker 使用了 <em>as</em> 操作符来定义了 <em>talk</em> 来作为 B 的 bigTalk 的别名.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait A {  
+    public function smallTalk() {  
+        echo 'a';  
+    }  
+    public function bigTalk() {  
+        echo 'A';  
+    }  
+}  
+
+trait B {  
+    public function smallTalk() {  
+        echo 'b';  
+    }  
+    public function bigTalk() {  
+        echo 'B';  
+    }  
+}  
+
+class Talker {  
+    use A, B {  
+        B::smallTalk insteadof A;  
+        A::bigTalk insteadof B;  
+    }  
+}  
+
+class Aliased_Talker {  
+    use A, B {  
+        B::smallTalk insteadof A;  
+        A::bigTalk insteadof B;  
+        B::bigTalk as talk;  
+    }  
+}  
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在 PHP 7.0 之前,在类里定义和 trait 同名的属性,哪怕是完全兼容的也会抛出 <strong><code>E_STRICT</code></strong>(完全兼容的意思:具有相同的访问可见性,初始默认值).</p>
+</blockquote>
+<h3 id="-9">修改方法的访问控制</h3>
+<p>使用 <em>as</em> 语法还可以用来调整方法的访问控制.</p>
+<p><strong>Example #6 修改方法的访问控制</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait HelloWorld {  
+    public function sayHello() {  
+        echo 'Hello World!';  
+    }  
+}  
+
+// 修改 sayHello 的访问控制  
+class MyClass1 {  
+    use HelloWorld { sayHello as protected; }  
+}  
+
+// 给方法一个改变了访问控制的别名  
+// 原版 sayHello 的访问控制则没有发生变化  
+class MyClass2 {  
+    use HelloWorld { sayHello as private myPrivateHello; }  
+}  
+?&gt;
+</code></pre>
+<h3 id="traittrait">从 trait 来组成 trait</h3>
+<p>正如 class 能够使用 trait 一样,其它 trait 也能够使用 trait.在 trait 定义时通过使用一个或多个 trait,能够组合其它 trait 中的部分或全部成员.</p>
+<p><strong>Example #7 从 trait 来组成 trait</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait Hello {  
+    public function sayHello() {  
+        echo 'Hello ';  
+    }  
+}  
+
+trait World {  
+    public function sayWorld() {  
+        echo 'World!';  
+    }  
+}  
+
+trait HelloWorld {  
+    use Hello, World;  
+}  
+
+class MyHelloWorld {  
+    use HelloWorld;  
+}  
+
+$o = new MyHelloWorld();  
+$o-&gt;sayHello();  
+$o-&gt;sayWorld();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Hello World!</p>
+<h3 id="trait-1">Trait 的抽象成员</h3>
+<p>为了对使用的类施加强制要求,trait 支持抽象方法的使用.</p>
+<p><strong>Example #8 表示通过抽象方法来进行强制要求</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait Hello {  
+    public function sayHelloWorld() {  
+        echo 'Hello'.$this-&gt;getWorld();  
+    }  
+    abstract public function getWorld();  
+}  
+
+class MyHelloWorld {  
+    private $world;  
+    use Hello;  
+    public function getWorld() {  
+        return $this-&gt;world;  
+    }  
+    public function setWorld($val) {  
+        $this-&gt;world = $val;  
+    }  
+}  
+?&gt;
+</code></pre>
+<h3 id="trait-2">Trait 的静态成员</h3>
+<p>Traits 可以被静态成员静态方法定义.</p>
+<p><strong>Example #9 静态变量</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait Counter {  
+    public function inc() {  
+        static $c = 0;  
+        $c = $c + 1;  
+        echo "$c\n";  
+    }  
+}  
+
+class C1 {  
+    use Counter;  
+}  
+
+class C2 {  
+    use Counter;  
+}  
+
+$o = new C1(); $o-&gt;inc(); // echo 1  
+$p = new C2(); $p-&gt;inc(); // echo 1  
+?&gt;
+</code></pre>
+<p><strong>Example #10 静态方法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait StaticExample {  
+    public static function doSomething() {  
+        return 'Doing something';  
+    }  
+}  
+
+class Example {  
+    use StaticExample;  
+}  
+
+Example::doSomething();  
+?&gt;
+</code></pre>
+<h3 id="-10">属性</h3>
+<p>Trait 同样可以定义属性.</p>
+<p><strong>Example #11 定义属性</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait PropertiesTrait {  
+    public $x = 1;  
+}  
+
+class PropertiesExample {  
+    use PropertiesTrait;  
+}  
+
+$example = new PropertiesExample;  
+$example-&gt;x;  
+?&gt;
+</code></pre>
+<p>Trait 定义了一个属性后,类就不能定义同样名称的属性,否则会产生 fatal error. 有种情况例外:属性是兼容的(同样的访问可见度,初始默认值). 在 PHP 7.0 之前,属性是兼容的,则会有 E_STRICT 的提醒.</p>
+<p><strong>Example #12 解决冲突</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+trait PropertiesTrait {  
+    public $same = true;  
+    public $different = false;  
+}  
+
+class PropertiesExample {  
+    use PropertiesTrait;  
+    public $same = true; // PHP 7.0.0 后没问题,之前版本是 E_STRICT 提醒  
+    public $different = true; // 致命错误  
+}  
+?&gt;
+</code></pre>
+<h3 id="9_14">9.14 匿名类</h3>
+<p>PHP 7 开始支持匿名类. 匿名类很有用,可以创建一次性的简单对象.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+// PHP 7 之前的代码  
+class Logger  
+{  
+    public function log($msg)  
+    {  
+        echo $msg;  
+    }  
+}  
+
+$util-&gt;setLogger(new Logger());  
+
+// 使用了 PHP 7+ 后的代码  
+$util-&gt;setLogger(new class {  
+    public function log($msg)  
+    {  
+        echo $msg;  
+    }  
+});
+</code></pre>
+<p>可以传递参数到匿名类的构造器,也可以扩展(extend)其他类,实现接口(implement interface),以及像其他普通的类一样使用 trait:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class SomeClass {}  
+interface SomeInterface {}  
+trait SomeTrait {}  
+
+var_dump(new class(10) extends SomeClass implements SomeInterface {  
+    private $num;  
+
+    public function __construct($num)  
+    {  
+        $this-&gt;num = $num;  
+    }  
+
+    use SomeTrait;  
+});
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(class@anonymous)#1 (1) {
+  ["Command line code0x104c5b612":"class@anonymous":private]=&gt;
+  int(10)
+}</p>
+<p>匿名类被嵌套进普通 Class 后,不能访问这个外部类(Outer class)的 private(私有),protected(受保护)方法或者属性. 为了访问外部类(Outer class)protected 属性或方法,匿名类可以 extend(扩展)此外部类. 为了使用外部类(Outer class)的 private 属性,必须通过构造器传进来:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class Outer  
+{  
+    private $prop = 1;  
+    protected $prop2 = 2;  
+
+    protected function func1()  
+    {  
+        return 3;  
+    }  
+
+    public function func2()  
+    {  
+        return new class($this-&gt;prop) extends Outer {  
+            private $prop3;  
+
+            public function __construct($prop)  
+            {  
+                $this-&gt;prop3 = $prop;  
+            }  
+
+            public function func3()  
+            {  
+                return $this-&gt;prop2 + $this-&gt;prop3 + $this-&gt;func1();  
+            }  
+        };  
+    }  
+}  
+
+echo (new Outer)-&gt;func2()-&gt;func3();
+</code></pre>
+<p>以上例程会输出:</p>
+<p>6</p>
+<p>声明的同一个匿名类,所创建的对象都是这个类的实例.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function anonymous_class()  
+{  
+    return new class {};  
+}  
+
+if (get_class(anonymous_class()) === get_class(anonymous_class())) {  
+    echo 'same class';  
+} else {  
+    echo 'different class';  
+}
+</code></pre>
+<p>以上例程会输出:</p>
+<p>same class</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>注意,匿名类的名称是通过引擎赋予的,如下例所示. 由于实现的细节,不应该去依赖这个类名.</p>
+</blockquote>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+&gt; echo get_class(new class {});
+</code></pre>
+<blockquote>
+  <p>以上例程的输出类似于:</p>
+  <p>class@anonymous/in/oNi1A0x7f8636ad2021</p>
+</blockquote>
+<h3 id="9_15">9.15 重载</h3>
+<p>PHP所提供的重载(overloading)是指动态地创建类属性和方法.我们是通过魔术方法(magic methods)来实现的.</p>
+<p>当调用当前环境下未定义或不<a href="language.oop5.visibility.html">可见</a>的类属性或方法时,重载方法会被调用.本节后面将使用不可访问属性(inaccessible properties)和不可访问方法(inaccessible methods)来称呼这些未定义或不可见的类属性或方法.</p>
+<p>所有的重载方法都必须被声明为 <em>public</em>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>这些魔术方法的参数都不能<a href="functions.arguments.html#functions.arguments.by-reference">通过引用传递</a>.</p>
+  <p><strong>Note</strong>:</p>
+  <p>PHP中的重载与其它绝大多数面向对象语言不同.传统的重载是用于提供多个同名的类方法,但各方法的参数类型和个数不同.</p>
+</blockquote>
+<h3 id="-11">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.3.0</p>
+<p>新增 <a href="language.oop5.overloading.html#object.callstatic">__callStatic()</a>魔术方法.可见性未设置为 public 或未声明为 static 的时候会产生一个警告.</p>
+<p>5.1.0</p>
+<p>新增 <a href="language.oop5.overloading.html#object.isset">__isset()</a> 和 <a href="language.oop5.overloading.html#object.unset">__unset()</a> 两个魔术方法.</p>
+<h3 id="-12">属性重载</h3>
+<p>public <strong>__set</strong> ( string <code>$name</code> , <a href="language.pseudo-types.html#language.types.mixed">mixed</a> <code>$value</code> ) : void</p>
+<p>public <strong>__get</strong> ( string <code>$name</code> ) : <a href="language.pseudo-types.html#language.types.mixed">mixed</a></p>
+<p>public <strong>__isset</strong> ( string <code>$name</code> ) : bool</p>
+<p>public <strong>__unset</strong> ( string <code>$name</code> ) : void</p>
+<p>在给不可访问属性赋值时,<a href="language.oop5.overloading.html#object.set">__set()</a> 会被调用.</p>
+<p>读取不可访问属性的值时,<a href="language.oop5.overloading.html#object.get">__get()</a> 会被调用.</p>
+<p>当对不可访问属性调用 <a href="function.isset.html">isset()</a> 或 <a href="function.empty.html">empty()</a> 时,<a href="language.oop5.overloading.html#object.isset">__isset()</a> 会被调用.</p>
+<p>当对不可访问属性调用 <a href="function.unset.html">unset()</a> 时,<a href="language.oop5.overloading.html#object.unset">__unset()</a> 会被调用.</p>
+<p>参数 $name 是指要操作的变量名称.<a href="language.oop5.overloading.html#object.set">__set()</a> 方法的 $value 参数指定了 $name 变量的值.</p>
+<p>属性重载只能在对象中进行.在静态方法中,这些魔术方法将不会被调用.所以这些方法都不能被 声明为 <a href="language.oop5.static.html">static</a>.从 PHP 5.3.0 起, 将这些魔术方法定义为 <em>static</em> 会产生一个警告.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>因为 PHP 处理赋值运算的方式,<a href="language.oop5.overloading.html#object.set">__set()</a> 的返回值将被忽略.类似的, 在下面这样的链式赋值中,<a href="language.oop5.overloading.html#object.get">__get()</a> 不会被调用:</p>
+  <p><em>$a = $obj->b = 8;</em> </p>
+  <p><strong>Note</strong>:</p>
+  <p>在除 <a href="function.isset.html">isset()</a> 外的其它语言结构中无法使用重载的属性,这意味着当对一个重载的属性使用 <a href="function.empty.html">empty()</a> 时,重载魔术方法将不会被调用.</p>
+  <p>为避开此限制,必须将重载属性赋值到本地变量再使用 <a href="function.empty.html">empty()</a>.</p>
+</blockquote>
+<p><strong>Example #1 使用 <a href="language.oop5.overloading.html#object.get">__get()</a>,<a href="language.oop5.overloading.html#object.set">__set()</a>,<a href="language.oop5.overloading.html#object.isset">__isset()</a> 和 <a href="language.oop5.overloading.html#object.unset">__unset()</a> 进行属性重载</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class PropertyTest {  
+     /**  被重载的数据保存在此  */  
+    private $data = array();  
+
+
+     /**  重载不能被用在已经定义的属性  */  
+    public $declared = 1;  
+
+     /**  只有从类外部访问这个属性时,重载才会发生 */  
+    private $hidden = 2;  
+
+    public function __set($name, $value)   
+    {  
+        echo "Setting '$name' to '$value'\n";  
+        $this-&gt;data[$name] = $value;  
+    }  
+
+    public function __get($name)   
+    {  
+        echo "Getting '$name'\n";  
+        if (array_key_exists($name, $this-&gt;data)) {  
+            return $this-&gt;data[$name];  
+        }  
+
+        $trace = debug_backtrace();  
+        trigger_error(  
+            'Undefined property via __get(): ' . $name .  
+            ' in ' . $trace[0]['file'] .  
+            ' on line ' . $trace[0]['line'],  
+            E_USER_NOTICE);  
+        return null;  
+    }  
+
+    /**  PHP 5.1.0之后版本 */  
+    public function __isset($name)   
+    {  
+        echo "Is '$name' set?\n";  
+        return isset($this-&gt;data[$name]);  
+    }  
+
+    /**  PHP 5.1.0之后版本 */  
+    public function __unset($name)   
+    {  
+        echo "Unsetting '$name'\n";  
+        unset($this-&gt;data[$name]);  
+    }  
+
+    /**  非魔术方法  */  
+    public function getHidden()   
+    {  
+        return $this-&gt;hidden;  
+    }  
+}  
+
+
+echo "&lt;pre&gt;\n";  
+
+$obj = new PropertyTest;  
+
+$obj-&gt;a = 1;  
+echo $obj-&gt;a . "\n\n";  
+
+var_dump(isset($obj-&gt;a));  
+unset($obj-&gt;a);  
+var_dump(isset($obj-&gt;a));  
+echo "\n";  
+
+echo $obj-&gt;declared . "\n\n";  
+
+echo "Let's experiment with the private property named 'hidden':\n";  
+echo "Privates are visible inside the class, so __get() not used...\n";  
+echo $obj-&gt;getHidden() . "\n";  
+echo "Privates not visible outside of class, so __get() is used...\n";  
+echo $obj-&gt;hidden . "\n";  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Setting 'a' to '1'
+Getting 'a'
+1</p>
+<p>Is 'a' set?
+bool(true)
+Unsetting 'a'
+Is 'a' set?
+bool(false)</p>
+<p>1</p>
+<p>Let's experiment with the private property named 'hidden':
+Privates are visible inside the class, so __get() not used…
+2
+Privates not visible outside of class, so __get() is used…
+Getting 'hidden'</p>
+<p>Notice:  Undefined property via __get(): hidden in <file> on line 70 in <file> on line 29</p>
+<h3 id="-13">方法重载</h3>
+<p>public <strong>__call</strong> ( string <code>$name</code> , array <code>$arguments</code> ) : <a href="language.pseudo-types.html#language.types.mixed">mixed</a></p>
+<p>public static <strong>__callStatic</strong> ( string <code>$name</code> , array <code>$arguments</code> ) : <a href="language.pseudo-types.html#language.types.mixed">mixed</a></p>
+<p>在对象中调用一个不可访问方法时,<a href="language.oop5.overloading.html#object.call">__call()</a> 会被调用.</p>
+<p>在静态上下文中调用一个不可访问方法时,<a href="language.oop5.overloading.html#object.callstatic">__callStatic()</a> 会被调用.</p>
+<p>$name 参数是要调用的方法名称.$arguments 参数是一个枚举数组,包含着要传递给方法 $name 的参数.</p>
+<p><strong>Example #2 使用 <a href="language.oop5.overloading.html#object.call">__call()</a> 和 <a href="language.oop5.overloading.html#object.callstatic">__callStatic()</a> 对方法重载</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MethodTest   
+{  
+    public function __call($name, $arguments)   
+    {  
+        // 注意: $name 的值区分大小写  
+        echo "Calling object method '$name' "  
+             . implode(', ', $arguments). "\n";  
+    }  
+
+    /**  PHP 5.3.0之后版本  */  
+    public static function __callStatic($name, $arguments)   
+    {  
+        // 注意: $name 的值区分大小写  
+        echo "Calling static method '$name' "  
+             . implode(', ', $arguments). "\n";  
+    }  
+}  
+
+$obj = new MethodTest;  
+$obj-&gt;runTest('in object context');  
+
+MethodTest::runTest('in static context');  // PHP 5.3.0之后版本  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Calling object method 'runTest' in object context
+Calling static method 'runTest' in static context</p>
+<h3 id="9_16">9.16 遍历对象</h3>
+<p>PHP 5 提供了一种定义对象的方法使其可以通过单元列表来遍历,例如用 <a href="control-structures.foreach.html">foreach</a> 语句.默认情况下,所有<a href="language.oop5.visibility.html">可见</a>属性都将被用于遍历.</p>
+<p><strong>Example #1 简单的对象遍历</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyClass  
+{  
+    public $var1 = 'value 1';  
+    public $var2 = 'value 2';  
+    public $var3 = 'value 3';  
+
+    protected $protected = 'protected var';  
+    private   $private   = 'private var';  
+
+    function iterateVisible() {  
+       echo "MyClass::iterateVisible:\n";  
+       foreach($this as $key =&gt; $value) {  
+           print "$key =&gt; $value\n";  
+       }  
+    }  
+}  
+
+$class = new MyClass();  
+
+foreach($class as $key =&gt; $value) {  
+    print "$key =&gt; $value\n";  
+}  
+echo "\n";  
+
+
+$class-&gt;iterateVisible();  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>var1 =&gt; value 1
+var2 =&gt; value 2
+var3 =&gt; value 3</p>
+<p>MyClass::iterateVisible:
+var1 =&gt; value 1
+var2 =&gt; value 2
+var3 =&gt; value 3
+protected =&gt; protected var
+private =&gt; private var</p>
+<p>如上所示,<a href="control-structures.foreach.html">foreach</a> 遍历了所有其能够访问的<a href="language.oop5.visibility.html">可见</a>属性.</p>
+<p>更进一步,可以实现 <strong>Iterator</strong> <a href="language.oop5.interfaces.html">接口</a>.可以让对象自行决定如何遍历以及每次遍历时那些值可用.</p>
+<p><strong>Example #2 实现 Iterator 接口的对象遍历</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyIterator implements Iterator  
+{  
+    private $var = array();  
+
+    public function __construct($array)  
+    {  
+        if (is_array($array)) {  
+            $this-&gt;var = $array;  
+        }  
+    }  
+
+    public function rewind() {  
+        echo "rewinding\n";  
+        reset($this-&gt;var);  
+    }  
+
+    public function current() {  
+        $var = current($this-&gt;var);  
+        echo "current: $var\n";  
+        return $var;  
+    }  
+
+    public function key() {  
+        $var = key($this-&gt;var);  
+        echo "key: $var\n";  
+        return $var;  
+    }  
+
+    public function next() {  
+        $var = next($this-&gt;var);  
+        echo "next: $var\n";  
+        return $var;  
+    }  
+
+    public function valid() {  
+        $var = $this-&gt;current() !== false;  
+        echo "valid: {$var}\n";  
+        return $var;  
+    }  
+}  
+
+$values = array(1,2,3);  
+$it = new MyIterator($values);  
+
+foreach ($it as $a =&gt; $b) {  
+    print "$a: $b\n";  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>rewinding
+current: 1
+valid: 1
+current: 1
+key: 0
+0: 1
+next: 2
+current: 2
+valid: 1
+current: 2
+key: 1
+1: 2
+next: 3
+current: 3
+valid: 1
+current: 3
+key: 2
+2: 3
+next:
+current:
+valid:</p>
+<p>可以用 <strong>IteratorAggregate</strong> <a href="language.oop5.interfaces.html">接口</a>以替代实现所有的 <strong>Iterator</strong> 方法.<strong>IteratorAggregate</strong> 只需要实现一个方法 <a href="iteratoraggregate.getiterator.html">IteratorAggregate::getIterator()</a>,其应返回一个实现了 <strong>Iterator</strong> 的类的实例.</p>
+<p><strong>Example #3 通过实现 IteratorAggregate 来遍历对象</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class MyCollection implements IteratorAggregate  
+{  
+    private $items = array();  
+    private $count = 0;  
+
+    // Required definition of interface IteratorAggregate  
+    public function getIterator() {  
+        return new MyIterator($this-&gt;items);  
+    }  
+
+    public function add($value) {  
+        $this-&gt;items[$this-&gt;count++] = $value;  
+    }  
+}  
+
+$coll = new MyCollection();  
+$coll-&gt;add('value 1');  
+$coll-&gt;add('value 2');  
+$coll-&gt;add('value 3');  
+
+foreach ($coll as $key =&gt; $val) {  
+    echo "key/value: [$key -&gt; $val]\n\n";  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>rewinding
+current: value 1
+valid: 1
+current: value 1
+key: 0
+key/value: [0 -&gt; value 1]</p>
+<p>next: value 2
+current: value 2
+valid: 1
+current: value 2
+key: 1
+key/value: [1 -&gt; value 2]</p>
+<p>next: value 3
+current: value 3
+valid: 1
+current: value 3
+key: 2
+key/value: [2 -&gt; value 3]</p>
+<p>next:
+current:
+valid:</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>更多遍历的示例见 <a href="spl.iterators.html">SPL 扩展</a>.</p>
+  <p><strong>Note</strong>:</p>
+  <p>PHP 5.5 及以后版本的用户也可参考<a href="language.generators.html">生成器</a>,其提供了另一方法来定义 Iterators.</p>
+</blockquote>
+<h3 id="9_17">9.17 魔术方法</h3>
+<p><a href="language.oop5.decon.html#object.construct">__construct()</a>, <a href="language.oop5.decon.html#object.destruct">__destruct()</a>, <a href="language.oop5.overloading.html#object.call">__call()</a>, <a href="language.oop5.overloading.html#object.callstatic">__callStatic()</a>, <a href="language.oop5.overloading.html#object.get">__get()</a>, <a href="language.oop5.overloading.html#object.set">__set()</a>, <a href="language.oop5.overloading.html#object.isset">__isset()</a>, <a href="language.oop5.overloading.html#object.unset">__unset()</a>, <a href="language.oop5.magic.html#object.sleep">__sleep()</a>, <a href="language.oop5.magic.html#object.wakeup">__wakeup()</a>, <a href="language.oop5.magic.html#object.tostring">__toString()</a>, <a href="language.oop5.magic.html#object.invoke">__invoke()</a>, <a href="language.oop5.magic.html#object.set-state">__set_state()</a>, <a href="language.oop5.cloning.html#object.clone">__clone()</a> 和 <a href="language.oop5.magic.html#object.debuginfo">__debugInfo()</a> 等方法在 PHP 中被称为魔术方法(Magic methods).在命名自己的类方法时不能使用这些方法名,除非是想使用其魔术功能.</p>
+<p><strong>Caution</strong></p>
+<p>PHP 将所有以 __(两个下划线)开头的类方法保留为魔术方法.所以在定义类方法时,除了上述魔术方法,建议不要以 __ 为前缀.</p>
+<h3 id="__sleeplanguageoop5magichtmlobjectsleep__wakeuplanguageoop5magichtmlobjectwakeup"><a href="language.oop5.magic.html#object.sleep">__sleep()</a> 和 <a href="language.oop5.magic.html#object.wakeup">__wakeup()</a></h3>
+<p>public <strong>__sleep</strong> ( void ) : array</p>
+<p><strong>__wakeup</strong> ( void ) : void</p>
+<p><a href="function.serialize.html">serialize()</a> 函数会检查类中是否存在一个魔术方法 <a href="language.oop5.magic.html#object.sleep">__sleep()</a>.如果存在,该方法会先被调用,然后才执行序列化操作.此功能可以用于清理对象,并返回一个包含对象中所有应被序列化的变量名称的数组.如果该方法未返回任何内容,则 <strong><code>NULL</code></strong> 被序列化,并产生一个 <strong><code>E_NOTICE</code></strong> 级别的错误.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p><a href="language.oop5.magic.html#object.sleep">__sleep()</a> 不能返回父类的私有成员的名字.这样做会产生一个 <strong><code>E_NOTICE</code></strong> 级别的错误.可以用 <strong>Serializable</strong> 接口来替代.</p>
+</blockquote>
+<p><a href="language.oop5.magic.html#object.sleep">__sleep()</a> 方法常用于提交未提交的数据,或类似的清理操作.同时,如果有一些很大的对象,但不需要全部保存,这个功能就很好用.</p>
+<p>与之相反,<a href="function.unserialize.html">unserialize()</a> 会检查是否存在一个 <a href="language.oop5.magic.html#object.wakeup">__wakeup()</a> 方法.如果存在,则会先调用 <em>__wakeup</em> 方法,预先准备对象需要的资源.</p>
+<p><a href="language.oop5.magic.html#object.wakeup">__wakeup()</a> 经常用在反序列化操作中,例如重新建立数据库连接,或执行其它初始化操作.</p>
+<p><strong>Example #1 Sleep 和 wakeup</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Connection   
+{  
+    protected $link;  
+    private $server, $username, $password, $db;  
+
+    public function __construct($server, $username, $password, $db)  
+    {  
+        $this-&gt;server = $server;  
+        $this-&gt;username = $username;  
+        $this-&gt;password = $password;  
+        $this-&gt;db = $db;  
+        $this-&gt;connect();  
+    }  
+
+    private function connect()  
+    {  
+        $this-&gt;link = mysql_connect($this-&gt;server, $this-&gt;username, $this-&gt;password);  
+        mysql_select_db($this-&gt;db, $this-&gt;link);  
+    }  
+
+    public function __sleep()  
+    {  
+        return array('server', 'username', 'password', 'db');  
+    }  
+
+    public function __wakeup()  
+    {  
+        $this-&gt;connect();  
+    }  
+}  
+?&gt;
+</code></pre>
+<h3 id="__tostringlanguageoop5magichtmlobjecttostring"><a href="language.oop5.magic.html#object.tostring">__toString()</a></h3>
+<p>public <strong>__toString</strong> ( void ) : string</p>
+<p><a href="language.oop5.magic.html#object.tostring">__toString()</a> 方法用于一个类被当成字符串时应怎样回应.例如 <em>echo $obj;</em> 应该显示些什么.此方法必须返回一个字符串,否则将发出一条 <strong><code>E_RECOVERABLE_ERROR</code></strong> 级别的致命错误.</p>
+<p><strong>Warning</strong></p>
+<p>不能在 <a href="language.oop5.magic.html#object.tostring">__toString()</a> 方法中抛出异常.这么做会导致致命错误.</p>
+<p><strong>Example #2 简单示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// Declare a simple class  
+class TestClass  
+{  
+    public $foo;  
+
+    public function __construct($foo)   
+    {  
+        $this-&gt;foo = $foo;  
+    }  
+
+    public function __toString() {  
+        return $this-&gt;foo;  
+    }  
+}  
+
+$class = new TestClass('Hello');  
+echo $class;  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Hello</p>
+<p>需要指出的是在 PHP 5.2.0 之前,<a href="language.oop5.magic.html#object.tostring">__toString()</a> 方法只有在直接使用于 <a href="function.echo.html">echo</a> 或 <a href="function.print.html">print</a> 时才能生效.PHP 5.2.0 之后,则可以在任何字符串环境生效(例如通过 <a href="function.printf.html">printf()</a>,使用 <em>%s</em> 修饰符),但不能用于非字符串环境(如使用 <em>%d</em> 修饰符).自 PHP 5.2.0 起,如果将一个未定义 <a href="language.oop5.magic.html#object.tostring">__toString()</a> 方法的对象转换为字符串,会产生 <strong><code>E_RECOVERABLE_ERROR</code></strong> 级别的错误.</p>
+<h3 id="__invokelanguageoop5magichtmlobjectinvoke"><a href="language.oop5.magic.html#object.invoke">__invoke()</a></h3>
+<p><strong>__invoke</strong> ([ <code>$...</code> ] ) : <a href="language.pseudo-types.html#language.types.mixed">mixed</a></p>
+<p>当尝试以调用函数的方式调用一个对象时,<a href="language.oop5.magic.html#object.invoke">__invoke()</a> 方法会被自动调用.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>本特性只在 PHP 5.3.0 及以上版本有效.</p>
+</blockquote>
+<p><strong>Example #3 使用 <a href="language.oop5.magic.html#object.invoke">__invoke()</a></strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class CallableClass   
+{  
+    function __invoke($x) {  
+        var_dump($x);  
+    }  
+}  
+$obj = new CallableClass;  
+$obj(5);  
+var_dump(is_callable($obj));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>int(5)
+bool(true)</p>
+<h3 id="__set_statelanguageoop5magichtmlobjectsetstate"><a href="language.oop5.magic.html#object.set-state">__set_state()</a></h3>
+<p>static <strong>__set_state</strong> ( array <code>$properties</code> ) : object</p>
+<p>自 PHP 5.1.0 起当调用 <a href="function.var-export.html">var_export()</a> 导出类时,此<a href="language.oop5.static.html">静态</a> 方法会被调用.</p>
+<p>本方法的唯一参数是一个数组,其中包含按 <em>array('property' => value, …)</em> 格式排列的类属性.</p>
+<p><strong>Example #4 使用 <a href="language.oop5.magic.html#object.set-state">__set_state()</a>>(PHP 5.1.0 起)</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class A  
+{  
+    public $var1;  
+    public $var2;  
+
+    public static function __set_state($an_array) // As of PHP 5.1.0  
+    {  
+        $obj = new A;  
+        $obj-&gt;var1 = $an_array['var1'];  
+        $obj-&gt;var2 = $an_array['var2'];  
+        return $obj;  
+    }  
+}  
+
+$a = new A;  
+$a-&gt;var1 = 5;  
+$a-&gt;var2 = 'foo';  
+
+eval('$b = ' . var_export($a, true) . ';'); // $b = A::__set_state(array(  
+                                            //    'var1' =&gt; 5,  
+                                            //    'var2' =&gt; 'foo',  
+                                            // ));  
+var_dump($b);  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(A)#2 (2) {
+  ["var1"]=&gt;
+  int(5)
+  ["var2"]=&gt;
+  string(3) "foo"
+}</p>
+<h3 id="__debuginfolanguageoop5magichtmlobjectdebuginfo"><a href="language.oop5.magic.html#object.debuginfo">__debugInfo()</a></h3>
+<p><strong>__debugInfo</strong> ( void ) : array</p>
+<p>This method is called by <a href="function.var-dump.html">var_dump()</a> when dumping an object to get the properties that should be shown. If the method isn't defined on an object, then all public, protected and private properties will be shown.</p>
+<p>This feature was added in PHP 5.6.0.</p>
+<p><strong>Example #5 Using <a href="language.oop5.magic.html#object.debuginfo">__debugInfo()</a></strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class C {  
+    private $prop;  
+
+    public function __construct($val) {  
+        $this-&gt;prop = $val;  
+    }  
+
+    public function __debugInfo() {  
+        return [  
+            'propSquared' =&gt; $this-&gt;prop ** 2,  
+        ];  
+    }  
+}  
+
+var_dump(new C(42));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(C)#1 (1) {
+  ["propSquared"]=&gt;
+  int(1764)
+}</p>
+<h3 id="9_18">9.18 Final 关键字</h3>
+<p>PHP 5 新增了一个 final 关键字.如果父类中的方法被声明为 final,则子类无法覆盖该方法.如果一个类被声明为 final,则不能被继承.</p>
+<p><strong>Example #1 Final 方法示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class BaseClass {  
+   public function test() {  
+       echo "BaseClass::test() called\n";  
+   }  
+
+   final public function moreTesting() {  
+       echo "BaseClass::moreTesting() called\n";  
+   }  
+}  
+
+class ChildClass extends BaseClass {  
+   public function moreTesting() {  
+       echo "ChildClass::moreTesting() called\n";  
+   }  
+}  
+// Results in Fatal error: Cannot override final method BaseClass::moreTesting()  
+?&gt;
+</code></pre>
+<p><strong>Example #2 Final 类示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+final class BaseClass {  
+   public function test() {  
+       echo "BaseClass::test() called\n";  
+   }  
+
+   // 这里无论你是否将方法声明为final,都没有关系  
+   final public function moreTesting() {  
+       echo "BaseClass::moreTesting() called\n";  
+   }  
+}  
+
+class ChildClass extends BaseClass {  
+}  
+// 产生 Fatal error: Class ChildClass may not inherit from final class (BaseClass)  
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>: 属性不能被定义为 final,只有类和方法才能被定义为 final.</p>
+</blockquote>
+<h3 id="9_19">9.19 对象复制</h3>
+<p>在多数情况下,我们并不需要完全复制一个对象来获得其中属性.但有一个情况下确实需要:如果你有一个 GTK 窗口对象,该对象持有窗口相关的资源.你可能会想复制一个新的窗口,保持所有属性与原来的窗口相同,但必须是一个新的对象(因为如果不是新的对象,那么一个窗口中的改变就会影响到另一个窗口).还有一种情况:如果对象 A 中保存着对象 B 的引用,当你复制对象 A 时,你想其中使用的对象不再是对象 B 而是 B 的一个副本,那么你必须得到对象 A 的一个副本.</p>
+<p>对象复制可以通过 clone 关键字来完成(如果可能,这将调用对象的 <a href="language.oop5.cloning.html#object.clone">__clone()</a> 方法).对象中的 <a href="language.oop5.cloning.html#object.clone">__clone()</a> 方法不能被直接调用.</p>
+<p>$copy_of_object = clone $object;</p>
+<p>当对象被复制后,PHP 5 会对对象的所有属性执行一个浅复制(shallow copy).所有的引用属性 仍然会是一个指向原来的变量的引用.</p>
+<p><strong>__clone</strong> ( void ) : void</p>
+<p>当复制完成时,如果定义了 <a href="language.oop5.cloning.html#object.clone">__clone()</a> 方法,则新创建的对象(复制生成的对象)中的 <a href="language.oop5.cloning.html#object.clone">__clone()</a> 方法会被调用,可用于修改属性的值(如果有必要的话).</p>
+<p><strong>Example #1 复制一个对象</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class SubObject  
+{  
+    static $instances = 0;  
+    public $instance;  
+
+    public function __construct() {  
+        $this-&gt;instance = ++self::$instances;  
+    }  
+
+    public function __clone() {  
+        $this-&gt;instance = ++self::$instances;  
+    }  
+}  
+
+class MyCloneable  
+{  
+    public $object1;  
+    public $object2;  
+
+    function __clone()  
+    {  
+
+        // 强制复制一份this-&gt;object, 否则仍然指向同一个对象  
+        $this-&gt;object1 = clone $this-&gt;object1;  
+    }  
+}  
+
+$obj = new MyCloneable();  
+
+$obj-&gt;object1 = new SubObject();  
+$obj-&gt;object2 = new SubObject();  
+
+$obj2 = clone $obj;  
+
+
+print("Original Object:\n");  
+print_r($obj);  
+
+print("Cloned Object:\n");  
+print_r($obj2);  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Original Object:
+MyCloneable Object
+(
+    [object1] =&gt; SubObject Object
+        (
+            [instance] =&gt; 1
+        )</p>
+<pre class="prettyprint"><code>\[object2\] =&gt; SubObject Object
+    (
+        \[instance\] =&gt; 2
+    )
+</code></pre>
+<p>)
+Cloned Object:
+MyCloneable Object
+(
+    [object1] =&gt; SubObject Object
+        (
+            [instance] =&gt; 3
+        )</p>
+<pre class="prettyprint"><code>\[object2\] =&gt; SubObject Object
+    (
+        \[instance\] =&gt; 2
+    )
+</code></pre>
+<p>)</p>
+<h3 id="9_20">9.20 对象比较</h3>
+<p>PHP 5 中的对象比较要比 PHP 4 中复杂,所期望的结果更符合一个面向对象语言.</p>
+<p>当使用比较运算符(<em>==</em>)比较两个对象变量时,比较的原则是:如果两个对象的属性和属性值 都相等,而且两个对象是同一个类的实例,那么这两个对象变量相等.</p>
+<p>而如果使用全等运算符(<em>===</em>),这两个对象变量一定要指向某个类的同一个实例(即同一个对象).</p>
+<p>通过下面的示例可以理解以上原则.</p>
+<p><strong>Example #1 PHP 5 的对象比较</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function bool2str($bool)  
+{  
+    if ($bool === false) {  
+        return 'FALSE';  
+    } else {  
+        return 'TRUE';  
+    }  
+}  
+
+function compareObjects(&amp;$o1, &amp;$o2)  
+{  
+    echo 'o1 == o2 : ' . bool2str($o1 == $o2) . "\n";  
+    echo 'o1 != o2 : ' . bool2str($o1 != $o2) . "\n";  
+    echo 'o1 === o2 : ' . bool2str($o1 === $o2) . "\n";  
+    echo 'o1 !== o2 : ' . bool2str($o1 !== $o2) . "\n";  
+}  
+
+class Flag  
+{  
+    public $flag;  
+
+    function Flag($flag = true) {  
+        $this-&gt;flag = $flag;  
+    }  
+}  
+
+class OtherFlag  
+{  
+    public $flag;  
+
+    function OtherFlag($flag = true) {  
+        $this-&gt;flag = $flag;  
+    }  
+}  
+
+$o = new Flag();  
+$p = new Flag();  
+$q = $o;  
+$r = new OtherFlag();  
+
+echo "Two instances of the same class\n";  
+compareObjects($o, $p);  
+
+echo "\nTwo references to the same instance\n";  
+compareObjects($o, $q);  
+
+echo "\nInstances of two different classes\n";  
+compareObjects($o, $r);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Two instances of the same class
+o1 == o2 : TRUE
+o1 != o2 : FALSE
+o1 === o2 : FALSE
+o1 !== o2 : TRUE</p>
+<p>Two references to the same instance
+o1 == o2 : TRUE
+o1 != o2 : FALSE
+o1 === o2 : TRUE
+o1 !== o2 : FALSE</p>
+<p>Instances of two different classes
+o1 == o2 : FALSE
+o1 != o2 : TRUE
+o1 === o2 : FALSE
+o1 !== o2 : TRUE</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>PHP 扩展中可以自行定义对象比较的原则.</p>
+</blockquote>
+<h3 id="9_21">9.21 类型约束</h3>
+<p>PHP 5 可以使用类型约束.函数的参数可以指定必须为对象(在函数原型里面指定类的名字),接口,数组(PHP 5.1 起)或者 <a href="language.types.callable.html">callable</a>(PHP 5.4 起).不过如果使用 <a href="language.types.null.html">NULL</a> 作为参数的默认值,那么在调用函数的时候依然可以使用 <a href="language.types.null.html">NULL</a> 作为实参.</p>
+<p>如果一个类或接口指定了类型约束,则其所有的子类或实现也都如此.</p>
+<p>类型约束不能用于标量类型如 <a href="language.types.integer.html">int</a> 或 <a href="language.types.string.html">string</a>.<a href="language.oop5.traits.html">Traits</a> 也不允许.</p>
+<p><strong>Example #1 类型约束示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+//如下面的类  
+class MyClass  
+{  
+    /**  
+     * 测试函数  
+     * 第一个参数必须为 OtherClass 类的一个对象  
+     */  
+    public function test(OtherClass $otherclass) {  
+        echo $otherclass-&gt;var;  
+    }  
+
+
+    /**  
+     * 另一个测试函数  
+     * 第一个参数必须为数组   
+     */  
+    public function test_array(array $input_array) {  
+        print_r($input_array);  
+    }  
+}  
+
+    /**  
+     * 第一个参数必须为递归类型  
+     */  
+    public function test_interface(Traversable $iterator) {  
+        echo get_class($iterator);  
+    }  
+
+    /**  
+     * 第一个参数必须为回调类型  
+     */  
+    public function test_callable(callable $callback, $data) {  
+        call_user_func($callback, $data);  
+    }  
+}  
+
+// OtherClass 类定义  
+class OtherClass {  
+    public $var = 'Hello World';  
+}  
+?&gt;
+</code></pre>
+<p>函数调用的参数与定义的参数类型不一致时,会抛出一个可捕获的致命错误.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// 两个类的对象  
+$myclass = new MyClass;  
+$otherclass = new OtherClass;  
+
+// 致命错误:第一个参数必须是 OtherClass 类的一个对象  
+$myclass-&gt;test('hello');  
+
+// 致命错误:第一个参数必须为 OtherClass 类的一个实例  
+$foo = new stdClass;  
+$myclass-&gt;test($foo);  
+
+// 致命错误:第一个参数不能为 null  
+$myclass-&gt;test(null);  
+
+// 正确:输出 Hello World   
+$myclass-&gt;test($otherclass);  
+
+// 致命错误:第一个参数必须为数组  
+$myclass-&gt;test_array('a string');  
+
+// 正确:输出数组  
+$myclass-&gt;test_array(array('a', 'b', 'c'));  
+
+// 正确:输出 ArrayObject  
+$myclass-&gt;test_interface(new ArrayObject(array()));  
+
+// 正确:输出 int(1)  
+$myclass-&gt;test_callable('var_dump', 1);  
+?&gt;
+</code></pre>
+<p>类型约束不只是用在类的成员函数里,也能使用在函数里:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// 如下面的类  
+class MyClass {  
+    public $var = 'Hello World';  
+}  
+
+/**  
+ * 测试函数  
+ * 第一个参数必须是 MyClass 类的一个对象  
+ */  
+function MyFunction (MyClass $foo) {  
+    echo $foo-&gt;var;  
+}  
+
+// 正确  
+$myclass = new MyClass;  
+MyFunction($myclass);  
+?&gt;
+</code></pre>
+<p>类型约束允许 NULL 值:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+/* 接受 NULL 值 */  
+function test(stdClass $obj = NULL) {  
+
+}  
+
+test(NULL);  
+test(new stdClass);  
+
+?&gt;
+</code></pre>
+<h3 id="9_22">9.22 后期静态绑定</h3>
+<p>自 PHP 5.3.0 起,PHP 增加了一个叫做后期静态绑定的功能,用于在继承范围内引用静态调用的类.</p>
+<p>准确说,后期静态绑定工作原理是存储了在上一个"非转发调用"(non-forwarding call)的类名.当进行静态方法调用时,该类名即为明确指定的那个(通常在 <a href="language.oop5.paamayim-nekudotayim.html"><em>::</em></a> 运算符左侧部分);当进行非静态方法调用时,即为该对象所属的类.所谓的"转发调用"(forwarding call)指的是通过以下几种方式进行的静态调用:<em>self::</em>,<em>parent::</em>,<em>static::</em> 以及 <a href="function.forward-static-call.html">forward_static_call()</a>.可用 <a href="function.get-called-class.html">get_called_class()</a> 函数来得到被调用的方法所在的类名,<em>static::</em> 则指出了其范围.</p>
+<p>该功能从语言内部角度考虑被命名为"后期静态绑定"."后期绑定"的意思是说,<em>static::</em> 不再被解析为定义当前方法所在的类,而是在实际运行时计算的.也可以称之为"静态绑定",因为它可以用于(但不限于)静态方法的调用.</p>
+<h3 id="_self_"><em>self::</em> 的限制</h3>
+<p>使用 <em>self::</em> 或者 <em>__CLASS__</em> 对当前类的静态引用,取决于定义当前方法所在的类:</p>
+<p><strong>Example #1 <em>self::</em> 用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class A {  
+    public static function who() {  
+        echo __CLASS__;  
+    }  
+    public static function test() {  
+        self::who();  
+    }  
+}  
+
+class B extends A {  
+    public static function who() {  
+        echo __CLASS__;  
+    }  
+}  
+
+B::test();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>A</p>
+<h3 id="-14">后期静态绑定的用法</h3>
+<p>后期静态绑定本想通过引入一个新的关键字表示运行时最初调用的类来绕过限制.简单地说,这个关键字能够让你在上述例子中调用 <em>test()</em> 时引用的类是 <em>B</em> 而不是 <em>A</em>.最终决定不引入新的关键字,而是使用已经预留的 <em>static</em> 关键字.</p>
+<p><strong>Example #2 <em>static::</em> 简单用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class A {  
+    public static function who() {  
+        echo __CLASS__;  
+    }  
+    public static function test() {  
+        static::who(); // 后期静态绑定从这里开始  
+    }  
+}  
+
+class B extends A {  
+    public static function who() {  
+        echo __CLASS__;  
+    }  
+}  
+
+B::test();  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>B</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在非静态环境下,所调用的类即为该对象实例所属的类.由于 <em>$this-></em> 会在同一作用范围内尝试调用私有方法,而 <em>static::</em> 则可能给出不同结果.另一个区别是 <em>static::</em> 只能用于静态属性.</p>
+</blockquote>
+<p><strong>Example #3 非静态环境下使用 <em>static::</em></strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class A {  
+    private function foo() {  
+        echo "success!\n";  
+    }  
+    public function test() {  
+        $this-&gt;foo();  
+        static::foo();  
+    }  
+}  
+
+class B extends A {  
+   /* foo() will be copied to B, hence its scope will still be A and  
+    * the call be successful */  
+}  
+
+class C extends A {  
+    private function foo() {  
+        /* original method is replaced; the scope of the new one is C */  
+    }  
+}  
+
+$b = new B();  
+$b-&gt;test();  
+$c = new C();  
+$c-&gt;test();   //fails  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>success!
+success!
+success!</p>
+<p>Fatal error:  Call to private method C::foo() from context 'A' in /tmp/test.php on line 9</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>后期静态绑定的解析会一直到取得一个完全解析了的静态调用为止.另一方面,如果静态调用使用 <em>parent::</em> 或者 <em>self::</em> 将转发调用信息.</p>
+  <p><strong>Example #4 转发和非转发调用</strong></p>
+</blockquote>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+&gt; class A {  
+&gt;     public static function foo() {  
+&gt;         static::who();  
+&gt;     }  
+&gt;   
+&gt;     public static function who() {  
+&gt;         echo __CLASS__."\n";  
+&gt;     }  
+&gt; }  
+&gt;   
+&gt; class B extends A {  
+&gt;     public static function test() {  
+&gt;         A::foo();  
+&gt;         parent::foo();  
+&gt;         self::foo();  
+&gt;     }  
+&gt;   
+&gt;     public static function who() {  
+&gt;         echo __CLASS__."\n";  
+&gt;     }  
+&gt; }  
+&gt; class C extends B {  
+&gt;     public static function who() {  
+&gt;         echo __CLASS__."\n";  
+&gt;     }  
+&gt; }  
+&gt;   
+&gt; C::test();  
+&gt; ?&gt;
+</code></pre>
+<blockquote>
+  <p>以上例程会输出:</p>
+  <p>A
+  C
+  C</p>
+</blockquote>
+<h3 id="9_23">9.23 对象和引用</h3>
+<p>在php5 的对象编程经常提到的一个关键点是"默认情况下对象是通过引用传递的".但其实这不是完全正确的.下面通过一些例子来说明.</p>
+<p>PHP 的引用是别名,就是两个不同的变量名字指向相同的内容.在 PHP 5,一个对象变量已经不再保存整个对象的值.只是保存一个标识符来访问真正的对象内容. 当对象作为参数传递,作为结果返回,或者赋值给另外一个变量,另外一个变量跟原来的不是引用的关系,只是他们都保存着同一个标识符的拷贝,这个标识符指向同一个对象的真正内容.</p>
+<p><strong>Example #1 引用和对象</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class A {  
+    public $foo = 1;  
+}    
+
+$a = new A;  
+$b = $a;     // $a ,$b都是同一个标识符的拷贝  
+             // ($a) = ($b) = &lt;id&gt;  
+$b-&gt;foo = 2;  
+echo $a-&gt;foo."\n";  
+
+
+$c = new A;  
+$d = &amp;$c;    // $c ,$d是引用  
+             // ($c,$d) = &lt;id&gt;  
+
+$d-&gt;foo = 2;  
+echo $c-&gt;foo."\n";  
+
+
+$e = new A;  
+
+function foo($obj) {  
+    // ($obj) = ($e) = &lt;id&gt;  
+    $obj-&gt;foo = 2;  
+}  
+
+foo($e);  
+echo $e-&gt;foo."\n";  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>2
+2
+2</p>
+<h3 id="9_24">9.24 对象序列化</h3>
+<h3 id="序列化对象">序列化对象 - 在会话中存放对象</h3>
+<p>所有php里面的值都可以使用函数<a href="function.serialize.html">serialize()</a>来返回一个包含字节流的字符串来表示.<a href="function.unserialize.html">unserialize()</a>函数能够重新把字符串变回php原来的值. 序列化一个对象将会保存对象的所有变量,但是不会保存对象的方法,只会保存类的名字.</p>
+<p>为了能够<a href="function.unserialize.html">unserialize()</a>一个对象,这个对象的类必须已经定义过.如果序列化类A的一个对象,将会返回一个跟类A相关,而且包含了对象所有变量值的字符串. 如果要想在另外一个文件中解序列化一个对象,这个对象的类必须在解序列化之前定义,可以通过包含一个定义该类的文件或使用函数<a href="function.spl-autoload-register.html">spl_autoload_register()</a>来实现.</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// classa.inc:  
+
+  class A {  
+      public $one = 1;  
+
+      public function show_one() {  
+          echo $this-&gt;one;  
+      }  
+  }  
+
+// page1.php:  
+
+  include("classa.inc");  
+
+  $a = new A;  
+  $s = serialize($a);  
+  // 把变量$s保存起来以便文件page2.php能够读到  
+  file_put_contents('store', $s);  
+
+// page2.php:  
+
+  // 要正确了解序列化,必须包含下面一个文件  
+  include("classa.inc");  
+
+  $s = file_get_contents('store');  
+  $a = unserialize($s);  
+
+  // 现在可以使用对象$a里面的函数 show_one()  
+  $a-&gt;show_one();  
+?&gt;
+</code></pre>
+<p>当一个应用程序使用函数<a href="function.session-register.html">session_register()</a>来保存对象到会话中时,在每个页面结束的时候这些对象都会自动序列化,而在每个页面开始的时候又自动解序列化. 所以一旦对象被保存在会话中,整个应用程序的页面都能使用这些对象.但是,<a href="function.session-register.html">session_register()</a>在php5.4.0之后被移除了.</p>
+<p>在应用程序中序列化对象以便在之后使用,强烈推荐在整个应用程序都包含对象的类的定义. 不然有可能出现在解序列化对象的时候,没有找到该对象的类的定义,从而把没有方法的类<strong>__PHP_Incomplete_Class_Name</strong>作为该对象的类,导致返回一个没有用的对象.</p>
+<p>所以在上面的例子中,当运行<em>session_register("a")</em>,把变量$a放在会话里之后,需要在每个页面都包含文件<em>classa.inc</em>,而不是只有文件page1.php和page2.php.</p>
+<p>除了以上建议,可以在对象上使用 <a href="language.oop5.magic.html#object.sleep">__sleep()</a> 和 <a href="language.oop5.magic.html#object.wakeup">__wakeup()</a> 方法对序列化/反序列化事件挂载钩子. 使用 <a href="language.oop5.magic.html#object.sleep">__sleep()</a> 也能够让仅仅序列化对象的某些属性.</p>
+<h3 id="9_25">9.25 OOP 变更日志</h3>
+<p>PHP 5 OOP 模型的变更将被记录在此.功能的描述与其他相关注意事项记录在了 OOP 5 文档之中.</p>
+<p>版本</p>
+<p>说明</p>
+<p>7.0.0</p>
+<p>Trait 里定义兼容的属性不再产生错误信息.</p>
+<p>5.6.0</p>
+<p>增加: <a href="language.oop5.magic.html#object.debuginfo">__debugInfo()</a> 方法.</p>
+<p>5.5.0</p>
+<p>增加: <a href="language.oop5.basic.html#language.oop5.basic.class.class">::class</a> 魔法常量.</p>
+<p>5.5.0</p>
+<p>增加: <a href="language.exceptions.html">finally</a> 来处理异常.</p>
+<p>5.4.0</p>
+<p>增加: <a href="language.oop5.traits.html">traits</a>.</p>
+<p>5.4.0</p>
+<p>已变更:如果一个<a href="language.oop5.abstract.html">抽象</a> 类定义了构造函数的签名,它将必须被实现.</p>
+<p>5.3.3</p>
+<p>已变更: <a href="language.namespaces.html">命名空间</a> 中和类同名的方法不再被作为 <a href="language.oop5.decon.html">构造函数</a>.这个变更不影响非命名空间中的类.</p>
+<p>5.3.0</p>
+<p>已变更:类实现接口的方法所具有的默认值不再需要和接口的默认值一致.</p>
+<p>5.3.0</p>
+<p>已变更: 现在它也能够通过一个变量来引用一个类(例如,<em>echo $classname::constant;</em>). 这个变量的值不能是一个保留关键词(比如,<em>self</em>,<em>parent</em> 或 <em>static</em>).</p>
+<p>5.3.0</p>
+<p>已变更: 如果<a href="language.oop5.overloading.html">重载</a>方法被定义为 <a href="language.oop5.static.html">static</a> 将导致一个 <strong><code>E_WARNING</code></strong> 级别的错误. 同时它也需要强制使用 public 的可见性.</p>
+<p>5.3.0</p>
+<p>已变更: 在 5.3.0 之前的版本,<a href="function.autoload.html">__autoload()</a> 函数里抛出的异常不能被 <a href="language.exceptions.html">catch</a> 块结构捕获,并会导致一个致命错误. 现在在一个前提下 <a href="language.exceptions.html">catch</a> 块能够捕获 __autoload 函数中抛出的错误.如果抛出一个自定义异常,这个自定义异常的类必须是可用的.否则 __autoload 函数可能递归自动加载这个自定义异常类.</p>
+<p>5.3.0</p>
+<p>新增: <a href="language.oop5.overloading.html">__callStatic</a> 方法.</p>
+<p>5.3.0</p>
+<p>新增: <a href="language.types.string.html#language.types.string.syntax.heredoc">heredoc</a> 和 <a href="language.types.string.html#language.types.string.syntax.heredoc">nowdoc</a> 支持类的 <em>常量</em> 和属性的定义. 注意:heredoc 值必须和双引号字符串遵循同样的规则(比如,变量将被替换).</p>
+<p>5.3.0</p>
+<p>新增: <a href="language.oop5.late-static-bindings.html">后期静态绑定</a>.</p>
+<p>5.3.0</p>
+<p>新增: <a href="language.oop5.magic.html#object.invoke">__invoke</a> 方法.</p>
+<p>5.2.0</p>
+<p>已变更:<a href="language.oop5.magic.html#object.tostring">__toString</a> 方法仅在直接与 <a href="function.echo.html">echo</a> 或 <a href="function.print.html">print</a> 使用时被调用.但是现在它能在任何字符串上下文被调用(比如在 <a href="function.printf.html">printf()</a> 中使用 <em>%s</em> ),但不是在其他类型的上下文被调用(例如 <em>%d</em> 修饰符). 自 PHP 5.2.0 起,将不具有 <em>__toString</em> 方法的对象转化为字符串将导致一个 <strong><code>E_RECOVERABLE_ERROR</code></strong> 级别的错误.</p>
+<p>5.1.3</p>
+<p>已变更:在 PHP 5 之前的版本,<em>var</em> 的使用已被废弃,并将产生一个 <strong><code>E_STRICT</code></strong> 级别的错误.现在它不再被废弃,因此也不会产生错误.</p>
+<p>5.1.0</p>
+<p>已变更:现在 <a href="language.oop5.magic.html#object.set-state">__set_state</a> 静态方法在 <a href="function.var-export.html">var_export()</a> 导出类时会被调用.</p>
+<p>5.1.0</p>
+<p>新增:<a href="language.oop5.overloading.html#object.isset">__isset</a> 和 <a href="language.oop5.overloading.html#object.unset">__unset</a> 方法.</p>

@@ -1,0 +1,827 @@
+<h1 id="8_">8. 函数</h1>
+<h3 id="8_1">8.1 用户自定义函数</h3>
+<p>一个函数可由以下的语法来定义:</p>
+<p><strong>Example #1 展示函数用途的伪代码</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function foo($arg_1, $arg_2, /* ..., */ $arg_n)  
+{  
+    echo "Example function.\n";  
+    return $retval;  
+}  
+?&gt;
+</code></pre>
+<p>任何有效的 PHP 代码都有可能出现在函数内部,甚至包括其它函数和<a href="language.oop5.basic.html#language.oop5.basic.class">类</a>定义.</p>
+<p>函数名和 PHP 中的其它标识符命名规则相同.有效的函数名以字母或下划线打头,后面跟字母,数字或下划线.可以用正则表达式表示为:<em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>.</p>
+<p><strong>Tip</strong></p>
+<p>请参见<a href="userlandnaming.html">用户空间命名指南</a>.</p>
+<p>函数无需在调用之前被定义,<em>除非</em>是下面两个例子中函数是有条件被定义时.</p>
+<p>当一个函数是有条件被定义时,必须在调用函数<em>之前</em>定义.</p>
+<p><strong>Example #2 有条件的函数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$makefoo = true;  
+
+/* 不能在此处调用foo()函数,  
+   因为它还不存在,但可以调用bar()函数.*/  
+
+bar();  
+
+if ($makefoo) {  
+  function foo()  
+  {  
+    echo "I don't exist until program execution reaches me.\n";  
+  }  
+}  
+
+/* 现在可以安全调用函数 foo()了,  
+   因为 $makefoo 值为真 */  
+
+if ($makefoo) foo();  
+
+function bar()  
+{  
+  echo "I exist immediately upon program start.\n";  
+}  
+
+?&gt;
+</code></pre>
+<p><strong>Example #3 函数中的函数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function foo()  
+{  
+  function bar()  
+  {  
+    echo "I don't exist until foo() is called.\n";  
+  }  
+}  
+
+/* 现在还不能调用bar()函数,因为它还不存在 */  
+
+foo();  
+
+/* 现在可以调用bar()函数了,因为foo()函数  
+   的执行使得bar()函数变为已定义的函数 */  
+
+bar();  
+
+?&gt;
+</code></pre>
+<p>PHP 中的所有函数和类都具有全局作用域,可以定义在一个函数之内而在之外调用,反之亦然.</p>
+<p>PHP 不支持函数重载,也不可能取消定义或者重定义已声明的函数.</p>
+<blockquote>
+  <p><strong>Note</strong>: 函数名是大小写无关的,不过在调用函数的时候,使用其在定义时相同的形式是个好习惯.</p>
+</blockquote>
+<p>PHP 的函数支持<a href="functions.arguments.html#functions.variable-arg-list">可变数量的参数</a>和<a href="functions.arguments.html#functions.arguments.default">默认参数</a>.参见 <a href="function.func-num-args.html">func_num_args()</a>,<a href="function.func-get-arg.html">func_get_arg()</a> 和 <a href="function.func-get-args.html">func_get_args()</a>.</p>
+<p>在 PHP 中可以调用递归函数.</p>
+<p><strong>Example #4 递归函数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function recursion($a)  
+{  
+    if ($a &lt; 20) {  
+        echo "$a\n";  
+        recursion($a + 1);  
+    }  
+}  
+?&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>: 但是要避免递归函数/方法调用超过 100-200 层,因为可能会使堆栈崩溃从而使当前脚本终止. 无限递归可视为编程错误.</p>
+</blockquote>
+<h3 id="8_2">8.2 函数的参数</h3>
+<p>通过参数列表可以传递信息到函数,即以逗号作为分隔符的表达式列表.参数是从左向右求值的.</p>
+<p>PHP 支持按值传递参数(默认),<a href="functions.arguments.html#functions.arguments.by-reference">通过引用传递参数</a>以及<a href="functions.arguments.html#functions.arguments.default">默认参数</a>.也支持<a href="functions.arguments.html#functions.variable-arg-list">可变长度参数列表</a>.</p>
+<p><strong>Example #1 向函数传递数组</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function takes_array($input)  
+{  
+    echo "$input[0] + $input[1] = ", $input[0]+$input[1];  
+}  
+?&gt;
+</code></pre>
+<h3 id="">通过引用传递参数</h3>
+<p>默认情况下,函数参数通过值传递(因而即使在函数内部改变参数的值,它并不会改变函数外部的值).如果希望允许函数修改它的参数值,必须通过引用传递参数.</p>
+<p>如果想要函数的一个参数总是通过引用传递,可以在函数定义中该参数的前面加上符号 &amp;:</p>
+<p><strong>Example #2 用引用传递函数参数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function add_some_extra(&amp;$string)  
+{  
+    $string .= 'and something extra.';  
+}  
+$str = 'This is a string, ';  
+add_some_extra($str);  
+echo $str;    // outputs 'This is a string, and something extra.'  
+?&gt;
+</code></pre>
+<h3 id="-1">默认参数的值</h3>
+<p>函数可以定义 C++ 风格的标量参数默认值,如下所示:</p>
+<p><strong>Example #3 在函数中使用默认参数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function makecoffee($type = "cappuccino")  
+{  
+    return "Making a cup of $type.\n";  
+}  
+echo makecoffee();  
+echo makecoffee(null);  
+echo makecoffee("espresso");  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Making a cup of cappuccino.
+Making a cup of .
+Making a cup of espresso.</p>
+<p>PHP 还允许使用数组 <a href="language.types.array.html">array</a> 和特殊类型 <strong><code>NULL</code></strong> 作为默认参数,例如:</p>
+<p><strong>Example #4 使用非标量类型作为默认参数</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function makecoffee($types = array("cappuccino"), $coffeeMaker = NULL)  
+{  
+    $device = is_null($coffeeMaker) ? "hands" : $coffeeMaker;  
+    return "Making a cup of ".join(", ", $types)." with $device.\n";  
+}  
+echo makecoffee();  
+echo makecoffee(array("cappuccino", "lavazza"), "teapot");  
+?&gt;
+</code></pre>
+<p>默认值必须是常量表达式,不能是诸如变量,类成员,或者函数调用等.</p>
+<p>注意当使用默认参数时,任何默认参数必须放在任何非默认参数的右侧;否则,函数将不会按照预期的情况工作.考虑下面的代码片断:</p>
+<p><strong>Example #5 函数默认参数的不正确用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function makeyogurt($type = "acidophilus", $flavour)  
+{  
+    return "Making a bowl of $type$flavour.\n";  
+}  
+
+echo makeyogurt("raspberry");   // won't work as expected  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Warning: Missing argument 2 in call to makeyogurt() in 
+/usr/local/etc/httpd/htdocs/phptest/functest.html on line 41
+Making a bowl of raspberry .</p>
+<p>现在,比较上面的例子和这个例子:</p>
+<p><strong>Example #6 函数默认参数正确的用法</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function makeyogurt($flavour, $type = "acidophilus")  
+{  
+    return "Making a bowl of $type$flavour.\n";  
+}  
+
+echo makeyogurt("raspberry");   // works as expected  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Making a bowl of acidophilus raspberry.</p>
+<blockquote>
+  <p><strong>Note</strong>: 自 PHP 5 起,传引用的参数也可以有默认值.</p>
+</blockquote>
+<h3 id="-2">类型声明</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在PHP 5中,类型声明也被称为类型提示.</p>
+</blockquote>
+<p>类型声明允许函数在调用时要求参数为特定类型. 如果给出的值类型不对,那么将会产生一个错误: 在PHP 5中,这将是一个可恢复的致命错误,而在PHP 7中将会抛出一个<strong>TypeError</strong>异常.</p>
+<p>为了指定一个类型声明,类型应该加到参数名前.这个声明可以通过将参数的默认值设为<strong><code>NULL</code></strong>来实现允许传递<strong><code>NULL</code></strong>.</p>
+<h4 id="validtypes">Valid types</h4>
+<p>Type</p>
+<p>Description</p>
+<p>Minimum PHP version</p>
+<p>Class/interface name</p>
+<p>The parameter must be an <a href="language.operators.type.html"><em>instanceof</em></a> the given class or interface name.</p>
+<p>PHP 5.0.0</p>
+<p><em>self</em></p>
+<p>The parameter must be an <a href="language.operators.type.html"><em>instanceof</em></a> the same class as the one the method is defined on. This can only be used on class and instance methods.</p>
+<p>PHP 5.0.0</p>
+<p><a href="language.types.array.html">array</a></p>
+<p>The parameter must be an <a href="language.types.array.html">array</a>.</p>
+<p>PHP 5.1.0</p>
+<p><a href="language.types.callable.html">callable</a></p>
+<p>The parameter must be a valid <a href="language.types.callable.html">callable</a>.</p>
+<p>PHP 5.4.0</p>
+<p><a href="language.types.boolean.html">bool</a></p>
+<p>The parameter must be a <a href="language.types.boolean.html">boolean</a> value.</p>
+<p>PHP 7.0.0</p>
+<p><a href="language.types.float.html">float</a></p>
+<p>The parameter must be a <a href="language.types.float.html">float</a>ing point number.</p>
+<p>PHP 7.0.0</p>
+<p><a href="language.types.integer.html">int</a></p>
+<p>The parameter must be an <a href="language.types.integer.html">integer</a>.</p>
+<p>PHP 7.0.0</p>
+<p><a href="language.types.string.html">string</a></p>
+<p>The parameter must be a <a href="language.types.string.html">string</a>.</p>
+<p>PHP 7.0.0</p>
+<p><strong>Warning</strong></p>
+<p>Aliases for the above scalar types are not supported. Instead, they are treated as class or interface names. For example, using <em>boolean</em> as a parameter or return type will require an argument or return value that is an <a href="language.operators.type.html"><em>instanceof</em></a> the class or interface <em>boolean</em>, rather than of type <a href="language.types.boolean.html">bool</a>:</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+ function test(boolean $param) {}  
+ test(true);  
+ ?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Fatal error: Uncaught TypeError: Argument 1 passed to test() must be an instance of boolean, boolean given, called in - on line 1 and defined in -:1</p>
+<h4 id="-3">范例</h4>
+<p><strong>Example #7 Basic class type declaration</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class C {}  
+class D extends C {}  
+
+// This doesn't extend C.  
+class E {}  
+
+function f(C $c) {  
+    echo get_class($c)."\n";  
+}  
+
+f(new C);  
+f(new D);  
+f(new E);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>C
+D</p>
+<p>Fatal error: Uncaught TypeError: Argument 1 passed to f() must be an instance of C, instance of E given, called in - on line 14 and defined in -:8
+Stack trace:</p>
+<h1 id="014fobjecte">0 -(14): f(Object(E))</h1>
+<h1 id="1main">1 {main}</h1>
+<p>thrown in - on line 8</p>
+<p><strong>Example #8 Basic interface type declaration</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+interface I { public function f(); }  
+class C implements I { public function f() {} }  
+
+// This doesn't implement I.  
+class E {}  
+
+function f(I $i) {  
+    echo get_class($i)."\n";  
+}  
+
+f(new C);  
+f(new E);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>C</p>
+<p>Fatal error: Uncaught TypeError: Argument 1 passed to f() must implement interface I, instance of E given, called in - on line 13 and defined in -:8
+Stack trace:</p>
+<h1 id="013fobjecte">0 -(13): f(Object(E))</h1>
+<h1 id="1main-1">1 {main}</h1>
+<p>thrown in - on line 8</p>
+<p><strong>Example #9 Nullable type declaration</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class C {}  
+
+function f(C $c = null) {  
+    var_dump($c);  
+}  
+
+f(new C);  
+f(null);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(C)#1 (0) {
+}
+NULL</p>
+<h4 id="-4">严格类型</h4>
+<p>默认情况下,如果能做到的话,PHP将会强迫错误类型的值转为函数期望的标量类型. 例如,一个函数的一个参数期望是<a href="language.types.string.html">string</a>,但传入的是<a href="language.types.integer.html">integer</a>,最终函数得到的将会是一个<a href="language.types.string.html">string</a>类型的值.</p>
+<p>可以基于每一个文件开启严格模式.在严格模式中,只有一个与类型声明完全相符的变量才会被接受,否则将会抛出一个<strong>TypeError</strong>. 唯一的一个例外是可以将<a href="language.types.integer.html">integer</a>传给一个期望<a href="language.types.float.html">float</a>的函数.</p>
+<p>使用 <a href="control-structures.declare.html"><em>declare</em></a> 语句和<em>strict_types</em> 声明来启用严格模式:</p>
+<p><strong>Caution</strong></p>
+<p>启用严格模式同时也会影响<a href="functions.returning-values.html#functions.returning-values.type-declaration">返回值类型声明</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>严格类型适用于在<em>启用严格模式的文件内</em>的函数调用,而不是在那个文件内声明的函数. 一个没有启用严格模式的文件内调用了一个在启用严格模式的文件中定义的函数,那么将会遵循调用者的偏好(弱类型),而这个值将会被转换.</p>
+  <p><strong>Note</strong>:</p>
+  <p>严格类型仅用于标量类型声明,也正是因为如此,这需要PHP 7.0.0 或更新版本,因为标量类型声明也是在那个版本中添加的.</p>
+</blockquote>
+<p><strong>Example #10 Strict typing</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+declare(strict_types=1);  
+
+function sum(int $a, int $b) {  
+    return $a + $b;  
+}  
+
+var_dump(sum(1, 2));  
+var_dump(sum(1.5, 2.5));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>int(3)</p>
+<p>Fatal error: Uncaught TypeError: Argument 1 passed to sum() must be of the type integer, float given, called in - on line 9 and defined in -:4
+Stack trace:</p>
+<h1 id="09sum1525">0 -(9): sum(1.5, 2.5)</h1>
+<h1 id="1main-2">1 {main}</h1>
+<p>thrown in - on line 4</p>
+<p><strong>Example #11 Weak typing</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function sum(int $a, int $b) {  
+    return $a + $b;  
+}  
+
+var_dump(sum(1, 2));  
+
+// These will be coerced to integers: note the output below!  
+var_dump(sum(1.5, 2.5));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>int(3)
+int(3)</p>
+<p>**Example #12 Catching *<em>TypeError</em>***</p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+declare(strict_types=1);  
+
+function sum(int $a, int $b) {  
+    return $a + $b;  
+}  
+
+try {  
+    var_dump(sum(1, 2));  
+    var_dump(sum(1.5, 2.5));  
+} catch (TypeError $e) {  
+    echo 'Error: '.$e-&gt;getMessage();  
+}  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>int(3)
+Error: Argument 1 passed to sum() must be of the type integer, float given, called in - on line 10</p>
+<h3 id="-5">可变数量的参数列表</h3>
+<p>PHP 在用户自定义函数中支持可变数量的参数列表.在 PHP 5.6 及以上的版本中,由 <em>…</em> 语法实现;在 PHP 5.5 及更早版本中,使用函数 <a href="function.func-num-args.html">func_num_args()</a>,<a href="function.func-get-arg.html">func_get_arg()</a>,和 <a href="function.func-get-args.html">func_get_args()</a> .</p>
+<h4 id="__inphp56"><em>…</em> in PHP 5.6+</h4>
+<p>In PHP 5.6 and later, argument lists may include the <em>…</em> token to denote that the function accepts a variable number of arguments. The arguments will be passed into the given variable as an array; for example:</p>
+<p><strong>Example #13 Using <em>…</em> to access variable arguments</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function sum(...$numbers) {  
+    $acc = 0;  
+    foreach ($numbers as $n) {  
+        $acc += $n;  
+    }  
+    return $acc;  
+}  
+
+echo sum(1, 2, 3, 4);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>10</p>
+<p>You can also use <em>…</em> when calling functions to unpack an <a href="language.types.array.html">array</a> or <strong>Traversable</strong> variable or literal into the argument list:</p>
+<p><strong>Example #14 Using <em>…</em> to provide arguments</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function add($a, $b) {  
+    return $a + $b;  
+}  
+
+echo add(...[1, 2])."\n";  
+
+$a = [1, 2];  
+echo add(...$a);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>3
+3</p>
+<p>You may specify normal positional arguments before the <em>…</em> token. In this case, only the trailing arguments that don't match a positional argument will be added to the array generated by <em>…</em>.</p>
+<p>It is also possible to add a <a href="language.oop5.typehinting.html">type hint</a> before the <em>…</em> token. If this is present, then all arguments captured by <em>…</em> must be objects of the hinted class.</p>
+<p><strong>Example #15 Type hinted variable arguments</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function total_intervals($unit, DateInterval ...$intervals) {  
+    $time = 0;  
+    foreach ($intervals as $interval) {  
+        $time += $interval-&gt;$unit;  
+    }  
+    return $time;  
+}  
+
+$a = new DateInterval('P1D');  
+$b = new DateInterval('P2D');  
+echo total_intervals('d', $a, $b).' days';  
+
+// This will fail, since null isn't a DateInterval object.  
+echo total_intervals('d', null);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>3 days
+Catchable fatal error: Argument 2 passed to total_intervals() must be an instance of DateInterval, null given, called in - on line 14 and defined in - on line 2</p>
+<p>Finally, you may also pass variable arguments <a href="functions.arguments.html#functions.arguments.by-reference">by reference</a> by prefixing the <em>…</em> with an ampersand (<em>&</em>).</p>
+<h4 id="olderversionsofphp">Older versions of PHP</h4>
+<p>No special syntax is required to note that a function is variadic; however access to the function's arguments must use <a href="function.func-num-args.html">func_num_args()</a>, <a href="function.func-get-arg.html">func_get_arg()</a> and <a href="function.func-get-args.html">func_get_args()</a>.</p>
+<p>The first example above would be implemented as follows in PHP 5.5 and earlier:</p>
+<p><strong>Example #16 Accessing variable arguments in PHP 5.5 and earlier</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function sum() {  
+    $acc = 0;  
+    foreach (func_get_args() as $n) {  
+        $acc += $n;  
+    }  
+    return $acc;  
+}  
+
+echo sum(1, 2, 3, 4);  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>10</p>
+<h3 id="8_3">8.3 返回值</h3>
+<p>值通过使用可选的返回语句返回.可以返回包括数组和对象的任意类型.返回语句会立即中止函数的运行,并且将控制权交回调用该函数的代码行.更多信息见 <a href="function.return.html">return</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>如果省略了 <a href="function.return.html">return</a>,则返回值为 <strong><code>NULL</code></strong>.</p>
+</blockquote>
+<h3 id="return">return 的使用</h3>
+<p><strong>Example #1 <a href="function.return.html">return</a> 的使用</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function square($num)  
+{  
+    return $num * $num;  
+}  
+echo square(4);   // outputs '16'.  
+?&gt;
+</code></pre>
+<p>函数不能返回多个值,但可以通过返回一个数组来得到类似的效果.</p>
+<p><strong>Example #2 返回一个数组以得到多个返回值</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function small_numbers()  
+{  
+    return array (0, 1, 2);  
+}  
+list ($zero, $one, $two) = small_numbers();  
+?&gt;
+</code></pre>
+<p>从函数返回一个引用,必须在函数声明和指派返回值给一个变量时都使用引用运算符 &amp;:</p>
+<p><strong>Example #3 从函数返回一个引用</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function &amp;returns_reference()  
+{  
+    return $someref;  
+}  
+
+$newref =&amp; returns_reference();  
+?&gt;
+</code></pre>
+<p>有关引用的更多信息, 请查看<a href="language.references.html">引用的解释</a>.</p>
+<h3 id="-6">返回值类型声明</h3>
+<p>PHP 7 增加了对返回值类型声明的支持. 就如 <a href="functions.arguments.html#functions.arguments.type-declaration">类型声明</a>一样, 返回值类型声明将指定该函数返回值的类型.同样,返回值类型声明也与 <a href="functions.arguments.html#functions.arguments.type-declaration.types">有效类型</a> 中可用的参数类型声明一致.</p>
+<p><a href="functions.arguments.html#functions.arguments.type-declaration.strict">严格类型</a> 也会影响返回值类型声明.在默认的弱模式中,如果返回值与返回值的类型不一致,则会被强制转换为返回值声明的类型.在强模式中,返回值的类型必须正确,否则将会抛出一个<strong>TypeError</strong>异常.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>当覆盖一个父类方法时,子类方法的返回值类型声明必须与父类一致.如果父类方法没有定义返回类型,那么子类方法可以定义任意的返回值类型声明.</p>
+</blockquote>
+<h4 id="-7">范例</h4>
+<p><strong>Example #4 基础返回值类型声明</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function sum($a, $b): float {  
+    return $a + $b;  
+}  
+
+// Note that a float will be returned.  
+var_dump(sum(1, 2));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>float(3)</p>
+<p><strong>Example #5 严格模式下执行</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+declare(strict_types=1);  
+
+function sum($a, $b): int {  
+    return $a + $b;  
+}  
+
+var_dump(sum(1, 2));  
+var_dump(sum(1, 2.5));  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>int(3)</p>
+<p>Fatal error: Uncaught TypeError: Return value of sum() must be of the type integer, float returned in - on line 5 in -:5
+Stack trace:</p>
+<h1 id="09sum125">0 -(9): sum(1, 2.5)</h1>
+<h1 id="1main-3">1 {main}</h1>
+<p>thrown in - on line 5</p>
+<p><strong>Example #6 返回一个对象</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class C {}  
+
+function getC(): C {  
+    return new C;  
+}  
+
+var_dump(getC());  
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(C)#1 (0) {
+}</p>
+<h3 id="8_4">8.4 可变函数</h3>
+<p>PHP 支持可变函数的概念.这意味着如果一个变量名后有圆括号,PHP 将寻找与变量的值同名的函数,并且尝试执行它.可变函数可以用来实现包括回调函数,函数表在内的一些用途.</p>
+<p>可变函数不能用于例如 <a href="function.echo.html">echo</a>,<a href="function.print.html">print</a>,<a href="function.unset.html">unset()</a>,<a href="function.isset.html">isset()</a>,<a href="function.empty.html">empty()</a>,<a href="function.include.html">include</a>,<a href="function.require.html">require</a> 以及类似的语言结构.需要使用自己的包装函数来将这些结构用作可变函数.</p>
+<p><strong>Example #1 可变函数示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function foo() {  
+    echo "In foo()&lt;br /&gt;\n";  
+}  
+
+function bar($arg = '') {  
+    echo "In bar(); argument was '$arg'.&lt;br /&gt;\n";  
+}  
+
+// 使用 echo 的包装函数  
+function echoit($string)  
+{  
+    echo $string;  
+}  
+
+$func = 'foo';  
+$func();        // This calls foo()  
+
+$func = 'bar';  
+$func('test');  // This calls bar()  
+
+$func = 'echoit';  
+$func('test');  // This calls echoit()  
+?&gt;
+</code></pre>
+<p>也可以用可变函数的语法来调用一个对象的方法.</p>
+<p><strong>Example #2 可变方法范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Foo  
+{  
+    function Variable()  
+    {  
+        $name = 'Bar';  
+        $this-&gt;$name(); // This calls the Bar() method  
+    }  
+
+    function Bar()  
+    {  
+        echo "This is Bar";  
+    }  
+}  
+
+$foo = new Foo();  
+$funcname = "Variable";  
+$foo-&gt;$funcname();   // This calls $foo-&gt;Variable()  
+
+?&gt;
+</code></pre>
+<p>当调用静态方法时,函数调用要比静态属性优先:</p>
+<p><strong>Example #3 Variable 方法和静态属性示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Foo  
+{  
+    static $variable = 'static property';  
+    static function Variable()  
+    {  
+        echo 'Method Variable called';  
+    }  
+}  
+
+echo Foo::$variable; // This prints 'static property'. It does need a $variable in this scope.  
+$variable = "Variable";  
+Foo::$variable();  // This calls $foo-&gt;Variable() reading $variable in this scope.  
+
+?&gt;
+</code></pre>
+<p>As of PHP 5.4.0, you can call any <a href="language.types.callable.html">callable</a> stored in a variable.</p>
+<p><strong>Example #4 Complex callables</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+class Foo  
+{  
+    static function bar()  
+    {  
+        echo "bar\n";  
+    }  
+    function baz()  
+    {  
+        echo "baz\n";  
+    }  
+}  
+
+$func = array("Foo", "bar");  
+$func(); // prints "bar"  
+$func = array(new Foo, "baz");  
+$func(); // prints "baz"  
+$func = "Foo::bar";  
+$func(); // prints "bar" as of PHP 7.0.0; prior, it raised a fatal error  
+?&gt;
+</code></pre>
+<p>参见 <a href="function.is-callable.html">is_callable()</a>,<a href="function.call-user-func.html">call_user_func()</a>,<a href="language.variables.variable.html">可变变量</a>和 <a href="function.function-exists.html">function_exists()</a>.</p>
+<h3 id="-8">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>7.0.0</p>
+<p>'ClassName::methodName' is allowed as variable function.</p>
+<p>5.4.0</p>
+<p>Arrays, which are valid callables, are allowed as variable functions.</p>
+<h3 id="8_5">8.5 内部(内置)函数</h3>
+<p>PHP 有很多标准的函数和结构.还有一些函数需要和特定地 PHP 扩展模块一起编译,否则在使用它们的时候就会得到一个致命的"未定义函数"错误.例如,要使用 <a href="ref.image.html">image</a> 函数中的 <a href="function.imagecreatetruecolor.html">imagecreatetruecolor()</a>,需要在编译 PHP 的时候加上 GD 的支持.或者,要使用 <a href="function.mysql-connect.html">mysql_connect()</a> 函数,就需要在编译 PHP 的时候加上 <a href="ref.mysql.html">MySQL</a> 支持.有很多核心函数已包含在每个版本的 PHP 中如<a href="ref.strings.html">字符串</a>和<a href="ref.var.html">变量</a>函数.调用 <a href="function.phpinfo.html">phpinfo()</a> 或者 <a href="function.get-loaded-extensions.html">get_loaded_extensions()</a> 可以得知 PHP 加载了那些扩展库.同时还应该注意,很多扩展库默认就是有效的.PHP 手册按照不同的扩展库组织了它们的文档.请参阅<a href="configuration.html">配置</a>,<a href="install.html">安装</a>以及各自的扩展库章节以获取有关如何设置 PHP 的信息.</p>
+<p>手册中<a href="about.prototypes.html">如何阅读函数原型</a>讲解了如何阅读和理解一个函数的原型.确认一个函数将返回什么,或者函数是否直接作用于传递的参数是很重要的.例如,<a href="function.str-replace.html">str_replace()</a> 函数将返回修改过的字符串,而 <a href="function.usort.html">usort()</a> 却直接作用于传递的参数变量本身.手册中,每一个函数的页面中都有关于函数参数,行为改变,成功与否的返回值以及使用条件等信息.了解这些重要的(常常是细微的)差别是编写正确的 PHP 代码的关键.</p>
+<blockquote>
+  <p><strong>Note</strong>: 如果传递给函数的参数类型与实际的类型不一致,例如将一个 <a href="language.types.array.html">array</a> 传递给一个 <a href="language.types.string.html">string</a> 类型的变量,那么函数的返回值是不确定的.在这种情况下,通常函数会返回 <strong><code>NULL</code></strong>.但这仅仅是一个惯例,并不一定如此.</p>
+</blockquote>
+<p>参见 <a href="function.function-exists.html">function_exists()</a>,<a href="funcref.html">函数参考</a>,<a href="function.get-extension-funcs.html">get_extension_funcs()</a> 和 <a href="function.dl.html">dl()</a>.</p>
+<h3 id="8_6">8.6 匿名函数</h3>
+<p>匿名函数(Anonymous functions),也叫闭包函数(<em>closures</em>),允许 临时创建一个没有指定名称的函数.最经常用作回调函数(<a href="language.pseudo-types.html#language.types.callback">callback</a>)参数的值.当然,也有其它应用的情况.</p>
+<p>匿名函数目前是通过 <a href="class.closure.html"></a><a href="class.closure.html">Closure</a> 类来实现的.</p>
+<p><strong>Example #1 匿名函数示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo preg_replace_callback('~-([a-z])~', function ($match) {  
+    return strtoupper($match[1]);  
+}, 'hello-world');  
+// 输出 helloWorld  
+?&gt;
+</code></pre>
+<p>闭包函数也可以作为变量的值来使用.PHP 会自动把此种表达式转换成内置类 <a href="class.closure.html">Closure</a> 的对象实例.把一个 closure 对象赋值给一个变量的方式与普通变量赋值的语法是一样的,最后也要加上分号:</p>
+<p><strong>Example #2 匿名函数变量赋值示例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$greet = function($name)  
+{  
+    printf("Hello %s\r\n", $name);  
+};  
+
+$greet('World');  
+$greet('PHP');  
+?&gt;
+</code></pre>
+<p>闭包可以从父作用域中继承变量. 任何此类变量都应该用 <em>use</em> 语言结构传递进去. PHP 7.1 起,不能传入此类变量: <a href="language.variables.predefined.html">superglobals</a>, $this 或者和参数重名.</p>
+<p><strong>Example #3 从父作用域继承变量</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+$message = 'hello';  
+
+// 没有 "use"  
+$example = function () {  
+    var_dump($message);  
+};  
+echo $example();  
+
+// 继承 $message  
+$example = function () use ($message) {  
+    var_dump($message);  
+};  
+echo $example();  
+
+// Inherited variable's value is from when the function  
+// is defined, not when called  
+$message = 'world';  
+echo $example();  
+
+// Reset message  
+$message = 'hello';  
+
+// Inherit by-reference  
+$example = function () use (&amp;$message) {  
+    var_dump($message);  
+};  
+echo $example();  
+
+// The changed value in the parent scope  
+// is reflected inside the function call  
+$message = 'world';  
+echo $example();  
+
+// Closures can also accept regular arguments  
+$example = function ($arg) use ($message) {  
+    var_dump($arg . ' ' . $message);  
+};  
+$example("hello");  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>Notice: Undefined variable: message in /example.php on line 6
+NULL
+string(5) "hello"
+string(5) "hello"
+string(5) "hello"
+string(5) "world"
+string(11) "hello world"</p>
+<p>这些变量都必须在函数或类的头部声明. 从父作用域中继承变量与使用全局变量是<em>不同</em>的.全局变量存在于一个全局的范围,无论当前在执行的是哪个函数.而 闭包的父作用域是定义该闭包的函数(不一定是调用它的函数).示例如下:</p>
+<p><strong>Example #4 Closures 和作用域</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// 一个基本的购物车,包括一些已经添加的商品和每种商品的数量.  
+// 其中有一个方法用来计算购物车中所有商品的总价格,该方法使  
+// 用了一个 closure 作为回调函数.  
+class Cart  
+{  
+    const PRICE_BUTTER  = 1.00;  
+    const PRICE_MILK    = 3.00;  
+    const PRICE_EGGS    = 6.95;  
+
+    protected   $products = array();  
+
+    public function add($product, $quantity)  
+    {  
+        $this-&gt;products[$product] = $quantity;  
+    }  
+
+    public function getQuantity($product)  
+    {  
+        return isset($this-&gt;products[$product]) ? $this-&gt;products[$product] :  
+               FALSE;  
+    }  
+
+    public function getTotal($tax)  
+    {  
+        $total = 0.00;  
+
+        $callback =  
+            function ($quantity, $product) use ($tax, &amp;$total)  
+            {  
+                $pricePerItem = constant(__CLASS__ . "::PRICE_" .  
+                    strtoupper($product));  
+                $total += ($pricePerItem * $quantity) * ($tax + 1.0);  
+            };  
+
+        array_walk($this-&gt;products, $callback);  
+        return round($total, 2);;  
+    }  
+}  
+
+$my_cart = new Cart;  
+
+// 往购物车里添加条目  
+$my_cart-&gt;add('butter', 1);  
+$my_cart-&gt;add('milk', 3);  
+$my_cart-&gt;add('eggs', 6);  
+
+// 打出出总价格,其中有 5% 的销售税.  
+print $my_cart-&gt;getTotal(0.05) . "\n";  
+// 最后结果是 54.29  
+?&gt;
+</code></pre>
+<p><strong>Example #5 Automatic binding of <em>$this</em></strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class Test  
+{  
+    public function testing()  
+    {  
+        return function() {  
+            var_dump($this);  
+        };  
+    }  
+}  
+
+$object = new Test;  
+$function = $object-&gt;testing();  
+$function();  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>object(Test)#1 (0) {
+}</p>
+<p>以上例程在PHP 5.3中的输出:</p>
+<p>Notice: Undefined variable: this in script.php on line 8
+NULL</p>
+<p>As of PHP 5.4.0, when declared in the context of a class, the current class is automatically bound to it, making <em>$this</em> available inside of the function's scope. If this automatic binding of the current class is not wanted, then <a href="functions.anonymous.html#functions.anonymous-functions.static">static anonymous functions</a> may be used instead.</p>
+<h3 id="staticanonymousfunctions">Static anonymous functions</h3>
+<p>As of PHP 5.4, anonymous functions may be declared statically. This prevents them from having the current class automatically bound to them. Objects may also not be bound to them at runtime.</p>
+<p><strong>Example #6 Attempting to use <em>$this</em> inside a static anonymous function</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+class Foo  
+{  
+    function __construct()  
+    {  
+        $func = static function() {  
+            var_dump($this);  
+        };  
+        $func();  
+    }  
+};  
+new Foo();  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Notice: Undefined variable: this in %s on line %d
+NULL</p>
+<p><strong>Example #7 Attempting to bind an object to a static anonymous function</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$func = static function() {  
+    // function body  
+};  
+$func = $func-&gt;bindTo(new StdClass);  
+$func();  
+
+?&gt;
+</code></pre>
+<p>以上例程会输出:</p>
+<p>Warning: Cannot bind an instance to a static closure in %s on line %d</p>
+<h3 id="-9">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>7.1.0</p>
+<p>Anonymous functions may not close over <a href="language.variables.predefined.html">superglobals</a>, $this, or any variable with the same name as a parameter.</p>
+<p>5.4.0</p>
+<p>$this 可用于匿名函数.</p>
+<p>5.3.0</p>
+<p>可以使用匿名函数.</p>
+<h3 id="-10">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: 可以在闭包中使用 <a href="function.func-num-args.html">func_num_args()</a>,<a href="function.func-get-arg.html">func_get_arg()</a> 和 <a href="function.func-get-args.html">func_get_args()</a>.</p>
+</blockquote>

@@ -1,0 +1,406 @@
+<h1 id="18_">18. 上下文(Context)选项和参数</h1>
+<h2 id="18_1">18.1 套接字上下文选项</h2>
+<p>套接字上下文选项 - 套接字上下文选项列表</p>
+<h3 id="">说明</h3>
+<p>套接字上下文选项可用于所有工作在套接字上的封装协议,像 <em>tcp</em>, <em>http</em> 和 <em>ftp</em>.</p>
+<h3 id="-1">可选项</h3>
+<p><code>bindto</code></p>
+<p>用户PHP访问网络的指定的IP地址(IPv4或IPv6其中的一个)和/或 端口号,这个语法是 <em>ip:port</em>. Setting the IP or the port to <em>0</em> will let the system choose the IP and/or port.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>As FTP creates two socket connections during normal operation, the port number cannot be specified using this option.</p>
+</blockquote>
+<p><code>backlog</code></p>
+<p>Used to limit the number of outstanding connections in the socket's listen queue.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>This is only applicable to <a href="function.stream-socket-server.html">stream_socket_server()</a>.</p>
+</blockquote>
+<h3 id="-2">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.1.0</p>
+<p>Added <em>bindto</em>.</p>
+<p>5.3.3</p>
+<p>Added <em>backlog</em>.</p>
+<h3 id="-3">范例</h3>
+<p><strong>Example #1 Basic <code>bindto</code> usage example</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+//&amp;nbsp;connect&amp;nbsp;to&amp;nbsp;the&amp;nbsp;internet&amp;nbsp;using&amp;nbsp;the&amp;nbsp;'192.168.0.100'&amp;nbsp;IP  
+$opts&amp;nbsp;=&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'socket'&amp;nbsp;=&gt;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'bindto'&amp;nbsp;=&gt;&amp;nbsp;'192.168.0.100:0',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;),  
+);  
+
+
+//&amp;nbsp;connect&amp;nbsp;to&amp;nbsp;the&amp;nbsp;internet&amp;nbsp;using&amp;nbsp;the&amp;nbsp;'192.168.0.100'&amp;nbsp;IP&amp;nbsp;and&amp;nbsp;port&amp;nbsp;'7000'  
+$opts&amp;nbsp;=&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'socket'&amp;nbsp;=&gt;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'bindto'&amp;nbsp;=&gt;&amp;nbsp;'192.168.0.100:7000',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;),  
+);  
+
+
+//&amp;nbsp;connect&amp;nbsp;to&amp;nbsp;the&amp;nbsp;internet&amp;nbsp;using&amp;nbsp;port&amp;nbsp;'7000'  
+$opts&amp;nbsp;=&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'socket'&amp;nbsp;=&gt;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'bindto'&amp;nbsp;=&gt;&amp;nbsp;'0:7000',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;),  
+);  
+
+
+//&amp;nbsp;create&amp;nbsp;the&amp;nbsp;context...  
+$context&amp;nbsp;=&amp;nbsp;stream_context_create($opts);  
+
+//&amp;nbsp;...and&amp;nbsp;use&amp;nbsp;it&amp;nbsp;to&amp;nbsp;fetch&amp;nbsp;the&amp;nbsp;data  
+echo&amp;nbsp;file_get_contents('http://www.example.com',&amp;nbsp;false,&amp;nbsp;$context);  
+
+?&gt;
+</code></pre>
+<h2 id="18_2">18.2 HTTP context 选项</h2>
+<p>HTTP context 选项 - HTTP context 的选项列表</p>
+<h3 id="-4">说明</h3>
+<p>提供给 <em>http://</em> 和 <em>https://</em> 传输协议的 context 选项. transports.</p>
+<h3 id="-5">可选项</h3>
+<p><code>method</code> <a href="language.types.string.html">string</a></p>
+<p>远程服务器支持的 <strong><code>GET</code></strong>,<strong><code>POST</code></strong> 或其它 HTTP 方法.</p>
+<p>默认值是 <strong><code>GET</code></strong>.</p>
+<p><code>header</code> <a href="language.types.string.html">string</a></p>
+<p>请求期间发送的额外 header .在此选项的值将覆盖其他值 (诸如 <em>User-agent:</em>, <em>Host:</em> 和 <em>Authentication:</em>).</p>
+<p><code>user_agent</code> <a href="language.types.string.html">string</a></p>
+<p>要发送的 header <em>User-Agent:</em> 的值.如果在上面的 <em>header</em> context 选项中没有指定 user-agent,此值将被使用.</p>
+<p>默认使用 php.ini 中设置的 <a href="filesystem.configuration.html#ini.user-agent">user_agent</a>.</p>
+<p><code>content</code> <a href="language.types.string.html">string</a></p>
+<p>在 header 后面要发送的额外数据.通常使用POST或PUT请求.</p>
+<p><code>proxy</code> <a href="language.types.string.html">string</a></p>
+<p>URI 指定的代理服务器的地址.(e.g. <em>tcp://proxy.example.com:5100</em>).</p>
+<p><code>request_fulluri</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>当设置为 <strong><code>TRUE</code></strong> 时,在构建请求时将使用整个 URI .(i.e. <em>GET http://www.example.com/path/to/file.html HTTP/1.0</em>). 虽然这是一个非标准的请求格式,但某些代理服务器需要它.</p>
+<p>默认值是 <strong><code>FALSE</code></strong>.</p>
+<p><code>follow_location</code> <a href="language.types.integer.html">integer</a></p>
+<p>跟随 <em>Location</em> header 的重定向.设置为 <em>0</em> 以禁用.</p>
+<p>默认值是 <em>1</em>.</p>
+<p><code>max_redirects</code> <a href="language.types.integer.html">integer</a></p>
+<p>跟随重定向的最大次数.值为 <em>1</em> 或更少则意味不跟随重定向.</p>
+<p>默认值是 <em>20</em>.</p>
+<p><code>protocol_version</code> <a href="language.types.float.html">float</a></p>
+<p>HTTP 协议版本.</p>
+<p>默认值是 <em>1.0</em>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>PHP 5.3.0 以前的版本没有实现分块传输解码. 如果此值设置为 <em>1.1</em> ,与 <em>1.1</em> 的兼容将是你的责任.</p>
+</blockquote>
+<p><code>timeout</code> <a href="language.types.float.html">float</a></p>
+<p>读取超时时间,单位为秒(s),用 <a href="language.types.float.html">float</a> 指定(e.g. <em>10.5</em>).</p>
+<p>默认使用 php.ini 中设置的 <a href="filesystem.configuration.html#ini.default-socket-timeout">default_socket_timeout</a>.</p>
+<p><code>ignore_errors</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>即使是故障状态码依然获取内容.</p>
+<p>默认值为 <strong><code>FALSE</code></strong>.</p>
+<h3 id="-6">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.3.4</p>
+<p>添加 <code>follow_location</code>.</p>
+<p>5.3.0</p>
+<p>当 <code>protocol_version</code> 设置为 <em>1.1</em> 时支持分块传输解码.</p>
+<p>5.2.10</p>
+<p>添加 <code>ignore_errors</code>.</p>
+<p>5.2.10</p>
+<p><code>header</code> 现在可以是一个数字索引的 <a href="language.types.array.html">array</a>.</p>
+<p>5.2.1</p>
+<p>添加 <code>timeout</code>.</p>
+<p>5.1.0</p>
+<p>Added HTTPS proxying through HTTP proxies. 添加经由 HTTP 代理的 HTTPS 代理.</p>
+<p>5.1.0</p>
+<p>添加 <code>max_redirects</code>.</p>
+<p>5.1.0</p>
+<p>添加 <code>protocol_version</code>.</p>
+<h3 id="-7">范例</h3>
+<p><strong>Example #1 获取一个页面并发送 POST 数据</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$postdata&amp;nbsp;=&amp;nbsp;http_build_query(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'var1'&amp;nbsp;=&gt;&amp;nbsp;'some&amp;nbsp;content',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'var2'&amp;nbsp;=&gt;&amp;nbsp;'doh'  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)  
+);  
+
+$opts&amp;nbsp;=&amp;nbsp;array('http'&amp;nbsp;=&gt;  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'method'&amp;nbsp;&amp;nbsp;=&gt;&amp;nbsp;'POST',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'header'&amp;nbsp;&amp;nbsp;=&gt;&amp;nbsp;'Content-type:&amp;nbsp;application/x-www-form-urlencoded',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'content'&amp;nbsp;=&gt;&amp;nbsp;$postdata  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)  
+);  
+
+$context&amp;nbsp;=&amp;nbsp;stream_context_create($opts);  
+
+$result&amp;nbsp;=&amp;nbsp;file_get_contents('http://example.com/submit.php',&amp;nbsp;false,&amp;nbsp;$context);  
+
+?&gt;
+</code></pre>
+<p><strong>Example #2 忽略重定向并获取 header 和内容</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$url&amp;nbsp;=&amp;nbsp;"http://www.example.org/header.php";  
+
+$opts&amp;nbsp;=&amp;nbsp;array('http'&amp;nbsp;=&gt;  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'method'&amp;nbsp;=&gt;&amp;nbsp;'GET',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'max_redirects'&amp;nbsp;=&gt;&amp;nbsp;'0',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'ignore_errors'&amp;nbsp;=&gt;&amp;nbsp;'1'  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)  
+);  
+
+$context&amp;nbsp;=&amp;nbsp;stream_context_create($opts);  
+$stream&amp;nbsp;=&amp;nbsp;fopen($url,&amp;nbsp;'r',&amp;nbsp;false,&amp;nbsp;$context);  
+
+//&amp;nbsp;header&amp;nbsp;information&amp;nbsp;as&amp;nbsp;well&amp;nbsp;as&amp;nbsp;meta&amp;nbsp;data  
+//&amp;nbsp;about&amp;nbsp;the&amp;nbsp;stream  
+var_dump(stream_get_meta_data($stream));  
+
+//&amp;nbsp;actual&amp;nbsp;data&amp;nbsp;at&amp;nbsp;$url  
+var_dump(stream_get_contents($stream));  
+fclose($stream);  
+?&gt;
+</code></pre>
+<h3 id="-8">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: <strong>Underlying socket stream context options</strong><br />
+  Additional context options may be supported by the <a href="transports.inet.html">underlying transport</a> For <em>http://</em> streams, refer to context options for the <em>tcp://</em> transport. For <em>https://</em> streams, refer to context options for the <em>ssl://</em> transport.</p>
+  <p><strong>Note</strong>: <strong>HTTP status line</strong><br />
+  When this stream wrapper follows a redirect, the <em>wrapper_data</em> returned by <a href="function.stream-get-meta-data.html">stream_get_meta_data()</a> might not necessarily contain the HTTP status line that actually applies to the content data at index <em>0</em>.</p>
+  <p>array (
+    'wrapper_data' =&gt;
+    array (
+      0 =&gt; 'HTTP/1.0 301 Moved Permantenly',
+      1 =&gt; 'Cache-Control: no-cache',
+      2 =&gt; 'Connection: close',
+      3 =&gt; 'Location: http://example.com/foo.jpg',
+      4 =&gt; 'HTTP/1.1 200 OK',
+      …</p>
+  <p>The first request returned a <em>301</em> (permanent redirect), so the stream wrapper automatically followed the redirect to get a <em>200</em> response (index = <em>4</em>).</p>
+</blockquote>
+<h3 id="-9">参见</h3>
+<ul>
+<li><a href="wrappers.http.html">http://</a></li>
+<li><a href="context.socket.html">套接字上下文选项</a></li>
+<li><a href="context.ssl.html">SSL 上下文选项</a></li>
+</ul>
+<h2 id="18_3">18.3 FTP context options</h2>
+<p>FTP context options - FTP context option listing</p>
+<h3 id="-10">说明</h3>
+<p>Context options for <em>ftp://</em> and <em>ftps://</em> transports.</p>
+<h3 id="-11">可选项</h3>
+<p><code>overwrite</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>Allow overwriting of already existing files on remote server. Applies to write mode (uploading) only.</p>
+<p>Defaults to <strong><code>FALSE</code></strong>.</p>
+<p><code>resume_pos</code> <a href="language.types.integer.html">integer</a></p>
+<p>File offset at which to begin transfer. Applies to read mode (downloading) only.</p>
+<p>Defaults to <em>0</em> (Beginning of File).</p>
+<p><code>proxy</code> <a href="language.types.string.html">string</a></p>
+<p>Proxy FTP request via http proxy server. Applies to file read operations only. Ex: <em>tcp://squid.example.com:8000</em>.</p>
+<h3 id="-12">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.1.0</p>
+<p>Added <code>proxy</code>.</p>
+<h3 id="-13">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: <strong>Underlying socket stream context options</strong><br />
+  Additional context options may be supported by the <a href="transports.inet.html">underlying transport</a> For <em>ftp://</em> streams, refer to context options for the <em>tcp://</em> transport. For <em>ftps://</em> streams, refer to context options for the <em>ssl://</em> transport.</p>
+</blockquote>
+<h3 id="-14">参见</h3>
+<ul>
+<li><a href="wrappers.ftp.html">ftp://</a></li>
+<li><a href="context.socket.html">套接字上下文选项</a></li>
+<li><a href="context.ssl.html">SSL 上下文选项</a></li>
+</ul>
+<h2 id="18_4">18.4 SSL 上下文选项</h2>
+<p>SSL 上下文选项 - SSL 上下文选项清单</p>
+<h3 id="-15">说明</h3>
+<p><em>ssl://</em> 和 <em>tls://</em> 传输协议上下文选项清单.</p>
+<h3 id="-16">可选项</h3>
+<p><code>peer_name</code> <a href="language.types.string.html">string</a></p>
+<p>要连接的服务器名称.如果未设置,那么服务器名称将根据打开 SSL 流的主机名称猜测得出.</p>
+<p><code>verify_peer</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>是否需要验证 SSL 证书.</p>
+<p>默认值为 <strong><code>TRUE</code></strong>.</p>
+<p><code>verify_peer_name</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>是否需要验证 peer name.</p>
+<p>默认值为 <strong><code>TRUE</code></strong>.</p>
+<p><code>allow_self_signed</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>是否允许自签名证书.需要配合 <a href="context.ssl.html#context.ssl.verify-peer"><code>verify_peer</code></a> 参数使用(注:当 verify_peer 参数为 true 时才会根据 allow_self_signed 参数值来决定是否允许自签名证书).</p>
+<p>默认值为 <strong><code>FALSE</code></strong></p>
+<p><code>cafile</code> <a href="language.types.string.html">string</a></p>
+<p>当设置 <em>verify_peer</em> 为 true 时, 用来验证远端证书所用到的 CA 证书. 本选项值为 CA 证书在本地文件系统的全路径及文件名.</p>
+<p><code>capath</code> <a href="language.types.string.html">string</a></p>
+<p>如果未设置 <em>cafile</em>,或者 <em>cafile</em> 所指的文件不存在时, 会在 <em>capath</em> 所指定的目录搜索适用的证书. 该目录必须是已经经过哈希处理的证书目录. (注:所谓 hashed certificate 目录是指使用类似 c_rehash 命令将目录中的 .pem 和 .crt 文件扫描并提取哈希码,然后根据此哈希码创建文件链接,以便于快速查找证书)</p>
+<p><code>local_cert</code> <a href="language.types.string.html">string</a></p>
+<p>本地证书路径. 必须是 PEM 格式,并且包含本地的证书及私钥. 也可以包含证书颁发者证书链. 也可以通过 <em>local_pk</em> 指定包含私钥的独立文件.</p>
+<p><code>local_pk</code> <a href="language.types.string.html">string</a></p>
+<p>如果使用独立的文件来存储证书(<em>local_cert</em>)和私钥, 那么使用此选项来指明私钥文件的路径.</p>
+<p><code>passphrase</code> <a href="language.types.string.html">string</a></p>
+<p><em>local_cert</em> 文件的密码.</p>
+<p><code>CN_match</code> <a href="language.types.string.html">string</a></p>
+<p>期望远端证书的 CN 名称. PHP 会进行有限的通配符匹配, 如果服务器给出的 CN 名称和本地访问的名称不匹配,则视为连接失败.</p>
+<blockquote>
+  <p><strong>Note</strong>: 在PHP 5.6.0中,这个选项已废弃,替换为 <code>peer_name</code>.</p>
+</blockquote>
+<p><code>verify_depth</code> <a href="language.types.integer.html">integer</a></p>
+<p>如果证书链条层次太深,超过了本选项的设定值,则终止验证.</p>
+<p>默认情况下不限制证书链条层次深度.</p>
+<p><code>ciphers</code> <a href="language.types.string.html">string</a></p>
+<p>设置可用的密码列表. 可用的值参见: <a href="https://www.openssl.org/docs/manmaster/man1/ciphers.html#CIPHER-LIST-FORMAT">»&nbsp;ciphers(1)</a>.</p>
+<p>默认值为 <em>DEFAULT</em>.</p>
+<p><code>capture_peer_cert</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>如果设置为 <strong><code>TRUE</code></strong> 将会在上下文中创建 <em>peer_certificate</em> 选项, 该选项中包含远端证书.</p>
+<p><code>capture_peer_cert_chain</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>如果设置为 <strong><code>TRUE</code></strong> 将会在上下文中创建 <em>peer_certificate_chain</em> 选项, 该选项中包含远端证书链条.</p>
+<p><code>SNI_enabled</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>设置为 <strong><code>TRUE</code></strong> 将启用服务器名称指示(server name indication). 启用 SNI 将允许同一 IP 地址使用多个证书.</p>
+<p><code>SNI_server_name</code> <a href="language.types.string.html">string</a></p>
+<p>如果设置此参数,那么其设置值将被视为 SNI 服务器名称. 如果未设置,那么服务器名称将基于打开 SSL 流的主机名称猜测得出.</p>
+<blockquote>
+  <p><strong>Note</strong>: 在PHP 5.6.0中,这个选项已废弃,替换为 <code>peer_name</code>.</p>
+</blockquote>
+<p><code>disable_compression</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>如果设置,则禁用 TLS 压缩,有助于减轻恶意攻击.</p>
+<p><code>peer_fingerprint</code> <a href="language.types.string.html">string</a> | <a href="language.types.array.html">array</a></p>
+<p>当远程服务器证书的摘要和指定的散列值不相同的时候, 终止操作.</p>
+<p>当使用 <a href="language.types.string.html">string</a> 时, 会根据字符串的长度来检测所使用的散列算法:"md5"(32 字节)还是"sha1"(40 字节).</p>
+<p>当使用 <a href="language.types.array.html">array</a> 时, 数组的键表示散列算法名称,其对应的值是预期的摘要值.</p>
+<h3 id="-17">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.6.0</p>
+<p>新加 <code>peer_fingerprint</code> 参数.</p>
+<p>5.4.13</p>
+<p>新加 <code>disable_compression</code>. 需要 OpenSSL &gt;= 1.0.0.</p>
+<p>5.3.2</p>
+<p>新加 <code>SNI_enabled</code> 和 <code>SNI_server_name</code>.</p>
+<h3 id="-18">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: 因为 <em>ssl://</em> 是 <a href="wrappers.http.html"><em>https://</em></a> 和 <a href="wrappers.ftp.html"><em>ftps://</em></a> 的底层传输协议, 所以,<em>ssl://</em> 的上下文选项也同样适用于 <em>https://</em> 和 <em>ftps://</em> 上下文.</p>
+  <p><strong>Note</strong>: PHP 必须联合 OpenSSL 0.9.8j 或以上版本编译才可以支持 SNI, 同时也支持使用 <strong><code>OPENSSL_TLSEXT_SERVER_NAME</code></strong> 来探测 SNI 服务器名称.</p>
+</blockquote>
+<h3 id="-19">参见</h3>
+<ul>
+<li><a href="context.socket.html">套接字上下文选项</a></li>
+</ul>
+<h2 id="18_5">18.5 CURL context options</h2>
+<p>CURL context options - CURL 上下文选项列表</p>
+<h3 id="-20">说明</h3>
+<p>CURL 上下文选项在 <a href="intro.curl.html">CURL</a> 扩展被编译(通过 <strong>--with-curlwrappers</strong> configure选项)时可用</p>
+<h3 id="-21">可选项</h3>
+<p><code>method</code> <a href="language.types.string.html">string</a></p>
+<p><strong><code>GET</code></strong>,<strong><code>POST</code></strong>,或者其他远程服务器支持的 HTTP 方法.</p>
+<p>默认为 <strong><code>GET</code></strong>.</p>
+<p><code>header</code> <a href="language.types.string.html">string</a></p>
+<p>额外的请求标头.这个值会覆盖通过其他选项设定的值(如: <em>User-agent:</em>,<em>Host:</em>, ,<em>Authentication:</em>).</p>
+<p><code>user_agent</code> <a href="language.types.string.html">string</a></p>
+<p>设置请求时 User-Agent 标头的值.</p>
+<p>默认为 php.ini 中的 <a href="filesystem.configuration.html#ini.user-agent">user_agent</a> 设定.</p>
+<p><code>content</code> <a href="language.types.string.html">string</a></p>
+<p>在头部之后发送的额外数据.这个选项在 <strong><code>GET</code></strong> 和 <strong><code>HEAD</code></strong> 请求中不使用.</p>
+<p><code>proxy</code> <a href="language.types.string.html">string</a></p>
+<p>URI,用于指定代理服务器的地址(例如 <em>tcp://proxy.example.com:5100</em>).</p>
+<p><code>max_redirects</code> <a href="language.types.integer.html">integer</a></p>
+<p>最大重定向次数.<em>1</em> 或者更小则代表不会跟随重定向.</p>
+<p>默认为 <em>20</em>.</p>
+<p><code>curl_verify_ssl_host</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>校验服务器.</p>
+<p>默认为 <strong><code>FALSE</code></strong></p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>这个选项在 HTTP 和 FTP 协议中均可使用.</p>
+</blockquote>
+<p><code>curl_verify_ssl_peer</code> <a href="language.types.boolean.html">boolean</a></p>
+<p>要求对使用的SSL证书进行校验.</p>
+<p>默认为 <strong><code>FALSE</code></strong></p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>这个选项在 HTTP 和 FTP 协议中均可使用.</p>
+</blockquote>
+<h3 id="-22">范例</h3>
+<p><strong>Example #1 获取一个页面,并以POST发送数据</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+
+$postdata&amp;nbsp;=&amp;nbsp;http_build_query(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'var1'&amp;nbsp;=&gt;&amp;nbsp;'some&amp;nbsp;content',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'var2'&amp;nbsp;=&gt;&amp;nbsp;'doh'  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)  
+);  
+
+$opts&amp;nbsp;=&amp;nbsp;array('http'&amp;nbsp;=&gt;  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'method'&amp;nbsp;&amp;nbsp;=&gt;&amp;nbsp;'POST',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'header'&amp;nbsp;&amp;nbsp;=&gt;&amp;nbsp;'Content-type:&amp;nbsp;application/x-www-form-urlencoded',  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'content'&amp;nbsp;=&gt;&amp;nbsp;$postdata  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)  
+);  
+
+$context&amp;nbsp;=&amp;nbsp;stream_context_create($opts);  
+
+$result&amp;nbsp;=&amp;nbsp;file_get_contents('http://example.com/submit.php',&amp;nbsp;false,&amp;nbsp;$context);  
+
+?&gt;
+</code></pre>
+<h3 id="-23">参见</h3>
+<ul>
+<li><a href="context.socket.html">套接字上下文选项</a></li>
+</ul>
+<h2 id="18_6">18.6 Phar 上下文(context)选项</h2>
+<p>Phar 上下文(context)选项 - Phar 上下文(context)选项列表</p>
+<h3 id="-24">说明</h3>
+<p><em>phar://</em> 封装(wrapper)的上下文(context)选项.</p>
+<h3 id="-25">可选项</h3>
+<p><code>compress</code> <a href="language.types.integer.html">int</a></p>
+<p><a href="phar.constants.html#phar.constants.compression">Phar compression constants</a> 中的一个.</p>
+<p><code>metadata</code> <a href="language.pseudo-types.html#language.types.mixed">mixed</a></p>
+<p>Phar 元数据(metadata).查看 <a href="phardata.setmetadata.html">Phar::setMetadata()</a>.</p>
+<h3 id="-26">参见</h3>
+<ul>
+<li><a href="wrappers.phar.html">phar://</a></li>
+<li><a href="phar.using.stream.html">Phar stream wrapper</a></li>
+</ul>
+<h2 id="18_7">18.7 MongoDB context options</h2>
+<p>MongoDB context options - MongoDB context option listing</p>
+<h3 id="-27">说明</h3>
+<p>Context options for <em>mongodb://</em> transports.</p>
+<h3 id="-28">可选项</h3>
+<p><code>log_cmd_insert</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when inserting a document, see <a href="function.log-cmd-insert.html">log_cmd_insert()</a>.</p>
+<p><code>log_cmd_delete</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when deleting a document, see <a href="function.log-cmd-delete.html">log_cmd_delete()</a>.</p>
+<p><code>log_cmd_update</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when updating a document, see <a href="function.log-cmd-update.html">log_cmd_update()</a>.</p>
+<p><code>log_write_batch</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when executing a Write Batch, see <a href="function.log-write-batch.html">log_write_batch()</a>.</p>
+<p><code>log_reply</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when reading a reply from MongoDB, see <a href="function.log-reply.html">log_reply()</a>.</p>
+<p><code>log_getmore</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called when retrieving more results from a MongoDB cursor, see <a href="function.log-getmore.html">log_getmore()</a>.</p>
+<p><code>log_killcursor</code> <a href="language.types.callable.html">callable</a></p>
+<p>A callback function called executing a killcursor opcode, see <a href="function.log-killcursor.html">log_killcursor()</a>.</p>
+<h3 id="-29">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>pecl/mongo 1.5.0</p>
+<p>Added Write API Context options</p>
+<h3 id="-30">参见</h3>
+<ul>
+<li><a href="context.socket.html">套接字上下文选项</a></li>
+<li><a href="context.ssl.html">SSL 上下文选项</a></li>
+</ul>
+<h2 id="18_8">18.8 Context 参数</h2>
+<p>Context 参数 - Context 参数列表</p>
+<h3 id="-31">说明</h3>
+<p>这些参数(<em>parameters</em>)可以设置为由函数 <a href="function.stream-context-set-params.html">stream_context_set_params()</a> 返回的 <em>context</em>.</p>
+<h3 id="-32">参数</h3>
+<p><code>notification</code> <a href="language.types.callable.html">callable</a></p>
+<p>当一个流(stream)上发生事件时,<a href="language.types.callable.html">callable</a> 将被调用.</p>
+<p>查看 <a href="function.stream-notification-callback.html">stream_notification_callback</a> 以获得更多信息.</p>

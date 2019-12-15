@@ -1,0 +1,29 @@
+<h1 id="11_">11. Errors</h1>
+<h3 id="11_1">11.1 Basics</h3>
+<p>PHP reports errors in response to a number of internal error conditions. These may be used to signal a number of different conditions, and can be displayed and/or logged as required.</p>
+<p>Every error that PHP generates includes a type. A <a href="errorfunc.constants.html">list of these types</a> is available, along with a short description of their behaviour and how they can be caused.</p>
+<h3 id="handlingerrorswithphp">Handling errors with PHP</h3>
+<p>If no error handler is set, then PHP will handle any errors that occur according to its configuration. Which errors are reported and which are ignored is controlled by the <a href="errorfunc.configuration.html#ini.error-reporting"><code>error_reporting</code></a> php.ini directive, or at runtime by calling <a href="function.error-reporting.html">error_reporting()</a>. It is strongly recommended that the configuration directive be set, however, as some errors can occur before execution of your script begins.</p>
+<p>In a development environment, you should always set <a href="errorfunc.configuration.html#ini.error-reporting"><code>error_reporting</code></a> to <strong><code>E_ALL</code></strong>, as you need to be aware of and fix the issues raised by PHP. In production, you may wish to set this to a less verbose level such as <code>E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_DEPRECATED</code>, but in many cases <strong><code>E_ALL</code></strong> is also appropriate, as it may provide early warning of potential issues.</p>
+<p>What PHP does with these errors depends on two further php.ini directives. <a href="errorfunc.configuration.html#ini.display-errors"><code>display_errors</code></a> controls whether the error is shown as part of the script's output. This should always be disabled in a production environment, as it can include confidential information such as database passwords, but is often useful to enable in development, as it ensures immediate reporting of issues.</p>
+<p>In addition to displaying errors, PHP can log errors when the <a href="errorfunc.configuration.html#ini.log-errors"><code>log_errors</code></a> directive is enabled. This will log any errors to the file or syslog defined by <a href="errorfunc.configuration.html#ini.error-log"><code>error_log</code></a>. This can be extremely useful in a production environment, as you can log errors that occur and then generate reports based on those errors.</p>
+<h3 id="usererrorhandlers">User error handlers</h3>
+<p>If PHP's default error handling is inadequate, you can also handle many types of error with your own custom error handler by installing it with <a href="function.set-error-handler.html">set_error_handler()</a>. While some error types cannot be handled this way, those that can be handled can then be handled in the way that your script sees fit: for example, this can be used to show a custom error page to the user and then report more directly than via a log, such as by sending an e-mail.</p>
+<h3 id="11_2">11.2 PHP 7 错误处理</h3>
+<p>PHP 7 改变了大多数错误的报告方式.不同于传统(PHP 5)的错误报告机制,现在大多数错误被作为 <strong>Error</strong> 异常抛出.</p>
+<p>这种 <strong>Error</strong> 异常可以像 <a href="class.exception.html">Exception</a> 异常一样被第一个匹配的 <em>try</em> / <em>catch</em> 块所捕获.如果没有匹配的 <a href="language.exceptions.html#language.exceptions.catch"><em>catch</em></a> 块,则调用异常处理函数(事先通过 <a href="function.set-exception-handler.html">set_exception_handler()</a> 注册)进行处理. 如果尚未注册异常处理函数,则按照传统方式处理:被报告为一个致命错误(Fatal Error).</p>
+<p><strong>Error</strong> 类并非继承自 <a href="class.exception.html">Exception</a> 类,所以不能用 <code>catch (Exception $e) { ... }</code> 来捕获 <strong>Error</strong>.你可以用 <code>catch (Error $e) { ... }</code>,或者通过注册异常处理函数( <a href="function.set-exception-handler.html">set_exception_handler()</a>)来捕获 <strong>Error</strong>.</p>
+<h3 id="error"><strong>Error</strong> 层次结构</h3>
+<ul>
+<li><strong>Throwable</strong><ul>
+<li><strong>Error</strong><ul>
+<li><strong>ArithmeticError</strong><ul>
+<li><strong>DivisionByZeroError</strong></li></ul></li>
+<li><strong>AssertionError</strong></li>
+<li><strong>CompileError</strong><ul>
+<li><strong>ParseError</strong></li></ul></li>
+<li><strong>TypeError</strong><ul>
+<li><strong>ArgumentCountError</strong></li></ul></li></ul></li>
+<li><a href="class.exception.html">Exception</a><ul>
+<li>…</li></ul></li></ul></li>
+</ul>

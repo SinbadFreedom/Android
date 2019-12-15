@@ -1,0 +1,517 @@
+<h1 id="15_">15. 预定义变量</h1>
+<h2 id="15_1">15.1 超全局变量</h2>
+<p>超全局变量 - 超全局变量是在全部作用域中始终可用的内置变量</p>
+<h3 id="">说明</h3>
+<p>PHP 中的许多预定义变量都是"超全局的",这意味着它们在一个脚本的全部作用域中都可用.在函数或方法中无需执行 <strong>global $variable;</strong> 就可以访问它们.</p>
+<p>这些超全局变量是:</p>
+<ul>
+<li><a href="reserved.variables.globals.html">$GLOBALS</a></li>
+<li><a href="reserved.variables.server.html">$_SERVER</a></li>
+<li><a href="reserved.variables.get.html">$_GET</a></li>
+<li><a href="reserved.variables.post.html">$_POST</a></li>
+<li><a href="reserved.variables.files.html">$_FILES</a></li>
+<li><a href="reserved.variables.cookies.html">$_COOKIE</a></li>
+<li><a href="reserved.variables.session.html">$_SESSION</a></li>
+<li><a href="reserved.variables.request.html">$_REQUEST</a></li>
+<li><a href="reserved.variables.environment.html">$_ENV</a></li>
+</ul>
+<h3 id="-1">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>超全局变量被引入到 PHP.</p>
+<h3 id="-2">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>: <strong>变量可用性</strong>  </p>
+  <p>默认情况下,所有的超全局变量都是可用的.但是,有一些指令会影响这种可用性.更多信息,参见文档 <a href="ini.core.html#ini.variables-order">variables_order</a>.</p>
+  <p><strong>Note</strong>: <strong>处理 register_globals</strong>  </p>
+  <p>如果已经弃用的 <a href="ini.core.html#ini.register-globals">register_globals</a> 指令被设置为 <em>on</em> 那么局部变量也将在脚本的全局作用域中可用.例如, <a href="reserved.variables.post.html">$_POST['foo']</a> 也将以 $foo 的形式存在.</p>
+  <p>相关信息,参见 FAQ "<a href="faq.using.html#faq.register-globals">register_globals 对我有什么影响?</a>"</p>
+  <p><strong>Note</strong>: <strong>可变变量</strong>  </p>
+  <p>在函数或类方法中,超全局变量不能被用作<a href="language.variables.variable.html">可变变量</a>.</p>
+</blockquote>
+<h3 id="-3">参见</h3>
+<ul>
+<li><a href="language.variables.scope.html">变量作用域</a></li>
+<li><a href="ini.core.html#ini.variables-order">variables_order</a> 指令</li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_2">15.2 $GLOBALS</h2>
+<p>$GLOBALS - 引用全局作用域中可用的全部变量</p>
+<h3 id="-4">说明</h3>
+<p>一个包含了全部变量的全局组合数组.变量的名字就是数组的键.</p>
+<h3 id="-5">范例</h3>
+<p><strong>Example #1 $GLOBALS 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function&amp;nbsp;test()&amp;nbsp;{  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$foo&amp;nbsp;=&amp;nbsp;"local&amp;nbsp;variable";  
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;echo&amp;nbsp;'$foo&amp;nbsp;in&amp;nbsp;global&amp;nbsp;scope:&amp;nbsp;'&amp;nbsp;.&amp;nbsp;$GLOBALS["foo"]&amp;nbsp;.&amp;nbsp;"\n";  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;echo&amp;nbsp;'$foo&amp;nbsp;in&amp;nbsp;current&amp;nbsp;scope:&amp;nbsp;'&amp;nbsp;.&amp;nbsp;$foo&amp;nbsp;.&amp;nbsp;"\n";  
+}  
+
+$foo&amp;nbsp;=&amp;nbsp;"Example&amp;nbsp;content";  
+test();  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>$foo in global scope: Example content
+$foo in current scope: local variable</p>
+<h3 id="-6">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+  <p><strong>Note</strong>: <strong>变量可用性</strong>  </p>
+  <p>与所有其他<a href="language.variables.superglobals.html">超全局变量</a>不同,$GLOBALS在PHP中总是可用的.</p>
+</blockquote>
+<h2 id="15_3">15.3 $_SERVER</h2>
+<h2 id="$HTTP\_SERVER\_VARS">$HTTP_SERVER_VARS [已删除]</h2>
+<p>$_SERVER -- $HTTP_SERVER_VARS [已删除] - 服务器和执行环境信息</p>
+<h3 id="-7">说明</h3>
+<p>$_SERVER 是一个包含了诸如头信息(header),路径(path),以及脚本位置(script locations)等等信息的数组.这个数组中的项目由 Web 服务器创建.不能保证每个服务器都提供全部项目;服务器可能会忽略一些,或者提供一些没有在这里列举出来的项目.这也就意味着大量的此类变量都会在<a href="http://www.faqs.org/rfcs/rfc3875">»&nbsp;CGI 1.1 规范</a>中说明,所以应该仔细研究一下.</p>
+<blockquote>
+  <p><strong>Note</strong>: PHP 5.4.0 之前,$HTTP_SERVER_VARS 包含着相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_SERVER_VARS 与 $_SERVER 是不同的变量,PHP处理它们的方式不同)</p>
+</blockquote>
+<h3 id="-8">目录</h3>
+<p>在 $_SERVER 中,你也许能够,也许不能够找到下面的这些元素.注意,如果以<a href="features.commandline.html">命令行</a>方式运行 PHP,下面列出的元素几乎没有有效的(或是没有任何实际意义的).</p>
+<p>'PHP_SELF'</p>
+<p>当前执行脚本的文件名,与 document root 有关.例如,在地址为 http://example.com/foo/bar.php 的脚本中使用 $_SERVER['PHP_SELF'] 将得到 /foo/bar.php.<a href="language.constants.predefined.html">__FILE__</a> 常量包含当前(例如包含)文件的完整路径和文件名. 从 PHP 4.3.0 版本开始,如果 PHP 以命令行模式运行,这个变量将包含脚本名.之前的版本该变量不可用.</p>
+<p>'<a href="reserved.variables.argv.html">argv</a>'</p>
+<p>传递给该脚本的参数的数组.当脚本以命令行方式运行时,argv 变量传递给程序 C 语言样式的命令行参数.当通过 GET 方式调用时,该变量包含query string.</p>
+<p>'<a href="reserved.variables.argc.html">argc</a>'</p>
+<p>包含命令行模式下传递给该脚本的参数的数目(如果运行在命令行模式下).</p>
+<p>'GATEWAY_INTERFACE'</p>
+<p>服务器使用的 CGI 规范的版本;例如,"<em>CGI/1.1</em>".</p>
+<p>'SERVER_ADDR'</p>
+<p>当前运行脚本所在的服务器的 IP 地址.</p>
+<p>'SERVER_NAME'</p>
+<p>当前运行脚本所在的服务器的主机名.如果脚本运行于虚拟主机中,该名称是由那个虚拟主机所设置的值决定.</p>
+<blockquote>
+  <p><strong>Note</strong>: 在 Apache 2 里,必须设置 <em>UseCanonicalName = On</em> 和 <em>ServerName</em>. 否则该值会由客户端提供,就有可能被伪造. 上下文有安全性要求的环境里,不应该依赖此值.</p>
+</blockquote>
+<p>'SERVER_SOFTWARE'</p>
+<p>服务器标识字符串,在响应请求时的头信息中给出.</p>
+<p>'SERVER_PROTOCOL'</p>
+<p>请求页面时通信协议的名称和版本.例如,"HTTP/1.0".</p>
+<p>'REQUEST_METHOD'</p>
+<p>访问页面使用的请求方法;例如,"<em>GET</em>", "<em>HEAD</em>","<em>POST</em>","<em>PUT</em>".</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>如果请求方法为 <em>HEAD</em>,PHP 脚本将在发送 Header 头信息之后终止(这意味着在产生任何输出后,不再有输出缓冲).</p>
+</blockquote>
+<p>'REQUEST_TIME'</p>
+<p>请求开始时的时间戳.从 PHP 5.1.0 起可用.</p>
+<p>'REQUEST_TIME_FLOAT'</p>
+<p>请求开始时的时间戳,微秒级别的精准度. 自 PHP 5.4.0 开始生效.</p>
+<p>'QUERY_STRING'</p>
+<p>query string(查询字符串),如果有的话,通过它进行页面访问.</p>
+<p>'DOCUMENT_ROOT'</p>
+<p>当前运行脚本所在的文档根目录.在服务器配置文件中定义.</p>
+<p>'HTTP_ACCEPT'</p>
+<p>当前请求头中 <em>Accept:</em> 项的内容,如果存在的话.</p>
+<p>'HTTP_ACCEPT_CHARSET'</p>
+<p>当前请求头中 <em>Accept-Charset:</em> 项的内容,如果存在的话.例如:"<em>iso-8859-1,*,utf-8</em>".</p>
+<p>'HTTP_ACCEPT_ENCODING'</p>
+<p>当前请求头中 <em>Accept-Encoding:</em> 项的内容,如果存在的话.例如:"<em>gzip</em>".</p>
+<p>'HTTP_ACCEPT_LANGUAGE'</p>
+<p>当前请求头中 <em>Accept-Language:</em> 项的内容,如果存在的话.例如:"<em>en</em>".</p>
+<p>'HTTP_CONNECTION'</p>
+<p>当前请求头中 <em>Connection:</em> 项的内容,如果存在的话.例如:"<em>Keep-Alive</em>".</p>
+<p>'HTTP_HOST'</p>
+<p>当前请求头中 <em>Host:</em> 项的内容,如果存在的话.</p>
+<p>'HTTP_REFERER'</p>
+<p>引导用户代理到当前页的前一页的地址(如果存在).由 user agent 设置决定.并不是所有的用户代理都会设置该项,有的还提供了修改 HTTP_REFERER 的功能.简言之,该值并不可信.</p>
+<p>'HTTP_USER_AGENT'</p>
+<p>当前请求头中 <em>User-Agent:</em> 项的内容,如果存在的话.该字符串表明了访问该页面的用户代理的信息.一个典型的例子是:Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586).除此之外,你可以通过 <a href="function.get-browser.html">get_browser()</a> 来使用该值,从而定制页面输出以便适应用户代理的性能.</p>
+<p>'HTTPS'</p>
+<p>如果脚本是通过 HTTPS 协议被访问,则被设为一个非空的值.</p>
+<blockquote>
+  <p><strong>Note</strong>: 注意当使用 IIS 上的 ISAPI 方式时,如果不是通过 HTTPS 协议被访问,这个值将为 <em>off</em>.</p>
+</blockquote>
+<p>'REMOTE_ADDR'</p>
+<p>浏览当前页面的用户的 IP 地址.</p>
+<p>'REMOTE_HOST'</p>
+<p>浏览当前页面的用户的主机名.DNS 反向解析不依赖于用户的 REMOTE_ADDR.</p>
+<blockquote>
+  <p><strong>Note</strong>: 你的服务器必须被配置以便产生这个变量.例如在 Apache 中,你需要在 httpd.conf 中设置 <em>HostnameLookups On</em> 来产生它.参见 <a href="function.gethostbyaddr.html">gethostbyaddr()</a>.</p>
+</blockquote>
+<p>'REMOTE_PORT'</p>
+<p>用户机器上连接到 Web 服务器所使用的端口号.</p>
+<p>'REMOTE_USER'</p>
+<p>经验证的用户</p>
+<p>'REDIRECT_REMOTE_USER'</p>
+<p>验证的用户,如果请求已在内部重定向.</p>
+<p>'SCRIPT_FILENAME'</p>
+<p>当前执行脚本的绝对路径.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>如果在命令行界面(Command Line Interface, CLI)使用相对路径执行脚本,例如 file.php 或 ../file.php,那么 $_SERVER['SCRIPT_FILENAME'] 将包含用户指定的相对路径.</p>
+</blockquote>
+<p>'SERVER_ADMIN'</p>
+<p>该值指明了 Apache 服务器配置文件中的 SERVER_ADMIN 参数.如果脚本运行在一个虚拟主机上,则该值是那个虚拟主机的值.</p>
+<p>'SERVER_PORT'</p>
+<p>Web 服务器使用的端口.默认值为 "<em>80</em>".如果使用 SSL 安全连接,则这个值为用户设置的 HTTP 端口.</p>
+<blockquote>
+  <p><strong>Note</strong>: 在 Apache 2 里,为了获取真实物理端口,必须设置 <em>UseCanonicalName = On</em> 以及 <em>UseCanonicalPhysicalPort = On</em>. 否则此值可能被伪造,不一定会返回真实端口值. 上下文有安全性要求的环境里,不应该依赖此值.</p>
+</blockquote>
+<p>'SERVER_SIGNATURE'</p>
+<p>包含了服务器版本和虚拟主机名的字符串.</p>
+<p>'PATH_TRANSLATED'</p>
+<p>当前脚本所在文件系统(非文档根目录)的基本路径.这是在服务器进行虚拟到真实路径的映像后的结果.</p>
+<blockquote>
+  <p><strong>Note</strong>: 自 PHP 4.3.2 起,PATH_TRANSLATED 在 Apache 2 SAPI 模式下不再和 Apache 1 一样隐含赋值,而是若 Apache 不生成此值,PHP 便自己生成并将其值放入 SCRIPT_FILENAME 服务器常量中.这个修改遵守了 CGI 规范,PATH_TRANSLATED 仅在 PATH_INFO 被定义的条件下才存在. Apache 2 用户可以在 httpd.conf 中设置 <em>AcceptPathInfo = On</em> 来定义 PATH_INFO.</p>
+</blockquote>
+<p>'SCRIPT_NAME'</p>
+<p>包含当前脚本的路径.这在页面需要指向自己时非常有用.<a href="language.constants.predefined.html">__FILE__</a> 常量包含当前脚本(例如包含文件)的完整路径和文件名.</p>
+<p>'REQUEST_URI'</p>
+<p>URI 用来指定要访问的页面.例如 "<em>/index.html</em>".</p>
+<p>'PHP_AUTH_DIGEST'</p>
+<p>当作为 Apache 模块运行时,进行 HTTP Digest 认证的过程中,此变量被设置成客户端发送的"Authorization" HTTP 头内容(以便作进一步的认证操作).</p>
+<p>'PHP_AUTH_USER'</p>
+<p>当 PHP 运行在 Apache 或 IIS(PHP 5 是 ISAPI)模块方式下,并且正在使用 HTTP 认证功能,这个变量便是用户输入的用户名.</p>
+<p>'PHP_AUTH_PW'</p>
+<p>当 PHP 运行在 Apache 或 IIS(PHP 5 是 ISAPI)模块方式下,并且正在使用 HTTP 认证功能,这个变量便是用户输入的密码.</p>
+<p>'AUTH_TYPE'</p>
+<p>当 PHP 运行在 Apache 模块方式下,并且正在使用 HTTP 认证功能,这个变量便是认证的类型.</p>
+<p>'PATH_INFO'</p>
+<p>包含由客户端提供的,跟在真实脚本名称之后并且在查询语句(query string)之前的路径信息,如果存在的话.例如,如果当前脚本是通过 URL http://www.example.com/php/path_info.php/some/stuff?foo=bar 被访问,那么 $_SERVER['PATH_INFO'] 将包含 <em>/some/stuff</em>.</p>
+<p>'ORIG_PATH_INFO'</p>
+<p>在被 PHP 处理之前,"PATH_INFO" 的原始版本.</p>
+<h3 id="-9">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.4.0</p>
+<p>因为移除了 long array register 功能,$HTTP_SERVER_VARS 不再有效.</p>
+<p>5.3.0</p>
+<p>废弃了使 $HTTP_SERVER_VARS 生效的 <a href="ini.core.html#ini.register-long-arrays">register_long_arrays</a> 指令.</p>
+<p>4.1.0</p>
+<p>引入 $_SERVER,弃用 $HTTP_SERVER_VARS.</p>
+<h3 id="-10">范例</h3>
+<p><strong>Example #1 $_SERVER 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo&amp;nbsp;$_SERVER['SERVER_NAME'];  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>www.example.com</p>
+<h3 id="-11">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-12">参见</h3>
+<ul>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_4">15.4 $_GET</h2>
+<h2 id="$HTTP\_GET\_VARS">$HTTP_GET_VARS [已弃用]</h2>
+<p>$_GET -- $HTTP_GET_VARS [已弃用] - HTTP GET 变量</p>
+<h3 id="-13">说明</h3>
+<p>通过 URL 参数传递给当前脚本的变量的数组.</p>
+<p>$HTTP_GET_VARS 包含相同的信息, 但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_GET_VARS 和 $_GET 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-14">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_GET,弃用 $HTTP_GET_VARS.</p>
+<h3 id="-15">范例</h3>
+<p><strong>Example #1 $_GET 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo&amp;nbsp;'Hello&amp;nbsp;'&amp;nbsp;.&amp;nbsp;htmlspecialchars($_GET["name"])&amp;nbsp;.&amp;nbsp;'!';  
+?&gt;
+</code></pre>
+<p>假设用户访问的是 http://example.com/?name=Hannes</p>
+<p>以上例程的输出类似于:</p>
+<p>Hello Hannes!</p>
+<h3 id="-16">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+  <p><strong>Note</strong>:</p>
+  <p>GET 是通过 <a href="function.urldecode.html">urldecode()</a> 传递的.</p>
+</blockquote>
+<h3 id="-17">参见</h3>
+<ul>
+<li><a href="language.variables.external.html">处理外部变量</a></li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_5">15.5 $_POST</h2>
+<h2 id="$HTTP\_POST\_VARS">$HTTP_POST_VARS [已弃用]</h2>
+<p>$_POST -- $HTTP_POST_VARS [已弃用] - HTTP POST 变量</p>
+<h3 id="-18">说明</h3>
+<p>当 HTTP POST 请求的 Content-Type 是 <em>application/x-www-form-urlencoded</em> 或 <em>multipart/form-data</em> 时,会将变量以关联数组形式传入当前脚本.</p>
+<p>$HTTP_POST_VARS 包含相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_POST_VARS 和 $_POST 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-19">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_POST,弃用 $HTTP_POST_VARS.</p>
+<h3 id="-20">范例</h3>
+<p><strong>Example #1 $_POST 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo&amp;nbsp;'Hello&amp;nbsp;'&amp;nbsp;.&amp;nbsp;htmlspecialchars($_POST["name"])&amp;nbsp;.&amp;nbsp;'!';  
+?&gt;
+</code></pre>
+<p>假设用户通过 HTTP POST 方式传递了参数 name=Hannes</p>
+<p>以上例程的输出类似于:</p>
+<p>Hello Hannes!</p>
+<h3 id="-21">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-22">参见</h3>
+<ul>
+<li><a href="language.variables.external.html">处理外部变量</a></li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_6">15.6 $_FILES</h2>
+<h2 id="$HTTP\_POST\_FILES">$HTTP_POST_FILES [已弃用]</h2>
+<p>$_FILES -- $HTTP_POST_FILES [已弃用] - HTTP 文件上传变量</p>
+<h3 id="-23">说明</h3>
+<p>通过 HTTP POST 方式上传到当前脚本的项目的数组. 此数组的概况在 <a href="features.file-upload.post-method.html">POST 方法上传</a> 章节中有描述.</p>
+<p>$HTTP_POST_FILES 包含相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_POST_FILES 和 $_FILES 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-24">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_FILES,弃用 $HTTP_POST_FILES.</p>
+<h3 id="-25">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-26">参见</h3>
+<ul>
+<li><a href="function.move-uploaded-file.html">move_uploaded_file()</a> - 将上传的文件移动到新位置</li>
+<li><a href="features.file-upload.html">处理文件上传</a></li>
+</ul>
+<h2 id="15_7">15.7 $_REQUEST</h2>
+<p>$_REQUEST - HTTP Request 变量</p>
+<h3 id="-27">说明</h3>
+<p>默认情况下包含了 <a href="reserved.variables.get.html">$_GET</a>,<a href="reserved.variables.post.html">$_POST</a> 和 <a href="reserved.variables.cookies.html">$_COOKIE</a> 的数组.</p>
+<h3 id="-28">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>5.3.0</p>
+<p>引入 <a href="ini.core.html#ini.request-order">request_order</a>.该指令会影响 $_REQUEST 的内容.</p>
+<p>4.3.0</p>
+<p><a href="reserved.variables.files.html">$_FILES</a> 信息被从 $_REQUEST 中移除.</p>
+<p>4.1.0</p>
+<p>引入 $_REQUEST.</p>
+<h3 id="-29">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+  <p><strong>Note</strong>:</p>
+  <p>以<a href="features.commandline.html">命令行</a>方式运行时,将<em>不</em>包含 <a href="reserved.variables.argv.html">argv</a> 和 <a href="reserved.variables.argc.html">argc</a> 信息;它们将存在于 <a href="reserved.variables.server.html">$_SERVER</a> 数组.</p>
+  <p><strong>Note</strong>:</p>
+  <p>由于 $_REQUEST 中的变量通过 GET,POST 和 COOKIE 输入机制传递给脚本文件,因此可以被远程用户篡改而并不可信.这个数组的项目及其顺序依赖于 PHP 的 <a href="ini.core.html#ini.variables-order">variables_order</a> 指令的配置.</p>
+</blockquote>
+<h3 id="-30">参见</h3>
+<ul>
+<li><a href="function.import-request-variables.html">import_request_variables()</a> - 将 GET/POST/Cookie 变量导入到全局作用域中</li>
+<li><a href="language.variables.external.html">处理外部变量</a></li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_8">15.8 $_SESSION</h2>
+<h2 id="$HTTP\_SESSION\_VARS">$HTTP_SESSION_VARS [已弃用]</h2>
+<p>$_SESSION -- $HTTP_SESSION_VARS [已弃用] - Session 变量</p>
+<h3 id="-31">说明</h3>
+<p>当前脚本可用 SESSION 变量的数组.更多关于如何使用的信息,参见 <a href="ref.session.html">Session 函数</a> 文档.</p>
+<p>$HTTP_SESSION_VARS 包含相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_SESSION_VARS 和 $_SESSION 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-32">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_SESSION,弃用 $HTTP_SESSION_VARS.</p>
+<h3 id="-33">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-34">参见</h3>
+<ul>
+<li><a href="function.session-start.html">session_start()</a> - 启动新会话或者重用现有会话</li>
+</ul>
+<h2 id="15_9">15.9 $_ENV</h2>
+<h2 id="$HTTP\_ENV\_VARS">$HTTP_ENV_VARS [已弃用]</h2>
+<p>$_ENV -- $HTTP_ENV_VARS [已弃用] - 环境变量</p>
+<h3 id="-35">说明</h3>
+<p>通过环境方式传递给当前脚本的变量的数组.</p>
+<p>这些变量被从 PHP 解析器的运行环境导入到 PHP 的全局命名空间.很多是由支持 PHP 运行的 Shell 提供的,并且不同的系统很可能运行着不同种类的 Shell,所以不可能有一份确定的列表.请查看你的 Shell 文档来获取定义的环境变量列表.</p>
+<p>其他环境变量包含了 CGI 变量,而不管 PHP 是以服务器模块还是 CGI 处理器的方式运行.</p>
+<p>$HTTP_ENV_VARS 包含相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_ENV_VARS 和 $_ENV 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-36">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_ENV,弃用 $HTTP_ENV_VARS.</p>
+<h3 id="-37">范例</h3>
+<p><strong>Example #1 $_ENV 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo&amp;nbsp;'My&amp;nbsp;username&amp;nbsp;is&amp;nbsp;'&amp;nbsp;.$_ENV["USER"]&amp;nbsp;.&amp;nbsp;'!';  
+?&gt;
+</code></pre>
+<p>假设 "bjori" 运行此段脚本</p>
+<p>以上例程的输出类似于:</p>
+<p>My username is bjori!</p>
+<h3 id="-38">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-39">参见</h3>
+<ul>
+<li><a href="function.getenv.html">getenv()</a> - 获取一个环境变量的值</li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_10">15.10 $_COOKIE</h2>
+<h2 id="$HTTP\_COOKIE\_VARS">$HTTP_COOKIE_VARS [已弃用]</h2>
+<p>$_COOKIE -- $HTTP_COOKIE_VARS [已弃用] - HTTP Cookies</p>
+<h3 id="-40">说明</h3>
+<p>通过 HTTP Cookies 方式传递给当前脚本的变量的数组.</p>
+<p>$HTTP_COOKIE_VARS 包含相同的信息,但它不是一个<a href="language.variables.superglobals.html">超全局变量</a>. (注意 $HTTP_COOKIE_VARS 和 $_COOKIE 是不同的变量,PHP 处理它们的方式不同)</p>
+<h3 id="-41">更新日志</h3>
+<p>版本</p>
+<p>说明</p>
+<p>4.1.0</p>
+<p>引入 $_COOKIE,弃用 $HTTP_COOKIE_VARS.</p>
+<h3 id="-42">范例</h3>
+<p><strong>Example #1 $_COOKIE 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+echo&amp;nbsp;'Hello&amp;nbsp;'&amp;nbsp;.&amp;nbsp;htmlspecialchars($_COOKIE["name"])&amp;nbsp;.&amp;nbsp;'!';  
+?&gt;
+</code></pre>
+<p>假设之前发送了 "name" Cookie</p>
+<p>以上例程的输出类似于:</p>
+<p>Hello Hannes!</p>
+<h3 id="-43">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>"Superglobal"也称为自动化的全局变量.这就表示其在脚本的所有作用域中都是可用的.不需要在函数或方法中用 <strong>global $variable;</strong> 来访问它.</p>
+</blockquote>
+<h3 id="-44">参见</h3>
+<ul>
+<li><a href="function.setcookie.html">setcookie()</a> - 发送 Cookie</li>
+<li><a href="language.variables.external.html">处理外部变量</a></li>
+<li><a href="book.filter.html">过滤器扩展</a></li>
+</ul>
+<h2 id="15_11">15.11 $php_errormsg</h2>
+<p>$php_errormsg - 前一个错误信息</p>
+<p><strong>Warning</strong></p>
+<p>This feature has been <em>DEPRECATED</em> as of PHP 7.2.0. Relying on this feature is highly discouraged.</p>
+<h3 id="-45">说明</h3>
+<p>$php_errormsg 变量包含由 PHP 生成的最新错误信息.这个变量只在错误发生的作用域内可用,并且要求 <a href="errorfunc.configuration.html#ini.track-errors">track_errors</a> 配置项是开启的(默认是关闭的).</p>
+<p><strong>Warning</strong></p>
+<p>如果用户定义了错误处理句柄(<a href="function.set-error-handler.html">set_error_handler()</a>)并且返回 <strong><code>FALSE</code></strong> 的时候,$php_errormsg 就会被设置.</p>
+<h3 id="-46">范例</h3>
+<p><strong>Example #1 $php_errormsg 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+@strpos();  
+echo&amp;nbsp;$php_errormsg;  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>Wrong parameter count for strpos()</p>
+<h2 id="15_12">15.12 $HTTP_RAW_POST_DATA</h2>
+<p>$HTTP_RAW_POST_DATA - 原生POST数据</p>
+<h3 id="-47">说明</h3>
+<p><strong>Warning</strong></p>
+<p>This feature was <em>DEPRECATED</em> in PHP 5.6.0, and <em>REMOVED</em> as of PHP 7.0.0.</p>
+<p>$HTTP_RAW_POST_DATA 包含 POST 提交的原始数据.参见 <a href="ini.core.html#ini.always-populate-raw-post-data">always_populate_raw_post_data</a></p>
+<p>一般而言,使用 <a href="wrappers.php.html#wrappers.php.input"><em>php://input</em></a> 代替 $HTTP_RAW_POST_DATA.</p>
+<h2 id="15_13">15.13 $http_response_header</h2>
+<p>$http_response_header - HTTP 响应头</p>
+<h3 id="-48">说明</h3>
+<p>$http_response_header 数组与 <a href="function.get-headers.html">get_headers()</a> 函数类似.当使用<a href="wrappers.http.html">HTTP 包装器</a>时,$http_response_header 将会被 HTTP 响应头信息填充.$http_response_header 将被创建于<a href="language.variables.scope.html">局部作用域</a>中.</p>
+<h3 id="-49">范例</h3>
+<p><strong>Example #1 $http_response_header 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+function&amp;nbsp;get_contents()&amp;nbsp;{  
+&amp;nbsp;&amp;nbsp;file_get_contents("http://example.com");  
+&amp;nbsp;&amp;nbsp;var_dump($http_response_header);  
+}  
+get_contents();  
+var_dump($http_response_header);  
+?&gt;
+</code></pre>
+<p>以上例程的输出类似于:</p>
+<p>array(9) {
+  [0]=&gt;
+  string(15) "HTTP/1.1 200 OK"
+  [1]=&gt;
+  string(35) "Date: Sat, 12 Apr 2008 17:30:38 GMT"
+  [2]=&gt;
+  string(29) "Server: Apache/2.2.3 (CentOS)"
+  [3]=&gt;
+  string(44) "Last-Modified: Tue, 15 Nov 2005 13:24:10 GMT"
+  [4]=&gt;
+  string(27) "ETag: "280100-1b6-80bfd280""
+  [5]=&gt;
+  string(20) "Accept-Ranges: bytes"
+  [6]=&gt;
+  string(19) "Content-Length: 438"
+  [7]=&gt;
+  string(17) "Connection: close"
+  [8]=&gt;
+  string(38) "Content-Type: text/html; charset=UTF-8"
+}
+NULL</p>
+<h2 id="15_14">15.14 $argc</h2>
+<p>$argc - 传递给脚本的参数数目</p>
+<h3 id="-50">说明</h3>
+<p>包含当运行于<a href="features.commandline.html">命令行</a>下时传递给当前脚本的参数的数目.</p>
+<blockquote>
+  <p><strong>Note</strong>: 脚本的文件名总是作为参数传递给当前脚本,因此 $argc 的最小值为 <em>1</em>.</p>
+  <p><strong>Note</strong>: 这个变量仅在 <a href="ini.core.html#ini.register-argc-argv">register_argc_argv</a> 打开时可用.</p>
+</blockquote>
+<h3 id="-51">范例</h3>
+<p><strong>Example #1 $argc 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+var_dump($argc);  
+?&gt;
+</code></pre>
+<p>当使用这个命令执行: php script.php arg1 arg2 arg3</p>
+<p>以上例程的输出类似于:</p>
+<p>int(4)</p>
+<h3 id="-52">注释</h3>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>也可以在 <a href="reserved.variables.server.html">$_SERVER['argc']</a> 中获取.</p>
+</blockquote>
+<h3 id="-53">参见</h3>
+<ul>
+<li><a href="function.getopt.html">getopt()</a> - 从命令行参数列表中获取选项</li>
+<li><a href="reserved.variables.argv.html"></a><a href="reserved.variables.argv.html">$argv</a></li>
+</ul>
+<h2 id="15_15">15.15 $argv</h2>
+<p>$argv - 传递给脚本的参数数组</p>
+<h3 id="-54">说明</h3>
+<p>包含当运行于<a href="features.commandline.html">命令行</a>下时传递给当前脚本的参数的数组.</p>
+<blockquote>
+  <p><strong>Note</strong>: 第一个参数总是当前脚本的文件名,因此 $argv[0] 就是脚本文件名.</p>
+  <p><strong>Note</strong>: 这个变量仅在 <a href="ini.core.html#ini.register-argc-argv">register_argc_argv</a> 打开时可用.</p>
+</blockquote>
+<h3 id="-55">范例</h3>
+<p><strong>Example #1 $argv 范例</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+var_dump($argv);  
+?&gt;
+</code></pre>
+<p>当使用这个命令执行:php script.php arg1 arg2 arg3</p>
+<p>以上例程的输出类似于:</p>
+<p>array(4) {
+  [0]=&gt;
+  string(10) "script.php"
+  [1]=&gt;
+  string(4) "arg1"
+  [2]=&gt;
+  string(4) "arg2"
+  [3]=&gt;
+  string(4) "arg3"
+}</p>
+<h3 id="-56">参见</h3>
+<ul>
+<li><a href="function.getopt.html">getopt()</a> - 从命令行参数列表中获取选项</li>
+</ul>
