@@ -749,94 +749,95 @@ declare(encoding='ISO-8859-1');
 <p>有关 PHP 怎样处理包含文件和包含路径的更多信息参见 <a href="ini.core.html#ini.include-path">include_path</a> 部分的文档.</p>
 <p>当一个文件被包含时,其中所包含的代码继承了 include 所在行的<a href="language.variables.scope.html">变量范围</a>.从该处开始,调用文件在该行处可用的任何变量在被调用的文件中也都可用.不过所有在包含文件中定义的函数和类都具有全局作用域.</p>
 <p><strong>Example #1 基本的 <em>include</em> 例子</strong></p>
-<p>`vars.php<br />
-&lt;?php  </p>
-<p>$color = 'green';<br />
-$fruit = 'apple';  </p>
-<p>?&gt;  </p>
-<p>test.php<br />
-&lt;?php  </p>
-<p>echo "A $color$fruit"; // A  </p>
-<p>include 'vars.php';  </p>
-<p>echo "A $color$fruit"; // A green apple  </p>
-<p>?&gt;</p>
-<pre class="prettyprint"><code>如果 include 出现于调用文件中的一个函数里,则被调用的文件中所包含的所有代码将表现得如同它们是在该函数内部定义的一样.所以它将遵循该函数的变量范围.此规则的一个例外是[魔术常量](language.constants.predefined.html),它们是在发生包含之前就已被解析器处理的.
+<pre class="prettyprint"><code class="php language-php">vars.php  
+&lt;?php  
 
-**Example #2 函数中的包含**
+$color = 'green';  
+$fruit = 'apple';  
+
+?&gt;  
+
+test.php  
+&lt;?php  
+
+echo "A $color$fruit"; // A  
+
+include 'vars.php';  
+
+echo "A $color$fruit"; // A green apple  
+
+?&gt;
 </code></pre>
-<p>php
-&lt;?php  </p>
-<p>function foo()<br />
-{<br />
-    global $color;  </p>
-<pre class="prettyprint"><code>include 'vars.php';  
+<p>如果 include 出现于调用文件中的一个函数里,则被调用的文件中所包含的所有代码将表现得如同它们是在该函数内部定义的一样.所以它将遵循该函数的变量范围.此规则的一个例外是<a href="language.constants.predefined.html">魔术常量</a>,它们是在发生包含之前就已被解析器处理的.</p>
+<p><strong>Example #2 函数中的包含</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
 
-echo "A $color$fruit";  
+function foo()  
+{  
+    global $color;  
+
+    include 'vars.php';  
+
+    echo "A $color$fruit";  
+}  
+
+/* vars.php is in the scope of foo() so     *  
+ * $fruit is NOT available outside of this  *  
+ * scope.  $color is because we declared it *  
+ * as global.                               */  
+
+foo();                    // A green apple  
+echo "A $color$fruit";   // A green  
+
+?&gt;
 </code></pre>
-<p>}  </p>
-<p>/* vars.php is in the scope of foo() so     *  </p>
-<ul>
-<li>$fruit is NOT available outside of this  *  </li>
-<li>scope.  $color is because we declared it *  </li>
-<li>as global.                               */  </li>
-</ul>
-<p>foo();                    // A green apple<br />
-echo "A $color$fruit";   // A green  </p>
-<p>?&gt;</p>
-<pre class="prettyprint"><code>当一个文件被包含时,语法解析器在目标文件的开头脱离 PHP 模式并进入 HTML 模式,到文件结尾处恢复.由于此原因,目标文件中需要作为 PHP 代码执行的任何代码都必须被包括在[有效的 PHP 起始和结束标记](language.basic-syntax.phpmode.html)之中.
+<p>当一个文件被包含时,语法解析器在目标文件的开头脱离 PHP 模式并进入 HTML 模式,到文件结尾处恢复.由于此原因,目标文件中需要作为 PHP 代码执行的任何代码都必须被包括在<a href="language.basic-syntax.phpmode.html">有效的 PHP 起始和结束标记</a>之中.</p>
+<p>如果"<a href="filesystem.configuration.html#ini.allow-url-include">URL include wrappers</a>"在 PHP 中被激活,可以用 URL(通过 HTTP 或者其它支持的封装协议--见<a href="wrappers.html">支持的协议和封装协议</a>)而不是本地文件来指定要被包含的文件.如果目标服务器将目标文件作为 PHP 代码解释,则可以用适用于 HTTP GET 的 URL 请求字符串来向被包括的文件传递变量.严格的说这和包含一个文件并继承父文件的变量空间并不是一回事;该脚本文件实际上已经在远程服务器上运行了,而本地脚本则包括了其结果.</p>
+<p><strong>Example #3 通过 HTTP 进行的 <em>include</em></strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
 
-如果"[URL include wrappers](filesystem.configuration.html#ini.allow-url-include)"在 PHP 中被激活,可以用 URL(通过 HTTP 或者其它支持的封装协议--见[支持的协议和封装协议](wrappers.html))而不是本地文件来指定要被包含的文件.如果目标服务器将目标文件作为 PHP 代码解释,则可以用适用于 HTTP GET 的 URL 请求字符串来向被包括的文件传递变量.严格的说这和包含一个文件并继承父文件的变量空间并不是一回事;该脚本文件实际上已经在远程服务器上运行了,而本地脚本则包括了其结果.
+/* This example assumes that www.example.com is configured to parse .php *  
+ * files and not .txt files. Also, 'Works' here means that the variables *  
+ * $foo and $bar are available within the included file.                 */  
 
-**Example #3 通过 HTTP 进行的 _include_**
+// Won't work; file.txt wasn't handled by www.example.com as PHP  
+include 'http://www.example.com/file.txt?foo=1&amp;bar=2';  
+
+// Won't work; looks for a file named 'file.php?foo=1&amp;bar=2' on the  
+// local filesystem.  
+include 'file.php?foo=1&amp;bar=2';  
+
+// Works.  
+include 'http://www.example.com/file.php?foo=1&amp;bar=2';  
+
+$foo = 1;  
+$bar = 2;  
+include 'file.txt';  // Works.  
+include 'file.php';  // Works.  
+
+?&gt;
 </code></pre>
-<p>php
-&lt;?php  </p>
-<p>/* This example assumes that www.example.com is configured to parse .php *  </p>
-<ul>
-<li>files and not .txt files. Also, 'Works' here means that the variables *  </li>
-<li>$foo and $bar are available within the included file.                 */  </li>
-</ul>
-<p>// Won't work; file.txt wasn't handled by www.example.com as PHP<br />
-include 'http://www.example.com/file.txt?foo=1&amp;bar=2';  </p>
-<p>// Won't work; looks for a file named 'file.php?foo=1&amp;bar=2' on the<br />
-// local filesystem.<br />
-include 'file.php?foo=1&amp;bar=2';  </p>
-<p>// Works.<br />
-include 'http://www.example.com/file.php?foo=1&amp;bar=2';  </p>
-<p>$foo = 1;<br />
-$bar = 2;<br />
-include 'file.txt';  // Works.<br />
-include 'file.php';  // Works.  </p>
-<p>?&gt;</p>
-<pre class="prettyprint"><code>**Warning**
+<p><strong>Warning</strong></p>
+<h2 id="安全警告">安全警告</h2>
+<p>远程文件可能会经远程服务器处理(根据文件后缀以及远程服务器是否在运行 PHP 而定),但必须产生出一个合法的 PHP 脚本,因为其将被本地服务器处理.如果来自远程服务器的文件应该在远端运行而只输出结果,那用 <a href="function.readfile.html">readfile()</a> 函数更好.另外还要格外小心以确保远程的脚本产生出合法并且是所需的代码.</p>
+<p>相关信息参见<a href="features.remote-files.html">使用远程文件</a>,<a href="function.fopen.html">fopen()</a> 和 <a href="function.file.html">file()</a>.</p>
+<p>处理返回值:在失败时 <em>include</em> 返回 <em>FALSE</em> 并且发出警告.成功的包含则返回 <em>1</em>,除非在包含文件中另外给出了返回值.可以在被包括的文件中使用 <a href="function.return.html">return</a> 语句来终止该文件中程序的执行并返回调用它的脚本.同样也可以从被包含的文件中返回值.可以像普通函数一样获得 include 调用的返回值.不过这在包含远程文件时却不行,除非远程文件的输出具有<a href="language.basic-syntax.phpmode.html">合法的 PHP 开始和结束标记</a>(如同任何本地文件一样).可以在标记内定义所需的变量,该变量在文件被包含的位置之后就可用了.</p>
+<p>因为 <em>include</em> 是一个特殊的语言结构,其参数不需要括号.在比较其返回值时要注意.</p>
+<p><strong>Example #4 比较 include 的返回值</strong></p>
+<pre class="prettyprint"><code class="php language-php">&lt;?php  
+// won't work, evaluated as include(('vars.php') == TRUE), i.e. include('')  
+if (include('vars.php') == TRUE) {  
+    echo 'OK';  
+}  
 
-安全警告
-====
-
-远程文件可能会经远程服务器处理(根据文件后缀以及远程服务器是否在运行 PHP 而定),但必须产生出一个合法的 PHP 脚本,因为其将被本地服务器处理.如果来自远程服务器的文件应该在远端运行而只输出结果,那用 [readfile()](function.readfile.html) 函数更好.另外还要格外小心以确保远程的脚本产生出合法并且是所需的代码.
-
-相关信息参见[使用远程文件](features.remote-files.html),[fopen()](function.fopen.html) 和 [file()](function.file.html).
-
-处理返回值:在失败时 _include_ 返回 _FALSE_ 并且发出警告.成功的包含则返回 _1_,除非在包含文件中另外给出了返回值.可以在被包括的文件中使用 [return](function.return.html) 语句来终止该文件中程序的执行并返回调用它的脚本.同样也可以从被包含的文件中返回值.可以像普通函数一样获得 include 调用的返回值.不过这在包含远程文件时却不行,除非远程文件的输出具有[合法的 PHP 开始和结束标记](language.basic-syntax.phpmode.html)(如同任何本地文件一样).可以在标记内定义所需的变量,该变量在文件被包含的位置之后就可用了.
-
-因为 _include_ 是一个特殊的语言结构,其参数不需要括号.在比较其返回值时要注意.
-
-**Example #4 比较 include 的返回值**
+// works  
+if ((include 'vars.php') == TRUE) {  
+    echo 'OK';  
+}  
+?&gt;
 </code></pre>
-<p>php
-&lt;?php<br />
-// won't work, evaluated as include(('vars.php') == TRUE), i.e. include('')<br />
-if (include('vars.php') == TRUE) {<br />
-    echo 'OK';<br />
-}  </p>
-<p>// works<br />
-if ((include 'vars.php') == TRUE) {<br />
-    echo 'OK';<br />
-}<br />
-?&gt;</p>
-<pre class="prettyprint"><code>**Example #5 _include_ 和 [return](function.return.html) 语句**
-
-`return.php  
+<p><strong>Example #5 <em>include</em> 和 <a href="function.return.html">return</a> 语句</strong></p>
+<pre class="prettyprint"><code>return.php  
 &lt;?php  
 
 $var = 'PHP';  
