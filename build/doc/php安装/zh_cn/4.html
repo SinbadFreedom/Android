@@ -1,0 +1,832 @@
+<h1 id="4_">4. Windows 系统下的安装</h1>
+<h3 id="4_1">4.1 Install Requirements</h3>
+<p>PHP 5.5+ require at least Windows 2008/Vista, or 2008r2, 2012, 2012r2, 2016 or 7, 8, 8.1, 10. Either 32-Bit or 64-bit (aka X86 or X64. PHP does not run on Windows RT/WOA/ARM).</p>
+<p>PHP requires the Visual C runtime(CRT). Many applications require that so it may already be installed.</p>
+<p>PHP 5.5 and 5.6 require VC CRT 11 (Visual Studio 2012). See: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=30679">»&nbsp;https://www.microsoft.com/en-us/download/details.aspx?id=30679</a></p>
+<p>PHP 7.0+ requires VC CRT 14 (Visual Studio 2015). See: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145">»&nbsp;https://www.microsoft.com/en-us/download/details.aspx?id=48145</a></p>
+<p>You MUST download the x86 CRT for PHP x86 builds and the x64 CRT for PHP x64 builds.</p>
+<p>If CRT is already installed, the installer will tell you that and not change anything.</p>
+<p>The CRT installer supports the /quiet and /norestart command-line switches, so you can script running it.</p>
+<p>VC11 CRT DLLs can be copied from your local machine to a remote machine(a `Copy Deployment` installation) instead of running the installer on the remote machine (such as a web server you have restricted access to). See: http://www.sitepoint.com/install-php53-windows/</p>
+<p>VC14 CRT does not support a `Copy Deployment` installation. VC14 CRT has many more DLLs(most in files with names starting with api-*). If you can find them all and copy them, it will also work (try a tool like Resource Hacker to get a list of all the DLLs to copy).</p>
+<h3 id="4_2">4.2 PECL</h3>
+<p>PECL extensions are pre-built for Windows and available from: <a href="http://windows.php.net/downloads/pecl/releases/">»&nbsp;http://windows.php.net/downloads/pecl/releases/</a></p>
+<p>Some extensions use features specific to some Unix systems and so are not available on Windows. Otherwise, all extensions are available for Windows.</p>
+<h3 id="4_3">4.3 Windows 下的 PHP 安装程序工具</h3>
+<h3 id="php">PHP 安装工具</h3>
+<p>如果你想安装PHP,一些常见的PHP应用程序,使用的是IIS,最简单的方式是使用微软的 Web 平台安装程序(WebPI).</p>
+<p>Windows 下使用 Apache 安装 PHP 应用程序:XAMPP,WampServer 和 BitNami.</p>
+<h3 id="4_4">4.4 Recommended Configuration on Windows systems</h3>
+<h3 id="opcache">OpCache</h3>
+<p>Highly Recommended that you enable OpCache. This extension is included with PHP for Windows. It compiles and optimizes PHP scripts and caches them in memory so that they aren't compiled every time the page is loaded.</p>
+<p>In your php.ini, set</p>
+<p><strong>Example #1 Recommended OpCache configuration</strong></p>
+<p>zend_extension=php_opcache.dll
+opcache.enable=On
+opcache.enable_cli=On</p>
+<p>And restart your web server. For more info, see: <a href="opcache.configuration.html">OpCache Configuration</a></p>
+<h3 id="wincache">WinCache</h3>
+<p>Recommended that you use WinCache if using IIS, especially if in a shared web hosting environment or using networked file storage (NAS). All PHP Applications automatically benefit from WinCache's file cache feature. File system operations are cached in memory. WinCache also can cache user objects in memory and share them between php.exe or php-cgi.exe processes (share objects between requests). Many major web applications have a plugin or extension or configuration option to make use of the WinCache user object cache. If you need high performance, you should use the object cache in your applications. See: <a href="http://pecl.php.net/package/WinCache">»&nbsp;http://pecl.php.net/package/WinCache</a> to download a WinCache DLL (or tgz) to your PHP extensions directory (extensions_dir in your php.ini). In your php.ini, set</p>
+<p><strong>Example #2 Recommended WinCache configuration</strong></p>
+<p>extension=php_wincache.dll
+wincache.fcenabled=1
+wincache.ocenabled=1 ; removed as of wincache 2.0.0.0</p>
+<p>For more info, see: <a href="http://php.net/manual/en/wincache.configuration.php">»&nbsp;http://php.net/manual/en/wincache.configuration.php</a></p>
+<h3 id="iisconfiguration">IIS Configuration</h3>
+<p>In IIS Manager, Install FastCGI module and add a handler mapping for `.php` to the path to PHP-CGI.exe (not PHP.exe)</p>
+<p>You may use the APPCMD command line tool to script IIS configuration.</p>
+<h3 id="database">Database</h3>
+<p>You'll probably need a Database Server. Popular databases provide PHP extensions to use them. If your web site doesn't get a lot of traffic, you can run your database server on the same server as your web server. Many popular database servers run on Windows.</p>
+<p>PHP includes mysqli and pdo_mysql extensions. PHP 5.5 and 5.6 include mysql extension (deprecated in 7.0).</p>
+<p>See <a href="https://dev.mysql.com/downloads/windows/">»&nbsp;https://dev.mysql.com/downloads/windows/</a></p>
+<h3 id="4_5">4.5 Manual PHP Installation on Windows</h3>
+<h3 id="choosewebserver">Choose Web Server</h3>
+<ul>
+<li><p>IIS is builtin to Windows. On Windows Server, use Server Manager to add the IIS role. Be sure to include the CGI Role Feature. On Windows Desktop, use Control Panel's Add/Remove Programs to add IIS. See: <a href="https://msdn.microsoft.com/en-us/library/ms181052%28v=vs.80%29.aspx?f=255&MSPPError=-2147217396">»&nbsp;https://msdn.microsoft.com/en-us/library/ms181052%28v=vs.80%29.aspx?f=255&MSPPError=-2147217396</a> For desktop web apps and web-development, you can also use IIS/Express or PHP Desktop</p>
+<p><strong>Example #1 Command line to configure IIS and PHP</strong></p>
+<pre class="prettyprint"><code>@echo off
+
+REM download .ZIP file of PHP build from http://windows.php.net/downloads/
+REM
+REM path to directory you decompressed PHP .ZIP file into
+</code></pre>
+<p>set phpdir=c:\php
+set phppath=php-5.6.19-nts-Win32-VC11-x86</p>
+<p>REM Clear current PHP handlers
+%windir%\system32\inetsrv\appcmd clear config /section:system.webServer/fastCGI
+%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers /-[name='PHP_via_FastCGI']</p>
+<p>REM Set up the PHP handler
+%windir%\system32\inetsrv\appcmd set config /section:system.webServer/fastCGI /+[fullPath='%phpdir%\%phppath%\php-cgi.exe']
+%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers /+[name='PHP_via_FastCGI',path='*.php',verb='*',modules='FastCgiModule',scriptProcessor='%phpdir%\%phppath%\php-cgi.exe',resourceType='Unspecified']
+%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers /accessPolicy:Read,Script</p>
+<p>REM Configure FastCGI Variables
+%windir%\system32\inetsrv\appcmd set config -section:system.webServer/fastCgi /[fullPath='%phpdir%\%phppath%\php-cgi.exe'].instanceMaxRequests:10000
+%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phpdir%\%phppath%\php-cgi.exe'].environmentVariables.[name='PHP_FCGI_MAX_REQUESTS',value='10000']"
+%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phpdir%\%phppath%\php-cgi.exe'].environmentVariables.[name='PHPRC',value='%phpdir%\%phppath%\php.ini']"</p>
+<p><a href="install.windows.legacy.index.html#install.windows.legacy.iis7">How to manually configure IIS</a></p></li>
+<li><p>There are several builds of Apache2 for Windows. We support ApacheLounge, but other options include XAMPP, WampServer and BitNami, which provide automatic installer tools. You may use mod_php or mod_fastcgi to load PHP on Apache. If you use mod_php, you MUST use a TS build of Apache built with same version of Visual C and same CPU (x86 or x64). <a href="install.windows.legacy.index.html#install.windows.legacy.apache2">How to manually configure Apache2</a></p></li>
+</ul>
+<h3 id="choosebuild">Choose Build</h3>
+<p>Download PHP production releases from <a href="http://windows.php.net/download/">»&nbsp;http://windows.php.net/download/</a>. A lot of testing and optimization is already done on the snapshot and qa releases, but you are welcome to help us do more. There are 4 types of PHP builds:</p>
+<ul>
+<li><p>Thread-Safe(TS) - use for single process web servers, like Apache with mod_php</p></li>
+<li><p>Non-Thread-Safe(NTS) - use for IIS and other FastCGI web servers (Apache with mod_fastcgi) and recommended for command-line scripts</p></li>
+<li><p>x86 - production use of PHP 5.5 or 5.6 or 7.0.</p></li>
+<li><p>x64 - production use of PHP 7.0+ unless its a 32-bit only version of Windows. 5.5 and 5.6 x64 are experimental.</p></li>
+</ul>
+<h3 id="4_6">4.6 Windows 下 PHP 故障排除</h3>
+<h3 id="">检查临时目录权限</h3>
+<ol>
+<li><p>在"文件管理器"中右键单击"临时目录"以获得权限.</p></li>
+<li><p>IIS, 检查用户的 IIS_User 是否有修改文件的权限.可以从配置或 php info 中获取临时目录的位置.</p></li>
+</ol>
+<h3 id="4_7">4.7 Installation on old Windows systems</h3>
+<p>This section applies to Windows 98/Me and Windows NT/2000/XP/2003. PHP will not work on 16 bit platforms such as Windows 3.1 and sometimes we refer to the supported Windows platforms as Win32.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>Windows XP/2003 are no longer supported as of PHP 5.5.0.</p>
+  <p><strong>Note</strong>:</p>
+  <p>Windows 98/Me/NT4/2000 are no longer supported as of PHP 5.3.0.</p>
+  <p><strong>Note</strong>:</p>
+  <p>Windows 95 is no longer supported as of PHP 4.3.0.</p>
+</blockquote>
+<p>If you have a development environment such as Microsoft Visual Studio, you can also build PHP from the original source code.</p>
+<p>Once you have PHP installed on your Windows system, you may also want to <a href="install.windows.legacy.index.html#install.windows.legacy.extensions">load various extensions</a> for added functionality.</p>
+<h3 id="-1">手工安装步骤</h3>
+<p>本章包含有在 Microsoft Windows 中手工安装和配置 PHP 的指示.</p>
+<h4 id="php-1">选择和下载 PHP 发行包</h4>
+<p>从 <a href="https://windows.php.net/download/">»&nbsp;PHP for Windows: Binaries and Sources</a> 页面下载 PHP 的 zip 二进制发行包.有几个不同版本,根据所用 web 服务器选择合适的版本: follow the detailed guide on the <a href="https://windows.php.net/download/">»&nbsp;download page</a>.</p>
+<h4 id="php-2">PHP 压缩包的结构和内容</h4>
+<p>将 zip 包解压缩到自己选择的目录,例如 C:\PHP\.此目录和文件结构类似于:</p>
+<p><strong>Example #1 PHP 5 压缩包的结构</strong></p>
+<p>c:\php
+   |
+   +--dev
+   |  |
+   |  |-php5ts.lib                 -- php5.lib 的非线程安全版本
+   |
+   +--ext                          -- PHP 扩展库的 DLL 文件目录
+   |  |
+   |  |-php_bz2.dll
+   |  |
+   |  |-php_cpdf.dll
+   |  |
+   |  |-…
+   |
+   +--extras                       -- 空 
+   |
+   +--pear                         -- PEAR 的初始版本
+   |
+   |
+   |-go-pear.bat                   -- PEAR 安装脚本
+   |
+   |-…
+   |
+   |-php-cgi.exe                   -- CGI 可执行文件
+   |
+   |-php-win.exe                   -- 无窗口执行脚本的可执行文件
+   |
+   |-php.exe                       -- PHP 命令行可执行文件(CLI)
+   |
+   |-…
+   |
+   |-php.ini-development           -- 默认的 php.ini 设置
+   |
+   |-php.ini-production            -- 推荐的 php.ini 设置
+   |
+   |-php5apache2_2.dll             -- 非线程安全版本中无此文件
+   |
+   |-php5apache2_2_filter.dll      -- 非线程安全版本中无此文件
+   |
+   |-…
+   |
+   |-php5ts.dll                    -- PHP 核心 DLL(php5.dll 的非线程安全版本)
+   | 
+   |-…</p>
+<p>以下是 PHP zip 包中包含的模块和可执行文件列表:</p>
+<ul>
+<li><p>go-pear.bat - PEAR 安装脚本.更多内容参见<a href="https://pear.php.net/manual/en/installation.php">»&nbsp;安装 PEAR</a>.</p></li>
+<li><p>php-cgi.exe - CGI 可执行文件,可用于 IIS 上以 CGI 或者 FastCGI 方式运行 PHP.</p></li>
+<li><p>php-win.exe - PHP 可执行文件,可运行 PHP 脚本而不打开命令行窗口(例如使用 Windows 图形界面的 PHP 程序).</p></li>
+<li><p>php.exe - PHP 可执行文件,用于命令行界面运行 PHP 脚本(CLI).</p></li>
+<li><p>php5apache2_2.dll - Apache 2.2.X 模块.</p></li>
+<li><p>php5apache2_2_filter.dll - Apache 2.2.X 过滤器.</p></li>
+</ul>
+<h4 id="phpini">修改 php.ini 文件</h4>
+<p>解压缩 PHP 的包之后,将 php.ini-production 拷贝为 同一目录下的 php.ini.如有必要,也可以将 php.ini 放到其它地方,但是需要更多配置步骤,具体见<a href="configuration.file.html">配置文件</a>.</p>
+<p>php.ini 文件决定 PHP 如何配置自身以及如何在其工作环境下运行.以下 php.ini 文件中的配置指令有助于使 PHP 更好地运行于 Windows 之中.有一些是可选项.还有很多其它指令也可能与用户环境有关,更多信息见 <a href="ini.list.html">php.ini 配置选项列表</a>.</p>
+<p>必须的指令:</p>
+<ul>
+<li><p>extension_dir = <em><指向扩展库目录的路径></em> - extension_dir 需要指向存放 PHP 扩展库文件的目录.可以是绝对路径(如 "C:\PHP\ext")或相对路径(如 ".\ext").在 php.ini 文件中要加载的扩展库都必须在 extension_dir 所指定的目录之中.</p></li>
+<li><p>extension = <em>xxxxx.dll</em> - 对每个需要激活的扩展,都需要一行相应的 "extension=" 语句来说明 PHP 启动时加载 extension_dir 目录下的哪些扩展.</p></li>
+<li><p>log_errors = <em>On</em> - PHP 有错误日志的功能可以将错误报告发送到一个文件中,或者系统服务中(例如系统日志),与下面的 error_log 指令配合工作.在 IIS 下运行时,log_errors 应被激活,并且配合有效的 error_log.</p></li>
+<li><p>error_log = <em><指向错误日志文件的路径></em> - error_log 需要指向一个具有绝对或相对路径的文件名用于记录 PHP 的错误日志.Web 服务器需要对此文件有可写权限.最常用的位置是各种临时目录,例如 "C:\inetpub\temp\php-errors.log".</p></li>
+<li><p>cgi.force_redirect = <em>0</em> - 在 IIS 下运行时需要关闭此项指令.这是个在许多其它 web 服务器中都需要激活的目录安全功能,但是在 IIS 下如果激活则会导致 PHP 引擎在 Windows 中出错.</p></li>
+<li><p>cgi.fix_pathinfo = <em>1</em> - 此指令可以允许 PHP 遵从 CGI 规则访问真实路径信息.IIS 的 FastCGI 实现需要激活此指令.</p></li>
+<li><p>fastcgi.impersonate = <em>1</em> - IIS 下的 FastCGI 支持模拟呼叫用户方安全令牌的能力.这使得 IIS 可以定义请求方的安全上下文.</p></li>
+<li><p>fastcgi.logging = <em>0</em> - FastCGI 日志在 IIS 下应被关闭.如果激活,则任何类的任何消息都被 FastCGI 视为错误条件从而导致 IIS 产生 HTTP 500 错误.</p></li>
+</ul>
+<p>可选指令:</p>
+<ul>
+<li><p>max_execution_time = <em>##</em> - 此指令设定任何脚本所能够运行的最长时间.默认值是 30 秒.如果 PHP 程序需要更多时间运行则增大此值.</p></li>
+<li><p>memory_limit = <em>###M</em> - PHP 进程能够占用的内存,单位为兆字节.默认值是 128M,对大多数程序都够用了.某些复杂程序可能需要更多.</p></li>
+<li><p>display_errors = <em>Off</em> - 此指令设定 PHP 是否将任何错误信息包含在返回给 web 服务器的数据流中.如果设定为 "On",则 PHP 将任何由 error_reporting 指令所定义的错误信息作为错误数据流发给 web 服务器.为安全起见,建议对在线服务器设为 "Off" 以避免泄露任何可能包含在错误消息中的安全敏感信息.</p></li>
+<li><p>open_basedir = <em><指向目录的路径,由分号分隔></em> - 例如 openbasedir="C:\inetpub\wwwroot;C:\inetpub\temp".此指令指定了允许 PHP 进行文件系统操作的目录.任何对这些目录之外的文件操作都会导致错误.此指令在共享主机环境中特别有用,可以阻止 PHP 脚本访问任何其网站根目录之外的文件.</p></li>
+<li><p>upload_max_filesize = <em>###M</em> 和 post_max_size = <em>###M</em> - 分别是上传文件的最大大小和 POST 方法提交数据的最大大小.如果 PHP 程序需要上传大型数据例如照片和视频文件,则应提高这两项的值.</p></li>
+</ul>
+<p>至此已在系统中安装了 PHP.下一步是选择一种 web 服务器并且使其能够运行 PHP.在目录中选择 web 服务器.</p>
+<p>除了可在 web 服务器中运行 PHP 之外,PHP 还可以在命令行运行,如同 <em>.BAT</em> 批处理脚本一样.详见 <a href="install.windows.legacy.index.html#install.windows.legacy.commandline">Windows 下的 PHP 命令行方式</a>.</p>
+<h3 id="microsoftiis">Microsoft IIS</h3>
+<p>本部分将具体指导如何在微软 Internet 信息服务(IIS)上安装 PHP.</p>
+<ul>
+<li><a href="install.windows.legacy.index.html#install.windows.legacy.iis6">在 IIS 5.1 和 IIS 6.0 上手工安装 PHP</a></li>
+<li><a href="install.windows.legacy.index.html#install.windows.legacy.iis7">在 IIS 7.0 及更高版本上手工安装 PHP</a></li>
+</ul>
+<h3 id="microsoftiis51iis60">Microsoft IIS 5.1 和 IIS 6.0</h3>
+<p>本章包含有在 Windows XP 和 Windows Server 2003 下的 Internet 信息服务(IIS)5.1 和 IIS 6.0 中安装 PHP 的指南.有关在 Windows Vista,Windows Server 2008,Windows 7 以及 Windows Server 2008 R2 下的 IIS 7.0 以及更高版本中安装 PHP 的指南见 <a href="install.windows.legacy.index.html#install.windows.legacy.iis7">Microsoft IIS 7.0 及更高版本</a>一章.</p>
+<h4 id="iisphp">配置 IIS 以处理 PHP 请求</h4>
+<p>根据<a href="install.windows.legacy.index.html#install.windows.legacy.manual">手工安装步骤</a>的说明下载和安装 PHP.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在使用 IIS 时推荐使用非线程安全的 PHP.可以在 <a href="https://windows.php.net/download/">»&nbsp;PHP for Windows: Binaries and Sources Releases</a> 下载.</p>
+</blockquote>
+<p>按以下示例在 php.ini 文件中配置 针对 CGI- 和 FastCGI- 的指令:</p>
+<p><strong>Example #2 php.ini 中的 CGI 和 FastCGI 设定</strong></p>
+<p>fastcgi.impersonate = 1
+fastcgi.logging = 0
+cgi.fix_pathinfo=1
+cgi.force_redirect = 0</p>
+<p>下载并安装 <a href="http://www.iis.net/extensions/fastcgi">»&nbsp;FastCGI for IIS</a>.有 32 位和 64 位平台的,根据用户平台选择相应的下载.</p>
+<p>用以下命令配置 FastCGI 扩展处理 PHP 请求.用指向 php-cgi.exe 文件的绝对路径替换其中的 "-path" 的参数.</p>
+<p><strong>Example #3 配置 FastCGI 扩展以处理 PHP 请求</strong></p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -add -section:"PHP" ^
+-extension:php -path:"C:\PHP\php-cgi.exe"</p>
+<p>此命令将创建对应于 *.php 文件后缀的 IIS 脚本映射,则所有以 *.php 结尾的 URL 都会被 FastCGI 扩展处理.此外还配置了 FastCGI 扩展使用 php-cgi.exe 可执行文件来处理 PHP 请求.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>至此所需的安装和配置步骤就完成了.以下剩余的指示是可选项,但是强烈推荐以使得在 IIS 上达到最佳的 PHP 功能和性能.</p>
+</blockquote>
+<h4 id="-2">角色扮演及文件系统访问</h4>
+<p>在 IIS 中使用 PHP 建议激活 FastCGI 的角色扮演功能.此功能在 php.ini 中由 fastcgi.impersonate 指令控制.激活角色扮演后,PHP 将以 IIS 所认证的用户帐号身份进行所有的文件系统操作.这将确保即使在(同一个主机)不同的 IIS 网站下使用了同一个 PHP 进程,只要每个网站使用了不同的用户帐号作为 IIS 身份认证,则这些网站的 PHP 脚本将不能访问彼此的文件.</p>
+<p>例如在 IIS 5.1 和 IIS 6.0 中,默认配置下的匿名认证将使用内置的用户帐号 IUSR_<MACHINE_NAME> 作为默认身份.这意味着要使得 IIS 能够运行 PHP 脚本,至少要将这些脚本的读取权限授予 IUSR_<MACHINE_NAME> 帐号.如果 PHP 程序需要对某些文件或文件夹进行写入操作,那 IUSR_<MACHINE_NAME> 帐号也需要有相对应的写入权限.</p>
+<p>要查看哪个用户帐号被用作 IIS 匿名认证的身份,使用以下步骤:</p>
+<ol>
+<li><p>在 Windows 开始菜单中选择"运行…",输入"inetmgr"并点击"确定";</p></li>
+<li><p>在树形视图下展开"网站"节点,右键点击要使用的网站并选择"属性";</p></li>
+<li><p>点击"目录安全"面板;</p></li>
+<li><p>记录下在"认证方式"对话框中的"用户名"字段.</p></li>
+</ol>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis6anonauth.png" alt="IIS 5.1 和 IIS 6.0 的匿名认证" /></p>
+<p>要修改文件及文件夹的权限,使用 Windows 资源管理器或者 icacls 命令行.</p>
+<p><strong>Example #4 配置文件访问权限</strong></p>
+<p>icacls C:\inetpub\wwwroot\upload /grant IUSR:(OI)(CI)(M)</p>
+<h4 id="iisindexphp">在 IIS 中把 index.php 设定为默认文档</h4>
+<p>IIS 的默认文档用于没有指定文件名的 HTTP 请求.对于 PHP 应用来说默认文档通常为 index.php.要将 index.php 添加到 IIS 的默认文档列表中,使用以下步骤:</p>
+<ol>
+<li><p>在 Windows 开始菜单中选择"运行…",输入"inetmgr"并点击"确定";</p></li>
+<li><p>在树形视图下展开"网站"节点,右键点击要使用的网站并选择"属性";</p></li>
+<li><p>点击"文档"面板;</p></li>
+<li><p>点击"添加…"按钮并在"默认内容页面"中输入"index.php".</p></li>
+</ol>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis6defaultdoc.png" alt="将 index.php 设为 IIS 的默认文档" /></p>
+<h4 id="fastcgiphp">FastCGI 和 PHP 回收配置</h4>
+<p>用以下命令配置 IIS FastCGI 对于 PHP 进程的回收设定.FastCGI 的设置 instanceMaxRequests 控制了单一的 php-cgi.exe 进程处理多少个请求之后会被 IIS 关闭.PHP 环境变量 PHP_FCGI_MAX_REQUESTS 控制了一个 php-cgi.exe 进程处理多少个请求之后会被自我回收.要确保 FastCGI 中 InstanceMaxRequests 的值小于或等于 PHP_FCGI_MAX_REQUESTS 的值.</p>
+<p><strong>Example #5 配置 FastCGI 和 PHP 的回收</strong></p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -set -section:"PHP" ^
+-InstanceMaxRequests:10000</p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -set -section:"PHP" ^
+-EnvironmentVars:PHP_FCGI_MAX_REQUESTS:10000</p>
+<h4 id="fastcgi">FastCGI 超时设定</h4>
+<p>如果会有一些需时较长的 PHP 脚本运行,则增加超时的设定值.有两个控制超时的指令 activityTimeout 和 requestTimeout.有关这些设定的更多信息参见 <a href="http://learn.iis.net/page.aspx/248/configuring-fastcgi-extension-for-iis-60/">»&nbsp;Configuring FastCGI Extension for IIS 6.0</a>.</p>
+<p><strong>Example #6 配置 FastCGI 超时设定</strong></p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -set -section:"PHP" ^
+-ActivityTimeout:90</p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -set -section:"PHP" ^
+-RequestTimeout:90</p>
+<h4 id="phpini-1">改变 php.ini 文件的位置</h4>
+<p>PHP 在几个位置搜索<a href="configuration.file.html">配置文件</a> php.ini,可以通过环境变量 PHPRC 来改变 php.ini 的默认位置.要使得 PHP 从用户指定的位置加载配置文件,使用以下命令.指向 php.ini 文件的绝对路径应作为环境变量 PHPRC 的值.</p>
+<p><strong>Example #7 改变 php.ini 文件的位置</strong></p>
+<p>cscript %windir%\system32\inetsrv\fcgiconfig.js -set -section:"PHP" ^
+-EnvironmentVars:PHPRC:"C:\Some\Directory\"</p>
+<h3 id="microsoftiis70">Microsoft IIS 7.0 及更高版本</h3>
+<p>本章包含有在 Windows Vista SP1,Windows 7,Windows Server 2008 以及 Windows Server 2008 R2下的 IIS 7.0 以及更高版本中手工安装 PHP 的指南.有关在 Windows XP 和 Windows Server 2003 下的 IIS 5.1 和 IIS 6.0 中安装 PHP 的指南见 <a href="install.windows.legacy.index.html#install.windows.legacy.iis6">Microsoft IIS 5.1 和 IIS 6.0</a> 一章.</p>
+<h4 id="iisfastcgi">在 IIS 中激活 FastCGI 支持</h4>
+<p>默认安装的 IIS 中 FastCGI 模块被关闭.要激活其的步骤在不同版本的 Windows 下不同.</p>
+<p>要在 Windows Vista SP1 和 Windows 7 中激活 FastCGI 支持:</p>
+<ol>
+<li><p>在 Windows 开始菜单中选择"运行…"(或在搜索框内),输入"optionalfeatures.exe"并按"确定"(或敲回车键);</p></li>
+<li><p>在"Windows 功能"对话框中展开"Internet 信息服务","万维网服务","应用程序开发功能",并选中"CGI"的选择框;</p></li>
+<li><p>点击确定按钮并等待安装完成.</p></li>
+</ol>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis7vistacgi.png" alt="在 Windows Vista SP1 和 Windows 7 中激活 FastCGI 支持" /></p>
+<p>要在 Windows Server 2008 和 Windows Server 2008 R2 中激活 FastCGI 支持:</p>
+<ol>
+<li><p>在 Windows 开始菜单中选择 "Run:",输入 "CompMgmtLauncher" 并点击 "Ok";</p></li>
+<li><p>如果在 "Roles" 节点下没有 "Web Server (IIS)" role,则点击 "Add Roles" 添加之;</p></li>
+<li><p>如果存在 "Web Server (IIS)" role,则点击 "Add Role Services" 并激活 "Application Development" 组之下的 "CGI" 选择框;</p></li>
+<li><p>点击 "Next" 及 "Install",等待安装完成.</p></li>
+</ol>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis7w2k8cgi.png" alt="在 Windows Server 2008 和 Windows Server 2008 R2 中激活 FastCGI 支持" /></p>
+<h4 id="iisphp-1">配置 IIS 以处理 PHP 请求</h4>
+<p>根据<a href="install.windows.manual.html">手工安装步骤</a>的说明下载和安装 PHP.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>在使用 IIS 时推荐使用非线程安全的 PHP.可以在 <a href="https://windows.php.net/download/">»&nbsp;PHP for Windows: Binaries and Sources Releases</a> 下载.</p>
+</blockquote>
+<p>按以下示例在 php.ini 文件中配置 针对 CGI- 和 FastCGI- 的指令:</p>
+<p><strong>Example #8 php.ini 中的 CGI 和 FastCGI 设定</strong></p>
+<p>fastcgi.impersonate = 1
+fastcgi.logging = 0
+cgi.fix_pathinfo=1
+cgi.force_redirect = 0</p>
+<p>通过 IIS 管理界面或者命令行工具配置对应于 PHP 的 IIS 程序映射.</p>
+<h5 id="iisphp-2">使用 IIS 管理界面来创建 PHP 的程序映射</h5>
+<p>按照以下步骤在 IIS 管理界面中创建 PHP 的程序映射:</p>
+<ol>
+<li><p>在 Windows 开始菜单中选择"运行…",输入"inetmgr"并点击"确定";</p></li>
+<li><p>在 IIS 管理器中左边面板"连接"下面的树状图中选择该服务器的节点;</p></li>
+<li><p>在中间面板下方的"功能视图"页面打开"处理程序映射"功能;</p>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis7handlericon.png" alt="创建 PHP 的程序映射:处理程序映射的位置" /></p></li>
+<li><p>在右边"操作"面板中点击"添加模块映射…";</p></li>
+<li><p>在"添加模块映射"对话框中输入以下内容:</p>
+<ul>
+<li>请求路径(P):*.php</li>
+<li>模块(M):FastCgiModule</li>
+<li>可执行文件(可选)(E):C:\[Path to PHP installation]\php-cgi.exe</li>
+<li>名称(N):PHP_via_FastCGI</li></ul></li>
+<li><p>点击"请求限制(R)…"按钮并选中"仅当请求映射至以下内容时才调用处理程序(I):"然后选择"文件或文件夹(O)";</p></li>
+<li><p>在所有对话框中点击确定以保存配置.</p></li>
+</ol>
+<p><img src="images/b4cf2bb34e3c20eebcf8f9e8e7949efd-iis7handlermap.png" alt="创建 PHP 的程序映射:添加程序映射" /></p>
+<h5 id="php-3">使用命令行工具创建 PHP 的程序映射</h5>
+<p>用以下命令创建一个 IIS FastCGI 处理池以使 php-cgi.exe 可执行文件来处理 PHP 请求.用自己系统上指向 php-cgi.exe 文件的绝对路径来替代 fullPath 参数的值.</p>
+<p><strong>Example #9 创建 IIS FastCGI 处理池</strong></p>
+<p>%windir%\system32\inetsrv\appcmd set config /section:system.webServer/fastCGI ^
+/+[fullPath='c:\PHP\php-cgi.exe']</p>
+<p>用以下命令配置 IIS 处理针对 PHP 的请求.用自己系统上指向 php-cgi.exe 文件的绝对路径来替代 scriptProcessor 参数的值.</p>
+<p><strong>Example #10 创建对应于 PHP 请求的处理程序映射</strong></p>
+<p>%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers ^
+/+[name='PHP_via_FastCGI', path='*.php',verb='*',modules='FastCgiModule',^
+scriptProcessor='c:\PHP\php-cgi.exe',resourceType='Either']</p>
+<p>此命令创建了一个对于 *.php 文件后缀的处理程序映射,使得所有以 .php 结尾的 URL 都会被 FastCGI 模块处理.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>至此所需的安装和配置步骤就完成了.以下剩余的指示是可选项,但是强烈推荐以使得在 IIS 上达到最佳的 PHP 功能和性能.</p>
+</blockquote>
+<h4 id="-3">角色扮演及文件系统访问</h4>
+<p>在 IIS 中使用 PHP 建议激活 FastCGI 的角色扮演功能.此功能在 php.ini 中由 fastcgi.impersonate 指令控制.激活角色扮演后,PHP 将以 IIS 所认证的用户帐号身份进行所有的文件系统操作.这将确保即使在(同一个主机)不同的 IIS 网站下使用了同一个 PHP 进程,只要每个网站使用了不同的用户帐号作为 IIS 身份认证,则这些网站的 PHP 脚本将不能访问彼此的文件.</p>
+<p>例如在 IIS 7 中,默认配置下的匿名认证将使用内置的用户帐号 IUSR 作为默认身份.这意味着要使得 IIS 能够运行 PHP 脚本,至少要将这些脚本的读取权限授予 IUSR 帐号.如果 PHP 程序需要对某些文件或文件夹进行写入操作,那 IUSER 帐号也需要有相对应的写入权限.</p>
+<p>在 IIS 7 中要查看哪个用户帐号被用作匿名认证的身份,使用以下命令.将其中的 "Default Web Site" 替换为自己使用的网站名.在输出的 XML 配置单元中查找 userName 属性.(注意:要以管理员身份运行此命令行)</p>
+<p><strong>Example #11 确定用于 IIS 匿名认证的用户帐号</strong></p>
+<p>%windir%\system32\inetsrv\appcmd.exe list config "Default Web Site" ^
+/section:anonymousAuthentication</p>
+<p><system.webServer>
+  <security>
+    <authentication>
+      <anonymousAuthentication enabled="true" userName="IUSR" />
+    </authentication>
+   </security>
+</system.webServer></p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>如果在 anonymousAuthentication 单元中没有显示 userName 属性,或者其值为一个空字符串,那意味着应用程序池的身份被用于该网站的匿名身份.</p>
+</blockquote>
+<p>要修改文件及文件夹的权限,使用 Windows 资源管理器或者 icacls 命令行.</p>
+<p><strong>Example #12 配置文件访问权限</strong></p>
+<p>icacls C:\inetpub\wwwroot\upload /grant IUSR:(OI)(CI)(M)</p>
+<h4 id="iisindexphp-1">在 IIS 中把 index.php 设定为默认文档</h4>
+<p>IIS 的默认文档用于没有指定文件名的 HTTP 请求.对于 PHP 应用来说默认文档通常为 index.php.要将 index.php 添加到 IIS 的默认文档列表中,使用此命令:</p>
+<p><strong>Example #13 将 index.php 设为 IIS 的默认文档</strong></p>
+<p>%windir%\system32\inetsrv\appcmd.exe set config ^
+-section:system.webServer/defaultDocument /+"files.[value='index.php']" ^
+/commit:apphost</p>
+<h4 id="fastcgiphp-1">FastCGI 和 PHP 回收配置</h4>
+<p>用以下命令配置 IIS FastCGI 对于 PHP 进程的回收设定.FastCGI 的设置 instanceMaxRequests 控制了单一的 php-cgi.exe 进程处理多少个请求之后会被 IIS 关闭.PHP 环境变量 PHP_FCGI_MAX_REQUESTS 控制了一个 php-cgi.exe 进程处理多少个请求之后会被自我回收.要确保 FastCGI 中 InstanceMaxRequests 的值小于或等于 PHP_FCGI_MAX_REQUESTS 的值.</p>
+<p><strong>Example #14 配置 FastCGI 和 PHP 的回收</strong></p>
+<p>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi ^
+/[fullPath='c:\php\php-cgi.exe'].instanceMaxRequests:10000</p>
+<p>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi ^
+/+"[fullPath='C:\{php_folder}\php-cgi.exe'].environmentVariables.^
+[name='PHP_FCGI_MAX_REQUESTS',value='10000']"</p>
+<h4 id="fastcgi-1">FastCGI 超时设定</h4>
+<p>如果会有一些需时较长的 PHP 脚本运行,则增加超时的设定值.有两个控制超时的指令 activityTimeout 和 requestTimeout.用以下命令修改超时设定.确保在 fullPath 的参数中使用自己系统上的 php-cgi.exe 的绝对路径.</p>
+<p><strong>Example #15 配置 FastCGI 超时设定</strong></p>
+<p>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi ^
+/[fullPath='C:\php\php-cgi.exe',arguments=''].activityTimeout:"90"  /commit:apphost</p>
+<p>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi ^
+/[fullPath='C:\php\php-cgi.exe',arguments=''].requestTimeout:"90"  /commit:apphost</p>
+<h4 id="phpini-2">改变 php.ini 文件的位置</h4>
+<p>PHP 在几个位置搜索<a href="configuration.file.html">配置文件</a> php.ini,可以通过环境变量 PHPRC 来改变 php.ini 的默认位置.要使得 PHP 从用户指定的位置加载配置文件,使用以下命令.指向 php.ini 文件的绝对路径应作为环境变量 PHPRC 的值.</p>
+<p><strong>Example #16 改变 php.ini 文件的位置</strong></p>
+<p>appcmd.exe set config  -section:system.webServer/fastCgi ^
+/+"[fullPath='C:\php\php.exe',arguments=''].environmentVariables.^
+[name='PHPRC',value='C:\Some\Directory\']" /commit:apphost</p>
+<h3 id="microsoftwindowsapache13x">Microsoft Windows 下的 Apache 1.3.x</h3>
+<p>本节包括在 Microsoft Windows 平台的 Apache 下安装 PHP 的说明和提示.在另外的页面也有 <a href="install.windows.legacy.index.html#install.windows.legacy.apache2">Apache 2 的安装和说明</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>请先阅读<a href="install.windows.legacy.index.html#install.windows.legacy.manual">手动安装步骤</a>!</p>
+</blockquote>
+<p>有两种方式让 PHP 工作在 Windows 下的 Apache 1.3.x 中.首先是使用 CGI 可执行程序(PHP 4 下为 php.exe,PHP 5 下为 php-cgi.exe),另外一种方式是使用 Apache 模块 DLL.无论是那种方式,都需要修改 httpd.conf 来配置 Apache,使 PHP 能够在其上运行,然后都需要重启服务.</p>
+<p>值得注意的是,现在 Windows 下的 SAPI 模块已经稳定得多,我们建议首先考虑使用 SAPI 而不要使用 CGI 可执行程序.因为 SAPI 更加透明和安全.</p>
+<p>虽然还有些其它的方法来在 Apache 下配置 PHP,下面介绍的方法是最简单并适用于新手的.请参考 Apache 的文档以获得更多的配置参数.</p>
+<p>在修改完配置文件后,请记得重启 Apache 服务.例如,如果把 Apache 作为 Windows 的一个服务来运行,那么在命令提示行下使用 <strong>NET STOP APACHE</strong>命令然后再使用 <strong>NET START APACHE</strong>命令便可重启服务.也可以使用重启 Apache 服务的快捷方式来重启.</p>
+<blockquote>
+  <p><strong>Note</strong>: 记住当在 Windows 环境下的 Apache 配置文件中添加路径值时,所有的反斜线,如 c:\directory\file.ext,应转换为正斜线: c:/directory/file.ext.对目录来说,也必须由斜线结尾.</p>
+</blockquote>
+<h4 id="apache">作为 Apache 的模块安装</h4>
+<p>应该将下面几行加入 Apache 的 httpd.conf 文件:</p>
+<p><strong>Example #17 PHP 作为 Apache 1.3.x 的一个模块</strong></p>
+<p>这里假设 PHP 安装在 c:\php.如果不是这样请根据情况修改路径.</p>
+<p>对于 PHP 4:</p>
+<p># 在 LoadModule 一节的末尾添加</p>
+<h1 id="sapi">不要忘记将该文件从 sapi 复制出来</h1>
+<p>LoadModule php4_module "C:/php/php4apache.dll"</p>
+<h1 id="addmodule">在 AddModule 一节的末尾添加</h1>
+<p>AddModule mod_php4.c</p>
+<p>对于 PHP 5:</p>
+<p># 在 LoadModule 一节的末尾添加
+LoadModule php5_module "C:/php/php5apache.dll"</p>
+<h1 id="addmodule-1">在 AddModule 一节的末尾添加</h1>
+<p>AddModule mod_php5.c</p>
+<p>两个 PHP 版本都需要添加的内容:</p>
+<p># 将下面这行添加到 <IfModule mod\_mime.c> 条件块中
+AddType application/x-httpd-php .php</p>
+<h1 id="phps">如果要使用语法高亮的 .phps 文件,需要添加</h1>
+<p>AddType application/x-httpd-php-source .phps</p>
+<h4 id="cgi">作为 CGI 可执行文件的安装</h4>
+<p>如果按照<a href="install.windows.manual.html">手工安装步骤</a>将 PHP 解压到 C:\php\,需要在 Apache 的配置文件中添加如下内容以使 PHP 按照 CGI 方式运行:</p>
+<p><strong>Example #18 PHP 以 CGI 方式运行在 Apache 1.3.x</strong></p>
+<p>ScriptAlias /php/ "c:/php/"
+AddType application/x-httpd-php .php</p>
+<h1 id="php4">对于 PHP 4</h1>
+<p>Action application/x-httpd-php "/php/php.exe"</p>
+<h1 id="php5">对于 PHP 5</h1>
+<p>Action application/x-httpd-php "/php/php-cgi.exe"</p>
+<h1 id="phpini-3">指定 php.ini 所在目录</h1>
+<p>SetEnv PHPRC C:/php</p>
+<p>请注意第二行的配置可以在默认的 httpd.conf 中找到,但是是被注释掉的.也请记得将 c:/php/替换为 PHP 所在的真实路径.</p>
+<p><strong>Warning</strong></p>
+<p>服务器使用 CGI 方式进行部署可能存在几个公开的缺陷.请阅读 <a href="security.cgi-bin.html">CGI 安全</a>一章 以学习 如何抵御这些攻击.</p>
+<p>如果想发布语法高亮的 php 文件,没有类似于模块方式下 PHP 那种方便的方法.如果选择了 CGI 方式运行 PHP,需要使用 <a href="function.highlight-file.html">highlight_file()</a> 函数来进行语法高亮.创建一个 PHP 文件,加入下述代码即可:<em><?php highlight_file('some_php_script.php'); ?></em>.</p>
+<h3 id="microsoftwindowsapache2x">Microsoft Windows 下的 Apache 2.x</h3>
+<p>本节包括在 Microsoft Windows 系统中针对 Apache 2.x 安装 PHP 的指导与说明.在其它页面也有 <a href="install.windows.legacy.index.html#install.windows.legacy.apache1">Apache 1.3.x 用户指导与说明</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>应该先阅读<a href="install.windows.legacy.index.html#install.windows.legacy.manual">手工安装步骤</a>!</p>
+  <p><strong>Note</strong>: <strong>Apache 2.2 支持</strong>  </p>
+  <p>Apache 2.2 用户应留意对于 Apache 2.2 的 DLL 文件名是 php5apache2_2.dll 而不是 php5apache2.dll,并且只在 PHP 5.2.0 以及更高版本中出现.参见 [broken link].</p>
+</blockquote>
+<p>强烈建议阅读 <a href="http://httpd.apache.org/docs/current/">»&nbsp;Apache 文档</a>来加深对 Apache 2.x 服务器的基本理解.此外在继续下去之前考虑先阅读一下 Apache 2.x 的 <a href="http://httpd.apache.org/docs/current/platform/windows.html">»&nbsp;Windows 下使用说明</a>.</p>
+<p>Apache 2.x 被设计运行于 Windows 版的服务器平台下,例如 Windows NT 4.0,Windows 2000,Windows XP 或 Windows 7.虽然 Apache 2.x 可以在 Windows 9x 下勉强运行,但对此平台的支持尚未完成,某些功能无法正确工作.对此并无补救计划.</p>
+<p>下载最新版本的 <a href="http://httpd.apache.org/">»&nbsp;Apache 2.x</a> 以及适合的 PHP 版本.先完成<a href="install.windows.manual.html">手工安装步骤</a>后再回来继续将 PHP 集成入 Apache.</p>
+<p>Windows 下有三种方法使 PHP 工作于 Apache 2.x 之中.可以以 handler,CGI,或者 FastCGI 方式运行 PHP.</p>
+<blockquote>
+  <p><strong>Note</strong>: 记住当在 Windows 环境下的 Apache 配置文件中添加路径值时,所有的反斜线,如 c:\directory\file.ext,应转换为正斜线: c:/directory/file.ext.对目录来说,也必须由斜线结尾.</p>
+</blockquote>
+<h4 id="apachehandler">以 Apache handler 方式安装</h4>
+<p>需要将以下几行加入到 Apache 的 httpd.conf 配置文件中以加载 Apache 2.x 的 PHP 模块:</p>
+<p><strong>Example #19 PHP 在 Apache 2.x 中作为 handler</strong></p>
+<p># 
+LoadModule php5_module "c:/php/php5apache2.dll"
+AddHandler application/x-httpd-php .php</p>
+<h1 id="phpini-4">配置 php.ini 的路径</h1>
+<p>PHPIniDir "C:/php"</p>
+<blockquote>
+  <p><strong>Note</strong>: 记得用自己 PHP 实际所在的路径替换掉上例中的 c:/php/.要留意在 LoadModule 指令中使用了 php5apache2.dll 或者 php5apache2_2.dll,并且该文件确实位于所指定的位置.</p>
+</blockquote>
+<p>以上配置将使 PHP 处理任何具有 .php 后缀的文件,即使该文件还有其它的文件后缀.例如一个名为 example.php.txt 的文件将被作为 PHP 文件运行.要确保只有以 .php <em>结尾</em>的文件才被执行,则用以下配置替换上面的:</p>
+<p><FilesMatch \\.php$>
+      SetHandler application/x-httpd-php
+ </FilesMatch></p>
+<h4 id="cgiphp">以 CGI 方式运行 PHP</h4>
+<p>要更好地理解在 Apache 下运行 CGI,请参阅 <a href="http://httpd.apache.org/docs/current/howto/cgi.html">»&nbsp;Apache CGI 文档</a>.</p>
+<p>要将 PHP 以 CGI 方式运行,需要将 php-cgi 文件放入到用 ScriptAlias 指令所指定的 CGI 目录中.</p>
+<p>然后需要给 PHP 文件中添加一 #! 的行来指明 PHP 可执行文件的位置:</p>
+<p><strong>Example #20 Apache 2.x 下 CGI 方式的 PHP</strong></p>
+<h1 id="cphpphpexe">!C:/php/php.exe</h1>
+<?php
+  phpinfo();
+?>
+<p><strong>Warning</strong></p>
+<p>服务器使用 CGI 方式进行部署可能存在几个公开的缺陷.请阅读 <a href="security.cgi-bin.html">CGI 安全</a>一章 以学习 如何抵御这些攻击.</p>
+<h4 id="fastcgiphp-2">以 FastCGI 方式运行 PHP</h4>
+<p>以 FastCGI 方式运行 PHP 比起 CGI 方式有很多优点.设定的方式很直接:</p>
+<p>从 <a href="http://httpd.apache.org/mod_fcgid/">»&nbsp;http://httpd.apache.org/mod_fcgid/</a> 取得 mod_fcgid,该站点有 Win32 可执行文件的下载.按照下载文件中的指示安装此模块.</p>
+<p>按以下方法配置 web 服务器,注意用自己系统上的路径替换其中相应的内容:</p>
+<p><strong>Example #21 配置 Apache 以 FastCGI 方式运行 PHP</strong></p>
+<p>LoadModule fcgid_module modules/mod_fcgid.so  </p>
+<h1 id="whereisyourphpinifile">Where is your php.ini file?</h1>
+<p>FcgidInitialEnv PHPRC        "c:/php" </p>
+<p>AddHandler fcgid-script .php<br />
+FcgidWrapper "c:/php/php-cgi.exe" .php  </p>
+<p>此时具有 .php 后缀的文件将被 PHP FastCGI 所解析执行.</p>
+<h3 id="microsoftwindowssuniplanetnetscape">Microsoft Windows 下的 Sun,iPlanet 和 Netscape 服务器</h3>
+<p>本节包含针对在 Windows 下 Sun Java System web 服务器,Sun ONE web 服务器,iPlanet 和 Netscape 服务器的 PHP 安装说明与提示.</p>
+<p>自 PHP 4.3.3 起可以通过 <a href="ref.nsapi.html">NSAPI 模块</a>使用 PHP 脚本来<a href="install.windows.legacy.index.html#install.windows.legacy.sun.specialpages">产生定制目录列表于错误页面</a>.也可以使用为兼容 Apache 的附加函数.目前使用的 web 服务器的支持请阅读<a href="install.windows.legacy.index.html#install.windows.legacy.sun.notes">有关子请求的说明</a>.</p>
+<h4 id="suniplanetnetscapecgi">Sun,iPlanet 和 Netscape 服务器的 CGI 方式安装</h4>
+<p>要将 PHP 安装为 CGI 处理器,按以下步骤进行:</p>
+<ul>
+<li><p>将 php4ts.dll 拷贝到 systemroot(即 Windows 的安装目录);</p></li>
+<li><p>在命令行做文件关联,输入以下两行命令:</p>
+<p>assoc .php=PHPScript
+ftype PHPScript=c:\php\php.exe %1 %*</p></li>
+<li><p>在 Netscape Enterprise Administration Server 中建一个空的 shellcgi 目录并随即删除(此步骤在 obj.conf 中新建了 5 行重要指令以允许 web 服务器处理 shellcgi 脚本);</p></li>
+<li><p>在 Netscape Enterprise Administration Server 中新建一个新的 MIME 类型(Category: type,Content-Type: magnus-internal/shellcgi,File Suffix: php);</p></li>
+<li><p>对每个要运行 PHP 的 web 服务器实例都进行以上步骤.</p></li>
+</ul>
+<p>更多将 PHP 设置为 CGI 可执行程序的内容见:<a href="http://benoit.noss.free.fr/php/install-php.html">»&nbsp;http://benoit.noss.free.fr/php/install-php.html</a>.</p>
+<h4 id="suniplanetnetscapensapi">Sun,iPlanet 和 Netscape 服务器的 NSAPI 方式</h4>
+<p>要将 PHP 以 NSAPI 方式安装,按以下步骤进行:</p>
+<ul>
+<li><p>将 php4ts.dll拷贝到 systemroot(即 Windows 的安装目录);</p></li>
+<li><p>在命令行做文件关联,输入以下两行命令:</p>
+<p>assoc .php=PHPScript
+ftype PHPScript=c:\php\php.exe %1 %*</p></li>
+<li><p>在 Netscape Enterprise Administration Server 中新建一个新的 MIME 类型(Category: type,Content-Type: magnus-internal/x-httpd-php,File Suffix: php);</p></li>
+<li><p>编辑 magnus.conf(服务器版本 &gt;= 6)或 obj.conf(服务器版本 &lt; 6)并加入下面两行;要将新行放在 <em>mime types init</em>之后:</p>
+<p>Init fn="load-modules" funcs="php4_init,php4_execute,php4_auth_trans" shlib="c:/php/sapi/php4nsapi.dll"
+Init fn="php4_init" LateInit="yes" errorString="Failed to initialise PHP!" [php_ini="c:/path/to/php.ini"]</p>
+<p>(PHP &gt;= 4.3.3)<em>php_ini</em> 参数为可选项,但加上后就可以把 php.ini 放到 web 服务器的配置目录中去;</p></li>
+<li><p>在 obj.conf 中配置默认对象(对于虚拟服务器类 [Sun web Server 6.0+] 是 vserver.obj.conf文件):在 <em><Object name="default"></em> 一节,在所有的"ObjectType"行之后和所有的"AddLog"行之前加上这一行:</p>
+<p>Service fn="php4_execute" type="magnus-internal/x-httpd-php" [inikey=value inikey=value …]</p>
+<p>(PHP &gt;= 4.3.3)作为附加参数可以加入一些特殊的 php.ini 值,例如可以在调用 <em>php4_execute</em> 时设定专门的 <em>docroot="/path/to/docroot"</em>.对于布尔的 ini 选项请用 0/1 作为值,而不是 <em>"On","Off",…</em>(这样不能正确工作),例如要用 <em>zlib.output_compression=1</em> 而不是 <em>zlib.output_compression="On"</em>;</p></li>
+<li><p>这几行仅在想要配置一个只有 PHP 脚本的目录时需要(类似 cgi-bin 目录):</p>
+<p><Object name="x-httpd-php">
+ObjectType fn="force-type" type="magnus-internal/x-httpd-php"
+Service fn=php4_execute [inikey=value inikey=value …]
+</Object></p>
+<p>在此之后可以在管理服务器中配置目录并将其类型设为 <em>x-httpd-php</em>.其中的所有文件都将作为 PHP 执行.这样可以隐藏 PHP 的使用,文件名还保留为 .html;</p></li>
+<li><p>重启动 web 服务使改动生效;</p></li>
+<li><p>对每个要运行 PHP 的 web 服务器实例都进行以上步骤.</p></li>
+</ul>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>更多将 PHP 设置为 NSAPI内容见:<a href="http://benoit.noss.free.fr/php/install-php4.html">»&nbsp;http://benoit.noss.free.fr/php/install-php4.html</a>.</p>
+  <p><strong>Note</strong>:</p>
+  <p>PHP 使用的堆栈大小(stacksize)依赖于 web 服务器的配置.如果在运行很大的 PHP 脚本时死掉,建议在管理服务器中增大此值(在 "MAGNUS EDITOR" 一节中).</p>
+</blockquote>
+<h4 id="cgiphpini">CGI 环境以及推荐在 php.ini 中进行的修改</h4>
+<p>在写 PHP 脚本时很重要一点是 Sun JSWS/Sun ONE WS/iPlanet/Netscape 是多线程 web 服务器.因此所有的请求都运行于同一个进程空间(即 web 服务器自己的空间)而此空间只有一个环境.如果想取得 CGI 变量例如 <em>PATH_INFO</em>,<em>HTTP_HOST</em> 等时不能用老的 PHP 3.x 的方式 <a href="function.getenv.html">getenv()</a> 或者类似手段(<em>$_ENV</em>)进行.只能取得运行的 web 服务器的环境变量而没有任何有效的 CGI 变量!</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>为什么环境中有一些(无效的)CGI 变量?</p>
+  <p>解答:这是因为从管理服务器启动了 web 服务器进程,这将运行 web 服务器的启动脚本,而你想要启动的是 CGI 脚本(CGI 脚本在管理服务器内部!).这是为什么 web 服务器启动的环境中有一些 CGI 环境变量的原因.可以不从管理服务器启动 web 服务器来试验一下.用管理员用户从命令行手工启动--这样就不会看到类似 CGI 的环境变量了.</p>
+</blockquote>
+<p>PHP 4.x 中取得 CGI 变量的正确方式是使用超全局变量 <a href="reserved.variables.server.html">$_SERVER</a>.如果有一些老的脚本用了 $HTTP_HOST 等,那应该在 php.ini 中打开 <em>register_globals</em> 选项并改变变量顺序(重要提示:去掉 <em>"E"</em>,因为这里不需要环境变量):</p>
+<p>variables_order = "GPCS"
+register_globals = On</p>
+<h4 id="php433">错误页面的特殊使用或定制目录列表(PHP &gt;= 4.3.3)</h4>
+<p>可以用 PHP 来为 <em>"404 Not Found"</em> 或类似的错误提示生成错误页面.对每个想要覆盖的错误页面在 obj.conf 中的对象里加入下面这行:</p>
+<p>Error fn="php4_execute" code=XXX script="/path/to/script.php" [inikey=value inikey=value…]</p>
+<p>其中的 <em>XXX</em> 是 HTTP 错误代码.删除掉可能干扰到自己设置的任何其它 <em>Error</em> 指令.如果对所有可能出现的错误都用同一个脚本处理,不要 <em>code</em> 参数即可.脚本里可以用 <a href="reserved.variables.server.html">$_SERVER['ERROR_TYPE']</a> 取得 HTTP 状态代码.</p>
+<p>还可以生成自己定制的目录列表.只要创建一个显示目录列表的 PHP 脚本并用下面一行在 obj.conf 中替换掉相应 <em>type="magnus-internal/directory"</em> 默认的 Service 设置:</p>
+<p>Service fn="php4_execute" type="magnus-internal/directory" script="/path/to/script.php" [inikey=value inikey=value…]</p>
+<p>对于错误和目录列表页面,原始的 URI 和转换后的 URI 都在变量 <a href="reserved.variables.server.html">$_SERVER['PATH_INFO']</a> 和 <a href="reserved.variables.server.html">$_SERVER['PATH_TRANSLATED']</a> 中.</p>
+<h4 id="nsapi_virtualfunctionnsapivirtualhtmlphp433">有关 <a href="function.nsapi-virtual.html">nsapi_virtual()</a>和子请求(PHP &gt;= 4.3.3)的说明</h4>
+<p>NSAPI 模块现在支持 <a href="function.nsapi-virtual.html">nsapi_virtual()</a> 函数(别名:<a href="function.virtual.html">virtual()</a>)来进行子请求并将结果插入到 web 页面里.问题是,此函数用到了一些 NSAPI 库中没有文档说明的特性.</p>
+<p>在 Unix 下这不是问题,因为模块会自动寻找所需的函数并使用.如果找不到,<a href="function.nsapi-virtual.html">nsapi_virtual()</a> 被禁用.</p>
+<p>在 Windows 下 DLL 处理的局限性需要使用最新的 ns-httpdXX.dll 文件中的自动检测功能.这已在版本 6.1 及以下的服务器中测试过.如果用了更高版本的 Sun 服务器,检测会失败并禁用 <a href="function.nsapi-virtual.html">nsapi_virtual()</a>.</p>
+<p>在这种情况下,试试下面的方法.在 magnus.conf/obj.conf 中的 <em>php4_init</em> 里加入下面的参数:</p>
+<p>Init fn=php4_init … server_lib="ns-httpdXX.dll"</p>
+<p>其中 <em>XX</em> 是正确的 DLL 版本号.在 server-root 目录下去找合适的 DLL 的名字.文件大小最大的 DLL 就是了.</p>
+<p>可以用 <a href="function.phpinfo.html">phpinfo()</a> 函数来检查状态.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>但要注意:对 <a href="function.nsapi-virtual.html">nsapi_virtual()</a> 的支持是试验性质的!</p>
+</blockquote>
+<h3 id="microsoftwindowssambar">Microsoft Windows 下的 Sambar 服务器</h3>
+<p>本节包含针对 Windows 下的 <a href="http://www.sambar.com/">»&nbsp;Sambar 服务器</a>的说明和提示.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>应该首先阅读<a href="install.windows.manual.html">手工安装步骤</a>!</p>
+</blockquote>
+<p>下面列出了怎样在 Windows 下设置 Sambar 服务器的 ISAPI 模块.</p>
+<ul>
+<li><p>在 Sambar 安装目录中找到 mappings.ini文件(在 config 目录中);</p></li>
+<li><p>打开 mappings.ini 并在 <em>[ISAPI]</em> 部分加入下面一行:</p>
+<p><strong>Example #22 Sambar 的 ISAPI 设置</strong></p>
+<h1 id="php4-1">对 PHP 4</h1>
+<p>*.php = c:\php\php4isapi.dll</p>
+<h1 id="php5-1">对 PHP 5</h1>
+<p>*.php = c:\php\php5isapi.dll</p>
+<p>(上面假定 PHP 安装在 c:\php.)</p></li>
+<li><p>重启动 Sambar 服务器以使改动生效.</p></li>
+</ul>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>如果想要用 PHP 与分布于网络中不同的主机上的资源通讯,则需要改变 Sambar 服务器的服务进程所使用的帐号.Sambar 服务进程使用的默认帐号是 LocalSystem,没有远程资源的访问许可.可以通过 Windows 控制面板中的"管理工具"里面的"服务"来修改此帐号.</p>
+</blockquote>
+<h3 id="microsoftwindowsxitami">Microsoft Windows 下的 Xitami</h3>
+<p>本节包含针对 Windows 下的 <a href="http://www.xitami.com/">»&nbsp;Xitami</a> 的说明与提示.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>应该首先阅读<a href="install.windows.manual.html">手工安装步骤</a>!</p>
+</blockquote>
+<p>下面列出了怎样在 Windows 下在 Xitami 中设置 PHP 的 CGI 方式.</p>
+<blockquote>
+  <p><strong>Note</strong>: <strong>CGI 用户重要提示</strong>  </p>
+  <p>请阅读 <a href="faq.installation.html#faq.installation.forceredirect">FAQ:cgi.force_redirect</a> 中的重要细节.此选项需要被设为 <em>0</em>.如果想要使用 <em>$_SERVER['PHP_SELF']</em>,还必须激活 <a href="ini.core.html#ini.cgi.fix-pathinfo">cgi.fix_pathinfo</a>选项.</p>
+</blockquote>
+<p><strong>Warning</strong></p>
+<p>服务器使用 CGI 方式进行部署可能存在几个公开的缺陷.请阅读 <a href="security.cgi-bin.html">CGI 安全</a>一章 以学习 如何抵御这些攻击.</p>
+<ul>
+<li><p>确保 web 服务器在运行,在浏览器中打开 Xitami 的管理控制台(通常是 <em>http://127.0.0.1/admin</em>),并点击 Configuration;</p></li>
+<li><p>找到 Filters,在 File extensions(.xxx)字段中加入想要 PHP 解析的后缀名(例如 .php);</p></li>
+<li><p>在 Filter command 或 script 中输入 PHP 的 CGI 可执行文件名,例如 PHP 4 是 C:\php\php.exe,PHP 5 是 C:\php\php-cgi.exe;</p></li>
+<li><p>点击"Save"图标;</p></li>
+<li><p>重启动服务器以使改动生效.</p></li>
+</ul>
+<h3 id="-4">从源程序编译</h3>
+<p>本章讲述了在 Windows 下如何使用 Microsoft 的工具编译 PHP.要在 CygWin 中编译 PHP,请参考 <a href="install.unix.html">Unix 系统下的安装</a>一章.</p>
+<p>具体内容见:<a href="https://wiki.php.net/internals/windows/stepbystepbuild">»&nbsp;https://wiki.php.net/internals/windows/stepbystepbuild</a>.</p>
+<h3 id="windows">Windows 下安装扩展库</h3>
+<p>在 Windows 下安装完 PHP 和 web 服务器之后,可能想要安装一些扩展库来获得更多功能.可以通过修改 php.ini 来选择当 PHP 启动时加载哪些扩展库.也可以在脚本中通过使用 <a href="function.dl.html">dl()</a>来动态加载.</p>
+<p>PHP 扩展库的 DLL 文件都具有 <em>php_</em> 前缀.</p>
+<p>很多扩展库都<em>内置于</em> Windows 版的 PHP 之中.这意味着要加载这些扩展库,额外的 DLL 文件和 <a href="ini.core.html#ini.extension">extension</a> 配置指令都<em>不需要</em>.Windows 下的 <a href="install.windows.legacy.index.html#install.windows.legacy.extensions.overview">PHP 扩展库</a>列表列出了需要或曾经需要额外 PHP DLL 文件的扩展库.下面是内置的扩展库列表:</p>
+<p>PHP 4 中(截止到 PHP 4.3.11):<a href="book.bc.html">BCMath</a>,<a href="book.calendar.html">Caledar</a>,<a href="book.com.html">COM</a>,<a href="book.ctype.html">Ctype</a>,<a href="book.ftp.html">FTP</a>,<a href="book.mysql.html">MySQL</a>,<a href="book.uodbc.html">ODBC</a>,Overload,<a href="book.pcre.html">PCRE</a>,<a href="book.session.html">Session</a>,<a href="book.tokenizer.html">Tokenizer</a>,<a href="book.wddx.html">WDDX</a>,<a href="book.xml.html">XML</a> 和 <a href="book.zlib.html">Zlib</a>.</p>
+<p>PHP 5 中(截止到 5.0.4)有以下修改.新增内置:<a href="book.dom.html">DOM</a>,<a href="book.libxml.html">LibXML</a>,<a href="book.iconv.html">Iconv</a>,<a href="book.simplexml.html">SimpleXML</a>,<a href="book.spl.html">SPL</a> 和 <a href="book.sqlite.html">SQLite</a>.以下不再内置:<a href="book.mysql.html">MySQL</a> 和 Overload.</p>
+<p>PHP 搜索扩展库的默认位置在 PHP 4 中是 C:\php4\extensions,在 PHP 5 中是 C:\php5.要修改此项以符合用户自己的 PHP 设置,需要编辑 php.ini 文件:</p>
+<ul>
+<li><p>需要修改 <a href="ini.core.html#ini.extension-dir">extension_dir</a> 设置以指向用户放置扩展库的目录或者说放置 php_*.dll 文件的位置.例如:</p>
+<p>extension_dir = C:\php\extensions</p></li>
+<li><p>要在 php.ini 中启用某扩展库,需要去掉该行 <em>extension=php_*.dll</em> 前的注释符号,将想要加载的扩展库前的分号(;)删除即可.</p>
+<p><strong>Example #23 启用 <a href="book.bzip2.html">Bzip2</a>扩展库</strong></p>
+<p>// 将这一行
+;extension=php_bz2.dll</p>
+<p>// 改成这样
+extension=php_bz2.dll</p></li>
+<li><p>有些扩展库需要额外的 DLL 才能工作.其中一部分包括在发行包里,PHP 4 中在 C:\php\dlls\ 目录下,PHP 5 中在主目录下,但还有一些,例如 Oracle(php_oci8.dll)所需要的 DLL 没有绑定在发行包里.如果安装 PHP 4,将绑定的 DLL 从 C:\php\dlls 拷贝到主目录 C:\php 中.别忘了将 C:\php 放到系统路径 PATH 中去(此过程在另外的 <a href="faq.installation.html#faq.installation.addtopath">FAQ 条目</a>中有说明).</p></li>
+<li><p>某些 DLL 没有绑定在 PHP 发行包中,详情见每个扩展库的文档页.此外有关 PECL 的说明见手册页 <a href="install.pecl.html">PECL 扩展库安装</a>.在 PECL 中有日益增加数目巨大的 PHP 扩展库,这些扩展库需要<a href="install.pecl.downloads.html">单独下载</a>.</p></li>
+</ul>
+<blockquote>
+  <p><strong>Note</strong>: 如果运行服务器模块版的 PHP,在修改了 php.ini 之后别忘了重新启动 web 服务器以使其改动生效.</p>
+</blockquote>
+<p>下表说明了哪些扩展库需要额外的 DLL.</p>
+<p><strong>PHP 扩展库</strong></p>
+<p>扩展库</p>
+<p>说明</p>
+<p>注解</p>
+<p>php_bz2.dll</p>
+<p><a href="book.bzip2.html">bzip2</a> 压缩函数</p>
+<p>无</p>
+<p>php_calendar.dll</p>
+<p><a href="book.calendar.html">Calendar</a> 日历转换函数</p>
+<p>自 PHP 4.0.3 起内置</p>
+<p>php_crack.dll</p>
+<p><a href="book.crack.html">Crack</a> 密码破解函数</p>
+<p>无</p>
+<p>php_ctype.dll</p>
+<p><a href="book.ctype.html">ctype</a> 家族函数</p>
+<p>自 PHP 4.3.0 起内置</p>
+<p>php_curl.dll</p>
+<p><a href="book.curl.html">CURL</a>,客户端 URL 库函数</p>
+<p>需要:libeay32.dll,ssleay32.dll(已附带)</p>
+<p>php_dba.dll</p>
+<p><a href="book.dba.html">DBA</a>:数据库(dbm 风格)抽象层函数</p>
+<p>无</p>
+<p>php_dbase.dll</p>
+<p><a href="book.dbase.html">dBase</a> 函数</p>
+<p>无</p>
+<p>php_dbx.dll</p>
+<p><a href="book.dbx.html">dbx</a> 函数</p>
+<p>无</p>
+<p>php_domxml.dll</p>
+<p>PHP 4 DOM XML 函数</p>
+<p>PHP <= 4.2.0 需要:libxml2.dll(已附带),PHP >= 4.3.0 需要:iconv.dll(已附带)</p>
+<p>php_dotnet.dll</p>
+<p>.NET 函数</p>
+<p>PHP &lt;= 4.1.1</p>
+<p>php_exif.dll</p>
+<p><a href="book.exif.html">EXIF</a> 函数</p>
+<p>需要 <a href="book.mbstring.html">php_mbstring.dll</a>.并且在 php.ini 中,php_exif.dll 必须在 php_mbstring.dll <em>之后</em>加载</p>
+<p>php_fbsql.dll</p>
+<p><a href="book.fbsql.html">FrontBase</a> 函数</p>
+<p>PHP &lt;= 4.2.0</p>
+<p>php_fdf.dll</p>
+<p><a href="book.fdf.html">FDF</a>:表单数据格式化函数</p>
+<p>需要:fdftk.dll(已附带)</p>
+<p>php_filepro.dll</p>
+<p><a href="book.filepro.html">filePro</a> 函数</p>
+<p>只读访问</p>
+<p>php_ftp.dll</p>
+<p><a href="book.ftp.html">FTP</a> 函数</p>
+<p>自 PHP 4.0.3 起内置</p>
+<p>php_gd.dll</p>
+<p><a href="book.image.html">GD</a> 库图像函数</p>
+<p>在 PHP 4.3.2 中移除.此外注意在 GD1 中不能用真彩色函数,用 php_gd2.dll替代.</p>
+<p>php_gd2.dll</p>
+<p><a href="book.image.html">GD</a> 库图像函数</p>
+<p>GD2</p>
+<p>php_gettext.dll</p>
+<p><a href="book.gettext.html">Gettext</a> 函数</p>
+<p>PHP <= 4.2.0 需要 gnu_gettext.dll(已附带),PHP >= 4.2.3 需要 libintl-1.dll, iconv.dll(已附带)</p>
+<p>php_hyperwave.dll</p>
+<p>HyperWave 函数</p>
+<p>无</p>
+<p>php_iconv.dll</p>
+<p><a href="book.iconv.html">ICONV</a> 字符集转换</p>
+<p>需要:iconv-1.3.dll(已附带),PHP &gt;=4.2.1 需要 iconv.dll</p>
+<p>php_ifx.dll</p>
+<p><a href="book.ifx.html">Informix</a> 函数</p>
+<p>需要:Informix 库</p>
+<p>php_iisfunc.dll</p>
+<p>IIS 管理函数库</p>
+<p>无</p>
+<p>php_imap.dll</p>
+<p><a href="book.imap.html">IMAP</a>,POP3 和 NNTP 函数</p>
+<p>无</p>
+<p>php_ingres.dll</p>
+<p><a href="book.ingres.html">Ingres II</a> 函数</p>
+<p>需要:Ingres II 库</p>
+<p>php_interbase.dll</p>
+<p><a href="book.ibase.html">InterBase</a> 函数</p>
+<p>需要:gds32.dll(已附带)</p>
+<p>php_java.dll</p>
+<p>Java 函数</p>
+<p>PHP &lt;= 4.0.6 需要:jvm.dll(已附带)</p>
+<p>php_ldap.dll</p>
+<p><a href="book.ldap.html">LDAP</a> 函数</p>
+<p>PHP <= 4.2.0 需要 libsasl.dll(已附带),PHP >= 4.3.0 需要 libeay32.dll,ssleay32.dll(已附带)</p>
+<p>php_mbstring.dll</p>
+<p><a href="book.mbstring.html">Multi-Byte String</a> 多字节字符串函数</p>
+<p>无</p>
+<p>php_mcrypt.dll</p>
+<p><a href="book.mcrypt.html">Mcrypt 加密</a>函数</p>
+<p>需要:libmcrypt.dll</p>
+<p>php_mhash.dll</p>
+<p><a href="book.mhash.html">Mhash</a> 函数</p>
+<p>PHP &gt;= 4.3.0 需要:libmhash.dll(已附带)</p>
+<p>php_mime_magic.dll</p>
+<p><a href="book.mime-magic.html">Mimetype</a> 函数</p>
+<p>需要:magic.mime(已附带)</p>
+<p>php_ming.dll</p>
+<p><a href="book.ming.html">Ming</a> 函数(Flash)</p>
+<p>无</p>
+<p>php_msql.dll</p>
+<p><a href="book.msql.html">mSQL</a> 函数</p>
+<p>需要:msql.dll(已附带)</p>
+<p>php_mssql.dll</p>
+<p><a href="book.mssql.html">MSSQL</a> 函数</p>
+<p>需要:ntwdblib.dll(已附带)</p>
+<p>php_mysql.dll</p>
+<p><a href="book.mysql.html">MySQL</a> 函数</p>
+<p>PHP &gt;= 5.0.0 需要 libmysql.dll(已附带)</p>
+<p>php_mysqli.dll</p>
+<p><a href="book.mysqli.html">MySQLi</a> 函数</p>
+<p>PHP &gt;= 5.0.0 需要 libmysql.dll(PHP &lt;= 5.0.2 中是 libmysqli.dll)(已附带)</p>
+<p>php_oci8.dll</p>
+<p><a href="book.oci8.html">Oracle 8</a> 函数</p>
+<p>需要:Oracle 8.1+ 客户端库</p>
+<p>php_openssl.dll</p>
+<p><a href="book.openssl.html">OpenSSL</a> 函数</p>
+<p>需要:libeay32.dll(已附带)</p>
+<p>php_overload.dll</p>
+<p>PHP 4 对象过载函数</p>
+<p>自 PHP 4.3.0 起内置,自 PHP 5.0.0 起移除</p>
+<p>php_pdf.dll</p>
+<p><a href="book.pdf.html">PDF</a> 函数</p>
+<p>无</p>
+<p>php_pgsql.dll</p>
+<p><a href="book.pgsql.html">PostgreSQL</a> 函数</p>
+<p>无</p>
+<p>php_shmop.dll</p>
+<p><a href="book.shmop.html">Shared Memory</a> 共享内存函数</p>
+<p>无</p>
+<p>php_snmp.dll</p>
+<p><a href="book.snmp.html">SNMP</a> 函数</p>
+<p>仅用于 Windows NT!</p>
+<p>php_soap.dll</p>
+<p><a href="book.soap.html">SOAP</a> 函数</p>
+<p>PHP &gt;= 5.0.0</p>
+<p>php_sockets.dll</p>
+<p><a href="book.sockets.html">Socket</a> 函数</p>
+<p>无</p>
+<p>php_sybase_ct.dll</p>
+<p><a href="book.sybase.html">Sybase</a> 函数</p>
+<p>需要:Sybase 客户端库</p>
+<p>php_tidy.dll</p>
+<p><a href="book.tidy.html">Tidy</a> 函数</p>
+<p>PHP &gt;= 5.0.0</p>
+<p>php_tokenizer.dll</p>
+<p><a href="book.tokenizer.html">Tokenizer</a> 函数</p>
+<p>自 PHP 4.3.0 起内置</p>
+<p>php_w32api.dll</p>
+<p>W32api 函数</p>
+<p>无</p>
+<p>php_xmlrpc.dll</p>
+<p><a href="book.xmlrpc.html">XML-RPC</a> 函数</p>
+<p>PHP &gt;= 4.2.1 需要 iconv.dll(已附带)</p>
+<p>php_xslt.dll</p>
+<p>XSLT 函数</p>
+<p>PHP <= 4.2.0 需要 sablot.dll,expat.dll(已附带).PHP >= 4.2.1 需要 sablot.dll,expat.dll,iconv.dll(已附带).</p>
+<p>php_yaz.dll</p>
+<p><a href="book.yaz.html">YAZ</a> 函数</p>
+<p>需要:yaz.dll(已附带)</p>
+<p>php_zip.dll</p>
+<p><a href="book.zip.html">Zip 文件</a>函数</p>
+<p>只读访问</p>
+<p>php_zlib.dll</p>
+<p><a href="book.zlib.html">ZLib</a> 压缩函数</p>
+<p>自 PHP 4.3.0 起内置</p>
+<h3 id="phpmicrosoftwindows">PHP 在 Microsoft Windows 下的命令行方式</h3>
+<p>本章包含有针对在 Windows 下以命令行运行 PHP 的说明与提示.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>应该先阅读<a href="install.windows.legacy.index.html#install.windows.legacy.manual">手工安装步骤</a>!</p>
+</blockquote>
+<p>要在命令行下运行 PHP,可以无需对 Windows 做任何改动.</p>
+<p>C:\PHP5\php.exe -f "C:\PHP Scripts\script.php" -- -arg1 -arg2 -arg3</p>
+<p>但是有几个很容易的步骤可以使其更加简便.某些步骤可能已经在之前完成了,不过还是在这里重复说明以便提供一个完整的步骤序列.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>PATH 和 PATHEXT 都是在 Windows 下已有的重要环境变量,要留意不要覆盖了其内容,仅仅是向其中添加内容.</p>
+</blockquote>
+<ul>
+<li><p>将 PHP 可执行文件(php.exe,php-win.exe 或者 php-cli.exe)的路径添加到 PATH 环境变量中去.如何将 PHP 目录添加到 PATH 中请参阅<a href="faq.installation.html#faq.installation.addtopath">与之相关的常见问题</a>.</p></li>
+<li><p>将 <em>.PHP</em> 后缀添加到 PATHEXT 环境变量中去.可以在修改 PATH 环境变量时同时进行.跟<a href="faq.installation.html#faq.installation.addtopath">常见问题</a>中说明的步骤一样,不要要修改的是 PATHEXT 环境变量而不是 PATH 环境变量.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>把 <em>.PHP</em> 放置到什么位置将决定具有相同文件名时运行的优先级.例如将 <em>.PHP</em> 放到 <em>.BAT</em> 之前将导致如果有同名的 PHP 脚本和批处理文件,则 PHP 脚本会运行.</p>
+</blockquote></li>
+<li><p>将 <em>.PHP</em> 后缀关联为一种文件类型,用以下命令完成:</p>
+<p>assoc .php=phpfile</p></li>
+<li><p>将 <em>phpfile</em> 文件类型关联到适当的 PHP 可执行文件,用以下命令完成:</p>
+<p>ftype phpfile="C:\PHP5\php.exe" -f "%1" -- %~2</p></li>
+</ul>
+<p>按照以上步骤将使 PHP 脚本可以在任何目录下运行,不需要输入 PHP 可执行文件名以及 <em>.PHP</em> 后缀,并且所有参数都会被传递给脚本来处理.</p>
+<p>以下例子说明了可以手工修改的注册表项目变化.</p>
+<p><strong>Example #24 注册表变化</strong></p>
+<p>Windows Registry Editor Version 5.00</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.php]
+@="phpfile"
+"Content Type"="application/php"</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\phpfile]
+@="PHP Script"
+"EditFlags"=dword:00000000
+"BrowserFlags"=dword:00000008
+"AlwaysShowExt"=""</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\phpfile\DefaultIcon]
+@="C:\\PHP5\\php-win.exe,0"</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\phpfile\shell]
+@="Open"</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\phpfile\shell\Open]
+@="&amp;Open"</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\phpfile\shell\Open\command]
+@="\"C:\\PHP5\\php.exe\" -f \"%1\" -- %~2"</p>
+<p>有了这些改变之后,本页顶端第一个例子中的命令可以写成这样:</p>
+<p>"C:\PHP Scripts\script" -arg1 -arg2 -arg3</p>
+<p>或者如果 <em>"C:\PHP Scripts"</em> 路径位于 <em>PATH</em> 环境变量中的话:</p>
+<p>script -arg1 -arg2 -arg3</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>不过如果想要通过此技巧将 PHP 脚本作为命令行管道过滤器的话,有个小问题.例如以下例子:</p>
+  <p>dir | "C:\PHP Scripts\script" -arg1 -arg2 -arg3</p>
+  <p>或者</p>
+  <p>dir | script -arg1 -arg2 -arg3</p>
+  <p>此时脚本会死掉,没有输出任何内容.要解决此问题,还需要做一个注册表修改.</p>
+  <p>Windows Registry Editor Version 5.00</p>
+  <p>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer]
+  "InheritConsoleHandles"=dword:00000001</p>
+  <p>有关此问题的更多信息见<a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;321788">»&nbsp;微软知识库文章:321788</a>.</p>
+</blockquote>

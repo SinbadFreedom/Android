@@ -1,0 +1,20 @@
+<h1 id="5_">5. 云计算平台上的安装</h1>
+<h3 id="5_1">5.1 Azure App Services</h3>
+<p>PHP is frequently used on Azure App Services (aka Microsoft Azure, Windows Azure, Azure Web Apps).</p>
+<p>Azure App Services manages pools of Windows Web Servers to host your web application, as an alternative to managing your own web server on your own Azure Compute VMs or other servers.</p>
+<p>PHP is already enabled for your Azure App Services web site automatically. In the Azure Portal, select your web site, and you can choose which version of PHP to use. You may want to choose a newer version than the default.</p>
+<p>As such, PHP and extensions will run on Azure App Services just as it will on other Windows servers. Much of the knowledgebase is also portable, so see the <a href="install.windows.troubleshooting.html">Windows Troubleshooting Page</a> too. However, the management interface for Azure App Services is different:</p>
+<ul>
+<li><p>Azure portal: create, edit settings and delete web sites. <a href="https://portal.azure.com/">»&nbsp;Azure Portal</a></p></li>
+<li><p>Kudu Dashboard: [your web site name].azurewebsites.net Then, the Kudu dashboard is <a href="https://your_web_site_name.scm.azurewebsites.net/">»&nbsp;https://[your web site name].scm.azurewebsites.net/</a>. The Dashboard gives you access to some debugging capabilities, file management and site extensions. Site extensions are an Azure mechanism to add extra programs, like PHP preview builds, to your web site.</p></li>
+<li><p>You can not use IIS Manager, Server Manager, or RDP.</p></li>
+</ul>
+<p>There is also a PHP SDK for programmatically using many Azure Services from your PHP code. See <a href="https://github.com/Azure/azure-sdk-for-php">»&nbsp;Azure SDK for PHP</a>.</p>
+<p>For more information, see <a href="https://azure.microsoft.com/en-us/develop/php/">»&nbsp;Azure PHP Developer Center</a></p>
+<h3 id="wincache">WinCache</h3>
+<p>WinCache is enabled by default on Azure App Services and it is recommended that you leave it enabled. If you install your own build of PHP, you should enable WinCache on that too.</p>
+<h3 id="customphpbuild">Custom PHP Build</h3>
+<p>You may upload your own PHP build to your D:\Home (C:\ is NOT writable). Then in the Azure Portal, set SCRIPT_PROCESSOR for .php to the absolute path to php-cgi.exe file in your build.</p>
+<h3 id="5_2">5.2 Amazon EC2</h3>
+<p><a href="http://aws.amazon.com/ec2/">»&nbsp;EC2 云平台</a>上 PHP 的安装.</p>
+<p>参见 <a href="http://aws.amazon.com/sdkforphp/">»&nbsp;AWS SDK for PHP</a>.</p>

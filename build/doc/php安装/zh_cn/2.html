@@ -1,0 +1,587 @@
+<h1 id="2_">2. Unix 系统下的安装</h1>
+<h3 id="2_1">2.1 Unix 系统下的 Apache 1.3.x</h3>
+<p>本节包括在 Unix 平台的 Apache 下安装 PHP 的说明和提示.我们在另外的页面也有 <a href="install.unix.apache2.html">Apache 2 的安装和说明</a>.</p>
+<p>可以从<a href="configure.html">核心配置选项列表</a>以及位于手册对应部分的特定扩展配置选项中选择参数并在安装步骤第 10 步将它们添加到 <strong>configure</strong> 命令中.版本号在这里被省略了以保证此说明的正确性.需要将这里的"xxx"替换为自己使用的文件的正确值.</p>
+<p><strong>Example #1 PHP 的 Apache 共享模块版本安装说明</strong></p>
+<ol>
+<li><p>gunzip apache_xxx.tar.gz</p></li>
+<li><p>tar -xvf apache_xxx.tar</p></li>
+<li><p>gunzip php-xxx.tar.gz</p></li>
+<li><p>tar -xvf php-xxx.tar</p></li>
+<li><p>cd apache_xxx</p></li>
+<li><p>./configure --prefix=/www --enable-module=so</p></li>
+<li><p>make</p></li>
+<li><p>make install</p></li>
+<li><p>cd ../php-xxx</p></li>
+<li><p>现在,配置 PHP.这是定制 PHP 的不同选项的时候,例如要加载哪些扩展库.使用</p></li>
+</ol>
+<pre class="prettyprint"><code>      ./configure --help
+</code></pre>
+<p>来列出可用的选项.在下面的示例中只是简单地配置 Apache 1 和 MySQL 支持.用户的 apxs 的路径可能和此示例中的不同.</p>
+<pre class="prettyprint"><code>      ./configure --with-mysql --with-apxs=/www/bin/apxs
+</code></pre>
+<ol start="11">
+<li><p>make</p></li>
+<li><p>make install</p>
+<p>如果在安装之后决定修改配置选项,那么只需重复以上最后三步.只须重新启动
+Apache 就可以使新模块生效.不需要重新编译 Apache.</p>
+<p>注意除非特别指出,"make install"总是会安装 PEAR,各种 PHP 工具例如 phpize,
+PHP CLI 以及其它.</p></li>
+<li><p>建立 php.ini 文件.</p></li>
+</ol>
+<pre class="prettyprint"><code>      cp php.ini-dist /usr/local/lib/php.ini
+</code></pre>
+<p>可以编辑 php.ini 来设置 PHP 选项.如果想把 php.ini 放在其它目录,在第10 步加上以下选项:</p>
+<pre class="prettyprint"><code>      --with-config-file-path=/path
+</code></pre>
+<p>如果选择了  php.ini-production,确保阅读一下其中的变更说明,因为这些会影响到 PHP 的行为.</p>
+<ol start="14">
+<li>编辑 httpd.conf 来加载 PHP 模块.在 LoadModule 语句右边的路径必须指向系统中
+PHP 模块所在的路径.上面的 make install 步骤可能已经添加了,但还是检查确认一下.</li>
+</ol>
+<pre class="prettyprint"><code>      LoadModule php5\_module        libexec/libphp5.so
+</code></pre>
+<ol start="15">
+<li><p>在 httpd.conf 中加入 AddModule 部分,在 ClearModuleList 下面的某处,加上这一句:</p>
+<p>AddModule mod_php5.c</p></li>
+<li><p>告诉 Apache 将哪些后缀作为 PHP 解析.例如,让 Apache 把 .php 后缀的文件解析为
+PHP.可以将任何后缀的文件解析为 PHP,只要在以下语句中加入并用空格分开.这里以
+添加一个 .phtml 来示例.</p></li>
+</ol>
+<pre class="prettyprint"><code>      AddType application/x-httpd-php .php .phtml
+</code></pre>
+<p>为了将 .phps 作为 PHP 的源文件进行语法高亮显示,还可以加上:</p>
+<pre class="prettyprint"><code>      AddType application/x-httpd-php-source .phps
+</code></pre>
+<ol start="17">
+<li>用通常的过程启动 Apache(必须完全停止 Apache 再重新启动,而不是用 HUP 或者
+USR1 信号使 Apache 重新加载).</li>
+</ol>
+<p>也可以将 PHP 作为静态对象来安装:</p>
+<p><strong>Example #2 PHP 的 Apache 静态模块版本安装说明</strong></p>
+<ol>
+<li><p>gunzip -c apache_1.3.x.tar.gz | tar xf -</p></li>
+<li><p>cd apache_1.3.x</p></li>
+<li><p>./configure</p></li>
+<li><p>cd ..</p></li>
+<li><p>gunzip -c php-5.x.y.tar.gz | tar xf -</p></li>
+<li><p>cd php-5.x.y</p></li>
+<li><p>./configure --with-mysql --with-apache=../apache_1.3.x</p></li>
+<li><p>make</p></li>
+<li><p>make install</p></li>
+<li><p>cd ../apache_1.3.x</p></li>
+<li><p>./configure --prefix=/www --activate-module=src/modules/php5/libphp5.a
+(上面一行是正确的!是的,我们知道 libphp5.a 尚不存在,还不到时候,
+  它会在之后被创建.)</p></li>
+<li><p>make
+(现在应该有一个 httpd 二进制文件,可以将它复制到 Apache bin 目录.如果这是
+  第一次安装,还要"make install".)</p></li>
+<li><p>cd ../php-5.x.y</p></li>
+<li><p>cp php.ini-development /usr/local/lib/php.ini</p></li>
+<li><p>可以编辑 /usr/local/lib/php.ini 文件以设置 PHP 选项.编辑 httpd.conf 或
+srm.conf 文件,添加:</p></li>
+</ol>
+<pre class="prettyprint"><code>    AddType application/x-httpd-php .php
+</code></pre>
+<p>根据 Unix 系统和 Apache 安装方法的不同,有很多方法停止和重启动 Apache.以下是一些不同的 Apache/UNIX 下重启动 Apache 的典型命令.需要把 <em>/path/to/</em>替换成自己系统上的确切路径.</p>
+<p><strong>Example #3 重启动 Apache 的示例命令</strong></p>
+<ol>
+<li>在一些 Linux 和 SysV 的变种下:</li>
+</ol>
+<pre class="prettyprint"><code>/etc/rc.d/init.d/httpd restart
+</code></pre>
+<ol start="2">
+<li><p>使用 apachectl 脚本:
+/path/to/apachectl stop
+/path/to/apachectl start</p></li>
+<li><p>httpdctl 和 httpsdctl(使用了 OpenSSL),类似 apachectl:
+/path/to/httpsdctl stop
+/path/to/httpsdctl start</p></li>
+<li><p>使用了 mod_ssl,或其他 SSL 服务器,可能需要手工重启动:
+/path/to/apachectl stop
+/path/to/apachectl startssl</p></li>
+</ol>
+<p>apachectl 和 http(s)dctl 程序所在的路径在不同系统中通常不一样.如果系统中有 <em>locate</em> 或者 <em>whereis</em> 或者 <em>which</em> 命令,那么可以帮助找到这些控制程序.</p>
+<p>编译 PHP 和 Apache 的不同例子还有:</p>
+<pre class="prettyprint"><code>./configure --with-apxs --with-pgsql
+</code></pre>
+<p>此配置将生成在 Apache 的 httpd.conf 文件中用 LoadModule 加载的 libphp5.so 共享库.而 PostgreSQL 支持将嵌入到此共享库中.</p>
+<pre class="prettyprint"><code>./configure --with-apxs --with-pgsql=shared
+</code></pre>
+<p>此配置将生成 Apache 的 libphp5.so 共享库,并且还生成 pgsql.so 共享库,可以在 php.ini 文件中用 extension 指令加载,或者在 PHP 脚本中用 <a href="function.dl.html">dl()</a> 函数明确地加载.</p>
+<pre class="prettyprint"><code>./configure --with-apache=/path/to/apache\_source --with-pgsql
+</code></pre>
+<p>此配置将生成一个 libmodphp5.a 库,一个 mod_php5.c 和一些相关的文件并且拷贝到 Apache 源程序目录中的 <em>src/modules/php5</em>目录下.然后用 <em>--activate-module=src/modules/php5/libphp5.a</em> 编译 Apache,Apache 编译系统会生成 libphp5.a 并且将其静态地连接到 httpd 程序中.PostgreSQL 支持也直接包括在这个 httpd 程序中了,因此最终结果是单一的一个包括了所有 Apache 和 PHP 支持的 httpd 可执行文件.</p>
+<pre class="prettyprint"><code>./configure --with-apache=/path/to/apache\_source --with-pgsql=shared
+</code></pre>
+<p>此配置和上面一样--除了没有在最后的 httpd 可执行文件中包括 PostgreSQL 的支持以及生成了一个 pgsql.so 共享库以外.该共享库可以在 php.ini 文件中或者用 <a href="function.dl.html">dl()</a> 函数加载.</p>
+<p>当选择不同的方法编译 PHP 时,需要考虑每种方法的优势和缺点.用共享对象方式编译 PHP 意味着可以单独编译 Apache,并且不用在添加或修改了 PHP 的时候重新编译所有程序.用内置方法编译 PHP(静态方式)意味着 PHP 可以加载和运行得更快.更多信息见 Apache 的 <a href="http://httpd.apache.org/docs/current/dso.html">»&nbsp;DSO 支持页面</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>Apache 默认的 httpd.conf 文件中目前包括类似如下的内容:</p>
+  <p>User nobody
+  Group "#-1"</p>
+  <p>除非把它修改成"Group nogroup"或者其它类似的("Group daemon"也很通用),PHP 将不能打开文件.</p>
+  <p><strong>Note</strong>:</p>
+  <p>确认在使用 <strong>--with-apxs=/path/to/apxs</strong> 时指向 Apache 安装后的目录中的 apxs.绝对不能用 Apache 源程序中的 apxs 而要用安装后的 apxs.</p>
+</blockquote>
+<h3 id="2_2">2.2 Unix 系统下的 Apache 2.x</h3>
+<p>本节包括在 Unix 平台的 Apache 2.x 下安装 PHP 的说明和提示.</p>
+<p><strong>Warning</strong></p>
+<p>不推荐在使用 Apache 2 的产品中使用线程化 MPM.应使用预分支 MPM,Apache 2.0 和 2.2 默认的 MPM.其原因见 FAQ 中的相关条目<a href="faq.installation.html#faq.installation.apache2">使用线程化 MPM 的 Apache2</a>.</p>
+<p>推荐阅读 <a href="http://httpd.apache.org/docs/current/">»&nbsp;Apache 文档</a>,了解一下 Apache 2.x 服务器,以及详细的安装参数.</p>
+<p>可以从 <a href="http://httpd.apache.org/">»&nbsp;Apache 下载站点</a>下载最新版本的Apache,并且根据上文选择合适版本的 PHP 下载.本向导仅包含最基础的内容,只能让 Apache 2.x 和 PHP 能够正常工作.更多信息请阅读 <a href="http://httpd.apache.org/docs/current/">»&nbsp;Apache 文档</a>.这里省略所有的版本号,以保证本文的正确性.需要将本文的"NN"替换为相应的版本号.</p>
+<p>当前 Apache 2.x 有两个流行的版本 - 2.0,2.2.虽然选择某个版本会有种种原因,但是如果可以考虑的话,我们还是建议使用最新的 Apache 2.2 版本.当然,以下的介绍同样适合 Apache 2.0 和 2.2.</p>
+<ol>
+<li>从上面列出的地方获取 Apache 源码包,然后解压:</li>
+</ol>
+<pre class="prettyprint"><code>    gzip -d httpd-2\_x\_NN.tar.gz
+    tar -xf httpd-2\_x\_NN.tar
+</code></pre>
+<ol start="2">
+<li>同样,获取 PHP 源码包并解压:</li>
+</ol>
+<pre class="prettyprint"><code>    gunzip php-NN.tar.gz
+    tar -xf php-NN.tar
+</code></pre>
+<ol start="3">
+<li>编译并安装 Apache.请参考 Apache 安装文档了解编译 Apache 的更多细节.</li>
+</ol>
+<pre class="prettyprint"><code>    cd httpd-2\_x\_NN
+    ./configure --enable-so
+    make
+    make install
+</code></pre>
+<ol start="4">
+<li>现在已经将 Apache 2.x.NN 安装在 /usr/local/apache2.本安装支持可装载模块 和标准的 MPM prefork.之后,可以使用如下命令启动 Apache 服务器:</li>
+</ol>
+<pre class="prettyprint"><code>    /usr/local/apache2/bin/apachectl start
+</code></pre>
+<p>如果成功,可以停止 Apache 服务器并继续安装 PHP:</p>
+<pre class="prettyprint"><code>/usr/local/apache2/bin/apachectl stop
+</code></pre>
+<ol start="5">
+<li>现在需要配置并编译 PHP.在这里可以用各种各样的参数来自定义 PHP,例如启动哪些扩展功能包的支持等.用 ./configure --help 命令可以列出当前可用的所有参数.在此例中,将给出一个在有 MySQL 支持的 Apache 2 上进行配置的范例.</li>
+</ol>
+<p>如果按照上面的说明从源代码编译了 Apache,下面的例子会正确匹配 apxs 的路径.如果通过其他方式安装了 Apache,需要相应的调整 apxs 的路径.注意,在有些发行版本中,可能将 apxs 更名为 apxs2.</p>
+<pre class="prettyprint"><code>    cd ../php-NN
+    ./configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql
+    make
+    make install
+</code></pre>
+<p>如果决定在安装后改变配置选项,只需重复最后的三步 configure,make,以及 make install,然后需要重新启动 Apache 使新模块生效.Apache 不需要重新编译.</p>
+<p>请注意,除非明确有提示,否则"make install"命令将安装 PEAR,各种 PHP 工具诸如 phpize,并安装 PHP CLI 等等.</p>
+<ol start="6">
+<li>配置 php.ini</li>
+</ol>
+<pre class="prettyprint"><code>    cp php.ini-development /usr/local/lib/php.ini
+</code></pre>
+<p>可以编辑 php.ini 来设置 PHP 运行时的选项.如果想要把此文件放到另外的位置,需要在步骤 5 添加 --with-config-file-path=/path 选项.</p>
+<p>如果选择了 php.ini-production,请务必阅读其中的变更列表,它们将影响 PHP 的执行.</p>
+<ol start="7">
+<li>编辑 httpd.conf 文件以调用 PHP 模块.LoadModule 达式右边的路径必须指向系统中的 PHP 模块.以上的 make install 命令可能已经完成了这些,但务必要检查.</li>
+</ol>
+<pre class="prettyprint"><code>    LoadModule php5\_module modules/libphp5.so
+</code></pre>
+<ol start="8">
+<li>告知 Apache 将特定的扩展名解析成 PHP,例如,让 Apache 将扩展名 .php 解析成 PHP.为了避免潜在的危险,例如上传或者创建类似 exploit.php.jpg 的文件并被当做 PHP 执行,我们不再使用 Apache 的 AddType 指令来设置.参考下面的例子,你可以简单的将需要的扩展名解释为 PHP.我们演示为增加.php.</li>
+</ol>
+<pre class="prettyprint"><code>    &lt;FilesMatch \\.php$&gt;
+        SetHandler application/x-httpd-php
+    &lt;/FilesMatch&gt;
+</code></pre>
+<p>或者,你也想将 .php,.php2,.php3,.php4,.php5,.php6,以及 .phtml 文件都当做 PHP 来运行,我们无需额外的设置,仅需按照下面这样来:</p>
+<pre class="prettyprint"><code>    &lt;FilesMatch "\\.ph(p\[2-6\]?|tml)$"&gt;
+        SetHandler application/x-httpd-php
+    &lt;/FilesMatch&gt;
+</code></pre>
+<p>然后,可以将 .phps 文件由 PHP 源码过滤器处理,使得其在显示时可以高亮源码,设置如下:</p>
+<pre class="prettyprint"><code>    &lt;FilesMatch "\\.phps$"&gt;
+        SetHandler application/x-httpd-php-source
+    &lt;/FilesMatch&gt;
+</code></pre>
+<p>mod_rewrite 也有助于将那些不需要运行的 .php 文件的源码高亮显示,而并不需要将他们更名为 .phps 文件:</p>
+<pre class="prettyprint"><code>    RewriteEngine On
+    RewriteRule (.\*\\.php)s$ $1 \[H=application/x-httpd-php-source\]
+</code></pre>
+<p>不要在正式生产运营的系统上启动 PHP 源码过滤器,因为这可能泄露系统机密或者嵌入的代码中的敏感信息.</p>
+<ol start="9">
+<li>按照通常的方式启动 Apache 服务:</li>
+</ol>
+<pre class="prettyprint"><code>    /usr/local/apache2/bin/apachectl start
+</code></pre>
+<p>或者</p>
+<pre class="prettyprint"><code>    service httpd restart
+</code></pre>
+<p>按照上面的步骤便可以使 Apache 2.x 将 PHP 作为 <em>SAPI</em> 模块了.当然 Apache 和 PHP 都还有很多配置选项,可以在相应的源代码目录中使用 <strong>./configure --help</strong> 获得更多信息.</p>
+<p>假如要编译一个多线程版本的 Apache,可在编译时选择用 worker MPM 来替换标准的 prefork MPM.只需在上面的第 3 步使用:</p>
+<pre class="prettyprint"><code>\--with-mpm=worker  
+</code></pre>
+<p>如果不是很明确这样做的后果并且大概理解其含义的话,最好不要进行这一步.更多信息请参考 Apache 文档中关于 <a href="http://httpd.apache.org/docs/current/mpm.html">»&nbsp;MPM-Modules</a> 的部分.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p><a href="faq.installation.html#faq.installation.apache.multiviews">Apache MultiViews 常见问题</a>中讨论了在 PHP 中使用 MultiViews.</p>
+  <p><strong>Note</strong>:</p>
+  <p>要编译多线程版本的 Apache,系统必须支持多线程.这也意味着需要将 PHP 编译为正处在试验阶段的 Zend Thread Safety(ZTS),因此并不是所有的扩展都可以使用了.推荐编译 Apache 使用标准的 prefork MPM-Module.</p>
+</blockquote>
+<h3 id="2_3">2.3 Unix 系统下的 Nginx 1.4.x</h3>
+<p>本文档包括使用 PHP-FPM 为 Nginx 1.4.x HTTP 服务器安装和配置 PHP 的说明和提示.</p>
+<p>本指南假定您已经从源代码成功构建 Nginx,并且其二进制文件和配置文件都位于 <em>/usr/local/nginx</em>. 如果您使用其他方式获取的 Nginx,请参考 <a href="http://wiki.nginx.org/Main">»&nbsp;Nginx Wiki</a> 并对照本文档完成安装.</p>
+<p>本文档仅包含 Nginx 服务器的基本配置,它将通过 80 端口提供 PHP 应用的处理能力. 如果您需要超出本文档范围的安装配置指导,建议您查阅 Nginx 和 PHP-FPM 的文档.</p>
+<p>需要注意的是,本文档一律使用 'x' 来表示版本号,请根据实际情况将 'x' 替换为对应的版本号.</p>
+<ol>
+<li><p>建议您访问 Nginx Wiki <a href="http://wiki.nginx.org/Install">»&nbsp;安装</a> 页面以获取并在您的系统上安装 Nginx.</p></li>
+<li><p>获取并解压 PHP 源代码:</p></li>
+</ol>
+<pre class="prettyprint"><code>    tar zxf php-x.x.x
+</code></pre>
+<ol start="3">
+<li>配置并构建 PHP.在此步骤您可以使用很多选项自定义 PHP,例如启用某些扩展等. 运行 ./configure --help 命令来获得完整的可用选项清单. 在本示例中,我们仅进行包含 PHP-FPM 和 MySQL 支持的简单配置.</li>
+</ol>
+<pre class="prettyprint"><code>    cd ../php-x.x.x
+    ./configure --enable-fpm --with-mysql
+    make
+    sudo make install
+</code></pre>
+<ol start="4">
+<li>创建配置文件,并将其复制到正确的位置.</li>
+</ol>
+<pre class="prettyprint"><code>    cp php.ini-development /usr/local/php/php.ini
+    cp /usr/local/etc/php-fpm.d/www.conf.default /usr/local/etc/php-fpm.d/www.conf
+    cp sapi/fpm/php-fpm /usr/local/bin
+</code></pre>
+<ol start="5">
+<li><p>需要着重提醒的是,如果文件不存在,则阻止 Nginx 将请求发送到后端的 PHP-FPM 模块, 以避免遭受恶意脚本注入的攻击.</p>
+<p>将 php.ini 文件中的配置项 <a href="ini.core.html#ini.cgi.fix-pathinfo">cgi.fix_pathinfo</a> 设置为 <em>0</em> .</p>
+<p>打开 php.ini:</p></li>
+</ol>
+<pre class="prettyprint"><code>    vim /usr/local/php/php.ini
+</code></pre>
+<pre class="prettyprint"><code>定位到 _cgi.fix\_pathinfo=_ 并将其修改为如下所示:
+</code></pre>
+<pre class="prettyprint"><code>    cgi.fix\_pathinfo=0
+</code></pre>
+<ol start="6">
+<li>在启动服务之前,需要修改 php-fpm.conf 配置文件,确保 php-fpm 模块使用 www-data 用户和 www-data 用户组的身份运行.</li>
+</ol>
+<pre class="prettyprint"><code>    vim /usr/local/etc/php-fpm.d/www.conf
+</code></pre>
+<p>找到以下内容并修改:</p>
+<pre class="prettyprint"><code>    ; Unix user/group of processes
+    ; Note: The user is mandatory. If the group is not set, the default user's group
+    ;       will be used.
+    user = www-data
+    group = www-data
+</code></pre>
+<p>然后启动 php-fpm 服务:</p>
+<pre class="prettyprint"><code>    /usr/local/bin/php-fpm
+</code></pre>
+<p>本文档未涵盖对 php-fpm 进行进一步配置的信息,如果您需要更多信息,请查阅相关文档.</p>
+<ol start="7">
+<li>配置 Nginx 使其支持 PHP 应用:</li>
+</ol>
+<pre class="prettyprint"><code>    vim /usr/local/nginx/conf/nginx.conf
+</code></pre>
+<p>修改默认的 location 块,使其支持 .php 文件:</p>
+<pre class="prettyprint"><code>    location / {
+        root   html;
+        index  index.php index.html index.htm;
+    }
+</code></pre>
+<p>下一步配置来保证对于 .php 文件的请求将被传送到后端的 PHP-FPM 模块, 取消默认的 PHP 配置块的注释,并修改为下面的内容:</p>
+<pre class="prettyprint"><code>    location ~\* \\.php$ {
+        fastcgi\_index   index.php;
+        fastcgi\_pass    127.0.0.1:9000;
+        include         fastcgi\_params;
+        fastcgi\_param   SCRIPT\_FILENAME    $document\_root$fastcgi\_script\_name;
+        fastcgi\_param   SCRIPT\_NAME        $fastcgi\_script\_name;
+    }
+</code></pre>
+<p>重启 Nginx.</p>
+<pre class="prettyprint"><code>    sudo /usr/local/nginx/sbin/nginx -s stop
+    sudo /usr/local/nginx/sbin/nginx
+</code></pre>
+<ol start="8">
+<li>创建测试文件.</li>
+</ol>
+<pre class="prettyprint"><code>    rm /usr/local/nginx/html/index.html
+    echo "&lt;?php phpinfo(); ?&gt;" &gt;&gt; /usr/local/nginx/html/index.php
+</code></pre>
+<p>打开浏览器,访问 http://localhost,将会显示 phpinfo() .</p>
+<p>通过以上步骤的配置,Nginx 服务器现在可以以 <em>SAPI</em> <em>SAPI</em> 模块的方式支持 PHP 应用了. 当然,对于 Nginx 和 PHP 的配置,还有很多可用的选项, 请在对应的源代码目录执行 <strong>./configure --help</strong> 来查阅更多配置选项.</p>
+<h3 id="2_4">2.4 Unix 平台的 Lighttpd 1.4</h3>
+<p>本节包括在 Unix 平台的 Lighttpd 1.4 下安装 PHP 的说明和提示.</p>
+<p>推荐阅读 <a href="http://trac.lighttpd.net/trac/">»&nbsp;Lighttpd trac</a> 了解一下正确安装 Lighttpd 然后继续.</p>
+<p>推荐使用 Fastcgi 作为 SAPI 模块来连接 PHP 和 Lighttpd.在 PHP 5.3 中自动激活了 Fastcgi,对于旧版本则在配置时使用 --enable-fastcgi.要确认 PHP 已激活 Fastcgi 可以使用命令 <em>php -v</em>,应该显示 <em>PHP 5.2.5 (cgi-fcgi)</em>.在 PHP 5.2.3 之前,Fastcgi 是包含在 php 可执行文件中(没有 php-cgi 文件).</p>
+<h3 id="lighttpdphp">使 Lighttpd 产生 php 进程</h3>
+<p>要配置 Lighttpd 连接到 php 并产生 fastcgi 进程,编辑 lighttpd.conf.推荐使用套接字在本机连接 fastcgi 进程.</p>
+<p><strong>Example #1 Partial lighttpd.conf</strong></p>
+<pre class="prettyprint"><code>server.modules += ( "mod\_fastcgi" )
+
+fastcgi.server = ( ".php" =&gt;
+  ((
+    "socket" =&gt; "/tmp/php.socket",
+    "bin-path" =&gt; "/usr/local/bin/php-cgi",
+    "bin-environment" =&gt; (
+      "PHP\_FCGI\_CHILDREN" =&gt; "16",
+      "PHP\_FCGI\_MAX\_REQUESTS" =&gt; "10000"
+    ),
+    "min-procs" =&gt; 1,
+    "max-procs" =&gt; 1,
+    "idle-timeout" =&gt; 20
+  ))
+)
+</code></pre>
+<p>bin-path 指令允许 lighttpd 动态产生 fastcgi 进程.PHP 会根据 PHP_FCGI_CHILDREN 环境变量产生子进程."bin-environment"指令设定了所产生的进行的环境.PHP 会在达到 PHP_FCGI_MAX_REQUESTS 所指定的请求数目之后杀死一个子进程.在 PHP 中通常应避免"min-procs"和"max-procs"指令.PHP 自己管理其子进程,并且例如 APC 之类的 opcode 缓存仅在 PHP 管理下的子进程之间共享.如果"min-procs"被设定成某个大于 1 的值,则 PHP 应答器的总数目为该值乘以 PHP_FCGI_CHILDREN(如 min-procs 为 2,PHP_FCGI_CHILDREN 为 16 则会产生 32 个应答器).</p>
+<h3 id="spawnfcgi">通过 spawn-fcgi 产生进程</h3>
+<p>Lighttpd 提供一个名为 spawn-fcgi 的程序来简化产生 fastcgi 进程的手续.</p>
+<h3 id="phpcgi">产生 php-cgi</h3>
+<p>有可能不通过 spawn-fcgi 来产生进程,但需要做些工作.设定 PHP_FCGI_CHILDREN 环境变量控制了 PHP 产生多少个子进程来处理请求.设定 PHP_FCGI_MAX_REQUESTS 将决定每个子进程存活多久(以请求数目决定).以下为一个简单的 bash 脚本来帮助产生 php 应答器.</p>
+<p><strong>Example #2 产生 FastCGI 应答器</strong></p>
+<pre class="prettyprint"><code>#!/bin/sh
+
+# Location of the php-cgi binary
+PHP=/usr/local/bin/php-cgi
+
+# PID File location
+PHP\_PID=/tmp/php.pid
+
+# Binding to an address
+#FCGI\_BIND\_ADDRESS=10.0.1.1:10000
+# Binding to a domain socket
+FCGI\_BIND\_ADDRESS=/tmp/php.sock
+
+PHP\_FCGI\_CHILDREN=16
+PHP\_FCGI\_MAX\_REQUESTS=10000
+
+env -i PHP\_FCGI\_CHILDREN=$PHP\_FCGI\_CHILDREN \\
+       PHP\_FCGI\_MAX\_REQUESTS=$PHP\_FCGI\_MAX\_REQUESTS \\
+       $PHP -b $FCGI\_BIND\_ADDRESS &amp;
+
+echo $! &gt; "$PHP\_PID"
+</code></pre>
+<h3 id="fcgi">连接远程 FCGI 实例</h3>
+<p>Fastcgi 实例可被产生于多个远程机器以分散应用程序.</p>
+<p><strong>Example #3 连接远程 php-fastcgi 实例</strong></p>
+<pre class="prettyprint"><code>fastcgi.server = ( ".php" =&gt;
+   (( "host" =&gt; "10.0.0.2", "port" =&gt; 1030 ),
+    ( "host" =&gt; "10.0.0.3", "port" =&gt; 1030 ))
+)
+</code></pre>
+<h3 id="2_5">2.5 Sun Solaris 上的 Sun,iPlanet 和 Netscape 服务器</h3>
+<p>本节包含了在 Sun Solaris 平台的 Sun Java System web Server,Sun ONE web Server,iPlanet 和 Netscape 下安装 PHP 的说明和提示.</p>
+<p>从 PHP 4.3.3 起,可以使用基于 <a href="ref.nsapi.html">NSAPI</a>模块 PHP 脚本来<a href="install.unix.sun.html#install.unix.sun.specialpages">生成自定义目录列表和错误页面</a>.更多与 Apache 兼容的功能也可以使用.要了解如何在当前的 web 服务器中支持此功能,请阅读<a href="install.unix.sun.html#install.unix.sun.notes">关于子请求(subrequests)的注释</a>.</p>
+<p>可以在下面的链接中了解更多关于在 Netscape Enterprise Server(NES)中设置 PHP 的信息:<a href="http://benoit.noss.free.fr/php/install-php4.html">»&nbsp;http://benoit.noss.free.fr/php/install-php4.html</a>.</p>
+<p>要在 Sun JSWS/Sun ONE WS/iPlanet/Netscape web 服务器中编译 PHP,请为 <a href="configure.about.html#configure.with-nsapi">--with-nsapi=[DIR]</a> 输入合适的安装目录.默认的目录通常是 /opt/netscape/suitespot/.还可以阅读 /php-xxx-version/sapi/nsapi/nsapi-readme.txt.</p>
+<ol>
+<li><p>从 <a href="http://www.sunfreeware.com/">»&nbsp;http://www.sunfreeware.com/</a> 或其它下载站点安装下面的软件包:</p>
+<ul>
+<li>autoconf-2.13</li>
+<li>automake-1.4</li>
+<li>bison-1_25-sol26-sparc-local</li>
+<li>flex-2_5_4a-sol26-sparc-local</li>
+<li>gcc-2_95_2-sol26-sparc-local</li>
+<li>gzip-1.2.4-sol26-sparc-local</li>
+<li>m4-1_4-sol26-sparc-local</li>
+<li>make-3_76_1-sol26-sparc-local</li>
+<li>mysql-3.23.24-beta(如果想要 mysql 支持)</li>
+<li>perl-5_005_03-sol26-sparc-local</li>
+<li>tar-1.13(GNU tar)</li></ul></li>
+<li><p>请确认 PATH 变量包含适当的目录 <em>PATH=.:/usr/local/bin:/usr/sbin:/usr/bin:/usr/ccs/bin</em>,并使用 <strong><code>export PATH</code></strong>命令将其导出为环境变量.</p></li>
+<li><p><strong><code>gunzip php-x.x.x.tar.gz</code></strong>(如果使用 .gz 版本,否则跳到 4)</p></li>
+<li><p><strong><code>tar xvf php-x.x.x.tar</code></strong></p></li>
+<li><p>进入 PHP 解压缩后的目录: <strong><code>cd ../php-x.x.x</code></strong></p></li>
+<li><p>在下面的步骤中,请确认 Netscape 服务器安装在 /opt/netscape/suitespot/ 目录中.否则,将下面命令中的该路径修改为正确的路径并运行:</p></li>
+</ol>
+<pre class="prettyprint"><code>    ./configure --with-mysql=/usr/local/mysql \\
+    --with-nsapi=/opt/netscape/suitespot/ \\
+    --enable-libgcc
+</code></pre>
+<ol start="7">
+<li>运行 <strong>make</strong>,然后运行 <strong>make install</strong>.</li>
+</ol>
+<p>在执行了基础的安装并阅读相应的 Readme 文件后,还需要执行一些额外的配置步骤.</p>
+<h5 id="suniplanetnetscape">Sun/iPlanet/Netscape 的配置说明</h5>
+<p>首先需要为 LD_LIBRARY_PATH 环境变量添加一些路径,以便服务器找到所需的共享库.可以使用 web 服务器的启动脚本很好的完成这一工作.启动脚本通常位于:/path/to/server/https-servername/start.或许需要编辑其配置文件,它位于:/path/to/server/https-servername/config/.</p>
+<ol>
+<li>添加下面一行到 mime.types(可以在管理服务器中添加):</li>
+</ol>
+<pre class="prettyprint"><code>    type=magnus-internal/x-httpd-php exts=php
+</code></pre>
+<ol start="2">
+<li>编辑 magnus.conf(若服务器 &gt;= 6)或 obj.conf(若服务器 &lt; 6)并添加下述内容.shlib 的值根据系统的配置会有所不同.它可能类似于 /opt/netscape/suitespot/bin/libphp4.so.应该在 <em>mime types init</em>后添加如下两行内容:</li>
+</ol>
+<pre class="prettyprint"><code>    Init fn="load-modules" funcs="php4\_init,php4\_execute,php4\_auth\_trans" shlib="/opt/netscape/suitespot/bin/libphp4.so"
+    Init fn="php4\_init" LateInit="yes" errorString="Failed to initialize PHP!" \[php\_ini="/path/to/php.ini"\]
+</code></pre>
+<p>(PHP &gt;= 4.3.3)<em>php_ini</em> 参数是可选的.但是若使用它,便可以将 php.ini 放到 web 服务器的配置目录中去.</p>
+<ol start="3">
+<li><p>在 obj.conf 中配置默认对象(对于虚拟服务器的类 [版本 6.0+] 是在 vserver.obj.conf中):</p>
+<p><Object name="default">
+.
+.
+.
+.#注意 下面一行添加在所有"ObjectType"之后,所有"AddLog"之前
+Service fn="php4_execute" type="magnus-internal/x-httpd-php" [inikey=value inikey=value …]
+.
+.
+</Object></p>
+<p>(PHP &gt;= 4.3.3)作为附加的参数,可以在 php.ini 中添加一些特别的配置选项.例如可以设置 <em>docroot="/path/to/docroot"</em> 指向 <em>php4_execute</em> 被调用的上下文(context).对于布尔 ini 键值,请使用 0/1 作为其值,而不是 <em>"On","Off"</em> 等(它们是无效的),例如,使用 <em>zlib.output_compression=1</em>,而不应使用 <em>zlib.output_compression="On"</em>.</p></li>
+<li><p>本步骤仅在需要配置一个由 PHP 脚本组成的目录时由必要执行(类似于一个 cgi-bin目录):</p></li>
+</ol>
+<pre class="prettyprint"><code>    &lt;Object name="x-httpd-php"&gt;
+    ObjectType fn="force-type" type="magnus-internal/x-httpd-php"
+    Service fn=php4\_execute \[inikey=value inikey=value ...\]
+    &lt;/Object&gt;
+</code></pre>
+<p>之后,可以在管理服务器中配置一个目录,分配给它 <em>x-httpd-php</em> 风格(style).这样在该目录中的所有文件都会被当作 PHP 来执行.这样就能很方便的将 PHP 文件更名为 .html以隐藏 PHP.</p>
+<ol start="5">
+<li>认证的设置:PHP 认证不能与其它任何类型的认证一起工作.所有认证被传递到 PHP 脚本.要为整个服务器配置 PHP 认证,在默认对象中添加下面一行:</li>
+</ol>
+<pre class="prettyprint"><code>    &lt;Object name="default"&gt;
+    AuthTrans fn=php4\_auth\_trans
+    .
+    .
+    .
+    &lt;/Object&gt;
+</code></pre>
+<ol start="6">
+<li>要在单一目录使用 PHP 认证,添加如下内容:</li>
+</ol>
+<pre class="prettyprint"><code>    &lt;Object ppath="d:\\path\\to\\authenticated\\dir\\\*"&gt;
+    AuthTrans fn=php4\_auth\_trans
+    &lt;/Object&gt;
+</code></pre>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>PHP 使用的堆栈大小取决于 web 服务器的配置.如果运行很大的 PHP 脚本时程序崩溃,推荐在 Admin Server(在"MAGNUS EDITOR"一节)中增大此项.</p>
+</blockquote>
+<h3 id="cgiphpini">CGI 环境和对 php.ini 推荐的修改</h3>
+<p>当编写 PHP 脚本时,应特别注意 Sun JSWS/Sun ONE WS/iPlanet/Netscape 是一个多线程 web 服务器.因此,所有请求都运行在相同的进程空间(Web 服务器自己的空间),该空间仅有一套环境变量.如果想获得 CGI 变量,例如 <em>PATH_INFO</em>,<em>HTTP_HOST</em> 等,使用原有的 PHP 3.x 的方式(<a href="function.getenv.html">getenv()</a>),或使用类似的方式(注册全局变量到环境变量,<a href="reserved.variables.environment.html">$_ENV</a>),都是不可行的.只能获得运行中的 web 服务器的环境变量,而不能获得任何有效的 CGI 变量!</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>为什么在环境中存在(无效的)CGI 变量?</p>
+  <p>答:这是因为从管理服务器中启动 web 服务器进程时,运行了 web 服务器的启动脚本,它事实上是一个 CGI 脚本(管理服务器中的一个 CGI 脚本!).这便是为什么启动的 web 服务器包含一些 CGI 变量.可以尝试不从管理服务器启动 web 服务器,用 root 用户登录使用命令行手动启动它,会发现这些 CGI 形式的变量不复存在.</p>
+</blockquote>
+<p>要在 PHP 4.x 中正确获得 CGI 变量,仅需修改脚本使用超级全局变量 <a href="reserved.variables.server.html">$_SERVER</a>.如果老脚本中使用了 $HTTP_HOST 等变量,应该在 php.ini 中打开 <em>register_globals</em>,并且要修改变量顺序(注意:从中删除 <em>"E"</em>,因为不需要这里的环境变量):</p>
+<p>variables_order = "GPCS"
+register_globals = On</p>
+<h3 id="php433">错误页面及自造目录列表的特别使用 (PHP &gt;= 4.3.3)</h3>
+<p>可以使用 PHP 为 <em>"404 Not Found"</em> 或类似的错误代码生成错误页面.将下面几行添加到 obj.conf 中以覆盖默认的错误页面:</p>
+<p>Error fn="php4_execute" code=XXX script="/path/to/script.php" [inikey=value inikey=value…]</p>
+<p><em>XXX</em> 是 HTTP 错误代码.请删除任何可能干扰 <em>Error</em> 设置的指令.如果想为所有可能存在的错误提供一个页面,则将 <em>code</em> 参数删除.脚本可以通过 <a href="reserved.variables.server.html">$_SERVER['ERROR_TYPE']</a> 获得 HTTP 状态代码.</p>
+<p>另一种可能是生成自造目录列表.只要创建一个 PHP 脚本,来显示目录列表 并在 obj.conf 中为 <em>type="magnus-internal/directory"</em> 将相应的默认 <em>Service</em> 行替换为:</p>
+<p>Service fn="php4_execute" type="magnus-internal/directory" script="/path/to/script.php" [inikey=value inikey=value…]</p>
+<p>错误和目录列表页面中,原始的 URI 和翻译的 URI 均被分别储存在 <a href="reserved.variables.server.html">$_SERVER['PATH_INFO']</a> 和 <a href="reserved.variables.server.html">$_SERVER['PATH_TRANSLATED']</a> 变量中.</p>
+<h3 id="nsapi_virtualfunctionnsapivirtualhtmlphp433">关于 <a href="function.nsapi-virtual.html">nsapi_virtual()</a>和子请求的注意事项(PHP &gt;= 4.3.3)</h3>
+<p>NSAPI 模块现在支持 <a href="function.nsapi-virtual.html">nsapi_virtual()</a> 函数(别名: <a href="function.virtual.html">virtual()</a>),用来在 web 服务器上创建子请求(subrequests)和在 web 页面插入请求的结果.此函数使用了一些 NSAPI 中还没有文档说明的函数.在 Unix 下,该模块自动查找需要的函数,若它们存在则使用它们.若不存在,函数 <a href="function.nsapi-virtual.html">nsapi_virtual()</a> 被禁用.</p>
+<blockquote>
+  <p><strong>Note</strong>:</p>
+  <p>但是要注意,对 <a href="function.nsapi-virtual.html">nsapi_virtual()</a> 的支持是试验性质的!</p>
+</blockquote>
+<h3 id="2_6">2.6 CGI 和命令行设置</h3>
+<p>默认为将 PHP 编译为 CLI 和 CGI 程序.这将建立一个命令行解释器,可用于 CGI 处理或非 web 相关的 PHP 脚本.如果用户运行着一个 PHP 模块支持的 web 服务器,那通常为性能考虑应该使用模块方式.不过 CGI 版可以使 Apache 用户用不同的用户 ID 运行不同的 PHP 页面.</p>
+<p><strong>Warning</strong></p>
+<p>服务器使用 CGI 方式进行部署可能存在几个公开的缺陷.请阅读 <a href="security.cgi-bin.html">CGI 安全</a>一章 以学习 如何抵御这些攻击.</p>
+<h3 id="">测试</h3>
+<p>如果将 PHP 编译为 CGI 程序,可以通过键入 <strong>make test</strong> 来测试你的编译.测试一下编译永远是个好主意.这样就可以在你的平台上及早捕捉到 PHP 的问题而不是以后再费力的解决.</p>
+<h3 id="-1">使用变量</h3>
+<p>某些<a href="reserved.variables.server.html">服务器提供的环境变量</a>没有定义在当前的 <a href="http://www.faqs.org/rfcs/rfc3875">»&nbsp;CGI/1.1 标准</a>中.只有下列变量定义在其中: AUTH_TYPE, CONTENT_LENGTH, CONTENT_TYPE, GATEWAY_INTERFACE, PATH_INFO, PATH_TRANSLATED, QUERY_STRING, REMOTE_ADDR, REMOTE_HOST, REMOTE_IDENT, REMOTE_USER, REQUEST_METHOD, SCRIPT_NAME, SERVER_NAME, SERVER_PORT, SERVER_PROTOCOL 和 SERVER_SOFTWARE.其它的变量均作为"供应商扩展(vendor extensions)"来对待.</p>
+<h3 id="2_7">2.7 针对 HP-UX 平台的安装提示</h3>
+<p>本节包括在 HP-UX 平台下安装 PHP 的说明和提示.</p>
+<p>在 HP-UX 系统下安装 PHP 有两个选择,一是编译,二是安装预编译的可执行包.</p>
+<p>官方发布的预编译包可在此地址搜索:<a href="http://software.hp.com/">»&nbsp;http://software.hp.com/</a>.</p>
+<p>在重新编写本节手册之前,在 HP-UX 系统下编译 PHP(以及相关扩展)的文档已被删除.目前请参考此外部文档:<a href="http://www.tekwire.net/joomla/building/apache/http-hpux-11-11">»&nbsp;Building Apache and PHP on HP-UX 11.11</a>.</p>
+<h3 id="2_8">2.8 在 OpenBSD 系统下的安装</h3>
+<p>本章节的内容和提示仅限于将 PHP 安装到 <a href="http://www.openbsd.org/">»&nbsp;OpenBSD 3.6</a> 系统上.</p>
+<h3 id="-2">使用二进制包安装</h3>
+<p>使用二进制包安装 PHP 到 OpenBSD 系统上是被推荐的同时也是最简单的方法.PHP 核心包已经从其他模块中分离出来了并且每个模块可以被独立的安装/卸载而不影响其他模块.所有这些安装 PHP 需要的文件可以在 OpenBSD 光盘或者在 FTP 站点上找到.</p>
+<p>需要安装的 PHP 核心包的文件是 php4-core-4.3.8.tgz,它包含了基本的引擎(包括 gettext 和 iconv).其次,可能还需要安装一些模块包,如:php4-mysql-4.3.8.tgz 或 php4-imap-4.3.8.tgz.需要使用命令 <strong>phpxs</strong> 去激活它,并且再通过修改 php.ini 文件来屏蔽他们.</p>
+<p><strong>Example #1 在 OpenBSD 系统下的软件包的安装示例</strong></p>
+<pre class="prettyprint"><code># pkg\_add php4-core-4.3.8.tgz
+# /usr/local/sbin/phpxs -s
+# cp /usr/local/share/doc/php4/php.ini-recommended /var/www/conf/php.ini
+  (加入 mysql 包)
+# pkg\_add php4-mysql-4.3.8.tgz
+# /usr/local/sbin/phpxs -a mysql
+  (加入 imap 包)
+# pkg\_add php4-imap-4.3.8.tgz
+# /usr/local/sbin/phpxs -a imap
+  (测试一下删除 mysql 包)
+# pkg\_delete php4-mysql-4.3.8
+# /usr/local/sbin/phpxs -r mysql
+  (安装 PEAR 库)
+# pkg\_add php4-pear-4.3.8.tgz
+</code></pre>
+<p>阅读用户手册中的 <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=packages">»&nbsp;packages(7)</a> 部分,可以得到更多 OpenBSD 系统下有关二进制软件包的信息.</p>
+<h3 id="-3">使用软件包</h3>
+<p>同样可以使用<a href="http://www.openbsd.org/faq/ports/ports.html">»&nbsp;软件包目录(ports tree)</a>来编译 PHP 的源代码.然而,这样的安装方式仅仅是建议对 OpenBSD 非常熟悉的高级用户去做.PHP4 的软件包被分别分为了两个子目录:core 和 extensions.其中 extensions 目录产生了所有 PHP 所支持的子模块.如果不希望创建并且使用这些模块中的某些模块,请使用 FLAVOR <strong>no_*</strong> 参数.例如,如果希望跳过编译 imap 模块,设置 FLAVOR 为 <strong>no_imap</strong>即可.</p>
+<h3 id="-4">常见问题</h3>
+<ul>
+<li>默认安装的 Apache 运行于 <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=chroot">»&nbsp;chroot(2) jail</a> 内,将限制 PHP 脚本只能访问 /var/www下面的文件.需要建立 /var/www/tmp 目录来存放 PHP session 文件,或使用其它的 session 后端.此外,数据库套接字需要被放入 jail 或者侦听 localhost接口.如果使用网络函数,某些 /etc 下面的文件例如 /etc/resolv.conf 和 /etc/services 需要被移动到 /var/www/etc 中去.OpenBSD PEAR 包会自动安装到正确的 chroot 目录中,因此不需要作特殊改动.有关 OpenBSD Apache 的更多信息见 OpenBSD FAQ.</li>
+<li>对应于 <a href="http://www.libgd.org/">»&nbsp;gd</a> 扩展的 OpenBSD 3.6 包需要预先安装 XFree86.如果不想使用那些需要 X11 的字体特性,则安装 php4-gd-4.3.8-no_x11.tgz 包来替代之.</li>
+</ul>
+<h3 id="-5">早期发布版本</h3>
+<p>早期的 OpenBSD 系统使用 FLAVORS 系统把 PHP 连接为静态模式.自从使用这种方法编译就造成了问题:很难制作二进制软件包.仍然可以使用早期稳定的 ports trees,但这种方式已经不被 OpenBSD 小组所支持.如果对此有任何建议和意见,软件包当前的维护人是 Anil Madhavapeddy(avsm at openbsd dot org).</p>
+<h3 id="2_9">2.9 针对 Solaris 的安装提示</h3>
+<p>本节包含了在 Solaris 系统上安装 PHP 的说明和提示.</p>
+<h3 id="-6">需要的软件</h3>
+<p>默认安装的 Solaris 系统经常缺少 C 语言编译器和其相关工具.部分工具必须使用该工具的 GNU 版本,原因请阅读 <a href="faq.build.html#faq.installation.needgnu">FAQ</a>.</p>
+<p>要解压缩 PHP 发行包,需要:</p>
+<ul>
+<li>tar</li>
+<li>gzip 或</li>
+<li>bzip2</li>
+</ul>
+<p>要编译 PHP,需要:</p>
+<ul>
+<li>gcc(推荐使用,其它 C 编译器也许也能用)</li>
+<li>make</li>
+<li>GNU sed</li>
+</ul>
+<p>要编译更多扩展库或自行开发 PHP 代码,可能还需要:</p>
+<ul>
+<li>flex(直到 PHP 5.2)</li>
+<li>re2c</li>
+<li>bison</li>
+<li>m4</li>
+<li>autoconf</li>
+<li>automake</li>
+</ul>
+<p>此外,还需要安装(甚至编译)针对自己的配置所需的软件,例如 Oracle 或 MySQL.</p>
+<h3 id="-7">使用软件包</h3>
+<p>可以使用 pkgadd 来安装大部分需要的软件来简化 Solaris 安装过程.Solaris 11 Express 下的映像打包系统(Image Packaging System,IPS)也包含了大多数安装所需的部件,通过 pkg 命令.</p>
+<h3 id="2_10">2.10 Debian GNU/Linux 安装说明</h3>
+<p>本节包含了在 <a href="http://www.debian.org/">»&nbsp;Debian GNU/Linux</a> 下安装 PHP 的说明和提示.</p>
+<p><strong>Warning</strong></p>
+<p>这里不支持非官方的第三方发行包.任何错误应报告给 Debian 开发组,除非该错误在使用从官方<a href="https://www.php.net/downloads.php">»&nbsp;下载</a>的最新版时仍能重现.</p>
+<p>尽管在 Unix 下编译 PHP 的指示也适用于 Debian,本节包含有一些特定信息,例如使用 <em>apt-get</em> 或者 <em>aptitude</em> 命令.本节中这两条命令可以互换.</p>
+<h3 id="apt">使用 APT</h3>
+<p>首先,注意其它有关的包可能需要 <em>libapache2-mod-php5</em> 集成入 Apache 2,以及 PEAR 的 <em>php-pear</em>.</p>
+<p>其次,在安装一个包之前,最好先确定该包是最新版.通常可以运行命令 <strong>apt-get update</strong>.</p>
+<p><strong>Example #1 Debian 下将 PHP 安装入 Apache 2 的例子</strong></p>
+<pre class="prettyprint"><code># apt-get install php5-common libapache2-mod-php5 php5-cli
+</code></pre>
+<p>APT 将自动安装 Apache 2 的 PHP 5 模块以及所有依赖的库并激活之.应重启动 Apache 以使更改生效,例如:</p>
+<p><strong>Example #2 安装完 PHP 后停止并启动 Apache</strong></p>
+<pre class="prettyprint"><code># /etc/init.d/apache2 stop
+# /etc/init.d/apache2 start
+</code></pre>
+<h3 id="-8">更好地控制配置</h3>
+<p>上一节中 PHP 仅安装了核心模块.很可能还需要更多模块,例如 <a href="book.mysql.html">MySQL</a>,<a href="book.curl.html">cURL</a>,<a href="book.image.html">GD</a> 等.这些模块也可以通过 <em>apt-get</em> 命令安装.</p>
+<p><strong>Example #3 取得 PHP 附加软件包的列表</strong></p>
+<pre class="prettyprint"><code># apt-cache search php5
+# aptitude search php5
+# aptitude search php5 |grep -i mysql
+</code></pre>
+<p>以上命令的输出中列出了很多的包,其中有几个针对 PHP 的模块例如 php5-cgi,php5-cli 以及 php5-dev.决定好要安装哪些之后可以用 <em>apt-get</em> 或者 <em>aptitude</em> 来安装.Debian 会进行倚赖性检查,会给出提示,例如安装 MySQL 和 cURL:</p>
+<p><strong>Example #4 安装 PHP 的 MySQL 和 cURL 支持</strong></p>
+<pre class="prettyprint"><code># apt-get install php5-mysql php5-curl
+</code></pre>
+<p>APT 会自动把适当的行添加到不同的 php.ini 相关文件中去,例如 /etc/php5/apache2/php.ini,/etc/php5/conf.d/pdo.ini 等,并且根据扩展,还会添加类似 <em>extension=foo.so</em> 的内容.不过还是需要重新启动 web 服务器(例如 Apache)以使这些改动生效.</p>
+<h3 id="-9">常见问题</h3>
+<ul>
+<li>如果 PHP 脚本没有通过 web 服务器被解析,则有可能是 PHP 没有被加入到 web 服务器的配置文件中,在 Debian 中可能是 /etc/apache2/apache2.conf 或类似文件.具体内容参见 Debian 手册.</li>
+<li>如果某扩展貌似已经安装,但其函数却又未定义,确保合适的 ini 文件已被加载并且 web 服务器在安装后重新启动过.</li>
+<li>在 Debian(以及其它 Linux 变种)下有两个基本命令来安装包:<em>apt-get</em> 和 <em>aptitude</em>.不过要解释这两个命令的细微区别已超出本手册范围.</li>
+</ul>
